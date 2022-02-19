@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형01</title>
+
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/NexonFootballGothic/NexonFootballGothic.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .image-wrap {
+            width: 100%;
+            /* background: rgba(0,0,0,0.2); */
+        }
+        .gmark {
+            font-family: 'GmarketSans';
+        }
+        .section {
+            padding: 120px 0;
+            text-align: center;
+        }
+        .section__h2 {
+            font-size: 50px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        .section__desc {
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 80px;
+            line-height: 150%;
+            color: #67778A;
+        }
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+            /* background: rgba(0,0,0,0.3); */
+        }
+        .image__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .image__inner .image {
+            width: 49%;
+            position: relative;
+            text-align: left;
+        }
+        .image__figure img {
+            width: 100%;
+        }
+        .image__body {
+            position: absolute;
+            left: 30px;
+            bottom: 30px;
+            color: #fff;
+        }
+        .image__title {
+            font-size: 32px;
+            font-family: 'NexonFootballGothic';
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        .image__desc {
+            font-size: 16px;
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+            line-height: 140%;
+            margin-bottom: 16px;
+        }
+        .image__btn {
+            text-decoration: none;
+            color: #fff;
+            font-family: 'NexonLv1Gothic';
+            background: #BE4E15;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+        .image__btn.yellow {
+            background: #C9931D;
+        }
+    </style>
+</head>
+<body>
+    <section class="image-wrap gmark section">
+        <div class="container">
+            <h2 class="section__h2">동물공감 인터뷰</h2>
+            <p class="section__desc">
+                이미지 유형입니다. 마우스 오버시 자세한 정보가 나와는 구조입니다.<br>
+                Gmarket Sans Light 22px 150% #67778A 
+            </p>
+            <div class="image__inner">
+                <article class="image">
+                    <div class="image__header">
+                        <figure class="image__figure">
+                            <img src="../../assets/img/imagetype01.jpg" alt="애교만점 웰시코기">
+                        </figure>
+                    </div>
+                    <div class="image__body">
+                        <h3 class="image__title">애교만점 웰시코기</h3>
+                        <p class="image__desc">제목은 넥슨 풋볼 고딕 폰트입니다.<br>설명부분은 넥슨 LV1 고딕 16px 140% 입니다.</p>
+                        <a href="#" class="image__btn">자세히 보기</a>
+                    </div>
+                </article>
+
+                <article class="image">
+                    <div class="image__header">
+                        <figure class="image__figure">
+                            <img src="../../assets/img/imagetype02.jpg" alt="코카스 파니엘">
+                        </figure>
+                    </div>
+                    <div class="image__body">
+                        <h3 class="image__title">코카스 파니엘</h3>
+                        <p class="image__desc">제목은 넥슨 풋볼 고딕 폰트입니다.<br>설명부분은 넥슨 LV1 고딕 16px 140% 입니다.</p>
+                        <a href="#" class="image__btn yellow">자세히 보기</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

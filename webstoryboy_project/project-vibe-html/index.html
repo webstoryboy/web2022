@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+</head>
+<body>
+    <noscript><strong>자바스크립트가 비활성화 되어있어 화면을 표시할 수 없습니다. 브라우저 설정에서 자바스크립트를 활성화 후 다시 시도해 주세요.</strong></noscript>
+    <div id="app">
+        <header id="header">
+            <h1 class="logo"><em>react</em>webs</h1>
+            <a href="#" role="button" aria-expanded="false" class="btn_search"><span class="blind">검색</span></a>
+            <a href="#" role="button" aria-expanded="false" class="btn_menu"><span class="blind">전체 메뉴 펼쳐보기</span></a>
+            <div class="search">
+                <label for="searchInput">검색</label>
+                <input id="searchInput" type="text" class="input_search" placeholder="검색" role="combobox" aria-expanded="false" aria-haspopup="listbox" title="검색창" autocomplete="off" />
+            </div>
+            <nav class="menu">
+                <ul role="menu">
+                    <li role="presentation"><a href="#" role="menuitem">투데이</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">챠트</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">최신영상</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">이달의영상</a></li>
+                    <li role="presentation"><a href="#" role="menuitem">보관함</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+        <main id="main">
+            <div class="container">
+                <section class="headline">
+                    <h2 class="blind">오늘의 영상</h2>
+                    <div class="headline-box">
+                        <div class="left">
+                            <img src="assets/img/webstandard001.png" alt="webstandard">
+                        </div>
+                        <div class="right" style="background-image: url(assets/img/webstandard001.png);">
+                            <div class="inner">
+                                <span class="pick">pick</span>
+                                <h3 class="title">오늘의 디버깅 #123 프론트앤드 개발자</h3>
+                                <p class="desc"> 어느덧 찾아온 2021년의 마지막 달. 올해도 역시 크리스마스 장식들이 거리 곳곳에 채워지고, 캐롤은 거리에 울려 퍼져 사람들의 마음을 들뜨게 만들고 있다. 여기에 많은 음악가가 연말 분위기를 즐기고자 하는 많은 이를 위해 크리스마스 앨범을 발표했다. 이주의 디깅에서는 좋아하는 연인과 함께, 혹은 집에서 “나 홀로 집에”와 함께 크리스마스를 보내는 모든 이들을 위해 여러 나라의 크리스마스 노래를 소개하고자 한다. – 인스 </p>
+                                <div class="sub"><span>FRONT</span><span>2021.12.12</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //headline -->
+
+                <section class="section today">
+                    <h3>투데이</h3>
+
+                    <div class="today_list">
+                        <div class="list">
+                            <div class="img">
+                                <a href="#"><img src="assets/img/webstandard001.png" alt="ss"></a>
+                            </div>
+                            <div class="title">
+                                <a href="#">마우스 이펙트 효과 배우기</a>
+                            </div>
+                            <div class="date">
+                                <a href="#">2021.21.2</a>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="img">
+                                <a href="#"><img src="assets/img/webstandard002.png" alt="ss"></a>
+                            </div>
+                            <div class="title">
+                                <a href="#">마우스 이펙트 효과 배우기</a>
+                            </div>
+                            <div class="date">
+                                <a href="#">2021.21.2</a>
+                            </div>
+                        </div>
+                        <div class="list">
+                            <div class="img">
+                                <a href="#"><img src="assets/img/webstandard003.png" alt="ss"></a>
+                            </div>
+                            <div class="title">
+                                <a href="#">마우스 이펙트 효과 배우기</a>
+                            </div>
+                            <div class="date">
+                                <a href="#">2021.21.2</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--<div class="swiper today_swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post01.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post02.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post03.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post03.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post03.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post03.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post03.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post01.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post02.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-list-prev"></div>
+                        <div class="slider-list-next"></div>
+                    </div>-->
+                </section>
+                <!-- //today -->
+
+                <section class="section news">
+                    <h3>오늘의 뉴스</h3>
+                    <div class="swiper news_swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/webstandard001.png" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/webstandard001.png" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/webstandard001.png" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/webstandard001.png" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/webstandard001.png" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/webstandard001.png" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/webstandard001.png" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/webstandard001.png" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/webstandard001.png" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-list-prev"></div>
+                        <div class="slider-list-next"></div>
+                    </div>
+                </section>
+                <!-- //news -->
+
+                <section class="section devloper">
+                    <h3>오늘의 개발자</h3>
+                    <div class="swiper devloper_swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post02.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post03.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">노마드 코더</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post01.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post02.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post03.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post04.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post03.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post02.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="slider-list">
+                                    <div class="img">
+                                        <a href="#"><img src="assets/img/post01.jpg" alt="ss"></a>
+                                    </div>
+                                    <div class="title">
+                                        <a href="#">마우스 이펙트 효과 배우기</a>
+                                    </div>
+                                    <div class="date">
+                                        <a href="#">2021.21.2</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-list-prev"></div>
+                        <div class="slider-list-next"></div>
+                    </div>
+                </section>
+                <!-- //devloper -->
+
+                <section class="section chart">
+                    <h3>오늘의 챠트</h3>
+                    <div>
+                        <ul class="chart-list">
+                            <li class="list-item list1">
+                                <ul>
+                                    <li>
+                                        <div class="thumb">
+                                            <img src="assets/img/post01.jpg" alt="dd">
+                                        </div>
+                                        <div class="rank">1</div>
+                                        <div class="title">
+                                            <span>노마드 코더의 알고리즘</span><br>
+                                            <span>알고리즘</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb">
+                                            <img src="assets/img/post02.jpg" alt="dd">
+                                        </div>
+                                        <div class="rank">2</div>
+                                        <div class="title">
+                                            <span>노마드 코더의 알고리즘</span><br>
+                                            <span>알고리즘</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb">
+                                            <img src="assets/img/post03.jpg" alt="dd">
+                                        </div>
+                                        <div class="rank">3</div>
+                                        <div class="title">
+                                            <span>노마드 코더의 알고리즘</span><br>
+                                            <span>알고리즘</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb">
+                                            <img src="assets/img/post04.jpg" alt="dd">
+                                        </div>
+                                        <div class="rank">4</div>
+                                        <div class="title">
+                                            <span>노마드 코더의 알고리즘</span><br>
+                                            <span>알고리즘</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb">
+                                            <img src="assets/img/post01.jpg" alt="dd">
+                                        </div>
+                                        <div class="rank">5</div>
+                                        <div class="title">
+                                            <span>노마드 코더의 알고리즘</span><br>
+                                            <span>알고리즘</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="list-item list2">
+                                <ul>
+                                    <li>
+                                        <div class="thumb">
+                                            <img src="assets/img/post01.jpg" alt="dd">
+                                        </div>
+                                        <div class="rank">6</div>
+                                        <div class="title">
+                                            <span>노마드 코더의 알고리즘</span><br>
+                                            <span>알고리즘</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb">
+                                            <img src="assets/img/post04.jpg" alt="dd">
+                                        </div>
+                                        <div class="rank">7</div>
+                                        <div class="title">
+                                            <span>노마드 코더의 알고리즘</span><br>
+                                            <span>알고리즘</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb">
+                                            <img src="assets/img/post03.jpg" alt="dd">
+                                        </div>
+                                        <div class="rank">8</div>
+                                        <div class="title">
+                                            <span>노마드 코더의 알고리즘</span><br>
+                                            <span>알고리즘</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb">
+                                            <img src="assets/img/post02.jpg" alt="dd">
+                                        </div>
+                                        <div class="rank">9</div>
+                                        <div class="title">
+                                            <span>노마드 코더의 알고리즘</span><br>
+                                            <span>알고리즘</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb">
+                                            <img src="assets/img/post01.jpg" alt="dd">
+                                        </div>
+                                        <div class="rank">10</div>
+                                        <div class="title">
+                                            <span>노마드 코더의 알고리즘</span><br>
+                                            <span>알고리즘</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="list-item list3">
+                                <ul>
+                                    <li>
+                                        <div class="thumb">
+                                            <img src="assets/img/post02.jpg" alt="dd">
+                                        </div>
+                                        <div class="rank">11</div>
+                                        <div class="title">
+                                            <span>노마드 코더의 알고리즘</span><br>
+                                            <span>알고리즘</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb">
+                                            <img src="assets/img/post03.jpg" alt="dd">
+                                        </div>
+                                        <div class="rank">12</div>
+                                        <div class="title">
+                                            <span>노마드 코더의 알고리즘</span><br>
+                                            <span>알고리즘</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb">
+                                            <img src="assets/img/post01.jpg" alt="dd">
+                                        </div>
+                                        <div class="rank">13</div>
+                                        <div class="title">
+                                            <span>노마드 코더의 알고리즘</span><br>
+                                            <span>알고리즘</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb">
+                                            <img src="assets/img/post04.jpg" alt="dd">
+                                        </div>
+                                        <div class="rank">14</div>
+                                        <div class="title">
+                                            <span>노마드 코더의 알고리즘</span><br>
+                                            <span>알고리즘</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="thumb">
+                                            <img src="assets/img/post03.jpg" alt="dd">
+                                        </div>
+                                        <div class="rank">15</div>
+                                        <div class="title">
+                                            <span>노마드 코더의 알고리즘</span><br>
+                                            <span>알고리즘</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <div class="container">
+                <div class="notice">
+                    <span>공지사항</span>
+                    <ul>
+                        <li>새로운 개발 루시 모터스를 환영합니다.</li>
+                    </ul>
+                </div>
+                <div class="info">
+                    <span>webstoryboy@naver.com</span><span>© WEBS Corp.</span>
+                </div>
+            </div>
+            
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script>
+        const swiper1 = new Swiper('.today_swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            // autoplay: {
+            //     delay: 5000,
+            //     pauseOnMouseEnter: true,
+            //     disableOnInteraction: false
+            // },
+            navigation: {
+                nextEl: ".slider-list-next",
+                prevEl: ".slider-list-prev",
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 2.4,
+                    spaceBetween: 20
+                },
+                678: {
+                    slidesPerView: 3.3,
+                    spaceBetween: 20
+                },
+                960: {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                },
+                1400: {
+                    slidesPerView: 4,
+                    spaceBetween: 30
+                },
+                1600: {
+                    slidesPerView: 5,
+                    spaceBetween: 30
+                }
+            }
+        });
+
+        const swiper2 = new Swiper('.news_swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: ".slider-list-next",
+                prevEl: ".slider-list-prev",
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 2.4,
+                    spaceBetween: 20
+                },
+                960: {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                },
+                1600: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                }
+            }
+        });
+
+        const swiper3 = new Swiper('.devloper_swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: ".slider-list-next",
+                prevEl: ".slider-list-prev",
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                },
+                960: {
+                    slidesPerView: 4,
+                    spaceBetween: 20
+                },
+                1600: {
+                    slidesPerView: 7,
+                    spaceBetween: 30
+                }
+            }
+        });
+    </script>
+</body>
+</html>

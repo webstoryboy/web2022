@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+        }
+        canvas {
+            background: #caffde;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="webgl-canvas"></canvas>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/93/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/easing/EasePack.min.js"></script>
+<script>
+    //화면 생성
+    var scene = new THREE.Scene();
+    
+    //카메라 설정
+    var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight);
+    camera.position.set(0,0,1000);
+
+    //렌더링 설정
+    var renderer = new THREE.WebGLRenderer({
+        canvas: document.getElementById("webgl-canvas"),
+        alpha: true
+    });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    
+    //모양 설정
+    const geometry = new THREE.SphereGeometry(300,30,30);
+    const material = new THREE.MeshStandardMaterial({
+        color: new THREE.Color("#009f8c"),
+        wireframe: true
+    });
+    const mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
+
+    //조명 설정
+    const ambientlight = new THREE.AmbientLight(0xffffff, 1);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 3);
+    directionalLight.position.set(1, 1, 1);
+
+    scene.add(ambientlight);
+    scene.add(directionalLight);
+
+    //애니메이션 설정
+    function animate() {
+        requestAnimationFrame(animate);
+
+        mesh.rotation.x += 0.01;
+        mesh.rotation.y += 0.01;
+       
+        renderer.render(scene, camera);
+    }
+    animate();
+
+    //화면 사이즈 설정
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    window.addEventListener('resize', onWindowResize);
+   
+</script>
+</body>
+</html>

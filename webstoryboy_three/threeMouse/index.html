@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r120/three.min.js"></script>
+    <script>
+        //변수 설정
+        let mouseX = 0;
+        let mouseY = 0;
+
+        //화면 생성
+        let scene = new THREE.Scene();
+
+        //카메라 설정
+        let camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+        camera.position.z = 1000;
+
+        //렌더링 설정
+        let renderer = new THREE.WebGLRenderer({antialias:true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+        
+        //모양 설정
+        let geometry = new THREE.CubeGeometry(200, 200, 200);
+        let material = new THREE.MeshPhongMaterial({color: 0xffcc00, wireframe: false});
+        let obj = {};
+        let mesh;
+        
+        for (let i=0; i<50; i++){	
+            obj['mesh'+i] = new THREE.Mesh(geometry, material);
+            scene.add(obj['mesh'+i]);
+
+            mesh = obj['mesh' + i]
+            mesh.position.x = ((- window.innerWidth * 2) * Math.random()) + window.innerWidth;
+            mesh.position.y = ((- window.innerHeight* 2) * Math.random()) + window.innerHeight;
+            mesh.position.z = ((- window.innerHeight* 2) * Math.random()) + window.innerHeight;
+            obj['meshZ' + i] = mesh.position.z
+        }
+
+        //조명 설정
+        pointLight = new THREE.PointLight(0xFFFFFF, 1, 1000);
+        pointLight.position.x = 0;
+        pointLight.position.y = 0;
+        pointLight.position.z = 500;
+        scene.add(pointLight);
+
+        //마우스 설정
+        function mouse(e){
+            mouseX = e.pageX;
+		    mouseY = e.pageY;
+        }
+        document.addEventListener("mousemove", mouse);
+
+        //애니메이션 설정
+        function animate() {
+            requestAnimationFrame(animate);
+
+            for (var i = 0; i < 50; i++){	
+                var mesh = obj['mesh'+i];
+                var meshZ = obj['meshZ'+i];
+                mesh.rotation.x += ((window.innerWidth * .5) - mouseY) * .00002;
+                mesh.rotation.y += ((window.innerHeight * .5) - mouseX) * .00002;
+                //mesh.position.z = meshZ + ((window.innerHeight * .5) - mouseY);
+            }
+
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        //화면 사이즈 설정
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        window.addEventListener('resize', onWindowResize);
+
+    </script>
+</body>
+</html>

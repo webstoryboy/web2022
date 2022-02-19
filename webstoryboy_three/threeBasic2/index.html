@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/93/three.min.js'></script>
+<script>
+    //화면 설정
+    var scene = new THREE.Scene();
+
+    //카메라 설정
+    var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 1, 1000);
+    camera.position.set(0,0,7);
+
+    //렌더링 설정
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    //모양 설정
+    //var geometry = new THREE.BoxGeometry();
+    //var geometry = new THREE.ConeGeometry(2,4,30);
+    //var geometry = new THREE.DodecahedronGeometry(2);
+    var geometry = new THREE.TorusGeometry(2, .5, 16, 100 );
+    var material = new THREE.MeshLambertMaterial({ color: 0xff0000 });
+    var shape = new THREE.Mesh(geometry, material);
+    shape.rotation.set(15,15,0);
+    scene.add(shape);
+
+    //조명 설정
+    var light = new THREE.DirectionalLight(0xffffff, 1.5);
+    light.position.y = 10;
+    scene.add(light);
+
+    var light2 = new THREE.DirectionalLight(0xffffff, .5);
+    light2.position.set(-10,-10,10);
+    scene.add(light2);
+
+    //애니메이션 설정
+    function animate() {
+        requestAnimationFrame(animate);
+
+        shape.rotation.x += .02;
+        shape.rotation.y += .02;
+        //shape.rotation.z += .04;
+
+        renderer.render(scene, camera);
+    }
+    animate();
+
+    //화면 사이즈 설정
+    function onWindowResize() {
+        var newWidth = window.innerWidth,
+            newHeight = window.innerHeight,
+            newAspect = newWidth / newHeight;
+        camera.aspect = newAspect;
+        camera.updateProjectionMatrix();
+        renderer.setSize(newWidth, newHeight);
+    }
+    window.addEventListener('resize', onWindowResize);
+</script>
+</body>
+</html>

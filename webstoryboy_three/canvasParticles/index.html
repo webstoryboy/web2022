@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box;
+        }
+        body {
+            display: grid;
+            place-items: center;
+            height: 100vh;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="testCanvas"></canvas>
+
+<script>
+    const canvas = document.querySelector('#testCanvas');
+    const c = canvas.getContext('2d');
+    let canvasWidth = window.innerWidth;
+    let canvasHeight = window.innerHeight;
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
+
+    const colors = [
+        '#0a3948',
+        '#426165',
+        '#adb0bd',
+        '#d0cdd7',
+    ];
+
+    let mouseX;
+    let mouseY;
+
+    window.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    window.addEventListener('resize', e => {
+        canvasWidth = window.innerWidth;
+        canvasHeight = window.innerHeight;
+        canvas.width = canvasWidth;
+        canvas.height = canvasHeight;
+        
+        initCanvas();
+    });
+
+    class Circle {
+        constructor(x, y, dx, dy, radius) {
+            this.xCoordinate = x;
+            this.yCoordinate = y;
+            this.xVelocity = dx;
+            this.yVelocity = dy;
+            this.circleRadius = radius;
+            this.originalRadius = radius;
+            const randomNumber = Math.floor(Math.random() * colors.length);
+            this.circleColor = colors[randomNumber];
+            this.maxRadius = 40;
+            this.amountFromMouse = 50;
+            
+            const randomTrueOrFalse = Math.floor(Math.random() * 2);
+            randomTrueOrFalse ? this.xVelocity = -Math.random() * 1 : this.xVelocity = Math.random() * 1;
+            randomTrueOrFalse ? this.yVelocity = -Math.random() * 1 : this.yVelocity = Math.random() * 1;
+
+        }
+        
+        draw() {
+            c.beginPath()
+            c.arc(this.xCoordinate, this.yCoordinate, this.circleRadius, Math.PI * 2, false);
+            c.fillStyle = this.circleColor;
+            c.fill();
+        }
+        
+        update() {
+            this.xCoordinate += this.xVelocity;
+            this.yCoordinate += this.yVelocity;
+            
+            const hitsSideWalls = this.xCoordinate + this.circleRadius > canvasWidth || this.xCoordinate - this.circleRadius < 0;
+            const hitsTopWalls = this.yCoordinate + this.circleRadius > canvasHeight || this.yCoordinate - this.circleRadius < 0;
+            
+            const xDistance = mouseX - this.xCoordinate
+            const yDistance = mouseY - this.yCoordinate
+            
+            let canGrow = this.circleRadius < this.maxRadius;
+            let canShrink = this.originalRadius < this.circleRadius;
+            
+            const isAroundMouse =
+                xDistance < this.amountFromMouse &&
+                xDistance > -this.amountFromMouse &&
+                yDistance < this.amountFromMouse &&
+                yDistance > -this.amountFromMouse &&
+                canGrow;
+            
+            const isNotAroundMouse = 
+                xDistance >= 50 && canShrink ||
+                xDistance <= -50 && canShrink ||
+                yDistance >= 50 && canShrink ||
+                yDistance <= -50 && canShrink;
+            
+            
+            if (hitsSideWalls) {
+                this.xVelocity = -this.xVelocity;
+            }
+
+            if (hitsTopWalls) {
+                this.yVelocity = -this.yVelocity;
+            }
+            
+            if (isAroundMouse) {
+                this.circleRadius += 1;
+            } else if (isNotAroundMouse) {
+                this.circleRadius -= 1;
+            }
+            
+            this.draw();
+        }
+    }
+
+    let circles = [];
+    const amountOfCircles = 400;
+
+    const initCanvas = () => {
+        circles = [];
+        for (let i = 0; i < amountOfCircles; i++) {
+            let radius = Math.random() * 10 + 1;
+            let x = Math.random() * (canvasWidth - radius * 2) + radius;
+            let y = Math.random() * (canvasHeight - radius * 2) + radius;
+            let dx = Math.random() - 0.5 * 4;
+            let dy = Math.random() - 0.5 * 4;
+
+            circles.push(new Circle(x, y, dx, dy, radius));
+        }
+    
+    }
+
+    const render = () => {
+        c.clearRect(0, 0, canvasWidth, canvasHeight);
+
+        circles.forEach(c => c.update());
+        requestAnimationFrame(render)
+    }
+
+    render();
+
+    initCanvas();
+
+
+
+</script>
+</body>
+</html>

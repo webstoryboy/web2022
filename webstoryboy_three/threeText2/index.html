@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(46,46,46,1) 0%, rgba(0,0,0,1) 100%);
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r120/three.min.js"></script>
+    <script src="https://assets.codepen.io/127738/MeshSurfaceSampler_20210711.js"></script>
+    <script src="https://assets.codepen.io/127738/OBJLoader_20210711.js"></script>
+    <script src="https://assets.codepen.io/127738/OrbitControls.js"></script>
+    <script>
+    //화면 생성
+    const scene = new THREE.Scene();
+
+    //카메라 설정
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 1000;
+
+    //렌더링 설정
+    const renderer = new THREE.WebGLRenderer({alpha: true, antialias:true});
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    document.getElementById("canvas").appendChild(renderer.domElement);
+    
+    //컨트롤 설정
+    //const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+    //그룹 설정
+    const group = new THREE.Group();
+
+    //폰트 설정
+    const typoLoader = new THREE.FontLoader();
+    const createTypo = font => {
+        const word = "webs";
+        const typoSize = 120;
+        const typoProperties = {
+            font: font,
+            size: typoSize,
+            height: typoSize * 3,
+            curveSegments: 1,
+            bevelEnabled: true,
+            bevelThickness: 0.1,
+            bevelSize: 2,
+            bevelOffset: 0,
+            bevelSegments: 3
+        };
+        //모양 설정
+        const textMesh = new THREE.Mesh();
+        textMesh.geometry = new THREE.TextBufferGeometry(word, typoProperties);
+        textMesh.material =  new THREE.MeshBasicMaterial({color: 0x18FFFF, wireframe: true});
+        
+        textMesh.geometry.computeBoundingBox();
+        textMesh.geometry.boundingBox.getCenter(textMesh.position).multiplyScalar(-1);
+        textMesh.matrixAutoUpdate = false;
+        textMesh.updateMatrix();
+        group.add(textMesh);
+    };
+    typoLoader.load(
+        "https://threejs.org/examples/fonts/helvetiker_bold.typeface.json",
+        createTypo
+    );
+    scene.add(group);
+
+    //마우스 효과
+    let mouseX = 0;
+    const mouseFX = {
+        windowHalfX: window.innerWidth / 2,
+        coordinates: function(coordX) {
+            mouseX = coordX - mouseFX.windowHalfX;		
+            mouseX = mouseX < 0 ? Math.abs(mouseX) : mouseX;
+        },
+        onMouseMove: function(e) {
+            mouseFX.coordinates(e.clientX);
+        },
+        onTouchMove: function(e) {
+            const touchX = e.changedTouches[0].clientX * 2;
+            mouseFX.coordinates(touchX);
+        }
+    };
+    document.addEventListener("mousemove", mouseFX.onMouseMove, false);
+    document.addEventListener("touchmove", mouseFX.onTouchMove, false);
+
+    
+    //애니메이션 설정
+    function animate() {
+        requestAnimationFrame(animate);
+
+        const pZ = (mouseX - camera.position.z) * 0.05;
+        camera.position.z += pZ;
+
+        const radians = Date.now() * 0.0005;
+        const rot = Math.sin(radians) * 0.1;
+        group.rotation.x = rot;
+        group.rotation.y = rot;
+
+        renderer.render(scene, camera);
+    }
+    animate();
+
+    //화면 사이즈 설정
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    window.addEventListener('resize', onWindowResize);
+
+    </script>
+</body>
+</html>

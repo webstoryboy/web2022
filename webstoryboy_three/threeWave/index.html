@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: #004076;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r120/three.min.js"></script>
+    <script src="https://assets.codepen.io/127738/MeshSurfaceSampler_20210711.js"></script>
+    <script src="https://assets.codepen.io/127738/OBJLoader_20210711.js"></script>
+    <script src="https://assets.codepen.io/127738/OrbitControls.js"></script>
+    <script>
+    //화면 생성
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x004076, 0.0006);
+
+    //카메라 설정
+    const camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 2500);
+    camera.position.x = 0;
+    camera.position.y = 70;
+    camera.position.z = 0;
+
+    //렌더링 설정
+    let renderer = new THREE.WebGLRenderer({alpha: true, antialias:true});
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    document.getElementById("canvas").appendChild(renderer.domElement);
+    
+    //달
+    const sphereGeometry = new THREE.SphereGeometry(100, 4, 4);
+    const sphereMaterial = new THREE.MeshPhongMaterial({
+        color: 0xffffff,
+        shininess: 10,
+        emissive: 0xFFFFFF,
+        emissiveIntensity: 3
+    });
+    const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    sphere.position.set(0, 300, -2450);
+    scene.add(sphere);
+
+    //조명 설정
+    const pointMoonColor = "#FCFFB4";
+    pointMoon = new THREE.PointLight(pointMoonColor, 1500, 300);
+    pointMoon.position.set(0, 300, -2500);
+    scene.add(pointMoon);
+    //scene.add(new THREE.PointLightHelper(pointMoon, 10));
+
+    // const ambiColor = "#0c0c0c";
+    // const ambientLight = new THREE.AmbientLight(ambiColor);
+    // scene.add(ambientLight);
+
+    // let pointAColor = "#FFA600";
+    // pointA = new THREE.PointLight(pointAColor, 50, 1);
+    // pointA.position.set(0, 70, 0);
+    // scene.add(pointA);
+    // scene.add(new THREE.PointLightHelper(pointA, 1));
+
+    //오른쪽 불빛
+    const dirLightL = new THREE.DirectionalLight(0xffffff, 3);
+    dirLightL.position.set(20, 0, 0);
+    scene.add(dirLightL);
+
+    // var dirLightBehind = new THREE.DirectionalLight(0x004076, 20);
+    // dirLightBehind.position.set(0, 0, -500);
+    // scene.add(dirLightBehind);
+
+    var cubeGeometry = new THREE.BoxGeometry(50, 50, 50);
+    var cubeMaterial = new THREE.MeshLambertMaterial({color: 0xff0000});
+    var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+    cube.position.y = 250;
+    scene.add(cube);
+
+    //
+    geometry = new THREE.PlaneGeometry(10000, 10000, 128 * 2 - 1, 128 * 2 - 1);
+    geometry.rotateX(Math.PI / 2);
+    for (var i = 0, l = geometry.vertices.length; i < l; i++) {
+        geometry.vertices[i].y = 5 * Math.sin(i / 4);
+    }
+    material = new THREE.MeshPhongMaterial({
+        color: 0x004076,
+        shading: THREE.FlatShading,
+        side: THREE.DoubleSide,
+        shininess: 25,
+        wireframe: false
+    });
+
+    mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
+
+    //
+    var spotColor = "#BF93FF";
+    var spotLight = new THREE.SpotLight(spotColor);
+    spotLight.angle = Math.PI;
+    spotLight.position.set(0, 160, -2000);
+    spotLight.distance = 5000;
+    spotLight.intensity = 5;
+    spotLight.castShadow = true;
+
+    spotLight.shadowCameraVisible = true;
+
+    spotLight.target = cube;
+    scene.add(spotLight);
+
+
+    
+
+    //물결 설정
+    geometry = new THREE.PlaneGeometry(10000, 10000, 128 * 2 - 1, 128 * 2 - 1);
+    geometry.rotateX(Math.PI / 2);
+    for (let i=0, l=geometry.vertices.length; i<l; i++) {
+        geometry.vertices[i].y = 5 * Math.sin(i/4);
+    }
+    material = new THREE.MeshPhongMaterial({
+        color: 0x004076,
+        shading: THREE.FlatShading,
+        side: THREE.DoubleSide,
+        shininess: 25,
+        wireframe: false
+    });
+
+    mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
+
+    
+
+    
+
+  
+    //애니메이션 설정
+    function animate() {
+        requestAnimationFrame(animate);
+
+        const clock = new THREE.Clock();
+        const delta = clock.getDelta();
+        const time = clock.getElapsedTime() * 10;
+
+        for (var i = 0, l = geometry.vertices.length; i < l; i++) {
+            geometry.vertices[ i ].y = 3 * Math.sin( i / 2 + ( time + i / 3 ) / 5 );
+        }
+
+        mesh.rotation.y += 0.005;
+        mesh.geometry.verticesNeedUpdate = true;
+
+        renderer.render(scene, camera);
+    }
+    animate();
+
+    //화면 사이즈 설정
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    window.addEventListener('resize', onWindowResize);
+
+    </script>
+</body>
+</html>

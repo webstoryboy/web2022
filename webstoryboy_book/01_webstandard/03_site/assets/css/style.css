@@ -1,0 +1,191 @@
+/* section */
+.section {
+    padding: 120px 0;
+    text-align: center;
+}
+.section__h2 {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+.section__desc {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 80px;
+    line-height: 150%;
+    color: #777;
+}
+
+/* container */
+.container {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 0 20px;
+    /* background: rgba(0,0,0,0.3); */
+}
+
+.gray {
+    background-color: #f5f5f5;
+}
+
+
+/* header__inner */
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+.header__logo {
+    font-size: 30px;
+}
+.header__logo em {
+    font-size: 18px;
+}
+.header__nav li {
+    display: inline;
+}
+.header__nav li a {
+    padding: 10px 20px; 
+    margin: 0 10px;
+    display: inline-block;
+    transition: all 0.2s;
+    border-radius: 5px;
+}
+.header__nav li a:hover {
+    background: #f5f5f5;
+}
+.header__member a {
+    border: 1px solid #000;
+    padding: 7px 20px 5px;
+    border-radius: 50px;
+}
+.header__member a:hover {
+    background: #000;
+    color: #fff;
+}
+
+
+/* slider__inner */
+.slider__inner {
+    position: relative;
+}
+.slider__btn a {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.slider__btn .prev {
+    left: 20px;
+}
+.slider__btn .next {
+    right: 20px;
+}
+
+
+/* intro__inner */
+.intro__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.intro__inner .intro {
+    width: 49%;
+    position: relative;
+    text-align: left;
+}
+.intro__figure {
+    border-radius: 10px;
+    overflow: hidden;
+}
+.intro__body {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    color: #fff;
+}
+
+/* lecture__inner */
+.lecture__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.lecture__inner .lecture {
+    width: 32%;
+    background: #fff;
+    text-align: left;
+}
+.lecture__body {
+    padding: 20px;
+}
+.lecture__title {
+    font-size: 24px;
+}
+
+
+/* site__inner */
+.site__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.site__inner > div {
+    width: 32%;
+    text-align: left;
+}
+.site__sub {
+    font-size: 16px;
+    margin-bottom: 20px;
+    display: inline-block;
+    border-bottom: 1px solid #777;
+    color: #777;
+}
+.site__title {
+    font-size: 50px;
+    font-weight: 300;
+    word-break: keep-all;
+    line-height: 1.2;
+    margin-bottom: 35px;
+}
+.site__desc {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 30px;
+}
+.site__btn {
+    background: #000;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+.site__inner > div:nth-child(2) {
+    margin-top: 40px;
+}
+.site__inner > div:nth-child(3) {
+    margin-top: -20px;
+}
+
+/* ad */
+.ad {
+    background: url(../img/ad_bg01@2x.jpg) center center no-repeat;
+    background-size: cover;
+}
+.ad__inner {
+    color: #fff;
+}
+.ad__title {
+    font-size: 50px;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+.ad__desc {
+    font-size: 24px;
+    margin-bottom: 70px;
+}
+.ad__desc a {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+.ad__sub {
+    border-bottom: 1px solid #fff;
+}

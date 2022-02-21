@@ -25,7 +25,7 @@
         //카메라 설정
         let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
         camera.position.x = 100;
-        camera.position.z = 2500;
+        camera.position.z = 6500;
 
         //렌더링 설정
         let renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -59,7 +59,7 @@
         scene.add(group);
 
         //컨트롤 설정
-     
+        
         //조명 설정
 
         //애니메이션 설정
@@ -77,7 +77,7 @@
             renderer.render(scene, camera);
         }
         animate();
-  
+
         //화면 사이즈 설정
         function onWindowResize() {
             camera.aspect = window.innerWidth / window.innerHeight;

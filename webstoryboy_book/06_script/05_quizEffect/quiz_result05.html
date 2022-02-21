@@ -630,71 +630,20 @@
         <h1>Quiz</h1>
         <nav>
             <ul>
-                <li><a href="quizEffect01.html">1</a></li>
-                <li><a href="quizEffect02.html">2</a></li>
-                <li><a href="quizEffect03.html">3</a></li>
-                <li class="active"><a href="quizEffect04.html">4</a></li>
-                <li><a href="quizEffect05.html">5</a></li>
-                <li><a href="quizEffect06.html">6</a></li>
-                <li><a href="quizEffect07.html">7</a></li>
+                <li><a href="quiz_result01.html">1</a></li>
+                <li><a href="quiz_result02.html">2</a></li>
+                <li><a href="quiz_result03.html">3</a></li>
+                <li><a href="quiz_result04.html">4</a></li>
+                <li class="active"><a href="quiz_result05.html">5</a></li>
+                <li><a href="quiz_result06.html">6</a></li>
+                <li><a href="quiz_result07.html">7</a></li>
             </ul>
         </nav>
     </header>
 
     <main id="main">
         <div class="quiz__wrap">
-            <div class="quiz">
-                <h2 class="quiz__type"></h2>
-                <h3 class="quiz__question">
-                    <span class="quiz__number"></span>
-                    <span class="quiz__ask"></span>
-                </h3>
-                <div class="quiz__view">
-                    <div class="true">정답입니다!</div>
-                    <div class="false">틀렸습니다!</div>
-                    <div class="dog">
-                        <div class="head">
-                            <div class="ears"></div>
-                            <div class="face"></div>
-                            <div class="eyes">
-                                <div class="teardrop"></div>
-                            </div>
-                            <div class="nose"></div>
-                            <div class="mouth">
-                                <div class="tongue"></div>
-                            </div>
-                            <div class="chin"></div>
-                        </div>
-                        <div class="body">
-                            <div class="tail"></div>
-                            <div class="legs"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="quiz__answer">
-                    <div class="quiz__selects">
-                        <label for="select1">
-                            <input class="select" type="radio" id="select1" name="select" value="1">
-                            <span class="choice"></span>
-                        </label>
-                        <label for="select2">
-                            <input class="select" type="radio" id="select2" name="select" value="2">
-                            <span class="choice"></span>
-                        </label>
-                        <label for="select3">
-                            <input class="select" type="radio" id="select3" name="select" value="3">
-                            <span class="choice"></span>
-                        </label>
-                        <label for="select4">
-                            <input class="select" type="radio" id="select4" name="select" value="4">
-                            <span class="choice"></span>
-                        </label>
-                    </div>
-                    <button class="quiz__confirm">정답 확인하기</button>
-                    <div class="quiz__result"></div>
-                </div>
-            </div>
-        <div class="quiz_source"></div>
+        </div>
     </main>
 
     <footer id="footer">
@@ -703,15 +652,14 @@
 
     <!-- script -->
     <script>
+        const quizWrap = document.querySelector(".quiz__wrap");        
         const quizType = document.querySelector(".quiz__type");        //문제 유형
         const quizNumber = document.querySelector(".quiz__number");    //문제 번호
         const quizAsk = document.querySelector(".quiz__ask");          //문제 질문
-        const quizConfirm = document.querySelector(".quiz__confirm");  //문제 정답 버튼
-        const quizResult = document.querySelector(".quiz__result");    //문제 설명
+        
+        const quizResult = document.querySelectorAll(".quiz__result");    //문제 설명
         const quizView = document.querySelector(".quiz__view");        //문제 화면
-        const quizSelects = document.querySelector(".quiz__selects");  //객관식 보기
-        const quizChoice = quizSelects.querySelectorAll(".choice");    //객관식 보기
-        const quizSelect = quizSelects.querySelectorAll(".select");    //객관식 보기
+   
 
         //문제 정보
         const quizInfo = [
@@ -719,13 +667,125 @@
                 answerType : "javascript",
                 answerNum : 1,
                 answerAsk : "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?",
-                answerChoice : ["javascript", "html", "css", "jquery"],
-                answerResult : "1",
+                answerChoice : {
+                    1: "html",
+                    2: "css",
+                    3: "javascript",
+                    4: "react",
+                },
+                answerResult : "3",
+                answerEx : "객체 기반의 스크립트 프로그래밍 언어는 자바스크립트입니다."
+            },{
+                answerType : "javascript",
+                answerNum : 2,
+                answerAsk : "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?",
+                answerChoice : {
+                    1: "html",
+                    2: "css",
+                    3: "javascript",
+                    4: "react",
+                },
+                answerResult : "3",
+                answerEx : "객체 기반의 스크립트 프로그래밍 언어는 자바스크립트입니다."
+            },{
+                answerType : "javascript",
+                answerNum : 3,
+                answerAsk : "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?",
+                answerChoice : {
+                    1: "html",
+                    2: "css",
+                    3: "javascript",
+                    4: "react",
+                },
+                answerResult : "3",
                 answerEx : "객체 기반의 스크립트 프로그래밍 언어는 자바스크립트입니다."
             }
         ];
 
+
+        //문제 출력
+        function updataQuiz() {
+            const html = [];
+            
+            quizInfo.forEach((question, number) => {
+                html.push(`
+                    <div class="quiz">
+                        <h2 class="quiz__type">${question.answerType}</h2>
+                        <h3 class="quiz__question">
+                            <span class="quiz__number">${question.answerNum} .</span>
+                            <span class="quiz__ask">${question.answerAsk}</span>
+                        </h3>
+                        <div class="quiz__view">
+                            <div class="true">정답입니다!</div>
+                            <div class="false">틀렸습니다!</div>
+                            <div class="dog">
+                                <div class="head">
+                                    <div class="ears"></div>
+                                    <div class="face"></div>
+                                    <div class="eyes">
+                                        <div class="teardrop"></div>
+                                    </div>
+                                    <div class="nose"></div>
+                                    <div class="mouth">
+                                        <div class="tongue"></div>
+                                    </div>
+                                    <div class="chin"></div>
+                                </div>
+                                <div class="body">
+                                    <div class="tail"></div>
+                                    <div class="legs"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quiz__answer">
+                            <div class="quiz__selects">
+                                <label>
+                                    <input class="select" type="radio" name="select${number}" value="1">
+                                    <span class="choice">${question.answerChoice[1]}</span>
+                                </label>
+                                <label>
+                                    <input class="select" type="radio" name="select${number}" value="2">
+                                    <span class="choice">${question.answerChoice[2]}</span>
+                                </label>
+                                <label>
+                                    <input class="select" type="radio" name="select${number}" value="3">
+                                    <span class="choice">${question.answerChoice[3]}</span>
+                                </label>
+                                <label>
+                                    <input class="select" type="radio" name="select${number}" value="4">
+                                    <span class="choice">${question.answerChoice[4]}</span>
+                                </label>
+                            </div>
+                            <button class="quiz__confirm">정답 확인하기</button>
+                            <div class="quiz__result">${question.answerEx}</div>
+                        </div>
+                    </div>
+                `);
+            })
+            quizWrap.innerHTML = html.join(' ');
+        }
+        updataQuiz();
+
+        function answerQuiz(){
+            const quizSelect = document.querySelectorAll(".select");
+
+            // quizInfo.forEach((question, number) => {
+            //     const quizSelectContainer = quizSelect[number];
+            //     const resultSelector = `input[name=select${number}]:checked`;
+            //     const resultAnswer = (quizSelectContainer.querySelector(resultSelector) || {}).value;
+                
+            //     if(resultAnswer == question.answerResult){
+            //         alert("정답입니다.")
+            //     } else {
+            //         alert("오답입니다.")
+            //     }
+            // })
+        }
         
+
+        document.querySelectorAll(".quiz__confirm").forEach((el) => {
+            el.addEventListener("click", answerQuiz)
+        })
     </script>
 </body>
 </html>

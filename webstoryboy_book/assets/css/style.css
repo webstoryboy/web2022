@@ -445,29 +445,14 @@ body.intro #footer {
     width: 100%;
 }
 #explanation .soFar .click {
-    background: #9a92dd;
+    background: #705df2;
     text-align: center;
     border-radius: 20px;
-    margin: 0 0 5px;
+    margin: 0 0 20px;
     cursor: pointer;
-}
-#explanation .soFar .view {
-    display: none;
-}
-#explanation .soFar .view.show {
-    display: block;
-}
-#explanation .soFar.show .view {
-    display: block;
-}
-#explanation .soFar.show .click {
-    background: #705df2;
 }
 #explanation .none {
     display: none;
-}
-#explanation .none.show {
-    display: block;
 }
 
 /* intro */

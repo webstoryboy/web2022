@@ -208,7 +208,6 @@
         }
         .quiz__answer {
             background-color: #f5f5f5;
-            border-top: 6px ridge #cacaca;
             padding: 10px;
         }
         .quiz__confirm {
@@ -221,22 +220,12 @@
             text-shadow: 1px 1px 1px #fff;
             transition: all 0.3s;
             cursor: pointer;
+            text-align: center;
         }
         .quiz__confirm:hover {
             background: #b3b3b3;
         }
         .quiz__result {
-            text-align: center;
-            border: 6px ridge #cacaca;
-            width: 100%;
-            font-size: 22px;
-            line-height: 1.4;
-            padding: 13px 20px;
-            background: #fff;
-            font-family: 'Cafe24Dangdanghae';
-            text-shadow: 1px 1px 1px #fff;
-        }
-        .quiz__ex {
             text-align: center;
             border: 6px ridge #cacaca;
             width: 100%;
@@ -297,6 +286,21 @@
         }
         .quiz__selects label input:checked + span::before {
             box-shadow: inset 0 0 0 10px #64a30b;
+        }
+        .quiz__btn {
+            border-top: 6px ridge #cacaca;
+            padding: 10px;
+        }
+        .quiz__btn button {
+            font-size: 16px;
+            width: 48%;
+            font-family: 'Cafe24Dangdanghae';
+            border: 6px ridge #cacaca;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .quiz__btn button:hover {
+            background-color: rgb(170, 170, 170);
         }
 
         /* dog */
@@ -634,9 +638,6 @@
         @keyframes cry {
             100% {visibility: visible;}
         }
-        .quiz__result {
-            display: none;
-        }
     </style>
 </head>
 <body>
@@ -644,20 +645,54 @@
         <h1>Quiz</h1>
         <nav>
             <ul>
-                <li><a href="quizEffect01.html">1</a></li>
-                <li><a href="quizEffect02.html">2</a></li>
-                <li><a href="quizEffect03.html">3</a></li>
-                <li><a href="quizEffect04.html">4</a></li>
-                <li class="active"><a href="quizEffect05.html">5</a></li>
-                <li><a href="quizEffect06.html">6</a></li>
-                <li><a href="quizEffect07.html">7</a></li>
+                <li><a href="quiz_result01.html">1</a></li>
+                <li><a href="quiz_result02.html">2</a></li>
+                <li><a href="quiz_result03.html">3</a></li>
+                <li><a href="quiz_result04.html">4</a></li>
+                <li><a href="quiz_result05.html">5</a></li>
+                <li class="active"><a href="quiz_result06.html">6</a></li>
+                <li><a href="quiz_result07.html">7</a></li>
             </ul>
         </nav>
     </header>
 
     <main id="main">
         <div class="quiz__wrap">
-            <!-- javascript : quiz -->
+            <div class="quiz">
+                <h2 class="quiz__type">javascript</h2>
+                <h3 class="quiz__question">
+                    <span class="quiz__number">1 .</span>
+                    <span class="quiz__ask">객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?</span>
+                </h3>
+                <div class="quiz__answer">
+                    <div class="quiz__selects">
+                        <label>
+                            <input class="select" type="radio" name="select${number}" value="1">
+                            <span class="choice">html</span>
+                        </label>
+                        <label>
+                            <input class="select" type="radio" name="select${number}" value="2">
+                            <span class="choice">css</span>
+                        </label>
+                        <label>
+                            <input class="select" type="radio" name="select${number}" value="3">
+                            <span class="choice">javascript</span>
+                        </label>
+                        <label>
+                            <input class="select" type="radio" name="select${number}" value="4">
+                            <span class="choice">react</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="quiz__btn">
+                    <button class="prev">이전 문제</button>
+                    <button class="next">다음 문제</button>
+                </div>
+                <div class="quiz__check">
+                    <span></span>
+                </div>
+            </div>
+            
         </div>
     </main>
 
@@ -667,8 +702,11 @@
 
     <!-- script -->
     <script>
-        const quizWrap = document.querySelector(".quiz__wrap");
-       
+        const quizWrap = document.querySelector(".quiz__wrap");        
+        const quizType = document.querySelector(".quiz__type");        //문제 유형
+        const quizNumber = document.querySelector(".quiz__number");    //문제 번호
+        const quizAsk = document.querySelector(".quiz__ask");          //문제 질문
+        
         //문제 정보
         const quizInfo = [
             {
@@ -679,136 +717,40 @@
                     1: "html",
                     2: "css",
                     3: "javascript",
-                    4: "react"
+                    4: "react",
                 },
                 answerResult : "3",
                 answerEx : "객체 기반의 스크립트 프로그래밍 언어는 자바스크립트입니다."
-            },
-            {
-                answerType : "html",
+            },{
+                answerType : "javascript",
                 answerNum : 2,
-                answerAsk : "웹 페이지를 표현하기 위한 마크업 언어는 무엇인가요?",
+                answerAsk : "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?",
                 answerChoice : {
                     1: "html",
                     2: "css",
                     3: "javascript",
-                    4: "react"
+                    4: "react",
                 },
-                answerResult : "1",
-                answerEx : "웹 페이지를 표현하기 위한 마크업 언어는 HTML입니다."
-            },
-            {
-                answerType : "css",
+                answerResult : "3",
+                answerEx : "객체 기반의 스크립트 프로그래밍 언어는 자바스크립트입니다."
+            },{
+                answerType : "javascript",
                 answerNum : 3,
-                answerAsk : "웹 페이지를 꾸미기 위해서 사용하는 언어는 무엇인가요?",
+                answerAsk : "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?",
                 answerChoice : {
                     1: "html",
                     2: "css",
                     3: "javascript",
-                    4: "react"
+                    4: "react",
                 },
-                answerResult : "2",
-                answerEx : "웹 페이지를 꾸미기 위해서 사용하는 언어는 css입니다."
+                answerResult : "3",
+                answerEx : "객체 기반의 스크립트 프로그래밍 언어는 자바스크립트입니다."
             }
         ];
 
+
         //문제 출력
-        function updataQuiz(){
-            const html = [];
-
-            quizInfo.forEach((question, number) => {
-                html.push(`
-                    <div class="quiz">
-                        <h2 class="quiz__type">${question.answerType}</h2>
-                        <h3 class="quiz__question">
-                            <span class="quiz__number">${question.answerNum}. </span>
-                            <span class="quiz__ask">${question.answerAsk}</span>
-                        </h3>
-                        <div class="quiz__view">
-                            <div class="true">정답입니다!</div>
-                            <div class="false">틀렸습니다!</div>
-                            <div class="dog">
-                                <div class="head">
-                                    <div class="ears"></div>
-                                    <div class="face"></div>
-                                    <div class="eyes">
-                                        <div class="teardrop"></div>
-                                    </div>
-                                    <div class="nose"></div>
-                                    <div class="mouth">
-                                        <div class="tongue"></div>
-                                    </div>
-                                    <div class="chin"></div>
-                                </div>
-                                <div class="body">
-                                    <div class="tail"></div>
-                                    <div class="legs"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="quiz__answer">
-                            <div class="quiz__selects">
-                                <label for="select1${number}">
-                                    <input class="select" type="radio" id="select1${number}" name="select${number}" value="1">
-                                    <span class="choice">${question.answerChoice[1]}</span>
-                                </label>
-                                <label for="select2${number}">
-                                    <input class="select" type="radio" id="select2${number}" name="select${number}" value="2">
-                                    <span class="choice">${question.answerChoice[2]}</span>
-                                </label>
-                                <label for="select3${number}">
-                                    <input class="select" type="radio" id="select3${number}" name="select${number}" value="3">
-                                    <span class="choice">${question.answerChoice[3]}</span>
-                                </label>
-                                <label for="select4${number}">
-                                    <input class="select" type="radio" id="select4${number}" name="select${number}" value="4">
-                                    <span class="choice">${question.answerChoice[4]}</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                `)
-            });
-
-            html.push(`
-                <div class="quiz__btn">
-                    <button class="quiz__confirm">정답 확인하기</button>   
-                    <div class="quiz__result"></div> 
-                </div>
-            `);
-
-            quizWrap.innerHTML = html.join('');
-        }
-        updataQuiz();
-
-        function answerQuiz(){
-            const quizSelects = document.querySelectorAll(".quiz__selects");    //보기 선택 박스
-            const quizView = document.querySelectorAll(".quiz__view");          //보기 선택 박스
-            const quizResult = document.querySelector(".quiz__result");
-
-            quizResult.style.display = "block";
-            let scoreCurrent = 0;
-            
-            quizInfo.forEach((question, number) => {
-                const quizSelectsWrap = quizSelects[number];                                  //전체 보기 박스 
-                const userSelector = `input[name=select${number}]:checked`;                   //사용자가 클릭한것
-                const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value  //클릭한 값의 속성 값을 가져옮
-
-                if(userAnswer == question.answerResult){
-                    //console.log("정답입니다.")
-                    quizView[number].classList.add("like");
-                    scoreCurrent++;
-                } else {
-                    //console.log("오답입니다.")
-                    quizView[number].classList.add("dislike");
-                    const div = document.createElement("div");
-                    quizSelectsWrap.appendChild(div).innerHTML = `<p class="quiz__ex">${question.answerEx}</p>`;
-                }
-            });
-            quizResult.innerHTML = `${quizInfo.length} 문제 중에 ${scoreCurrent} 문제를 맞추었습니다.`;
-        }
-
-        document.querySelector(".quiz__confirm").addEventListener("click", answerQuiz);
+       
     </script>
 </body>
 </html>

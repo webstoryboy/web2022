@@ -11,5 +11,11 @@ https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/
 
 
 
+## 퀴즈 이펙트
+
+https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quiz_result01.html
+
+
+
 https://webstoryboy.github.io/web2022/webstoryboy_three/threeMarble/index.html
 https://webstoryboy.github.io/web2022/webstoryboy_three/threeCurve/index.html

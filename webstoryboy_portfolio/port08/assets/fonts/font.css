@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Miracle';
+  src: url('Miracle.eot');
+  src: url('Miracle.eot?#iefix') format('embedded-opentype'),
+       url('Miracle.svg#Miracle') format('svg'),
+       url('Miracle.ttf') format('truetype'),
+       url('Miracle.woff') format('woff'),
+       url('Miracle.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+

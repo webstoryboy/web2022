@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"
+      integrity="sha512-2fk3Q4NXPYAqIha0glLZ2nluueK43aNoxvijPf53+DgL7UW9mkN+uXc1aEmnZdkkZVvtJZltpRt+JqTWc3TS3Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer
+    ></script>
+    <script
+      src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"
+      defer
+    ></script>
+
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      defer
+    ></script>
+    <script src="./public/js/app.js" defer></script>
+
+    <title>정범수의 포토폴리오</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="loader-outer">
+        <div class="loader-inner">
+          <div class="radius-square"></div>
+          <div class="radius-square"></div>
+          <div class="radius-square"></div>
+        </div>
+      </div>
+      <h1><span>LOADING</span></h1>
+    </div>
+    <main>
+      <!-- 메뉴 버튼 -->
+      <div class="menu">
+        <div class="relative">
+          <span>MENU</span>
+          <div class="hambuger-menu">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <nav class="context-menu">
+          <a href="#main-page">main</a>
+          <a href="#about-page">about</a>
+          <a href="#project-cover-page">project-cover</a>
+          <a href="#project-page">project</a>
+          <a href="#vertical-project-page">vertical-project</a>
+          <a href="#contact-cover-page">contact-cover</a>
+          <a href="#contact-page">contact</a>
+        </nav>
+      </div>
+      <!-- // 메뉴 버튼 끝 -->
+
+      <!-- 프로필 상자 -->
+      <div class="introduce">
+        <img
+          src="./public/images/basicProfile.jpeg"
+          alt="jungbeomsu profile Image"
+          class="profile"
+        />
+        <span class="typing"></span>
+        <div class="cursor"></div>
+      </div>
+      <!-- // 프로필 상자 끝 -->
+
+      <!-- 기능아이템 목록 -->
+      <ul class="icon-list">
+        <li class="progress">
+          <span class="scroll-top">0</span>
+          <svg class="progress__circle" width="60" height="60">
+            <circle cx="30" cy="30" r="29"></circle>
+          </svg>
+        </li>
+        <li class="github-item">
+          <a href="https://github.com/JB-JS">
+            <img src="./public/images/git.png" alt="Git Icon" />
+          </a>
+        </li>
+        <li class="sound-item">
+          <svg
+            fill="currentColor"
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+            class="unmute"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+          <svg
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            width="20"
+            height="20"
+            xmlns="http://www.w3.org/2000/svg"
+            class="mute"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            ></path>
+          </svg>
+        </li>
+      </ul>
+      <!-- // 기능아이템 목록 끝 -->
+
+      <section class="main" data-section="main" id="main-page">
+        <div class="sticky">
+          <div class="visual">
+            <h1>
+              <span>FRONT</span> <br /><span>END</span> <br /><span>DEV</span>
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" data-section="about" id="about-page">
+        <div class="star">
+          <img src="./public/images/cover1.jpeg" alt="star background" />
+        </div>
+        <div class="container">
+          <h2 class="title fade-up" data-duration="1000">
+            a STORY<br />
+            of FRONT<br />
+            End dev.
+          </h2>
+          <div class="flex fade-up" data-duration="1000">
+            <p class="history-txt">
+              My story from<br />
+              2021.05,24
+            </p>
+            <div class="txt-box">
+              <div class="line"></div>
+              <span class="description">
+                자신이 원하는 사이트를 퍼블리싱할 수 있는 능력과 동적인 기능을
+                추가시켜 줄 수 있게 리액트나 jQuery등의 라이브러리를 사용해
+                효율적이며 생산적인 도구들을 사용해서 필요한 웹사이트를 제작할
+                수 있는 능력을 가진 프론트엔드 개발자가 되기 의해서 여러 가지
+                사이트들을 퍼블리싱하고 스크립트적인 기능을 추가하며 만들어
+                왔습니다 그리고 새로운 기술들이 끊임없이 나오는 프론트엔드에서
+                최신 트렌드에 뒤처지지 않기 위해 인터넷 서칭을 통해 동향을
+                파악하고 각각의 기술들의 장단점을 확실하게 알고 원하는 기능이
+                필요할 때 바로 배우고 적용할 수 있는 개발자가 되겠습니다. 그러기
+                위해서 업무시간외에도 여러 기술들을 공부하여 자기 계발에 힘쓰는
+                개발자가 되겠습니다.
+              </span>
+              <div class="writer">정범수</div>
+            </div>
+          </div>
+          <div class="my-profile fade-down" data-duration="1000">
+            <div class="img-box"></div>
+          </div>
+          <div class="my-info">
+            <p class="history-txt fade-up" data-duration="1000">2021.05,24</p>
+            <div class="name-en fade-up" data-duration="1000">
+              JUNG<br />
+              BEOM SU
+            </div>
+            <p class="history-txt fade-up" data-duration="1000">
+              My story 2021.05,24
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="project-cover cover"
+        data-section="projectCover"
+        id="project-cover-page"
+      >
+        <div class="sticky">
+          <div class="project-bg bg">
+            <h1 class="title ani-right-txt">MY REACT PROJECT</h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="project" data-section="project" id="project-page">
+        <ul class="project-list">
+          <li class="p1">
+            <div class="img-container">
+              <img src="./public/images/JMusic.png" alt="JMusic" />
+            </div>
+            <div class="content">
+              <div class="r-txt title">JMusic Site</div>
+              <div class="tags">
+                <a href="https://ko.reactjs.org/" class="react" target="_blank">
+                  <img src="./public/images/react.png" alt="react logo" />
+                  &nbsp;&nbsp;React
+                </a>
+                <a href="https://axios-http.com/" class="axios" target="_blank">
+                  <img src="./public/images/axios.png" alt="axios logo" />
+                  &nbsp;&nbsp;Axios
+                </a>
+                <a
+                  href="https://styled-components.com/"
+                  class="styled-components"
+                  target="_blank"
+                >
+                  <img
+                    src="./public/images/styled-components.png"
+                    alt="styled-components Logo"
+                  />
+                  &nbsp;&nbsp;styled-components
+                </a>
+                <a
+                  href="https://reactrouter.com/web/guides/quick-start"
+                  class="react-router-dom"
+                  target="_blank"
+                >
+                  <img
+                    src="./public/images/react-router-dom.png"
+                    alt="react-router-dom Logo"
+                  />
+                  &nbsp;&nbsp;react-router-dom
+                </a>
+              </div>
+              <p class="description">
+                JMusic 사이트는
+                <a
+                  href="https://developers.google.com/youtube/v3?hl=ko"
+                  target="_blank"
+                  >Youtube Data Api V3</a
+                >
+                로부터 비디오와 재생목록을 Axios로 가져와서 사용자가 편하게
+                볼수있게 UI Component를 리엑트를 이용해서 제작하였습니다.
+                컴포넌트 스타일링은 styled-components를 사용해서 css-in-js
+                방식으로 스타일링 하였습니다. react-router-dom을 이용해서 Home,
+                Search, Playlists 페이지가 있습니다. 음악을 재생목록에
+                추가하거나 혹은 음악을 검색하거나 음악을 재생할 수 있는 뮤직
+                웹앱 SPA사이트를 제작하였습니다. 호스팅은 Netlify 에 하였습니다.
+              </p>
+              <a
+                href="https://github.com/JB-JS/JMusic"
+                class="github__link"
+                target="_blank"
+              >
+                <button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  Github 코드 보기
+                </button>
+              </a>
+              <a
+                href="https://jbmusic.netlify.app/"
+                class="nettlify-link"
+                target="_blank"
+              >
+                <button>
+                  <img src="./public/images/nettlify.png" alt="nettlify Logo" />
+                  Netlify 사이트 보기
+                </button>
+              </a>
+            </div>
+          </li>
+          <li class="p2">
+            <div class="img-container">
+              <img src="./public/images/Nomflix.png" alt="Nomflix" />
+            </div>
+            <div class="content">
+              <div class="r-txt title">NomFlix Site</div>
+              <div class="tags">
+                <a href="https://ko.reactjs.org/" class="react" target="_blank">
+                  <img src="./public/images/react.png" alt="react logo" />
+                  &nbsp;&nbsp;React
+                </a>
+                <a href="https://axios-http.com/" class="axios" target="_blank">
+                  <img src="./public/images/axios.png" alt="axios logo" />
+                  &nbsp;&nbsp;Axios
+                </a>
+                <a
+                  href="https://styled-components.com/"
+                  class="styled-components"
+                  target="_blank"
+                >
+                  <img
+                    src="./public/images/styled-components.png"
+                    alt="styled-components Logo"
+                  />
+                  &nbsp;&nbsp;styled-components
+                </a>
+                <a
+                  href="https://reactrouter.com/web/guides/quick-start"
+                  class="react-router-dom"
+                  target="_blank"
+                >
+                  <img
+                    src="./public/images/react-router-dom.png"
+                    alt="react-router-dom Logo"
+                  />
+                  &nbsp;&nbsp;react-router-dom
+                </a>
+              </div>
+              <p class="description">
+                Nomflix 사이트는
+                <a
+                  href="https://developers.themoviedb.org/3/tv/get-tv-details"
+                  target="_blank"
+                  >The Movie Database Api</a
+                >
+                로부터 영화 정보를 Axios 로 가져와서 사용자가 편하게 볼수있게 UI
+                Component를 리엑트를 이용해서 제작하였습니다. 컴포넌트
+                스타일링은 styled-components를 사용해서 css-in-js 방식으로
+                스타일링 하였습니다. react-router-dom을 이용해서 TV, Movie,
+                Search, Detail 페이지들을 제작하였습니다 영화를 검색할 수 있거나
+                클릭해서 영화의 정보를 보여줄 수 있습니다. 호스팅은 Netlify 에
+                하였습니다.
+              </p>
+              <a
+                href="https://github.com/JB-JS/Nomflix_Second/tree/master"
+                class="github__link"
+                target="_blank"
+              >
+                <button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  Github 코드 보기
+                </button>
+              </a>
+              <a
+                href="https://adoring-lovelace-42f3ab.netlify.app"
+                class="nettlify-link"
+                target="_blank"
+              >
+                <button>
+                  <img src="./public/images/nettlify.png" alt="nettlify Logo" />
+                  Netlify 사이트 보기
+                </button>
+              </a>
+            </div>
+          </li>
+          <li class="p3">
+            <!--            <div class="img-container">
+              <img src="./public/images/Nomflix.png" alt="Nomflix" />
+            </div>
+            <div class="content">
+              <div class="r-txt title">Webstandart site</div>
+              <p class="description">
+                Nomflix 사이트는
+                <a href="https://developers.themoviedb.org/3/tv/get-tv-details"
+                  >The Movie Database Api</a
+                >
+                로부터 영화 정보를 Axios 로 가져와서 사용자가 편하게 볼수있게
+                Ui를 리엑트를 이용해서 제작하였습니다 영화를 검색할 수 있거나
+                클릭해서 영화의 정보를 보여줄 수 있습니다. 호스팅은 nettlify 에
+                하였습니다
+              </p>
+              <a href="" class="github__link" target="_blank">
+                <button>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  Github 코드 보기
+                </button>
+              </a>
+              <a href="" class="nettlify-link">
+                <button>
+                  <img src="./public/images/nettlify.png" alt="nettlify Logo" />
+                  Netlify 사이트 보기
+                </button>
+              </a>
+            </div> -->
+          </li>
+        </ul>
+      </section>
+
+      <section
+        class="project-cover cover"
+        data-section="verticalProjectCover"
+        id="project-cover-page"
+      >
+        <div class="sticky">
+          <div class="vertical-project-bg bg">
+            <h1 class="title ani-right-txt">
+              PUBLISHING SITE & RESPONSIVE SITE & JQUERY SITE
+            </h1>
+          </div>
+        </div>
+      </section>
+      <section
+        class="vertical-project"
+        data-section="verticalProject"
+        id="vertical-project-page"
+      >
+        <h1 class="title">CODING SITE</h1>
+        <div class="divider"></div>
+        <div class="item">
+          <div class="img-container">
+            <h2>
+              <span class="fade-up" style="display: block" data-duration="1000"
+                >RECEIPT</span
+              ><span class="fade-up" style="display: block" data-duration="1000"
+                >SITE</span
+              >
+            </h2>
+            <img
+              src="./public/images/ReceiptSite.png"
+              alt="Receipt Web App Site"
+            />
+          </div>
+
+          <div class="txt-box fade-up" data-duration="1000">
+            <div class="line"></div>
+            <span class="description">
+              사이트를 이용하실려면
+              <strong
+                >아래 JSON 파일 다운로드 받기 버튼을 누르신후
+                이용바랍니다!!</strong
+              >
+              영수중 사이트입니다 JSON파일의 영수증을 추가후 업로드시
+              영수증을클릭해서 영수증에 관한 정보들을 볼수 있고 영수증들을
+              검색하거나 3초이상 마우스 다운하면 선택할수있습니다 선택한
+              영수증은 삭제하거나 다운로드 내보내기 할수있습니다 모든 업로드한
+              영수증 데이터는 localStorage에 저장해서 브라우저 종료후
+              다시접속해도 데이터를 유지할수있습니다
+            </span>
+          </div>
+          <div class="btns fade-up" data-duration="1000">
+            <a
+              href="https://github.com/JB-JS/assignments/tree/master/2018/%EC%A0%84%EA%B5%AD/%EB%8C%80%EA%B5%AC/3%EA%B3%BC%EC%A0%9C/%EC%84%A0%EC%88%98%20%EC%A0%9C%EA%B3%B5%20%ED%8C%8C%EC%9D%BC"
+              class="github__link"
+              target="_blank"
+            >
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
+                </svg>
+                Github 코드 보기
+              </button>
+            </a>
+            <a href="./downloads/receiptFiles.zip" download class="download">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="#fff"
+              >
+                <path d="M16 11h5l-9 10-9-10h5v-11h8v11zm1 11h-10v2h10v-2z" />
+              </svg>
+              영수증 JSON 파일 다운로드
+            </a>
+
+            <a
+              href="https://jb-js.github.io/assignments/2018/%EC%A0%84%EA%B5%AD/%EB%8C%80%EA%B5%AC/3%EA%B3%BC%EC%A0%9C/%EC%84%A0%EC%88%98%20%EC%A0%9C%EA%B3%B5%20%ED%8C%8C%EC%9D%BC/templete/"
+              target="_blank"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.21 0-4 1.791-4 4s1.79 4 4 4c2.209 0 4-1.791 4-4s-1.791-4-4-4zm-.004 3.999c-.564.564-1.479.564-2.044 0s-.565-1.48 0-2.044c.564-.564 1.479-.564 2.044 0s.565 1.479 0 2.044z"
+                />
+              </svg>
+              사이트 보기
+            </a>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="item">
+          <div class="img-container">
+            <h2>
+              <span class="fade-up" style="display: block" data-duration="1000"
+                >EDITOR</span
+              ><span class="fade-up" style="display: block" data-duration="1000"
+                >SITE</span
+              >
+            </h2>
+            <img src="./public/images/editor.png" alt="Editor Web App Site" />
+          </div>
+
+          <div class="txt-box fade-up" data-duration="1000">
+            <div class="line"></div>
+            <span class="description">
+              온라인 웹앱 에디터 사이트입니다 폴더와 파일을 만들수 있고 이미지를
+              업로드할 수 있습니다
+            </span>
+          </div>
+          <div class="btns fade-up" data-duration="1000">
+            <a
+              href="https://github.com/JB-JS/assignments/tree/master/2017/3%EA%B3%BC%EC%A0%9C"
+              class="github__link"
+              target="_blank"
+            >
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
+                </svg>
+                Github 코드 보기
+              </button>
+            </a>
+            <a href="https://jb-js.github.io/assignments/2017/3과제/">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.21 0-4 1.791-4 4s1.79 4 4 4c2.209 0 4-1.791 4-4s-1.791-4-4-4zm-.004 3.999c-.564.564-1.479.564-2.044 0s-.565-1.48 0-2.044c.564-.564 1.479-.564 2.044 0s.565 1.479 0 2.044z"
+                />
+              </svg>
+              사이트 보기
+            </a>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="item">
+          <div class="img-container">
+            <h2>
+              <span class="fade-up" style="display: block" data-duration="1000"
+                >WEB PAGE CREATE</span
+              ><span class="fade-up" style="display: block" data-duration="1000"
+                >SITE</span
+              >
+            </h2>
+            <img
+              src="./public/images/webProduct2.png"
+              alt="webProduct2 App Site"
+            />
+          </div>
+
+          <div class="txt-box fade-up" data-duration="1000">
+            <div class="line"></div>
+            <span class="description">
+              사이트를 이용하실려면
+              <strong
+                >아래 JSON 파일 다운로드 받기 버튼을 누르신후
+                이용바랍니다!!</strong
+              >
+              웹페이지 제작사이트입니다 처음 메뉴에서 완성한사이트목록을
+              볼수있고 생성일 OR 이름 && 내림차순 오름차순으로 정렬할수있습니다
+              웹페이지 제작하기버튼을 클릭후 값을입력하면 페이지를 그릴수있는
+              캔바스가 생성되고 메뉴가 나옵니다 메뉴는 Tab 키를 이용하여
+              숨기거나 보이게 할수있습니다
+            </span>
+          </div>
+          <div class="btns fade-up" data-duration="1000">
+            <a
+              href="https://github.com/JB-JS/assignments/tree/master/2018/%EC%A0%84%EA%B5%AD/%EA%B2%BD%EA%B8%B0/3%EA%B3%BC%EC%A0%9C"
+              class="github__link"
+              target="_blank"
+            >
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
+                </svg>
+                Github 코드 보기
+              </button>
+            </a>
+
+            <a
+              href="https://jb-js.github.io/assignments/2018/%EC%A0%84%EA%B5%AD/%EA%B2%BD%EA%B8%B0/3%EA%B3%BC%EC%A0%9C/"
+              target="_blank"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.21 0-4 1.791-4 4s1.79 4 4 4c2.209 0 4-1.791 4-4s-1.791-4-4-4zm-.004 3.999c-.564.564-1.479.564-2.044 0s-.565-1.48 0-2.044c.564-.564 1.479-.564 2.044 0s.565 1.479 0 2.044z"
+                />
+              </svg>
+              사이트 보기</a
+            >
+          </div>
+        </div>
+
+        <h1 class="title pub fade-up" data-duration="1000">
+          퍼블리싱 사이트입니다
+        </h1>
+
+        <div class="divider"></div>
+
+        <div class="item">
+          <div class="img-container">
+            <h2>
+              <span class="fade-up" style="display: block" data-duration="1000"
+                >YEOSU INTRODUCTION</span
+              ><span class="fade-up" style="display: block" data-duration="1000"
+                >SITE</span
+              >
+            </h2>
+            <img src="./public/images/yeosu1.png" alt="yeosu web App Site" />
+          </div>
+
+          <div class="txt-box fade-up" data-duration="1000">
+            <div class="line"></div>
+            <span class="description">
+              여수 소개 사이트입니다 반응형으로 데스크탑 1600px 타블렛 780px
+              스마트폰 480px 에서도 잘보일수있게 반응형 작업을 했습니다
+            </span>
+          </div>
+          <div class="btns fade-up" data-duration="1000">
+            <a
+              href="https://github.com/JB-JS/assignments/tree/master/2018/%EC%A0%84%EA%B5%AD/%EA%B2%BD%EA%B8%B0/2%EA%B3%BC%EC%A0%9C"
+              class="github__link"
+              target="_blank"
+            >
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
+                </svg>
+                Github 코드 보기
+              </button>
+            </a>
+
+            <a
+              href="https://jb-js.github.io/assignments/2018/%EC%A0%84%EA%B5%AD/%EA%B2%BD%EA%B8%B0/2%EA%B3%BC%EC%A0%9C/"
+              target="_blank"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.21 0-4 1.791-4 4s1.79 4 4 4c2.209 0 4-1.791 4-4s-1.791-4-4-4zm-.004 3.999c-.564.564-1.479.564-2.044 0s-.565-1.48 0-2.044c.564-.564 1.479-.564 2.044 0s.565 1.479 0 2.044z"
+                />
+              </svg>
+              사이트 보기</a
+            >
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="item">
+          <div class="img-container">
+            <h2>
+              <span class="fade-up" style="display: block" data-duration="1000"
+                >YEOSU INTRODUCTION</span
+              ><span class="fade-up" style="display: block" data-duration="1000"
+                >SITE</span
+              >
+            </h2>
+            <img src="./public/images/yeosu2.png" alt="yeosu web App Site" />
+          </div>
+
+          <div class="txt-box fade-up" data-duration="1000">
+            <div class="line"></div>
+            <span class="description">
+              여수 소개 사이트입니다 HTML CSS를 이용해 제작하였습니다
+            </span>
+          </div>
+          <div class="btns fade-up" data-duration="1000">
+            <a
+              href="https://github.com/JB-JS/assignments/tree/master/2018/%EC%A0%84%EA%B5%AD/%EA%B4%91%EC%A3%BC/2%EA%B3%BC%EC%A0%9C"
+              class="github__link"
+              target="_blank"
+            >
+              <button>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
+                </svg>
+                Github 코드 보기
+              </button>
+
+              <a
+                href="https://jb-js.github.io/assignments/2018/%EC%A0%84%EA%B5%AD/%EA%B4%91%EC%A3%BC/2%EA%B3%BC%EC%A0%9C/"
+                target="_blank"
+                title="전러남도 여수 소개사이트로 이동"
+                class="site-view"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.21 0-4 1.791-4 4s1.79 4 4 4c2.209 0 4-1.791 4-4s-1.791-4-4-4zm-.004 3.999c-.564.564-1.479.564-2.044 0s-.565-1.48 0-2.044c.564-.564 1.479-.564 2.044 0s.565 1.479 0 2.044z"
+                  />
+                </svg>
+                사이트 보기</a
+              >
+            </a>
+          </div>
+          <div class="site-view fade-up" data-duration="1000"></div>
+        </div>
+      </section>
+
+      <section
+        class="contact-cover cover"
+        data-section="contactCover"
+        id="contact-cover-page"
+      >
+        <div class="sticky">
+          <div class="contact-bg bg">
+            <h1 class="title ani-right-txt">CONATCT ME</h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" data-section="contact" id="contact-page">
+        <div class="container">
+          <div class="title">
+            <h1>CONTACT ME</h1>
+          </div>
+          <div class="email">
+            <span>이메일: </span>
+            <a href="mailTo:jungbeomsu@naver.com">jungbeomsu@naver.com</a>
+          </div>
+
+          <div id="disqus_thread"></div>
+          <script>
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+            ;(function () {
+              // DON'T EDIT BELOW THIS LINE
+              var d = document,
+                s = d.createElement('script')
+              s.src = 'https://jungbemosu-portfolio.disqus.com/embed.js'
+              s.setAttribute('data-timestamp', +new Date())
+              ;(d.head || d.body).appendChild(s)
+            })()
+          </script>
+          <noscript
+            >Please enable JavaScript to view the
+            <a href="https://disqus.com/?ref_noscript"
+              >comments powered by Disqus.</a
+            ></noscript
+          >
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

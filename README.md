@@ -27,7 +27,8 @@ https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/q
 https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quiz_result06.html
 
 ### 포트폴리오
-https://webstoryboy.github.io/web2022/webstoryboy_portfolio/port01/index.html
+진재현 : https://webstoryboy.github.io/web2022/webstoryboy_portfolio/port01/index.html
+박준승 : https://webstoryboy.github.io/web2022/webstoryboy_portfolio/port02/index.html
 
 ### THREE.JS 이펙트
 https://webstoryboy.github.io/web2022/webstoryboy_three/threeMarble/index.html

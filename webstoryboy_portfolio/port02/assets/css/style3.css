@@ -1,0 +1,1168 @@
+
+:root {
+    --display: block;
+    --color: black;
+}
+
+/* contents */
+body {
+    height: 100%;
+}
+.loader-wrap{
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    position: fixed;
+    z-index: 100000;
+}
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    border: 4px solid #Fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: loader 2s infinite ease;
+    z-index: 100000;
+}
+
+.loader-inner {
+    vertical-align: top;
+    display: inline-block;
+    width: 100%;
+    background-color: #fff;
+    animation: loader-inner 2s infinite ease-in;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(180deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loader-inner {
+    0% {
+        height: 0%;
+    }
+
+    25% {
+        height: 0%;
+    }
+
+    50% {
+        height: 100%;
+    }
+
+    75% {
+        height: 100%;
+    }
+
+    100% {
+        height: 0%;
+    }
+}
+.scroll {
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #000;
+    background: rgba(253, 220, 220, 0.3);
+    border-radius: 50%;
+    z-index: 10000;
+}
+#contents {}
+#section1 {
+    position: relative;
+    height: 8500px;
+    left: 0;
+    top: 0;
+    background: transparent;
+    z-index: 4000;
+
+}
+#section2 {
+    position: relative;
+    height: 20000px;
+    background: #000;
+    z-index: 3000;
+}
+#section4 {
+    height: 5000px;
+    z-index: 5500;
+    background:#f5f5f5  
+}
+#section5 {}
+
+/* header */
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10000 !important;
+}
+#header .logo {
+    font-family: 'GmarketSans';
+    font-size: 2vh;
+    line-height: 1.4;
+    padding-top: 2px;
+    padding-left: 3.2vh;
+}
+#header .menu {
+    font-family: 'GmarketSans';
+    font-size: 2.2vh;
+    line-height: 1.4;
+    font-weight: 300;
+    padding-top: 2px;
+}
+#header .menu a {
+    color: inherit  ;
+}
+#header .contact {
+    font-family: 'GmarketSans';
+    font-size: 2vh;
+    line-height: 1.4;
+    padding-top: 2px;
+    padding-right: 3.2vh;
+}
+
+@media (max-width: 800px){
+    #header .menu {display: none;}
+    #header .contact {display: none;}
+}
+
+
+/* sec1 */
+.sec1 {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #f5f5f5;
+    z-index: 4000;
+}
+.sec1 .top {
+    position: fixed;
+    width: 100%;
+    height: 50vh;
+    top: 5vh;
+    left: 0;
+    right: 0;
+    font-family: 'GmarketSans';
+    z-index: 4000;
+}
+.sec1 .top::before {
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 5vh;
+    width: 3.2vh;
+    height: 50vh;
+    background: #f5f5f5;
+    z-index: 3000;
+    display: var(--display);
+}
+.sec1 .top::after {
+    content: '';
+    position: fixed;
+    right: 0;
+    top: 5vh;
+    width: 3.2vh;
+    height: 50vh;
+    background: #f5f5f5;
+    z-index: 3000;
+    display: var(--display);
+}
+.sec1 .top .line1 {
+    position: fixed;
+    left: 0;
+    top: 5vh;
+    width: 100%;
+    height: 2px;
+    background: #000;
+}
+.sec1 .top .line2 {
+    position: fixed;
+    left: 0;
+    bottom: 45vh;
+    width: 100%;
+    height: 2px;
+    background: #000;
+}
+.sec1 .top .vline1 {
+    position: absolute;
+    left: 100vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+.sec1 .top .vline2 {
+    position: absolute;
+    left: 140vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+.sec1 .top .vline3 {
+    position: absolute;
+    left: 285vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+
+.sec1 .top .vline4 {
+    position: absolute;
+    left: 287vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+.sec1 .top .vline10 {
+    position: absolute;
+    left: 349vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+.sec1 .top .vline5 {
+    position: absolute;
+    left: 365vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+.sec1 .top .vline6 {
+    position: absolute;
+    left: 490vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+
+.sec1 .top .vline7 {
+    position: absolute;
+    left: 532vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+.sec1 .top .vline8 {
+    position: absolute;
+    left: 547vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+.sec1 .top .vline9 {
+    position: absolute;
+    left: 755vh;
+    width: 2px;
+    height: 50vh;
+    background: #000;
+}
+.sec1 .top .text1 {
+    position: absolute;
+    left: 3.2vh;
+    top: 39vh;
+    font-size: 3vh;
+    white-space: nowrap;
+}
+
+.sec1 .top .text1 strong {
+    display: block;
+    font-family: 'GmarketSans';
+    font-weight: 300;
+    overflow: hidden;
+}
+.sec1 .top .text1 em {
+    display: block;
+    font-weight: 700;
+    font-family: 'GmarketSans';
+    overflow: hidden;
+}
+.sec1 .top .text1 span {
+    display: inline-block;
+    min-width: 7px;
+}
+
+.sec1 .top .text2 {
+    position: absolute;
+    left: 266vh;
+    top: 37vh;
+    font-size:2vh;
+    white-space: nowrap;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+.sec1 .top .text3 {
+    position: absolute;
+    left: 290vh;
+    width: 50vh;
+    top: 2vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+}
+
+.sec1 .top .text4 {
+    position: absolute;
+    left: 340vh;
+    top: 34vh;
+    font-size: 2vh;
+    white-space: nowrap;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    overflow: hidden;
+}
+.sec1 .top .text5 {
+    position: absolute;
+    left: 368vh;
+    width: 60vh;
+    top: 2vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+}
+
+.sec1 .top .text6 {
+    position: absolute;
+    left: 521vh;
+    top: 32vh;
+    font-size: 2vh;
+    white-space: nowrap;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+.sec1 .top .text7 {
+    position: absolute;
+    left: 550vh;
+    width: 60vh;
+    top: 2vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+}
+.sec1 .top .text8 {
+    position: absolute;
+    left: 752vh;
+    top: 38vh;
+    font-size: 2vh;
+    white-space: nowrap;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+.sec1 .top .text9 {
+    position: absolute;
+    left: 759vh;
+    width: 100vh;
+    top: 2vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+}
+
+
+.sec1 .top .container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sec1 .top .container1 {
+    position: absolute;
+    left: 222vh;
+    width: 50vh;
+    height: 50vh;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+.sec1 .top .container2 {
+    position: absolute;
+    left: 450vh;
+    width: 50vh;
+    height: 50vh;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+.sec1 .top .container3 {
+    position: absolute;
+    left: 630vh;
+    width: 50vh;
+    height: 50vh;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+.sec1 .top .container4 {
+    position: absolute;
+    left: 880vh;
+    width: 110vh;
+    height: 50vh;
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+
+.sec1 .top .container:nth-child(1) {
+    background: #3c564f;
+}
+
+.sec1 .top .container:nth-child(2) {
+    background: #b69187;
+}
+
+.sec1 .top .container:nth-child(3) {
+    background: #bcb8ad;
+}
+
+.sec1 .top .container:nth-child(4) {
+    background: #b6916d;
+}
+
+.sec1 .top .container1 .reveal {
+    visibility: hidden;
+    position: relative;
+    width: 49.7vh;
+    height: 49.8vh;
+}
+.sec1 .top .container2 .reveal {
+    visibility: hidden;
+    position: relative;
+    width: 49.7vh;
+    height: 49.8vh;
+}
+
+.sec1 .top .container3 .reveal {
+    visibility: hidden;
+    position: relative;
+    width: 49.7vh;
+    height: 49.8vh;
+}
+
+.sec1 .top .container4 .reveal {
+    visibility: hidden;
+    position: relative;
+    width: 109.7vh;
+    height: 49.8vh;
+}
+
+.sec1 .bom {
+    position: fixed;
+    width: 100%;
+    height: 50vh;
+    top: 50vh;
+    left: 0;
+    right: 0;
+    z-index: 4000;
+}
+.sec1 .bom .box1 {
+    position: fixed;
+    left: 3.2vh;
+    bottom: 6vh;
+    width: 33.3vh; 
+    height: 33.3vh;
+    background: #000;
+}
+.sec1 .bom .text1 {
+    position: absolute;
+    left: 40vh;
+    bottom: 6vh;
+    line-height: 8vh; 
+    padding-top: 4.9vh; 
+    font-weight: 700;
+    color: #000;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+}
+
+.sec1 .bom .text1 span{
+    position: relative;
+    display: inline-block;
+    font-size: 40.8vh;
+    opacity: 1;
+}
+
+.sec1 .bom .text2 {
+    position: absolute;
+    left: 223vh;
+    bottom: 6vh;
+    line-height: 8vh;
+    padding-top: 4.9vh;
+    font-weight: 700;
+    color: #000;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+}
+.sec1 .bom .text2 span:first-child{
+    display: inline-block;
+    width: 33.3vh;
+    height: 2vh;
+    background: #000;
+    margin-right: 10vh;
+    margin-bottom: -3.7vh;
+}
+.sec1 .bom .text2 span {
+    position: relative;
+    display: inline-block;
+    font-size: 40.8vh;
+}
+
+.sec1 .bom .text3 {
+    position: absolute;
+    left: 460vh;
+    bottom: 6vh;
+    line-height: 8vh;
+    padding-top: 4.9vh;
+    font-weight: 700;
+    color: #000;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+}
+.sec1 .bom .text3 span:first-child {
+    display: inline-block;
+    width: 33.3vh;
+    height: 2vh;
+    background: #000;
+    margin-right: 10vh;
+    margin-bottom: -3.7vh;
+}
+.sec1 .bom .text3 span {
+    position: relative;
+    display: inline-block;
+    font-size: 40.8vh;
+}
+
+.sec1 .bom .text4 {
+    position: absolute;
+    left: 920vh;
+    bottom: 6vh;
+    line-height: 8vh;
+    padding-top: 4.9vh;
+    font-weight: 700;
+    color: #000;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+}
+
+.sec1 .bom .text4 span {
+    position: relative;
+    display: inline-block;
+    font-size: 40.8vh;
+}
+
+
+/* 섹션2 */
+.sec2 {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+    background: #000;
+}
+.sec2 .top {
+    position: fixed;
+    width: 100%;
+    height: 50vh;
+    top: 5vh;
+    left: 0;
+    right: 0;
+    font-family: 'GmarketSans';
+    background: #000;
+}
+.sec2 .top::before {
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 5vh;
+    width: 3.2vh;
+    height: 50vh;
+    background: #000;
+    z-index: 3000;
+}
+
+.sec2 .top::after {
+    content: '';
+    position: fixed;
+    right: 0;
+    top: 5vh;
+    width: 3.2vh;
+    height: 50vh;
+    background: #000;
+    z-index: 3000;
+}
+.sec2 .top .line11 {
+    position: fixed;
+    left: 0;
+    top: 5vh;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+}
+.sec2 .top .line21 {
+    position: fixed;
+    left: 0;
+    bottom: 45vh;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+}
+.sec2 .top .vline1 {
+    position: absolute;
+    left: 100vh;
+    width: 2px;
+    height: 50vh;
+    background: #fff;
+}
+.sec2 .top .vline2 {
+    position: absolute;
+    left: 208.6vh;
+    width: 2px;
+    height: 50vh;
+    background: #fff;
+}
+.sec2 .top .vline3 {
+    position: absolute;
+    left: 333vh;
+    width: 2px;
+    height: 50vh;
+    background: #fff;
+}
+.sec2 .top .vline4 {
+    position: absolute;
+    left: 335vh;
+    width: 2px;
+    height: 50vh;
+    background: #fff;
+}
+.sec2 .top .vline5 {
+    position: absolute;
+    left: 468.6vh;
+    width: 2px;
+    height: 50vh;
+    background: #fff;
+}
+.sec2 .top .vline6 {
+    position: absolute;
+    left: 648.6vh;
+    width: 2px;
+    height: 50vh;
+    background: #fff;
+}
+.sec2 .top .vline7 {
+    position: absolute;
+    left: 738.6vh;
+    width: 2px;
+    height: 50vh;
+    background: #fff;
+}
+.sec2 .top .vline8 {
+    position: absolute;
+    left: 1038.6vh;
+    width: 2px;
+    height: 50vh;
+    background: #fff;
+}
+.sec2 .top .vline9 {
+    position: absolute;
+    left: 1138.6vh;
+    width: 2px;
+    height: 50vh;
+    background: #fff;
+}
+.sec2 .top .vline10 {
+    position: absolute;
+    left: 1158.6vh;
+    width: 2px;
+    height: 50vh;
+    background: #fff;
+}
+.sec2 .top .vline11 {
+    position: absolute;
+    left: 1162.6vh;
+    width: 2px;
+    height: 50vh;
+    background: #fff;
+}
+.sec2 .top .vline12 {
+    position: absolute;
+    left: 1338.6vh;
+    width: 2px;
+    height: 50vh;
+    background: #fff;
+}
+.sec2 .top .text1 {
+    position: absolute;
+    left: 3.2vh;
+    top: 39vh;
+    font-size: 3vh;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.sec2 .top .text1 strong {
+    display: block;
+    font-family: 'GmarketSans';
+    font-weight: 300;
+    overflow: hidden;
+}
+
+.sec2 .top .text1 em {
+    display: block;
+    font-weight: 700;
+    font-family: 'GmarketSans';
+    overflow: hidden;
+}
+
+.sec2 .top .text1 span {
+    display: inline-block;
+    min-width: 7px;
+}
+.sec2 .top .text2 {
+    position: absolute;
+    left: 212vh;
+    width: 50vh;
+    top: 2vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+    color: #fff;
+}
+.sec2 .top .text3 {
+    position: absolute;
+    left: 472vh;
+    width: 50vh;
+    top: 2vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+    color: #fff;
+}
+.sec2 .top .text4 {
+    position: absolute;
+    left: 742vh;
+    width: 50vh;
+    top: 2vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+    color: #fff;
+}
+.sec2 .top .text5 {
+    position: absolute;
+    left: 1042vh;
+    width: 50vh;
+    top: 2vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+    color: #fff;
+}
+.sec2 .top .text6 {
+    position: absolute;
+    left: 1342vh;
+    width: 50vh;
+    top: 2vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+    color: #fff;
+}
+.sec2 .top .text7 {
+    position: absolute;
+    left: 1742vh;
+    width: 50vh;
+    top: 2vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+    color: #fff;
+}
+.sec2 .top .text8 {
+    position: absolute;
+    left: 2342vh;
+    width: 50vh;
+    top: 2vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+    color: #fff;
+}
+.sec2 .top .contact {
+    position: absolute;
+    left: 2762vh;
+    width: 50vh;
+    top: 2vh;
+    font-size: 2vh;
+    text-transform: uppercase;
+    color: #fff;
+}
+.sec2 .top .contact h3 {
+font-size: 4vh;
+margin-bottom: 2vh;
+}
+.sec2 .top .contact ul{
+    width: 100%;
+}
+.sec2 .top .contact ul li{
+    display: flex;
+    justify-content: start;
+    margin-bottom: 1vh;
+    border-top: 1px solid #fff;
+    padding: 2vh 0 1vh;
+}
+.sec2 .top .contact ul li:last-child {
+    justify-content: end;
+}
+.sec2 .top .contact ul li img{
+    width: 5vh;
+    height: 5vh;
+    margin-right: 3vh;
+}
+.sec2 .top .contact ul li span {
+    padding: 1vh 0;
+    display: inline-block;
+    line-height: 3vh;
+}
+.sec2 .top .s2t h3 {
+    font-size: 4vh;
+}
+.sec2 .top .s2t span {
+    display: inline-block;
+    font-size: 0.8em;
+    text-decoration: underline;
+    margin-right: 1vh;
+}
+.sec2 .top .s2t a {
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 1vh 4vh;
+    margin-top: 1vh;
+    display: inline-block;
+}
+.sec2 .top .container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sec2 .top .container1 {
+    position: absolute;
+    left: 122vh;
+    width: 86.6vh;
+    height: 50vh;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+.sec2 .top .container2 {
+    position: absolute;
+    left: 382vh;
+    width: 86.6vh;
+    height: 50vh;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+.sec2 .top .container3 {
+    position: absolute;
+    left: 652vh;
+    width: 86.6vh;
+    height: 50vh;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+.sec2 .top .container4 {
+    position: absolute;
+    left: 952vh;
+    width: 86.6vh;
+    height: 50vh;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+.sec2 .top .container5 {
+    position: absolute;
+    left: 1252vh;
+    width: 86.6vh;
+    height: 50vh;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+.sec2 .top .container6 {
+    position: absolute;
+    left: 1652vh;
+    width: 86.6vh;
+    height: 50vh;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+.sec2 .top .container7 {
+    position: absolute;
+    left: 2252vh;
+    width: 86.6vh;
+    height: 50vh;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+.sec2 .top .container8 {
+    position: absolute;
+    left: 2671vh;
+    width: 86.6vh;
+    height: 50vh;
+    border-left: 2px solid #fff;
+    border-right: 2px solid #fff;
+}
+.sec2 .top .container:nth-child(1) {
+    background: #3c564f;
+}
+.sec2 .top .container:nth-child(2) {
+    background: #3c564f;
+}
+.sec2 .top .container:nth-child(3) {
+    background: #3c564f;
+}
+.sec2 .top .container:nth-child(4) {
+    background: #3c564f;
+}
+.sec2 .top .container:nth-child(5) {
+    background: #3c564f;
+}
+.sec2 .top .container:nth-child(6) {
+    background: #3c564f;
+}
+.sec2 .top .container:nth-child(7) {
+    background: #3c564f;
+}
+.sec2 .top .container:nth-child(8) {
+    background: #3c564f;
+}
+.sec2 .top .container .reveal {
+    visibility: hidden;
+    position: relative;
+    width: 86.3vh;
+    height: 49.8vh;
+}
+.sec2 .bom {
+    position: fixed;
+    width: 100%;
+    height: 50vh;
+    top: 50vh;
+    left: 0;
+    right: 0;
+}
+
+.sec2 .bom .box2 {
+    position: fixed;
+    left: 3.2vh;
+    bottom: 6vh;
+    width: 33.3vh;
+    height: 33.3vh;
+    border-radius: 50%;
+    background: #fff;
+}
+.sec2 .bom .box2-link {
+    position: fixed;
+    left: 3.2vh;
+    bottom: 6vh;
+    width: 33.3vh;
+    height: 33.3vh;
+    padding: 12vh 10vh;
+    font-size: 6vh;
+    font-weight: 900;
+    opacity: 0;
+    color: #000;
+    cursor: pointer;
+    z-index: 1000;
+}
+.sec2 .bom .text1 {
+    position: absolute;
+    left: 40vh;
+    bottom: 6vh;
+    line-height: 8vh;
+    padding-top: 4.9vh;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+}
+.sec2 .bom .text1 span {
+    position: relative;
+    display: inline-block;
+    font-size: 40.8vh;
+    opacity: 1;
+}
+.sec2 .bom .text2 {
+    position: absolute;
+    left: 223vh;
+    bottom: 6vh;
+    line-height: 8vh;
+    padding-top: 4.9vh;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+}
+.sec2 .bom .text2 span {
+    position: relative;
+    display: inline-block;
+    font-size: 40.8vh;
+}
+.sec2 .bom .text3 {
+    position: absolute;
+    left: 483vh;
+    bottom: 6vh;
+    line-height: 8vh;
+    padding-top: 4.9vh;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+}
+
+.sec2 .bom .text3 span {
+    position: relative;
+    display: inline-block;
+    font-size: 40.8vh;
+}
+
+.sec2 .bom .text4 {
+    position: absolute;
+    left: 833vh;
+    bottom: 6vh;
+    line-height: 8vh;
+    padding-top: 4.9vh;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+}
+
+.sec2 .bom .text4 span {
+    position: relative;
+    display: inline-block;
+    font-size: 40.8vh;
+}
+
+.sec2 .bom .text4 span:nth-child(7) {
+    display: inline-block;
+    width: 33.3vh;
+    height: 2vh;
+    background: #fff;
+    margin: 0 10vh;
+    margin-bottom: -3.7vh;
+}
+
+.sec2 .bom .text5 {
+    position: absolute;
+    left: 1383vh;
+    bottom: 6vh;
+    line-height: 8vh;
+    padding-top: 4.9vh;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+}
+
+.sec2 .bom .text5 span {
+    position: relative;
+    display: inline-block;
+    font-size: 40.8vh;
+}
+
+.sec2 .bom .text6 {
+    position: absolute;
+    left: 1800vh;
+    bottom: 6vh;
+    line-height: 8vh;
+    padding-top: 4.9vh;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+}
+
+.sec2 .bom .text6 span {
+    position: relative;
+    display: inline-block;
+    font-size: 40.8vh;
+}
+.sec2 .bom .text6 span:nth-child(4) {
+    display: inline-block;
+    width: 33.3vh;
+    height: 2vh;
+    background: #fff;
+    margin: 0 10vh;
+    margin-bottom:27.6vh;
+}
+.sec2 .bom .text7 {
+    position: absolute;
+    left: 2200vh;
+    bottom: 6vh;
+    line-height: 8vh;
+    padding-top: 4.9vh;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+}
+
+.sec2 .bom .text7 span {
+    position: relative;
+    display: inline-block;
+    font-size: 40.8vh;
+}
+
+.sec2 .bom .text8 {
+    position: absolute;
+    left: 2700vh;
+    bottom: 6vh;
+    line-height: 8vh;
+    padding-top: 4.9vh;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+}
+
+.sec2 .bom .text8 span {
+    position: relative;
+    display: inline-block;
+    font-size: 40.8vh;
+}
+
+.sec2 .bom .text9 {
+    position: absolute;
+    left: 3010vh;
+    bottom: 6vh;
+    line-height: 8vh;
+    padding-top: 4.9vh;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+}
+
+.sec2 .bom .text9 span {
+    position: relative;
+    display: inline-block;
+    font-size: 40.8vh;
+}

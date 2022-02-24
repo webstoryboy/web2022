@@ -1,0 +1,1001 @@
+@charset "utf-8";
+
+/* font */
+@font-face {
+    font-family: "North";
+    src: url(../fonts/North_Carossela.woff);
+}
+
+@font-face {
+    font-family: "Miracle";
+    src: url(../fonts/Miracle_Personal_use.woff);
+}
+
+@font-face {
+    font-family: "Champagne";
+    src: url(../fonts/Champagne-_-Limousines.woff);
+}
+
+@font-face {
+    font-family: "Butterflies";
+    src: url(../fonts/Butterflies.woff);
+}
+
+@font-face {
+    font-family: "BRANCHE";
+    src: url(../fonts/BRANCHE-Demo.woff);
+}
+
+@font-face {
+    font-family: "BRANCHEOL";
+    src: url(../fonts/BRANCHE-Outline-DEMO.woff);
+}
+
+
+/* temporary */
+.scroll {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 3vw;
+    height: 5.5vh;
+    font-size: 1vw;
+    line-height: 5.5vh;
+    text-align: center;
+    background: rgba(255, 255, 255, 255);
+    z-index: 12000;
+}
+
+.scroll-left {
+    position: fixed;
+    top: 0;
+    left: 4vw;
+    width: 3vw;
+    height: 5.5vh;
+    font-size: 1vw;
+    line-height: 5.5vh;
+    text-align: center;
+    background: rgba(255, 255, 255, 255);
+    z-index: 12000;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fade01;
+}
+
+::-webkit-scrollbar-button {
+    background-color: #000000;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: black;
+}
+
+/* layout */
+#contents {
+    overflow: hidden;
+}
+
+#contents>section {
+    position: relative;
+}
+
+#section1 {
+    height: 100vh;
+    background: #c4c4c4;
+    z-index: 6000;
+}
+
+#section2 {
+    height: 100vh;
+    background: #000000;
+    z-index: 5000;
+    ;
+}
+
+#section3 {
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+}
+
+#section4 {
+    height: 10vw;
+    background: #000;
+    z-index: 5000;
+}
+
+#section5 {
+    height: 22940px;
+    background: #c4c4c4;
+    z-index: 3000;
+}
+
+#section6 {
+    height: 7000px;
+    background: #333;
+    background-size: 200%;
+    z-index: 6000;
+}
+
+/* container */
+.container {
+    margin: 0 auto;
+}
+
+/* sec1 */
+.sec1 {}
+
+.sec1 h2 {
+    font-family: "Miracle";
+    font-size: 19vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -80%);
+    z-index: 1000;
+}
+
+.sec1 h2 em {
+    position: relative;
+    z-index: 950;
+}
+
+.sec1 h2::after {
+    content: "";
+    width: 0;
+    height: 3vw;
+    background: #fade01;
+    position: absolute;
+    left: -40%;
+    top: 42.1%;
+    animation: line 3s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes line {
+    0% {
+        width: 0vw;
+    }
+
+    100% {
+        width: 58.5vw;
+    }
+}
+
+.sec1 .face {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -30%);
+    width: 27vw;
+    z-index: 900;
+}
+
+.sec1 .face::before {
+    content: "Portfolio";
+    position: absolute;
+    left: -10vw;
+    top: 50%;
+    font-family: "Roboto", sans-serif;
+    text-transform: capitalize;
+    font-size: 1.4vw;
+    font-weight: 100;
+}
+
+.sec1 .face::after {
+    content: "FrontEnd Dev";
+    position: absolute;
+    right: -14vw;
+    top: 50%;
+    font-family: "Roboto", sans-serif;
+    text-transform: capitalize;
+    font-size: 1.4vw;
+    font-weight: 100;
+}
+
+.sec1 .face img {
+    width: 100%;
+    filter: grayscale(100%) contrast(40%);
+}
+
+/* sec2 */
+.sec2 {
+    text-align: center;
+    position: relative;
+}
+
+.sec2 div {
+    height: 100vh;
+    position: relative;
+}
+
+.sec2 div p {
+    font-family: "Champagne";
+    color: #ffffff;
+    font-size: 1vw;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sec2 div h2 {
+    width: 100%;
+    font-family: "Miracle";
+    color: #ffffff;
+    font-size: 13vw;
+    line-height: 13vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 900;
+}
+
+.sec2 div h2 em {
+    position: relative;
+    z-index: 900;
+}
+
+.sec2 div h2:before {
+    content: "";
+    width: 0;
+    height: 3vw;
+    background: #fade01;
+    position: absolute;
+    right: -40%;
+    bottom: 2%;
+}
+
+.sec2 div h2.active:before {
+    animation: line2 3s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes line2 {
+    0% {
+        width: 0vw;
+    }
+
+    100% {
+        width: 90vw;
+    }
+}
+
+/* sec3 */
+.sec3 {
+    padding-top: 3vw;
+    position: relative;
+    height: 100vh;
+}
+
+.sec3 .face2 {
+    position: absolute;
+    width: 27vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sec3 .face2 img {
+    width: 100%;
+}
+
+.sec3 .aboutBG {
+    display: flex;
+    position: absolute;
+    top: -65%;
+    left: 0%;
+    background: #000;
+    transform: rotate(-45deg);
+    z-index: -100;
+}
+
+.sec3 .aboutBG .aboutBGline {
+    margin-right: 30px;
+}
+
+.sec3 .aboutBG .aboutBGline img {
+    width: 18vw;
+    min-width: 225px;
+    height: 31vw;
+    min-height: 400px;
+    padding: 0 0 50px 0;
+}
+
+.sec3 .aboutBG .aboutBGline .null-image {
+    display: inline-block;
+    width: 18vw;
+    min-width: 225px;
+    height: 31vw;
+    min-height: 400px;
+    margin-top: 30px;
+}
+
+.sec3 .aboutBG .aboutBGline img:nth-child(1),
+.sec3 .aboutBG .aboutBGline img:nth-child(2),
+.sec3 .aboutBG .aboutBGline img:nth-child(3),
+.sec3 .aboutBG .aboutBGline img:nth-child(4) {
+    padding-top: 0;
+}
+
+.sec3 .aboutTXT {
+    width: 100%;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sec3 .aboutText {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "North";
+    font-weight: normal;
+    color: #333333;
+    font-size: 4.3vw;
+    z-index: 1;
+}
+
+.sec3 .aboutText span {
+    min-width: 20px;
+    position: relative;
+    font-family: "North";
+    color: #333333;
+    z-index: 1;
+}
+
+.sec3 .aboutText span.active {
+    color: #ffffff;
+}
+
+.cursor {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: url(../img/aboutmask.png) no-repeat;
+    background-size: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+/* sec4 */
+.sec4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 4.5vw;
+    font-family: "North";
+    line-height: 2.1;
+    color: #ffffff;
+}
+
+.sec4 .sec4-1 {
+    font-family: "Butterflies";
+    flex: 0 0 10%;
+    height: 100%;
+    border-right: 1px solid #333333;
+}
+
+.sec4 .sec4-1:hover {
+    color: #fade01;
+    text-shadow: 0px 0px 10px #fade01;
+}
+
+.sec4 .sec4-2 {
+    flex: 0 0 80%;
+    height: 100%;
+}
+
+.sec4 .sec4-2:hover {
+    color: #fade01;
+    text-shadow: 0px 0px 10px #fade01;
+}
+
+.sec4 .sec4-3 {
+    flex: 0 0 10%;
+    height: 100%;
+    border-left: 1px solid #333333;
+}
+
+.sec4 .sec4-3:hover {
+    color: #fade01;
+    text-shadow: 0px 0px 10px #fade01;
+}
+
+/* sec5 */
+
+.sec5 {
+    height: 100vh;
+}
+
+.sec5 h2 {
+    font-family: "BRANCHE";
+    font-size: 0vw;
+    line-height: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sec5 h2 .door {
+    position: absolute;
+    left: 49.5%;
+    top: 46%;
+    transform: translate(-50%, -50%);
+    width: 0vw;
+    height: 0px;
+    border: 1px solid #fade01;
+    border-radius: 1vw;
+    background: #333333;
+}
+
+.sec5 h2 .practice {
+    position: absolute;
+    top: -1%;
+    left: 34.5%;
+    transform: (-50%, -50%);
+    font-size: 0vw;
+    font-family: "Miracle";
+    text-transform: uppercase;
+}
+
+.sec5 .text-box {
+    position: fixed;
+    left: 100%;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.sec5 .text-box>div {
+    white-space: nowrap;
+    height: 33vh;
+    font-size: 33vh;
+    line-height: 1;
+    font-family: "BRANCHE";
+}
+
+.sec5 .text-box>div strong {}
+
+.sec5 .text-box>div em {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 2px #000;
+}
+
+.sec5 .text-box>div strong:hover,
+.sec5 .text-box>div em:hover {
+    color: #fade01;
+    text-shadow: 0px 0px 10px #fade01;
+}
+
+.sec5 .text-box>div em:hover {
+    -webkit-text-stroke: 2px #fff;
+}
+
+.sec5 .img-box {
+    position: fixed;
+    top: 22%;
+    left: 74%;
+    transform: translate(-50%, -50%);
+    width: 46vw;
+}
+
+.sec5 .img-box img {
+    position: absolute;
+    border: 10px solid #000000;
+    display: none;
+    opacity: 0;
+    width: 47vw;
+}
+
+.sec5 .img-box img.active {
+    display: block;
+    animation: opacity 1000ms 200ms linear forwards;
+}
+
+.sec5 .text-box .java {
+    position: relative;
+}
+
+.sec5 .text-box .jque {
+    position: relative;
+}
+
+/* sec5 img */
+.reveal {
+    position: relative;
+}
+
+.reveal::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 26.4vw;
+    background: #fade01;
+    opacity: 1;
+}
+
+.reveal.reveal-two::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0;
+    height: 27vw;
+    background: #000000;
+    opacity: 1;
+}
+
+.reveal.show::before {
+    animation: reveal 1000ms cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+.reveal.show::after {
+    animation: reveal 1000ms 300ms cubic-bezier(0.77, 0, 0.18, 1);
+}
+
+@keyframes reveal {
+    0% {
+        width: 0;
+        left: 0;
+    }
+
+    50% {
+        width: 47vw;
+        left: 0;
+    }
+
+    80% {
+        width: 47vw;
+        left: 0;
+    }
+
+    100% {
+        width: 0;
+        left: 47vw;
+    }
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.sec5 .angel {
+    background: #9A1C0E;
+    position: fixed;
+    left: 100%;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.sec5 .angel:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+}
+
+.sec5 .angel.active:after {
+    display: none;
+}
+
+canvas {
+    width: 100vw;
+    height: 100vh;
+    outline: none;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.sec5 .angel h2::selection {
+    background: transparent;
+    color: red;
+}
+
+.sec5 .angel p::selection {
+    background: transparent;
+    color: red;
+}
+
+.sec5 .angel h2 {
+    font-family: "North";
+    position: fixed;
+    font-weight: normal;
+    width: 100%;
+    font-size: 13vw;
+    top: 9.5%;
+    left: 50%;
+    color: #000;
+}
+
+.sec5 .angel p {
+    font-family: "North";
+    font-size: 5vw;
+    color: #000;
+}
+
+.sec5 .angel .txt1 {
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    left: 88.5%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+
+.sec5 .angel .txt2 {
+    position: fixed;
+    width: 100%;
+    bottom: 10%;
+    left: 5%;
+}
+
+.sec5 .angel .txt-box {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.sec5 .angel .txt-box .txt3 {
+    position: relative;
+    width: 120vw;
+    animation: angel03 20s ease-in infinite;
+}
+
+@keyframes angel03 {
+    0% {
+        left: 120%
+    }
+
+    100% {
+        left: -110%
+    }
+}
+
+.sec5 .angel .handle {
+    background: url("/port/assets/img/0.png") no-repeat;
+    background-size: 5.5vw 11.5vw;
+    width: 5.5vw;
+    height: 13vw;
+    position: absolute;
+    top: 24%;
+    left: 52.5%;
+    transform: translate(-50%, -50%);
+    z-index: 5100;
+}
+
+.sec5 .angel .handle::before {
+    width: 13px;
+    height: 6.5px;
+    position: absolute;
+    background: #000;
+    top: 0;
+    left: 0;
+}
+
+.sec5 .angel .handle:active {
+    animation: none;
+}
+
+.sec5 .angel .handle:hover {
+    animation: handle 3s ease-out infinite;
+}
+
+@keyframes handle {
+    0% {
+        background: url("/port/assets/img/0.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    10% {
+        background: url("/port/assets/img/1.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+
+    }
+
+    15% {
+        background: url("/port/assets/img/2.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    20% {
+        background: url("/port/assets/img/3.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    25% {
+        background: url("/port/assets/img/4.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    28% {
+        background: url("/port/assets/img/4-2.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    30% {
+        background: url("/port/assets/img/5.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    33% {
+        background: url("/port/assets/img/4-2.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    35% {
+        background: url("/port/assets/img/4.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    40% {
+        background: url("/port/assets/img/3.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    45% {
+        background: url("/port/assets/img/2.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    50% {
+        background: url("/port/assets/img/1.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    55% {
+        background: url("/port/assets/img/0.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    60% {
+        background: url("/port/assets/img/B1.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    65% {
+        background: url("/port/assets/img/B2.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    70% {
+        background: url("/port/assets/img/B3.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    75% {
+        background: url("/port/assets/img/B4.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    78% {
+        background: url("/port/assets/img/B4-2.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    80% {
+        background: url("/port/assets/img/B5.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    83% {
+        background: url("/port/assets/img/B4-2.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    85% {
+        background: url("/port/assets/img/B4.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    90% {
+        background: url("/port/assets/img/B3.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    95% {
+        background: url("/port/assets/img/B2.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+    100% {
+        background: url("/port/assets/img/B1.png") no-repeat;
+        background-size: 5.5vw 11.5vw;
+    }
+
+
+
+}
+
+
+.sec5 .angel audio {}
+
+.sec5 .complication h2 {
+    color: #ffffff;
+    font-family: "BRANCHE";
+    font-size: 0vw;
+    line-height: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sec5 .complication .enjoying {
+    color: #fff;
+    font-family: "North";
+    font-size: 0vw;
+    position: fixed;
+    left: 45%;
+    bottom: 50%;
+    transform: translate(-50%, -50%) rotate(270deg);
+}
+
+.sec5 .complication .door2 {
+    width: 0vw;
+    height: 0vw;
+    position: fixed;
+    top: 48.9%;
+    left: 49.5%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    z-index: 5500;
+}
+
+.ani-tit {
+    position: relative;
+    z-index: 6000;
+    width: 100%;
+    height: 100vh;
+    background: url(../img/ani-bg2.png) no-repeat center;
+}
+
+.ani-tit h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "BRANCHE";
+    text-align: center;
+    font-size: 15vw;
+    z-index: 6200;
+    color: #fff;
+}
+
+/* sec6 */
+
+.sec6 {
+    height: 100vh;
+}
+
+.sec6 .ani-main {
+    position: fixed;
+    left: 100%;
+    top: 0%;
+    width: 100%;
+    height: 100vh;
+    z-index: 6200;
+    color: #fff;
+}
+
+.sec6 .ani-main h2 {
+    position: relative;
+    color: #9A1C0E;
+    font-size: 15vw;
+    font-family: "BRANCHE";
+    line-height: 1.15;
+}
+
+.sec6 .ani-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6vw;
+    height: 6vw;
+    border-radius: 50%;
+    background: #fff;
+    animation: ani-ball 3s;
+    animation-fill-mode: forwards;
+    z-index: 6300;
+}
+
+@keyframes ani-ball {
+    0% {
+        top: 0vw;
+        left: 4vw;
+    }
+    5% {
+        top: 2vw;
+        left: 4vw;
+    }
+    10% {
+        top: 5vw;
+        left: 4vw
+    }
+    20% {
+        top: 10vw;
+        left: 4vw
+    }
+    30% {
+        top: 18vw;
+        left: 4vw
+    }
+    40% {
+        top: 28vw;
+        left: 4vw
+    }
+    50% {
+        top: 30vw;
+        left: 4vw
+    }
+    60% {
+        top: 26vw;
+        left: 1vw
+    }
+    70% {
+        top: 28vw;
+        left: 1vw
+    }
+    80% {
+        top: 32vw;
+        left: 1vw
+    }
+    85% {
+        top: 36vw;
+        left: 1vw
+    }
+    90% {
+        top: 43vw;
+        left: 1vw
+    }
+    100% {
+        top: 43vw;
+        left: 2vw;
+    }
+}

@@ -637,6 +637,17 @@
         .quiz__result {
             display: none;
         }
+        .quiz__btn {
+            flex: 0 0 100%;
+            text-align: center;
+        }
+        .quiz__confirm {
+            width: auto;
+        }
+        .quiz__result {
+            max-width: 500px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -644,13 +655,13 @@
         <h1>Quiz</h1>
         <nav>
             <ul>
-                <li><a href="quizEffect01.html">1</a></li>
-                <li><a href="quizEffect02.html">2</a></li>
-                <li><a href="quizEffect03.html">3</a></li>
-                <li><a href="quizEffect04.html">4</a></li>
-                <li class="active"><a href="quizEffect05.html">5</a></li>
-                <li><a href="quizEffect06.html">6</a></li>
-                <li><a href="quizEffect07.html">7</a></li>
+                <li><a href="quiz_result01.html">1</a></li>
+                <li><a href="quiz_result02.html">2</a></li>
+                <li><a href="quiz_result03.html">3</a></li>
+                <li><a href="quiz_result04.html">4</a></li>
+                <li class="active"><a href="quiz_result05.html">5</a></li>
+                <li><a href="quiz_result06.html">6</a></li>
+                <li><a href="quiz_result07.html">7</a></li>
             </ul>
         </nav>
     </header>
@@ -785,8 +796,10 @@
             const quizSelects = document.querySelectorAll(".quiz__selects");    //보기 선택 박스
             const quizView = document.querySelectorAll(".quiz__view");          //보기 선택 박스
             const quizResult = document.querySelector(".quiz__result");
+            const quizConfirm = document.querySelector(".quiz__confirm");
 
             quizResult.style.display = "block";
+            quizConfirm.style.display = "none";
             let scoreCurrent = 0;
             
             quizInfo.forEach((question, number) => {

@@ -12,6 +12,13 @@ https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/
 
 
 ### 퀴즈 이펙트
+1. 주관식 : 정답 클릭하면 정답 알려주기 : textContent, style <br>
+2. 주관식 : 정답을 적으면 정답 알려주기 : classList <br>
+3. 주관식 : 여러 문제, 정답 적으면 정답 알려주기 : for()문, forEach, 객체 <br>
+4. 객관식 : 정답 클릭하면 정답 알려주기 : .checked, .value, 배열 <br>
+5. 객관식 : 여러 문제, 정답 체크하고 정답 알려주기, 맞힌 문제 알려주기 
+
+
 https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quiz_result01.html
 https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quiz_result02.html
 https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quiz_result03.html

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Narrative</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/style2.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="scroll">0</div>
+
+    <header id="header">
+        <h1><a href="#">portfolio</a></h1>
+    </header>
+
+    <div id="contents">
+        <section id="section1">
+            <div class="sec1">
+                <h2>N<em>arr</em>ative<span class="hit">FrontEnd Devoloper</span></h2>
+                <div class="face"></div>
+            </div>
+        </section>
+        <!-- //section1 -->
+        <section id="section2">
+            <div class="sec2">
+                <h2><em>About</em> Me <span class="hit">FrontEnd Devoloper</span></h2>
+                <div class="txt-wrap">
+                    <p>Hello, I'm Jin Jae Hyun, 28 years old.</p>
+                    <p>I majored in video and literature before.</p>
+                    <p>This work is about myself along</p>
+                    <p>with the process of learning.</p>
+                    <p>I tried to capture the feeling of how I lived</p>
+                    <p>and how I walked this road.</p>
+                    <p>I hope you enjoy looking at this portfolio.</p>
+
+                    <p class="kor">안녕하세요. 저는 28살 진재현입니다.<br>
+                        이전엔 영상과 문학을 전공했습니다.<br>
+                        본 작품은 제 배움의 과정과 함께 제 자신이 어떻게 살아왔고<br> 어떻게 이곳까지 왔는지에
+                        대한 느낌을 담기 위해 노력했습니다.<br>
+                        이 포트폴리오를 보는 순간이 당신에게<br>
+                        잠시나마 즐거운 시간이었으면 좋겠습니다.
+                    </p>
+                    
+                </div>
+            </div>
+        </section>
+        <!-- //section2 -->
+
+        <section id="section3">
+            <div class="sec3">
+                <h2>EXPOSITION</h2>
+                <div class="text-box">
+                    <div data-3000 = "transform: translatex(0%)" data-10000 = "transform: translatex(-100%)"><strong>JAVASCRIPT</strong><em>JAVASCRIPT</em><strong>JAVASCRIPT</strong><em>JAVASCRIPT</em></div>
+                    <div data-3000 = "transform: translatex(-100%)" data-10000 = "transform: translatex(0%)"><em>MOUSEEFFECT</em><strong>MOUSEEFFECT</strong><em>MOUSEEFFECT</em><strong>MOUSEEFFECT</strong></div>
+                    <div data-2500 = "transform: translatex(0%)" data-10000 = "transform: translatex(-80%)"><strong>JQUERY</strong><em>JQUERY</em><strong>JQUERY</strong><em>JQUERY</em></div>
+                    <div class="box1" data-4000 = "left: 100%" data-8000 = "left: -100%">
+                        <iframe src="http://richclub9.dothome.co.kr/script/effectMouse/mouseEffect02-jquery.html" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //section3 -->
+        <section id="section4"></section>
+        <!-- //section4 -->
+        <section id="section5"></section>
+        <!-- //section5 -->
+        <section id="section6"></section>
+        <!-- //section6 -->
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+    <script>
+        var s = skrollr.init();
+
+        function scrollProgress() {
+            let scroll = (window.pageYOffset || document.documentElement.scrollTop);
+            console.log(window.innerHeight)
+            document.querySelector(".scroll").innerText = parseInt(scroll);
+        }
+        window.addEventListener("scroll", scrollProgress);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ani6 {
+            width: 500px;
+            height: 500px;
+            x: 30px;
+            y: 30px;
+            fill: none;
+            stroke: #880e41;
+            stroke-width: 200px;
+            animation: ani6 2s infinite linear alternate-reverse;
+            stroke-dasharray: 3271;
+            stroke-dashoffset: 0;
+        }
+
+        @keyframes ani6 {
+            0% {
+                stroke-dashoffset: 3271;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <svg width="1172" height="1147" viewBox="0 0 1172 1147" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="ani6"
+            d="M612 100.71C765.333 91.3768 1072 170.31 1072 560.71C1072 951.11 748 1047.38 586 1046.71C424 1038.04 100 928.71 100 560.71C100 100.71 459.099 100.71 560 100.71C660.901 100.71 776 100.71 812 100.71"
+            stroke="black" stroke-width="200" />
+    </svg>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        var path = document.querySelector(".ani6");
+        var length = path.getTotalLength();
+        console.log(length)
+    </script>
+</body>
+
+</html>

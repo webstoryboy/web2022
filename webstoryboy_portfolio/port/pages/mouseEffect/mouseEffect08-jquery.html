@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MouseEffect06 - jquery</title>
+    <style>
+        @font-face {
+            font-family: 'Cafe24Simplehae';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Simplehae.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.2s;
+        }
+
+        a:hover {
+            border-bottom: 1px dashed #fff;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        body {
+            background: url(../assets/img/img_v10.png) no-repeat center center;
+            background-size: cover;
+            background-color: #a18cd1;
+            background-blend-mode: luminosity;
+            height: 100vh;
+            overflow: hidden;
+            font-size: 16px;
+            line-height: 1.5;
+            /*cursor: none;*/
+            font-family: 'Cafe24Simplehae';
+            color: #fff;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(8, 31, 36, 0.7);
+        }
+
+        /* info */
+        .info {
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .info.left {
+            left: 20px;
+            top: 20px;
+        }
+
+        .info.right {
+            right: 20px;
+            top: 20px;
+        }
+
+        .info.bottom {
+            right: 20px;
+            bottom: 20px;
+        }
+
+        .info.top {
+            left: 20px;
+            bottom: 20px;
+        }
+
+        .info.top li.active {
+            color: orange;
+            text-decoration: underline;
+        }
+
+        .info h1 {
+            font-size: 2rem;
+            line-height: 1.4;
+        }
+
+        .info p {
+            font-size: 1rem;
+        }
+
+        .info li {
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .info li a {
+            color: #fff;
+            width: 25px;
+            height: 25px;
+            border: 1px dashed #fff;
+            display: inline-block;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            font-size: 0.8rem;
+            margin: 3px;
+        }
+
+        .info li a.active {
+            background: #fff;
+            color: #000;
+        }
+
+        @media (max-width: 800px) {
+            .info h1 {
+                display: none;
+            }
+        }
+
+        /* main */
+        .contents {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .contents p {
+            font-size: 3vw;
+            color: #fff;
+        }
+
+        .contents p:first-child {
+            font-size: 2.3vw;
+            line-height: 2;
+        }
+
+        .contents p em {
+            color: #ffd700;
+            border-bottom: 2px dashed #ffd700;
+            font-style: normal;
+        }
+
+        .cursor {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            background: #55b9f3;
+            animation: color 4s linear infinite;
+        }
+
+        @keyframes color {
+            0%      {
+                transform: translate(-50%, -50%);
+                opacity: 1;
+                filter: hue-rotate(0deg);
+            }
+            100%    {
+                transform: translate(-50%, -1000%);
+                opacity: 0;
+                filter: hue-rotate(720deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- main -->
+    <div class="cursor"></div>
+    <div class="contents">
+        <p>허기 위에 그보다 더한 <em>허기</em>가 겹친다.</p>
+            <p>점점 많은 사람들의 볼이 움푹 꺼지고 그 속에서 <em>토끼</em>가 자라요.</p>
+        <div class="move-image">
+        </div>
+    </div>
+    <!-- info -->
+    <div class="info left">
+        <h1>Mouse Effect08 - jQuery</h1>
+        <p>마우스 버블 애니메이션</p>
+    </div>
+    <div class="info right">
+        <ul>
+            <li><a href="mouseEffect01-jquery.html">1</a><a href="mouseEffect01-javascript.html">1</a></li>
+            <li><a href="mouseEffect02-jquery.html">2</a><a href="mouseEffect02-javascript.html">2</a></li>
+            <li><a href="mouseEffect03-jquery.html">3</a><a href="mouseEffect03-javascript.html">3</a></li>
+            <li><a href="mouseEffect04-jquery.html">4</a><a href="mouseEffect04-javascript.html">4</a></li>
+            <li><a href="mouseEffect05-jquery.html">5</a><a href="mouseEffect05-javascript.html">5</a></li>
+            <li><a href="mouseEffect06-jquery.html">6</a><a href="mouseEffect06-javascript.html">6</a></li>
+            <li><a href="mouseEffect07-jquery.html">7</a><a href="mouseEffect07-javascript.html">7</a></li>
+            <li class="active"><a href="mouseEffect08-jquery.html">8</a>
+            </li>
+        </ul>
+    </div>
+    <div class="info bottom">
+    </div>
+    <!-- info -->
+
+
+
+    <!-- script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script>
+        function mouseMove(e){
+            const body = $("body");
+            const circle = document.createElement("span");
+
+            let size = Math.random() * 100;
+
+            $(".cursor").css({left: e.pageX, top: e.pageY, width: size, height: size});
+            //gsap.to(".cursor", {duration: .5, left: e.pageX, top: e.pageY}); 
+
+            body.append(circle)
+        }
+        $(window).on("mousemove", mouseMove);
+    </script>
+    <!-- /script -->
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"포트폴리오가 실력이다" : 웹 표준 사이트 만들기</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">WEBS : 웹 표준 사이트 만들기 : 블록구조/인라인구조</a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+
+        <section id="youtube" class="container ">
+            <div class="video none resizable draggable sampleBtn3">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JoOa5xyvh2Y" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="desc">
+                <div class="left">
+                    <span class="num">01.</span>
+                    <h3 class="title">참고 : 블록구조/인라인구조</h3>
+                    <span class="difficulty">난이도 <span>쉬움</span></span>
+                </div>
+                <div class="right">
+                    <!--<h3>소스 다운로드</h3>
+                    <a href="#" target="_blank" class="sampleBtn">완성 화면 보기</a>
+                    <a href="#" target="_blank" class="sampleBtn">피그마 보기</a> -->
+                </div>
+            </div>
+        </section>
+        <!-- //youtube -->
+
+        <section id="explanation">
+            <div class="container">
+                <h2>소개</h2>
+                <p>
+                    안녕하세요!. 웹스토리보이입니다.
+                    웹 사이트 제작에 있어 가장 기본이 되는 블록 구조와 인라인 구조에 대해서 알아보겠습니다.
+                </p>
+                <p>
+                    블록(block)은 하나의 박스, 인라인(inline)은 하나의 텍스트라고 생각하시면, 이해하는데 도움이 됩니다.<br>
+                    블록 구조에는 대표적으로 
+                    <code>div</code>, <code>p</code>, <code>h1</code>~<code>h6</code>, <code>ul</code>, <code>li</code>,
+                    <code>ol</code>, <code>table</code> 등이 있으며, 
+                    인라인 구조에는 대표적으로 <code>span</code>, <code>a</code>, <code>em</code>,
+                    <code>i</code>, <code>strong</code> 등이 있습니다.
+                </p>
+                <p>
+                    인간도 남자, 여자가 있는 것처럼, 태그도 이렇게 블록 구조, 인라인 구조로 분류할 수 있습니다. 
+                    이렇게 얘기하면 학생들 중에 게이는 어디인가요? 라고 물을 수 있겠지만,
+                    태그에도 게이가 있습니다. 🤬 그건 좀 더 공부하시면 알 수 있을 겁니다.
+                </p>
+
+                <p data-num="01" class="mt50">표현 방법</p>
+                <div class="layout">
+                    <div class="culumn6">
+                        <div class="highlight">
+                            <div class="&lt;div&gt;">
+                                <div class="&lt;div&gt;" fakeimage></div>
+                                <div class="&lt;div&gt;" fakeimage></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="culumn6">
+                        <p>
+                            블록 구조의 특징은 한 줄에 하나만 표현됩니다. 즉 가로로 정렬이 되지 않습니다. 
+                        </p>
+                    </div>
+                </div>
+                <div class="layout">
+                    <div class="culumn6">
+                        <div class="highlight">
+                            <div class="&lt;div&gt;">
+                                <span class="&lt;span&gt;" style="display: inline-block; width: 100px;"></span>
+                                <span class="&lt;span&gt;" style="display: inline-block; width: 100px;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="culumn6">
+                       <p>인라인 구조의 경우에는 한 줄에 여러개가 표현이 되며, 가로로 정렬이 됩니다.</p>
+                    </div>
+                </div>
+
+                <p class="mt20">
+                    이 부분이 블록 구조와 인라인 구조의 가장 큰 특징입니다. 그래서 레이아웃을 작업할 때는 블록 구조를 이용해서 작업을 하고,
+                    세부적인 부분은 인라인 구조로 작업하게 됩니다.
+                </p>
+
+                <p data-num="02" class="mt50">포함 관계</p>
+                <div class="layout">
+                    <div class="culumn6">
+                        <div class="highlight">
+                            <div class="&lt;div&gt;">
+                                <div class="&lt;div&gt;">
+                                    <div class="&lt;div&gt;" fakeimage></div>
+                                    <div class="&lt;div&gt;" fakeimage>
+                                        <span class="&lt;span&gt;" style="display: inline-block; width: 100px;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="culumn6">
+                        <p>
+                            블록 구조는 블록 구조 안에 블록 구조가 올 수가 있습니다. 물론 인라인 구조도 올 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="layout">
+                    <div class="culumn6">
+                        <div class="highlight">
+                            <div class="&lt;span&gt;">
+                                <div class="&lt;span&gt;">
+                                    <div class="&lt;div&gt;" fakeimage style="display: inline-block; width: 100px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="culumn6">
+                        <p>
+                            인라인 구조는 인라인 구조 안에 블록 구조가 올 수 없습니다. 규칙입니다. 
+                            단 예외적으로 <code>&lt;a&gt;</code> 태그는 허용됩니다.
+                            이런 구조로 코딩을 하여도, 표면적으로 이상이 없을지 모르지만,
+                            웹 표준 개념을 무시한 코딩 방법이기 때문에, 올바른 방법이 아닙니다.
+                        </p>
+                    </div>
+                </div>
+
+                <p data-num="03" class="mt50">구조 변경</p>
+                <p>
+                    위에서 잠깐 얘기 했듯이 블록, 인라인 구조에도 게이가 존재합니다. 즉 블록과 인라인의 중간 성질 같은 존재가 있습니다. 
+                    바로 인라인 블록(inline-block)입니다. 
+                </p>
+                <div class="layout">
+                    <div class="culumn6">
+                        <div class="highlight">
+                            <div class="&lt;ul&gt;">
+                                <div class="&lt;li&gt;"></div>
+                                <div class="&lt;li&gt;"></div>
+                                <div class="&lt;li&gt;"></div>
+                                <div class="&lt;li&gt;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="culumn6">
+                        <p>
+                            <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code> 태그도 대표적인 블록구조이기 때문에
+                            한 줄에 하나씩 나옵니다. 하지만 코딩을 하다 보면 목록을 표현 할 때 목록형 태그를 써야 하지만,
+                            세로로 정렬이 필요할 때가 있습니다. 
+                            그 때 <code>&lt;li&gt;</code> 태그 대신에 <code>&lt;span&gt;</code> 태그를 쓰는 건
+                            불편할 수 있습니다. 그때 <code>&lt;li&gt;</code> 태그의 성질을 인라인으로 변경해줍니다. 
+                            하지만 이렇게 되면 패딩이나 마진 등이 먹히지 않기 때문에 inline-block을 주면 됩니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //explanation -->
+        
+        <article id="lesson">
+            <button class="lesson-btn"><span>lesson Refer</span></button>
+            <div class="link">
+                <ul>
+                    <li><a href="#">1. 웹 폰트 사이트</a></li>
+                    <li><a href="#">2. 여기도 필요한 사이트 경로</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                </ul>
+            </div>
+        </article>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer> 
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="../../assets/js/jquery-3.6.0.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/script.js"></script> 
+</body>
+</html>

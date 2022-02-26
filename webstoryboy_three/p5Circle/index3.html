@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            margin: 0;
+            height: 100%;
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+        }
+
+    </style>
+</head>
+<body>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.2/p5.js"></script>
+    <script>
+        var angle = 0.0; 
+        var y = []; 
+        var x;
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            stroke(255);
+            strokeWeight(3);    
+        }
+        function draw() {
+            background( '#1d0808' ); 
+            angle += 0.02;  
+            x = angle;  
+
+            for ( var i = 0; i < width; i++ ) {
+                y[i] = sin(x);
+                y[i] = y[i] * 200;
+                x += 1;
+            }
+            for ( var i = 0; i < width; i++ ) {
+                stroke(abs(y[i] * 1.4), 0, 0);
+                point(i * 5, height/2 + y[i] );
+            }
+        }
+    </script>
+</body>
+</html>

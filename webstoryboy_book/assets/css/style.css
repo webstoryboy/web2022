@@ -369,6 +369,12 @@ body.intro #footer {
     top: -1px;
     opacity: 0.3;
 }
+#explanation li {
+    font-size: 16px;
+    line-height: 2;
+    font-weight: 300;
+    list-style:decimal-leading-zero
+}
 #explanation .detail {
     font-family: 'NexonLv1Gothic';
     color: #9a92dd;
@@ -649,7 +655,7 @@ body.intro #footer {
 .layout {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .culumn6 {
     width: 49%;

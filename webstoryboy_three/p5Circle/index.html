@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: hotpink;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.min.js"></script>
+    <script>
+        const bgColor = 'hotpink';
+        const inkColor = 'white';
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            stroke(inkColor);
+            strokeWeight(2);
+            fill(bgColor);
+            frameRate(1);
+        }
+        function draw() {	
+            background(bgColor);
+
+            const count = round(windowWidth/12);
+
+            for (let i = 0; i < count; i++) {
+                const x = random(10, width);
+                const y = random(10, height);
+                const d = random(10, 250);
+                
+                circle(x, y, d);
+            }
+        }
+    </script>
+</body>
+</html>

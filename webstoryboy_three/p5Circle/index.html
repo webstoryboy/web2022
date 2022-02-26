@@ -12,6 +12,16 @@
             padding: 0;
             overflow: hidden;
         }
+        canvas {
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
     </style>
 </head>
 <body>
@@ -22,7 +32,7 @@
         const inkColor = 'white';
 
         function setup() {
-            createCanvas(windowWidth, windowHeight);
+            createCanvas(innerWidth, innerHeight);
             stroke(inkColor);
             strokeWeight(2);
             fill(bgColor);

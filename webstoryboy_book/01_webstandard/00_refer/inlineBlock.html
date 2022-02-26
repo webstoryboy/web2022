@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../../assets/css/dracula.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
-<body>
+<body class="white">
     <header id="header">
         <h1><a href="#">WEBS : 웹 표준 사이트 만들기 : 블록구조/인라인구조</a></h1>
         <nav>
@@ -62,7 +62,7 @@
                 <p>
                     인간도 남자, 여자가 있는 것처럼, 태그도 이렇게 블록 구조, 인라인 구조로 분류할 수 있습니다. 
                     이렇게 얘기하면 학생들 중에 게이는 어디인가요? 라고 물을 수 있겠지만,
-                    태그에도 게이가 있습니다. 🤬 그건 좀 더 공부하시면 알 수 있을 겁니다.
+                    태그에도 게이가 있습니다. 🤬 그건 아래 쪽에서 설명을 드리겠습니다.
                 </p>
 
                 <p data-num="01" class="mt50">표현 방법</p>
@@ -78,6 +78,7 @@
                     <div class="culumn6">
                         <p>
                             블록 구조의 특징은 한 줄에 하나만 표현됩니다. 즉 가로로 정렬이 되지 않습니다. 
+                            또한 영역을 포현하는 부분이기 때문에, 마진 값이나 패딩 값이 먹힙니다.
                         </p>
                     </div>
                 </div>
@@ -91,7 +92,11 @@
                         </div>
                     </div>
                     <div class="culumn6">
-                       <p>인라인 구조의 경우에는 한 줄에 여러개가 표현이 되며, 가로로 정렬이 됩니다.</p>
+                       <p>
+                           인라인 구조의 경우에는 한 줄에 여러개가 표현이 되며, 가로로 정렬이 됩니다.
+                           영역은 텍스트 부분만 영역으로 존재하기 때문에, 패딩이나 마진이 먹히지 않습니다. 
+                           하지만 좌우는 먹힙니다.
+                        </p>
                     </div>
                 </div>
 
@@ -164,6 +169,41 @@
                             그 때 <code>&lt;li&gt;</code> 태그 대신에 <code>&lt;span&gt;</code> 태그를 쓰는 건
                             불편할 수 있습니다. 그때 <code>&lt;li&gt;</code> 태그의 성질을 인라인으로 변경해줍니다. 
                             하지만 이렇게 되면 패딩이나 마진 등이 먹히지 않기 때문에 inline-block을 주면 됩니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="layout">
+                    <div class="culumn6">
+                        <div class="highlight">
+                            <div class="&lt;ul&gt;">
+                                <span class="&lt;li&gt;" style="display: inline-block; width: 100px;"></span>
+                                <span class="&lt;li&gt;" style="display: inline-block; width: 100px;"></span>
+                                <span class="&lt;li&gt;" style="display: inline-block; width: 100px;"></span>
+                                <span class="&lt;li&gt;" style="display: inline-block; width: 100px;"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="culumn6">
+                        <p>
+                            <code>&lt;li&gt;</code> 태그의 블록 성질을 인라인으로 변경해주면 왼쪽처럼 가로 정렬이 됩니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="layout">
+                    <div class="culumn6">
+                        <div class="highlight">
+                            <div class="&lt;ul&gt;">
+                                <span class="&lt;li&gt;" style="display: inline-block; width: 100px; height: 50px"></span>
+                                <span class="&lt;li&gt;" style="display: inline-block; width: 100px; height: 50px"></span>
+                                <span class="&lt;li&gt;" style="display: inline-block; width: 100px; height: 50px"></span>
+                                <span class="&lt;li&gt;" style="display: inline-block; width: 100px; height: 50px"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="culumn6">
+                        <p>
+                            인라인 구조는 원칙적으로 패딩이나 마진이 먹히지 않기 때문에 <code>inline-block</code>으로 변경해주면,
+                            패딩이나 마진이 먹히는 것을 확인 할 수 있습니다.
                         </p>
                     </div>
                 </div>

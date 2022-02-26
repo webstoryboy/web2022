@@ -1,0 +1,77 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;배너 유형01&lt;/title&gt;
+
+    &lt;link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet"&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .gmarket {
+            font-family: "GmarketSans";
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden
+        }
+        .banner-wrap {
+            background-image: url(../../assets/img/banner_bg01@2x.jpg);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .banner__inner {
+            text-align: center;
+            color: #fff;
+        }
+        .banner__title {
+            font-size: 50px;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+        .banner__desc {
+            font-size: 24px;
+            line-height: 1.5;
+            font-weight: 300;
+            margin-bottom: 70px;
+        }
+        .banner__desc a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+        .banner__sub {
+            font-size: 16px;
+            font-weight: 300;
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;section class="banner-wrap gmarket section"&gt;
+        &lt;h2 class="blind"&gt;배너 제목 영역&lt;/h2&gt; 
+        &lt;div class="banner__inner"&gt;
+            &lt;h3 class="banner__title"&gt;유튜버 웹보이&lt;/h3&gt;
+            &lt;p class="banner__desc"&gt;
+                더 다양한 강의는 유튜브를 통해 제공하고 있습니다.
+                &lt;a href="#" target="https://youtube.com/c/Webstoryboy"&gt;youtube.com/c/Webstoryboy&lt;/a&gt;
+            &lt;/p&gt;
+            &lt;span class="banner__sub"&gt;배너 영역01&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;

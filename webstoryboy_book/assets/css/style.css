@@ -347,6 +347,9 @@ body.intro #footer {
     font-weight: 300;
     position: relative;
 }
+#explanation p strong:hover {
+    border-bottom: 1px solid #fff;
+}
 #explanation pre {
     margin-top: 0;
 }
@@ -590,28 +593,7 @@ body.intro #footer {
 }
 
 
-@media (max-width: 1220px){
-    .container {
-        width: 98%;
-    }
-    #explanation {
-        padding: 30px;
-    }
-}
 
-@media (max-width: 960px){
-    #youtube .desc {
-        flex-direction: column;
-    }
-    #youtube .desc .left {
-        width: 100%;
-        border-radius: 0;
-    }
-    #youtube .desc .right {
-        width: 100%;
-        border-radius: 0 0 10px 10px;
-    }
-}
 
 /* highlight */
 .highlight {
@@ -658,7 +640,6 @@ body.intro #footer {
     height: 100px;
     max-width: 200px;
 }
-
 .highlight .card {
     display: inline-block;
     vertical-align: top;
@@ -675,19 +656,114 @@ body.intro #footer {
 } 
 
 /* media */
-@media (max-width: 800px) {
-    .container {width: 94%;}
-    #aside {top: 4px;}
-    #header {height: 62px; width: 100%; overflow: hidden;}
-    #header nav {display: none;}
-    #header h1 {padding-left: 60px; padding-top: 22px;}
-    #explanation {padding: 0px;}
-    #explanation h2 {font-size: 26px; margin-top: 70px; margin-bottom: 20px;}
-    #explanation p {font-size: 14px; line-height: 1.8;}
-    pre[class*=language-] {padding: 1em !important;}
-    code[class*=language-], pre[class*=language-] {font-size: 14px !important;}
-    #youtube .desc .left {padding: 20px;}
-    #youtube .desc .right {padding: 20px;}
-    #youtube .desc .left .title {font-size: 22px;}
-    #youtube .desc .right h3 {display: none;}
+@media (max-width: 1220px){
+    .container {
+        width: 98%;
+    }
+    #explanation {
+        padding: 30px;
+    }
 }
+
+@media (max-width: 960px){
+    #youtube .desc {
+        flex-direction: column;
+    }
+    #youtube .desc .left {
+        width: 100%;
+        border-radius: 0;
+    }
+    #youtube .desc .right {
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        width: 94%;
+    }
+    #aside {
+        top: 4px;
+    }
+    #header {
+        height: 62px;
+        width: 100%;
+        overflow: hidden;
+    }
+    #header nav {
+        display: none;
+    }
+    #header h1 {
+        padding-left: 60px;
+        padding-top: 22px;
+    }
+    #explanation {
+        padding: 0px;
+    }
+    #explanation h2 {
+        font-size: 26px;
+        margin-top: 70px;
+        margin-bottom: 20px;
+    }
+    #explanation p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+    pre[class*=language-] {
+        padding: 1em !important;
+    }
+    code[class*=language-],
+    pre[class*=language-] {
+        font-size: 14px !important;
+    }
+    #youtube .desc .left {
+        padding: 20px;
+    }
+    #youtube .desc .right {
+        padding: 20px;
+    }
+    #youtube .desc .left .title {
+        font-size: 22px;
+    }
+    #youtube .desc .right h3 {
+        display: none;
+    }
+}
+
+
+
+
+
+/* white */
+.white {
+    background: #fff;
+    color: #000;
+}
+.white a {
+    color: #000;
+}
+.white #header {
+    background: #fff;
+    color: #000;
+    border-bottom: 1px solid rgba(0, 0, 0, .12)
+}
+.white #header h1 a {
+    color: #000;
+}
+.white #explanation {
+    color: #000;
+}
+.white #explanation p[data-num]::before {
+    opacity: 0.7;
+}
+.white .highlight {
+    background: #2A283F;
+}
+.white .highlight *::after {
+    background: #2A283F;
+}
+.white #explanation p code {
+    background: #8b82e2
+}
+

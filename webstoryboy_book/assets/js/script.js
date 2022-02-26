@@ -10,6 +10,9 @@ hljs.highlightAll();
 $(".soFar > div").click(function(){
     $(this).parent().parent().next().fadeToggle()
 })
+$(".soFar.code > div").click(function(){
+    $(this).parent().next().fadeToggle()
+})
 
 
 // window.addEventListener("scroll", function(){

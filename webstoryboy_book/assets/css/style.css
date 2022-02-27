@@ -466,6 +466,15 @@ body.intro #footer {
 #explanation .refer li {
     list-style: none;
 }
+#explanation .layout {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+#explanation .layout .culumn6 {
+    width: 49%;
+} 
+
 
 /* intro */
 .intro {
@@ -654,15 +663,6 @@ body.intro #footer {
     vertical-align: top;
 }
 
-/* layout */
-.layout {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-.culumn6 {
-    width: 49%;
-} 
 
 /* media */
 @media (max-width: 1220px){

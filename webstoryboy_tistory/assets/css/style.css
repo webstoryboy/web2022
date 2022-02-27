@@ -527,6 +527,90 @@ body.intro #footer {
     border-radius: 0 0 5px 5px;
     margin-bottom: 0;
 }
+#explanation .sample .sampleBtn {
+    border-bottom: 1px solid #e6e6e6;
+    padding: 20px 20px 10px 20px;
+}
+#explanation .sample .sampleBtn a {
+    border: 1px solid #e6e6e6;
+    border-radius: 100px;
+    white-space: nowrap;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+    transition: all 0.2s;
+}
+#explanation .sample .sampleOption {
+    border-bottom: 1px solid #e6e6e6;
+    padding: 20px;
+}
+#explanation .sample .sampleOption .option {
+	display: inline-block;
+	border: 1px solid #e6e6e6;
+	border-radius: 100px;
+}
+#explanation .sample .sampleOption .option .one {
+	border-radius: 100px;
+	border-radius: 100px;
+	white-space: nowrap;
+	padding: 10px 20px;
+	display: inline-block;
+	color: #666;
+}
+#explanation .sample .sampleOption .option .left {
+	border-right: 1px solid #e6e6e6;
+	padding: 10px 14px 8px 20px;
+	display: inline-block;
+}
+#explanation .sample .sampleOption .option .right {
+	padding: 8px 20px 2px 10px;
+	display: inline-block;
+	vertical-align: -5px;
+}
+#explanation .sample .sampleOption .option .right a {
+    display: inline-block;
+    margin-right: 3px;
+}
+#explanation .sample .sampleOption .option .right i {
+	display: inline-block;
+	cursor: pointer;
+	width: 20px; 
+    height: 20px;
+    border-radius: 50%;
+    background: #222;
+}
+#explanation .sample .sampleOption .option .right .plus {
+    position: relative;
+}
+#explanation .sample .sampleOption .option .right .plus::before {
+    content: '';
+    position: absolute;
+    left: 5px; top: 9px;
+    width: 10px; height: 2px;
+    background: #fff;
+    border-radius: 2px;
+}
+#explanation .sample .sampleOption .option .right .plus::after {
+    content: '';
+    position: absolute;
+    left: 9px; top: 5px;
+    width: 2px; height: 10px;
+    background: #fff;
+    border-radius: 2px;
+}
+#explanation .sample .sampleOption .option .right .minus {
+    position: relative;
+}
+#explanation .sample .sampleOption .option .right .minus::before {
+    content: '';
+    position: absolute;
+    left: 5px; top: 9px;
+    width: 10px; height: 2px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+
 #explanation .sample .sampleCode .scMenu > div {
     display: inline-block;
     border-right: 1px solid #e6e6e6;
@@ -649,11 +733,11 @@ body.intro #footer {
 
 
 /* sampleBtn */
-.sampleBtn {
+#youtube .sampleBtn {
     position: relative;
     padding-left: 54px !important;
 }
-.sampleBtn::before {
+#youtube .sampleBtn::before {
     content: '';
     background-image: url(../img/icon.svg);
     background-position: -20px -20px;
@@ -664,11 +748,11 @@ body.intro #footer {
     position: absolute;
     left: 30px; top: 11px;
 }
-.sampleBtn2 {
+#youtube .sampleBtn2 {
     position: relative;
     padding-left: 54px !important;
 }
-.sampleBtn2::before {
+#youtube .sampleBtn2::before {
     content: '';
     background-image: url(../img/icon.svg);
     background-position: -40px 0px;
@@ -679,11 +763,11 @@ body.intro #footer {
     position: absolute;
     left: 30px; top: 11px;
 }
-.sampleBtn3 {
+#youtube .sampleBtn3 {
     position: relative;
     padding-left: 54px !important;
 }
-.sampleBtn3::after {
+#youtube .sampleBtn3::after {
     content: '';
     background-image: url(../img/icon.svg);
     background-position: -60px 0px;

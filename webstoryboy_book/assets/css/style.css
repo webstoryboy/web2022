@@ -463,6 +463,9 @@ body.intro #footer {
 #explanation .none {
     display: none;
 }
+#explanation .refer li {
+    list-style: none;
+}
 
 /* intro */
 .intro {

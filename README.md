@@ -15,6 +15,17 @@ https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_banner/
 https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_banner/banner_result01_03.html
 https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_banner/banner_result01_04.html
 
+### 카드 유형
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_card/card_result01_01.html
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_card/card_result01_02.html
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_card/card_result01_03.html
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_card/card_result01_04.html
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_card/card_result01_05.html
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_card/card_result01_06.html
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_card/card_result01_07.html
+
+
+
 
 
 ### 퀴즈 이펙트

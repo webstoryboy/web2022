@@ -340,6 +340,12 @@ body.intro #footer {
     margin-bottom: 30px;
     margin-top: 100px;
 }
+#explanation h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    font-weight: normal;
+}
 #explanation p {
     font-size: 16px;
     line-height: 2;

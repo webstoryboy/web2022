@@ -125,119 +125,217 @@
                     우선 <code>imgText01.html</code> 페이지를 만들고, <code>!</code>를 치고 <code>tab</code>을 누르겠습니다.
                     언어를 <code>ko</code>로 변경하고 <code>title</code>은 이미지 텍스트 유형01로 변경하겠습니다.
                 </p>
-<pre><code class="hljs language-html">&lt;!DOCTYPE html&gt;
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html lang="ko"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;이미지 텍스트 유형&lt;/title&gt;
+    &lt;title&gt;이미지 텍스트 유형01&lt;/title&gt;
     &lt;style&gt;
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        .imgText-wrap {
-            width: 100%;
-            background: rgba(0,0,0,0.2);
-        }
-        .section {
-            padding: 120px 0;
-            text-align: center;
-        }
         .container {
             width: 1160px;
             margin: 0 auto;
             padding: 0 20px;
             background: rgba(0,0,0,0.3);
-        }
-        .imgText-inner {
             height: 200px;
+        }
+        .imgText-wrap {
+            padding: 120px 0;
+            background: rgba(0,0,0,0.1);
         }
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;section class="imgText-wrap section gmark"&gt;
+    &lt;section class="imgText-wrap"&gt;
         &lt;div class="container"&gt;
-            &lt;div class="imgText-inner"&gt;
-            &lt;/div&gt;
+
         &lt;/div&gt;
     &lt;/section&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>   
-                <div class="soFar result01-click">
-                    <div class="click">여기까지 결과01 확인하기</div>
-                </div>   
-            </div> 
+</code></pre>
+                <p data-num="01">
+                    <strong>문서 세팅<sup>1</sup></strong>을 완료하고, <code>section</code> 태그를 이용하여, 콘텐츠를 설정합니다. 
+                    <strong>시멘틱 태그<sup>2</sup></strong>를 이용하여 카드 영역임을 표현합니다. 
+                    클래스 이름은 <code>imgText-wrap</code>이라고 설정하겠습니다. 
+                </p>
+                <p data-num="02">
+                    가운데 영역을 설정하기 위해서 <code>container</code>를 클래스를 만들고, <code>width:1160px</code>, <code>padding: 0 20px;</code>을 설정합니다. 
+                    <strong>블록구조를 가운데 오기<sup>3</sup></strong> 위해서 <code>margin: 0 auto</code>를 설정하고, 영역 확인을 위해 백그라운드를 넣어줍니다. 
+                </p>
+                <p data-num="03">
+                    <code>head</code> 태그 안에 <code>style</code> 스타일을 선언하고, <strong>CSS 초기화<sup>4</sup></strong> 작업을 하겠습니다.
+                    전체(*)선택자를 이용하여 마진, 패딩, 박스 사이즈를 초기화하겠습니다.
+                </p>
 
-            <div class="none result01-view">
+                <div class="soFar ">
+                    <div class="click mb5">여기까지 결과 확인하기 <span>(imgText_result01_01.html)</span></div>
+                </div> 
+            </div> 
+            <!-- ..container -->
+
+            <div class="none">
                 <iframe style="width: 100%; height: 440px; background: #fff;" src="imgText_result01_01.html" frameborder="0"></iframe>
             </div>
 
             <div class="container">
-                <p data-num="01" class="mt50">
-                    전체 영역을 표현 할 수 있는 .imgText-wrap 클래스를 만들고 
-                    자식으로 가운데 영역을 표현할 .container를 만들겠습니다.
-                    전체 선택자(*)를 이용하여 기본값을 초기하고, 박스 사이즈 값도 초기화 하겠습니다.
-                    .imgText-wrap 클래스에는 <code>width:100%</code>와 백그라운드 색으로 영역으로 표시하겠습니다.
-                    .section 클래스도 추가하여 <code>padding: 120px 0</code> 값을 추가하겠습니다.
-                </p>
-                <p data-num="02">
-                    .container 클래스를 추가하여, 가운데로 올 수 있도록 설정하겠습니다.
-                    <code>width: 1160px;</code>, <code>margin: 0 auto;</code>, <code>padding: 0 20px;</code>,
-                    <code>background: rgba(0,0,0,0.3);</code>를 추가하여 가운데로 오게 하고
-                    영역을 확인하기 위해 백그라운드 색도 넣어주겠습니다.
-                </p>
-                <p data-num="03">
-                    .imgText-inner 클래스를 만들고 가상으로 <code>height: 200px</code>만 넣어주겠습니다.
-                    이렇게 해주면 결과01처럼 나옵니다. 여기까지 잘 나왔다면, 다음 부분 진행하겠습니다.
-                </p>
-            </div>
+                <p class="mt20">결과 처럼 잘 나왔다면, 다음 부분 진행할께요</p>
 
-            <div class="container mt50">
-<pre><code class="hljs language-html">&lt;div class="imgText-inner"&gt;
-    &lt;div class="imgText"&gt;&lt;/div&gt;
-    &lt;div class="imgText"&gt;&lt;/div&gt;
-    &lt;div class="imgText"&gt;&lt;/div&gt;
+<pre><code class="language-html">&lt;div class="imgText__inner"&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+
                 <p data-num="04">
-                    박스를 3개더 만들고 .imgText 클래스 이름을 추가하였습니다.
+                    <code>imgText__inner</code> 클래스를 추가하고, 자식으로 박스 영역 3개를 만들겠습니다. 
+                    첫 번째 박스에는 제목과 설명, 나머지 박스에는 이미지가 추가 될 것입니다. 
+                    먼저 3개의 박스 레이아웃 부터 작업하겠습니다.
                 </p>
-<pre><code class="language-css">.imgText-inner {
+
+<pre><code class="language-css">.imgText__inner {
     display: flex;
     justify-content: space-between;
 }
-.imgText-inner .imgText {
+.imgText__inner > div {
     width: 32%;
-    height: 512px;
-    background: rgba(0,0,0,0.4)
+    height: 500px;
+    background: rgba(0,0,0,0.2);
 }
 </code></pre>
                 <p data-num="05">
-                    <code>display: flex;</code>와 <code>justify-content: space-between;</code>를 추가하고,
-                    자식 박스 .imgText 클래스에 <code>width</code>, <code>height</code>을 설정하고,
-                    영역 확인을 위해 <code>background</code>를 설정합니다.
+                    레이아웃 구조는 <code>float</code>, <code>flex</code>, <code>grid</code> 중에 <strong>flex<sup>5</sup></strong>를 사용할 것입니다. 
+                    부모 박스에 <code>display: flex;</code>를 선언하고,
+                    자식 박스 정렬을 위해 <code>justify-content: space-between;</code> 설정하겠습니다. 
+                    그럼 양쪽 정렬이 되면서 가운데 정렬이 되고,
+                    자식 박스는 <code>width: 32%;</code>를 설정하고, 가상으로 높이 값과 백그라운드를 주겠습니다.
                 </p>
-                <div class="soFar result02-click">
-                    <div class="click">여기까지 결과02 확인하기</div>
-                </div>  
+
+                <div class="soFar ">
+                    <div class="click mb5">여기까지 결과 확인하기 <span>(imgText_result01_02.html)</span></div>
+                </div> 
+            </div>
+            <!-- ..container -->
+
+            <div class="none">
+                <iframe style="width: 100%; height: 600px; background: #fff;" src="imgText_result01_02.html" frameborder="0"></iframe>
             </div>
 
-<div class="none result02-view">
-    <iframe style="width: 100%; height: 540px; background: #fff;" src="imgText_result01_02.html" frameborder="0"></iframe>
-</div>
+            <div class="container">
+                <p class="mt20">그럼 이렇게 나오겠죠? 😱 </p>
 
+<pre><code class="language-html">&lt;div class="imgText__inner"&gt;
+    &lt;div&gt;
+        &lt;span&gt;이미지 텍스트 유형01&lt;/span&gt;
+        &lt;h3&gt;웹스토리보이 사이트&lt;/h3&gt;
+        &lt;p&gt;
+            웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자를 위한 강의 사이트입니다.&lt;br&gt;
+            Gmarket Sans Light 22px 150% #67778A 
+        &lt;/p&gt;
+        &lt;a href="#"&gt;더 많은 유형 살펴보기&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                <p data-num="06">
+                    첫 번째 박스에 제목, 설명, 버튼 등을 추가하겠습니다. 
+                </p>
+
+<pre><code class="language-css">.imgText__inner {
+    display: flex;
+    justify-content: space-between;
+    font-family: "GmarketSans";
+}
+.imgText__inner > div {
+    width: 32%;
+    height: 500px;
+    background: rgba(0,0,0,0.2);
+}
+.imgText__inner > div:nth-child(1) {
+    padding-right: 20px;
+}
+.imgText__inner span {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    text-underline-position: under;
+    display: block;
+}
+.imgText__inner h3 {
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 35px;
+}
+.imgText__inner p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+.imgText__inner a {
+    font-size: 18px;
+    text-decoration: none;
+    background: #000;
+    color: #fff;
+    font-weight: 300;
+    padding: 14px 24px;
+}
+</code></pre>
+
+                <p data-num="07">
+                    우선 지마켓 <strong>웹 폰트<sup>6</sup></strong>를 추가하겠습니다. 
+                </p>
+
+<pre><code class="language-html">&lt;link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet"&gt;</code></pre>
+            
+                <p data-num="08">
+                    <code>font-family: "GmarketSans";</code>를 설정하고,
+                    제목, 설명, 버튼에 해당 속성을 하나씩 설정하겠습니다. 
+                </p>
+                <p data-num="09">
+                    첫 번째 박스한테 <code>padding-right: 20px;</code>을 주어, 여백을 더 확보하겠습니다. 
+                    나머지 세부적인 부분은 소스를 참고해서 하나씩 넣어주세요! 
+                </p>
+
+                <div class="soFar ">
+                    <div class="click mb5">여기까지 결과 확인하기 <span>(imgText_result01_03.html)</span></div>
+                </div> 
+                
+            </div>
+            <!-- ..container -->
+
+            <div class="none">
+                <iframe style="width: 100%; height: 440px; background: #fff;" src="imgText_result01_03.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="container">
+                <p>잘 나오죠? 🤒 여러분들이 잘 따라하고 있는지 궁금하네요^^</p>
+                <p>그럼 나머지 영역도 이어서 해 볼께요~</p>
+            </div>
+            <!-- ..container -->
 
             <div class="container">
                 <h2>참고</h2>
                 <ul class="refer">
-                    <li><sup>1</sup> <a href="#">웹 폰트 연동하기</a> </li>
-                    <li><a href="#">블록구조와 인라인구조</a> <span>02</span></li>
-                    <li><a href="#">컨텐츠 언어 설정</a> <span>03</span></li>
-                    <li><a href="#">뷰포트 설정</a> <span>04</span></li>
+                    <li><sup>1</sup> <a href="#">문서 셋팅하기</a></li>
+                    <li><sup>2</sup> <a href="#">시멘틱 태그</a></li>
+                    <li><sup>3</sup> <a href="#">블록구조를 가운데 오기</a></li>
+                    <li><sup>4</sup> <a href="#">CSS 초기화</a></li>
+                    <li><sup>5</sup> <a href="#">flex</a></li>
+                    <li><sup>6</sup> <a href="#">웹 폰트</a></li>
+
+                    <li><sup>5</sup> <a href="#">한줄 효과</a></li>
+                    <li><sup>6</sup> <a href="#">벤더프리픽스</a></li>
+                    <li><sup>7</sup> <a href="#">피그마를 통해 svg 가져오기</a></li>
                 </ul>
             </div>
         </section>

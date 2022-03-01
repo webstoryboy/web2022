@@ -23,6 +23,7 @@ https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_card/ca
 https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_card/card_result01_05.html
 https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_card/card_result01_06.html
 https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_card/card_result01_07.html
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_card/card_doc01.html
 
 
 

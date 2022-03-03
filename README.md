@@ -63,6 +63,7 @@ https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/q
 https://webstoryboy.github.io/web2022/webstoryboy_three/threeMarble/index.html
 https://webstoryboy.github.io/web2022/webstoryboy_three/threeCurve/index.html
 https://webstoryboy.github.io/web2022/webstoryboy_three/threeArt/index.html
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index.html
 
 ### p5.JS 이펙트
 https://webstoryboy.github.io/web2022/webstoryboy_three/p5Circle/index.html

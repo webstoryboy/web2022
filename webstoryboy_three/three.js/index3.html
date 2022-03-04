@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+        body {
+            margin: 0;
+            background-color: #000;
+        }
+        #webgl-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        h1 {
+            position: fixed;
+            left: 30px; top: 10px;
+            color: #fff;
+            font-family: "Oswald";
+            line-height: 1;
+        }
+        .section {
+            display: grid;
+            place-items: center;
+            width: 100%;
+            height: 100vh;
+            scroll-snap-align: center;
+        }
+        .section:nth-child(even){
+            background: rgba(255,255,255,0.1);
+        }
+        .section__title {
+            color: #fff;
+            font-family: "Oswald";
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scroll</h1>
+    <section class="section">
+        <h2 class="section__title">Section1</h2>
+    </section>
+    <section class="section">
+        <h2 class="section__title">Section2</h2>
+    </section>
+    <section class="section">
+        <h2 class="section__title">Section3</h2>
+    </section>
+    <section class="section">
+        <h2 class="section__title">Section4</h2>
+    </section>
+    <section class="section">
+        <h2 class="section__title">Section5</h2>
+    </section>
+    <section class="section">
+        <h2 class="section__title">Section6</h2>
+    </section>
+    <canvas id="webgl-canvas"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r127/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script>
+        class Stage {
+            constructor() {
+                this.renderParam = {
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                };
+
+                this.cameraParam = {
+                    fov: 75,
+                    near: 0.001,
+                    far: 5000,
+                    lookAt: new THREE.Vector3(0, 0, 0),
+                    x: 1,
+                    y: 1,
+                    z: 40
+                };
+
+                this.scene = null;
+                this.camera = null;
+                this.renderer = null;
+                this.geometry = null;
+                this.material = null;
+                this.mesh = null;
+
+                this.isInitialized = false;
+            }
+
+            init() {
+                this._setScene();
+                this._setRender();
+                this._setCamera();
+
+                this.isInitialized = true;
+            }
+
+            _setScene() {
+                this.scene = new THREE.Scene();
+            }
+
+            _setRender() {
+                this.renderer = new THREE.WebGLRenderer({
+                    canvas: document.getElementById("webgl-canvas"),
+                    antialias: true,
+                    alpha: true
+                });
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.renderer.setSize(this.renderParam.width, this.renderParam.height);
+            }
+
+            _setCamera() {
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+
+                if (!this.isInitialized) {
+                    this.camera = new THREE.PerspectiveCamera(
+                        this.cameraParam.fov,
+                        this.renderParam.width / this.renderParam.height,
+                        this.cameraParam.near,
+                        this.cameraParam.far
+                    );
+
+                    this.camera.position.set(
+                        this.cameraParam.x,
+                        this.cameraParam.y,
+                        this.cameraParam.z
+                    );
+                }
+
+                this.camera.aspect = windowWidth / windowHeight;
+                this.camera.updateProjectionMatrix();
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.renderer.setSize(windowWidth, windowHeight);
+            }
+
+            _render() {
+                this.renderer.render(this.scene, this.camera);
+            }
+
+            onResize() {
+                this._setCamera();
+            }
+
+            onRaf() {
+                this._render();
+            }
+        }
+
+        class Mesh {
+            constructor(stage) {
+                this.stage = stage;
+                this.mesh = null;
+            }
+
+            init() {
+                this._setMesh();
+                this.onScroll();
+            }
+
+            _setMesh() {
+                const geometry = new THREE.IcosahedronGeometry(20, 1)
+                const material = new THREE.MeshNormalMaterial({
+                    wireframe: true
+                });
+
+                this.mesh = new THREE.Mesh(geometry, material);
+                this.stage.scene.add(this.mesh);
+            }
+  
+            onScroll() {
+                gsap.registerPlugin(ScrollTrigger)
+                ScrollTrigger.defaults({
+                    scrub: 3,
+                    ease: 'none',
+                })
+
+                const sections = document.querySelectorAll('.section')
+                gsap.from(this.mesh.position, {
+                    x: 1,
+                    duration: 1,
+                    ease: 'expo',
+                })
+                
+                gsap.to(this.mesh.rotation, {
+                    x: Math.PI * 2,
+                    scrollTrigger: {
+                        trigger: sections[1],
+                    },
+                })
+                gsap.to(this.mesh.scale, {
+                    x: 0.5,
+                    scrollTrigger: {
+                        trigger: sections[2],
+                    },
+                })
+                gsap.to(this.mesh.rotation, {
+                    y: Math.PI * 2,
+                    scrollTrigger: {
+                        trigger: sections[3],
+                    },
+                })
+                gsap.to(this.mesh.scale, {
+                    y: 0.5,
+                    scrollTrigger: {
+                        trigger: sections[4],
+                    },
+                })
+                gsap.to(this.mesh.rotation, {
+                    x: Math.PI * 2,
+                    scrollTrigger: {
+                        trigger: sections[4],
+                    },
+                })
+                
+            }
+  
+            onMouseMove(e) {
+                const x = e.clientX;
+                const y = e.clientY;
+
+                gsap.to(this.stage.scene.rotation, {
+                    y: gsap.utils.mapRange(0, window.innerWidth, 1, -1, x),
+                    x: gsap.utils.mapRange(0, window.innerHeight, 1, -1, y),
+                })
+            }
+  
+            _render() {}
+  
+            onRaf() {
+                this._render();
+            }
+        }
+
+        (() => {
+            const stage = new Stage();
+            const mesh = new Mesh(stage);
+
+            stage.init();
+            mesh.init();
+
+            window.addEventListener("resize", () => {
+                stage.onResize();
+            });
+
+            window.addEventListener("mousemove", (e) => {
+                mesh.onMouseMove(e);
+            })
+
+            const _raf = () => {
+                window.requestAnimationFrame(() => {
+                    stage.onRaf();
+                    _raf();
+                });
+            };
+
+            _raf();
+        })();
+
+    </script>
+</body>
+</html>

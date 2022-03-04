@@ -140,7 +140,7 @@ body.intro #footer {
     color: #fff;
 }
 #aside .chapter .chapter-title .class {
-    font-size: 24px;
+    font-size: 1.4rem;
 }
 #aside .chapter .chapter-sub {
     padding: 20px;
@@ -150,9 +150,9 @@ body.intro #footer {
 }
 #aside .chapter .chapter-sub ul li a {
     color: #fff;
-    padding: 14px 30px;
+    padding: 12px 20px 10px 20px;
     display: block;
-    font-size: 18px;
+    font-size: 1rem;
     opacity: 0.4;
     transition: all 0.4s;
 }

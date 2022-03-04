@@ -1,5 +1,12 @@
 # web2022
 
+## 웹표준 사이트 만들기
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc01.html
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc02.html
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc03.html
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc04.html
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc05.html
+
 ### 레이아웃 유형
 https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_result01_01.html
 https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_result01_02.html

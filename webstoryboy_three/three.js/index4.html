@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+        body {
+            margin: 0;
+            background-color: #000;
+            cursor: none;
+        }
+        #webgl-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        h1 {
+            position: fixed;
+            left: 30px; top: 10px;
+            color: #fff;
+            font-family: "Oswald";
+            line-height: 1;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mouse Effect</h1>
+    
+    <canvas id="webgl-canvas"></canvas>
+
+
+    <!-- vertexShader -->
+    <script id="js-vertex-shader" type="x-shader/x-vertex">
+        attribute vec3 position;
+        attribute vec2 uv;
+        varying vec2 vUv;
+        
+        void main() {
+            vUv = uv;
+            gl_Position = vec4(position, 1.0);
+        }
+    </script>
+        
+    <!-- fragmentShader -->
+    <script id="js-fragment-shader" type="x-shader/x-fragment">
+        precision highp float;
+        uniform float uAspect;
+        uniform vec2 uMouse;
+        uniform vec2 resolution;
+        uniform float uRadius;
+        varying vec2 vUv;
+    
+    void main() {
+        float aspect = 1.0 / (resolution.x / resolution.y);
+        vec2 uv = vec2(vUv.x * uAspect, vUv.y);
+        vec2 center = vec2(uMouse.x * uAspect, uMouse.y);
+        float lightness = uRadius / length(uv - center);
+        vec4 color = vec4(vec3(lightness), 1.0);
+        color *= vec4(1.2, 0.5, 1.0, 1.0);
+        
+        gl_FragColor = color;
+    }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r127/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script>
+        class Stage {
+            constructor() {
+                this.renderParam = {
+                    clearColor: 0x666666,
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                };
+
+                this.cameraParam = {
+                    left: -1,
+                    right: 1,
+                    top: 1,
+                    bottom: 1,
+                    near: 0,
+                    far: -1
+                };
+
+                this.scene = null;
+                this.camera = null;
+                this.renderer = null;
+                this.geometry = null;
+                this.material = null;
+                this.mesh = null;
+
+                this.isInitialized = false;
+            }
+
+            init() {
+                this._setScene();
+                this._setRender();
+                this._setCamera();
+
+                this.isInitialized = true;
+            }
+
+            _setScene() {
+                this.scene = new THREE.Scene();
+            }
+
+            _setRender() {
+                this.renderer = new THREE.WebGLRenderer({
+                    canvas: document.getElementById("webgl-canvas"),
+                });
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.renderer.setClearColor(new THREE.Color(this.renderParam.clearColor));
+                this.renderer.setSize(this.renderParam.width, this.renderParam.height);
+            }
+
+            _setCamera() {
+                if (!this.isInitialized) {
+                    this.camera = new THREE.PerspectiveCamera(
+                        this.cameraParam.left,
+                        this.cameraParam.right,
+                        this.cameraParam.top,
+                        this.cameraParam.bottom,
+                        this.cameraParam.near,
+                        this.cameraParam.far
+                    );
+                }
+
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+
+                this.camera.aspect = windowWidth / windowHeight;
+
+                this.camera.updateProjectionMatrix();
+                this.renderer.setSize(windowWidth, windowHeight);
+            }
+
+            _render() {
+                this.renderer.render(this.scene, this.camera);
+            }
+
+            onResize() {
+                this._setCamera();
+            }
+
+            onRaf() {
+                this._render();
+            }
+        }
+
+        class Mesh {
+            constructor(stage) {
+                this.mouse = new THREE.Vector2(0.5, 0.5);
+                this.targetRadius = 0.1;
+
+                this.uniforms = {
+                    uAspect: {
+                        type: "f", value: window.innerWidth / window.innerHeight
+                    },
+                    uTime: {
+                        type: "f", value: 0.0
+                    },
+                    uMouse: {
+                        value: new THREE.Vector2(0.0, 0.0)
+                    },
+                    uRadius: {
+                        type: "f",
+                        value: this.targetRadius
+                    }
+                };
+                this.stage = stage;
+                this.mesh = null;
+            }
+
+            init() {
+                this._setMesh();
+            }
+
+            _setMesh() {
+                const geometry = new THREE.PlaneGeometry(2, 2, 1, 1);
+                const material = new THREE.RawShaderMaterial({
+                    vertexShader: document.getElementById("js-vertex-shader").textContent,
+                    fragmentShader: document.getElementById("js-fragment-shader").textContent,
+                    uniforms: this.uniforms,
+                    side: THREE.DoubleSide
+                });
+                this.mesh = new THREE.Mesh(geometry, material);
+                this.stage.scene.add(this.mesh);
+            }
+
+            _render() {
+                const sec = performance.now() / 1000;
+                this.uniforms.uTime.value = sec;
+                this.uniforms.uMouse.value.lerp(this.mouse, 0.25);
+                this.uniforms.uRadius.value += (this.targetRadius - this.uniforms.uRadius.value) * 0.2;
+            }
+
+            onResize() {
+                this.uniforms.uAspect.value = window.innerWidth / window.innerHeight;
+            }
+
+            onMouseMove(x, y) {
+                this.mouse.x = x / window.innerWidth;
+                this.mouse.y = 1.0 - (y / window.innerHeight);
+            }
+            onMouseEnter(x, y) {
+                this.onMouseMove(x, y);
+                this.targetRadius = 0.20;
+            }
+            onMouseLeave(x, y) {
+                this.onMouseMove(x, y);
+                this.targetRadius = 0.1;
+            }
+
+            onRaf() {
+                this._render();
+            }
+        }
+
+        (() => {
+            const stage = new Stage();
+            const mesh = new Mesh(stage);
+
+            stage.init();
+            mesh.init();
+
+            window.addEventListener("resize", () => {
+                stage.onResize();
+                mesh.onResize();
+            });
+
+            window.addEventListener("mousemove", (e) => {
+                mesh.onMouseMove(e.clientX, e.clientY);
+            });
+
+            document.querySelector("h1").addEventListener("mouseenter", (e) => {
+                mesh.onMouseEnter(e.clientX, e.clientY);
+            });
+
+            document.querySelector("h1").addEventListener("mouseleave", (e) => {
+                mesh.onMouseLeave(e.clientX, e.clientY);
+            });
+
+            const _raf = () => {
+                window.requestAnimationFrame(() => {
+                    stage.onRaf();
+                    mesh.onRaf();
+
+                    _raf();
+                });
+            };
+
+            _raf();
+        })();
+
+    </script>
+</body>
+</html>

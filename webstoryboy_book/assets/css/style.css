@@ -480,6 +480,68 @@ body.intro #footer {
 #explanation .layout .culumn6 {
     width: 49%;
 } 
+#explanation .folder {
+    background-color: #282936;
+    display: inline-block;
+    padding: 20px 25px 20px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+#explanation .folder ul li {
+    list-style: none;
+    padding-left: 27px;  
+    position: relative;
+}
+#explanation .folder ul li ul li {
+    position: relative;
+}
+#explanation .folder .icon1 {
+    display: block;
+}
+#explanation .folder .icon1:before {
+    content: '';
+    width: 20px; 
+    height: 15px;
+    background-color: #5c43f5;
+    position: absolute;
+    left: 0; 
+    top: 7px;
+    border-radius: 0px 3px 3px 3px;
+}
+#explanation .folder .icon1:after {
+    content: '';
+    width: 10px; 
+    height: 4px;
+    background-color: #5c43f5;
+    position: absolute;
+    left: 0; 
+    top: 4px;
+    border-radius: 3px 3px 0px 0px;
+}
+#explanation .folder .icon2 {
+    display: block;
+}
+#explanation .folder .icon2:before {
+    content: '';
+    width: 16px; 
+    height: 20px;
+    background-color: #fff;
+    position: absolute;
+    left: 0; 
+    top: 4px;
+    border-radius: 3px 3px 3px 3px;
+}
+#explanation .folder .icon2:after {
+    content: '';
+    width: 20px; 
+    height: 4px;
+    position: absolute;
+    left: -3px; 
+    top: 4px;
+    border-right: 7px solid #282936;
+    border-bottom: 7px solid transparent;
+    border-top: 0px solid transparent;
+}
 
 
 /* intro */

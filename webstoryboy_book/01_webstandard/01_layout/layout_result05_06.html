@@ -39,49 +39,53 @@
             background-color: rgba(0,0,0,0.3);
             margin: 0 auto;
         }
+        .content__inner {
+            display: grid;
+            grid-template-areas: 
+                "content1 content1"
+                "content2 content2"
+                "content3 content4"
+            ;
+            grid-template-columns: 600px 600px;
+            grid-template-rows: 100px 200px 480px;
+        }
         .content1 {
-            width: 1200px;
-            height: 100px;
             background-color: #74574A;
+            grid-area: content1;
         }
         .content2 {
-            width: 1200px;
-            height: 200px;
             background-color: #684D43;
+            grid-area: content2;
         }
         .content3 {
-            width: 600px;
-            height: 480px;
             background-color: #594139;
-            float: left;
+            grid-area: content3;
         }
         .content4 {
-            width: 600px;
-            height: 480px;
             background-color: #4A352F;
-            float: left;
+            grid-area: content4;
         }
     </style>
 </head>
 <body>
     <div id="wrap">
-        <div id="header">
+        <header id="header">
             <div class="container"></div>
-        </div>
-        <div id="nav">
+        </header>
+        <nav id="nav">
             <div class="container"></div>
-        </div>
-        <div id="contents">
-            <div class="container">
-                <div class="content1"></div>
-                <div class="content2"></div>
-                <div class="content3"></div>
-                <div class="content4"></div>
+        </nav>
+        <main id="contents">
+            <div class="container content__inner">
+                <article class="content1"></article>
+                <article class="content2"></article>
+                <section class="content3"></section>
+                <section class="content4"></section>
             </div>
-        </div>
-        <div id="footer">
+        </main>
+        <footer id="footer">
             <div class="container"></div>
-        </div>
+        </footer>
     </div>
 </body>
 </html>

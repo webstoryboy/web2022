@@ -53,7 +53,7 @@
         </aside>
         <!-- //aside -->
 
-        <section id="youtube" class="container ">
+        <section id="youtube" class="container">
             <div class="video none resizable draggable sampleBtn3">
                 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JoOa5xyvh2Y" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
             </div>
@@ -105,9 +105,9 @@
 
 
                 <h2>완성작</h2>
-                <!-- <div class="iframe">
+                <div class="iframe">
                     <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FiD3Ehm4HRhe16Vx6kxz3ob%2F%255B%25ED%258F%25AC%25ED%258A%25B8%25ED%258F%25B4%25EB%25A6%25AC%25EC%2598%25A4%25EA%25B0%2580-%25EC%258B%25A4%25EB%25A0%25A5%25EC%259D%25B4%25EB%258B%25A4%255D-%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EC%25A0%259C%25EC%259E%2591%25ED%258E%25B8%3Fpage-id%3D3563%253A38%26node-id%3D4737%253A153%26viewport%3D241%252C48%252C0.17%26scaling%3Dmin-zoom" allowfullscreen></iframe>
-                </div> -->
+                </div>
 
                 <h2>이론</h2>
                 <div class="folder">
@@ -175,6 +175,120 @@
                     index.html 파일을 열고 <code>!</code>를 치고 <code>tab</code>을 누르겠습니다. 
                     언어는 <code>ko</code>로 변경하고 <code>title</code>은 "웹 표준 사이트 만들기"로 변경하겠습니다.
                 </p>
+
+<pre><code class="language-html">&lt;!-- SEO(검색엔진최적화) --&gt;
+&lt;meta name="acthor" content="webstroyboy"&gt;
+&lt;meta name="description" content="웹 표준을 준수한 사이트입니다."&gt;
+&lt;meta name="keywords" content="웹표준, 웹접근성, 웹호환성, 사이트제작, 사이트만들기, 포트폴리오"&gt;
+&lt;meta name="robots" content="all"&gt;
+</code></pre>   
+
+                <p data-num="03">
+                    <code>head</code> 요소 안에는 사이트에 대한 정보를 제공합니다. 
+                    <strong>SEO(검색엔진최적화)<sup>1</sup></strong> 사이트에서 가장 중요할 지 모릅니다. 
+                    정성스럽게 사이트를 만들었는데 아무도 들어와 주지 않으면, 슬프겠죠! 
+                    그래서 검색에 잘 노출 될 수 있도록 <code>meta</code> 정보을 <code>head</code> 요소에 제공해야 합니다. 
+                </p>
+
+<pre><code class="language-html">&lt;!-- CSS(스타일) --&gt;
+&lt;link rel="stylesheet" href="assets/css/fonts.css"&gt;
+&lt;link rel="stylesheet" href="assets/css/reset.css"&gt;
+&lt;link rel="stylesheet" href="assets/css/common.css"&gt;
+&lt;link rel="stylesheet" href="assets/css/style.css"&gt;
+</code></pre>  
+
+                <p data-num="04">
+                    다음은 CSS를 연동할 것입니다. 
+                    지금까지는 CSS를 <code>head</code> 요소 안에 <code>style</code>을 선언하여 넣어지만
+                    이제는 따로 파일을 만들어서 연동할 것입니다. 
+                    파일이 많아지기 때문에 외부 파일로 만들어서 작업할 것입니다. 
+                    이렇게 <strong>CSS 선언하는 방법<sup>2</sup></strong>은 총 3가지 있습니다. 
+                    그 중에서 2번째 방법까지 완료한 것입니다. 나머지는 추후에 또 나올 것입니다. 
+                </p>
+                <p data-num="05">
+                    <code>fonts.css</code>는 웹 폰트 관련된 CSS를 정리할 것이고,
+                    <code>reset.css</code>는 초기화와 관련된 CSS를 정리할 것이고,
+                    <code>common.css</code>는 공통적으로 사용되는 CSS를 정리할 것이고,
+                    <code>sytle.css</code>는 유형별로 코딩한 CSS를 정리할 것입니다. 
+                    사이트 규모가 커지면 더 세분활 될 수도 있습니다. 
+                    이런 부분이 본인이 하기 나름입니다. 정답이 있는 것은 아닙니다. 
+                    코딩을 많이 하다보면 자기만의 노하우가 쌓일 것입니다. 
+                    회사에 들어갔을 때는 회사 규율에 맞게 작업하시면 됩니다. 
+                </p>
+                <div class="soFar code">
+                    <div class="click">여기까지 코드 확인하기 <span>(site_result01_02.html)</span></div>
+                </div>
+                <div class="none">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;웹 표준 사이트 만들기&lt;/title&gt;
+
+    &lt;!-- SEO(검색엔진최적화) --&gt;
+    &lt;meta name="acthor" content="webstroyboy"&gt;
+    &lt;meta name="description" content="웹 표준을 준수한 사이트입니다."&gt;
+    &lt;meta name="keywords" content="웹표준, 웹접근성, 웹호환성, 사이트제작, 사이트만들기, 포트폴리오"&gt;
+    &lt;meta name="robots" content="all"&gt;
+
+    &lt;!-- CSS(스타일) --&gt;
+    &lt;link rel="stylesheet" href="assets/css/fonts.css"&gt;
+    &lt;link rel="stylesheet" href="assets/css/reset.css"&gt;
+    &lt;link rel="stylesheet" href="assets/css/common.css"&gt;
+    &lt;link rel="stylesheet" href="assets/css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+
+<pre><code class="language-html">&lt;div id="wrap"&gt;
+    &lt;header id="header"&gt;&lt;/header&gt;
+    &lt;main id="main"&gt;&lt;/main&gt;
+    &lt;footer id="footer"&gt;&lt;/footer&gt;
+&lt;/div&gt;
+</code></pre> 
+
+                <p data-num="06">
+                    이 사이트의 전체적인 구조는 3단으로 나눌 수 있습니다. 
+                    <code>header</code>, <code>main</code>, <code>footer</code>로 나눌 수 있으며,
+                    전체를 감싸는 <code>wrap</code> 요소로 구성하였습니다. 
+                </p>
+
+<pre><code class="language-html">&lt;div id="wrap"&gt;
+    &lt;header id="header"&gt;
+
+    &lt;/header&gt;
+    &lt;!-- //헤더 영역 : 메뉴 유형 --&gt;
+
+    &lt;main id="main"&gt;
+        &lt;section id="sliderType01"&gt;&lt;/section&gt;&lt;!-- //슬라이드 유형 --&gt;
+        &lt;section id="imageType01"&gt;&lt;/section&gt;&lt;!-- //이미지 유형 --&gt;
+        &lt;section id="cardType01"&gt;&lt;/section&gt;&lt;!-- //카드 유형 --&gt;
+        &lt;section id="imgTextType01"&gt;&lt;/section&gt;&lt;!-- //이미지텍스트 유형 --&gt;
+        &lt;section id="bannerType01"&gt;&lt;/section&gt;&lt;!-- //배너 유형 --&gt;
+        &lt;section id="texgType01"&gt;&lt;/section&gt;&lt;!-- //텍스트 유형 --&gt;
+    &lt;/main&gt;
+    &lt;!-- //메인 영역 --&gt;
+
+    &lt;footer id="footer"&gt;
+
+    &lt;/footer&gt;
+    &lt;!-- //푸터 영역 : 푸터 유형 --&gt;
+&lt;/div&gt;
+&lt;!-- //wrap --&gt;
+</code></pre> 
+
+                <p data-num="06">
+                    영역의 <code>헤더 영역</code>, <code>메인 영역</code>, <code>푸터 영역</code>으로 나누고,
+                    메인 영역은 다시 <code>슬라이드 유형</code>, <code>이미지 유형</code>, <code>카드 유형</code>, <code>이미지텍스트 유형</code>, <code>배너 유형</code>, <code>텍스트 유형</code>으로 나눌 것입니다.
+                    <code>헤더 영역</code>에는 <code>메뉴 유형</code>이 들어가고, <code>푸터 영역</code>에는 <code>푸터 유형</code>이 들어갈 것입니다.
+                    각각의 영역은 <code>section</code> 태그로 설정하였고, 이름도 아이디로 설정하였습니다. 
+                </p>
             </div>
             <!-- ..container -->
 
@@ -183,7 +297,9 @@
             <div class="container">
                 <h2>참고</h2>
                 <ul class="refer">
-                    <li><sup>1</sup> <a href="#">블록/인라인 요소</a></li>
+                    <li><sup>1</sup> <a href="#">SEO(검색엔진최적화)</a></li>
+                    <li><sup>2</sup> <a href="#">CSS 선언 방법</a></li>
+              
                     <li><sup>2</sup> <a href="#">선택자</a></li>
                     <li><sup>3</sup> <a href="#">CSS 초기화</a></li>
                     <li><sup>4</sup> <a href="#">id와 class의 차이점</a></li>

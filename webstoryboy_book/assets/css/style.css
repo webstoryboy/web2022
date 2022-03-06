@@ -549,6 +549,7 @@ body.intro #footer {
     text-align: center;
     display: block;
     border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 /* intro */

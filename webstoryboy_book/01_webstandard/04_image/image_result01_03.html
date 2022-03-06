@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형01</title>
+
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .section {
+            padding: 120px 0;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 50px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        .section .desc {
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 70px;
+            line-height: 1.5;
+            color: #777;
+        }
+        .section .desc em {
+            font-style: normal;
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+        .gmark {
+            font-family: "GmarketSans";
+        }
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background: rgba(0,0,0,0.3);
+        }
+        .image-wrap {
+            width: 100%;
+            background: rgba(0,0,0,0.2);
+        }
+        .image-inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .image-inner .image {
+            width: 570px;
+        }
+        .image-inner .image img {
+            width: 100%;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <section class="image-wrap section gmark">
+        <div class="container">
+            <h2 class="h2">포트폴리오가 실력이다.</h2>
+            <p class="desc"><em>이미지 유형입니다.</em> 마우스 오버시 자세한 정보가 나와는 구조입니다.</p>
+            <div class="image-inner">
+                <div class="image">
+                    <img src="../../assets/img/imagetype01.jpg" alt="애교만점 웰시코기">
+                </div>
+                <div class="image">
+                    <img src="../../assets/img/imagetype02.jpg" alt="코카스 파니엘">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

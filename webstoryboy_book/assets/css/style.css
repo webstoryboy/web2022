@@ -542,7 +542,14 @@ body.intro #footer {
     border-bottom: 7px solid transparent;
     border-top: 0px solid transparent;
 }
-
+#explanation .next {
+    background: #5c43f5;
+    color: #fff;
+    padding: 10px 20px; 
+    text-align: center;
+    display: block;
+    border-radius: 5px;
+}
 
 /* intro */
 .intro {

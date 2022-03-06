@@ -13,12 +13,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-        .gmarket {
-            font-family: "GmarketSans";
-        }
-        .section {
-            padding: 120px 0;
-        }
         .blind {
             position: absolute;
             clip: rect(0 0 0 0);
@@ -27,11 +21,18 @@
             margin: -1px;
             overflow: hidden
         }
+        .section {
+            padding: 120px 0;
+        }
+        .gmarket {
+            font-family: "GmarketSans";
+        }
         .banner-wrap {
             background-image: url(../../assets/img/banner_bg01@2x.jpg);
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
+            height: 500px;
         }
         .banner__inner {
             text-align: center;
@@ -50,8 +51,12 @@
         }
         .banner__desc a {
             display: block;
+            font-size: 24px;
+            line-height: 1.5;
+            font-weight: 300;
             color: #fff;
             text-decoration: none;
+            margin-bottom: 70px;
         }
         .banner__sub {
             font-size: 16px;
@@ -62,8 +67,8 @@
     </style>
 </head>
 <body>
-    <section class="banner-wrap gmarket section">
-        <h2 class="blind">배너 제목 영역</h2> 
+    <section class="banner-wrap section gmarket">
+        <h2 class="blind">배너 광고 영역</h2>
         <div class="banner__inner">
             <h3 class="banner__title">유튜버 웹보이</h3>
             <p class="banner__desc">
@@ -71,7 +76,7 @@
                 <a href="#">youtube.com/c/Webstoryboy</a>
             </p>
             <span class="banner__sub">배너 영역01</span>
-        </div>`
+        </div>
     </section>
 </body>
 </html>

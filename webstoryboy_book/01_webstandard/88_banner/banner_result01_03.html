@@ -13,40 +13,47 @@
             padding: 0;
             box-sizing: border-box;
         }
+        .gmarket {
+            font-family: "GmarketSans";
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden
+        }
         .banner-wrap {
             background-image: url(../../assets/img/banner_bg01@2x.jpg);
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
-            height: 500px;
         }
         .banner__inner {
-            padding: 120px 0;
             text-align: center;
             color: #fff;
-            font-family: "GmarketSans";
         }
-        .banner__inner .title {
+        .banner__title {
             font-size: 50px;
             font-weight: 300;
             margin-bottom: 40px;
         }
-        .banner__inner .desc {
+        .banner__desc {
             font-size: 24px;
             line-height: 1.5;
             font-weight: 300;
             margin-bottom: 70px;
         }
-        .banner__inner .desc a {
+        .banner__desc a {
             display: block;
-            font-size: 24px;
-            line-height: 1.5;
-            font-weight: 300;
             color: #fff;
             text-decoration: none;
-            margin-bottom: 70px;
         }
-        .banner__inner .sub {
+        .banner__sub {
             font-size: 16px;
             font-weight: 300;
             text-decoration: underline;
@@ -55,15 +62,16 @@
     </style>
 </head>
 <body>
-    <section class="banner-wrap">
+    <section class="banner-wrap gmarket section">
+        <h2 class="blind">배너 제목 영역</h2> 
         <div class="banner__inner">
-            <h3 class="title">유튜버 웹보이</h3>
-            <p class="desc">
+            <h3 class="banner__title">유튜버 웹보이</h3>
+            <p class="banner__desc">
                 더 다양한 강의는 유튜브를 통해 제공하고 있습니다.
                 <a href="#">youtube.com/c/Webstoryboy</a>
             </p>
-            <span class="sub">배너 영역01</span>
-        </div>
+            <span class="banner__sub">배너 영역01</span>
+        </div>`
     </section>
 </body>
 </html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+        body {
+            margin: 0;
+            background-color: #000;
+            cursor: none;
+        }
+        #webgl-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mouse Effect</h1>
+    
+    <canvas id="webgl-canvas"></canvas>
+
+    <!-- vertexShader -->
+    <script id="js-vertex-shader" type="x-shader/x-vertex">
+        attribute vec3 position;
+        attribute vec2 uv;
+        uniform mat4 modelViewMatrix;
+        uniform mat4 projectionMatrix;
+        uniform float u_time;
+        varying vec2 vUv;
+
+        void main() {
+            float wave1 = 0.5 * sin(0.5 * position.x + u_time * 2.0);
+            float wave2 = 0.2 * sin(2.0 * position.x + u_time * 2.0);
+            float x = position.x;
+            float y = position.y;
+            float z = (wave1 + wave2) * (2.0 + position.x);
+            vUv = uv;
+
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(vec3(x,y,z), 1.0 );
+        }
+    </script>
+
+    <!-- fragmentShader -->
+    <script id="js-fragment-shader" type="x-shader/x-fragment">
+        precision mediump float;
+
+        uniform sampler2D u_texture;
+        varying vec2 vUv;
+
+        void main() {
+            vec4 texture = texture2D(u_texture,vUv);
+            gl_FragColor = texture;
+        }
+    </script>
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r127/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script>
+        class Stage {
+            constructor() {
+                this.renderParam = {
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                };
+
+                this.cameraParam = {
+                    fov: 20,
+                    near: 0.1,
+                    far: 100,
+                    lookAt: new THREE.Vector3(0, 0, 0),
+                    x: 0,
+                    y: 0,
+                    z: 10
+                };
+
+                this.scene = null;
+                this.camera = null;
+                this.renderer = null;
+                this.geometry = null;
+                this.material = null;
+                this.mesh = null;
+                this.isInitialized = false;
+            }
+
+            init() {
+                this._setScene();
+                this._setRender();
+                this._setCamera();
+
+                this.isInitialized = true;
+            }
+
+            _setScene() {
+                this.scene = new THREE.Scene();
+            }
+
+            _setRender() {
+                this.renderer = new THREE.WebGLRenderer({
+                    canvas: document.getElementById('webgl-canvas'),
+                    antialias: true,
+                    alpha: true
+                });
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.renderer.setClearColor(new THREE.Color(0x161616));
+                this.renderer.setSize(this.renderParam.width, this.renderParam.height);
+            }
+
+            _setCamera() {
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+
+                if(!this.isInitialized){
+                    this.camera = new THREE.PerspectiveCamera(
+                        this.cameraParam.fov,
+                        this.renderParam.width / this.renderParam.height,
+                        this.cameraParam.near,
+                        this.cameraParam.far
+                    );
+
+                    this.camera.position.set(
+                        this.cameraParam.x,
+                        this.cameraParam.y,
+                        this.cameraParam.z
+                    );
+                    this.camera.lookAt(this.cameraParam.lookAt);
+                }
+
+                this.camera.aspect = windowWidth / windowHeight;
+                this.camera.updateProjectionMatrix();
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.renderer.setSize(windowWidth, windowHeight);
+            }
+
+            _render() {
+                this.renderer.render(this.scene, this.camera);
+            }
+
+            onResize() {
+                this._setCamera();
+            }
+
+            onRaf() {
+                this._render();
+            }
+        }
+
+        class Mesh {
+            constructor(stage) {
+                this.geometryParam = {
+                    width: 4,
+                    height: 2.5,
+                    widthSegments: 20,
+                    heightSegments: 20
+                }
+                this.uniforms = {
+                    u_texture: {
+                        type: "t",
+                        value: new THREE.TextureLoader().load("img.jpg")
+                    },
+                    u_time: { type: "f", value: 1.0 }
+                };
+
+                this.stage = stage;
+                this.mesh = null;
+            }
+
+            init() {
+                this._setMesh();
+            }
+
+            _setMesh() {
+                const geometry = new THREE.PlaneBufferGeometry(this.geometryParam.width, this.geometryParam.height, this.geometryParam.widthSegments, this.geometryParam.heightSegments);
+                const material = new THREE.RawShaderMaterial({
+                    vertexShader: document.querySelector("#js-vertex-shader").textContent,
+                    fragmentShader: document.querySelector("#js-fragment-shader").textContent,
+                    uniforms: this.uniforms
+                });
+
+                this.mesh = new THREE.Mesh(geometry, material);
+                this.stage.scene.add(this.mesh);
+            }
+
+            _render() {
+                this.uniforms.u_time.value += 0.02;
+            }
+
+            onRaf() {
+                this._render();
+            }
+        }
+
+        (() => {
+            const stage = new Stage();
+            const mesh = new Mesh(stage);
+
+            stage.init();
+            mesh.init();
+
+            window.addEventListener("resize", () => {
+                stage.onResize();
+            });
+
+            const _raf = () => {
+                window.requestAnimationFrame(() => {
+                    stage.onRaf();
+                    mesh.onRaf();
+
+                    _raf();
+                });
+            };
+
+            _raf();
+        })();
+
+    </script>
+</body>
+</html>

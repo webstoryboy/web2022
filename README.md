@@ -75,6 +75,8 @@ https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index2.html
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index3.html
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index4.html
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index5.html
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index6.html
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index7.html
 
 ### p5.JS 이펙트
 https://webstoryboy.github.io/web2022/webstoryboy_three/p5Circle/index.html

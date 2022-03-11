@@ -98,7 +98,6 @@
         .content__item__imgWrap {
             width: 100%;
             padding-bottom: 56.25%;
-            background: #000;
             position: relative;
             overflow: hidden;
         }
@@ -185,133 +184,111 @@
             line-height: 1.6;
         }
         /* option */
-        /* 한번에 나타나기 */
-        /* .content__item__desc span {
-            opacity: 0;
-            transition: all 0.33s ease-in-out;
-        }
-        .content__item__desc span:nth-child(1)  {transition-delay: 0.1s;}
-        .content__item__desc span:nth-child(2)  {transition-delay: 0.2s;}
-        .content__item__desc span:nth-child(3)  {transition-delay: 0.3s;}
-        .content__item__desc span:nth-child(4)  {transition-delay: 0.4s;}
-        .content__item__desc span:nth-child(5)  {transition-delay: 0.5s;}
-        .content__item__desc span:nth-child(6)  {transition-delay: 0.6s;}
-        .content__item__desc span:nth-child(7)  {transition-delay: 0.7s;}
-        .content__item__desc span:nth-child(8)  {transition-delay: 0.8s;}
-        .content__item__desc span:nth-child(9)  {transition-delay: 0.9s;}
-        .content__item__desc span:nth-child(10) {transition-delay: 1.0s;}
-        .content__item__desc span:nth-child(11) {transition-delay: 1.1s;}
-        .content__item__desc span:nth-child(12) {transition-delay: 1.2s;}
-        .content__item__desc span:nth-child(13) {transition-delay: 1.3s;}
-        .content__item__desc span:nth-child(14) {transition-delay: 1.4s;}
-        .content__item__desc span:nth-child(15) {transition-delay: 1.5s;}
-        .content__item__desc span:nth-child(16) {transition-delay: 1.6s;}
-        .content__item__desc span:nth-child(17) {transition-delay: 1.7s;}
-        .content__item__desc span:nth-child(18) {transition-delay: 1.8s;}
-        .content__item__desc span:nth-child(19) {transition-delay: 1.9s;}
-        .content__item__desc span:nth-child(20) {transition-delay: 2.0s;}
-
-        .content__item__desc.show span:nth-child(1)  {opacity: 1;}
-        .content__item__desc.show span:nth-child(2)  {opacity: 1;}
-        .content__item__desc.show span:nth-child(3)  {opacity: 1;}
-        .content__item__desc.show span:nth-child(4)  {opacity: 1;}
-        .content__item__desc.show span:nth-child(5)  {opacity: 1;}
-        .content__item__desc.show span:nth-child(6)  {opacity: 1;}
-        .content__item__desc.show span:nth-child(7)  {opacity: 1;}
-        .content__item__desc.show span:nth-child(8)  {opacity: 1;}
-        .content__item__desc.show span:nth-child(9)  {opacity: 1;}
-        .content__item__desc.show span:nth-child(10) {opacity: 1;}
-        .content__item__desc.show span:nth-child(11) {opacity: 1;}
-        .content__item__desc.show span:nth-child(12) {opacity: 1;}
-        .content__item__desc.show span:nth-child(13) {opacity: 1;}
-        .content__item__desc.show span:nth-child(14) {opacity: 1;}
-        .content__item__desc.show span:nth-child(15) {opacity: 1;}
-        .content__item__desc.show span:nth-child(16) {opacity: 1;}
-        .content__item__desc.show span:nth-child(17) {opacity: 1;}
-        .content__item__desc.show span:nth-child(18) {opacity: 1;}
-        .content__item__desc.show span:nth-child(19) {opacity: 1;}
-        .content__item__desc.show span:nth-child(20) {opacity: 1;} */
-        
-
-        /* 순차적으로 나타나기 */
-        #section1 .content__item__desc span {
-            opacity: 0;
-            min-width: 1.4vw;
-            transition: all 0.33s ease-in-out;
-        }
-        #section1 .content__item__desc span.show {
-            opacity: 1;
-        }
-
-        /* section2 */
-        #section2 .content__item__desc span {
-            opacity: 0;
-            display: inline-block;
-            min-width: 1.4vw;
-            transform: translateY(70px);
-            transition: all 0.33s cubic-bezier(0, 0.52, 0.58, 1);
-        }
-        #section2 .content__item__desc span.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* section3 */
-        #section3 .content__item__desc span {
-            display: inline-block;
-            min-width: 1.4vw;
+        .reveal > span,
+        .reveal > div {
             opacity: 0;
         }
-        #section3 .content__item__desc span.show {
-            opacity: 1;
-            animation: tada 0.3s;
+        .reveal.show > span,
+        .reveal.show > div {
+            animation: opacity 1s linear forwards;
         }
-        @keyframes tada {
-            0% {transform: scaleX(1)}
-            10%, 20% {transform: scale3d(.9, .9, .9) rotate(-3deg)}
-            30%, 50%, 70%, 90% {transform: scale3d(1.1, 1.1, 1.1) rotate(3deg)}
-            40%, 60%, 80% {transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg)}
-            100% {transform: scaleX(1)}
+        .reveal {
+            position: relative;
+        }
+        .reveal::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0; 
+            height: 100%;
+            background: #fff;
+            z-index: 1;
+        }
+        .reveal.reveal-two::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            z-index: 1;
+            background: orange;
         }
 
-        /* section4 */
-        #section4 .content__item__desc span {
-            display: inline-block;
-            min-width: 1.4vw;
-            opacity: 0;
+        /* 기본값 */
+        .reveal.show::before {
+            animation: reveal 1s;
         }
-        #section4 .content__item__desc span.show {
-            opacity: 1;
-            animation: rubberBand 1s;
+        .reveal.reveal-RTL.show::before {
+            animation: reveal-RTL 1s;
         }
-        @keyframes rubberBand {
-            0% {
-                opacity: 0;
-                transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
-                animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-            }
+        .reveal.reveal-TTB.show::before {
+            animation: reveal-TTB 1s;
+        }
+        .reveal.reveal-BTT.show::before {
+            animation: reveal-BTT 1s;
+        }
 
-            60% {
-                opacity: 1;
-                transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
-                animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
-            }
+        /* 두가지 */
+        .reveal.show::after {
+            animation: reveal 1000ms 300ms;
+        }
+        .reveal.reveal-RTL.show::after {
+            animation: reveal-RTL 1000ms 300ms;
+        }
+        .reveal.reveal-TTB.show::after {
+            animation: reveal-TTB 1000ms 300ms;
+        }
+        .reveal.reveal-BTT.show::after {
+            animation: reveal-BTT 1000ms 300ms;
+        }
+
+        @keyframes opacity {
+            0%   {opacity: 0;}
+            60%  {opacity: 0;}
+            70%  {opacity: 1;}
+            100% {opacity: 1;}
+        }
+        @keyframes reveal {
+            0%   {width: 0;    left: 0}
+            50%  {width: 100%; left: 0}
+            80%  {width: 100%; left: 0}
+            100% {width: 0;    left: 100%}
+        }
+        @keyframes reveal-RTL {
+            0%   {width: 0;    right: 0}
+            50%  {width: 100%; right: 0}
+            80%  {width: 100%; right: 0}
+            100% {width: 0;    right: 100%}
+        }
+        @keyframes reveal-TTB {
+            0%   {width: 100%; height: 0;    top: 0}
+            50%  {width: 100%; height: 100%; top: 0}
+            80%  {width: 100%; height: 100%; top: 0}
+            100% {width: 100%; height: 0;    top: 100%}
+        }
+        @keyframes reveal-BTT {
+            0%   {width: 100%; height: 0;    top: auto; bottom: 0}
+            50%  {width: 100%; height: 100%; top: auto; bottom: 0}
+            80%  {width: 100%; height: 100%; top: auto; bottom: 0}
+            100% {width: 100%; height: 0;    top: auto; bottom: 100%}
         }
     </style>
 </head>
 <body>
 
     <header id="parallax__title">
-        <h1><a href="parallaxEffect.html">JavaScript Parallax Effect06</a></h1>
-        <p>패럴랙스 스크롤링 효과 - 텍스트 효과</p>
+        <h1><a href="parallaxEffect.html">JavaScript Parallax Effect07</a></h1>
+        <p>패럴랙스 스크롤링 효과 - 리빌 효과</p>
         <ul>
             <li><a href="parallaxEffect01.html">1</a></li>
             <li><a href="parallaxEffect02.html">2</a></li>
             <li><a href="parallaxEffect03.html">3</a></li>
             <li><a href="parallaxEffect04.html">4</a></li>
             <li><a href="parallaxEffect05.html">5</a></li>
-            <li class="active"><a href="parallaxEffect06.html">6</a></li>
-            <li><a href="parallaxEffect07.html">7</a></li>
+            <li><a href="parallaxEffect06.html">6</a></li>
+            <li class="active"><a href="parallaxEffect07.html">7</a></li>
         </ul>
     </header>
     <!-- //parallax__title  -->
@@ -321,70 +298,70 @@
             <section id="section1" class="content__item">
                 <span class="content__item__num">01</span>
                 <h2 class="content__item__title">Section1</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">높은 목표를 세우고, 스스로 채찍질 한다.</p>
+                <p class="content__item__desc reveal">높은 목표를 세우고, 스스로 채찍질 한다.</p>
             </section>
             <!-- //section1 -->
     
             <section id="section2" class="content__item">
                 <span class="content__item__num">02</span>
                 <h2 class="content__item__title">Section2</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-RTL">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">결과도 중요하지만, 과정을 더 중요하게 생각한다.</p>
+                <p class="content__item__desc reveal reveal-RTL">결과도 중요하지만, 과정을 더 중요하게 생각한다.</p>
             </section>
             <!-- //section2 -->
     
             <section id="section3" class="content__item">
                 <span class="content__item__num">03</span>
                 <h2 class="content__item__title">Section3</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-TTB">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">매 순간에 최선을 다하고, 끊임없이 변화한다.</p>
+                <p class="content__item__desc reveal reveal-TTB">매 순간에 최선을 다하고, 끊임없이 변화한다.</p>
             </section>
             <!-- //section3 -->
     
             <section id="section4" class="content__item">
                 <span class="content__item__num">04</span>
                 <h2 class="content__item__title">Section4</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-BTT">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">모든 일에는 기본을 중요하게 생각한다.</p>
+                <p class="content__item__desc reveal reveal-BTT">모든 일에는 기본을 중요하게 생각한다.</p>
             </section>
             <!-- //section4 -->
     
             <section id="section5" class="content__item">
                 <span class="content__item__num">05</span>
                 <h2 class="content__item__title">Section5</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-two">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">열정을 잃지 않고 실패에서 실패로 걸어가는 것이 성공이다.</p>
+                <p class="content__item__desc reveal reveal-two">열정을 잃지 않고 실패에서 실패로 걸어가는 것이 성공이다.</p>
             </section>
             <!-- //section5 -->
     
             <section id="section6" class="content__item">
                 <span class="content__item__num">06</span>
                 <h2 class="content__item__title">Section6</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-two reveal-RTL">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">천 마디 말보단 하나의 행동이 더 값지다.</p>
+                <p class="content__item__desc reveal reveal-two reveal-RTL">천 마디 말보단 하나의 행동이 더 값지다.</p>
             </section>
             <!-- //section6 -->
     
             <section id="section7" class="content__item">
                 <span class="content__item__num">07</span>
                 <h2 class="content__item__title">Section7</h2>
-                <figure class="content__item__imgWrap">
+                <figure class="content__item__imgWrap reveal reveal-two reveal-BTT">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">조그만 성공에 만족하지 않으며, 방심을 경계한다.</p>
+                <p class="content__item__desc reveal reveal-two" data-delay="500">조그만 성공에 만족하지 않으며, 방심을 경계한다.</p>
             </section>
             <!-- //section7 -->
     
@@ -404,7 +381,7 @@
                 <figure class="content__item__imgWrap">
                     <div class="content__item__img"></div>
                 </figure>
-                <p class="content__item__desc">꿈이 있다면, 그 꿈을 잡고 절대 놓아주지마라.</p>
+                <p class="content__item__desc reveal reveal-text">꿈이 있다면, 그 꿈을 잡고 절대 놓아주지마라.</p>
             </section>
             <!-- //section9 -->
         </div>
@@ -421,46 +398,45 @@
     <!-- script -->
     <script src="js/gsap.min.js"></script>
     <script>
-        //글씨 쪼개기
-        // let text = document.querySelector("#section1 .content__item__desc");
-        // let splitText = text.innerText;
-        // let splitWrap = splitText.split('').join("</span><span>");
-        //     splitWrap = "<span>" + splitWrap + "</span>";
-        //     text.innerHTML = splitWrap;
-        
-        //여러개 글씨 쪼개기
-        document.querySelectorAll(".content__item__desc").forEach(desc => {
-            let splitText = desc.innerText;
-            let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");
-                splitWrap = "<span aria-hidden='true'>" + splitWrap + "</span>";
-                desc.innerHTML = splitWrap;
-                desc.setAttribute("aria-label", splitText);
-        })
+
+        //만약에 reveal 클래스가 있는데 
+        //글씨를 span으로 감싸주고 
+        //글씨를 다 넣어줘요 함
+
+        document.querySelectorAll(".reveal-text").forEach(reveal => {
+            let revealText = reveal.innerText;
+            let revealWrap = "<span>" + revealText + "</span>";
+            reveal.innerHTML = revealWrap;
+        });
 
         function scroll(){
-            let scrollTop = (window.pageYOffset || document.documentElement.scrollTop || window.scrollY);
-            document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+            
+            const reveal = document.querySelectorAll(".reveal");
 
-            // document.querySelectorAll(".content__item").forEach(item => {
-            //     if(scrollTop >= item.offsetTop){
-            //         item.querySelector(".content__item__desc").classList.add("show");
-            //     }
-            // })
+            reveal.forEach(elem => {
+                let revealOffetset = elem.offsetTop + elem.parentElement.offsetTop;
+                let revealDelay = elem.dataset.delay;
+                
+                // if(scrollTop >= revealOffetset - window.innerHeight/2){
+                //     elem.classList.add("show");
+                // }
 
-            document.querySelectorAll(".content__item").forEach(item => {
-                if(scrollTop > item.offsetTop){
-                    item.querySelectorAll(".content__item__desc span").forEach((span, index) => {
+                if(scrollTop >= revealOffetset - window.innerHeight/2){
+                    if(revealDelay == undefined){
+                        elem.classList.add("show");
+                    } else {
                         setTimeout(() => {
-                            span.classList.add("show");
-                        }, 50 * (index+1))
-                    })
+                            elem.classList.add("show");
+                        }, revealDelay)
+                    }
                 }
             })
 
+            document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
             requestAnimationFrame(scroll);
         }
         scroll();
-
     </script>
 </body>
 </html>

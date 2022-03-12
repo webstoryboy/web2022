@@ -1,0 +1,128 @@
+/* 배너 유형01 */
+.banner-wrap {
+    background-image: url(../img/banner_bg01@2x.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* height: 500px; */
+}
+.banner__inner {
+    text-align: center;
+    color: #fff;
+}
+.banner__title {
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+.banner__desc {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 70px;
+}
+.banner__desc a {
+    display: block;
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 70px;
+}
+.banner__sub {
+    font-size: 16px;
+    font-weight: 300;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+/* 이미지 유형01 */
+.image-wrap {
+    width: 100%;
+    /* background: rgba(0,0,0,0.2); */
+}
+.image__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.image__inner .image {
+    width: 570px;
+    position: relative;
+}
+.image__figure img {
+    width: 100%;
+    vertical-align: top;
+}
+.image__body {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    color: #fff;
+    text-align: left;
+}
+.image__title {
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+.image__desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 16px;
+}
+.image__btn {
+    text-decoration: none;
+    color: #fff;
+    background: #BE4E15;
+    padding: 10px 20px;
+    display: inline-block;
+}
+.image__btn.yellow {
+    background: #C9931D;
+}
+
+/* 카드 유형01 */
+.card-wrap {
+    text-align: center;
+    /* background: rgba(0,0,0,0.1); */
+}
+.card__inner {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+}
+.card__inner > .card {
+    width: 32%;
+    background: #F5F5F5;
+}
+.card__img {
+    width: 100%;
+}
+.card__body {
+    padding: 20px;
+}
+.card__title {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.card__desc {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #5b5b5b;
+    font-weight: 300;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; 
+    -webkit-box-orient: vertical;
+}
+.card__btn {
+    font-size: 16px;
+    font-weight: 400;
+    color: #5b5b5b;
+    text-decoration: none;
+}

@@ -1,4 +1,4 @@
-# web2022
+# web2022 : 이번엔 끈내자!!!
 
 ## WEBS : 사이트 만들기
 
@@ -25,6 +25,7 @@
 ### Classic 이미지/텍스트 유형
 01. 이미지/텍스트 유형01 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/05_imgText/imgText_doc01.html">문서</a>  
 
+<br>
 
 ## WEBS : 스크립트 조작하기
 
@@ -39,10 +40,14 @@
 ### Classic 요소 객체
 ### Classic 이벤트 객체
 
+<br>
+
 ## WEBS : 스크립트 실행하기
 
 ### Classic 메뉴 이펙트
 ### Classic 검색 이펙트
+01. 검색 이펙트 유형01 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/searchEffect_doc01.html">문서</a>  
+
 ### Classic 마우스 이펙트
 ### Classic 패럴랙스 이펙트
 ### Classic 슬라이드 이펙트

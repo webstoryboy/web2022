@@ -70,33 +70,27 @@
     <a href="#">문서, </a>  
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc06.html">결과보기(O)</a> 
 
-> 01   
-    검색하기      
+> 01       
     indexOf()를 이용하여 CSS 속성 검색하기   
     querySelector, querySelectorAll, addEventListener, value, dataset, indexOf, classList, if문   
 
 > 02   
-    검색하기   
     includes()를 이용하여 CSS 속성 검색하기   
     querySelector, querySelectorAll, addEventListener, value, dataset, includes, classList, innerHTML, if문, forEach   
 
 > 03
-    검색하기   
     charAt()를 이용하여 알파벳 별로 검색하기   
     querySelector, querySelectorAll, addEventListener, value, dataset, forEach, innerText, dataset, charAt, classList  
 
 > 04   
-    검색하기   
     find()를 이용하여 속성을 검색하면 설명 보여주기
     querySelector, querySelectorAll, addEventListener, value, dataset, forEach, 배열, 객체, 함수, if문, map(), innerText, textContent, innerHTML
 
 > 05 
-    검색하기  
     filter()를 이용하여 조회수 검색하기
     querySelector, querySelectorAll, addEventListener, value, dataset, 배열, 객체, 함수, for of, filter, innerHTML 
-    
+
 > 06   
-    검색하기   
     sort(), reverse()를 이용하여 정렬하기   
     querySelector, querySelectorAll, addEventListener, value, dataset, 배열, 객체, 함수, forEach, reverse, sort, localeCompare, localeCompare
     
@@ -122,33 +116,27 @@
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_result05.html">결과보기(O)</a>
 
 > 01   
-    주관식      
-    버튼을 클릭하면 정답을 보여주는 스타일   
+    주관식 : 버튼을 클릭하면 정답을 보여주는 스타일   
     querySelector, textContent, classList, style   
 
 > 02   
-    주관식   
-    정답을 적고 확인하는 스타일   
+    주관식 : 정답을 적고 확인하는 스타일   
     querySelector, textContent, addEventListener, classList, style, if문   
 
 > 03   
-    주관식  
-    정답을 적고 정답을 확인, 여러 문제   
+    주관식 : 정답을 적고 정답을 확인, 여러 문제   
     querySelector, querySelectorAll, textContent, innerHTML, addEventListener, classList, style, if문, forEach문, 배열
 
 > 04   
-    객관식   
-    정답을 선택하고 정답 확인하기, 한 문제   
+    객관식 : 정답을 선택하고 정답 확인하기, 한 문제   
     querySelector, querySelectorAll, 배열, 함수, for문, if문, checked, value, classList, style
 
 > 05   
-    객관식   
-    정답을 선택하고 정답 확인하기, 여러 문제를 풀고 정답과 오답을 알려주는 스타일   
+    객관식 : 정답을 선택하고 정답 확인하기, 여러 문제를 풀고 정답과 오답을 알려주는 스타일   
     querySelector, querySelectorAll, 배열, 객체, 함수, forEach, push, innerHTML, join, style, classList, addEventListener, createElement, checked, value, appendChild, if문 
 
-> 06   
-    객관식   
-    정답을 선택하고 정답 확인하기, 다수의 문제를 이미지 슬라이드 형식으로 보여주는 스타일
+> 06(X)   
+    객관식 : 정답을 선택하고 정답 확인하기, 다수의 문제를 이미지 슬라이드 형식으로 보여주는 스타일
 
 
 

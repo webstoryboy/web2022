@@ -78,5 +78,25 @@
 ### Classic 패럴랙스 이펙트
 01. 패럴랙스 이펙트 유형01 : 
 <a href="#">문서</a>, 
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/07_parallax/parallaxEffect_doc01.html">결과</a>
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/07_parallax/parallaxEffect_doc01.html">결과(0)</a>
+
+02. 패럴랙스 이펙트 유형02 : 
+<a href="#">문서</a>, 
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/07_parallax/parallaxEffect_doc02.html">결과(0)</a>
+
+03. 패럴랙스 이펙트 유형03 : 
+<a href="#">문서</a>, 
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/07_parallax/parallaxEffect_doc03.html">결과(0)</a>
+
+04. 패럴랙스 이펙트 유형04 : 
+<a href="#">문서</a>, 
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/07_parallax/parallaxEffect_doc04.html">결과(0)</a>
+
+05. 패럴랙스 이펙트 유형05 : 
+<a href="#">문서</a>, 
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/07_parallax/parallaxEffect_doc05.html">결과(0)</a>
+
+06. 패럴랙스 이펙트 유형06 : 
+<a href="#">문서</a>, 
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/07_parallax/parallaxEffect_doc06.html">결과(0)</a>
 

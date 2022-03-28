@@ -70,15 +70,22 @@
     <a href="#">문서, </a>
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_result05.html">결과보기(O)</a>
 
-> 01
-    주관식   
+> 01   
+    주관식      
     버튼을 클릭하면 정답을 보여주는 스타일   
     querySelector, textContent, classList, style   
-    
+
 > 02   
     주관식   
     정답을 적고 확인하는 스타일   
-    querySelector, textContent, addEventListener,  classList, style, if문
+    querySelector, textContent, addEventListener, classList, style, if문   
+
+> 03   
+    주관식  
+    정답을 적고 정답을 확인, 여러 문제   
+    querySelector, querySelectorAll, textContent, innerHTML, addEventListener, classList, style, if문, forEach문, 배열
+
+
 
 
 

@@ -53,6 +53,15 @@
 04. 검색 이펙트 유형05 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/searchEffect_doc05.html">문서</a> 
 05. 검색 이펙트 유형06 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/searchEffect_doc06.html">문서</a> 
 
+### Classic 퀴즈 이펙트
+01. 퀴즈 이펙트 유형01 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_doc01.html">문서</a>
+01. 퀴즈 이펙트 유형02 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_doc02.html">문서</a>
+01. 퀴즈 이펙트 유형03 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_doc03.html">문서</a>
+01. 퀴즈 이펙트 유형04 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_doc04.html">문서</a>
+01. 퀴즈 이펙트 유형05 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_doc05.html">문서</a>
+01. 퀴즈 이펙트 유형06 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_doc06.html">문서</a>
+01. 퀴즈 이펙트 유형07 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_doc07.html">문서</a>
+
 ### Classic 마우스 이펙트
 ### Classic 패럴랙스 이펙트
 ### Classic 슬라이드 이펙트

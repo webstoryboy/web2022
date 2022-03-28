@@ -55,47 +55,33 @@
 
 ### Classic 메뉴 이펙트
 ### Classic 검색 이펙트
-01. 검색 이펙트 유형01 : 
-    <a href="#">문서, </a>
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc01.html">결과보기</a>  
-02. 검색 이펙트 유형02 : 
-    <a href="#">문서, </a>
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc02.html">결과보기</a>  
-02. 검색 이펙트 유형03 : 
-    <a href="#">문서, </a>
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc03.html">결과보기</a>  
-03. 검색 이펙트 유형04 :
-    <a href="#">문서, </a>
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc04.html">결과보기</a>  
-04. 검색 이펙트 유형05 : 
-    <a href="#">문서, </a>
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc05.html">결과보기</a>
-05. 검색 이펙트 유형06 : 
-    <a href="#">문서, </a>
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc06.html">결과보기</a> 
-
 > 01 검색 이펙트 유형01 : 
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc01.html">결과보기</a>   
     indexOf()를 이용하여 CSS 속성 검색하기   
     querySelector, querySelectorAll, addEventListener, value, dataset, indexOf, classList, if문   
 
-> 02   
+> 02 검색 이펙트 유형02 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc02.html">결과보기</a>
     includes()를 이용하여 CSS 속성 검색하기   
     querySelector, querySelectorAll, addEventListener, value, dataset, includes, classList, innerHTML, if문, forEach   
 
-> 03
+> 03 검색 이펙트 유형03 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc03.html">결과보기</a>   
     charAt()를 이용하여 알파벳 별로 검색하기   
     querySelector, querySelectorAll, addEventListener, value, dataset, forEach, innerText, dataset, charAt, classList  
 
-> 04   
+> 04 검색 이펙트 유형04 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc04.html">결과보기</a>   
     find()를 이용하여 속성을 검색하면 설명 보여주기
     querySelector, querySelectorAll, addEventListener, value, dataset, forEach, 배열, 객체, 함수, if문, map(), innerText, textContent, innerHTML
 
-> 05 
+> 05 검색 이펙트 유형05 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc05.html">결과보기</a>   
     filter()를 이용하여 조회수 검색하기
     querySelector, querySelectorAll, addEventListener, value, dataset, 배열, 객체, 함수, for of, filter, innerHTML 
 
-> 06   
+> 06 검색 이펙트 유형06 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc06.html">결과보기</a>    
     sort(), reverse()를 이용하여 정렬하기   
     querySelector, querySelectorAll, addEventListener, value, dataset, 배열, 객체, 함수, forEach, reverse, sort, localeCompare, localeCompare
     

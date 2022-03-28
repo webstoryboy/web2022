@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>패럴랙스 효과</title>
-
+    <title>패랠랙스 이펙트</title>
     <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -61,15 +59,11 @@
         #parallax__nav {
             position: fixed;
             right: 20px;
-            top: -200px;
+            top: 20px;
             z-index: 1000;
             background-color: rgba(0,0,0,0.4);
             padding: 15px 20px;
             border-radius: 50px;
-            transition: top 0.3s ease-in-out;
-        }
-        #parallax__nav.show {
-            top: 20px;
         }
         #parallax__nav li {
             list-style: none;
@@ -77,14 +71,16 @@
         }
         #parallax__nav li a {
             display: inline-block;
-            padding: 5px 20px;
+            width: 30px; 
+            height: 30px;
+            padding: 5px;
             text-align: center;
             line-height: 30px;
         }
         #parallax__nav li.active a {
             background: #fff;
             color: #000;
-            border-radius: 30px;
+            border-radius: 50%;
         }
         #parallax__cont {
             max-width: 1600px;
@@ -139,12 +135,12 @@
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
-            filter: saturate(0%);
-            transition: all 1s;
+            /* filter: saturate(0%); */
+            /* transition: transform 0.33s linear; */
         }
         .content__item__img:hover {
-            filter: saturate(100%);
-            transform: scale(1.025);
+            /* filter: saturate(100%);
+            transform: scale(1.025); */
         }
         .content__item:nth-child(1) .content__item__img {
             background-image: url(img/images01@2.jpg);
@@ -186,129 +182,23 @@
             margin-left: auto;
             margin-right: -4vw;
         }
-
-        #parallax__footer {}
-
-        /* info */
-        .scrollTop {
-            position: fixed;
-            left: 20px;
-            bottom: 20px;
-            z-index: 1000;
-            background: rgba(0,0,0,0.4);
-            color: #fff;
-            padding: 10px 30px;
-            border-radius: 50px;
-        }
-        .scrollInfo {
-            position: fixed;
-            left: 20px;
-            bottom: 70px;
-            z-index: 1000;
-            background: rgba(0,0,0,0.4);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 10px;
-        }
-        .scrollInfo li {
-            list-style: none;
-            line-height: 1.6;
-        }
-
-        /* option */
-        /* 한번에 나타나기 */
-        /* #contents > section {
-            opacity: 0;
-            transition: all 1s;
-        }
-        #contents > section.show {
-            opacity: 1;
-        } */
-
-        /* 개별적으로 나타나기 */
-        #contents > section .content__item__num {
-            opacity: 0;
-            transform: translateY(200px);
-            transition: all 1s 0.1s cubic-bezier(0, 0.38, 0.21, 0.99);
-        }
-        #contents > section .content__item__title {
-            opacity: 0;
-            transform: translateX(-100px);
-            transition: all 1s 0.3s cubic-bezier(0, 0.38, 0.21, 0.99);
-        }
-        #contents > section .content__item__imgWrap {
-            opacity: 0;
-            transform: translateY(200px) rotate(30deg) skew(20deg);
-            transition: all 1s 0.6s cubic-bezier(0, 0.38, 0.21, 0.99);
-        }
-        #contents > section .content__item__desc {
-            opacity: 0;
-            transform: translateX(-200px);
-            transition: all 1s 0.9s cubic-bezier(0, 0.38, 0.21, 0.99);
-        }
-        
-        #contents > section.show .content__item__num {
-            opacity: 0.07;
-            transform: translateY(0);
-        }
-        #contents > section.show .content__item__title {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        #contents > section.show .content__item__imgWrap {
-            opacity: 1;
-            transform: translateY(0) rotate(0) skew(0);
-        }
-        #contents > section.show .content__item__desc {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        #contents > section:nth-child(even) .content__item__title {
-            transform: translateX(100px);
-        }
-        #contents > section:nth-child(even).show .content__item__title {
-            transform: translateX(0);
-        }
-        #contents > section:nth-child(even) .content__item__desc {
-            transform: translateX(200px);
-        }
-        #contents > section:nth-child(even).show .content__item__desc {
-            transform: translateX(0);
-        }
     </style>
 </head>
 <body>
-
     <header id="parallax__title">
         <h1><a href="parallaxEffect.html">JavaScript Parallax Effect04</a></h1>
-        <p>패럴랙스 스크롤링 효과 - 나타나기</p>
+        <p>패럴랙스 스크롤링 효과 - 이질감 효과</p>
         <ul>
-            <li><a href="parallaxEffect01.html">1</a></li>
-            <li><a href="parallaxEffect02.html">2</a></li>
-            <li><a href="parallaxEffect03.html">3</a></li>
-            <li class="active"><a href="parallaxEffect04.html">4</a></li>
-            <li><a href="parallaxEffect05.html">5</a></li>
-            <li><a href="parallaxEffect06.html">6</a></li>
-            <li><a href="parallaxEffect07.html">7</a></li>
+            <li><a href="parallax_result01.html">1</a></li>
+            <li><a href="parallax_result02.html">2</a></li>
+            <li><a href="parallax_result03.html">3</a></li>
+            <li class="active"><a href="parallax_result04.html">4</a></li>
+            <li><a href="parallax_result05.html">5</a></li>
+            <li><a href="parallax_result06.html">6</a></li>
+            <li><a href="parallax_result07.html">7</a></li>
         </ul>
     </header>
     <!-- //parallax__title  -->
-
-    <nav id="parallax__nav">
-        <ul>
-            <li class="active"><a href="#section1"><span>메뉴1</span></a></li>
-            <li><a href="#section2"><span>메뉴2</span></a></li>
-            <li><a href="#section3"><span>메뉴3</span></a></li>
-            <li><a href="#section4"><span>메뉴4</span></a></li>
-            <li><a href="#section5"><span>메뉴5</span></a></li>
-            <li><a href="#section6"><span>메뉴6</span></a></li>
-            <li><a href="#section7"><span>메뉴7</span></a></li>
-            <li><a href="#section8"><span>메뉴8</span></a></li>
-            <li><a href="#section9"><span>메뉴9</span></a></li>
-        </ul>
-    </nav>
-    <!-- //parallax__dot -->
 
     <main id="parallax__cont">
         <div id="contents">
@@ -403,30 +293,32 @@
             <!-- //section9 -->
         </div>
     </main>
-    <!-- //main -->
+    <!-- //parallax__cont -->
 
-    <!-- info -->
-    <div class="scrollTop">
-        scrollTop : <span>0</span>px
-    </div>
-    <!-- //info -->
-
-
-    <!-- script -->
     <script>
-        function scroll(){
-            let scrollTop = (window.pageYOffset || document.documentElement.scrollTop || window.scrollY);
-            document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
+        const parallaxItem = document.querySelectorAll(".content__item");
 
-            document.querySelectorAll(".content__item").forEach(el => {
-                if(scrollTop >= el.offsetTop - window.innerHeight ){
-                    el.classList.add("show");
-                } 
+        function scroll(){
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+
+            // const img = document.querySelector("#section1 .content__item__img")
+            // img.style.transform = "translateY("+scrollTop/10+"px)";
+
+            parallaxItem.forEach(item => {
+                let offset1 = (scrollTop - item.offsetTop) * 0.1;
+                let offset2 = (scrollTop - item.offsetTop) * 0.15;
+                
+                const target1 = item.querySelector(".content__item__img");
+                const target2 = item.querySelector(".content__item__desc");
+
+                target1.style.transform = `translateY(${offset1}px)`;
+                target2.style.transform = `translateY(${-offset2}px)`;
             })
+
             requestAnimationFrame(scroll);
         }
         scroll();
-
     </script>
+
 </body>
 </html>

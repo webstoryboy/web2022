@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>패랠랙스 이펙트</title>
+    <title>패럴랙스 효과</title>
+
     <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -59,11 +61,15 @@
         #parallax__nav {
             position: fixed;
             right: 20px;
-            top: 20px;
+            top: -200px;
             z-index: 1000;
             background-color: rgba(0,0,0,0.4);
             padding: 15px 20px;
             border-radius: 50px;
+            transition: top 0.3s ease-in-out;
+        }
+        #parallax__nav.show {
+            top: 20px;
         }
         #parallax__nav li {
             list-style: none;
@@ -71,16 +77,14 @@
         }
         #parallax__nav li a {
             display: inline-block;
-            width: 30px; 
-            height: 30px;
-            padding: 5px;
+            padding: 5px 20px;
             text-align: center;
             line-height: 30px;
         }
         #parallax__nav li.active a {
             background: #fff;
             color: #000;
-            border-radius: 50%;
+            border-radius: 30px;
         }
         #parallax__cont {
             max-width: 1600px;
@@ -183,6 +187,34 @@
             margin-right: -4vw;
         }
 
+        #parallax__footer {}
+
+        /* info */
+        .scrollTop {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 1000;
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            padding: 10px 30px;
+            border-radius: 50px;
+        }
+        .scrollInfo {
+            position: fixed;
+            left: 20px;
+            bottom: 70px;
+            z-index: 1000;
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        .scrollInfo li {
+            list-style: none;
+            line-height: 1.6;
+        }
+
         /* option */
         /* 한번에 나타나기 */
         /* #contents > section {
@@ -247,20 +279,36 @@
     </style>
 </head>
 <body>
+
     <header id="parallax__title">
-        <h1><a href="parallaxEffect.html">JavaScript Parallax Effect03</a></h1>
+        <h1><a href="parallaxEffect.html">JavaScript Parallax Effect04</a></h1>
         <p>패럴랙스 스크롤링 효과 - 나타나기</p>
         <ul>
-            <li><a href="parallax_result01.html">1</a></li>
-            <li><a href="parallax_result02.html">2</a></li>
-            <li class="active"><a href="parallax_result03.html">3</a></li>
-            <li><a href="parallax_result04.html">4</a></li>
-            <li><a href="parallax_result05.html">5</a></li>
-            <li><a href="parallax_result06.html">6</a></li>
-            <li><a href="parallax_result07.html">7</a></li>
+            <li><a href="parallaxEffect01.html">1</a></li>
+            <li><a href="parallaxEffect02.html">2</a></li>
+            <li><a href="parallaxEffect03.html">3</a></li>
+            <li class="active"><a href="parallaxEffect04.html">4</a></li>
+            <li><a href="parallaxEffect05.html">5</a></li>
+            <li><a href="parallaxEffect06.html">6</a></li>
+            <li><a href="parallaxEffect07.html">7</a></li>
         </ul>
     </header>
     <!-- //parallax__title  -->
+
+    <nav id="parallax__nav">
+        <ul>
+            <li class="active"><a href="#section1"><span>메뉴1</span></a></li>
+            <li><a href="#section2"><span>메뉴2</span></a></li>
+            <li><a href="#section3"><span>메뉴3</span></a></li>
+            <li><a href="#section4"><span>메뉴4</span></a></li>
+            <li><a href="#section5"><span>메뉴5</span></a></li>
+            <li><a href="#section6"><span>메뉴6</span></a></li>
+            <li><a href="#section7"><span>메뉴7</span></a></li>
+            <li><a href="#section8"><span>메뉴8</span></a></li>
+            <li><a href="#section9"><span>메뉴9</span></a></li>
+        </ul>
+    </nav>
+    <!-- //parallax__dot -->
 
     <main id="parallax__cont">
         <div id="contents">
@@ -355,24 +403,30 @@
             <!-- //section9 -->
         </div>
     </main>
-    <!-- //parallax__cont -->
+    <!-- //main -->
 
+    <!-- info -->
+    <div class="scrollTop">
+        scrollTop : <span>0</span>px
+    </div>
+    <!-- //info -->
+
+
+    <!-- script -->
     <script>
-        const parallaxItem = document.querySelectorAll(".content__item");
-
         function scroll(){
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+            let scrollTop = (window.pageYOffset || document.documentElement.scrollTop || window.scrollY);
+            document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
 
-            parallaxItem.forEach(item => {
-                if(scrollTop >= item.offsetTop - window.innerHeight ){
-                    item.classList.add("show");
+            document.querySelectorAll(".content__item").forEach(el => {
+                if(scrollTop >= el.offsetTop - window.innerHeight ){
+                    el.classList.add("show");
                 } 
             })
-
             requestAnimationFrame(scroll);
         }
         scroll();
-    </script>
 
+    </script>
 </body>
 </html>

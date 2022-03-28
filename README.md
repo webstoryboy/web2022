@@ -63,11 +63,20 @@
 01. 퀴즈 이펙트 유형07 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_doc07.html">문서</a>
 
 ### Classic 마우스 이펙트
-### Classic 패럴랙스 이펙트
+
 ### Classic 슬라이드 이펙트
 ### Classic 게임 이펙트
 
 
 
 
+
+<br>
+
+## WEBS : 패럴랙스 사이트 만들기
+
+### Classic 패럴랙스 이펙트
+01. 패럴랙스 이펙트 유형01 : 
+<a href="#">문서</a>, 
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/07_parallax/parallaxEffect_doc01.html">결과</a>
 

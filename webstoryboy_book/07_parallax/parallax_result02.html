@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>패럴랙스 효과</title>
-
+    <title>패랠랙스 이펙트</title>
     <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -38,14 +36,38 @@
         #parallax__title p {
             font-size: 16px;
         }
+        #parallax__title ul {
+            margin-top: 10px;
+        }
+        #parallax__title li {
+            display: inline;
+        }
+        #parallax__title li a {
+            width: 20px; 
+            height: 20px;
+            border-radius: 50%;
+            border: 1px dashed #fff;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+        #parallax__title li.active a {
+            background: #fff;
+            color: #000;
+        }
         #parallax__nav {
             position: fixed;
             right: 20px;
-            top: 20px;
+            top: -200px;
             z-index: 1000;
             background-color: rgba(0,0,0,0.4);
             padding: 15px 20px;
             border-radius: 50px;
+            transition: top 0.3s ease;
+        }
+        #parallax__nav.show {
+            top: 20px;
         }
         #parallax__nav li {
             list-style: none;
@@ -53,16 +75,15 @@
         }
         #parallax__nav li a {
             display: inline-block;
-            width: 30px; 
             height: 30px;
-            padding: 5px;
+            padding: 5px 20px;
             text-align: center;
             line-height: 30px;
         }
         #parallax__nav li.active a {
             background: #fff;
             color: #000;
-            border-radius: 50%;
+            border-radius: 50px;
         }
         #parallax__cont {
             max-width: 1600px;
@@ -79,6 +100,7 @@
             margin-right: 0;
             position: relative;
             padding-top: 15vw;
+            min-height: 100vh;
         }
         .content__item:nth-child(even) {
             margin-left: 0;
@@ -164,11 +186,7 @@
             margin-left: auto;
             margin-right: -4vw;
         }
-
-        #parallax__footer {}
-
-        /* info */
-        .scrollTop {
+        .parallax__scrollTop {
             position: fixed;
             left: 20px;
             bottom: 20px;
@@ -178,77 +196,38 @@
             padding: 10px 30px;
             border-radius: 50px;
         }
-        .scrollInfo {
-            position: fixed;
-            left: 20px;
-            bottom: 70px;
-            z-index: 1000;
-            background: rgba(0,0,0,0.4);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 10px;
-        }
-        .scrollInfo li {
-            list-style: none;
-            line-height: 1.6;
-        }
-        #parallax__dot {
-            position: fixed;
-            right: 20px; top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            background: rgba(0,0,0,0.4);
-            padding: 20px 10px;
-            border-radius: 30px;
-        }
-        #parallax__dot li {
-            position: relative;
-            width: 20px; height: 20px;
-            border-radius: 50%;
-            list-style: none;
-            margin: 12px 8px;
-            box-shadow: 0 0 0 2px rgba(255,255,255,0);
-            transition: box-shadow .2s ease;
-        }
-        #parallax__dot li a {
-            background: #fff;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0; left: 0;
-            border-radius: 50%;
-            transition: transform .2s ease;
-        }
-        #parallax__dot li.active {
-            box-shadow: 0 0 0 2px rgba(255,255,255,1);
-        }
-        #parallax__dot li.active a {
-            transform: scale(0.4);
-        }
     </style>
 </head>
 <body>
-
     <header id="parallax__title">
         <h1><a href="parallaxEffect.html">JavaScript Parallax Effect02</a></h1>
-        <p>패럴랙스 스크롤링 효과 - 메뉴 이동</p>
+        <p>패럴랙스 스크롤링 효과 - 메뉴 숨김</p>
+        <ul>
+            <li><a href="parallax_result01.html">1</a></li>
+            <li class="active"><a href="parallax_result02.html">2</a></li>
+            <li><a href="parallax_result03.html">3</a></li>
+            <li><a href="parallax_result04.html">4</a></li>
+            <li><a href="parallax_result05.html">5</a></li>
+            <li><a href="parallax_result06.html">6</a></li>
+            <li><a href="parallax_result07.html">7</a></li>
+        </ul>
     </header>
     <!-- //parallax__title  -->
 
-    <nav id="parallax__dot">
+    <nav id="parallax__nav">
         <ul>
-            <li class="active"><a href="#section1"><span>s1</span></a></li>
-            <li><a href="#section2"><span>s2</span></a></li>
-            <li><a href="#section3"><span>s3</span></a></li>
-            <li><a href="#section4"><span>s4</span></a></li>
-            <li><a href="#section5"><span>s5</span></a></li>
-            <li><a href="#section6"><span>s6</span></a></li>
-            <li><a href="#section7"><span>s7</span></a></li>
-            <li><a href="#section8"><span>s8</span></a></li>
-            <li><a href="#section9"><span>s9</span></a></li>
+            <li class="active"><a href="#section1">메뉴1</a></li>
+            <li><a href="#section2">메뉴2</a></li>
+            <li><a href="#section3">메뉴3</a></li>
+            <li><a href="#section4">메뉴4</a></li>
+            <li><a href="#section5">메뉴5</a></li>
+            <li><a href="#section6">메뉴6</a></li>
+            <li><a href="#section7">메뉴7</a></li>
+            <li><a href="#section8">메뉴8</a></li>
+            <li><a href="#section9">메뉴9</a></li>
         </ul>
     </nav>
-    <!-- //parallax__dot -->
+    <!-- //parallax__nav -->
 
     <main id="parallax__cont">
         <div id="contents">
@@ -343,37 +322,51 @@
             <!-- //section9 -->
         </div>
     </main>
-    <!-- //main -->
+    <!-- //parallax__cont -->
 
-    <!-- info -->
-    <div class="scrollTop">
+    
+    <div class="parallax__scrollTop">
         scrollTop : <span>0</span>px
     </div>
-    <!-- //info -->
+    <!-- //parallax__scrollTop -->
 
-
-
-    <!-- script -->
     <script>
-        function scroll() {
+        const parallaxItem = document.querySelectorAll(".content__item");
+        const parallaxNav = document.querySelectorAll("#parallax__nav ul li");
+        let lastScrollTop = 0;
+
+        function scrollNav(){
+            document.querySelectorAll("#parallax__nav ul li a").forEach((li, index) => {
+                li.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    document.querySelector(li.getAttribute("href")).scrollIntoView({behavior:"smooth"})
+                })
+            });
+        }
+
+        function scroll(){
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
-            
-            document.querySelectorAll(".content__item").forEach((element, index) => {
-                if( scrollTop >= element.offsetTop -2 ){
-                    document.querySelectorAll("#parallax__dot li").forEach(li => {
-                        li.classList.remove("active");
-                    });
-                    document.querySelector("#parallax__dot li:nth-child("+(index+1)+")").classList.add("active")
+
+            if(scrollTop <= lastScrollTop){
+                document.querySelector("#parallax__nav").classList.add("show")
+            } else {
+                document.querySelector("#parallax__nav").classList.remove("show")
+            }
+            lastScrollTop = scrollTop;
+
+            parallaxItem.forEach((element, index) => {
+                if(scrollTop >= element.offsetTop -2){
+                    parallaxNav.forEach(li => li.classList.remove("active"));
+                    parallaxNav[index].classList.add("active")
                 }
             })
-            
 
-            document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
+            document.querySelector(".parallax__scrollTop span").innerText = Math.round(scrollTop);
+        }
 
-            requestAnimationFrame(scroll);
-        };
-        scroll()
-        
+        window.addEventListener("scroll", scroll);
+        scrollNav();
     </script>
+
 </body>
 </html>

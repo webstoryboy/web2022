@@ -92,41 +92,46 @@
 ### Classic 퀴즈 이펙트
 01. 퀴즈 이펙트 유형01 : 
     <a href="#">문서, </a>
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_result01.html">결과보기</a>
+    
 02. 퀴즈 이펙트 유형02 : 
     <a href="#">문서, </a>
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_result02.html">결과보기</a>
+   
 03. 퀴즈 이펙트 유형03 : 
     <a href="#">문서, </a>
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_result03.html">결과보기</a>
+    
 04. 퀴즈 이펙트 유형04 : 
     <a href="#">문서, </a>
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_result04.html">결과보기</a>
+    
 05. 퀴즈 이펙트 유형05 : 
     <a href="#">문서, </a>
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_result05.html">결과보기</a>
+    
 
-> 01   
+> 01 퀴즈 이펙트 유형01 : 
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quiz_result01.html">결과보기</a>   
     주관식 : 버튼을 클릭하면 정답을 보여주는 스타일   
     querySelector, textContent, classList, style   
 
-> 02   
+> 02 퀴즈 이펙트 유형02 : 
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quiz_result02.html">결과보기</a>   
     주관식 : 정답을 적고 확인하는 스타일   
     querySelector, textContent, addEventListener, classList, style, if문   
 
-> 03   
+> 03 퀴즈 이펙트 유형03 : 
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quiz_result03.html">결과보기</a>   
     주관식 : 정답을 적고 정답을 확인, 여러 문제   
     querySelector, querySelectorAll, textContent, innerHTML, addEventListener, classList, style, if문, forEach문, 배열
 
-> 04   
+> 04 퀴즈 이펙트 유형04 : 
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quiz_result04.html">결과보기</a>   
     객관식 : 정답을 선택하고 정답 확인하기, 한 문제   
     querySelector, querySelectorAll, 배열, 함수, for문, if문, checked, value, classList, style
 
-> 05   
+> 05 퀴즈 이펙트 유형05 : 
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quiz_result05.html">결과보기</a>   
     객관식 : 정답을 선택하고 정답 확인하기, 여러 문제를 풀고 정답과 오답을 알려주는 스타일   
     querySelector, querySelectorAll, 배열, 객체, 함수, forEach, push, innerHTML, join, style, classList, addEventListener, createElement, checked, value, appendChild, if문 
 
-> 06(X)   
+> 06 퀴즈 이펙트 유형06(X) : 
     객관식 : 정답을 선택하고 정답 확인하기, 다수의 문제를 이미지 슬라이드 형식으로 보여주는 스타일
 
 

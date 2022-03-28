@@ -73,6 +73,13 @@
 > 01
     주관식   
     버튼을 클릭하면 정답을 보여주는 스타일   
+    querySelector, textContent, classList, style   
+> 02   
+    주관식   
+    정답을 적고 확인하는 스타일   
+    querySelector, textContent, addEventListener,  classList, style, if문
+
+
 
 
 

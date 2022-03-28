@@ -85,6 +85,20 @@
     정답을 적고 정답을 확인, 여러 문제   
     querySelector, querySelectorAll, textContent, innerHTML, addEventListener, classList, style, if문, forEach문, 배열
 
+> 04   
+    객관식   
+    정답을 선택하고 정답 확인하기, 한 문제   
+    querySelector, querySelectorAll, 배열, 함수, for문, if문, checked, value, classList, style
+
+> 05   
+    객관식   
+    정답을 선택하고 정답 확인하기, 여러 문제를 풀고 정답과 오답을 알려주는 스타일   
+    querySelector, querySelectorAll, 배열, 객체, 함수, forEach, push, innerHTML, join, style, classList, addEventListener, createElement, checked, value, appendChild, if문 
+
+> 06   
+    객관식   
+    정답을 선택하고 정답 확인하기, 다수의 문제를 이미지 슬라이드 형식으로 보여주는 스타일
+
 
 
 

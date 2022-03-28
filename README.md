@@ -101,12 +101,16 @@
 
 
 
-
-
-
-
-
 ### Classic 마우스 이펙트
+01. 마우스 이펙트 유형01 : 
+    <a href="#">문서, </a>
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result01.html">결과보기(O)</a>
+02. 마우스 이펙트 유형02 : 
+    <a href="#">문서, </a>
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result02.html">결과보기(O)</a>
+
+
+
 ### Classic 슬라이드 이펙트
 ### Classic 게임 이펙트
 

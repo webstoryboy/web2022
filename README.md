@@ -112,6 +112,18 @@
 
 
 ### Classic 슬라이드 이펙트
+01. 슬라이드 이펙트 유형01 :   
+    <a href="#">문서, </a>
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/04_sliderEffect/slider_result01.html">결과보기(O)</a>
+02. 슬라이드 이펙트 유형02 :   
+    <a href="#">문서, </a>
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/04_sliderEffect/slider_result02.html">결과보기(O)</a>
+03. 슬라이드 이펙트 유형03 :   
+    <a href="#">문서, </a>
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/04_sliderEffect/slider_result03.html">결과보기(O)</a>
+
+
+
 ### Classic 게임 이펙트
 
 

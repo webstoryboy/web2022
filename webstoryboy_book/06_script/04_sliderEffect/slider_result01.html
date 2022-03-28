@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'NexonLv1Gothic';
         }
         body {
             width: 100%;
@@ -35,8 +36,46 @@
             width: 100%;
             vertical-align: top;
         }
-        .nexon {
-            font-family: 'NexonLv1Gothic';
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        #slider__title {
+            padding: 20px;
+            position: fixed;
+            left: 0; 
+            top: 0;
+        }
+        #slider__title h1 {
+            font-size: 30px;
+            border-bottom: 1px dashed #fff;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            font-weight: 400;
+            display: inline-block;
+        }
+        #slider__title p {
+            font-size: 16px;
+        }
+        #slider__title ul {
+            margin-top: 10px;
+        }
+        #slider__title li {
+            display: inline;
+        }
+        #slider__title li a {
+            width: 20px; 
+            height: 20px;
+            border-radius: 50%;
+            border: 1px dashed #fff;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+        #slider__title li.active a {
+            background: #fff;
+            color: #000;
         }
         
         /* slider */
@@ -76,9 +115,24 @@
         .slider:nth-child(3) {z-index: 3;}
         .slider:nth-child(4) {z-index: 2;}
         .slider:nth-child(5) {z-index: 1;}
-    </style>
+    </style> 
 </head>
 <body>
+    <header id="slider__title">
+        <h1><a href="parallaxEffect.html">JavaScript Slider Effect01</a></h1>
+        <p>슬라이드 이펙트 - 트랜지션 효과</p>
+        <ul>
+            <li class="active"><a href="slider_result01.html">1</a></li>
+            <li><a href="slider_result02.html">2</a></li>
+            <li><a href="slider_result03.html">3</a></li>
+            <li><a href="slider_result04.html">4</a></li>
+            <li><a href="slider_result05.html">5</a></li>
+            <li><a href="slider_result06.html">6</a></li>
+            <li><a href="slider_result07.html">7</a></li>
+        </ul>
+    </header>
+    <!-- //title  -->
+
     <!-- main -->
     <main>
         <section id="sliderType01" class="nexon">

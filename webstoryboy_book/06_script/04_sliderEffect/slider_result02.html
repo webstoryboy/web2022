@@ -7,15 +7,16 @@
     <title>슬라이드 이펙트</title>
     <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
     <style>
-        * {
+         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'NexonLv1Gothic';
         }
         body {
             width: 100%;
             height: 100vh;
-            background-image: url(../img/images10@2.jpg);
+            background-image: url(../img/images09@2.jpg);
             background-size: cover;
             background-position: center center;
             overflow: hidden;
@@ -35,8 +36,46 @@
             width: 100%;
             vertical-align: top;
         }
-        .nexon {
-            font-family: 'NexonLv1Gothic';
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        #slider__title {
+            padding: 20px;
+            position: fixed;
+            left: 0; 
+            top: 0;
+        }
+        #slider__title h1 {
+            font-size: 30px;
+            border-bottom: 1px dashed #fff;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            font-weight: 400;
+            display: inline-block;
+        }
+        #slider__title p {
+            font-size: 16px;
+        }
+        #slider__title ul {
+            margin-top: 10px;
+        }
+        #slider__title li {
+            display: inline;
+        }
+        #slider__title li a {
+            width: 20px; 
+            height: 20px;
+            border-radius: 50%;
+            border: 1px dashed #fff;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+        #slider__title li.active a {
+            background: #fff;
+            color: #000;
         }
         
         /* slider */
@@ -80,6 +119,21 @@
     </style>
 </head>
 <body>
+    <header id="slider__title">
+        <h1><a href="parallaxEffect.html">JavaScript Slider Effect02</a></h1>
+        <p>슬라이드 이펙트 - 좌로 움직이기</p>
+        <ul>
+            <li><a href="slider_result01.html">1</a></li>
+            <li class="active"><a href="slider_result02.html">2</a></li>
+            <li><a href="slider_result03.html">3</a></li>
+            <li><a href="slider_result04.html">4</a></li>
+            <li><a href="slider_result05.html">5</a></li>
+            <li><a href="slider_result06.html">6</a></li>
+            <li><a href="slider_result07.html">7</a></li>
+        </ul>
+    </header>
+    <!-- //mouse__title  -->
+
     <!-- main -->
     <main>
         <section id="sliderType02" class="nexon">

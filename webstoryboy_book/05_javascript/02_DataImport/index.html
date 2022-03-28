@@ -1,12 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>"포트폴리오가 실력이다" : 자바스크립트 </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
-<body>
-    
+<body class="white">
+    <header id="header">
+        <h1><a href="#">WEBS : 자바스크립트 : 데이터 출력하기</a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+
+        <section id="youtube" class="container">
+            <div class="video none resizable draggable sampleBtn3">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JoOa5xyvh2Y" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="desc">
+                <div class="left">
+                    <span class="num">01.</span>
+                    <h3 class="title">자바스크립트 : 데이터 출력하기</h3>
+                    <span class="difficulty">난이도 <span>쉬움</span></span>
+                </div>
+                <div class="right">
+                    <!--<h3>소스 다운로드</h3>
+                    <a href="#" target="_blank" class="sampleBtn">완성 화면 보기</a>
+                    <a href="#" target="_blank" class="sampleBtn">피그마 보기</a> -->
+                </div>
+            </div>
+        </section>
+        <!-- //youtube -->
+
+        <section id="explanation">
+            <div class="container">
+                <h2>소개</h2>
+                <p>
+                    안녕하세요!. 웹스토리보이입니다.
+                    자바스크립트는 웹 사이트를 동적으로 표현하는 언어로 묘사하지만, 가장 기본이 되는 특징은 데이터를 컨트롤 하는 기능이 더 중요합니다.
+                    자바스크립트는 데이터를 저장하고, 출력하고, 실행하고, 제어하는 기능을 가지고 있습니다. 
+                    이 4가지 특징을 이용해 동적으로 표현 할 수 있습니다. 
+                    그래서 우리는 데이터를 저장하는 방법에 대해서 배워보겠습니다.
+                </p>
+                <p>
+                    자바스크립트에서 데이터를 저장하는 방법은 크게 변수, 상수, 배열, 객체가 있습니다. 
+                    리액트를 배운다면 더 추가적인 내용이 있겠지만, 우리는 우선 4가지에 대해서 먼저 배워보겠습니다. 
+                    변수는 상수랑 비슷하기 때문에 동급으로 취한다면, 변수, 배열, 객체에 대해서 자세히 배워보겠습니다.
+                </p>
+                <p>
+                    여러분들이 사이트를 동적으로 만들려면, 동적으로 만들 요소를 저장해야 합니다. 
+                    그래야 움직이게 컨트롤 할 수 있습니다. 
+                    그런 요소를 딱! 하나만 저장할 수 있는게 <code>변수</code>입니다.
+                    변수에는 데이터를 하나만 저장할 수 있으며, 데이터를 변경 할 수도 있습니다. 또한 데이터를 하나만 저장하지만 추가도 가능합니다.
+                    하디만 상수는 데이터를 하나만 저장하지만, 데이터를 변경할 수 없습니다.
+                    반면에 <code>배열</code>은 데이터를 순서대로 여러개를 저장할 수 있습니다. 
+                    즉 하나가 아닌 여러개도 저장이 가능합니다. 
+                    <code>객체</code> 역시 데이터를 저장할 수 있습니다. 
+                    배열처럼 여러개를 저장 할 수 있지만, 저장한 데이터의 키 값과 속성 값을 저장할 수 있습니다. 
+                    즉 데이터를 좀 더 디테일하게 저장할 수 있습니다.
+                    아직은 이게 무는 말인지 잘 모를 수 있지만 예제를 보면서 이해하시면 됩니다. 
+                    시작하기 전에 변수, 배열, 객체는 데이터를 저장하는 저장소라는거 알고 시작하시면 될 것 같습니다.
+                </p>
+
+                <h3>01. 변수 : 변수는 데이터 저장합니다.</h3>
+                <p>
+                    변수에는 숫자와 문자를 저장할 수 있습니다. 문자를 표현 할 때는 <code>"</code>를 사용합니다. 
+                    이렇게 숫자, 문자, 함수, 객체 등 여러가지 종류를 저장할 수 있는데 이것을 <strong>자료형<sup>1</sup></strong>이라고 얘기합니다.
+                </p>
+<pre><code>{
+    var x = 100;            
+    var y = 200;            
+    var z = "javascript";  
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+
+    //100 200 javascript
+}</code></pre>
+
+                
+
+            <h2>참고</h2>
+            <ul class="refer">
+                <li><sup>1</sup> <a href="#">자료형</a></li>
+            </ul>
+        </section>
+        <!-- //explanation -->
+
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer> 
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="../../assets/js/jquery-3.6.0.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/script.js"></script> 
 </body>
 </html>

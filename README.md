@@ -70,6 +70,11 @@
     <a href="#">문서, </a>
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_result05.html">결과보기(O)</a>
 
+> 01
+    주관식   
+    버튼을 클릭하면 정답을 보여주는 스타일   
+
+
 
 
 ### Classic 마우스 이펙트

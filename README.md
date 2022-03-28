@@ -49,26 +49,21 @@
 01. 검색 이펙트 유형01 : 
     <a href="#">문서, </a>
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc01.html">결과보기</a>  
-
 02. 검색 이펙트 유형02 : 
     <a href="#">문서, </a>
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc02.html">결과보기</a>  
-
 02. 검색 이펙트 유형03 : 
     <a href="#">문서, </a>
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc03.html">결과보기</a>  
-
 03. 검색 이펙트 유형04 :
     <a href="#">문서, </a>
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc04.html">결과보기</a>  
-
 04. 검색 이펙트 유형05 : 
     <a href="#">문서, </a>
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc05.html">결과보기</a>
-
 05. 검색 이펙트 유형06 : 
-    <a href="#">문서, </a>  
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc06.html">결과보기(O)</a> 
+    <a href="#">문서, </a>
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc06.html">결과보기</a> 
 
 > 01       
     indexOf()를 이용하여 CSS 속성 검색하기   
@@ -151,13 +146,13 @@
 
 
 ### Classic 슬라이드 이펙트
-01. 슬라이드 이펙트 유형01 :   
+01. 슬라이드 이펙트 유형01 :
     <a href="#">문서, </a>
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/04_sliderEffect/slider_result01.html">결과보기</a>
-02. 슬라이드 이펙트 유형02 :   
+02. 슬라이드 이펙트 유형02 :
     <a href="#">문서, </a>
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/04_sliderEffect/slider_result02.html">결과보기</a>
-03. 슬라이드 이펙트 유형03 :   
+03. 슬라이드 이펙트 유형03 :
     <a href="#">문서, </a>
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/04_sliderEffect/slider_result03.html">결과보기</a>
 
@@ -177,27 +172,21 @@
 01. 패럴랙스 이펙트 유형01 : 
 <a href="#">문서</a>, 
 <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result01.html">결과보기</a>
-
 02. 패럴랙스 이펙트 유형02 : 
 <a href="#">문서</a>, 
 <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result02.html">결과보기</a>
-
 03. 패럴랙스 이펙트 유형03 : 
 <a href="#">문서</a>, 
 <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result03.html">결과보기</a>
-
 04. 패럴랙스 이펙트 유형04 : 
 <a href="#">문서</a>, 
 <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result04.html">결과보기</a>
-
 05. 패럴랙스 이펙트 유형05 : 
 <a href="#">문서</a>, 
 <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result05.html">결과보기</a>
-
 06. 패럴랙스 이펙트 유형06 : 
 <a href="#">문서</a>, 
 <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result06.html">결과보기</a>
-
 06. 패럴랙스 이펙트 유형07 : 
 <a href="#">문서</a>, 
 <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result07.html">결과보기</a>

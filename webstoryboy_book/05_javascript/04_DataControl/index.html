@@ -14,7 +14,7 @@
 </head>
 <body class="white">
     <header id="header">
-        <h1><a href="#">WEBS : 자바스크립트 : 데이터 실행하기</a></h1>
+        <h1><a href="#">WEBS : 자바스크립트 : 데이터 제어하기</a></h1>
         <nav>
             <ul>
                 <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
@@ -54,201 +54,218 @@
 
             
 
-                <h3>01. 함수를 표현하는 가장 기본적인 방법이며, 선언적 함수라고 합니다.</h3>
+                <h3>01.  if문</h3>
 <pre class="language-javascript"><code>{
-    function func(){
-        document.write("함수가 실행되었습니다.");
+    //false, "", 0, null, undefined, true, 1, "1", [], {}
+    if(true){
+        document.write("조건문이 실행되었습니다.(true)");
+    } else {
+        document.write("조건문이 실행되었습니다.(false)");
     }
-    func();
 }</code></pre>
 
-                <h3>02. 함수를 변수 안에 넣고 설정하는 방법이며, 익명 함수라고 합니다.</h3>
+                <h3>02. if문 생략</h3>
 <pre class="language-javascript"><code>{
-    const func = function(){
-        document.write("함수가 실행되었습니다.");
-    }
-    func();
+    if(ture) document.write("true");
 }</code></pre>
 
-                <h3>03. 함수를 매개변수를 통해 설정하는 방법이며, 매개면수 함수라고 합니다.</h3>
+                <h3>03. 다중 if문</h3>
 <pre class="language-javascript"><code>{
-    function func(str){
-        document.write(str);
+    let num = 100;
+
+    if( num == 90 ){
+        document.write("조건문이 실행되었습니다.(num == 90)");
+    } else if ( num == 100 ){
+        document.write("조건문이 실행되었습니다.(num == 100)");
+    } else if ( num == 200 ){
+        document.write("조건문이 실행되었습니다.(num == 200)");
+    } else if ( num == 300 ){
+        document.write("조건문이 실행되었습니다.(num == 300)");
+    } else {
+        document.write("조건문이 실행되었습니다.(num == 값이 없음)");
     }
-    func("함수가 실행되었습니다.");
 }</code></pre>
 
-                <h3>04. 함수를 리턴값을 통해 설정하는 방법이며, 리턴값 함수라고 합니다.</h3>
+                <h3>04. 중첩 if문</h3>
 <pre class="language-javascript"><code>{
-    function func(){
-        const str = "함수가 실행되었습니다.";
-        return str;
+    let num = 100;
+
+    if( num == 100 ){
+        document.write("조건문이 실행되었습니다.(1)");
+        if( num == 100 ){
+            document.write("조건문이 실행되었습니다.(2)");
+            if( num == 100){
+                document.write("조건문이 실행되었습니다.(3)");
+            }
+        }
+    } else {
+        document.write("조건문이 실행되었습니다.(4)");
     }
-    document.write(func());
 }</code></pre>
 
-                <h3>05. 선언적 함수를 화살표 함수로 표현합니다.</h3>
+                <h3>05. 조건부 연산자</h3>
 <pre class="language-javascript"><code>{
-    // function func(){
-    //     document.write("함수가 실행되었습니다.");
+    let num = 100;
+
+    // if( num == 100 ){
+    //     document.write("true");
+    // } else {
+    //     document.write("false");
     // }
-    // func();
 
-    func = () => {
-        document.write("함수가 실행되었습니다.");
-    }
-    func();
+    (num == 100) ? document.write("true") : document.write("false");
 }</code></pre>
 
-                <h3>06. 익명 함수를 화살표 함수로 표현합니다.</h3>
+                <h3>06. switch문</h3>
 <pre class="language-javascript"><code>{
-    // const func = function(){
-    //     document.write("함수가 실행되었습니다.");
-    // }
-    // func();
+    let num = 100;
 
-    const func = () => {
-        document.write("함수가 실행되었습니다")
+    switch( num ){
+        case 100 : 
+            document.write("조건문이 실행되었습니다.(num == 100)");
+        break;
+        case 200 : 
+            document.write("조건문이 실행되었습니다.(num == 200)");
+        break;
+        case 300 : 
+            document.write("조건문이 실행되었습니다.(num == 300)");
+        break;
+        default :
+            document.write("조건문이 실행되었습니다.(num == 값이 없음)");
+        break;
     }
-    func();
 }</code></pre>
 
-                <h3>07. 매개변수 함수를 화살표 함수로 표현합니다.</h3>
+                <h3>07. while문</h3>
 <pre class="language-javascript"><code>{
-    // function func(str){
-    //     document.write(str);
-    // }
-    // func("함수가 실행되었습니다.");
-
-    func = (str) => {
-        document.write(str);
+    let num = 1;
+    while( num &lt= 10 ){
+        document.write( num + ". 반복문이 실행되었습니다.");  
+        num++;
     }
-    func("함수가 실행되었습니다.");
 }</code></pre>
 
-                <h3>08. 리턴값 함수를 화살표 함수로 표현합니다.</h3>
+                <h3>08. do while문</h3>
 <pre class="language-javascript"><code>{
-    // function func(){
-    //     const str = "함수가 실행되었습니다.";
-    //     return str;
-    // }
-    // document.write(func());
+    let num = 1;
+    do {
+        document.write(num + ". 반복문이 실행되었습니다.");
+        num++;
+    } while (num &lt;= 10);
+}</code></pre>
 
-    func = () => {
-        const str = "함수가 실행되었습니다.";
-        return str;
+                <h3>09. for문</h3>
+<pre class="language-javascript"><code>{
+    for( let i=1; i&lt;=10; i++ ){
+        document.write(i + ". 반복문이 실행되었습니다.");
     }
-    document.write(func());
-}</code></pre>  
+}</code></pre>
 
-                <h3>09. 익명함수, 매개변수, 리턴값을 같이 사용하는 화살표 함수 입니다.</h3>
+                <h3>10. 중첩 for문</h3>
 <pre class="language-javascript"><code>{
-    const func = (str) => {
-        return str;
-    }
-    document.write(func("함수가 실행되었습니다."));
-}</code></pre>  
-
-                <h3>10. 익명함수, 매개변수, 리턴값, 괄호 생략을 같이 사용하는 화살표 함수 입니다.</h3>
-<pre class="language-javascript"><code>{
-    const func = str => {
-        return str;
-    }
-    document.write(func("함수가 실행되었습니다."));
-}</code></pre>  
-
-                <h3>11. 익명함수, 매개변수, 리턴값, 괄호 생략, 리턴 생략을 같이 사용하는 화살표 함수 입니다.</h3>
-<pre class="language-javascript"><code>{
-    const func = str => str;
-            
-    document.write(func("함수가 실행되었습니다."));
-}</code></pre>  
-
-                <h3>12. 선언적함수, 매개변수, 리턴값, 괄호 생략, 리턴 생략을 같이 사용하는 화살표 함수입니다.</h3>
-<pre class="language-javascript"><code>{
-    func = str => str;
-            
-    document.write(func("함수가 실행되었습니다."));
-}</code></pre>  
-
-                <h3>13. 함수를 선언하지 않고 바로 실행시키는 즉시 실행 함수입니다.</h3>
-<pre class="language-javascript"><code>{
-    (function (){
-        document.write("함수가 실행되었습니다.");
-    })();
-
-    (() => {
-        document.write("함수가 실행되었습니다.");
-    })();
-}</code></pre>         
-
-                <h3>14. 파라미터 함수 : 매개 변수를 전달하는 함수</h3>
-<pre class="language-javascript"><code>{
-    function func(str = "함수가 실행되었습니다."){
-        document.write(str);
-    }
-    func();
-}</code></pre>     
-
-                <h3>15. 아규먼트 함수 : 인자를 전달하는 함수</h3>
-<pre class="language-javascript"><code>{
-    function func1(a, b) {
-        document.write(arguments[0]);
-        document.write(arguments[1]);
-    }
-
-    func1("함수A가 실행되었습니다.", "함수B가 실행되었습니다.");
-}</code></pre> 
-
-                <h3>16. 재귀 함수 : 자기 자신을 다시 호출하는 함수</h3>
-<pre class="language-javascript"><code>{
-    // function func(){
-    //     document.write("함수가 실행되었습니다.");
-    //     func();
-    // }
-    // func();
-
-    function func(num){
-        if(num &lt;= 1){
-            document.write("함수가 실행되었습니다.");
-        } else {
-            document.write("함수가 실행되었습니다.");
-            func(num - 1);
+    for(var i=1; i&lt;=5; i++){
+        document.write(i + ". 반복문(아이)이 실행되었습니다.");
+        for(var j=1; j&lt;=5; j++){
+            document.write(j + ". 반복문(제이)이 실행되었습니다.");
         }
     }
-    func(5);
-}</code></pre> 
+}</code></pre>
 
-                <h3>16. 콜백 함수 : 다른 함수에 인수로 넘겨지는 함수</h3>
+                <h3>11. forEach()</h3>
 <pre class="language-javascript"><code>{
-    function func(){
-        document.write("함수2가 실행되었습니다.");
-    }
-    function callback(str){
-        document.write("함수1가 실행되었습니다.");
-        str();
-    }
-    callback(func);
-}</code></pre> 
+    const num = [100, 200, 300, 400, 500];
 
-                <h3>17. 콜백 함수 : 반복문</h3>
-<pre class="language-javascript"><code>{
-    function func(){
-        document.write("함수가 실행되었습니다.");
-    }
-    function callblack(num){
-        for( let i=1; i&lt=5; i++ ){
-            num(i);
-        }
-    }
-    callblack(func);
-}</code></pre> 
+    document.write(num[0]);
+    document.write(num[1]);
+    document.write(num[2]);
+    document.write(num[3]);
+    document.write(num[4]);
 
-                <h3>18. 콜백 함수 : 동기/비동기</h3>
+    //for문
+    for(let i=0; i&lt;num.length; i++){
+        document.write(num[i]);
+    }
+
+    //forEach()
+    num.forEach(function(el){
+        document.write(el);
+    });
+
+    //forEach(element, index, array)
+    num.forEach((element, index, array) => {
+        document.write(element);
+        document.write(index);
+        document.write(array);
+    });
+}</code></pre>
+
+                <h3>12. for of문</h3>
 <pre class="language-javascript"><code>{
+    const num = [100, 200, 300, 400, 500];
+
+    for( let i of num ){
+        document.write( i + ". 반복문이 실행되었습니다.");
+    }
+}</code></pre>
+
+                <h3>13. for in문</h3>
+<pre class="language-javascript"><code>{
+    //배열
+    const num = [100, 200, 300, 400, 500];
+
+    for( let i in num ){
+        document.write(num[i]);
+    }
+
+    //객체
+    const obj = {
+        a: 100,
+        b: 200,
+        c: 300,
+        d: 400,
+        e: 500
+    }
     
-}</code></pre> 
+    for( let key in obj ){
+        document.write(key);
+        document.write(obj[key]);
+    }
+}</code></pre>
 
+                <h3>14. break문</h3>
+<pre class="language-javascript"><code>{
+    let num = 0;
+    while (num &lt; 20){
+        num++;
+        document.write(num);
+        if( num == 10 ){
+            break;
+        }
+    }
+
+    for( let i=1; i&lt;=20; i++ ){
+        document.write(i, "  ");
+        if( i == 10 ){
+            break;
+        }
+    }
+}</code></pre>
+
+                <h3>15. continue문</h3>
+<pre class="language-javascript"><code>{
+    let num = 0;
+
+    while( true ){
+        num++;
+        if( num == 3 ){
+            continue;
+        }
+        if( num > 19 ){
+            break;
+        }
+        document.write(num);
+    }
+}</code></pre>
         </section>
         <!-- //explanation -->
 
@@ -267,24 +284,11 @@
     <script src="../../assets/js/script.js"></script> 
 
     <script>
-        // function outter(){ 
-        //     var title = 'test'; 
-        //     function inner(){ 
-        //         console.log(title); 
-        //     } 
-        //     inner(); 
-        // } 
-        // outter();
-
-        // function outter(){ 
-        //     var title = 'test'; 
-        //     return function(){ 
-        //         console.log(title); 
-        //     } 
-        // } 
-        // const inner = outter(); 
-        // inner();
-
+        if( undefined ){
+        document.write("조건문이 실행되었습니다.(true)");
+    } else {
+        document.write("조건문이 실행되었습니다.(false)");
+    }
  
        
 

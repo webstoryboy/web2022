@@ -74,7 +74,8 @@
     <a href="#">문서, </a>
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc06.html">결과보기</a> 
 
-> 01       
+> 01. 검색 이펙트 유형01 :   
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc01.html">결과보기</a>      
     indexOf()를 이용하여 CSS 속성 검색하기   
     querySelector, querySelectorAll, addEventListener, value, dataset, indexOf, classList, if문   
 

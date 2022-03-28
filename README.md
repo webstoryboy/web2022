@@ -74,22 +74,27 @@
     검색하기      
     indexOf()를 이용하여 CSS 속성 검색하기   
     querySelector, querySelectorAll, addEventListener, value, dataset, indexOf, classList, if문   
+
 > 02   
     검색하기   
     includes()를 이용하여 CSS 속성 검색하기   
     querySelector, querySelectorAll, addEventListener, value, dataset, includes, classList, innerHTML, if문, forEach   
+
 > 03
     검색하기   
     charAt()를 이용하여 알파벳 별로 검색하기   
-    querySelector, querySelectorAll, addEventListener, value, dataset, forEach, innerText, dataset, charAt, classList   
+    querySelector, querySelectorAll, addEventListener, value, dataset, forEach, innerText, dataset, charAt, classList  
+
 > 04   
     검색하기   
     find()를 이용하여 속성을 검색하면 설명 보여주기
     querySelector, querySelectorAll, addEventListener, value, dataset, forEach, 배열, 객체, 함수, if문, map(), innerText, textContent, innerHTML
+
 > 05 
     검색하기  
     filter()를 이용하여 조회수 검색하기
     querySelector, querySelectorAll, addEventListener, value, dataset, 배열, 객체, 함수, for of, filter, innerHTML 
+    
 > 06   
     검색하기   
     sort(), reverse()를 이용하여 정렬하기   

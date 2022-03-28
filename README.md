@@ -30,6 +30,8 @@
 ## WEBS : 스크립트 조작하기
 
 ### Classic 데이터 저장하기
+01. 데이터 저장하기 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/01_DataStorage/index.html">문서</a>
+
 ### Classic 데이터 출력하기
 ### Classic 데이터 실행하기
 ### Classic 데이터 제어하기

@@ -55,10 +55,20 @@
 
 ### Classic 퀴즈 이펙트
 01. 퀴즈 이펙트 유형01 : 
-    <a href="#">문서보기(X), </a>
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_result01.html">결과보기(O)</a><br>
-    주관식
-    버튼을 클릭하면 정답을 보여주는 구조
+    <a href="#">문서, </a>
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_result01.html">결과보기(O)</a>
+02. 퀴즈 이펙트 유형02 : 
+    <a href="#">문서, </a>
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_result02.html">결과보기(O)</a>
+03. 퀴즈 이펙트 유형03 : 
+    <a href="#">문서, </a>
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_result03.html">결과보기(O)</a>
+04. 퀴즈 이펙트 유형04 : 
+    <a href="#">문서, </a>
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_result04.html">결과보기(O)</a>
+05. 퀴즈 이펙트 유형05 : 
+    <a href="#">문서, </a>
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_result05.html">결과보기(O)</a>
 
 
 

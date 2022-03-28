@@ -1,12 +1,293 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>"포트폴리오가 실력이다" : 자바스크립트 </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 </head>
-<body>
+<body class="white">
+    <header id="header">
+        <h1><a href="#">WEBS : 자바스크립트 : 데이터 실행하기</a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+
+        <section id="youtube" class="container">
+            <div class="video none resizable draggable sampleBtn3">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JoOa5xyvh2Y" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="desc">
+                <div class="left">
+                    <span class="num">01.</span>
+                    <h3 class="title">자바스크립트 : 데이터 실행하기</h3>
+                    <span class="difficulty">난이도 <span>쉬움</span></span>
+                </div>
+                <div class="right">
+                    <!--<h3>소스 다운로드</h3>
+                    <a href="#" target="_blank" class="sampleBtn">완성 화면 보기</a>
+                    <a href="#" target="_blank" class="sampleBtn">피그마 보기</a> -->
+                </div>
+            </div>
+        </section>
+        <!-- //youtube -->
+
+        <section id="explanation">
+            <div class="container">
+                <h2>소개</h2>
+                <p>
+                    안녕하세요!. 웹스토리보이입니다.
+                    자바스크립트를 통해 데이터 저장하는 방법과 출력하는 방법을 배웠으면, 이제는 데이터를 실행하는 방법을 배우겠습니다. 
+                </p>
+
+            
+
+                <h3>01. 함수를 표현하는 가장 기본적인 방법이며, 선언적 함수라고 합니다.</h3>
+<pre class="language-javascript"><code>{
+    function func(){
+        document.write("함수가 실행되었습니다.");
+    }
+    func();
+}</code></pre>
+
+                <h3>02. 함수를 변수 안에 넣고 설정하는 방법이며, 익명 함수라고 합니다.</h3>
+<pre class="language-javascript"><code>{
+    const func = function(){
+        document.write("함수가 실행되었습니다.");
+    }
+    func();
+}</code></pre>
+
+                <h3>03. 함수를 매개변수를 통해 설정하는 방법이며, 매개면수 함수라고 합니다.</h3>
+<pre class="language-javascript"><code>{
+    function func(str){
+        document.write(str);
+    }
+    func("함수가 실행되었습니다.");
+}</code></pre>
+
+                <h3>04. 함수를 리턴값을 통해 설정하는 방법이며, 리턴값 함수라고 합니다.</h3>
+<pre class="language-javascript"><code>{
+    function func(){
+        const str = "함수가 실행되었습니다.";
+        return str;
+    }
+    document.write(func());
+}</code></pre>
+
+                <h3>05. 선언적 함수를 화살표 함수로 표현합니다.</h3>
+<pre class="language-javascript"><code>{
+    // function func(){
+    //     document.write("함수가 실행되었습니다.");
+    // }
+    // func();
+
+    func = () => {
+        document.write("함수가 실행되었습니다.");
+    }
+    func();
+}</code></pre>
+
+                <h3>06. 익명 함수를 화살표 함수로 표현합니다.</h3>
+<pre class="language-javascript"><code>{
+    // const func = function(){
+    //     document.write("함수가 실행되었습니다.");
+    // }
+    // func();
+
+    const func = () => {
+        document.write("함수가 실행되었습니다")
+    }
+    func();
+}</code></pre>
+
+                <h3>07. 매개변수 함수를 화살표 함수로 표현합니다.</h3>
+<pre class="language-javascript"><code>{
+    // function func(str){
+    //     document.write(str);
+    // }
+    // func("함수가 실행되었습니다.");
+
+    func = (str) => {
+        document.write(str);
+    }
+    func("함수가 실행되었습니다.");
+}</code></pre>
+
+                <h3>08. 리턴값 함수를 화살표 함수로 표현합니다.</h3>
+<pre class="language-javascript"><code>{
+    // function func(){
+    //     const str = "함수가 실행되었습니다.";
+    //     return str;
+    // }
+    // document.write(func());
+
+    func = () => {
+        const str = "함수가 실행되었습니다.";
+        return str;
+    }
+    document.write(func());
+}</code></pre>  
+
+                <h3>09. 익명함수, 매개변수, 리턴값을 같이 사용하는 화살표 함수 입니다.</h3>
+<pre class="language-javascript"><code>{
+    const func = (str) => {
+        return str;
+    }
+    document.write(func("함수가 실행되었습니다."));
+}</code></pre>  
+
+                <h3>10. 익명함수, 매개변수, 리턴값, 괄호 생략을 같이 사용하는 화살표 함수 입니다.</h3>
+<pre class="language-javascript"><code>{
+    const func = str => {
+        return str;
+    }
+    document.write(func("함수가 실행되었습니다."));
+}</code></pre>  
+
+                <h3>11. 익명함수, 매개변수, 리턴값, 괄호 생략, 리턴 생략을 같이 사용하는 화살표 함수 입니다.</h3>
+<pre class="language-javascript"><code>{
+    const func = str => str;
+            
+    document.write(func("함수가 실행되었습니다."));
+}</code></pre>  
+
+                <h3>12. 선언적함수, 매개변수, 리턴값, 괄호 생략, 리턴 생략을 같이 사용하는 화살표 함수입니다.</h3>
+<pre class="language-javascript"><code>{
+    func = str => str;
+            
+    document.write(func("함수가 실행되었습니다."));
+}</code></pre>  
+
+                <h3>13. 함수를 선언하지 않고 바로 실행시키는 즉시 실행 함수입니다.</h3>
+<pre class="language-javascript"><code>{
+    (function (){
+        document.write("함수가 실행되었습니다.");
+    })();
+
+    (() => {
+        document.write("함수가 실행되었습니다.");
+    })();
+}</code></pre>         
+
+                <h3>14. 파라미터 함수 : 매개 변수를 전달하는 함수</h3>
+<pre class="language-javascript"><code>{
+    function func(str = "함수가 실행되었습니다."){
+        document.write(str);
+    }
+    func();
+}</code></pre>     
+
+                <h3>15. 아규먼트 함수 : 인자를 전달하는 함수</h3>
+<pre class="language-javascript"><code>{
+    function func1(a, b) {
+        document.write(arguments[0]);
+        document.write(arguments[1]);
+    }
+
+    func1("함수A가 실행되었습니다.", "함수B가 실행되었습니다.");
+}</code></pre> 
+
+                <h3>16. 재귀 함수 : 자기 자신을 다시 호출하는 함수</h3>
+<pre class="language-javascript"><code>{
+    // function func(){
+    //     document.write("함수가 실행되었습니다.");
+    //     func();
+    // }
+    // func();
+
+    function func(num){
+        if(num &lt;= 1){
+            document.write("함수가 실행되었습니다.");
+        } else {
+            document.write("함수가 실행되었습니다.");
+            func(num - 1);
+        }
+    }
+    func(5);
+}</code></pre> 
+
+                <h3>16. 콜백 함수 : 다른 함수에 인수로 넘겨지는 함수</h3>
+<pre class="language-javascript"><code>{
+    function func(){
+        document.write("함수2가 실행되었습니다.");
+    }
+    function callback(str){
+        document.write("함수1가 실행되었습니다.");
+        str();
+    }
+    callback(func);
+}</code></pre> 
+
+                <h3>17. 콜백 함수 : 반복문</h3>
+<pre class="language-javascript"><code>{
+    function func(){
+        document.write("함수가 실행되었습니다.");
+    }
+    function callblack(num){
+        for( let i=1; i&lt=5; i++ ){
+            num(i);
+        }
+    }
+    callblack(func);
+}</code></pre> 
+
+                <h3>18. 콜백 함수 : 동기/비동기</h3>
+<pre class="language-javascript"><code>{
     
+}</code></pre> 
+
+        </section>
+        <!-- //explanation -->
+
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer> 
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="../../assets/js/jquery-3.6.0.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/script.js"></script> 
+
+    <script>
+        // function outter(){ 
+        //     var title = 'test'; 
+        //     function inner(){ 
+        //         console.log(title); 
+        //     } 
+        //     inner(); 
+        // } 
+        // outter();
+
+        // function outter(){ 
+        //     var title = 'test'; 
+        //     return function(){ 
+        //         console.log(title); 
+        //     } 
+        // } 
+        // const inner = outter(); 
+        // inner();
+
+ 
+       
+
+    </script>
 </body>
 </html>

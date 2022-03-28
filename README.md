@@ -54,16 +54,15 @@
 05. 검색 이펙트 유형06 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/searchEffect_doc06.html">문서</a> 
 
 ### Classic 퀴즈 이펙트
-01. 퀴즈 이펙트 유형01 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_doc01.html">문서</a>
-01. 퀴즈 이펙트 유형02 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_doc02.html">문서</a>
-01. 퀴즈 이펙트 유형03 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_doc03.html">문서</a>
-01. 퀴즈 이펙트 유형04 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_doc04.html">문서</a>
-01. 퀴즈 이펙트 유형05 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_doc05.html">문서</a>
-01. 퀴즈 이펙트 유형06 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_doc06.html">문서</a>
-01. 퀴즈 이펙트 유형07 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_doc07.html">문서</a>
+01. 퀴즈 이펙트 유형01 : 
+    <a href="#">문서</a>
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quizEffect_result01.html">결과보기(O)</a>
+    주관식
+    정답 확인하기
+
+
 
 ### Classic 마우스 이펙트
-
 ### Classic 슬라이드 이펙트
 ### Classic 게임 이펙트
 
@@ -78,25 +77,29 @@
 ### Classic 패럴랙스 이펙트
 01. 패럴랙스 이펙트 유형01 : 
 <a href="#">문서</a>, 
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/07_parallax/parallaxEffect_doc01.html">결과(0)</a>
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result01.html">결과(0)</a>
 
 02. 패럴랙스 이펙트 유형02 : 
 <a href="#">문서</a>, 
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/07_parallax/parallaxEffect_doc02.html">결과(0)</a>
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallaxEffect_doc02.html">결과(0)</a>
 
 03. 패럴랙스 이펙트 유형03 : 
 <a href="#">문서</a>, 
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/07_parallax/parallaxEffect_doc03.html">결과(0)</a>
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallaxEffect_doc03.html">결과(0)</a>
 
 04. 패럴랙스 이펙트 유형04 : 
 <a href="#">문서</a>, 
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/07_parallax/parallaxEffect_doc04.html">결과(0)</a>
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallaxEffect_doc04.html">결과(0)</a>
 
 05. 패럴랙스 이펙트 유형05 : 
 <a href="#">문서</a>, 
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/07_parallax/parallaxEffect_doc05.html">결과(0)</a>
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallaxEffect_doc05.html">결과(0)</a>
 
 06. 패럴랙스 이펙트 유형06 : 
 <a href="#">문서</a>, 
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/07_parallax/parallaxEffect_doc06.html">결과(0)</a>
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallaxEffect_doc06.html">결과(0)</a>
+
+06. 패럴랙스 이펙트 유형07 : 
+<a href="#">문서</a>, 
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallaxEffect_doc07.html">결과(0)</a>
 

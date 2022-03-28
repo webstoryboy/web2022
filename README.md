@@ -47,6 +47,11 @@
 ### Classic 메뉴 이펙트
 ### Classic 검색 이펙트
 01. 검색 이펙트 유형01 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/searchEffect_doc01.html">문서</a>  
+02. 검색 이펙트 유형02 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/searchEffect_doc02.html">문서</a>  
+02. 검색 이펙트 유형03 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/searchEffect_doc03.html">문서</a>  
+03. 검색 이펙트 유형04 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/searchEffect_doc04.html">문서</a>  
+04. 검색 이펙트 유형05 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/searchEffect_doc05.html">문서</a> 
+05. 검색 이펙트 유형06 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/searchEffect_doc06.html">문서</a> 
 
 ### Classic 마우스 이펙트
 ### Classic 패럴랙스 이펙트

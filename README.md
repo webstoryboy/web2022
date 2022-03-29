@@ -49,6 +49,9 @@
 ### Classic 요소 객체
 ### Classic 이벤트 객체
 
+### Classic 테스트
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/pdf01.html">문서</a>
+
 <br>
 
 ## WEBS : 스크립트 실행하기

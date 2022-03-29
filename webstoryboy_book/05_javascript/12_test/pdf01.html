@@ -198,7 +198,7 @@ code[class*=language-],
         }
 
         .sample {
-            border: 1px solid #e6e6e6;
+            /* border: 1px solid #e6e6e6; */
             border-radius: 5px;
         }
 
@@ -347,88 +347,196 @@ code[class*=language-],
             margin-top: 20px;
         }
         .wrap {
-            display: flex;
-            justify-content: space-between;
+           max-width: 1200px;
+           margin: 0 auto;
         }
-        .wrap .left {
-            width: 49%;
-        }
-        .wrap .right {
-            width: 49%;
+        .wrap > div {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            margin: 10px;
+            box-sizing: border-box;
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Javascript</h1>
+    <h1>Javascript 데이터 저장하기</h1>
 
     <div class="wrap">
-        <div class="left">
-
-            <div id="sample1" class="sample">
-                <h2>01. 다음의 결과를 보고 빈칸에 올 수 있는 것을 모두 고르시오!</h2>
-                <div class="code">
+        <div id="sample1" class="sample">
+            <h2>01. 변수</h2>
+            <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    //true, false, 1, "1", "", 0, "0" null, undefined, [], [0], {}, {a:1}
+    var x = 100;            
+    var y = 200;            
+    var z = "javascript";   
 
-    if( _____ ){
-        document.write("조건문이 실행되었습니다.(true)");
-    } else {
-        document.write("조건문이 실행되었습니다.(false)");
-    }
-
-    //결과
-    //조건문이 실행되었습니다.(false)
+    document.write(x);
+    document.write(y);
+    document.write(z);
 }
 </code></pre>
 
-                </div>
-            </div>
-            <!-- /sample01 -->
-
-            <br>
-
-            <div id="sample2" class="sample">
-                <h2>02. 다음의 결과를 보고 빈칸에 올 수 있는 것을 모두 고르시오!</h2>
-                <div class="code">
-<pre class="line-numbers"><code class="language-js">{
-    //true, false, 1, "1", "", 0, "0" null, undefined, [], [0], {}, {a:1}
-
-    if( _____ ){
-        document.write("조건문이 실행되었습니다.(true)");
-    } else {
-        document.write("조건문이 실행되었습니다.(false)");
-    }
-
-    //결과
-    //조건문이 실행되었습니다.(false)
-}
-</code></pre>
-
-                </div>
-            </div>
-            <!-- /sample02 -->
-        </div>
-
-        <div class="right">
-            <div id="sample1" class="sample">
-                <h2>02. 다음의 결과를 보고 빈칸에 올 수 있는 것을 모두 고르시오!</h2>
-                <div class="code">
-<pre class="line-numbers"><code class="language-js">{
-    //true, false, 1, "1", "", 0, "0" null, undefined, [], [0], {}, {a:1}
-
-    if( _____ ){
-        document.write("조건문이 실행되었습니다.(true)");
-    } else {
-        document.write("조건문이 실행되었습니다.(false)");
-    }
-}
-</code></pre>
-
-                </div>
             </div>
         </div>
+        <!-- /sample01 -->
+
+        <div id="sample2" class="sample">
+            <h2>02. 변수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+let x = 100;
+let y = 200;
+let z = "javascript";
+
+x = 300;
+y = 400;
+z = "jquery";
+
+document.write(x);
+document.write(y);
+document.write(z);
+}
+</code></pre>
+
+            </div>
+        </div>
+        <!-- /sample02 -->
+
+        <div id="sample3" class="sample">
+            <h2>03. 변수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+let x = 100;
+let y = 200;
+let z = "javascript";
+
+x += 300;
+y += 400;
+z += "jquery";
+
+document.write(x);
+document.write(y);
+document.write(z);
+}
+</code></pre>
+
+            </div>
+        </div>
+        <!-- /sample03 -->
+
+        <div id="sample4" class="sample">
+            <h2>04. 변수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+let x = 100;
+let y = 200;
+let z = "javascript";
+
+x += 300;
+y += 400;
+z += "jquery";
+
+document.write(x);
+document.write(y);
+document.write(z);
+}
+</code></pre>
+
+            </div>
+        </div>
+        <!-- /sample04 -->
+
+        <div id="sample5" class="sample">
+            <h2>05. 변수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+let x = 100;
+let y = 200;
+let z = "javascript";
+
+x += 300;
+y += 400;
+z += "jquery";
+
+document.write(x);
+document.write(y);
+document.write(z);
+}
+</code></pre>
+
+            </div>
+        </div>
+        <!-- /sample05 -->
+
+        <div id="sample6" class="sample">
+            <h2>06. 변수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+let x = 100;
+let y = 200;
+let z = "javascript";
+
+x += 300;
+y += 400;
+z += "jquery";
+
+document.write(x);
+document.write(y);
+document.write(z);
+}
+</code></pre>
+
+            </div>
+        </div>
+        <!-- /sample06 -->
+
+        <div id="sample7" class="sample">
+            <h2>07. 변수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x += 300;
+    y += 400;
+    z += "jquery";
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+
+            </div>
+        </div>
+        <!-- /sample07 -->
+
+        <div id="sample8" class="sample">
+            <h2>08. 변수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+let x = 100;
+let y = 200;
+let z = "javascript";
+
+x += 300;
+y += 400;
+z += "jquery";
+
+document.write(x);
+document.write(y);
+document.write(z);
+}
+</code></pre>
+
+            </div>
+        </div>
+        <!-- /sample08 -->
+    
     </div>
 
     
@@ -443,7 +551,15 @@ code[class*=language-],
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
     <script>
- 
+        window.onload = () => {
+            document.querySelectorAll(".sample").forEach((item) => {
+                item.style.gridRowEnd = `span ${item.clientHeight}`;
+            });
+            const wrap = document.querySelector(".wrap");
+            wrap.style.display = "grid";
+            wrap.style.gridTemplateColumns = "1fr 1fr";
+            wrap.style.gridAutoRows = "1px";
+        }
     </script>
 </body>
     

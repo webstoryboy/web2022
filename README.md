@@ -115,7 +115,7 @@
     객관식 : 정답을 선택하고 정답 확인하기, 여러 문제를 풀고 정답과 오답을 알려주는 스타일   
     querySelector, querySelectorAll, 배열, 객체, 함수, forEach, push, innerHTML, join, style, classList, addEventListener, createElement, checked, value, appendChild, if문 
 
-> 06 퀴즈 이펙트 유형06(X) : 
+> 06 퀴즈 이펙트 유형06(X) :   
     객관식 : 정답을 선택하고 정답 확인하기, 다수의 문제를 이미지 슬라이드 형식으로 보여주는 스타일
 
 

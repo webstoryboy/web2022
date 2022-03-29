@@ -544,6 +544,181 @@ code[class*=language-],
         <!-- /sample08 -->
     
     </div>
+<hr>
+    <div class="wrap">
+        <div id="sample1" class="sample">
+            <h2>01. 변수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    var x = 100;            
+    var y = 200;            
+    var z = "javascript";   
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+
+            </div>
+        </div>
+        <!-- /sample01 -->
+
+        <div id="sample2" class="sample">
+            <h2>02. 변수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x = 300;
+    y = 400;
+    z = "jquery";
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+
+            </div>
+        </div>
+        <!-- /sample02 -->
+
+        <div id="sample3" class="sample">
+            <h2>03. 변수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x += 300;
+    y += 400;
+    z += "jquery";
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+
+            </div>
+        </div>
+        <!-- /sample03 -->
+
+        <div id="sample4" class="sample">
+            <h2>04. 변수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x += 300;
+    y += 400;
+    z += "jquery";
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+
+            </div>
+        </div>
+        <!-- /sample04 -->
+
+        <div id="sample5" class="sample">
+            <h2>05. 변수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x += 300;
+    y += 400;
+    z += "jquery";
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+
+            </div>
+        </div>
+        <!-- /sample05 -->
+
+        <div id="sample6" class="sample">
+            <h2>06. 변수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x += 300;
+    y += 400;
+    z += "jquery";
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+
+            </div>
+        </div>
+        <!-- /sample06 -->
+
+        <div id="sample7" class="sample">
+            <h2>07. 변수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x += 300;
+    y += 400;
+    z += "jquery";
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+
+            </div>
+        </div>
+        <!-- /sample07 -->
+
+        <div id="sample8" class="sample">
+            <h2>08. 변수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x += 300;
+    y += 400;
+    z += "jquery";
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+
+            </div>
+        </div>
+        <!-- /sample08 -->
+    
+    </div>
 
     
 
@@ -561,10 +736,15 @@ code[class*=language-],
             document.querySelectorAll(".sample").forEach((item) => {
                 item.style.gridRowEnd = `span ${item.clientHeight}`;
             });
-            const wrap = document.querySelector(".wrap");
-            wrap.style.display = "grid";
-            wrap.style.gridTemplateColumns = "1fr 1fr";
-            wrap.style.gridAutoRows = "1px";
+            const wrap = document.querySelectorAll(".wrap");
+
+            wrap.forEach((wr) => {
+                wr.style.display = "grid";
+                wr.style.gridTemplateColumns = "1fr 1fr";
+                wr.style.gridAutoRows = "1px";
+            })
+
+            
         }
     </script>
 </body>

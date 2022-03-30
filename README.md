@@ -51,9 +51,9 @@
 
 ### Classic 테스트
 <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/pdf01.html">문서1</a>,
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/pdf01.html">문서2</a>,
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/pdf01.html">문서3</a>,
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/pdf01.html">문서4</a> 
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/pdf02.html">문서2</a>,
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/pdf03.html">문서3</a>,
+<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/pdf04.html">문서4</a> 
 
 <br>
 

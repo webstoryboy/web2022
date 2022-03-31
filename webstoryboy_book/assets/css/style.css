@@ -346,6 +346,11 @@ body.intro #footer {
     margin-top: 50px;
     font-weight: normal;
 }
+#explanation h4 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
 #explanation p {
     font-size: 16px;
     line-height: 2;

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"포트폴리오가 실력이다" : 웹 표준 사이트 만들기</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="white">
+    <header id="header">
+        <h1><a href="#">WEBS : 자바스크립트 : MySql</a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+
+        <section id="youtube" class="container">
+            <div class="video none resizable draggable sampleBtn3">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/JoOa5xyvh2Y" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="desc">
+                <div class="left">
+                    <span class="num">01.</span>
+                    <h3 class="title">PHP : MySql</h3>
+                    <span class="difficulty">난이도 <span>쉬움</span></span>
+                </div>
+                <div class="right">
+                    <!--<h3>소스 다운로드</h3>
+                    <a href="#" target="_blank" class="sampleBtn">완성 화면 보기</a>
+                    <a href="#" target="_blank" class="sampleBtn">피그마 보기</a> -->
+                </div>
+            </div>
+        </section>
+        <!-- //youtube -->
+
+        <section id="explanation">
+            <div class="container">
+                <h2>소개</h2>
+                <p>
+                    안녕하세요!. 웹스토리보이입니다.
+                    자바스크립트는 웹 사이트를 동적으로 표현하는 언어로 묘사하지만, 가장 기본이 되는 특징은 데이터를 컨트롤 하는 기능이 더 중요합니다.
+                    자바스크립트는 데이터를 저장하고, 출력하고, 실행하고, 제어하는 기능을 가지고 있습니다. 
+                    이 4가지 특징을 이용해 동적으로 표현 할 수 있습니다. 
+                    그래서 우리는 데이터를 저장하는 방법에 대해서 배워보겠습니다.
+                </p>
+                
+
+                <h2>데이터베이스</h2>
+                <h3>1.1 데이터 베이스 만들기</h3>
+<pre><code>create database 데이터베이스 이름</code></pre>
+
+                <h3>1.2 데이터 베이스 보기</h3>
+<pre><code>show databases;</code></pre>
+
+                <h3>1.3 데이터 베이스 사용</h3>
+<pre><code>use 데이터베이스 이름;</code></pre>
+
+                <h3>1.4 데이터 베이스 삭제</h3>
+<pre><code>drop database 데이터베이스 이름;</code></pre>
+
+                <h2>테이블</h2>
+                <h3>2.1 테이블 만들기</h3>
+<pre class="language-js"><code>CREATE TABLE myMember (
+    memberID int(10) unsigned auto_increment,
+    youEmail varchar(40) NOT NULL,
+    youName varchar(20) NOT NULL,
+    youPass varchar(20) NOT NULL,
+    youBirth int(20) NOT NULL,
+    youAge int(20) NOT NULL,
+    youPhone int(20) NOT NULL,
+    regTime int(11) NOT NULL,
+    PRIMARY KEY (memberID)
+) charset=utf8;
+</code></pre>
+                <h3>2.2 테이블 보기</h3>
+<pre><code>show tables;</code></pre>
+
+                <h3>2.3 테이블 필드 보기</h3>
+<pre><code>desc 테이블 이름;</code></pre>
+
+                <h3>2.4 테이블 삭제</h3>
+<pre><code>drop table 테이블 이름</code></pre>
+
+                <h3>2.5 테이블 수정 - 필드 추가하기</h3>
+<pre><code>ALTER TABLE 테이블명 ADD 추가할 필드명 AFTER 필드명 위치;</code></pre>
+<pre><code>ALTER TABLE myMember ADD youGender enum('m','w','x') default 'x' comment "남성은 m, 여성은 w" AFTER youBirth;
+ALTER TABLE myMember ADD youAddress varchar(40) NOT NULL comment "주소" AFTER youBirth;
+</code></pre>
+
+                <h3>2.6 테이블 수정 - 필드 수정하기</h3>
+<pre><code>ALTER TABLE 테이블명 MODIFY 수정할 필드명</code></pre>
+<pre><code>ALTER TABLE myMember MODIFY youName int(20);</code></pre>
+
+                <h3>2.7 테이블 수정 - 필드 삭제하기</h3>
+<pre><code>ALTER TABLE 테이블명 DROP 삭제할 필드명</code></pre>
+<pre><code>ALTER TABLE myMember DROP youPass;</code></pre>
+
+                <h3>2.8 테이블 복사</h3>
+<pre><code>CREATE TABLE 새로운 테이블명 SELECT * FROM 복사할 테이블명;</code></pre>
+<pre><code>CREATE TABLE myMember1 SELECT * FROM myMember;</code></pre>
+
+                <h3>2.9 테이블 복사 - 구조 복사</h3>
+<pre><code>CREATE TABLE 새로운 테이블명 LIKE 복사할 테이블명;</code></pre>
+<pre><code>CREATE TABLE myMember2 LIKE myMember;</code></pre>
+
+                <h3>2.10 테이블 복사 - 데이터 복사</h3>
+<pre><code>INSERT INTO 새로운 테이블명 SELECT * FROM 복사할 테이블명;</code></pre>
+<pre><code>INSERT INTO myMember3 SELECT * FROM myMember;</code></pre>
+
+                <h2>데이터</h2>
+                <h3>3.1 입력하기</h3>
+<pre><code>INSERT INTO 새로운 테이블명 SELECT * FROM 복사할 테이블명;</code></pre>
+<pre><code>INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('webstoryboy@naver.com','황상연','12dfsdecv','19920405','33','01039858583','578365839');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('jungsik321@naver.com', '김정식', '1234', '19930209', '30', '01025738580', '20220314');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('ik6623@naver.com','박종호','1234qwer','19950909','28','01040976623','10293857');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('rmsgur2275@gmail.com','박근혁','alcls2860','19980611','25','01058122860', '12345678');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('apdlvmf8044@gmail.com', '송준섭', 'qweasdf', '19931120', '30', '01088648044', '21846351');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('sbxjs6999@naver.com','박근희','1234qwer','19970214','28',01041046999,'12345678');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('seongwoo@lycos.com','박성우','123456asd','19910506','32', '01044779156','54216451');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('dnwls7738@naver.com','천우진', '12asdf', '19960324', '27', '01055805274', '45678941');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('dnstjq6305@naver.com', '조운섭', 'qweasdf', '19911110', '32', '01024068904', '12345678');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('lhw1847@gmail.com','이현우','1234','19971221','26', '01055332287', '0303');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('dhtpfls321@naver.com', '오세린', '1234', '19980214', '25', '01032229944', '12345678');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('GarenChoi@naver.com','최근영','1234','19970117','26','01054651345','234');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('sna12345@naver.com', '배석찬','1234','19960727','27','01033125279','03270327');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('sbxjs6999@naver.com','박근희','1234qwer','19970214','26',01041046999,'12345678');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('wwuu123@naver.com','최가영','12345678','19970506','26','01066179991','12345678');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('illie@naver.com', '류성일', 'ryuPass', '19940426', '29', '01055327391', '1440');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('jsjh442@naver.com','박지선','1234','19980423','25','01057421662','12341234');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('ohwehoh@naver.com','이연우','dldus1358','19950720','28','01014141441','12341234');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('go_goa@naver.com' ,'김현우', '159753', '19920126', '31', '01087361836', '40250371');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('placidcy@gmail.com', '김지섭', '1234', '19900212', '32', '01011112222','20220314');
+</code></pre>
+            
+            <h3>3.2 불러오기 - 전체 데이터 불러오기</h3>
+<pre><code>SELECT * FROM 테이블 명;</code></pre>
+
+            <h3>3.2 불러오기 - 조건</h3>
+<pre><code>SELECT * FROM 테이블 명 WHERE 조건;</code></pre>
+
+<pre><code>//회원 아이디가 10번인 경우
+SELECT * FROM myMember WHERE memberID = 10
+//회원 아이디가 10번이 아닌 경우
+SELECT * FROM myMember WHERE memberID &lt;&gt; 10;
+//회원 아이디가 5~10번인 경우
+SELECT * FROM myMember WHERE memberID >=5 AND memberID &lt;11
+</code></pre>
+
+            <h3>3.3 불러오기 - 범위</h3>
+<pre><code>SELECT * FROM 테이블 명 WHERE 컬럼명 BETWEEN 시작 값 AND 끝 값;</code></pre>
+<pre><code>//회원 아이디가 5~10번인 경우
+SELECT * FROM myMember WHERE memberID BETWEEN 5 AND 10; 
+//회원 아이디가 5~10번이 아닌 경우
+SELECT * FROM myMember WHERE memberID NOT BETWEEN 5 AND 10;
+</code></pre>
+
+            <h3>3.4 불러오기 - 해당 조건 데이터</h3>
+<pre><code>SELECT * FROM 테이블 명 WHERE 컬럼명 IN(값1, 값2, 값3....)</code></pre>
+<pre><code>//회원 아이디 4,6,13,14번인 경우
+SELECT * FROM myMember WHERE memberID IN(4, 6, 13, 14);
+</code></pre>
+
+            <h3>3.5 불러오기 - 패턴 조건 데이터</h3>
+<pre><code>SELECT * FROM 테이블 명 WHERE 컬럼명 LIKE</code></pre>
+<pre><code>//이메일 중에 naver 텍스트가 포함된 경우
+SELECT * FROM myMember WHERE youEmail LIKE '%naver%';
+//이메일 중에 web 텍스트로 시작되는 경우
+SELECT * FROM myMember WHERE youEmail LIKE 'web%';
+//이메일 중에 com 텍스트로 끝나는 경우
+SELECT * FROM myMember WHERE youEmail LIKE '%com';
+//이름 중에 '김'으로 시작되는 멤버를 출력!
+SELECT * FROM myMember WHERE youName LIKE '김%'
+//이름 중에 '김'씨 이거나 '황'씨인 경우의 멤버를 출력!
+SELECT * FROM myMember WHERE youName LIKE '김%' OR youName LIKE '황%'
+//이름 중에 중간 글자가 '근'인 경우의 멤버를 출력!(%문자열, _1개의 글자)
+SELECT * FROM myMember WHERE youName LIKE '_근_';
+SELECT * FROM myMember WHERE youName LIKE '__연';
+</code></pre>
+            
+            <h3>3.6 불러오기 - NULL 데이터 데이터</h3>
+<pre><code>SELECT * FROM 테이블 명 WHERE 컬럼명 IS NULL</code></pre>
+<pre><code>SELECT * FROM myMember WHERE youName IS NULL;
+SELECT * FROM myMember WHERE youName IS NOT NULL;
+</code></pre>
+
+            <h3>3.7 불러오기 - 논리연산자 데이터</h3>
+<pre><code>SELECT * FROM 테이블 명 WHERE 컬럼명 연산자</code></pre>
+<pre><code>//나이가 30살 이상이거나 또는(OR) 김씨인 멤버
+SELECT * FROM myMember WHERE youAge >=30 OR youName LIKE '김%';
+//나이가 20살 이상이면서(AND) 김씨인 멤버
+SELECT * FROM myMember WHERE youAge >=20 AND youName LIKE '김%';
+//멤버아이디가 2또는 10 그리고 나이가 30이상인 경우
+SELECT * FROM myMember WHERE (memberID=2 OR memberID=10) AND youAge >= 30;
+</code></pre>
+
+            <h3>3.8 불러오기 - 갯수</h3>
+<pre><code>SELECT * FROM 테이블 명 LIMIT 표시할 수</code></pre>
+<pre><code>SELECT * FROM myMember LIMIT 12;
+SELECT * FROM myMember LIMIT 5, 10;
+SELECT youEmail FROM myMember LIMIT 5, 10;
+</code></pre>
+
+            <h3>3.8 불러오기 - 내림차순/오름차순</h3>
+<pre><code>SELECT * FROM 테이블 명 ORDER by 컬럼명 정렬방식(DESC/ASC)</code></pre>
+<pre><code>SELECT * FROM myMember ORDER BY youAge DESC;
+SELECT * FROM myMember ORDER BY youAge ASC;
+</code></pre>
+
+            <h3>3.9 수정하기 - 내림차순/오름차순</h3>
+<pre><code>UPDATE 테이블명 SET 컬럼명 조건</code></pre>
+<pre><code>//모든 회원의 비밀번호를 '1234' 변경
+UPDATE myMember SET youPass = "1234";
+//5회원부터 10회원까지의 비밀번호를 '1234567' 변경
+UPDATE myMember SET youPass = "1234567" WHERE memberID BETWEEN 5 AND 10;
+//아이디 내림차순
+UPDATE myMember SET youPass = "****" ORDER BY memberID DESC LIMIT 10;
+</code></pre>
+
+            <h3>3.10 삭제하기 - 전체 데이터 삭제 </h3>
+<pre><code>DELETE FROM 테이블명 or DELETE * FROM 테이블명</code></pre>
+<pre><code>DELETE FROM myMember</code></pre>
+
+            <h3>3.11 삭제하기 - 조건 </h3>
+<pre><code>DELETE FROM 테이블명 조건 </code></pre>
+<pre><code>//회원 아이디가 5번 멤버를 삭제
+DELETE FROM myMember WHERE memberID = 5;
+//패스워드가 '****' 멤버를 삭제
+DELETE FROM myMember WHERE youPass = '****';
+//이름을 기준으로 5번째까지 멤버 삭제
+DELETE FROM myMember ORDER BY youName LIMIT 5;
+//지정한 멤버 삭제
+DELETE FROM myMember WHERE memberID IN(8,9,10)
+</code></pre>
+
+            <h2>테이블 합치기</h2>
+
+
+            <h2>참고</h2>
+            <ul class="refer">
+                <li><sup>1</sup> <a href="#">자료형</a></li>
+            </ul>
+        </section>
+        <!-- //explanation -->
+
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer> 
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="../assets/js/jquery-3.6.0.js"></script>
+    <script src="../assets/js/jquery-ui.js"></script>
+    <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/script.js"></script> 
+</body>
+</html>

@@ -129,8 +129,14 @@
 ### Classic 마우스 이펙트
 > 01 마우스 이펙트 유형01 : 
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result01.html">결과보기</a>   
-    마우스 오버 효과     
+    마우스 이펙트 - 마우스 따라다니기         
     clientX, clientY, offsetX, offsetY, pageX, pageY, screenX, screenY, addEventListener, querySelector, style, innerText, classList, for(), forEach(), getAttribute 
+
+> 02 마우스 이펙트 유형02 :    
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result02.html">결과보기</a>   
+    마우스 이펙트 - 마우스 따라다니기(GSAP)         
+    querySelector, querySelectorAll, addEventListener, pageX, pageY, classList, forEach, innerText   
+    gsap : to, 
 
 
 

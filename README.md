@@ -75,7 +75,7 @@
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc03.html">결과보기</a>   
     charAt()를 이용하여 알파벳 별로 검색하기   
     querySelector, querySelectorAll, addEventListener, value, dataset, forEach, innerText, dataset, charAt, classList  
-
+ 
 > 04 검색 이펙트 유형04 :
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc04.html">결과보기</a>   
     find()를 이용하여 속성을 검색하면 설명 보여주기   
@@ -127,12 +127,10 @@
 
 
 ### Classic 마우스 이펙트
-01. 마우스 이펙트 유형01 : 
-    <a href="#">문서, </a>
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result01.html">결과보기</a>
-02. 마우스 이펙트 유형02 : 
-    <a href="#">문서, </a>
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result02.html">결과보기</a>
+> 01 마우스 이펙트 유형01 : 
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result01.html">결과보기</a>   
+    마우스 오버 효과     
+    clientX, clientY, offsetX, offsetY, pageX, pageY, screenX, screenY, addEventListener, querySelector, style, innerText, classList, for(), forEach(), getAttribute 
 
 
 
@@ -186,4 +184,12 @@
 
 
 ### THREE.JS 
-https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index8.html 
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index1.html    
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index2.html    
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index3.html    
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index4.html    
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index5.html    
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index6.html    
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index7.html    
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index8.html    
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index9.html    

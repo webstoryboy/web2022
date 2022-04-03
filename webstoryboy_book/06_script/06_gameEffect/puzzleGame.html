@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테트리스</title>
+    <style>
+        * {margin: 0;padding: 0;}
+        ul {list-style: none;}
+        body {height: 100vh;overflow: hidden;}
+        .score {text-align: center; font-size: 36px; margin-bottom: 20px;}
+        .playground {}
+        .playground ul {border: 1px solid #333; width: 250px; margin: 0 auto;}
+        .playground ul > li {width: 100%; height: 25px;}
+        .playground ul > li > ul {display: flex;}
+        .playground ul > li > ul > li {width: 25px; height: 25px; outline: 1px solid #ccc;}
+        .tree {background: red;}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="score">0</div>
+        <div class="playground">
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const playground = document.querySelector(".playground > ul");
+
+        // setting
+        const game_rows = 20;
+        const game_cols = 10;
+
+        let score = 0;
+        let duration = 500;
+        let downInterval;
+        let tempMovingItem;
+
+        const blocks = {
+            tree: [
+                [[2,1],[0,1],[1,1],[1,0]],
+                [[1,1],[0,1],[1,1],[1,0]],
+                [[1,2],[0,1],[2,1],[1,0]],
+                [[2,1],[0,1],[1,1],[1,0]],
+            ]
+        }
+
+        const movingItem = {
+            type: "tree",
+            direction: 1,
+            top: 0,
+            left: 3,
+        }
+
+        init();
+
+        //사각형 만들기
+        function init(){
+            tempMovingItem = { ...movingItem };
+
+            console.log(tempMovingItem)
+
+            for(let i=0; i<game_rows; i++){
+                prependNewLine();
+            }
+
+            renderBlocks();
+        }
+
+        function prependNewLine(){
+            const li = document.createElement("li");
+            const ul = document.createElement("ul");
+            for(let j=0; j<game_cols; j++){
+                const martix = document.createElement("li");
+                ul.prepend(martix);
+            }
+            li.prepend(ul);
+            playground.prepend(li);
+        }
+        function renderBlocks(){
+            const {type, direction, top, left} = tempMovingItem;
+            const movingBlocks = document.querySelectorAll(".moving");
+            movingBlocks.forEach(moving => {
+                moving.classList.remove(type, "moving");
+            })
+            tempMovingItem.type;
+            tempMovingItem.direction;
+            tempMovingItem.top;
+            tempMovingItem.left;
+
+            blocks[type][direction].forEach(block => {
+                const x = block[0] + left;
+                const y = block[1] + top;
+                const target = playground.childNodes[y] ? playground.childNodes[y].childNodes[0].childNodes[x] : null;
+                const isAvailable = checkEmpty(target);
+                if(isAvailable){
+                    target.classList.add(type,"moving");
+                } else {
+                    tempMovingItem = { ...movingItem }
+                    setTimeout(() => {
+                        if(moveType === "top"){
+                            seizeBlock();
+                        }
+                        renderBlocks();
+                    },0)
+                    
+                }
+            })
+            movingItem.left = left;
+            movingItem.top = top;
+            movingItem.direction = direction;
+        }
+
+        function seizeBlock(){
+
+        }
+
+        function checkEmpty(target){
+            if(!target){
+                return false;
+            }
+            return true;
+        }
+
+        function moveBlock(moveType, amount){
+            tempMovingItem[moveType] += amount;
+            renderBlocks()
+        }
+        function changDirection(){
+            const direction = tempMovingItem.direction;
+            direction === 3 ? tempMovingItem.direction = 0 : tempMovingItem.direction +=1
+
+        }
+
+        document.addEventListener("keydown", e => {
+            switch(e.keyCode){
+                case 39:
+                    moveBlock("left", 1);
+                    break;
+                case 37:
+                    moveBlock("left", -1);
+                    break;
+                case 40:
+                    moveBlock("top", 1);
+                    break;
+                case 38:
+                    changDirection("top", 1);
+                    break;
+                default:
+                    break;
+            }
+        })
+    </script>
+</body>
+</html>

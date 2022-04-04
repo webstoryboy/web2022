@@ -136,8 +136,18 @@
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result02.html">결과보기</a>   
     마우스 이펙트 - 마우스 따라다니기(GSAP)         
     querySelector, querySelectorAll, addEventListener, pageX, pageY, classList, forEach, innerText   
-    gsap : to, 
+    gsap : to
 
+> 03 마우스 이펙트 유형03 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result03.html">결과보기</a>   
+    마우스 이펙트 - 조명 효과 :       
+    querySelector, clientWidth, offsetWidth, pageX, pageY, getBoundingClientRect, innerText, addEventListener
+
+> 04 마우스 이펙트 유형04 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result04.html">결과보기</a>   
+    마우스 이펙트 - 이미지 효과 :       
+    querySelector, getBoundingClientRect, addEventListener, pageX, pageY, innerWidth, outerWidth, screen.width, screen.height, style, textContent   
+    gsap : to
 
 
 ### Classic 슬라이드 이펙트

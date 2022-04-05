@@ -11,6 +11,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'NexonLv1Gothic';
         }
         body {
             width: 100%;
@@ -35,8 +36,46 @@
             width: 100%;
             vertical-align: top;
         }
-        .nexon {
-            font-family: 'NexonLv1Gothic';
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        #slider__title {
+            padding: 20px;
+            position: fixed;
+            left: 0; 
+            top: 0;
+        }
+        #slider__title h1 {
+            font-size: 30px;
+            border-bottom: 1px dashed #fff;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            font-weight: 400;
+            display: inline-block;
+        }
+        #slider__title p {
+            font-size: 16px;
+        }
+        #slider__title ul {
+            margin-top: 10px;
+        }
+        #slider__title li {
+            display: inline;
+        }
+        #slider__title li a {
+            width: 20px; 
+            height: 20px;
+            border-radius: 50%;
+            border: 1px dashed #fff;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+        #slider__title li.active a {
+            background: #fff;
+            color: #000;
         }
         
         /* slider */
@@ -103,9 +142,42 @@
         .slider__btn .next {
             right: 0;
         }
+        .slider__dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 20px;
+        }
+        .slider__dot .dot {
+            width: 20px; height: 20px;
+            background: rgba(0,0,0,0.4);
+            display: inline-block;
+            border-radius: 50%;
+            transition: all 0.3s;
+            text-indent: -9999px;
+            margin: 3px;
+        }
+        .slider__dot .dot.active {
+            background: rgba(255,255,255,0.9);
+        }
     </style>
 </head>
 <body>
+    <header id="slider__title">
+        <h1><a href="parallaxEffect.html">JavaScript Slider Effect05</a></h1>
+        <p>슬라이드 이펙트 - 이미지 슬라이드(버튼, 닷버튼)</p>
+        <ul>
+            <li><a href="slider_result01.html">1</a></li>
+            <li><a href="slider_result02.html">2</a></li>
+            <li><a href="slider_result03.html">3</a></li>
+            <li><a href="slider_result04.html">4</a></li>
+            <li class="active"><a href="slider_result05.html">5</a></li>
+            <li><a href="slider_result06.html">6</a></li>
+            <li><a href="slider_result07.html">7</a></li>
+        </ul>
+    </header>
+    <!-- //title  -->
+
     <!-- main -->
     <main>
         <section id="sliderType05" class="nexon">
@@ -123,6 +195,12 @@
                     <a href="#" class="prev">prev</a>
                     <a href="#" class="next">next</a>
                 </div>
+                <div class="slider__dot">
+                    <!-- <a href="#" class="dot active"></a>
+                    <a href="#" class="dot"></a>
+                    <a href="#" class="dot"></a>
+                    <a href="#" class="dot"></a> -->
+                </div>
             </div>
         </section>
     </main>
@@ -135,32 +213,59 @@
         const sliderImg = document.querySelector(".slider__img");
         const sliderInner = document.querySelector(".slider__inner");
         const slider = document.querySelectorAll(".slider");
-        const sliderBtn = document.querySelector(".slider__btn");
-        const sliderBtnPrev = sliderBtn.querySelector(".prev");
-        const sliderBtnNext = sliderBtn.querySelector(".next");
-
-        let currentIndex = 0;   
-        let sliderCount = slider.length;                                   
-        let sliderWidth = sliderImg.offsetWidth; 
+        const sliderDot = document.querySelector(".slider__dot");
         
+        let currentIndex = 0;
+        let sliderCount = slider.length;  
+        let sliderWidth = sliderImg.offsetWidth;     
+        let dotIndex = "";
+        let dotActive;
+
+        function init(){
+            // 이미지 갯수만큼 <a></a>
+            // dotIndex += "<a href='#' class='dot'></a>"
+            // dotIndex += "<a href='#' class='dot'></a>"
+            // dotIndex += "<a href='#' class='dot'></a>"
+            // dotIndex += "<a href='#' class='dot'></a>"
+            // dotIndex += "<a href='#' class='dot'></a>"
+
+            slider.forEach(() => dotIndex += "<a href='#' class='dot'></a>");
+            sliderDot.innerHTML = dotIndex;
+            //첫 번재 닷 버튼한테 활성화 표시(active)
+            sliderDot.firstElementChild.classList.add("active");
+        }
+        init();
+
         function gotoSlider(num){
-            sliderInner.style.transition = "all 400ms";
+            sliderInner.style.transition = "all 600ms";
             sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
             currentIndex = num;
-        }
-        
-        sliderBtnPrev.addEventListener("click", () => {
-            let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
-            // 첫번째 있을 때 0 --> 4 
-            // if( currentIndex == 0 ) prevIndex = sliderCount - 1;
-            // 0 1 2 3 4 
-            gotoSlider(prevIndex);
-        })
 
-        sliderBtnNext.addEventListener("click", () => {
-            let nextIndex = (currentIndex + 1) % sliderCount;
-            gotoSlider(nextIndex);
-        })
+            dotActive = document.querySelectorAll(".slider__dot .dot");
+            dotActive.forEach(el => {
+                el.classList.remove("active");
+            })
+            dotActive[num].classList.add("active");
+        }
+
+        document.querySelectorAll(".slider__btn a").forEach((btn, index) => {
+            btn.addEventListener("click", () => {
+                let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
+                let nextIndex = (currentIndex + 1) % sliderCount;
+
+                if(btn.classList.contains("prev")){
+                    gotoSlider(prevIndex);
+                } else {
+                    gotoSlider(nextIndex);
+                };
+            });
+        });
+
+        document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                gotoSlider(index);
+            });
+        });
     </script>
 </body>
 </html>

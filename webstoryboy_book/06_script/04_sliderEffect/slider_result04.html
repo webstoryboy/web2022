@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 이펙트</title>
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'NexonLv1Gothic';
+        }
+        body {
+            width: 100%;
+            height: 100vh;
+            background-image: url(../img/images09@2.jpg);
+            background-size: cover;
+            background-position: center center;
+            overflow: hidden;
+            color: #fff;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            left: 0; 
+            top: 0;
+            width: 100%; 
+            height: 100vh;
+            background: rgba(8,31,36,.8);
+            z-index: -1;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        #slider__title {
+            padding: 20px;
+            position: fixed;
+            left: 0; 
+            top: 0;
+        }
+        #slider__title h1 {
+            font-size: 30px;
+            border-bottom: 1px dashed #fff;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            font-weight: 400;
+            display: inline-block;
+        }
+        #slider__title p {
+            font-size: 16px;
+        }
+        #slider__title ul {
+            margin-top: 10px;
+        }
+        #slider__title li {
+            display: inline;
+        }
+        #slider__title li a {
+            width: 20px; 
+            height: 20px;
+            border-radius: 50%;
+            border: 1px dashed #fff;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+        #slider__title li.active a {
+            background: #fff;
+            color: #000;
+        }
+        
+        /* slider */
+        .slider__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .slider__img {
+            position: relative;
+            width: 800px;
+            height: 480px;
+            margin: 16px;
+            overflow: hidden;
+        }
+        .slider__inner {
+            position: relative;
+            width: 4800px;
+            height: 480px;
+        }
+        .slider {
+            float: left;
+            width: 800px;
+            height: 480px;
+            position: relative;
+        }
+        .slider::before {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            padding: 5px 10px 3px;
+        }
+        .slider:nth-child(1)::before {content: '이미지1';}
+        .slider:nth-child(2)::before {content: '이미지2';}
+        .slider:nth-child(3)::before {content: '이미지3';}
+        .slider:nth-child(4)::before {content: '이미지4';}
+        .slider:nth-child(5)::before {content: '이미지5';}
+        .slider:nth-child(6)::before {content: '이미지1';}
+        
+        .slider__btn a {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            width: 50px;
+            height: 50px;
+            background: rgba(0,0,0,.4);
+            text-align: center;
+            line-height: 50px;
+            transition: all 0.2s;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+        .slider__btn a:hover {
+            background: rgba(241, 96, 86, 1)
+        }
+        .slider__btn .prev {
+            left: 0;
+        }
+        .slider__btn .next {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <header id="slider__title">
+        <h1><a href="parallaxEffect.html">JavaScript Slider Effect04</a></h1>
+        <p>슬라이드 이펙트 - 이미지 슬라이드(버튼)</p>
+        <ul>
+            <li><a href="slider_result01.html">1</a></li>
+            <li><a href="slider_result02.html">2</a></li>
+            <li><a href="slider_result03.html">3</a></li>
+            <li class="active"><a href="slider_result04.html">4</a></li>
+            <li><a href="slider_result05.html">5</a></li>
+            <li><a href="slider_result06.html">6</a></li>
+            <li><a href="slider_result07.html">7</a></li>
+        </ul>
+    </header>
+    <!-- //title  -->
+
+    <!-- main -->
+    <main>
+        <section id="sliderType05" class="nexon">
+            <div class="slider__wrap">
+                <div class="slider__img">
+                    <div class="slider__inner">
+                        <div class="slider"><img src="../img/images01.jpg" alt="이미지1"></div>
+                        <div class="slider"><img src="../img/images02.jpg" alt="이미지2"></div>
+                        <div class="slider"><img src="../img/images03.jpg" alt="이미지3"></div>
+                        <div class="slider"><img src="../img/images04.jpg" alt="이미지4"></div>
+                        <div class="slider"><img src="../img/images05.jpg" alt="이미지5"></div>
+                    </div>
+                </div> 
+                <div class="slider__btn">
+                    <a href="#" class="prev">prev</a>
+                    <a href="#" class="next">next</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- //main -->
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script>
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderImg = document.querySelector(".slider__img");
+        const sliderInner = document.querySelector(".slider__inner");
+        const slider = document.querySelectorAll(".slider");
+        const sliderBtn = document.querySelector(".slider__btn");
+        const sliderBtnPrev = sliderBtn.querySelector(".prev");
+        const sliderBtnNext = sliderBtn.querySelector(".next");
+
+        let currentIndex = 0;   
+        let sliderCount = slider.length;                                   
+        let sliderWidth = sliderImg.offsetWidth; 
+        
+        function gotoSlider(num){
+            sliderInner.style.transition = "all 400ms";
+            sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
+            currentIndex = num;
+        }
+        
+        sliderBtnPrev.addEventListener("click", () => {
+            let prevIndex = (currentIndex + (sliderCount - 1)) % sliderCount;
+            // 첫번째 있을 때 0 --> 4 
+            // if( currentIndex == 0 ) prevIndex = sliderCount - 1;
+            // 0 1 2 3 4 
+            gotoSlider(prevIndex);
+        })
+
+        sliderBtnNext.addEventListener("click", () => {
+            let nextIndex = (currentIndex + 1) % sliderCount;
+            gotoSlider(nextIndex);
+        })
+    </script>
+</body>
+</html>

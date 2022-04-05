@@ -170,16 +170,37 @@
 
 
 ### Classic 슬라이드 이펙트
-01. 슬라이드 이펙트 유형01 :
-    <a href="#">문서, </a>
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/04_sliderEffect/slider_result01.html">결과보기</a>
-02. 슬라이드 이펙트 유형02 :
-    <a href="#">문서, </a>
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/04_sliderEffect/slider_result02.html">결과보기</a>
-03. 슬라이드 이펙트 유형03 :
-    <a href="#">문서, </a>
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/04_sliderEffect/slider_result03.html">결과보기</a>
+> 01 슬라이드 이펙트 유형01 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/04_sliderEffect/slider_result01.html">결과보기</a>   
+    패럴랙스 이펙트 - 트랜지션 효과    
+    querySelector(), querySelectorAll(), setInterval(), style, forEach()
 
+> 02 슬라이드 이펙트 유형02 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/04_sliderEffect/slider_result02.html">결과보기</a>   
+    패럴랙스 이펙트 - 좌로 움직이기    
+    querySelector(), querySelectorAll(), setInterval(), style   
+    gsap : to
+
+> 03 슬라이드 이펙트 유형03 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/04_sliderEffect/slider_result03.html">결과보기</a>   
+    패럴랙스 이펙트 - 좌로 움직이기(무한)    
+    querySelector(), querySelectorAll(), setInterval(), style, length, offsetWidth, firstElementChild, cloneNode, appendChild, if()   
+
+> 04 슬라이드 이펙트 유형04 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/04_sliderEffect/slider_result04.html">결과보기</a>   
+    패럴랙스 이펙트 - 이미지 슬라이드(버튼)    
+    querySelector(), querySelectorAll(), setInterval(), style, length, offsetWidth, style, addEventListener(),
+
+> 05 슬라이드 이펙트 유형05 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/04_sliderEffect/slider_result05.html">결과보기</a>   
+    패럴랙스 이펙트 - 이미지 슬라이드(버튼, 닷버튼)    
+    querySelector(), querySelectorAll(), setInterval(), style, length, offsetWidth, style, addEventListener(), forEach(), innerHTML, classList
+
+> 06 슬라이드 이펙트 유형06 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/04_sliderEffect/slider_result06.html">결과보기</a>   
+    패럴랙스 이펙트 - 이미지 슬라이드(버튼, 닷버튼, 무한)    
+    querySelector(), querySelectorAll(), setInterval(), style, length, offsetWidth, style, addEventListener(),
+    cloneNode, appendChild, insertBefore, for(), firstElementChild, classList, 
 
 
 ### Classic 게임 이펙트
@@ -198,6 +219,38 @@
     패럴랙스 이펙트 - 메뉴 이동      
     querySelector(), querySelectorAll(), forEach() , addEventListener(), scroll(), scrollTo(), scrollBy(), getAttribute(), scrollIntoView(), pageYOffset, scrollTop, scrollY, classList, innerText, Math.round() 
     
+> 02 패럴랙스 이펙트 유형02 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result02.html">결과보기</a>   
+    패럴랙스 이펙트 - 숨김 메뉴      
+    querySelector(), querySelectorAll(), forEach(), preventDefault(), getAttribute(), scrollIntoView(), pageYOffset, scrollTop, scrollY, classList, offsetTop, innerText, Math.round()   
+
+> 03 패럴랙스 이펙트 유형03 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result03.html">결과보기</a>   
+    패럴랙스 이펙트 - 나타나기      
+    querySelector(), querySelectorAll(), pageYOffset, scrollTop, scrollY, classList, offsetTop, innerHeight, requestAnimationFrame()
+
+> 04 패럴랙스 이펙트 유형04 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result04.html">결과보기</a>   
+    패럴랙스 이펙트 - 이질감 효과      
+    querySelector(), querySelectorAll(), pageYOffset, scrollTop, scrollY, classList, offsetTop, innerHeight, requestAnimationFrame(), forEach(), style
+
+> 05 패럴랙스 이펙트 유형05 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result05.html">결과보기</a>   
+    패럴랙스 이펙트 - 텍스트 효과      
+    querySelector(), querySelectorAll(), pageYOffset, scrollTop, scrollY, classList, offsetTop, innerHeight, requestAnimationFrame(), forEach(), style, split(), join(), innerHTML, setAttribute(), setTimeout
+
+> 06 패럴랙스 이펙트 유형06 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result06.html">결과보기</a>   
+    패럴랙스 이펙트 - 리빌 효과      
+    querySelector(), querySelectorAll(), pageYOffset, scrollTop, scrollY, classList, offsetTop, innerHeight, requestAnimationFrame(), forEach(), style, innerText, dataset, setTimeout()
+
+> 07 패럴랙스 이펙트 유형07 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result07.html">결과보기</a>   
+    패럴랙스 이펙트 - 가로 효과      
+    
+    
+
+
 
 
 

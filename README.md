@@ -202,6 +202,11 @@
     querySelector(), querySelectorAll(), setInterval(), style, length, offsetWidth, style, addEventListener(),
     cloneNode, appendChild, insertBefore, for(), firstElementChild, classList, 
 
+> 07 슬라이드 이펙트 유형07 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/04_sliderEffect/slider_result07.html">결과보기</a>   
+    패럴랙스 이펙트 - 이미지 슬라이드(버튼, 닷버튼, 무한, 플레이 버튼, 정지 버튼, 자동 플레이)    
+     
+
 
 ### Classic 게임 이펙트
 

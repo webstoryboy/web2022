@@ -147,7 +147,14 @@
     <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result04.html">결과보기</a>   
     마우스 이펙트 - 이미지 효과 :       
     querySelector, getBoundingClientRect, addEventListener, pageX, pageY, innerWidth, outerWidth, screen.width, screen.height, style, textContent   
-    gsap : to
+    gsap : to 
+
+> 05 마우스 이펙트 유형05 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result05.html">결과보기</a>   
+    마우스 이펙트 - 기울기 효과 :       
+    querySelector, getBoundingClientRect, addEventListener, pageX, pageY, innerWidth, outerWidth, Math.max, Math.min, style, textContent
+    gsap : to 
+
 
 
 ### Classic 슬라이드 이펙트

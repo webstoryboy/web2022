@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.135.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.2/chroma.min.js"></script>
+    <script src="https://assets.codepen.io/127738/perlin.js"></script>
+    <script>
+
+    //화면 생성
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.Fog(0x3d0764, 20, 25);
+
+    //카메라 설정
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 25;
+
+    //렌더링 설정
+    renderer = new THREE.WebGLRenderer({antialias:true, alpha: true});
+    renderer.setClearColor(0x3d0764);
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    document.body.appendChild(renderer.domElement);
+
+    //조명 설정
+    const light = new THREE.HemisphereLight(0xffffbb, 0x151515, 1);
+    scene.add(light);
+
+    const plight = new THREE.PointLight(0xffffff, 1, 40);
+    plight.position.z = 30;
+
+    let lGroup = new THREE.Group();
+    lGroup.add(plight);
+    scene.add(lGroup);
+
+    const colours = chroma.scale(['#A947F2', '#FF29BD', '#FF5286', '#FF905C', '#FFC84F', '#F9F871']);
+
+    let geometry = new THREE.IcosahedronGeometry(4, 40);
+    let material = new THREE.MeshPhongMaterial({wireframe: false, vertexColors: true});
+    
+    let blob = new THREE.Mesh(geometry, material);
+    scene.add(blob);
+    
+    noise.seed(Math.random() * 100);
+
+    let v = new THREE.Vector3();
+    const count = geometry.attributes.position.count;
+    let center = new THREE.Vector3(1,-1,1);
+    geometry.setAttribute('color', new THREE.BufferAttribute(new Float32Array(count * 3), 3) );
+    for (let i = 0; i < geometry.attributes.position.count * 3; i += 3) {
+        v.x = geometry.attributes.position.array[i];
+        v.y = geometry.attributes.position.array[i + 1];
+        v.z = geometry.attributes.position.array[i + 2];
+        let angle = center.angleTo(v) / Math.PI;
+            geometry.attributes.color.array[i] = colours(angle).rgb()[0] / 255;
+            geometry.attributes.color.array[i + 1] = colours(angle).rgb()[1] / 255;
+            geometry.attributes.color.array[i + 2] = colours(angle).rgb()[2] / 255;
+        }
+        let origin = geometry.attributes.position.clone();
+        function updateGeom (seed) {
+        for (let i = 0; i < geometry.attributes.position.count * 3; i += 3) {
+            v.x = origin.array[i];
+            v.y = origin.array[i + 1];
+            v.z = origin.array[i + 2];
+            let n = 2;
+            n += noise.simplex3(v.x * 0.2, v.y * 0.2, v.z * 0.2 + seed);
+            v.multiplyScalar(n);
+            geometry.attributes.position.array[i] = v.x;
+            geometry.attributes.position.array[i + 1] = v.y;
+            geometry.attributes.position.array[i + 2] = v.z;
+        }
+        geometry.attributes.position.needsUpdate = true;
+    }
+    updateGeom(0);
+
+    //애니메이션 설정
+    function animate(a) {
+        requestAnimationFrame(animate);
+
+        updateGeom(a * 0.0001);
+        lGroup.rotation.x = a * 0.001;
+        lGroup.rotation.y = a * 0.001;
+        lGroup.rotation.z = -a * 0.001;
+  
+        renderer.render(scene, camera);
+    }
+    animate();
+
+    //화면 사이즈 설정
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+    window.addEventListener('resize', onWindowResize);
+    </script>
+</body>
+</html>

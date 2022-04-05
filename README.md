@@ -193,32 +193,17 @@
 ## WEBS : 패럴랙스 사이트 만들기
 
 ### Classic 패럴랙스 이펙트
-01. 패럴랙스 이펙트 유형01 : 
-<a href="#">문서</a>, 
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result01.html">결과보기</a>
-02. 패럴랙스 이펙트 유형02 : 
-<a href="#">문서</a>, 
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result02.html">결과보기</a>
-03. 패럴랙스 이펙트 유형03 : 
-<a href="#">문서</a>, 
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result03.html">결과보기</a>
-04. 패럴랙스 이펙트 유형04 : 
-<a href="#">문서</a>, 
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result04.html">결과보기</a>
-05. 패럴랙스 이펙트 유형05 : 
-<a href="#">문서</a>, 
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result05.html">결과보기</a>
-06. 패럴랙스 이펙트 유형06 : 
-<a href="#">문서</a>, 
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result06.html">결과보기</a>
-06. 패럴랙스 이펙트 유형07 : 
-<a href="#">문서</a>, 
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result07.html">결과보기</a>
+> 01 패럴랙스 이펙트 유형01 :
+    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result01.html">결과보기</a>   
+    패럴랙스 이펙트 - 메뉴 이동      
+    querySelector(), querySelectorAll(), forEach() , addEventListener(), scroll(), scrollTo(), scrollBy(), getAttribute(), scrollIntoView(), pageYOffset, scrollTop, scrollY, classList, innerText, Math.round() 
+    
 
 
 
 
-### THREE.JS 
+
+## THREE.JS 
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index1.html    
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index2.html    
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index3.html    

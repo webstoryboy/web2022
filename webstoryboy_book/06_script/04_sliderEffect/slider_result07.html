@@ -154,20 +154,36 @@
         .slider__dot .dot.active {
             background: rgba(255,255,255,0.9);
         }
+        .slider__dot .play {
+            display: none;
+        }
+        .slider__dot .play.show {
+            display: block;
+            background: #000; color: #fff;
+            padding: 20px;
+        }
+        .slider__dot .stop {
+            display: none;
+        }
+        .slider__dot .stop.show {
+            display: block;
+            background: red; color: #fff;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
     <header id="slider__title">
-        <h1><a href="parallaxEffect.html">JavaScript Slider Effect06</a></h1>
-        <p>슬라이드 이펙트 - 이미지 슬라이드(버튼, 닷버튼, 무한)</p>
+        <h1><a href="parallaxEffect.html">JavaScript Slider Effect07</a></h1>
+        <p>슬라이드 이펙트 - 이미지 슬라이드(버튼, 닷버튼, 무한, 플레이 버튼, 정지 버튼, 자동 플레이)</p>
         <ul>
             <li><a href="slider_result01.html">1</a></li>
             <li><a href="slider_result02.html">2</a></li>
             <li><a href="slider_result03.html">3</a></li>
             <li><a href="slider_result04.html">4</a></li>
             <li><a href="slider_result05.html">5</a></li>
-            <li class="active"><a href="slider_result06.html">6</a></li>
-            <li><a href="slider_result07.html">7</a></li>
+            <li><a href="slider_result06.html">6</a></li>
+            <li class="active"><a href="slider_result07.html">7</a></li>
         </ul>
     </header>
     <!-- //title  -->
@@ -218,31 +234,40 @@
             sliderLast = slider[sliderLength - 1],
             cloneFirst = sliderFirst.cloneNode(true),
             cloneLast = sliderLast.cloneNode(true),
-            dotIndex = "";
+            dotIndex = "",
+            sliderTimer = "";
 
         sliderInner.appendChild(cloneFirst);
         sliderInner.insertBefore(cloneLast, sliderFirst);
 
-        function init(){
+        function dotInit(){
             for(let i=0; i<sliderLength; i++){
                 dotIndex += "<a href='#' class='dot'></a>";
             }
+            dotIndex += "<a href='#' class='play'>play</a>";
+            dotIndex += "<a href='#' class='stop show'>stop</a>";
             sliderDot.innerHTML = dotIndex;
             sliderDot.firstElementChild.classList.add("active");
-        }
-        init();
 
-        function gotoSlider(direction){
+        }
+        dotInit();
+
+        function gotoSlider(index){
             sliderInner.classList.add("transition");
             posInitial = sliderInner.offsetLeft;
+            console.log(posInitial) //-800
 
-            if(direction == -1){
-                sliderInner.style.left = (posInitial + sliderWidth) + "px";
-                currentIndex--;
-            } else if(direction == 1){
-                sliderInner.style.left = (posInitial - sliderWidth) + "px";
-                currentIndex++;
-            }
+            // if(direction == -1){
+            //     sliderInner.style.left = (posInitial + sliderWidth) + "px";
+            //     currentIndex--;
+            // } else if(direction == 1){
+            //     sliderInner.style.left = (posInitial - sliderWidth) + "px";
+            //     currentIndex++;
+            // }
+
+            sliderInner.style.left =  -sliderWidth * (index+1) + "px";
+            
+            currentIndex = index;
 
             let dotActive = document.querySelectorAll(".slider__dot .dot");
             dotActive.forEach(el => {
@@ -270,10 +295,55 @@
                 currentIndex = 0;
             }
         }
+
+        function autoPlay(){
+            sliderTimer = setInterval(function(){
+                var intervalNum = currentIndex + 1
+                gotoSlider(intervalNum);
+            }, 3000);
+        }
+        autoPlay();
+
+        function stopPlay(){
+            clearInterval(sliderTimer)
+        }
     
-        sliderBtnPrev.addEventListener("click", () => {gotoSlider(-1)})
-        sliderBtnNext.addEventListener("click", () => {gotoSlider(1)})
+        sliderBtnPrev.addEventListener("click", () => {
+            let prevIndex = currentIndex - 1
+            gotoSlider(prevIndex)
+        })
+        sliderBtnNext.addEventListener("click", () => {
+            let nextIndex = currentIndex + 1
+            gotoSlider(nextIndex)
+        })
         sliderInner.addEventListener('transitionend', checkIndex);
+
+        document.querySelectorAll(".slider__dot .dot").forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                gotoSlider(index);
+            })
+        });
+
+        sliderInner.addEventListener("mouseenter", () => {
+            stopPlay();
+        })
+        sliderInner.addEventListener("mouseleave", () => {
+            if(document.querySelector(".play").classList.contains("show")){
+                stopPlay();  
+            } else {
+                autoPlay();
+            }
+        })
+        document.querySelector(".play").addEventListener("click", () => {
+            document.querySelector(".play").classList.remove("show");
+            document.querySelector(".stop").classList.add("show");
+            autoPlay();
+        })
+        document.querySelector(".stop").addEventListener("click", () => {
+            document.querySelector(".stop").classList.remove("show");
+            document.querySelector(".play").classList.add("show");
+            stopPlay();
+        })
     </script>
 </body>
 </html>

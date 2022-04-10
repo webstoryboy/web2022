@@ -5,12 +5,178 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        body {height: 100vh; overflow: hidden; padding: 29px;}
+        li {list-style: none;}
+        .score {text-align: center; font-size: 36px; margin: 20px;}
+        .playground {
+            width: 250px;
+            margin: 0 auto;
+        }
+        .playground > ul {
+            border: 3px solid #ccc;
+        }
+        .playground > ul > li {
+            width: 100%;
+            height: 25px;
+        }
+        .playground > ul > li > ul {
+            display: flex;
+        }
+        .playground > ul > li > ul > li {
+            width: 25px;
+            height: 25px;
+            outline: 1px solid #ccc;
+        }
+        .tree {
+            background: #6723ca;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="wrapper">
+        <div class="score">0</div>
+        <div class="playground">
+            <ul>
+                
+            </ul>
+        </div>
+    </div>
 
     <script>
+        const playground = document.querySelector(".playground > ul");
+
+        //설정
+        const GAME_ROWS = 20;
+        const GAME_COLS = 10;
+
+        //변수
+        let score = 0;
+        let duration = 500;
+        let downInterval;
+        let tempMovingItem;
+
+        const BLOCKS = {
+            tree : [
+                [[2,1],[0,1],[1,0],[1,1]],
+                [[1,2],[0,1],[1,0],[1,1]],
+                [[1,2],[0,1],[2,1],[1,1]],
+                [[2,1],[1,2],[1,0],[1,1]],
+            ]
+        }
+        const movingItem = {
+            type: "tree",
+            direction : 3,
+            top: 0,
+            left: 0,
+        }
+
+        init();
+
         
+        function init(){
+            tempMovingItem = { ...movingItem };
+            //movingItem.left = 3;
+            //console.log(tempMovingItem);
+
+            for(let i=0; i<GAME_ROWS; i++){ 
+                prependNewLine();
+            }
+            renderBlocks();
+        }
+        
+        function prependNewLine(){
+            const li = document.createElement("li");
+            const ul = document.createElement("ul");
+            for(let j=0; j<GAME_COLS; j++){
+                const martix = document.createElement("li");
+                ul.prepend(martix);
+            }
+            li.prepend(ul);
+            playground.prepend(li);
+        }
+
+        function renderBlocks(){
+            const {type, direction, top, left} = tempMovingItem;
+
+            // tempMovingItem.type;
+            // tempMovingItem.direction;
+            // tempMovingItem.top;
+            // tempMovingItem.left;
+            // console.log(tempMovingItem.type);
+            console.log(tempMovingItem.type, tempMovingItem.direction);
+
+            const movingBlocks = document.querySelectorAll(".moving");
+            movingBlocks.forEach(moving => {
+                moving.classList.remove(type, "moving");
+            })
+
+            BLOCKS[type][direction].forEach(block => {
+                const x = block[0] + left;
+                const y = block[1] + top;
+
+                const target = playground.childNodes[y] ? playground.childNodes[y].childNodes[0].childNodes[x] : null;
+                const isAvailable = checkEmpty(target);
+                if(isAvailable){
+                    target.classList.add(type, "moving");
+                } else {
+                    tempMovingItem = {...movingItem}
+                    setTimeout(() => {
+                        if(moveType === "top"){
+                            seizeBlock()
+                        }
+                        renderBlocks()  // 재귀함수
+                    }, 100)
+                    //renderBlocks();
+                }
+            });
+            movingItem.left = left;
+            movingItem.top = top;
+            movingItem.direction = direction;
+        }
+
+        function seizeBlock(){
+            console.log(first)
+        }
+
+        function checkEmpty(target){
+            if(!target){
+                return false;
+            }
+            return true;
+        }
+
+        function moveBlock(moveType, amount){
+            tempMovingItem[moveType] += amount;
+            renderBlocks();
+        }
+
+        function changeDirection(){
+            const direction = tempMovingItem.direction;
+            direction === 3 ? tempMovingItem.direction = 0 : tempMovingItem.direction +=1;
+            renderBlocks();
+        }
+        
+        document.addEventListener("keydown", e => {
+            switch(e.keyCode){
+                case 39:
+                    moveBlock("left", 1);
+                    break;
+                case 37:
+                    moveBlock("left", -1);
+                    break;
+                case 38:
+                    changeDirection();
+                    break;
+                case 40:
+                    moveBlock("top", 1);
+                    break;
+                default:
+                    break;
+            }
+        })
+
     </script>
 </body>
 </html>

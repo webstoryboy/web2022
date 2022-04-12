@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+
+
+    <script src="https://threejs.org/build/three.min.js"></script>
+    <script src="https://threejs.org/examples/js/utils/BufferGeometryUtils.js"></script>
+    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <script>
+        //화면 생성
+        const scene = new THREE.Scene();
+
+        //카메라 설정
+        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(0, -6, 20);
+
+        //렌더링 설정
+        renderer = new THREE.WebGLRenderer({antialias:true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x201005);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        document.body.appendChild(renderer.domElement);
+
+        //컨트롤 설정
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+        
+
+        //Geometry
+        let geoms = [];
+        let pts = [
+            new THREE.Vector2(0, 1. - 0),
+            new THREE.Vector2(1.25, 1. - 1),
+            new THREE.Vector2(1.25, 1. - 1.125),
+            new THREE.Vector2(1.45, 1. - 0.125),
+            new THREE.Vector2(1.45, 1. - 0.95)
+        ];
+        const geom = new THREE.LatheBufferGeometry(pts, 200);
+        geoms.push(geom);
+
+        //조명 설정
+        var geomLight = new THREE.CylinderBufferGeometry(0.1, 0.1, 1.05, 10);
+        geomLight.rotateX(Math.PI * 1.5);
+        geoms.push(geomLight);
+
+        //Geometry
+        const fullGeom = THREE.BufferGeometryUtils.mergeBufferGeometries(geoms);
+        const instGeom = new THREE.InstancedBufferGeometry().copy(fullGeom);
+
+        var num = 100;
+        let instPos = []; //3
+        let instSpeed = []; //1
+        let instLight = []; // 2 (initial intensity, frequency)
+        for (let i = 0; i < num; i++){
+            instPos.push( Math.random() - 0.5, Math.random() - 0.5, Math.random() - 0.5 );
+            instSpeed.push( Math.random() * 0.25 + 1);
+            instLight.push( Math.PI * 0.5 + (Math.PI * Math.random() * 0.5), Math.random() + 5);
+        }
+        instGeom.setAttribute("instPos", new THREE.InstancedBufferAttribute(new Float32Array(instPos), 3));
+        instGeom.setAttribute("instSpeed", new THREE.InstancedBufferAttribute(new Float32Array(instSpeed), 1));
+        instGeom.setAttribute("instLight", new THREE.InstancedBufferAttribute(new Float32Array(instPos), 2));
+        instGeom.instanceCount = num;
+
+        var mat = new THREE.ShaderMaterial({
+            uniforms: {
+                uTime: {value: 0},
+                uLight: {value: new THREE.Color("maroon").multiplyScalar(1.5)},
+                uColor: {value: new THREE.Color("maroon").multiplyScalar(0.95)},
+                uFire: {value: new THREE.Color(1, 0.75, 0)}
+            },
+            vertexShader:`
+                uniform float uTime;
+
+                attribute vec3 instPos;
+                attribute float instSpeed;
+                attribute vec2 instLight;
+
+                varying vec2 vInstLight;
+                varying float vY;
+
+                void main() {
+                    vInstLight = instLight;
+                    vY = position.y;
+
+                    vec3 pos = vec3(position);
+                    vec3 iPos = instPos * 50.;
+
+                    iPos.xz += vec2(
+                        cos(instLight.x + instLight.y * uTime),
+                        sin(instLight.x + instLight.y * uTime * fract(sin(instLight.x)))
+                    );
+
+                    iPos.y = mod(iPos.y + 25. + (uTime * instSpeed), 50.) - 25.;
+                    pos += iPos;
+                    gl_Position = projectionMatrix * modelViewMatrix * vec4(pos,1.0);
+                }
+            `,
+            fragmentShader: `
+                uniform float uTime;
+                uniform vec3 uLight;
+                uniform vec3 uColor;
+                uniform vec3 uFire;
+
+                varying vec2 vInstLight;
+                varying float vY;
+
+                void main() {
+                    vec3 col = vec3(0);
+                    float t = vInstLight.x + (vInstLight.y * uTime * 10.);
+                    float ts = sin(t * 3.14) * 0.5 + 0.5;
+                    float tc = cos(t * 2.7) * 0.5 + 0.5;
+                    float f = smoothstep(0.12, 0.12 + (ts + tc) * 0.25, vY);
+                    float li = (0.5 + smoothstep(0., 1., ts * ts + tc * tc) * 0.5);
+                    col = mix(uLight * li, uColor * (0.75 + li * 0.25), f);
+
+                    col = mix(col, uFire, step(vY, 0.05) * (0.75 + li * 0.25));
+
+                    gl_FragColor = vec4(col, 1);
+                }
+            `,
+            side: THREE.DoubleSide
+        });
+
+        var lantern = new THREE.Mesh(instGeom, mat);
+        scene.add(lantern);
+
+        //애니메이션 설정
+        var clock = new THREE.Clock();
+        function animate(a) {
+            requestAnimationFrame(animate);
+
+            let t = clock.getElapsedTime();
+            mat.uniforms.uTime.value = t;
+
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        //화면 사이즈 설정
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+        window.addEventListener('resize', onWindowResize);
+   
+    </script>
+</body>
+</html>

@@ -260,9 +260,11 @@
 
 ## HTML REFERENCE 
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/a.html   
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/abbr.html   
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/abbr.html    
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/acronym.html     
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/address.html     
 
-
+ 
 ## CSS REFERENCE 
 
 

@@ -40,16 +40,16 @@ $(".scMenu > div").click(function (e) {
 // const nav = document.querySelector("#aside");
 // const navBtn = document.querySelector(".aside-btn");
 // const lesson = document.querySelector("#lesson");
-// const lessonBtn = document.querySelector(".lesson-btn");
+const lessonBtn = document.querySelector(".lesson-btn");
 
 // navBtn.addEventListener("click", function() {
 //     nav.classList.toggle("nav-open");
 //     navBtn.classList.toggle("open");
 // });
 
-// lessonBtn.addEventListener("click", function() {
-//     lesson.classList.toggle("open");
-// });
+lessonBtn.addEventListener("click", function() {
+    lesson.classList.toggle("open");
+});
 
 //tab 
 const codeLink = document.querySelectorAll(".code_link .sub li");

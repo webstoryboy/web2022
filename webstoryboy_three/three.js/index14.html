@@ -36,7 +36,7 @@
                 gl_Position = projectionMatrix * modelViewMatrix * vec4(pos,1.0);
             }
         `;
-        
+
         var heatFragment = `
             varying float hValue;
 
@@ -49,7 +49,7 @@
                 gl_FragColor = vec4(heatmapGradient(hValue), 1. - v * v) ;
             }
         `;
-        
+
         const heightMap = createHeightMap();
         function createHeightMap(){
             var canvas = document.createElement("canvas");
@@ -71,8 +71,7 @@
             }
             return new THREE.CanvasTexture(canvas);
         }
-    </script>
-    <script>
+
         //화면 생성
         const scene = new THREE.Scene();
 
@@ -107,7 +106,7 @@
         }));
 
         scene.add(heat);
-    
+
         //애니메이션 설정
         var clock = new THREE.Clock();
         function animate(a) {
@@ -126,7 +125,7 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
         }
         window.addEventListener('resize', onWindowResize);
-   
+        
     </script>
 </body>
 </html>

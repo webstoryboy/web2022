@@ -263,6 +263,22 @@ https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/a.html
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/abbr.html    
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/acronym.html     
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/address.html     
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/applet.html     
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/area.html     
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/article.html     
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/aside.html        
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/audio.html   
+
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/b.html       
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/base.html          
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/basefont.html             
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/bdi.html                
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/bdo.html                   
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/big.html                      
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/blockquote.html                         
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/blink.html                         
+
+
 
  
 ## CSS REFERENCE 

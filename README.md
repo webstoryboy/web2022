@@ -285,7 +285,7 @@ https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/blink.html
 
 
 ## THREE.JS 
-https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index1.html    
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index.html    
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index2.html    
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index3.html    
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index4.html    

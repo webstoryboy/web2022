@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/99/three.min.js"></script>
+    <script>
+        let frag = `
+            vec4 abyssColor = vec4(1, 0.8, 0.4, 0);
+            vec4 tunnelColor = vec4(2, 0.9, 0.3, 1);
+
+            uniform float time;
+            uniform vec2 resolution;
+
+            void main() {
+                vec2 uv = ( gl_FragCoord.xy - .6 * resolution.xy) / resolution.y * 0.3;
+                
+                float r = length(uv);
+                float y = fract( r / 0.05 / ( r - 0.02 ) + time * 1.);
+                
+                y = smoothstep( 0.01, 4., y );
+            
+                float x = length(uv);
+                x = smoothstep( 0.5, .01, x );
+
+                gl_FragColor = mix( tunnelColor, abyssColor, x ) * y;
+            }
+        `
+        let startTime = Date.now()
+
+        //화면 생성
+        const scene = new THREE.Scene();
+
+        //카메라 설정
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 2);
+        camera.position.z = 1
+
+        //렌더링 설정
+        renderer = new THREE.WebGLRenderer({antialias:true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        document.body.appendChild(renderer.domElement);
+
+        //메쉬 설정
+        geometry = new THREE.PlaneGeometry(10, 2)
+        material = new THREE.ShaderMaterial({
+            uniforms: {
+                time: { type: 'f', value: 1.0 },
+                resolution: { type: "v2", value: new THREE.Vector2() }
+            },
+            fragmentShader: frag
+        })
+        mesh = new THREE.Mesh(geometry, material)
+        scene.add(mesh)
+
+
+        //애니메이션 설정
+        let clock = new THREE.Clock()
+        function animate() {
+            requestAnimationFrame(animate);
+
+            let elapsedMilliseconds = Date.now() - startTime
+            material.uniforms.time.value = elapsedMilliseconds / 2000
+
+            renderer.render(scene, camera);
+        }
+        animate();
+        material.uniforms.resolution.value.x = window.innerWidth
+        material.uniforms.resolution.value.y = window.innerHeight
+
+        //화면 사이즈 설정
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            material.uniforms.resolution.value.x = window.innerWidth
+            material.uniforms.resolution.value.y = window.innerHeight
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+        window.addEventListener('resize', onWindowResize);
+   
+    </script>
+</body>
+</html>

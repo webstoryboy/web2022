@@ -394,54 +394,17 @@ body.intro #footer {
 }
 #explanation .code_link li {
     display: inline-block;
-    margin-bottom: 65px;
+    margin-bottom: 20px;
     position: relative;
 }
 #explanation .code_link li a {
     color: #fff;
     background: #222;
-    padding: 7px 20px 5px 20px;
+    padding: 2px 20px 0px 20px;
     display: inline-block;
     border-radius: 30px;
 }
 #explanation .code_link li.active a {
-    background: #fff;
-    color: #000;
-}
-#explanation .code_link li .sub {
-    position: absolute;
-    left: 0; 
-    top: 40px;
-    width: 500px;
-}
-#explanation .code_link li .sub li {
-    display: inline;
-}
-#explanation .code_link li .sub li a {
-    width: 30px; height: 30px;
-    text-align: center;
-    line-height: 30px;
-    padding: 0;
-    background: #222;
-    color: #fff;
-    letter-spacing: -1px;
-}
-#explanation .code_link li .sub li.last a {
-    width: auto;
-    padding: 1px 10px 0 10px;
-    margin-right: 5px;
-}
-#explanation .code_link li .sub li.last a:last-child {
-    visibility: hidden;
-    border: 2px solid #fff;
-    background: transparent;
-    color: #fff;
-    line-height: 1.9;
-}
-#explanation .code_link li .sub li.last.active a:last-child {
-    visibility: visible;
-}
-#explanation .code_link li .sub li.active a {
     background: #fff;
     color: #000;
 }
@@ -556,6 +519,25 @@ body.intro #footer {
     border-radius: 5px;
     margin-bottom: 20px;
 }
+#explanation .list li {
+    list-style: none;
+}
+#explanation .list li ul {
+    padding-left: 20px;
+}
+#explanation .list li ul li{
+    list-style: none;
+}
+#explanation .list span {
+    background: #8b82e2;
+    font-family: 'NexonLv1Gothic';
+    font-size: 0.9em;
+    color: #fff;
+    padding: 5px 4px 4px 4px;
+    vertical-align: 2px;
+    border-radius: 5px;
+}
+
 
 /* intro */
 .intro {

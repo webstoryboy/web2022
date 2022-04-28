@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃01</title>
+    <title>layout_type01</title>
     <style>
         * {
             margin: 0;
+            padding: 0;
         }
         body {
-            background-color: #FFF3E0
+            background-color: #FFF3E0;
         }
         #wrap {
             width: 1200px;
@@ -26,17 +27,18 @@
             height: 100px;
             background-color: #FFCC80;
         }
+        #main {
+            display: flex;
+        }
         #aside {
             width: 400px;
             height: 780px;
             background-color: #FFB74D;
-            float: left;
         }
-        #section {
+        #contents {
             width: 800px;
             height: 780px;
             background-color: #FFA726;
-            float: left;
         }
         #footer {
             width: 1200px;
@@ -48,11 +50,13 @@
 </head>
 <body>
     <div id="wrap">
-        <div id="header"></div>
-        <div id="nav"></div>
-        <div id="aside"></div>
-        <div id="section"></div>
-        <div id="footer"></div>
-    </div>
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <aside id="aside"></aside>
+            <section id="contents"></section>
+        </main>
+        <footer id="footer"></footer>
+    </div> 
 </body>
 </html>

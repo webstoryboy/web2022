@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃 유형03</title>
+    <title>layout_type03</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
         #wrap {
             width: 1200px;
+            margin: 0 auto;
         }
         #header {
             width: 1200px;
@@ -19,23 +24,28 @@
             height: 100px;
             background-color: #81D4FA;
         }
-        #main {}
+        #main {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            height: 780px;
+        }
         #aside {
             width: 300px;
             height: 780px;
             background-color: #4FC3F7;
         }
-        #artice1 {
+        #article1 {
             width: 900px;
             height: 260px;
             background-color: #29B6F6;
         }
-        #artice2 {
+        #article2 {
             width: 900px;
             height: 260px;
             background-color: #03A9F4;
         }
-        #artice3 {
+        #article3 {
             width: 900px;
             height: 260px;
             background-color: #039BE5;
@@ -45,19 +55,29 @@
             height: 100px;
             background-color: #0288D1;
         }
+        /* clearfix */
+        .clearfix::before, 
+        .clearfix::after {
+            content: '';
+            display: block;
+            line-height: 0;
+        }
+        .clearfix::after {
+            clear: both;
+        }
     </style>
 </head>
 <body>
     <div id="wrap">
-        <div id="header"></div>
-        <div id="nav"></div>
-        <div id="main">
-            <div id="aside"></div>
-            <div id="artice1"></div>
-            <div id="artice2"></div>
-            <div id="artice3"></div>
-        </div>
-        <div id="footer"></div>
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <main id="main">
+            <aside id="aside"></aside>
+            <article id="article1"></article>
+            <article id="article2"></article>
+            <article id="article3"></article>
+        </main>
+        <footer id="footer"></footer>
     </div>
 </body>
 </html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myCanvas"></div>
+
+    <script type="x-shader/x-vertex" id="vertex">
+        uniform float u_time;
+        attribute float a_random;
+        
+        varying float v_random;
+        varying vec2 vUv;
+        varying vec3 v_normal;
+    
+        void main() {
+            vUv = uv;
+            
+            vec3 newPos = position.xyz;
+            float wave = sin(newPos.x / 8.0 - u_time) * 1.;
+            wave += sin(newPos.y / 13.0 - u_time) * 1.;
+            
+            newPos.z += wave;
+            
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(newPos, 1.0);
+        
+        
+            v_random = wave;
+        }
+    </script>
+    
+    <script type="x-shader/x-fragment" id="fragment">
+        varying float v_random;
+        varying vec2 vUv;
+        varying vec3 v_normal;
+            
+        void main() {
+            gl_FragColor = vec4(0.886, clamp(v_random, 0.70, 0.78), 0.984, 1.0);
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/150586/OrbitControls.js"></script>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script>
+        class THREEScene {
+            constructor(container = document.body) {
+                this.container = container;
+                this.init();
+            }
+
+            init() {
+                this.setup();
+                this.camera();
+                this.addToScene();
+                this.eventListeners();
+                this.render();
+            }
+
+            setup() {
+                this.group = new THREE.Group();
+                this.textureLoader = new THREE.TextureLoader();
+                this.clock = new THREE.Clock();
+                this.scene = new THREE.Scene();
+                this.renderer = new THREE.WebGLRenderer({ antialias: true });
+                this.renderer.setSize(this.viewport.width, this.viewport.height);
+                this.renderer.setPixelRatio = window.devicePixelRatio;
+                this.renderer.setClearColor(0x151617);
+                this.container.appendChild(this.renderer.domElement);
+            }
+
+            camera() {
+                const fov = 75;
+                const near = 0.1;
+                const far = 400;
+                const aspectRatio = this.viewport.aspectRatio;
+                this.camera = new THREE.PerspectiveCamera(fov, aspectRatio, near, far);
+                this.camera.position.set(10, 10, 10);
+                gsap.to(this.camera.position, {
+                    x: 0,
+                    y: 2,
+                    z: 5,
+                    duration: 5,
+                    ease: "power4.out"
+                });
+            }
+
+            addToScene() {
+                const parameters = {
+                    count: 100000,
+                    size: 0.01,
+                    radius: 5,
+                    branches: 3,
+                    spin: 1,
+                    randomness: 0.2,
+                    randomnessPower: 3,
+                    insideColor: "#ff6030",
+                    outsideColor: "#1b3984"
+                };
+
+                let geometry = null;
+                let matetrial = null;
+                let points = null;
+
+                const generateGalaxy = () => {
+                    if (points !== null) {
+                        geometry.dispose();
+                        matetrial.dispose();
+                        this.scene.remove(points);
+                    }
+
+                    geometry = new THREE.BufferGeometry();
+                    matetrial = new THREE.PointsMaterial({
+                        size: parameters.size,
+                        sizeAttenuation: true,
+                        depthWrite: true,
+                        blending: THREE.AdditiveBlending,
+                        vertexColors: true
+                    });
+
+                    const positions = new Float32Array(parameters.count * 3);
+                    const colors = new Float32Array(parameters.count * 3);
+
+                    const colorInside = new THREE.Color(parameters.insideColor);
+                    const colorOutside = new THREE.Color(parameters.outsideColor);
+
+                    for (let i = 0; i < parameters.count; i++) {
+                        const i3 = i * 3;
+                        const radius = parameters.radius * Math.random();
+                        const spinAngle = radius * parameters.spin;
+                        const branchAngle = ((i % parameters.branches) / parameters.branches) * Math.PI * 2;
+                        const randomX = Math.pow(Math.random(), parameters.randomnessPower) * (Math.random() < 0.5 ? 1 : -1);
+                        const randomY = Math.pow(Math.random(), parameters.randomnessPower) * (Math.random() < 0.5 ? 1 : -1);
+                        const randomZ = Math.pow(Math.random(), parameters.randomnessPower) * (Math.random() < 0.5 ? 1 : -1);
+
+                        positions[i3] = Math.cos(branchAngle + spinAngle) * radius + randomX;
+                        positions[i3 + 1] = randomY;
+                        positions[i3 + 2] = Math.sin(branchAngle + spinAngle) * radius + randomZ;
+
+                        const mixedColor = colorInside.clone();
+                        mixedColor.lerp(colorOutside, radius / parameters.radius);
+
+                        colors[i3 + 0] = mixedColor.r;
+                        colors[i3 + 1] = mixedColor.g;
+                        colors[i3 + 2] = mixedColor.b;
+                    }
+
+                    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+                    geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+                    points = new THREE.Points(geometry, matetrial);
+                    this.group.add(points);
+                    this.scene.add(this.group);
+                };
+
+                generateGalaxy();
+            }
+            render() {
+                this.group.rotation.y += 0.001;
+                this.camera.lookAt(this.scene.position);
+                this.renderer.render(this.scene, this.camera);
+
+                requestAnimationFrame(() => {
+                    this.render();
+                });
+            }
+
+            eventListeners() {
+                window.addEventListener("resize", this.onWindowResize.bind(this));
+            }
+
+            onWindowResize() {
+                this.camera.aspect = this.viewport.aspectRatio;
+                this.camera.updateProjectionMatrix();
+                this.renderer.setSize(this.viewport.width, this.viewport.height);
+            }
+
+            get viewport() {
+                const width = this.container.clientWidth;
+                const height = this.container.clientHeight;
+                const aspectRatio = width / height;
+
+                return {
+                    width,
+                    height,
+                    aspectRatio
+                };
+            }
+        }
+
+        const scene = new THREEScene();
+    </script>
+</body>
+
+</html>

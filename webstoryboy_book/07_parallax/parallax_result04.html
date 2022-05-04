@@ -135,12 +135,12 @@
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
-            /* filter: saturate(0%); */
-            /* transition: transform 0.33s linear; */
+            filter: saturate(0%);
+            transition: all 1s;
         }
         .content__item__img:hover {
-            /* filter: saturate(100%);
-            transform: scale(1.025); */
+            filter: saturate(100%);
+            transform: scale(1.025);
         }
         .content__item:nth-child(1) .content__item__img {
             background-image: url(img/images01@2.jpg);
@@ -182,12 +182,74 @@
             margin-left: auto;
             margin-right: -4vw;
         }
+
+        /* option */
+        /* 한번에 나타나기 */
+        /* #contents > section {
+            opacity: 0;
+            transition: all 1s;
+        }
+        #contents > section.show {
+            opacity: 1;
+        } */
+
+        /* 개별적으로 나타나기 */
+        #contents > section .content__item__num {
+            opacity: 0;
+            transform: translateY(200px);
+            transition: all 1s 0.1s cubic-bezier(0, 0.38, 0.21, 0.99);
+        }
+        #contents > section .content__item__title {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 1s 0.3s cubic-bezier(0, 0.38, 0.21, 0.99);
+        }
+        #contents > section .content__item__imgWrap {
+            opacity: 0;
+            transform: translateY(200px) rotate(30deg) skew(20deg);
+            transition: all 1s 0.6s cubic-bezier(0, 0.38, 0.21, 0.99);
+        }
+        #contents > section .content__item__desc {
+            opacity: 0;
+            transform: translateX(-200px);
+            transition: all 1s 0.9s cubic-bezier(0, 0.38, 0.21, 0.99);
+        }
+        
+        #contents > section.show .content__item__num {
+            opacity: 0.07;
+            transform: translateY(0);
+        }
+        #contents > section.show .content__item__title {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        #contents > section.show .content__item__imgWrap {
+            opacity: 1;
+            transform: translateY(0) rotate(0) skew(0);
+        }
+        #contents > section.show .content__item__desc {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        #contents > section:nth-child(even) .content__item__title {
+            transform: translateX(100px);
+        }
+        #contents > section:nth-child(even).show .content__item__title {
+            transform: translateX(0);
+        }
+        #contents > section:nth-child(even) .content__item__desc {
+            transform: translateX(200px);
+        }
+        #contents > section:nth-child(even).show .content__item__desc {
+            transform: translateX(0);
+        }
     </style>
 </head>
 <body>
     <header id="parallax__title">
         <h1><a href="parallaxEffect.html">JavaScript Parallax Effect04</a></h1>
-        <p>패럴랙스 스크롤링 효과 - 이질감 효과</p>
+        <p>패럴랙스 스크롤링 효과 - 나타나기</p>
         <ul>
             <li><a href="parallax_result01.html">1</a></li>
             <li><a href="parallax_result02.html">2</a></li>
@@ -196,6 +258,8 @@
             <li><a href="parallax_result05.html">5</a></li>
             <li><a href="parallax_result06.html">6</a></li>
             <li><a href="parallax_result07.html">7</a></li>
+            <li><a href="parallax_result08.html">8</a></li>
+            <li><a href="parallax_result09.html">9</a></li>
         </ul>
     </header>
     <!-- //parallax__title  -->
@@ -301,18 +365,10 @@
         function scroll(){
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
 
-            // const img = document.querySelector("#section1 .content__item__img")
-            // img.style.transform = "translateY("+scrollTop/10+"px)";
-
             parallaxItem.forEach(item => {
-                let offset1 = (scrollTop - item.offsetTop) * 0.1;
-                let offset2 = (scrollTop - item.offsetTop) * 0.15;
-                
-                const target1 = item.querySelector(".content__item__img");
-                const target2 = item.querySelector(".content__item__desc");
-
-                target1.style.transform = `translateY(${offset1}px)`;
-                target2.style.transform = `translateY(${-offset2}px)`;
+                if(scrollTop >= item.offsetTop - window.innerHeight ){
+                    item.classList.add("show");
+                } 
             })
 
             requestAnimationFrame(scroll);

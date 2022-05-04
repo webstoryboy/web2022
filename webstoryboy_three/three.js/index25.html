@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            z-index: 10;
+            pointer-events: none;
+        }
+        [data-webgl-image] {
+            opacity: 0;
+            position: relative;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+            margin: 10vh auto;
+            padding: 0 5vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div asscroll-container>
+        <div id="page">
+            <img crossorigin="anonymous" src="https://assets.codepen.io/2479807/adidas.jpg" data-webgl-image />
+            <img crossorigin="anonymous" src="https://assets.codepen.io/2479807/nike.jpg" data-webgl-image />
+            <div class="canvas-container"></div>
+        </div>
+    </div>
+
+    <script type="x-shader/x-fragment" id="fragment">
+        varying vec2 vUv;
+    
+        uniform vec2 u_resolution;
+        uniform vec2 u_image_sizes;
+        uniform vec2 u_plane_sizes;
+        uniform sampler2D u_image;
+        uniform float u_time;
+        uniform vec2 hover;
+        uniform float hoverState;
+        
+        float circle(vec2 uv, vec2 disc_center, float disc_radius, float border_size) {
+            uv -= disc_center;
+            uv*=u_resolution;
+            float dist = sqrt(dot(uv, uv));
+            return smoothstep(disc_radius+border_size, disc_radius-border_size, dist);
+        }
+    
+        void main() {
+            vec2 newUV = vUv;
+        
+            vec2 ratio = vec2(
+                min((u_plane_sizes.x / u_plane_sizes.y) / (u_image_sizes.x / u_image_sizes.y), 1.0),
+                min((u_plane_sizes.y / u_plane_sizes.x) / (u_image_sizes.y / u_image_sizes.x), 1.0)
+            );
+        
+            vec2 uv = vec2(
+                vUv.x * (ratio.x) + (1.0 - ratio.x) * 0.5,
+                vUv.y * ratio.y + (1.0 - ratio.y) * 0.5
+            );
+        
+            float c = circle(vUv, hover, 0.0, hoverState);
+            
+            float r = texture2D(u_image, newUV.xy += c * (0.1 * .5)).x;
+            float g = texture2D(u_image, newUV.xy += c * (0.1 * .525)).y;
+            float b = texture2D(u_image, newUV.xy += c * (0.1 * .55)).z;
+            vec4 color = vec4(r, g, b, 1.);
+        
+            //gl_FragColor.rgb = texture2D(u_image, uv).rgb;
+            //gl_FragColor.a = 1.0;
+            gl_FragColor = color;
+        }
+    </script>
+    <script type="x-shader/x-vertex" id="vertex">
+        varying vec2 vUv;
+        uniform float u_time;
+        uniform float hoverState;
+        uniform vec2 hover;
+        uniform float u_delta;
+    
+
+        void main() {
+            vUv = uv;
+            vec3 newPos = position;
+
+            float dist = distance(uv, hover);
+            newPos.z += hoverState * sin(dist*2.0 + u_time);
+
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(newPos, 1.0);
+        }
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/150586/OrbitControls.js"></script>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <!-- <script src="https://cdn.skypack.dev/@ashthornton/asscroll"></script> -->
+    <script type="module">
+        import ASScroll from "https://cdn.skypack.dev/@ashthornton/asscroll";
+        const fragment = document.querySelector("#fragment").textContent;
+        const vertex = document.querySelector("#vertex").textContent;
+
+        class Canvas {
+        constructor(container = document.body) {
+            this.container = container;
+            this.DOMImages = [...document.querySelectorAll("[data-webgl-image]")];
+
+            this._setup();
+            this._camera();
+            this._addImages();
+        }
+
+    _addImages() {
+        this.material = new THREE.ShaderMaterial({
+            fragmentShader: fragment,
+            vertexShader: vertex,
+            side: THREE.DoubleSide,
+            uniforms: {
+                u_time: { value: 0 },
+                u_delta: { value: 0 },
+                u_image: { value: 0 },
+                u_resolution: {
+                    value: new THREE.Vector2(1.0, this.viewport.aspectRatio)
+                },
+                u_velocity: { value: 1.0 },
+                u_plane_sizes: { value: [0, 0] },
+                u_image_sizes: { value: [0, 0] },
+                hover: { value: new THREE.Vector2(0.5, 0.5) },
+                hoverState: { value: 0 }
+            }
+        });
+
+        this.materials = [];
+
+        this.imageStore = this.DOMImages.map((image) => {
+            const { top, left, width, height } = image.getBoundingClientRect();
+
+            const geometry = new THREE.PlaneGeometry(width, height, 16, 16);
+            const texture = new THREE.Texture(image);
+            texture.needsUpdate = true;
+
+            const material = this.material.clone();
+
+            this.materials.push(material);
+            material.uniforms.u_image.value = texture;
+            material.uniforms.u_image_sizes.value = [
+                image.naturalWidth,
+                image.naturalHeight
+            ];
+            material.uniforms.u_plane_sizes.value = [width, height];
+
+            image.addEventListener("mouseover", () => {
+                gsap.to(material.uniforms.hoverState, {
+                    value: 1
+                });
+            });
+
+            image.addEventListener("mouseleave", () => {
+                gsap.to(material.uniforms.hoverState, {
+                    value: 0
+                });
+            });
+
+            const mesh = new THREE.Mesh(geometry, material);
+
+            this.scene.add(mesh);
+
+            return {
+                image,
+                mesh,
+                top,
+                left,
+                width,
+                height
+            };
+        });
+    }
+
+    _setImagePositions(scrollPosition) {
+        this.imageStore.forEach((image) => {
+            image.mesh.position.y =
+                scrollPosition.currentPos -
+                image.top +
+                this.viewport.height / 2 -
+                image.height / 2;
+            image.mesh.position.x =
+                image.left - this.viewport.width / 2 + image.width / 2;
+        });
+    }
+
+    _setup() {
+        this.clock = new THREE.Clock();
+        this.mouse = new THREE.Vector2();
+        this.scene = new THREE.Scene();
+        this.renderer = new THREE.WebGLRenderer({
+            antialias: true,
+            alpha: true
+        });
+        this.renderer.setSize(this.viewport.width, this.viewport.height);
+        this.renderer.setPixelRatio = window.devicePixelRatio;
+        this.container.appendChild(this.renderer.domElement);
+        this.raycaster = new THREE.Raycaster();
+        this.mouse = new THREE.Vector2();
+    }
+
+    _camera() {
+        const NEAR = 0.001;
+        const FAR = 100;
+        const ASPECT_RATIO = this.viewport.aspectRatio;
+
+        this.cameraZ = 20;
+        this.cameraFOV =
+            2 *
+            Math.atan(this.viewport.height / 2 / this.cameraZ) *
+            (180 / Math.PI);
+
+        this.camera = new THREE.PerspectiveCamera(
+            this.cameraFOV,
+            ASPECT_RATIO,
+            NEAR,
+            FAR
+        );
+        this.camera.position.set(0, 0, this.cameraZ);
+        this.camera.aspect = this.viewport.width / this.viewport.height;
+        this.camera.updateProjectionMatrix();
+    }
+
+    onResize() {
+        this.camera.aspect = this.viewport.aspectRatio;
+        this.camera.updateProjectionMatrix();
+        this.renderer.setSize(this.viewport.width, this.viewport.height);
+    }
+
+    onMousemove(event) {
+        //Use this.canvas since its a callback in the main index.js file
+        const { canvas } = this;
+        canvas.mouse.x = (event.clientX / canvas.viewport.width) * 2 - 1;
+        canvas.mouse.y = -(event.clientY / canvas.viewport.height) * 2 + 1;
+
+        canvas.raycaster.setFromCamera(canvas.mouse, canvas.camera);
+
+        const intersects = canvas.raycaster.intersectObjects(
+            canvas.scene.children
+        );
+
+        if (intersects.length > 0) {
+            intersects[0].object.material.uniforms.hover.value =
+                intersects[0].uv;
+        }
+    }
+
+    render(scrollPosition, deltaY) {
+        this._setImagePositions(scrollPosition);
+        this.materials.forEach((material) => {
+            material.uniforms.u_time.value = this.clock.getElapsedTime();
+            material.uniforms.u_delta.value = deltaY;
+        });
+        this.renderer.render(this.scene, this.camera);
+    }
+
+    get viewport() {
+        const width = this.container.clientWidth;
+        const height = this.container.clientHeight;
+        const aspectRatio = width / height;
+
+        this.aspectRatio = aspectRatio;
+
+        return {
+            width,
+            height,
+            aspectRatio
+        };
+    }
+}
+
+class App {
+    constructor() {
+        const images = [...document.querySelectorAll("img")];
+        imagesLoaded(images, () => {
+            this._createSmoothScroll();
+            this._createCanvas();
+            this._addEventListeners();
+            this.onResize();
+            this._render();
+        });
+    }
+
+    _createSmoothScroll() {
+        this.asscroll = new ASScroll({
+            scrollElements: document.querySelector("#page"),
+            disableRaf: true,
+            disableResize: true,
+            touchScrollType: "transform"
+        });
+
+        this.asscroll.enable();
+    }
+
+    _createCanvas() {
+        this.canvas = new Canvas();
+    }
+
+    onResize() {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        this.asscroll.resize({ width, height });
+
+        if (this.canvas && this.canvas.onResize) {
+            this.canvas.onResize();
+        }
+    }
+
+    _addEventListeners() {
+        window.addEventListener("resize", this.onResize.bind(this));
+
+        if (this.canvas && this.canvas.onMousemove) {
+            window.addEventListener(
+                "mousemove",
+                this.canvas.onMousemove.bind(this),
+                false
+            );
+        }
+    }
+
+    _render() {
+        this.asscroll.update();
+        if (this.canvas && this.canvas.render) {
+            this.canvas.render(this.asscroll);
+        }
+
+        requestAnimationFrame(this._render.bind(this));
+    }
+}
+
+new App();
+    </script>
+</body>
+
+</html>

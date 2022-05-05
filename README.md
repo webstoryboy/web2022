@@ -345,5 +345,8 @@ https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index24.html
 
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index26.html
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index27.html
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index28.html
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index29.html
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index30.html
 
 https://webstoryboy.github.io/web2022/webstoryboy_three/canvas/index1.html

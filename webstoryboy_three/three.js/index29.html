@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script id="fragmentShader" type="x-shader/x-fragment">
+        uniform float time;
+        varying vec2 vUv;
+        float snow(vec2 uv,float scale)
+        {
+            float _t = time*0.1;
+            uv.x+=_t/scale;
+
+            uv*=scale;
+            vec2 s=floor(uv);
+            vec2 f=fract(uv);
+            vec2 p;
+            float k=40.;
+            float d;
+            p=sin(11.*fract(sin((s+p+scale)*mat2(7,3,6,5))*5.))-f;
+            d=length(p);
+            k=min(d,k);
+            k=smoothstep(0.,k,sin(f.x+f.y)*0.003); // particleの大きさ
+            return k;
+        }
+
+        void main(void) {
+
+            vec2 uv = - 1.0 + 2.0 * vUv;
+            uv.x += sin(uv.x*0.01+time*0.01);
+            uv.x *= 0.001;
+            uv.y += sin(time*0.01);
+            float c=0.0;
+            for(float i = 0.0; i < 20.0; i++){
+                uv.x += i*0.01;
+                c+=snow(uv,i*2.0);
+            }
+            vec3 finalColor=(vec3(uv.x,uv.y,0.9))*c*50.0;
+            gl_FragColor = vec4(finalColor,1);
+        }
+    </script>
+
+    <script id="vertexShader" type="x-shader/x-vertex">
+        varying vec2 vUv;
+        void main()
+        {
+            vUv = uv;
+            vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+            gl_Position = projectionMatrix * mvPosition;
+        }
+    </script>
+    <script type="module">
+        import * as THREE from 'https://threejs.org/build/three.module.js';
+        import Stats from 'https://threejs.org/examples/jsm/libs/stats.module.js';
+
+        var container, stats;
+        var camera, scene, renderer, clock;
+        var uniforms, uniforms2;
+
+        init();
+        animate();
+
+        function init() {
+            container = document.getElementById('container');
+            camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 3000);
+            camera.position.z = 4;
+            scene = new THREE.Scene();
+            clock = new THREE.Clock();
+
+            var geometry = new THREE.TorusGeometry(0.8, 0.3, 16, 100);
+
+            uniforms = {
+                "time": {
+                    value: 1.0
+                }
+            };
+
+            var material = new THREE.ShaderMaterial({
+                uniforms: uniforms,
+                vertexShader: document.getElementById('vertexShader').textContent,
+                fragmentShader: document.getElementById('fragmentShader').textContent
+            });
+
+            var mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+
+            renderer = new THREE.WebGLRenderer({
+                antialias: true
+            });
+            renderer.setPixelRatio(window.devicePixelRatio);
+            container.appendChild(renderer.domElement);
+
+            // stats = new Stats();
+            // container.appendChild(stats.dom);
+
+            onWindowResize();
+
+            window.addEventListener('resize', onWindowResize, false);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            render();
+            stats.update();
+        }
+
+        function render() {
+
+            var delta = clock.getDelta();
+            uniforms["time"].value += delta * 5;
+            for (var i = 0; i < scene.children.length; i++) {
+                var object = scene.children[i];
+                object.rotation.y += delta * 0.5 * (i % 2 ? 1 : -1);
+                object.rotation.x += delta * 0.5 * (i % 2 ? -1 : 1);
+            }
+            renderer.render(scene, camera);
+        }
+
+        function getRandom(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+    </script>
+</body>
+
+</html>

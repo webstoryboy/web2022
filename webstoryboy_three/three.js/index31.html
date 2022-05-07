@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+    <script>
+        var camera;
+        var scene;
+        var renderer;
+        var mouseX = 0;
+        var mouseY = 0;
+        var windowHalfX = window.innerWidth / 2;
+        var windowHalfY = window.innerHeight / 2;
+        var minX = -500;
+        var maxX = 500;
+        var minY = -500;
+        var maxY = 500;
+        var minZ = -40;
+        var maxZ = 40;
+        var minNodeDistance = 90;
+        var numNodes = 300;
+        var nodes = [];
+        var lines = [];
+        var moveAmplitude = 50;
+        var lightColors = [
+            0xffffff,
+            0xff0000,
+            0xff00ff,
+            0x0000ff
+        ];
+
+        init();
+        animate();
+
+        function init() {
+            camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000);
+            camera.position.z = 400;
+
+            scene = new THREE.Scene();
+
+            while (numNodes--) {
+                var geometry = new THREE.CircleGeometry(5, 16);
+                var material = new THREE.MeshPhongMaterial({
+                    color: 0x00ff00,
+                    specular: 0x00ff00,
+                    shininess: 30,
+                    shading: THREE.SmoothShading
+                });
+                var nodeMesh = new THREE.Mesh(geometry, material);
+                nodeMesh.position.x = getNumberInRange(minX, maxX);
+                nodeMesh.position.y = getNumberInRange(minY, maxY);
+                nodeMesh.position.z = getNumberInRange(minZ, maxZ);
+                nodeMesh.numConnections = 0;
+                nodeMesh.moveIterationCount = 0;
+                nodeMesh.movePeriod = (Math.random() * 200) + 300;
+                nodeMesh.lines = {
+                    start: {
+                        lines: [],
+                        lineGeometry: []
+                    },
+                    end: {
+                        lines: [],
+                        lineGeometry: []
+                    },
+                };
+                scene.add(nodeMesh);
+                nodes.push(nodeMesh);
+            }
+
+            _.each(nodes, function (node) {
+                if (node.numConnections > 10) return false;
+
+                _.each(nodes, function (otherNode) {
+                    var start = new THREE.Vector3(node.position.x, node.position.y, node.position.z);
+                    var end = new THREE.Vector3(otherNode.position.x, otherNode.position.y, otherNode
+                        .position.z);
+                    var distance = start.distanceTo(end);
+
+                    if (otherNode.numConnections > 10) return false;
+
+                    if (distance < minNodeDistance) {
+                        var geometry = new THREE.Geometry();
+                        geometry.vertices.push(
+                            start,
+                            end
+                        );
+                        var material = new THREE.MeshPhongMaterial({
+                            color: 0xffffff,
+                            specular: 0xffffff,
+                            shininess: 10,
+                            shading: THREE.SmoothShading
+                        });
+                        var line = new THREE.Line(geometry, material);
+                        scene.add(line);
+                        lines.push(line);
+
+                        node.lines.start.lines.push(line);
+                        node.lines.start.lineGeometry.push(geometry);
+                        otherNode.lines.end.lines.push(line);
+                        otherNode.lines.end.lineGeometry.push(geometry);
+                    }
+                });
+            });
+
+            // 조명 설정
+            scene.add(new THREE.AmbientLight(0x002222));
+
+            _.each(lightColors, function (color) {
+                var directionalLight = new THREE.DirectionalLight(color, 0.1);
+                directionalLight.position.x = getNumberInRange(0, 1);
+                directionalLight.position.y = getNumberInRange(0, 1);
+                directionalLight.position.z = 1;
+                directionalLight.position.normalize();
+                scene.add(directionalLight);
+            });
+
+            // 컨트롤 설정
+            document.addEventListener('mousemove', onDocumentMouseMove, false);
+            document.addEventListener('touchstart', onDocumentTouchStart, false);
+            document.addEventListener('touchmove', onDocumentTouchMove, false);
+
+            // 렌더링 설정
+            renderer = new THREE.WebGLRenderer();
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+
+            // 리사이즈 설정
+            window.addEventListener('resize', onWindowResize, false);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function onWindowResize() {
+            windowHalfX = window.innerWidth / 2;
+            windowHalfY = window.innerHeight / 2;
+
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function updateCamera() {
+            camera.position.x += (mouseX - camera.position.x) * .05;
+            camera.position.y += (-mouseY - camera.position.y) * .05;
+            camera.lookAt(scene.position);
+        }
+
+        function onDocumentMouseMove(event) {
+            mouseX = event.clientX - windowHalfX;
+            mouseY = event.clientY - windowHalfY;
+        }
+
+        function getNumberInRange(min, max) {
+            return Math.random() * (max + Math.abs(min)) - Math.abs(min);
+        }
+
+        function onDocumentTouchStart(event) {
+            if (event.touches.length > 1) {
+
+                event.preventDefault();
+
+                mouseX = event.touches[0].pageX - windowHalfX;
+                mouseY = event.touches[0].pageY - windowHalfY;
+            }
+        }
+
+        function onDocumentTouchMove(event) {
+            if (event.touches.length == 1) {
+
+                event.preventDefault();
+
+                mouseX = event.touches[0].pageX - windowHalfX;
+                mouseY = event.touches[0].pageY - windowHalfY;
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            _.each(nodes, function (node) {
+                node.quaternion.copy(camera.quaternion);
+                node.position.z = moveAmplitude * Math.cos((Math.PI * 2) * node.moveIterationCount / node
+                    .movePeriod);
+
+                _.each([node.lines.start, node.lines.end], function (lineSet, idx) {
+                    _.each(lineSet.lines, function (line, lineIdx) {
+                        var lineGeometry = lineSet.lineGeometry[lineIdx];
+                        lineGeometry.vertices[idx].z = node.position.z;
+                        line.geometry.verticesNeedUpdate = true;
+                    });
+                });
+
+                node.moveIterationCount++;
+            });
+
+            updateCamera();
+
+            renderer.render(scene, camera);
+        }
+    </script>
+</body>
+
+</html>

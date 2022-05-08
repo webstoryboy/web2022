@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="webgl-canvas"></canvas>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
+    <script>
+class Stage {
+    constructor() {
+        this.renderParam = {
+            width: window.innerWidth,
+            height: window.innerHeight
+        };
+
+        this.cameraParam = {
+            fov: 60,
+            near: 0.001,
+            far: 1000,
+            x: 0,
+            y: 0,
+            z: 10.0
+        };
+
+        this.scene = null;
+        this.camera = null;
+        this.renderer = null;
+        this.mesh = null;
+        this.isInitialized = false;
+    }
+
+    init() {
+        this._setScene();
+        this._setRender();
+        this._setCamera();
+
+        this.isInitialized = true;
+    }
+
+    _setScene() {
+        this.scene = new THREE.Scene();
+    }
+
+    _setRender() {
+        this.renderer = new THREE.WebGLRenderer({
+            canvas: document.getElementById('webgl-canvas'),
+            alpha: false,
+            antialias: true,
+        });
+        this.renderer.setPixelRatio(window.devicePixelRatio);
+        this.renderer.setSize(this.renderParam.width, this.renderParam.height);
+        this.renderer.setClearColor(0x000000);
+    }
+
+    _setCamera() {
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        if (!this.isInitialized) {
+            this.camera = new THREE.PerspectiveCamera(
+                this.cameraParam.fov,
+                windowWidth / windowHeight,
+                this.cameraParam.near,
+                this.cameraParam.far
+            );
+
+            this.camera.position.set(
+                this.cameraParam.x,
+                this.cameraParam.y,
+                this.cameraParam.z
+            );
+        }
+
+        this.camera.aspect = windowWidth / windowHeight;
+        this.camera.updateProjectionMatrix();
+        this.renderer.setSize(windowWidth, windowHeight);
+    }
+
+    _render() {
+        this.renderer.render(this.scene, this.camera);
+    }
+
+    onResize() {
+        this._setCamera();
+    }
+
+    onRaf() {
+        this._render();
+    }
+}
+
+class Mesh {
+    constructor(stage) {
+        this.stage = stage;
+        this.mesh = null;
+        this.objects = [];
+        this.mouse = { x: 0, y: 0 };
+    }
+
+    init() {
+        this._setMesh();
+    }
+
+    _setMesh() {
+        this.numObjects = 30;
+        const innerRadius = 5;
+        this.geometry = new THREE.RingGeometry(innerRadius, innerRadius + 15, 5, 1);
+
+        for (let i = 0; i < this.numObjects; i++) {
+            const c = 1 - i * (1 / this.numObjects);
+            const object = new THREE.Mesh(
+                this.geometry,
+                new THREE.MeshBasicMaterial({
+                    color: new THREE.Color(c, c, c),
+                    side: THREE.DoubleSide,
+                }),
+            )
+
+            object.position.z = -i * 2;
+            object.rotation.z = -i * 2;
+            object.userData.moveScale = (i + 1) * (1 / this.numObjects);
+
+            this.objects.push(object);
+            this.stage.scene.add(object);
+        }
+    }
+
+    _render() {
+        for (let i = 0; i < this.numObjects; i++) {
+            const object = this.objects[i];
+            object.rotation.z += 0.005;
+        }
+    }
+
+    onRaf(event) {
+        this._render();
+    }
+}
+
+(() => {
+    const stage = new Stage();
+    stage.init();
+
+    const mesh = new Mesh(stage);
+    mesh.init();
+
+    window.addEventListener("resize", () => {
+        stage.onResize();
+    });
+
+    const _raf = () => {
+        window.requestAnimationFrame(() => {
+            stage.onRaf();
+            mesh.onRaf();
+
+            _raf();
+        });
+    };
+
+    _raf();
+})();
+
+    </script>
+</body>
+</html>

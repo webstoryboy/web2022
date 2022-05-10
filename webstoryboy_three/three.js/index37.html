@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="canvas-wrapper" aria-label="One Up"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js"></script>
+    <script>
+        // 화면 설정
+        const scene = new THREE.Scene();
+
+        // 카메라 설정
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 7000);
+        camera.position.x = 7000 * -2;
+        camera.position.z = 450;
+
+        // 렌더링 설정
+        const renderer = new THREE.WebGLRenderer({antialias: true});
+        renderer.setClearColor("#000");
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.querySelector("#canvas-wrapper").appendChild(renderer.domElement);
+
+        // 글씨 설정
+        const group = new THREE.Group();
+        const typoSize = 120;
+
+        for (let i = 0; i < 12; i++) {
+            const typoLoader = new THREE.FontLoader();
+            const createTypo = font => {
+                const textMesh = new THREE.Mesh();
+                const word = "WEBS";
+                const typoProperties = {
+                    font: font,
+                    size: typoSize,
+                    height: typoSize * 2,
+                    curveSegments: 10,
+                    bevelEnabled: true,
+                    bevelThickness: 10,
+                    bevelSize: 6,
+                    bevelOffset: 1,
+                    bevelSegments: 60
+                };
+                textMesh.geometry = new THREE.TextBufferGeometry(word, typoProperties);
+                textMesh.material = new THREE.MeshMatcapMaterial();
+                textMesh.material.color = new THREE.Color(0xffffff);
+
+                const texture = new THREE.TextureLoader().load(
+                    "https://threejs.org/examples/textures/matcaps/matcap-porcelain-white.jpg"
+                );
+                texture.wrapS = THREE.RepeatWrapping; //매핑 설정
+                texture.wrapT = THREE.RepeatWrapping;
+                texture.repeat.set(4, 4);
+                textMesh.material.matcap = texture;
+
+                const dist = i * (typoSize * 1.05);
+                textMesh.position.x = dist;
+                textMesh.position.y = dist;
+
+                // 3D 성능 향상을 위한 설정
+                textMesh.matrixAutoUpdate = false;
+                textMesh.updateMatrix();
+
+                group.add(textMesh);
+            };
+            typoLoader.load(
+                "https://threejs.org/examples/fonts/helvetiker_bold.typeface.json",
+                createTypo
+            );
+        }
+
+        group.position.x = typoSize * -1.6;
+        group.position.y = typoSize * -1;
+        scene.add(group);
+
+        // 마우스 설정
+        let mouseX = 0;
+        let mouseY = 0;
+        const mouseFX = {
+            windowHalfX: window.innerWidth / 2,
+            windowHalfY: window.innerHeight / 2,
+            coordinates: function (coordX, coordY) {
+                mouseX = (coordX - mouseFX.windowHalfX) * 5;
+                mouseY = (coordY - mouseFX.windowHalfY) * 5;
+            },
+            onMouseMove: function (e) {
+                mouseFX.coordinates(e.clientX, e.clientY);
+            },
+            onTouchMove: function (e) {
+                mouseFX.coordinates(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+            }
+        };
+
+        document.addEventListener("mousemove", mouseFX.onMouseMove, false);
+        document.addEventListener("touchmove", mouseFX.onTouchMove, false);
+
+        // 3D 렌더링 설정
+        const render = () => {
+            requestAnimationFrame(render);
+
+            // 카메라 애니메이션 설정
+            const ctiming = 0.04;
+            const pX = (mouseX - camera.position.x) * ctiming;
+            const pY = (mouseY * -1 - camera.position.y) * ctiming;
+            camera.position.x += pX;
+            camera.position.y += pY;
+            camera.position.z += pY;
+            camera.lookAt(scene.position); // 기준점 설정
+
+            // 애니메이션
+            const radians = Date.now() * 0.0004;
+            const rot = Math.sin(radians) * 0.2;
+            group.rotation.x = rot;
+            group.rotation.y = rot;
+
+            renderer.render(scene, camera);
+        };
+        render();
+    </script>
+</body>
+
+</html>

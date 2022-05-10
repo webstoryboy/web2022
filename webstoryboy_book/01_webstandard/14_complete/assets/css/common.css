@@ -13,13 +13,13 @@
     padding: 120px 0;
     text-align: center;
 }
-.section__h2 {
+.section > h2 {
     font-size: 50px;
     font-weight: 500;
     margin-bottom: 20px;
     line-height: 1;
 }
-.section__desc {
+.section > p {
     font-size: 22px;
     font-weight: 300;
     margin-bottom: 70px;

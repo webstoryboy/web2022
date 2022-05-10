@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="canvas-wrapper" aria-label="dandelion-dahlia flowers"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+    <script>
+        // 화면 설정
+        const scene = new THREE.Scene();
+
+        // 카메라 설정
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
+        camera.position.set(0, 0, 450);
+
+        // 렌더링 설정
+        const renderer = new THREE.WebGLRenderer({antialias: true});
+        renderer.setClearColor("hotpink");
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.querySelector("#canvas-wrapper").appendChild(renderer.domElement);
+        
+        // 꽃 설정
+        const petalRadius = 150;
+        const geometry = new THREE.TetrahedronBufferGeometry(petalRadius);
+        const material = new THREE.MeshNormalMaterial();
+        const group = new THREE.Group();
+
+        const CustomSinCurve = function (scale) {
+            THREE.Curve.call(this);
+            this.scale = scale === undefined ? 1 : scale;
+        };
+        CustomSinCurve.prototype = Object.create(THREE.Curve.prototype);
+        CustomSinCurve.prototype.constructor = CustomSinCurve;
+        CustomSinCurve.prototype.getPoint = function (t) {
+            const tx = t * 3 - 1.5;
+            const ty = Math.sin(2 * Math.PI * t);
+            const tz = 0;
+
+            return new THREE.Vector3(tx, ty, tz).multiplyScalar(this.scale);
+        };
+
+        const Flower = function (group, distance = null) {
+            this.group = group;
+            this.dist = distance;
+            this.group.position.x = petalRadius * -1;
+            this.group.position.y = Math.round(petalRadius / 2);
+            this.group.rotation.z = 250;
+
+            if (distance !== null) {
+                this.group.position.x = Math.round(this.dist / 2);
+                this.group.position.y = Math.round(petalRadius * -0.5);
+                this.group.position.z = 10;
+
+                this.group.rotation.x = Math.round(this.dist / -2);
+                this.group.rotation.z = Math.round(this.dist * 2);
+            }
+        };
+
+        Flower.prototype.create = function () {
+            const petalCount = 180;
+            for (let i = 0; i < petalCount; i++) {
+                const mesh = new THREE.Mesh(geometry, material);
+                const tau = 2 * Math.PI;
+
+                mesh.rotation.x = Math.random() * tau;
+                mesh.rotation.y = Math.random() * tau;
+
+                mesh.matrixAutoUpdate = false;
+                mesh.updateMatrix();
+
+                this.group.add(mesh);
+            }
+        };
+
+        Flower.prototype.createStem = function () {
+            const path = new CustomSinCurve(petalRadius);
+            const geometryStem = new THREE.TubeBufferGeometry(path, 1, 5, 20, false);
+            const meshStem = new THREE.Mesh(geometryStem, material);
+
+            meshStem.position.x = petalRadius;
+            this.group.add(meshStem);
+        };
+
+        const f1group = new THREE.Group();
+        const f1 = new Flower(f1group);
+        f1.create();
+        f1.createStem();
+
+        const f2group = new THREE.Group();
+        const f2dist = Math.floor(1000 / 5);
+        const f2 = new Flower(f2group, f2dist);
+        f2.create();
+        f2.createStem();
+
+        group.add(f1group);
+        group.add(f2group);
+        scene.add(group);
+
+        const raycaster = new THREE.Raycaster();
+        const mouse = new THREE.Vector2();
+        const colorMaterial = "#ff0080";
+        const newMaterial = new THREE.MeshPhongMaterial({color: colorMaterial, shininess: 60 });
+
+        // 조명 설정
+        const light = new THREE.DirectionalLight();
+        light.position.set(0, 0.5, 1);
+        scene.add(light);
+
+        // 마우스 설정
+        let mouseX = 0;
+        let mouseY = 0;
+        const mouseFX = {
+            coordinates(cX, cY) {
+                mouseX = cX - window.innerWidth / 2;
+                mouseY = cY - window.innerHeight / 2;
+
+                const limit = 700;
+                if (mouseX >= limit || mouseX <= limit * -1) mouseX = limit;
+            },
+            calcObjPickingRay(gp) {
+                const ob = gp.children;
+                const intersects = raycaster.intersectObjects(ob, true);
+
+                ob.forEach((el) => {
+                    el.material = intersects.length > 0 ? newMaterial : material;
+                    el.material.needsUpdate = true;
+                });
+            },
+            addMouseOver(cX, cY) {
+                mouse.x = (cX / window.innerWidth) * 2 - 1;
+                mouse.y = -(cY / window.innerHeight) * 2 + 1;
+
+                raycaster.setFromCamera(mouse, camera);
+
+                const flowerGroups = [f1group, f2group];
+                flowerGroups.forEach((el) => {
+                    mouseFX.calcObjPickingRay(el);
+                });
+            },
+            onMouseMove(e) {
+                mouseFX.addMouseOver(e.clientX, e.clientY);
+                mouseFX.coordinates(e.clientX, e.clientY);
+            },
+            onTouchMove(e) {
+                const touchX = e.changedTouches[0].clientX;
+                const touchY = e.changedTouches[0].clientY;
+                mouseFX.coordinates(touchX, touchY);
+            },
+        };
+        document.addEventListener("mousemove", mouseFX.onMouseMove);
+        document.addEventListener("touchmove", mouseFX.onTouchMove);
+
+        // 사이즈 설정
+        const onWindowResize = () => {
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+
+            renderer.setSize(w, h);
+        };
+        window.addEventListener("resize", onWindowResize);
+
+        // 애니메이션
+        const createAnimRotation = () => {
+            const t = Date.now() * 0.001;
+            const rx = Math.sin(t * 0.7);
+            const ry = Math.sin(t * 0.3);
+
+            group.rotation.x = rx;
+            group.rotation.y = ry;
+        };
+
+        // 렌더링
+        const render = () => {
+            camera.position.x += (mouseX - camera.position.x) * 0.05;
+            camera.position.y += (mouseY * -1 - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
+
+            createAnimRotation();
+
+            renderer.render(scene, camera);
+            requestAnimationFrame(render);
+        };
+        render();
+    </script>
+</body>
+
+</html>

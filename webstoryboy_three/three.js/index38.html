@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="shadercollab"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script id="vertex" type="x-shader/x-vertex">
+        void main() { 
+            gl_Position = vec4(position, 1.0); 
+        }
+    </script>
+
+    <script id="fragment" type="x-shader/x-fragment">
+        precision highp float;
+
+        #define PI 3.14159265359
+        #define clamprepetition(p,per,l) p=p-per*clamp(floor(p/per + 0.5), -l, l)
+
+        uniform vec2 u_resolution;
+        uniform float u_time;
+            
+        const int RAYMARCH_MAX_STEPS = 200;
+        const float RAYMARCH_MAX_DIST = 50.;
+        const float EPSILON = 0.0002;
+
+        mat2 rot (float a) {
+            return mat2(cos(a),sin(a),-sin(a),cos(a));
+        }
+	
+        // p: 위치 c: 코너
+        float sdBox(vec3 p, vec3 c) {
+            vec3 q = abs(p) - c;
+            return length(max(q,0.0)) + min(max(q.x,max(q.y,q.z)),0.0);
+        }
+	
+        float scene(vec3 pos) {
+            pos.yz *= rot(atan(1./sqrt(2.)));
+            pos.xz *= rot(PI/4.); 
+            
+            float period = 4.+(sin(u_time*5.) * 0.5+0.5);
+            vec2 id = floor(pos.xz/period + 0.5); 
+            clamprepetition(pos.xz, period, 2.);
+            pos.xz *= rot(u_time*length(id+2.));
+            float box = sdBox(pos, vec3(1.));
+	
+            return box;
+        }
+
+        vec3 getnormalsmall(vec3 p) {
+            vec2 epsilon = vec2(0.001, 0.);
+            
+            return normalize(
+                scene(p) - vec3(scene(p-epsilon.xyy),
+                scene(p-epsilon.yxy),
+                scene(p-epsilon.yyx))
+            );
+        }
+	
+        vec4 raymarch(vec3 rayDir, vec3 pos) {
+            float currentDist = 0.0; 
+            float rayDepth = 0.0;
+            vec3 rayLength = vec3(0.0);
+	
+            vec3 light = normalize(vec3(1.,2.,2.));
+            vec4 bgColor = vec4(0.1, 0.1, 0.1, 1.);
+	
+            for (int i=0; i < RAYMARCH_MAX_STEPS; i++) {
+                vec3 new_p = pos + rayDir * rayDepth;
+                currentDist = scene(new_p);
+                rayDepth += currentDist;
+                
+                vec3 normals = getnormalsmall(new_p);
+                float lighting = max(0.,dot(normals,light));
+                vec4 shapeColor = mix(
+                    vec4(0.1, 0.1, 0.3, 1.0),
+                    vec4(0.4, 0.8, 0.9, 1.0),
+                    lighting
+                );
+                
+                if (currentDist < EPSILON) return shapeColor; 
+                if (rayDepth > RAYMARCH_MAX_DIST) return bgColor; 
+            }
+            
+            return bgColor;
+        }
+	
+        void main() {
+            vec2 uv = (gl_FragCoord.xy - u_resolution * .5) / u_resolution.yy; 
+            
+            vec3 camPos = vec3(uv*10., 30.); // x, y, z axis	
+            vec3 rayDir = normalize(vec3(0.,0., -1.0)); // DOF
+            
+            gl_FragColor = vec4(raymarch(rayDir, camPos));
+        }
+    </script>
+    <script>
+        /* 
+         * https://www.curiouslyminded.xyz
+         * https://www.twitch.tv/curiouslyminded
+         * https://www.youtube.com/curiouslyminded
+         */
+
+        let camera, scene, renderer, clock;
+        let uniforms;
+
+        function init() {
+            const container = document.getElementById("shadercollab");
+
+            clock = new THREE.Clock();
+            camera = new THREE.Camera();
+            camera.position.z = 1;
+
+            scene = new THREE.Scene();
+
+            const geometry = new THREE.PlaneBufferGeometry(2, 2);
+
+            uniforms = {
+                u_time: {
+                    type: "f",
+                    value: 1.0
+                },
+                u_resolution: {
+                    type: "v2",
+                    value: new THREE.Vector2()
+                },
+            };
+
+            const material = new THREE.ShaderMaterial({
+                uniforms,
+                vertexShader: document.getElementById("vertex").textContent,
+                fragmentShader: document.getElementById("fragment").textContent
+            });
+
+            const mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+
+            renderer = new THREE.WebGLRenderer();
+            renderer.setPixelRatio(window.devicePixelRatio);
+
+            container.appendChild(renderer.domElement);
+
+            onWindowResize();
+            window.addEventListener("resize", onWindowResize);
+        }
+
+        function onWindowResize() {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            uniforms.u_resolution.value.x = renderer.domElement.width;
+            uniforms.u_resolution.value.y = renderer.domElement.height;
+        }
+
+        function render() {
+            uniforms.u_time.value = clock.getElapsedTime() * 0.6;
+            renderer.render(scene, camera);
+        }
+
+        function animate() {
+            render();
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+    </script>
+</body>
+
+</html>

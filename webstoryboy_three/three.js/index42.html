@@ -77,10 +77,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js"></script>
     <script>
         const PX_RATIO = window.devicePixelRatio
-        /*
-         * Re-maps a number from one range to another. Thank's processing
-         * @see: https://processing.org/reference/map_.html
-         */
+
         Math.map = (n, start, stop, start2, stop2) => {
             const newval = (n - start) / (stop - start) * (stop2 - start2) + start2
             return newval

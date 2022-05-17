@@ -1,12 +1,582 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            overflow: hidden;
+        }
+
+        #webgl {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div id="webgl"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r115/three.min.js"></script>
+    <script id="js-vertex-shader" type="x-shader/x-vertex">
+        attribute vec3 position;
+        attribute vec2 uv;
+        uniform float u_wave;
+        uniform float u_time;
+        uniform mat4 modelViewMatrix;
+        uniform mat4 projectionMatrix;
+        varying vec2 vUv;
+
+        void main() {
+            vUv = uv;
+            float power = 1.0;
+            float x = position.x;
+            float y = position.y;
+            float z = position.z + u_wave * cos(-u_time + x * power) * sin(u_time + y * power);
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(x, y, z, 1.0);
+        }
+    </script>
+    <script id="js-fragment-shader" type="x-shader/x-fragment">
+        precision mediump float;
+
+        uniform vec2 u_meshsize;
+        uniform vec2 u_texturesize;
+        uniform float u_texture_switch_01;
+        uniform float u_texture_switch_02;
+        uniform float u_texture_switch_03;
+        uniform float u_texture_switch_04;
+        uniform float u_noise_switch_01;
+        uniform float u_noise_switch_02;
+        uniform float u_noise_switch_03;
+        uniform float u_noise_switch_04;
+        uniform sampler2D u_noise_texture;
+        uniform sampler2D u_texture_01;
+        uniform sampler2D u_texture_02;
+        uniform sampler2D u_texture_03;
+        uniform sampler2D u_texture_04;
+        varying vec2 vUv;
+
+        #define PI 3.14159265359
+
+        mat2 rotate2d(float _angle){
+            return mat2(cos(_angle),-sin(_angle), sin(_angle),cos(_angle));
+        }
+
+        void main() {
+            vec2 uv = vUv;
+
+            vec2 ratio = vec2(
+                min((u_meshsize.x / u_meshsize.y) / (u_texturesize.x / u_texturesize.y), 1.0),
+                min((u_meshsize.y / u_meshsize.x) / (u_texturesize.y / u_texturesize.x), 1.0)
+            );
+
+            uv *= ratio;
+
+            float noisePower = 0.5;
+            mat2 rotate = rotate2d(PI);
+            vec4 noise_texture = texture2D(u_noise_texture, uv);
+            vec2 uv01 = uv + rotate * vec2(noise_texture.r, noise_texture.g) * u_noise_switch_01 * noisePower;
+            vec2 uv02 = uv + rotate * vec2(noise_texture.r, noise_texture.g) * u_noise_switch_02 * noisePower;
+            vec2 uv03 = uv + rotate * vec2(noise_texture.r, noise_texture.g) * u_noise_switch_03 * noisePower;
+            vec2 uv04 = uv + rotate * vec2(noise_texture.r, noise_texture.g) * u_noise_switch_04 * noisePower;
+
+            vec4 texture01 = texture2D(u_texture_01, uv01);
+            vec4 texture02 = texture2D(u_texture_02, uv02);
+            vec4 texture03 = texture2D(u_texture_03, uv03);
+            vec4 texture04 = texture2D(u_texture_04, uv04);
+
+            vec4 finalPos = texture01 * u_texture_switch_01 + texture02 * u_texture_switch_02 + texture03 * u_texture_switch_03 + texture04 * u_texture_switch_04;
+            gl_FragColor = vec4(finalPos);
+        }
+    </script>
+    <script>
+        class Stage {
+            constructor() {
+                this.renderParam = {
+                    clearColor: 0xffffff,
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                };
+                this.cameraParam = {
+                    fov: 45,
+                    near: 0.1,
+                    far: 100,
+                    lookAt: new THREE.Vector3(0, 0, 0),
+                    x: 0,
+                    y: 0,
+                    z: 10
+                };
+
+                this.scene = null;
+                this.camera = null;
+                this.renderer = null;
+                this.geometry = null;
+                this.material = null;
+                this.mesh = null;
+                this.isInitialized = false;
+            }
+
+            init() {
+                this._setScene();
+                this._setRender();
+                this._setCamera();
+                this.isInitialized = true;
+            }
+
+            _setScene() {
+                this.scene = new THREE.Scene();
+            }
+
+            _setRender() {
+                this.renderer = new THREE.WebGLRenderer({alpha: true});
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.renderer.setClearColor(new THREE.Color(this.renderParam.clearColor));
+                this.renderer.setSize(this.renderParam.width, this.renderParam.height);
+                const wrapper = document.querySelector("#webgl");
+                wrapper.appendChild(this.renderer.domElement);
+            }
+
+            _setCamera() {
+                if (!this.isInitialized) {
+                    this.camera = new THREE.PerspectiveCamera(
+                        0,
+                        0,
+                        this.cameraParam.near,
+                        this.cameraParam.far
+                    );
+
+                    this.camera.position.set(
+                        this.cameraParam.x,
+                        this.cameraParam.y,
+                        this.cameraParam.z
+                    );
+                    this.camera.lookAt(this.cameraParam.lookAt);
+                }
+
+                const width = window.innerWidth;
+                const height = window.innerHeight;
+                this.camera.aspect = width / height;
+
+                this.camera.fov =
+                    THREE.MathUtils.radToDeg(
+                        Math.atan(width / this.camera.aspect / (2 * this.camera.position.z))
+                    ) * 2;
+                this.camera.updateProjectionMatrix();
+                this.renderer.setSize(width, height);
+            }
+
+            _render() {
+                this.renderer.render(this.scene, this.camera);
+            }
+
+            onResize() {
+                this._setCamera();
+            }
+
+            onRaf() {
+                this._render();
+            }
+        }
+
+        class Mesh {
+            constructor(stage) {
+                this.geometryRatio = 0.8;
+
+                this.geometryParm = {
+                    width: 1.0,
+                    height: 1.0,
+                    widthSegments: 32.0,
+                    heightSegments: 32.0
+                };
+
+                this.materialParam = {
+                    useWireframe: false
+                };
+
+                this.width = window.innerWidth;
+                this.height = window.innerHeight;
+
+                this.naturalSize = {
+                    x: 1728,
+                    y: 1064
+                };
+
+                this.images = [
+                    "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                    "https://images.unsplash.com/photo-1638913971789-667874197280?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+                    "https://images.unsplash.com/photo-1652783070844-64b446b791dd?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170",
+                    "https://images.unsplash.com/photo-1652631093599-9a971911bd43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1334&q=80"
+                ];
+
+                this.noiseImage =
+                    "https://hisamikurita.github.io/sample-images/dist/assets/images/noise.webp";
+
+                this.uniforms = {
+                    u_noise_texture: {
+                        type: "t",
+                        value: new THREE.TextureLoader().load(this.noiseImage)
+                    },
+                    u_texture_01: {
+                        type: "t",
+                        value: new THREE.TextureLoader().load(this.images[0])
+                    },
+                    u_texture_02: {
+                        type: "t",
+                        value: new THREE.TextureLoader().load(this.images[1])
+                    },
+                    u_texture_03: {
+                        type: "t",
+                        value: new THREE.TextureLoader().load(this.images[2])
+                    },
+                    u_texture_04: {
+                        type: "t",
+                        value: new THREE.TextureLoader().load(this.images[3])
+                    },
+                    u_noise_switch_01: {
+                        type: "f",
+                        value: 0.0
+                    },
+                    u_noise_switch_02: {
+                        type: "f",
+                        value: 0.0
+                    },
+                    u_noise_switch_03: {
+                        type: "f",
+                        value: 0.0
+                    },
+                    u_noise_switch_04: {
+                        type: "f",
+                        value: 0.0
+                    },
+                    u_texture_switch_01: {
+                        type: "f",
+                        value: 1.0
+                    },
+                    u_texture_switch_02: {
+                        type: "f",
+                        value: 0.0
+                    },
+                    u_texture_switch_03: {
+                        type: "f",
+                        value: 0.0
+                    },
+                    u_texture_switch_04: {
+                        type: "f",
+                        value: 0.0
+                    },
+                    u_wave: {
+                        type: "f",
+                        value: 0.0
+                    },
+                    u_time: {
+                        type: "f",
+                        value: 0.0
+                    },
+                    u_meshsize: {
+                        type: "v2",
+                        value: {
+                            x: this.width,
+                            y: this.height
+                        }
+                    },
+                    u_texturesize: {
+                        type: "v2",
+                        value: {
+                            x: this.naturalSize.x,
+                            y: this.naturalSize.y
+                        }
+                    }
+                };
+
+                this.stage = stage;
+                this.mesh = null;
+                this.duration = 0.9;
+                this.ease = "power1.out";
+            }
+
+            init() {
+                this._setMesh();
+                this._setMeshScale();
+            }
+
+            _setMesh() {
+                const geometry = new THREE.PlaneBufferGeometry(
+                    this.geometryParm.width,
+                    this.geometryParm.height,
+                    this.geometryParm.widthSegments,
+                    this.geometryParm.heightSegments
+                );
+
+                const material = new THREE.RawShaderMaterial({
+                    vertexShader: document.querySelector("#js-vertex-shader").textContent,
+                    fragmentShader: document.querySelector("#js-fragment-shader").textContent,
+                    wireframe: this.materialParam.useWireframe,
+                    transparent: true,
+                    uniforms: this.uniforms
+                });
+
+                this.mesh = new THREE.Mesh(geometry, material);
+                this.stage.scene.add(this.mesh);
+            }
+
+            _setMeshScale() {
+                this.width =
+                    document.querySelector("#webgl").getBoundingClientRect().width *
+                    this.geometryRatio;
+                this.height =
+                    document.querySelector("#webgl").getBoundingClientRect().height *
+                    this.geometryRatio;
+
+                this.mesh.scale.x = this.width;
+                this.mesh.scale.y = this.height;
+
+                this.uniforms.u_meshsize.value.x = this.mesh.scale.x;
+                this.uniforms.u_meshsize.value.y = this.mesh.scale.y;
+            }
+
+            onResize() {
+                this._setMeshScale();
+            }
+
+            _setWave() {
+                gsap.fromTo(
+                    this.mesh.material.uniforms.u_wave, {
+                        value: 0.0
+                    }, {
+                        duration: this.duration / 2,
+                        ease: this.ease,
+                        value: 1.0,
+                        onComplete: () => {
+                            gsap.to(this.mesh.material.uniforms.u_wave, {
+                                duration: this.duration,
+                                ease: this.ease,
+                                value: 0.0
+                            });
+                        }
+                    }
+                );
+            }
+
+            _setNoise(number) {
+                switch (number) {
+                    case 0:
+                        gsap.fromTo(
+                            this.mesh.material.uniforms.u_noise_switch_01, {
+                                value: 0.0
+                            }, {
+                                duration: this.duration,
+                                ease: this.ease,
+                                value: 1.0
+                            }
+                        );
+                        gsap.fromTo(
+                            this.mesh.material.uniforms.u_noise_switch_02, {
+                                value: -1.0
+                            }, {
+                                duration: this.duration * 1.3,
+                                ease: this.ease,
+                                value: 0.0
+                            }
+                        );
+                        break;
+                    case 1:
+                        gsap.fromTo(
+                            this.mesh.material.uniforms.u_noise_switch_02, {
+                                value: 0.0
+                            }, {
+                                duration: this.duration,
+                                ease: this.ease,
+                                value: 1.0
+                            }
+                        );
+                        gsap.fromTo(
+                            this.mesh.material.uniforms.u_noise_switch_03, {
+                                value: -1.0
+                            }, {
+                                duration: this.duration * 1.3,
+                                ease: this.ease,
+                                value: 0.0
+                            }
+                        );
+                        break;
+                    case 2:
+                        gsap.fromTo(
+                            this.mesh.material.uniforms.u_noise_switch_03, {
+                                value: 0.0
+                            }, {
+                                duration: this.duration,
+                                ease: this.ease,
+                                value: 1.0
+                            }
+                        );
+                        gsap.fromTo(
+                            this.mesh.material.uniforms.u_noise_switch_04, {
+                                value: -1.0
+                            }, {
+                                duration: this.duration * 1.3,
+                                ease: this.ease,
+                                value: 0.0
+                            }
+                        );
+                        break;
+                    case 3:
+                        gsap.fromTo(
+                            this.mesh.material.uniforms.u_noise_switch_04, {
+                                value: 0.0
+                            }, {
+                                duration: this.duration,
+                                ease: this.ease,
+                                value: 1.0
+                            }
+                        );
+                        gsap.fromTo(
+                            this.mesh.material.uniforms.u_noise_switch_01, {
+                                value: -1.0
+                            }, {
+                                duration: this.duration * 1.3,
+                                ease: this.ease,
+                                value: 0.0
+                            }
+                        );
+                        break;
+                }
+            }
+
+            _changeSlide(number) {
+                this._setWave();
+                this._setNoise(number);
+
+                switch (number) {
+                    case 0:
+                        gsap.to(this.mesh.material.uniforms.u_texture_switch_01, {
+                            duration: this.duration,
+                            ease: this.ease,
+                            value: 0.0
+                        });
+                        gsap.to(this.mesh.material.uniforms.u_texture_switch_02, {
+                            duration: this.duration,
+                            ease: this.ease,
+                            value: 1.0
+                        });
+                        break;
+                    case 1:
+                        gsap.to(this.mesh.material.uniforms.u_texture_switch_02, {
+                            duration: this.duration,
+                            ease: this.ease,
+                            value: 0.0
+                        });
+                        gsap.to(this.mesh.material.uniforms.u_texture_switch_03, {
+                            duration: this.duration,
+                            ease: this.ease,
+                            value: 1.0
+                        });
+                        break;
+                    case 2:
+                        gsap.to(this.mesh.material.uniforms.u_texture_switch_03, {
+                            duration: this.duration,
+                            ease: this.ease,
+                            value: 0.0
+                        });
+                        gsap.to(this.mesh.material.uniforms.u_texture_switch_04, {
+                            duration: this.duration,
+                            ease: this.ease,
+                            value: 1.0
+                        });
+                        break;
+                    case 3:
+                        gsap.to(this.mesh.material.uniforms.u_texture_switch_04, {
+                            duration: this.duration,
+                            ease: this.ease,
+                            value: 0.0
+                        });
+                        gsap.to(this.mesh.material.uniforms.u_texture_switch_01, {
+                            duration: this.duration,
+                            ease: this.ease,
+                            value: 1.0
+                        });
+                        break;
+                }
+            }
+
+            _render() {
+                this.uniforms.u_time.value += 0.05;
+            }
+
+            onRaf() {
+                this._render();
+            }
+        }
+
+        class Slider {
+            constructor() {
+                const stage = new Stage();
+                stage.init();
+
+                const mesh = new Mesh(stage);
+                mesh.init();
+
+                window.addEventListener("resize", () => {
+                    stage.onResize();
+                    mesh.onResize();
+                });
+
+                const _raf = () => {
+                    window.requestAnimationFrame(() => {
+                        _raf();
+
+                        stage.onRaf();
+                        mesh.onRaf();
+                    });
+                };
+
+                _raf();
+
+                this.currentNum = 0;
+
+                const _moveChangeSlide = () => {
+                    if (this.currentNum > 2) {
+                        this.currentNum = 0;
+                    } else {
+                        this.currentNum++;
+                    }
+                };
+
+                const _autoChangeSlide = () => {
+                    gsap
+                        .to({}, {
+                            ease: "none",
+                            duration: 3.0,
+                            repeat: -1.0
+                        })
+                        .eventCallback("onRepeat", () => {
+                            mesh._changeSlide(this.currentNum);
+                            _moveChangeSlide();
+                        });
+                };
+
+                window.addEventListener("load", () => {
+                    _autoChangeSlide();
+                });
+            }
+        }
+
+        new Slider();
+    </script>
 </body>
+
 </html>

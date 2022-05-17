@@ -35,10 +35,6 @@
             gsap
         } from "https://cdn.skypack.dev/gsap@3.9.1";
 
-        // ----
-        // main
-        // ----
-
         const renderer = new THREE.WebGLRenderer();
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, 2, .1, 100);
@@ -54,7 +50,6 @@
         light1.position.set(0, 0, 1);
         scene.add(light1);
 
-        // photo by Joe Woods - https://unsplash.com/photos/4Zaq5xY5M_c
         const url =
             'https://images.unsplash.com/photo-1531685250784-7569952593d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80';
         const tex = new THREE.TextureLoader().load(url);
@@ -113,10 +108,6 @@
             controls.update();
             composer.render();
         });
-
-        // ----
-        // view
-        // ----
 
         function resize(w, h, dpr = devicePixelRatio) {
             renderer.setPixelRatio(dpr);

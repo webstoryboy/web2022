@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div id="contents">
+        <section id="section1">
+            <div class="b_black">
+                <!-- //1 -->
+                <h1>dev</h1>
+            </div>
+            <div>
+                <!-- //2 -->
+            </div>
+            <div class="p10">
+                <!-- //3 -->
+                <h2>SITE CODING</h2>
+                <p>웹 표준 코딩부터 레이아웃, 반응형, 패럴랙스를 통해 사이트 코딩을 마스터하다.</p>
+
+                <div class="link">
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                </div>
+            </div>
+            <div>
+                <!-- //4 -->
+            </div>
+            <div>
+                <!-- //5 -->
+            </div>
+            <div class="p10">
+                <!-- //6 -->
+                <h2>SITE CODING</h2>
+                <p>웹 표준 코딩부터 레이아웃, 반응형, 패럴랙스를 통해 사이트 코딩을 마스터하다.</p>
+
+                <div class="link">
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                </div>
+            </div>
+            <div class="p_bl">
+                <!-- //7 -->
+                <h1 class="lh6">portfolio</h1>
+            </div>
+            <div>
+                <!-- //8 -->
+            </div>
+            <div class="p10">
+                <!-- //9 -->
+                <h2>SITE CODING</h2>
+                <p>웹 표준 코딩부터 레이아웃, 반응형, 패럴랙스를 통해 사이트 코딩을 마스터하다.</p>
+
+                <div class="link_wrap">
+                    <a href="sub1.html" class="link">10</a>
+                    <a href="sub2.html" class="link">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                </div>
+            </div>
+            <div>
+                <!-- //10 -->
+            </div>
+            <div class="b_black">
+                <!-- //11 -->
+            </div>
+            <div class="b_black">
+                <!-- //12 -->
+            </div>
+            <div>
+                <!-- //13 -->
+            </div>
+            <div>
+                <!-- //14 -->
+            </div>
+            <div>
+                <!-- //15 -->
+            </div>
+            <div>
+                <!-- //16 -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.querySelectorAll(".link_wrap .link").forEach((el) => {
+            el.addEventListener("click", (e) => {
+                e.preventDefault();
+                const herfName = el.getAttribute("href");
+
+                document.getElementById("section1").classList.add("active");
+                document.querySelectorAll("#section1 > div").forEach((box, index) => {
+                    setTimeout(() => {
+                        box.classList.add("active");
+                    }, 100 * index)
+                })
+
+                setTimeout(() => {
+                    window.location.href = herfName;
+                }, 3000)
+            })
+        })
+
+    </script>
+</body>
+</html>

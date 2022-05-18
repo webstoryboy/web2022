@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://boseungdl.github.io/webs_class_si/portfolio/styles/fonts.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header id="header">
+        <span class="l">frontend</span>
+        <h1>portfolio</h1>
+        <span class="r">seungbo</span>
+    </header>
+
+    <main id="contents">
+        <section id="section1">
+            <div class="sec1">
+                <div class="sec1-1">
+                    <div class="main_text">
+                        <div>seungbo</div>
+                        <div><span>the</span>Frontend<span>developer</span></div>
+                        <div>Portfolio</div>
+                    </div>
+                </div>
+                <div class="sec1-2"></div>
+                <div class="sec1-3"></div>
+            </div>
+        </section>
+        <!-- //section1 -->
+
+        <section id="section2">
+
+        </section>
+        <!-- //section2 -->
+
+        <section id="section3">
+            <div class="sec3">
+                <div class="sec3-1"></div>
+                <div class="sec3-2"></div>
+                <div class="sec3-3"></div>
+            </div>
+        </section>
+        <!-- //section3 -->
+
+    </main>
+    <!-- //contents -->
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script>
+        function scroll(){
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY
+
+            gsap.to(".sec1", {left: -scrollTop})
+
+            //let offset = scrollTop - document.querySelector("#section4").offsetTop;
+
+            // if(scrollTop >= document.querySelector("#section4").offsetTop){
+            //     document.querySelector(".sec4").style.backgroundColor = "blue";
+            //     gsap.to(".sec4", {left: -offset, ease: "linear"})
+            // }
+
+            requestAnimationFrame(scroll);
+        }
+        scroll();
+    </script>
+</body>
+</html>

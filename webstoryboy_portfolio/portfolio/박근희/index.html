@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://gwni0214.github.io/webs_class//portfolio/assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="scroll">0</div>
+
+    <div id="contents">
+        <section id="section1">
+            <div class="sec1"
+                data-0="transform: translate(-50%, -50%) scale(5);"
+                data-3000="transform: translate(-50%, -50%) scale(1);"
+                data-4000="transform: translate(-50%, -50%) scale(1);"
+                data-5000="transform: translate(-50%, -45%) scale(0.9);"
+            ></div>
+
+            <div class="sec1_text"
+                data-0="transform: translate(-50%, -50%) scale(1);"
+                data-3000="transform: translate(-50%, -70%) scale(0.4);"
+                data-4000="transform: translate(-50%, -70%) scale(0.4);"
+                data-5000="transform: translate(-50%, -60%) scale(0.3);"
+            >
+                <img src="https://gwni0214.github.io/webs_class//portfolio/assets/img/face.png" alt="dd">
+                <span>Gwni Park</span>
+                <h1>The New Developer</h1>
+            </div>
+            
+            <div class="sec1_bg fixed"
+                data-4000 = "transform: translate(-50%, 50%) scale(0.9);"
+                data-5000 = "transform: translate(-50%, -50%) scale(1);"
+                data-6000 = "transform: translate(-50%, -50%) scale(1);">
+                <div class="bg"
+                    data-5000 = "opacity:1;"
+                    data-6000 = "opacity:0;"
+                ></div>
+                <div class="bgx">
+                    <div>
+                        <span 
+                            data-4500="opacity:1"
+                            data-5000="opacity:0"
+                        >WORLD CLASS</span> 
+                        <span
+                            data-4600="opacity:1"
+                            data-5100="opacity:0"
+                        >IS A Dream</span>
+                    </div>
+                    <div>
+                        <span
+                            data-4700="opacity:1"
+                            data-5200="opacity:0"
+                        >IN THE NEAR</span>
+                        <span
+                            data-4800="opacity:1"
+                            data-5300="opacity:0"
+                        >FUTURE</span></div>
+                    <div>
+                        <span
+                            data-4900="opacity:1"
+                            data-5400="opacity:0"
+                        >LET’S</span>
+                        <span
+                            data-5000="opacity:1"
+                            data-5100="opacity:0"
+                        >DO BEST</div>
+                </div>
+                <div class="bgo">
+                    <div><span>WORLD CLASS</span> <span>IS A Dream</span></div>
+                    <div><span>IN THE NEAR</span> <span>FUTURE</span></div>
+                    <div><span>LET’S</span> <span>DO BEST</div>
+                </div>
+            </div>
+
+        </section>
+        <!-- //section1 -->
+
+        <section id="section2">
+            <!-- <div class="container">
+                <div class="sec2">
+                    <h2 class="fixed" 
+                        data-3000 = "opacity:0; top[swing]: 27vh"
+                        data-3300 = "opacity:1; top[swing]: 24vh"
+                    >ABOUT ME</h2>
+                    <div class="sec2_txt1 fixed"
+                        data-3300 = "opacity:0; top[quadratic]: 63vh"
+                        data-3600 = "opacity:1; top[quadratic]: 60vh"
+                        >
+                        <p>도전을 두려워하지 않고 새로운것을 배우는 사람</p>
+                        <p>시간을 효율적으로 쓰는 경제적인 사람</p>
+                        <p>1픽셀의 디테일을 아는 섬세한 감성의 사람</p>
+                        <p>좋은 영향력을 주도하는 센스있는 사람</p>
+                    </div>
+                    <div class="sec2_img1 fixed"
+                        data-3600 = "transform: translate(-50%, -50%) rotate(0deg) scale(1); opacity: 0;"
+                        data-4600 = "transform: translate(-50%, -50%) rotate(-50deg) scale(0.); opacity: 1;"
+                    >
+                        <div class="imgWrap"
+       
+                        >
+                            <img src="https://gwni0214.github.io/webs_class/portfolio/assets/img/ipadFace2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </section>
+        <!-- //section2 -->
+
+        <section id="section3"></section>
+        <section id="section4"></section>
+        <section id="section5"></section>
+        <section id="section6"></section>
+    </div>
+    
+    <script src="https://gwni0214.github.io/webs_class//portfolio/assets/js/skrollr.min.js"></script>
+    <script>
+        var s = skrollr.init();
+
+        function scroll() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            document.querySelector(".scroll").innerText = Math.round(scrollTop);
+
+            requestAnimationFrame(scroll);
+        }
+        scroll();
+    </script>
+</body>
+</html>

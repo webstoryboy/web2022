@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div id="header">
+        <div class="logo">
+            <a href="#">portfolio</a>
+            <div></div>
+        </div>
+        <nav class="nav">
+            <a href="#">about</a>
+            <a href="#">work</a>
+            <a href="#">contact</a>
+        </nav>
+    </div>
+    <!-- //header -->
+
+    <div id="contents">
+        <section id="section1">
+            <div class="sec1_bg">
+                <div class="layout">
+                    <div class="box1">
+                        <span>developer</span>
+                    </div>
+                    <div class="box2"></div>
+                    <div class="box3">
+                        <span>frontend</span>
+                    </div>
+                </div>
+                <canvas id="three_bg"></canvas>
+            </div>
+        </section>
+        <!-- //section1 -->
+
+        <section id="section2">
+            <div class="sec2_bg bb_line">
+                <h2>portfolio</h2>
+            </div>
+        </section>
+        <!-- //section2 -->
+
+        <section id="section3"></section><!-- //section3 -->
+        <section id="section4"></section><!-- //section4 -->
+        <section id="section5"></section><!-- //section5 -->
+        <section id="section6"></section><!-- //section6 -->
+    </div>
+    <!-- //contents -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
+    <script id="vertexShader" type="x-shader/x-vertex">
+        void main() {
+            gl_Position = vec4( position, 1.0 );
+        }
+    </script>
+    <script id="fragmentShader" type="x-shader/x-fragment">
+        #ifdef GL_ES
+        precision mediump float;
+        #endif
+        uniform float time;
+        uniform vec2 resolution;
+
+        const int complexity = 3;
+        const float fluid_speed = 10.0;
+        const float color_intensity = 1.0;
+
+        float random (in vec2 st) {
+            return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
+        }
+
+        void main(){
+            vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / min(resolution.x, resolution.y);
+            float r = sqrt( dot( uv, uv ) );
+            
+            for(int i=1; i<complexity; i++){
+                vec2 newUv = uv + time * 0.01;
+                newUv.x += 1.5/float(i) * sin(float(i) * uv.y + time/fluid_speed) + 1.0;
+                newUv.y += 1.4/float(i) * cos(float(i) * uv.x + time/fluid_speed) - 0.9;
+                uv = newUv;
+            }
+
+            vec3 col = vec3(color_intensity*cos(uv.x) * 0.9, color_intensity * sin(uv.x) * sqrt(cos(time * 0.01)), color_intensity);
+            gl_FragColor=vec4(col, 1.0);
+        }
+    </script>
+    <script>
+        var container;
+        var camera, scene, renderer;
+        var uniforms;
+
+        init();
+        animate();
+
+        function init() {
+            container = document.getElementById('container');
+
+            camera = new THREE.Camera();
+            camera.position.z = 1;
+
+            scene = new THREE.Scene();
+
+            var geometry = new THREE.PlaneBufferGeometry(2, 2);
+
+            uniforms = {
+                time: {
+                    type: "f",
+                    value: 1.0
+                },
+                resolution: {
+                    type: "v2",
+                    value: new THREE.Vector2()
+                }
+            };
+
+            var material = new THREE.ShaderMaterial({
+                uniforms: uniforms,
+                vertexShader: document.getElementById('vertexShader').textContent,
+                fragmentShader: document.getElementById('fragmentShader').textContent
+            });
+
+            var mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+
+            renderer = new THREE.WebGLRenderer({canvas: document.getElementById("three_bg"),});
+            renderer.setPixelRatio(window.devicePixelRatio);
+
+            onWindowResize();
+            window.addEventListener('resize', onWindowResize, false);
+        }
+        function onWindowResize(event) {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            uniforms.resolution.value.x = renderer.domElement.width;
+            uniforms.resolution.value.y = renderer.domElement.height;
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            render();
+        }
+
+        function render() {
+            uniforms.time.value += 0.05;
+            renderer.render(scene, camera);
+        }
+    </script>
+</body>
+
+</html>

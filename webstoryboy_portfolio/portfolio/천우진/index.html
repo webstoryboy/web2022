@@ -6,19 +6,94 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background: #000;
-        }
-    </style>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-    <div id="container"></div>
+    <header id="header">
+        <div>
+            <a href="#">portfolio</a>
+            <a href="#">about</a>
+        </div>
+        <div class="info">
+            <span>center</span>
+            <span>center</span>
+            <span>center</span>
+            <span>center</span>
+            <span>center</span>
+            <span>center</span>
+        </div>
+        <div>
+            <a href="#">work</a>
+            <a href="#">contact</a>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <main data-scroll-container>
+        <div class="contents">
+            <div class="sec_wrap">
+                <section id="section1" class="section">
+                    <div class="sec1_text">
+                        <div>
+                            <div class="t1">INDEPENDENT</div>
+                            <div class="t2">FRONT-END</div>
+                            <div class="t3">WEB DEVELOPER</div>
+                            <span>WEB DEVELOPER</span>
+                        </div>
+                    </div>
+                    <canvas class="sec1_bg" id="webgl"></canvas>
+                </section>
+                <section id="section2" class="section">
+                    
+                </section>
+                <section id="section3" class="section">
+                    
+                </section>
+                <section id="section4" class="section">
+                    
+                </section>
+                <section id="section5" class="section">
+                    
+                </section>
+                <section id="section6" class="section">
+                    
+                </section>
+                <section id="section7" class="section">
+                    
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <span>INDEPENDENT FRONTEND WEB DEVELOPOER</span><em>2022 portfolio</em>
+        <span>INDEPENDENT FRONTEND WEB DEVELOPOER</span><em>2022 portfolio</em>
+        <span>INDEPENDENT FRONTEND WEB DEVELOPOER</span><em>2022 portfolio</em>
+        <span>INDEPENDENT FRONTEND WEB DEVELOPOER</span><em>2022 portfolio</em>
+        <span>INDEPENDENT FRONTEND WEB DEVELOPOER</span><em>2022 portfolio</em>
+    </footer>
+    <!-- //footer -->
+
+
+    <script type="module">
+        import locomotiveScroll from "https://cdn.skypack.dev/locomotive-scroll@4.0.6";
+
+        const lscroll = new locomotiveScroll({
+            el: document.querySelector("[data-scroll-container]"),
+            smooth: true,
+            direction: "horizontal"
+        });
+
+    </script>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
     <script id="vertexShader" type="x-shader/x-vertex">
         void main() {
@@ -62,7 +137,7 @@
                 col[int(j)] = clamp((abs(uv.x+uv.y)), 0.2, 1.0);
             }
         
-            vec3 bg = vec3(0.9,0.2,0.8);
+            vec3 bg = vec3(0.1,0.1,0.1);
                 color = mix(col, bg, smoothstep(0.0,abs(sin(time*0.05))*3.0,map(uv))
             );
         
@@ -105,14 +180,11 @@
 
             var mesh = new THREE.Mesh(geometry, material);
             scene.add(mesh);
-
             renderer = new THREE.WebGLRenderer({
-                alpha: true
+                alpha: true,
+                canvas: document.getElementById("webgl")
             });
             renderer.setPixelRatio(window.devicePixelRatio);
-
-            container.appendChild(renderer.domElement);
-
             onWindowResize();
             window.addEventListener('resize', onWindowResize, false);
         }

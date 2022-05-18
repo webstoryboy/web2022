@@ -1,0 +1,96 @@
+
+@font-face {
+    font-family: 'Chomsky';
+    src: url('https://cherin0115.github.io/dothome21/portfolio/assets/fonts/Chomsky.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'theramy';
+    src: url('https://gosu1234.dothome.co.kr/portfolio/font/theramy-webfont.eot');
+    src: url('https://gosu1234.dothome.co.kr/portfolio/font/theramy-webfont.eot?#iefix') format('embedded-opentype'),
+         url('https://gosu1234.dothome.co.kr/portfolio/font/theramy-webfont.woff2') format('woff2'),
+         url('https://gosu1234.dothome.co.kr/portfolio/font/theramy-webfont.woff') format('woff'),
+         url('https://gosu1234.dothome.co.kr/portfolio/font/theramy-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ChosunNm';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/ChosunNm/ChosunNm.ttf') format("truetype");
+    font-display: swap;
+}
+    
+/* layout */
+body {
+    background-color: #D8D1C8;
+}
+
+/* header */
+#header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.679);
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+#header h1 {
+    font-family: 'Chomsky';
+    padding: 10px 0;
+}
+#header span {
+    font-family: 'abel';
+    text-transform: uppercase;
+    letter-spacing: .5vw;
+    font-size: 14px;
+}
+
+
+
+/* section1 */
+#section {}
+
+.sec1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px;
+}
+.sec1 > div {
+    width: 32%;
+    height: 250px;
+    border: 1px solid #000;
+}
+.sec1 > div:nth-child(2){
+    border: 0
+}
+.sec1 > div:nth-child(2) h2 {
+    font-family: 'theramy';
+    text-align: center;
+    font-size: 6.7vw;
+    line-height: 1;
+}
+.sec1 > div:nth-child(2) p {
+    font-family: 'ChosunNm';
+}
+.sec1 > div:nth-child(1){
+    background: url(https://images.unsplash.com/photo-1652270430489-0ea0f45344f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=985&q=80);
+    background-size: cover;
+    background-position: center top -200px;
+}
+.sec1 > div:nth-child(3){
+    background: url(https://images.unsplash.com/photo-1652458301645-bde64fcc5712?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80);
+    background-size: cover;
+    background-position: center top -200px;
+}
+
+

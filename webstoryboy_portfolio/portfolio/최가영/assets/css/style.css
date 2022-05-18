@@ -1,0 +1,125 @@
+.container {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/* layout */
+#section1 {
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+#section2 {
+    height: 2000px;
+    background: #000;
+}
+
+/* section1 */
+.sec1_text {
+    color: #fff;
+    font-size: 8vw;
+    line-height: 1.1;
+    font-family: 'GmarketSans';
+    text-transform: uppercase;
+    font-weight: 700;
+    background: linear-gradient(140deg, #4ef036, #daffe8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 10;
+}
+.sec1_text > div:first-child {
+    font-weight: 300;
+}
+
+#webgl-canvas {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+
+/* section2 */
+#section2 {
+    padding: 200px 0;
+}
+.sec2 {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.sec2 .left {
+    width: 50%;
+    color: #8CFFA7
+}
+.sec2 .left h2 {
+    font-size: 84px;
+    font-family: 'GmarketSans';
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-top: -0.1vw;
+}
+.sec2 .right {
+    width: 49%;
+    
+}
+.sec2 .right p {
+    color: #fff;
+    font-family: 'ChosunNm';
+    font-size: 18px;
+    line-height: 1.6;
+}
+.box {
+    margin-top: 100px;
+    overflow: hidden;
+    position: relative;
+    z-index: 100;
+}
+.box img {
+    object-fit: cover;
+    object-position: center;
+    border: 8px solid #8CFFA7;
+    height: 400px;
+}
+.box2 {
+    position: absolute;
+    left: 150px;
+    top: 250px;
+    z-index: 50;
+}
+.box2 img {
+    width: 600px;
+    object-fit: cover;
+    object-position: center;
+    border: 8px solid #8CFFA7;
+    height: 400px;
+}
+
+@media (max-width: 1320px){
+    .container {
+        width: 100%;
+        padding: 0 2%;
+    }
+    .sec2 {
+        flex-direction: column;
+    }
+    .sec2 .right {
+        width: 100%;
+        margin-top: 40px;
+    }
+    .sec2 .right p br {
+        display: none;
+    }
+    .box {
+        width: 50%;
+    }
+}

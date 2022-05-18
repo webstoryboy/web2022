@@ -1,0 +1,88 @@
+body {
+    background: #000;
+}
+
+.scroll {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    z-index: 10000;
+    text-align: center;
+    line-height: 40px;
+    font-family: 'NanumSquare';
+    font-size: 14px;
+}
+
+/* fixed */
+.fixed {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* section1 */
+#section1 {
+    height: 30000px;
+    font-family: 'NanumSquare';
+}
+.sec1_bg1 {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/bg.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-blend-mode: hard-light;
+    animation: hue-rotate 6s linear infinite;
+}
+.sec1_text1 {
+    font-size: 6vw;
+    color: #fff;
+    white-space: nowrap;
+    font-weight: 800;
+}
+.sec1_text2 {
+    font-size: 6vw;
+    color: #fff;
+    white-space: nowrap;
+    font-weight: 800;
+}
+.sec1_text3 {
+    font-size: 4vw;
+    color: #fff;
+    white-space: nowrap;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.3;
+}
+.sec1_text4 {
+    font-size: 4vw;
+    color: #fff;
+    white-space: nowrap;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.3;
+    z-index: 1000;
+}
+.sec1_text4 img {
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+@keyframes hue-rotate {
+  from {filter: hue-rotate(0);}
+  to {filter: hue-rotate(360deg);}
+}
+
+/* section2 */
+.sec2_bg1 {
+    width: 100vw;
+    height: 100vw;
+    background: #000;
+}

@@ -1,0 +1,35 @@
+/* layout */
+body {
+    transition: 0.3s ease-out;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+    overscroll-behavior: none;
+    background-color: #b9b3a9;
+}
+#contents > section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#section1 {background-color: #b9b3a9;}
+#section2 {background-color: #7d7565;}
+#section3 {background-color: #b9b3a9;}
+#section4 {background-color: #7d7565;}
+#section5 {background-color: #b9b3a9;}
+
+.sec__wrap {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.sec__wrap > section {
+    min-width: 80vw;
+    height: 20vh;
+}
+#section1 {
+    background: #888;
+}

@@ -1,88 +1,143 @@
-body {
-    background: #000;
+/* layout */
+#section1 {
+    height: 100vh;
+    background-color: #2A65B7;
+    background:
+    radial-gradient(circle closest-side at 60% 43%, #b03 26%, rgba(187,0,51,0) 27%),
+    radial-gradient(circle closest-side at 40% 43%, #b03 26%, rgba(187,0,51,0) 27%),
+    radial-gradient(circle closest-side at 40% 22%, #d35 45%, rgba(221,51,85,0) 46%),
+    radial-gradient(circle closest-side at 60% 22%, #d35 45%, rgba(221,51,85,0) 46%),
+    radial-gradient(circle closest-side at 50% 35%, #d35 30%, rgba(221,51,85,0) 31%),
+    
+    radial-gradient(circle closest-side at 60% 43%, #b03 26%, rgba(187,0,51,0) 27%) 50px 50px,
+    radial-gradient(circle closest-side at 40% 43%, #b03 26%, rgba(187,0,51,0) 27%) 50px 50px,
+    radial-gradient(circle closest-side at 40% 22%, #d35 45%, rgba(221,51,85,0) 46%) 50px 50px,
+    radial-gradient(circle closest-side at 60% 22%, #d35 45%, rgba(221,51,85,0) 46%) 50px 50px,
+    radial-gradient(circle closest-side at 50% 35%, #d35 30%, rgba(221,51,85,0) 31%) 50px 50px;
+    background-color:#b03;
+    background-size:100px 100px;
 }
 
-.scroll {
+#section2 {
+    height: 100vh;
+    background-color: #ccc;
+}
+
+/* header */
+#header {
     position: fixed;
-    left: 10px;
-    top: 10px;
-    width: 40px;
-    height: 40px;
-    background: rgba(0,0,0,0.3);
-    color: #fff;
-    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
     text-align: center;
-    line-height: 40px;
-    font-family: 'NanumSquare';
-    font-size: 14px;
+    z-index: 10000;
+}
+#header h1 {
+    font-family: Abel;
+    font-size: 24px;
+    line-height: 1;
+    text-transform: uppercase;
+    padding: 20px;
+    color: #fff;
 }
 
-/* fixed */
-.fixed {
-    position: fixed;
+canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.td-wrapper, canvas {
+    transition: opacity 1s;
+}
+
+.td-wrapper:not(.td-hide)+canvas, .td-hide {
+    opacity: 0;
+}
+
+
+/* sectin1 */
+.sec1_text {
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    font-size: 18vw;
+    color: #fff;
+    z-index: 1000;
+    font-family: Abel;
 }
-
-/* section1 */
-#section1 {
-    height: 30000px;
-    font-family: 'NanumSquare';
+.sec1_text span {
+    pointer-events: none;
 }
-.sec1_bg1 {
+.sec1_bg {
+    position: absolute;
+    left: 0; 
+    top: 0;
     width: 100%;
     height: 100vh;
-    background-image: url(../img/bg.jpg);
-    background-position: center center;
-    background-size: cover;
-    background-blend-mode: hard-light;
-    animation: hue-rotate 6s linear infinite;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 100;
 }
-.sec1_text1 {
-    font-size: 6vw;
-    color: #fff;
-    white-space: nowrap;
-    font-weight: 800;
+.sec1_bg span {
+    width: 1px;
+    height: 100vh;
+    background: rgb(149, 0, 40);
+    margin-left: 20%;
+    display: block;
 }
-.sec1_text2 {
-    font-size: 6vw;
-    color: #fff;
-    white-space: nowrap;
-    font-weight: 800;
-}
-.sec1_text3 {
-    font-size: 4vw;
-    color: #fff;
-    white-space: nowrap;
-    font-weight: 800;
-    text-align: center;
-    line-height: 1.3;
-}
-.sec1_text4 {
-    font-size: 4vw;
-    color: #fff;
-    white-space: nowrap;
-    font-weight: 800;
-    text-align: center;
-    line-height: 1.3;
+.sec1_img {
+    width: 100%;
+    height: 100%;
     z-index: 1000;
 }
-.sec1_text4 img {
-    width: 20vw;
-    height: 20vw;
+
+
+.sec1_img .frame {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.sec1_img .frame iframe {
+    width: 100%;
+    height: 100%;
+}
+.sec1_img .img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
-    object-fit: cover;
+    overflow: hidden;
+    width: 20%;
+    object-fit: contain;
+    z-index: 1000;
+}
+.sec1_img .img {
+    transition: opacity 0.8s;
+}
+.sec1_img:hover .img {
+    opacity: 0;
+}
+.sec1_img:hover .frame {
+    opacity: 1;
 }
 
-@keyframes hue-rotate {
-  from {filter: hue-rotate(0);}
-  to {filter: hue-rotate(360deg);}
-}
 
-/* section2 */
-.sec2_bg1 {
-    width: 100vw;
-    height: 100vw;
-    background: #000;
+
+
+.sec1_scroll {
+    position: absolute;
+    left: 3vw;
+    bottom: 3vw;
+    width: 150px;
+    height: 150px;
+    background: url(https://uploads-ssl.webflow.com/5f83677f5913488dd24dd8d0/60f587cbcda5c63f5ab5d8c2_Scroll.svg) no-repeat center center;
+    background-size: contain;
 }

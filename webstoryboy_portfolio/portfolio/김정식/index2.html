@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet" />
+
+    <style>
+        body {
+            height: 20000px;
+        }
+
+        .scrollTop {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            background: rgba(0, 0, 0, 0.1);
+            color: #fff;
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            z-index: 10000;
+        }
+
+        .section1__front {
+            font-family: "Anton";
+            text-transform: uppercase;
+            background-color: #f4955c;
+            color: #313131;
+            font-size: 15vw;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            line-height: 1;
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+        }
+
+        .section1__back {
+            font-family: "Anton";
+            text-transform: uppercase;
+            background-color: #313131;
+            color: #f4955c;
+            font-size: 15vw;
+            width: 0%;
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            line-height: 1;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .frontend {
+            margin-right: 30vw;
+        }
+
+        .develeoper {
+            margin-left: 11.5vw;
+        }
+
+        .section1__desc {
+            font-family: "GmarketSans";
+            width: 60vw;
+            font-size: 1vw;
+            margin-left: 0.5vw;
+            line-height: 1.4;
+        }
+
+        .section1__desc span {
+            display: block;
+        }
+
+        /* section2 */
+        #section2 {
+            display: flex;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: #313131;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .section2__imgbox {
+            display: flex;
+            padding: 0 90px 0 60px;
+        }
+
+        .section2__img {
+            width: 360px;
+            height: 538px;
+            margin-right: 70px;
+        }
+
+        .section2__imgbox img {
+            width: 100%;
+            height: 100%;
+            margin-right: 70px;
+        }
+
+        .section2__text {
+            position: fixed;
+            font-family: "Anton";
+            font-size: 210px;
+            color: #f4955c;
+            right: 0%;
+            bottom: -33%;
+            white-space: nowrap;
+        }
+
+        /* section3 */
+        .section3 {
+            z-index: 2;
+            width: 0%;
+            height: 100vh;
+            background-color: #f4955c;
+            color: #313131;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            overflow: hidden;
+            flex-wrap: wrap;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        .section3__text {
+            font-size: 9vw;
+            font-family: "Anton";
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+
+        .section3__text .text1 {
+            transform: translateX(-100%);
+        }
+
+        .section3__text .text2 {
+            transform: translateX(80%);
+        }
+
+        /* section4 */
+        .section4 {
+            width: 400vw;
+            height: 100vh;
+            background-color: #f4955c;
+            display: flex;
+            position: fixed;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            z-index: 4;
+        }
+
+        .box {
+            width: 100vw;
+            height: 100%;
+        }
+
+        .section4__line {
+            width: 100%;
+            height: 30%;
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .section4__line .table1 {
+            width: 0%;
+            border-bottom: 3px solid #313131;
+            animation: base 0.3s forwards;
+        }
+
+        .table1 {
+            font-size: 1vw;
+            font-family: "GmarketSans";
+        }
+
+        .section4__info {
+            width: 100%;
+            height: 70%;
+        }
+
+        @keyframes base {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 0%;
+            }
+        }
+
+        @keyframes line {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        @keyframes op {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes jjan {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .mystroy {
+            width: 40vw;
+        }
+
+        .myskill {
+            width: 40vw;
+        }
+
+        .section4__info h3 {
+            font-size: 5vw;
+            font-family: "Anton";
+            margin: 2vw 0;
+        }
+
+        .mystroy ul li {
+            font-family: "GmarketSans";
+            font-size: 1vw;
+            width: 20vw;
+            word-break: keep-all;
+        }
+
+        .myskill ul li {
+            font-family: "Anton";
+            font-size: 1.2vw;
+            margin: 1vw 0;
+        }
+
+        .myability {
+            width: 40vw;
+        }
+
+        .myability ul li {
+            font-family: "GmarketSans";
+            font-size: 1vw;
+            margin: 1vw 0;
+        }
+
+        .mydream {
+            width: 40vw;
+        }
+
+        .mydream ul li {
+            font-family: "GmarketSans";
+            font-size: 1vw;
+            width: 20vw;
+            word-break: keep-all;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scrollTop">0</div>
+    <section class="section1">
+        <div class="section1__front" data-1000="width:100%" data-3500="transform:translateX(0%)"
+            data-5000="transform:translateX(100%); width:100%" data-5100="display:flex" data-5200="display:none">
+            <div class="frontend front" data-1300="transform: translateX(0%)" data-3300="transform: translateX(-120%)">
+                frontend
+            </div>
+            <div class="develeoper front" data-1300="transform: translateX(0%)" data-2700="transform: translateX(70%)"
+                data-3300="transform: translateX(130%)">
+                develeoper!
+                <div class="section1__desc" data-1300="opacity: 1; transform: translateY(0%) translateX(0%)"
+                    data-2700="opacity: 0; transform: translateY(300%) translateX(-82%)">
+                    <span>무엇인가 새로 시작하기는 늦었다고 느껴질 수 있는 나이에
+                        '개발자'라는 꿈을 꾸게 되었습니다. 그 꿈을 이루기 위한 노력의
+                        결과물들을</span>
+                    <span> 정리해 보았습니다. 잘 부탁드리겠습니다!</span>
+                </div>
+            </div>
+        </div>
+        <div class="section1__back" data-0="width: 0%" data-1000="width:100%"
+            data-1300="width: 100%; transform: translateX(0%)" data-3000="transform: translateX(100%)"
+            data-3500="display:flex" data-3501="display:none">
+            <div class="frontend back" data-0="transform : translateX(90.3%)" data-1000="transform:translateX(0)"
+                data-1300="transform: translateX(0%)" data-3300="transform: translateX(-332.5%)">
+                frontend
+            </div>
+            <div class="develeoper back" data-0="transform : translateX(70.7%)" data-1000="transform:translateX(0)"
+                data-1300="transform: translateX(0%)" data-2700="transform: translateX(-46%)"
+                data-3300="transform: translateX(-39%)">
+                develeoper!
+                <div class="section1__desc" data-1300="opacity: 1; transform: translateY(0%) translateX(0%)"
+                    data-2700="opacity: 0; transform: translateY(300%) translateX(-82.7%)">
+                    <span>무엇인가 새로 시작하기는 늦었다고 느껴질 수 있는 나이에
+                        '개발자'라는 꿈을 꾸게 되었습니다. 그 꿈을 이루기 위한 노력의
+                        결과물들을</span>
+                    <span> 정리해 보았습니다. 잘 부탁드리겠습니다!</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- // section1 -->
+    <section id="section2">
+        <div class="section2__imgbox" data-3700="transform: scale(0.95);"
+            data-4800="transform: scale(1); padding: 0 90px 0 60px" data-6200="padding: 0 0 0 200px">
+            <div class="section2__img img01">
+                <img src="https://umami-ware.com/en/wp-content/uploads/sites/2/2020/04/johannes_fischl_mono.jpg"
+                    alt="" />
+            </div>
+            <div class="section2__img img01">
+                <img src="https://umami-ware.com/en/wp-content/uploads/sites/2/2020/04/johannes_artmeier_mono.jpg"
+                    alt="" />
+            </div>
+            <div class="section2__img img01">
+                <img src="https://umami-ware.com/en/wp-content/uploads/sites/2/2020/06/marius_orha_mono.jpg" alt="" />
+            </div>
+            <div class="section2__img img01">
+                <img src="https://umami-ware.com/en/wp-content/uploads/sites/2/2020/04/ilya_kulbachny_mono.jpg"
+                    alt="" />
+            </div>
+            <div class="section2__text" data-4800="right:0%" data-6200="right:100%">
+                ABOUT ME!
+            </div>
+        </div>
+    </section>
+    -->
+    <!-- // section1 -->
+    <section class="section3" data-6150="width:0%" data-7600="width:100%">
+        <div class="section3__text">
+            <div class="text1" data-6300="transform: translateX(-100%)" data-9300="transform: translateX(100%)">
+                Believe in yourself
+            </div>
+            <div class="text2" data-6300="transform: translateX(80%)" data-9300="transform: translateX(-100%)">
+                He can do, she can do, why not me?
+            </div>
+        </div>
+    </section>
+    <!-- // section3 -->
+    <section class="section4" data-9400="opacity:0; left:0%;" data-9401="opacity:1; left:0%" data-13000="left:-270%">
+        <div class="blank box">
+            <div class="section4__line">
+                <table class="table1" data-9400="animation: base 0.3s forwards"
+                    data-9450="animation: line 0.7s forwards">
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="section4__info">
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mystroy box">
+            <div class="section4__line">
+                <table class="table1" data-9400="animation: base 0.3s forwards" data-9450="animation: line 1s forwards">
+                    <tr>
+                        <td>01</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="section4__info">
+                <h3 data-9400="animation: op 0.1s forwards" data-9451="animation: jjan 1s forwards">
+                    MY STORY
+                </h3>
+                <ul>
+                    <li data-9400="animation: op 0.1s forwards;" data-9451="animation: jjan 1s forwards;">
+                        항공기계학과 전공으로 졸업 후에 자영업을 시작하였습니다. 하지만
+                        코로나로 인해 상황이 어려워져 다른 길을 알아 보던 중, 개발자라는
+                        꿈을 꾸게 되었습니다. 새로운 도전을 두려워하지 않고 더 나은 미래를
+                        그려나가고 있습니다.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="myskill box">
+            <div class="section4__line">
+                <table class="table1" data-9900="animation: base 0.3s forwards"
+                    data-9950="animation: line 1.2s forwards">
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <table class="table1" data-9900="animation: base 0.3s forwards"
+                    data-9950="animation: line 1.5s forwards">
+                    <tr>
+                        <td>02</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="section4__info">
+                <h3>MY SKILL</h3>
+                <ul>
+                    <li>HTML5 & CSS3</li>
+                    <li>JAVASCRIPT & JQUERY</li>
+                    <li>PHP</li>
+                    <li>REACT & VUE</li>
+                </ul>
+            </div>
+        </div>
+        <div class="myability box">
+            <div class="section4__line">
+                <table class="table1" data-10400="animation: base 0.3s forwards"
+                    data-10450="animation: line 1.2s forwards">
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+                <table class="table1" data-10400="animation: base 0.3s forwards"
+                    data-10450="animation: line 1.5s forwards">
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+                <table class="table1" data-10400="animation: base 0.3s forwards"
+                    data-10450="animation: line 1.8s forwards">
+                    <tr>
+                        <td>03</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="section4__info">
+                <h3>MY ABILITY</h3>
+                <ul>
+                    <li>웹 디자인 기능사</li>
+                    <li>워드프로세서 1급</li>
+                    <li>정보처리기사(필기)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mydream box">
+            <div class="section4__line">
+                <table class="table1" data-11000="animation: base 0.3s forwards"
+                    data-11080="animation: line 1.2s forwards">
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+                <table class="table1" data-11000="animation: base 0.3s forwards"
+                    data-11080="animation: line 1.5s forwards">
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+                <table class="table1" data-11000="animation: base 0.3s forwards"
+                    data-11080="animation: line 1.8s forwards">
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+                <table class="table1" data-11000="animation: base 0.3s forwards"
+                    data-11080="animation: line 1.9s forwards">
+                    <tr>
+                        <td>04</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="section4__info">
+                <h3>MY DREAM</h3>
+                <ul>
+                    <li>
+                        반복되는 일상에 지쳐있었지만 새로운걸익히고 끊임없이 배운다는 점이
+                        저를 뒤쳐지지 않게 만들었습니다. 지금의 열정과 앞으로의 노력들로
+                        부끄럽지않은 개발자가 되고 싶습니다.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- // section4 -->
+    <section class="section5"></section>
+    <!-- // section5 -->
+    <section class="section6"></section>
+    <!-- // section6 -->
+    <section class="section7"></section>
+    <!-- // section7 -->
+</body>
+<script src="https://gentlemanjs.github.io/webs_class/parallax/js/skrollr.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+<script>
+
+    console.log(document.querySelector(".myskill").offsetLeft)
+    console.log(document.querySelector(".myability").offsetLeft)
+    console.log(window.pageXOffset)
+
+
+
+    var s = skrollr.init({
+        smoothScrolling: true
+    });
+
+    function scroll() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
+
+        requestAnimationFrame(scroll);
+    }
+    scroll();
+
+    function data() {
+        let a = window.scrollY;
+        requestAnimationFrame(data);
+        // console.log(a);
+    }
+    data();
+</script>
+
+</html>

@@ -1,107 +1,137 @@
+:root {
+    --text-color: #111;
+    --bg-color: #b9b3a9;
+}
+
 body {
-    background-color: #CCCCCC;
+    color: var(--text-color);
+    background: var(--bg-color);
+    transition: 0.3s ease-out;
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+    overscroll-behavior: none;
+}
+
+section:not(.horizontal-scroll) {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+    padding: 50px 10vw;
+    margin: auto;
+    place-items: center;
+}
+img {
+    height: 80vh;
+    width: auto;
+    object-fit: cover;
+}
+.horizontal-scroll {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    left: 0;
+}
+.pin-wrap {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 50px 10vw;
+}
+.pin-wrap > div{
+    min-width: 80vw;
 }
 
 /* header */
 #header {
     position: fixed;
-    left: 50px; top: 5vh;
-    width: 60px;
-    height: 90vh;
-    z-index: 100000;
-    border-left: 1px solid #817F7F;
-    font-family: 'Montserrat';
+    left: 0; 
+    top: 0;
+    width: 70px;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    white-space: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Montserrat';
     text-transform: uppercase;
+    z-index: 10000;
+    backdrop-filter: blur(10px);
 }
 #header h1 {
     font-size: 18px;
-    text-transform: uppercase;
+    transform: rotate(-90deg);
     font-weight: 600;
-    transform: rotate(-90deg);
-    margin-left: 0px;
-    letter-spacing: 4px;
+    padding: 10vw;
+    letter-spacing: 0.1vw;
 }
-#header .l {
+#header .left {
+    font-size: 14px;
     transform: rotate(-90deg);
-    margin-top: 106px;
-    font-size: 0.8em;
-    letter-spacing: 10px;
+    letter-spacing: 0.2vw;
 }
-#header .r {
+#header .right {
+    font-size: 14px;
     transform: rotate(-90deg);
-    margin-bottom: 20px;
-    font-size: 0.8em;
-    letter-spacing: 10px;
+    letter-spacing: 0.2vw;
 }
 
-/* section1 */
-#section1 {
-    height: 500vh;
-    width: 100%;
-    position: relative;
-    z-index: 1000;
-}
-.sec1 {
-    position: fixed;
-    left: 0; 
-    top: 0;
-    background: blue;
-    width: 500vh;
-    height: 100vh;
-    display: flex;
-}
-.sec1 .sec1-1 {
-    width: 200vh;
-    height: 100vh;
-    background-color: #ccc;
-    position: relative;
-}
-.sec1 .sec1-1 .main_text {
-    position: absolute;
-    top: 6vw;
-    right: 10vw;
+/* sec1_text */
+.sec1_text {
     font-family: "Eros Romano";
-    font-size: 10vw;
+    font-size: 9vw;
     line-height: .91;
-    text-transform: uppercase;
 }
-.sec1 .sec1-1 .main_text > div:nth-child(3){padding-left: 20vw;}
-.sec1 .sec1-1 .main_text span {
-    font-size: 40px;
-    vertical-align: 0.8vw;
-    padding: 0 3vw;
+.sec1_text .t1 {padding-left: 10vw;}
+.sec1_text .t2 {padding-left: 12vw;}
+.sec1_text .t3 {padding-left: 20vw;}
+.sec1_text .t2 span {
     font-family: 'Montserrat';
+    font-size: 3vw;
     text-transform: uppercase;
+    display: inline-block;
+    vertical-align: .81vw;
+    padding: 0 1vw;
+    font-weight: 200;
 }
 
-
-.sec1 .sec1-2 {
-    width: 100vh;
+.sec2_3 {background: #333; height: 40vh;}
+.sec2_4 {background: #444; height: 40vh;}
+.sec2_1 {
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    font-family: 'IropkeBatang';
+}
+.sec2_2 {
+    display: flex;
+    align-items: center;    
+    justify-content: center;
     height: 100vh;
-    background-color: palegoldenrod;
 }
-.sec1 .sec1-3 {
-    width: 200vh;
-    height: 100vh;
-    background-color: palegreen;
+.sec2_2 .title .imgWrap {
+    width: 40vw;
+    height: 300px;
 }
-
-
-
-
-#section2 {
-    height: 4000px;
+.sec2_2 .title .imgWrap .img {
+    background: url(https://images.unsplash.com/photo-1586652272501-1f671c68b70a?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687) no-repeat center top -350px;
+    background-size: cover;
     width: 100%;
-    background-color: red;
-    position: relative;
-    z-index: 2000;
+    height: 100%;
 }
-#section3 {}
-#section4 {}
-#section5 {}
-#section6 {}
 
+.sec2_2 .title .desc {
+    width: 30vw;
+    font-family: 'IropkeBatang';
+}
+.sec2_2 .title .desc h3 {
+    padding: 1vw 0;
+}
+
+.sec2_3 {}
+.sec2_4 {}

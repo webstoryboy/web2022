@@ -49,7 +49,23 @@
     background-size: cover;
     position: relative;
     z-index: 10;
+    background-blend-mode: hard-light;
+    animation: hue-rotate 13s linear infinite;
 }
+@keyframes hue-rotate {
+    from {
+      -webkit-filter: hue-rotate(0);
+      -moz-filter: hue-rotate(0);
+      -ms-filter: hue-rotate(0);
+      filter: hue-rotate(0);
+    }
+    to {
+      -webkit-filter: hue-rotate(360deg);
+      -moz-filter: hue-rotate(360deg);
+      -ms-filter: hue-rotate(360deg);
+      filter: hue-rotate(360deg);
+    }
+  }
 #section1:after {
     content: '';
     position: absolute;

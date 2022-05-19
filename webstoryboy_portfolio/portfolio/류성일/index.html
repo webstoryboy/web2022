@@ -6,74 +6,225 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link href="https://webfontworld.github.io/NanumSquare/NanumSquare.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="scroll">0</div>
-    
-    <main id="contents">
+    <header id="header">
+        <h1>
+            frontend<br>
+            portfolio
+        </h1>
+    </header>
+    <!-- //header -->
+
+    <div id="contents">
         <section id="section1">
-            <div class="sec1_bg1 fixed" 
-                data-0 = "width: 100%; height: 100vh;"
-                data-5000 = "width: 95%; height: 90vh;"
-                data-6000 = "width: 95%; height: 10vh;"
-                data-6500 = "width: 95%; height: 5vh;"
-            ></div>
-            <div class="sec1_text1 fixed"
-                data-0 = "opacity: 1; transform: translate(-50%, -50%);"
-                data-500 = "opacity: 1; transform: translate(-50%, -50%);"
-                data-1000 = "opacity: 0; transform: translate(-50%, -60%);"
-            >프론트엔드 개발자</div>
-            <div class="sec1_text2 fixed"
-                data-1000 = "opacity: 0; transform: translate(-50%, -40%);"
-                data-1500 = "opacity: 1; transform: translate(-50%, -50%);"
-                data-2000 = "opacity: 1; transform: translate(-50%, -50%);"
-                data-2500 = "opacity: 0; transform: translate(-50%, -60%);"
-            >류성희 포폴입니다.</div>
-            <div class="sec1_text3 fixed"
-                data-2500 = "opacity: 0; transform: translate(-50%, -40%);"
-                data-3000 = "opacity: 1; transform: translate(-50%, -50%);"
-                data-3500 = "opacity: 1; transform: translate(-50%, -50%);"
-                data-4000 = "opacity: 0; transform: translate(-50%, -60%);"
-            >지금부터 저의 모든 실력을<br>보여드리겠습니다.</div>
-            <div class="sec1_text4 fixed"
-                data-4000 = "opacity: 0; transform: translate(-50%, -40%);"
-                data-4500 = "opacity: 1; transform: translate(-50%, -50%);">
-                <p><img src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=689&q=80" alt=""
-                    data-7000="transform:scale(1)"
-                    data-8000="transform:scale(0.8)"
-                    ></p>
+            <div class="sec1_text">
+                <span>developer</span>
+            </div>
+            <div class="sec1_img">
+                <div class="img">
+                    <img src="https://images.unsplash.com/photo-1652847351205-a7cfdd5a8488?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627" alt="">
+                </div>
+                <div class="frame">
+                    <iframe src="heart.html" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="sec1_bg">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="sec1_scroll">
+
             </div>
         </section>
         <!-- //section1 -->
-
-        <section id="section2">
-            <div class="sec2_bg1 fixed"
-                data-7000 = "width: 0vw; height: 0vw"
-                data-9000 = "width: 200vw; height: 200vw"
-            ></div>
-        </section>
-        <!-- //section2 -->
+        <section id="section2"></section><!-- //section2 -->
         <section id="section3"></section><!-- //section3 -->
         <section id="section4"></section><!-- //section4 -->
         <section id="section5"></section><!-- //section5 -->
         <section id="section6"></section><!-- //section6 -->
-    </main>
+    </div>
 
-    <script type="text/javascript" src="assets/js/skrollr.min.js"></script>
-	<script type="text/javascript">
-	    var s = skrollr.init({
-            smoothScrolling: true
-        });
 
-        window.addEventListener("scroll", () => { 
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
 
-            document.querySelector(".scroll").innerText = Math.round(scrollTop);
-        })
-	</script>
+    <script>
+        class TextDesintegrator {
+            constructor(el, options) {
+                const defaultOptions = {
+                    padding: 10,
+                    density: 4,
+                    duration: 2000 
+                };
+                this.step = 0;
+                this.count = 0;
+                this.data = [];
+                this.scale = 2;
+                this.el = el;
+                this.el.style.position = "relative";
+                this.el.innerHTML = `<span class="td-wrapper">${this.el.textContent}</span>`;
+                this.inner = this.el.querySelector("span");
+                this.options = {
+                    ...defaultOptions,
+                    ...options
+                };
+                this.reverse = false;
+
+                document.fonts.ready.then(() => {
+                    this.createCanvas();
+                    this.fillCanvas();
+                    this.pixelize();
+                    setTimeout(() => {
+                        this.start();
+                    }, 0);
+                });
+            }
+            createCanvas() {
+                const {width, height} = this.el.getBoundingClientRect();
+                this.height = height;
+                this.width = width;
+                this.canvas = document.createElement("canvas");
+                this.canvas.width = this.scale * (this.width + 2 * this.options.padding);
+                this.canvas.height = this.scale * (this.height + 2 * this.options.padding);
+                this.canvas.style.width = `${this.width + 2 * this.options.padding}px`;
+                this.canvas.style.height = `${this.height + 2 * this.options.padding}px`;
+                this.canvas.style.transform = `translate3d(${-this.options.padding}px, ${-this.options.padding}px, 0)`;
+                this.context = this.canvas.getContext("2d");
+                this.context.scale(this.scale, this.scale);
+                this.el.append(this.canvas);
+            }
+            clearContext() {
+                this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+            }
+            fillCanvas() {
+                const style = getComputedStyle(this.el);
+                this.color = style.getPropertyValue("color");
+                this.context.fillStyle = this.color;
+                this.context.font = style.getPropertyValue("font");
+                this.context.textBaseline = "ideographic";
+                this.context.fillText(
+                    this.el.textContent,
+                    this.options.padding,
+                    (this.canvas.height / this.scale + this.height) / 2
+                );
+            }
+            start() {
+                this.t0 = 0;
+                this.id = window.requestAnimationFrame((t) => this.render(t));
+            }
+            stop() {
+                if (this.id) {
+                    window.cancelAnimationFrame(this.id);
+                }
+            }
+            pixelize() {
+                const {padding, density, duration} = this.options;
+                for (
+                    let y = 0; y < this.canvas.height + 2 * padding - Math.floor(density / 2); y += density
+                ) {
+                    for (
+                        let x = 0; x < this.canvas.width + 2 * padding - Math.floor(density / 2); x += density
+                    ) {
+                        const {
+                            data
+                        } = this.context.getImageData(
+                            x + Math.floor(density / 4),
+                            y + Math.floor(density / 4),
+                            1,
+                            1
+                        );
+                        const [, , , a] = data;
+                        if (a > 0) {
+                            this.data.push({
+                                alpha: a / 255,
+                                longevity: Math.min(
+                                    duration * 0.25 + Math.random() * duration * 0.75,
+                                    duration - 1
+                                ),
+                                x,
+                                y,
+                                initialX: x,
+                                initialY: y,
+                                finalX: x + 2 * (Math.random() - 0.5) * this.canvas.width,
+                                finalY: y + 2 * (Math.random() - 0.5) * this.canvas.width
+                            });
+                        }
+                    }
+                }
+            }
+
+            render(timestamp) {
+                if (!this.t0) {
+                    this.t0 = timestamp;
+                }
+                const elapsed = timestamp - this.t0;
+                if (this.step < Math.min(500, this.options.duration * 0.5)) {
+                    if (this.reverse) {
+                        this.inner.classList.remove("td-hide");
+                    } else {
+                        this.inner.classList.add("td-hide");
+                    }
+                }
+                this.updateData();
+                this.clearContext();
+                for (const sq of this.data) {
+                    this.context.globalAlpha = sq.alpha;
+                    this.context.fillStyle = this.color;
+                    this.context.fillRect(
+                        sq.x / 2,
+                        sq.y / 2,
+                        this.options.density / 2,
+                        this.options.density / 2
+                    );
+                }
+                this.step = this.reverse ? this.options.duration - elapsed : elapsed;
+                if (elapsed > this.options.duration) {
+                    this.onComplete();
+                }
+                this.id = requestAnimationFrame((t) => this.render(t));
+            }
+            onComplete() {
+                this.reverse = !this.reverse;
+                this.t0 = 0;
+            }
+            updateData() {
+                for (const sq of this.data) {
+                    sq.alpha = this.calculateOpacity(sq.longevity, this.step);
+                    sq.x = this.calculatePosition(
+                        sq.initialX,
+                        sq.finalX,
+                        sq.longevity,
+                        this.step
+                    );
+                    sq.y = this.calculatePosition(
+                        sq.initialY,
+                        sq.finalY,
+                        sq.longevity,
+                        this.step
+                    );
+                }
+            }
+            calculatePosition(xS, xE, l, x) {
+                const expo = (l, x) => {
+                    return x < l ? 1 - Math.pow(2, 10 * (x / l) - 10) : 0;
+                };
+                const val = (xS - xE) * expo(l, x) + xE;
+                return val;
+            }
+            calculateOpacity(l, x) {
+                return x <= l ? 1 - Math.pow(x / l, 1) : 0;
+            }
+        }
+
+        const h1 = document.querySelectorAll(".sec1_text span");
+
+        h1.forEach((el) => new TextDesintegrator(el));
+    </script>
 </body>
 </html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Italiana&family=Monoton&family=Raleway+Dots&family=Rubik+Moonrocks&family=Sulphur+Point:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main data-scroll-container>
+        <div id="contents">
+            <section id="section1">
+                <div class="sec1_tit">
+                    <h1>THE<br>PORTFOLIO</h1>
+                    <p>방가워요! 6개월 동안 배운 코딩을 통해<br>포트폴리오를 만들어 봤습니다.<br>환영합니다.</p>
+                </div>
+                <div class="sec1_menu">
+                    <div class="box1">
+                        <h2>A</h2>
+                    </div>
+                    <div class="box2">
+                        <h2>s</h2>
+                    </div>
+                    <div class="box3">
+                        <h2>s</h2>
+                    </div>
+                    <div class="box4">
+                        <h2>c</h2>
+                    </div>
+                </div>
+            </section>
+            <!-- //section1 -->
+            <section id="section2">section2</section><!-- //section2 -->
+            <section id="section3">section3</section><!-- //section3 -->
+            <section id="section4">section4</section><!-- //section4 -->
+            <section id="section5">section5</section><!-- //section5 -->
+            <section id="section6">section6</section><!-- //section6 -->
+        </div>
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+	<script type="text/javascript">
+	    var s = skrollr.init({
+            smoothScrolling: true
+        });
+
+        window.addEventListener("scroll", () => { 
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+
+            document.querySelector(".scroll").innerText = Math.round(scrollTop);
+        })
+
+        gsap.set(".sec1_tit h1", {opacity: 0, y:50})
+        gsap.set(".sec1_tit p", {opacity: 0, y:30})
+        gsap.set(".sec1_menu > .box1", {opacity: 0, height: "0vh", y:30})
+        gsap.set(".sec1_menu > .box2", {opacity: 0, height: "0vh", y:30})
+        gsap.set(".sec1_menu > .box3", {opacity: 0, height: "0vh", y:30})
+        gsap.set(".sec1_menu > .box4", {opacity: 0, height: "0vh", y:30})
+        gsap.set(".sec1_menu > .box1 h2", {opacity: 0, y:230, rotation: 180})
+        gsap.set(".sec1_menu > .box2 h2", {opacity: 0, y:230, rotation: 190})
+        gsap.set(".sec1_menu > .box3 h2", {opacity: 0, y:230, rotation: 200})
+        gsap.set(".sec1_menu > .box4 h2", {opacity: 0, y:230, rotation: 210})
+
+        setTimeout(() => {
+            const tl = gsap.timeline();
+            tl.to(".sec1_tit h1", {duration: 0.6, opacity: 1, y:0})
+            tl.to(".sec1_tit p", {duration: 0.6, opacity: 1, y:0})
+            tl.to(".sec1_menu > .box1", {duration: 0.2, opacity: 1, y:0, height: "45vh", ease: "bounce.out"})
+            tl.to(".sec1_menu > .box2", {duration: 0.2, opacity: 1, y:0, height: "60vh", ease: "bounce.out"})
+            tl.to(".sec1_menu > .box3", {duration: 0.2, opacity: 1, y:0, height: "75vh", ease: "bounce.out"})
+            tl.to(".sec1_menu > .box4", {duration: 0.2, opacity: 1, y:0, height: "45vh", ease: "bounce.out"})
+            tl.to(".sec1_menu > .box1 h2", {duration: 0.8, opacity: 1, y:0, rotation: 0, ease: "power3.out"}, "2")
+            tl.to(".sec1_menu > .box2 h2", {duration: 0.8, opacity: 1, y:0, rotation: 0, ease: "power3.out"}, "2")
+            tl.to(".sec1_menu > .box3 h2", {duration: 0.8, opacity: 1, y:0, rotation: 0, ease: "power3.out"}, "2")
+            tl.to(".sec1_menu > .box4 h2", {duration: 0.8, opacity: 1, y:0, rotation: 0, ease: "power3.out"}, "2")
+        }, 2000)
+    </script>
+
+
+    <script type="module">
+        import locomotiveScroll from "https://cdn.skypack.dev/locomotive-scroll@4.0.6";
+
+        const lscroll = new locomotiveScroll({
+            el: document.querySelector("[data-scroll-container]"),
+            smooth: true,
+            direction: "horizontal"
+        });
+    </script>
+
+    
+
+    
+</body>
+</html>

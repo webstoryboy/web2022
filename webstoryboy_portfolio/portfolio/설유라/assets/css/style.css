@@ -8,6 +8,16 @@
     font-family: "Gilroy Semi-Bold";
 }
 
+html {
+
+    user-select: none;
+    min-height: 100vh;
+}
+body {
+    
+}
+
+
 .scroll {
     position: fixed;
     left: 10px;

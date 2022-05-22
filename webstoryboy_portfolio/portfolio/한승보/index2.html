@@ -76,6 +76,7 @@
                 <h1 data-scroll data-scroll-speed="1"><span>Horizontal</span></h1>
                 <p data-scroll data-scroll-speed="4" data-scroll-delay="0.2">Locomotive Scroll</p>
             </div>
+            <div></div>
         </section>
 
         <section id="section2">
@@ -96,19 +97,6 @@
         </section>
         <section id="section3">
             section3
-        </section>
-        <section id="section4">
-            <div class="sec4__wrap">
-                <div>
-                    <img src="https://images.pexels.com/photos/5207262/pexels-photo-5207262.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt="">
-                </div>
-                <div>
-                    <img src="https://images.pexels.com/photos/3371358/pexels-photo-3371358.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt="">
-                </div>
-                <div>
-                    <img src="https://images.pexels.com/photos/3618545/pexels-photo-3618545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt="">
-                </div>
-            </div>
         </section>
         <section id="section5">
             section5
@@ -163,25 +151,6 @@
                     end: sec2WrapWidth
                 },
                 x: -horizontal2,
-                ease: "none"
-            });
-
-
-            let sec4WrapWidth = document.querySelector("#section4 .sec4__wrap").offsetWidth;
-            let horizontal4 = sec4WrapWidth - window.innerWidth;
-
-            gsap.to("#section4 .sec4__wrap", {
-                scrollTrigger: {
-                    scroller: pageContents, 
-                    scrub: true,
-                    trigger: "#section4",
-                    pin: true,
-                    // anticipatePin: 1,
-                    start: "top top",
-                    markers: true,
-                    end: sec4WrapWidth
-                },
-                x: -horizontal4,
                 ease: "none"
             });
 

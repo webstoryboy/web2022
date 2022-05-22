@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="webgl-canvas"></canvas>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.110.0/examples/js/controls/OrbitControls.js"></script>
+    <script id="js-vertex-shader" type="x-shader/x-vertex">
+        attribute vec3 position;
+        attribute vec4 color;
+        uniform mat4 projectionMatrix;
+        uniform mat4 viewMatrix;
+        uniform mat4 modelMatrix;
+        uniform float time;
+        varying vec4 vColor;
+
+        void main()	{
+            vColor = color;
+            vec3 normal = normalize(position);
+            float s = sin(position.y * 2.0 + time * 2.0);
+            vec3 n = normal * s * 0.05;
+            gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position + n, 1.0);
+            gl_PointSize = 4.0;
+        }
+    </script>
+
+    <!-- fragmentShader -->
+    <script id="js-fragment-shader" type="x-shader/x-fragment">
+        precision mediump float;
+            varying vec4 vColor;
+
+            void main() {
+            gl_FragColor = vColor;
+        }
+    </script>
+    <script>
+        class Stage {
+            constructor() {
+                this.renderParam = {
+                    clearColor: 0x000000,
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                };
+
+                this.cameraParam = {
+                    fov: 60,
+                    near: 0.1,
+                    far: 10.0,
+                    lookAt: new THREE.Vector3(0, 0, 0),
+                    x: 0,
+                    y: 0,
+                    z: 3.0
+                };
+
+                this.scene = null;
+                this.camera = null;
+                this.renderer = null;
+                this.geometry = null;
+                this.material = null;
+                this.mesh = null;
+
+                this.isInitialized = false;
+            }
+
+            init() {
+                this._setScene();
+                this._setRender();
+                this._setCamera();
+
+                this.isInitialized = true;
+            }
+
+            _setScene() {
+                this.scene = new THREE.Scene();
+            }
+
+            _setRender() {
+                this.renderer = new THREE.WebGLRenderer({
+                    canvas: document.getElementById("webgl-canvas")
+                });
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.renderer.setClearColor(new THREE.Color(this.renderParam.clearColor));
+                this.renderer.setSize(this.renderParam.width, this.renderParam.height);
+            }
+
+            _setCamera() {
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+
+                if (!this.isInitialized) {
+                    this.camera = new THREE.PerspectiveCamera(
+                        this.cameraParam.fov,
+                        windowWidth / windowHeight,
+                        this.cameraParam.near,
+                        this.cameraParam.far
+                    );
+
+                    this.camera.position.set(
+                        this.cameraParam.x,
+                        this.cameraParam.y,
+                        this.cameraParam.z
+                    );
+                    this.camera.lookAt(this.cameraParam.lookAt);
+
+                    this.orbitcontrols = new THREE.OrbitControls(
+                        this.camera,
+                        this.renderer.domElement
+                    );
+                    this.orbitcontrols.enableDamping = true;
+                }
+
+                this.camera.aspect = windowWidth / windowHeight;
+
+                this.camera.fov = this.cameraParam.fov;
+                this.camera.updateProjectionMatrix();
+                this.renderer.setSize(windowWidth, windowHeight);
+            }
+
+            _render() {
+                this.renderer.render(this.scene, this.camera);
+                this.orbitcontrols.update();
+            }
+
+            onResize() {
+                this._setCamera();
+            }
+
+            onRaf() {
+                this._render();
+            }
+        }
+
+        class Mesh {
+            constructor(stage) {
+                this.geometryParm = {};
+
+                this.materialParam = {
+                    useWireframe: false
+                };
+
+                this.uniforms = {
+                    time: {
+                        type: "f",
+                        value: 0.0
+                    },
+                };
+
+                this.stage = stage;
+                this.mesh = null;
+                this.windowWidth = 0;
+                this.windowHeight = 0;
+                this.windowWidthHalf = 0;
+                this.windowHeightHalf = 0;
+            }
+
+            init() {
+                this._setMesh();
+            }
+
+            _setMesh() {
+                const vertex_count = 100;
+                const vertex_radius = 1.0;
+                const position = [];
+                const color = [];
+                for (let i = 0; i < vertex_count; ++i) {
+                    const iRad = (i / vertex_count) * Math.PI * 2.0;
+                    const x = Math.sin(iRad);
+                    const z = Math.cos(iRad);
+                    for (let j = 0; j < vertex_count; ++j) {
+                        const jRad = j / vertex_count * Math.PI;
+                        const radius = Math.sin(jRad);
+                        const y = Math.cos(jRad);
+                        position.push(
+                            x * vertex_radius * radius,
+                            y * vertex_radius,
+                            z * vertex_radius * radius,
+                        );
+                        color.push(i / vertex_count, j / vertex_count, 0.5, 1.0);
+                    }
+                }
+
+                const positions = new THREE.BufferAttribute(new Float32Array(position), 3);
+                const colors = new THREE.BufferAttribute(new Float32Array(color), 4);
+
+                const geometry = new THREE.BufferGeometry();
+                geometry.setAttribute("position", positions);
+                geometry.setAttribute("color", colors);
+
+                const material = new THREE.RawShaderMaterial({
+                    vertexShader: document.getElementById("js-vertex-shader").textContent,
+                    fragmentShader: document.getElementById("js-fragment-shader").textContent,
+                    uniforms: this.uniforms
+                });
+
+                this.mesh = new THREE.Points(geometry, material);
+                this.stage.scene.add(this.mesh);
+            }
+
+            _render() {
+                this.uniforms.time.value += 0.02;
+            }
+
+            onRaf() {
+                this._render();
+            }
+        }
+
+        (() => {
+            const stage = new Stage();
+            stage.init();
+
+            const mesh = new Mesh(stage);
+            mesh.init();
+
+            window.addEventListener("resize", () => {
+                stage.onResize();
+            });
+
+            const _raf = () => {
+                window.requestAnimationFrame(() => {
+                    stage.onRaf();
+                    mesh.onRaf();
+
+                    _raf();
+                });
+            };
+
+            _raf();
+        })();
+    </script>
+</body>
+
+</html>

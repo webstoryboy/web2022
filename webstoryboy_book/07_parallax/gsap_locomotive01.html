@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP + Locomotive : 가로 세로 레이아웃</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* locomotive */
+        html.has-scroll-smooth {
+            overflow: hidden;
+        }
+        html.has-scroll-dragging {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .has-scroll-smooth body {
+            overflow: hidden;
+        }
+        .has-scroll-smooth [data-scroll-container] {
+            min-height: 100vh;
+        }
+        .c-scrollbar {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 11px;
+            height: 100vh;
+            transform-origin: center right;
+            transition: transform 0.3s, opacity 0.3s;
+            opacity: 0;
+        }
+        .c-scrollbar:hover {
+            transform: scaleX(1.45);
+        }
+        .c-scrollbar:hover,
+        .has-scroll-scrolling .c-scrollbar,
+        .has-scroll-dragging .c-scrollbar {
+            opacity: 1;
+        }
+        .c-scrollbar_thumb {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: black;
+            opacity: 0.5;
+            width: 7px;
+            border-radius: 10px;
+            margin: 2px;
+            cursor: -webkit-grab;
+            cursor: grab;
+        }
+        .has-scroll-dragging .c-scrollbar_thumb {
+            cursor: -webkit-grabbing;
+            cursor: grabbing;
+        }
+
+        /* layout */
+        #section1 {background-color: #b9b3a9;}
+        #section2 {background-color: #7d7565;}
+        #section3 {background-color: #b9b3a9; height: 100vh;}
+
+        .sec1-1 {background-color: #51442b; height: 100vh; } 
+        .sec1-2 {background-color: #b9b3a9; height: 100vh;} 
+        .sec1-3 {background-color: #51442b; height: 100vh;} 
+
+        #section2 {
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            left: 0;
+        }
+        .sec2_wrap {
+            height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .sec2_wrap > div {
+            min-width: 100vw;
+            height: 40vh;
+        }
+        .sec2-1 {background-color: #51442b;} 
+        .sec2-2 {background-color: #b9b3a9;} 
+        .sec2-3 {background-color: #51442b;} 
+    </style>
+</head>
+
+<body>
+    <main id="main">
+        <section id="section1">
+            <div class="sec1_wrap">
+                <div class="sec1-1">sec1-1</div>
+                <div class="sec1-2">sec1-1</div>
+                <div class="sec1-3">sec1-1</div>
+            </div>
+        </section>
+        <section id="section2">
+            <div class="sec2_wrap">
+                <div class="sec2-1">sec2-1</div>
+                <div class="sec2-2">sec2-2</div>
+                <div class="sec2-3">sec2-3</div>
+            </div>
+        </section>
+        <section id="section3">section3</section>
+    </main>
+
+    <script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js'></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const pageContents = document.getElementById("main");
+        const scroller = new LocomotiveScroll({
+            el: pageContents,
+            smooth: true
+        });
+        scroller.on("scroll", ScrollTrigger.update);
+
+        ScrollTrigger.scrollerProxy(pageContents, {
+            scrollTop(value) {
+                return arguments.length ?
+                    scroller.scrollTo(value, 0, 0) :
+                    scroller.scroll.instance.scroll.y;
+            },
+            getBoundingClientRect() {
+                return {
+                    left: 0,
+                    top: 0,
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                };
+            },
+            pinType: pageContents.style.transform ? "transform" : "fixed"
+        });
+
+        window.addEventListener("load", function () {
+            let sec2WrapWidth = document.querySelector(".sec2_wrap").offsetWidth;
+            let horizontal2 = sec2WrapWidth - window.innerWidth;
+
+            gsap.to("#section2 .sec2_wrap", {
+                scrollTrigger: {
+                    scroller: pageContents,
+                    scrub: true,
+                    trigger: "#section2",
+                    pin: true,
+                    start: "top top",
+                    markers: true,
+                    end: sec2WrapWidth
+                },
+                x: -horizontal2,
+                ease: "none"
+            });
+
+            ScrollTrigger.addEventListener("refresh", () => scroller.update());
+            ScrollTrigger.refresh();
+        });
+    </script>
+</body>
+
+</html>

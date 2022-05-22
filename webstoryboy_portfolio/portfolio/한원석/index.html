@@ -30,7 +30,7 @@
     </header>
     <!-- //header -->
 
-    <main id="contents">
+    <main id="contents" data-scroll-container>
         <section id="section1">
             <canvas id="sec1_bg"
                 data-0="opacity:1"
@@ -61,7 +61,14 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
+    <script src="https://cdn.skypack.dev/locomotive-scroll@4.0.6"></script>
 	<script type="text/javascript">
+        const lscroll = new locomotiveScroll({
+            el: document.querySelector("[data-scroll-container]"),
+            smooth: true
+        });
+
 	    var s = skrollr.init({
             smoothScrolling: true
         });
@@ -74,7 +81,7 @@
 	</script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
+    
     <script>
         //화면 생성
         let scene = new THREE.Scene();

@@ -1,18 +1,85 @@
-body {
-    overscroll-behavior: none;
-    -webkit-overflow-scrolling: touch;
-}
-
-.supah-scroll {
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    will-change: transform;
+/* locomotive */
+html.has-scroll-smooth {
     overflow: hidden;
 }
+html.has-scroll-dragging {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.has-scroll-smooth body {
+    overflow: hidden;
+}
+.has-scroll-smooth [data-scroll-container] {
+    min-height: 100vh;
+}
+.c-scrollbar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 11px;
+    height: 100vh;
+    transform-origin: center right;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+.c-scrollbar:hover {
+    transform: scaleX(1.45);
+}
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+    opacity: 1;
+}
+.c-scrollbar_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.5;
+    width: 7px;
+    border-radius: 10px;
+    margin: 2px;
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+.has-scroll-dragging .c-scrollbar_thumb {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+
+/* layout */
+#section2 {background-color: #7d7565;}
+#section3 {background-color: #2A57DC; height: 100vh;}
+
+.sec1_wrap {
+    width: calc(100% - 100px);
+    margin-left: 100px;
+}
+.sec1-4 {background-color: #2A57DC; height: 100vh;} 
+.sec1-5 {background-color: #2A57DC; height: 100vh;} 
+
+#section2 {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    left: 0;
+}
+.sec2_wrap {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.sec2_wrap > div {
+    min-width: 60vw;
+    height: 40vh;
+}
+.sec2-1 {background-color: #51442b;} 
+.sec2-2 {background-color: #b9b3a9;} 
+.sec2-3 {background-color: #51442b;} 
+
 
 /* header */
 #header {
@@ -81,7 +148,6 @@ body {
 
 /* section1 */
 #section1 {
-    
     width: 100%;
 }
 .sec1__inner {
@@ -260,3 +326,6 @@ body {
 .sec4__inner h2 span {
     display: inline-block;
 }
+
+
+

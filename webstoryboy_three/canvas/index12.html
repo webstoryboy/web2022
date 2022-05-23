@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        // https://codepen.io/jscottsmith/pen/JNxyBL
+        
+        class Canvas {
+            constructor() {
+                this.canvas = document.getElementById('canvas');
+                this.dpr = window.devicePixelRatio || 1;
+                // this.dpr = 1;
+
+                this.radius = 8 * this.dpr;
+                this.spread = this.radius * 0.5 / this.dpr;
+
+                this.ctx = this.canvas.getContext('2d');
+                this.ctx.scale(this.dpr, this.dpr);
+
+                this.mouse = {
+                    x: 0,
+                    y: 0,
+                };
+
+                this.setCanvasSize = this.setCanvasSize.bind(this);
+                this.handleClick = this.handleClick.bind(this);
+                this.handleMouse = this.handleMouse.bind(this);
+                this.render = this.render.bind(this);
+
+                this.setCanvasSize();
+                this.setupListeners();
+                this.constructLines();
+
+                this.tick = 0;
+                this.render();
+            }
+
+            constructLines() {
+                const padding = 60 * this.dpr;
+                const dy = (this.canvas.height - padding * 2) / this.radius / this.spread;
+                const amount = Math.ceil(dy);
+
+                this.lines = new Array(amount)
+                    .fill(null)
+                    .map((l, i) => {
+                        const p1 = new Point(
+                            padding,
+                            padding + i * this.radius * this.spread
+                        );
+
+                        const p2 = new Point(
+                            this.canvas.width - padding,
+                            padding + i * this.radius * this.spread
+                        );
+
+                        return new Line(Math.floor(this.canvas.width / this.radius / this.spread), p1, p2);
+                    });
+            }
+
+            updateVerts() {
+                this.lines.map((line, i) => {
+                    const l = line.vertices.length;
+                    const r = 1 / l;
+                    line.vertices.map((p, i) =>
+                        p.moveTo(
+                            p.x,
+                            p.y + Math.cos((this.tick) / 10 + i)
+                        )
+                    );
+                });
+            }
+
+            setupListeners() {
+                window.addEventListener('resize', this.setCanvasSize);
+                window.addEventListener('click', this.handleClick);
+                window.addEventListener('mousemove', this.handleMouse);
+            }
+
+            handleClick(event) {
+                const {
+                    x,
+                    y
+                } = event.clientX;
+            }
+
+            handleMouse(event) {
+                const x = event.clientX * this.dpr;
+                const y = event.clientY * this.dpr;
+                this.mouse = {
+                    x,
+                    y
+                };
+            }
+
+            setCanvasSize() {
+                this.canvas.width = window.innerWidth * this.dpr;
+                this.canvas.height = window.innerHeight * this.dpr;
+                this.canvas.style.width = window.innerWidth + 'px';
+                this.canvas.style.height = window.innerHeight + 'px';
+
+                this.constructLines();
+            }
+
+            drawBackground() {
+                const gradient = this.ctx.createLinearGradient(0, 0, this.canvas.width, this.canvas.height);
+                gradient.addColorStop(0, '#667eea');
+                gradient.addColorStop(1, '#764ba2');
+                this.ctx.fillStyle = gradient;
+                this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+            }
+
+            drawText() {
+                const size = this.canvas.width / 14;
+                this.ctx.font = `bold ${size}px Futura`;
+                this.ctx.textAlign = 'center';
+                this.ctx.fillStyle = 'white';
+                this.ctx.fillText('Waves', this.canvas.width / 2, this.canvas.height / 2 + size / 2);
+            }
+
+            drawVerts() {
+                this.lines.forEach(line => {
+                    this.ctx.lineWidth = 2 * this.dpr;
+                    this.ctx.strokeStyle = '#92fe9d';
+                    // this.ctx.globalCompositeOperation = 'overlay';
+
+                    line.vertices.forEach(p => {
+                        this.ctx.beginPath();
+                        this.ctx.arc(p.x, p.y, this.radius, 0, Math.PI * 2, true);
+                        this.ctx.closePath();
+                        this.ctx.stroke();
+                    });
+
+                    // this.ctx.globalCompositeOperation = 'source-over';
+                });
+            }
+
+            render() {
+                this.drawBackground();
+                this.drawVerts();
+                this.updateVerts();
+                //this.drawText();
+
+                this.tick++;
+                window.requestAnimationFrame(this.render);
+            }
+        }
+
+        class Line {
+            constructor(vertices, p1, p2) {
+                this.p1 = p1;
+                this.p2 = p2;
+                const dx = p2.x - p1.x;
+                const dy = p2.y - p1.y;
+                const vx = dx / (vertices - 1);
+                const vy = dy / (vertices - 1);
+
+                this.vertices = new Array(vertices)
+                    .fill(null)
+                    .map((p, i) => new Point(p1.x + vx * i, p1.y + vy * i));
+            }
+        }
+
+        class Point {
+            constructor(x = 0, y = 0) {
+                this.x = x;
+                this.y = y;
+            }
+
+            get position() {
+                return {
+                    x: this.x,
+                    y: this.y,
+                };
+            }
+
+            moveTo(...args) {
+                this.x = args[0];
+                this.y = args[1];
+            }
+        }
+
+        new Canvas();
+    </script>
+</body>
+
+</html>

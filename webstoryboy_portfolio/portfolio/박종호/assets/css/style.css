@@ -62,12 +62,16 @@
 #header {
     position: absolute;    
     left: 0; 
-    bottom: -88px;
+    top: 100%;
     width: 100%;
     z-index: 20000;
     background: #fff;
     border-top: 2px solid #000;
     border-bottom: 2px solid #000;
+}
+#header.fixed {
+    position: fixed;   
+    top: 0; 
 }
 #nav {
     text-align: center;
@@ -106,4 +110,30 @@
     line-height: 1;
     padding: 1.4vw 1vw 1vw 1vw;
     display: inline-block;
+}
+
+/* section2 */
+#section2 {
+    background-color: #FFFEF1;
+}
+.sec2 h2 {
+    color: #FFD057;
+    font-size: 8vw;
+    font-family: 'Oi';
+    text-align: center;
+    padding-top: 300px;
+    -webkit-text-stroke: 3px #000;
+}
+.sec2_text {
+    color: #fff;
+    font-family: 'Oi';
+    text-align: center;
+}
+.sec2_text > div {
+    -webkit-text-stroke: 2px #000;
+    font-size: 4vw;
+    letter-spacing: 2px;
+}
+.sec2_text > div em {
+    color: #000;
 }

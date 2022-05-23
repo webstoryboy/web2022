@@ -24,6 +24,9 @@
     color: #fff;
     font-family: 'Abel';
 }
+#header nav {
+    display: none;
+}
 
 /* section1 */
 #section1 {
@@ -39,7 +42,7 @@
     height: 100%;
     overflow: hidden;
 }
-.sec1_bg::after {
+/* .sec1_bg::after {
     content: '';
     position: absolute;
     left: 0;
@@ -47,12 +50,11 @@
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,.8);
-}
+} */
 .sec1_title {
     position: absolute;
     z-index: 20;
     left: 10vw; top: 14vw;
-    width: 100%;
     color: #fff;
     font-size: 6vmax;
     font-family: "Gilroy";
@@ -77,21 +79,22 @@
     display: inline-block;
     width: 1px;
     height: 100%;
-    background: rgba(255,255,255,0.2);
+    background: rgb(255,255,255);
+    opacity: 0.2;
 }
 .sec1_line span.line-last {
     position: absolute;
     left: 0; bottom: 0;
     width: 100%;
     height: 1px;
-    background: rgba(255,255,255,0.2);
+    background: rgb(255,255,255);
+    opacity: 0.2;
     margin-left: 0;
 }
 
 
 /* section2 */
 #section2 {
-    height: 170vh;
     background: #000;
 }
 .sec2_tit {
@@ -120,5 +123,57 @@
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,.3);
-    backdrop-filter: blur(20px);
+    /* backdrop-filter: blur(20px); */
+}
+
+.sec2_about {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    margin-top: 200px;
+}   
+.sec2_about > .title {
+    color: #fff;
+    font-size: 6vmax;
+    text-transform: uppercase;
+    line-height: 1;
+    text-align: right;
+    padding: 10vw;
+}
+.sec2_about .title > div:first-child {
+    font-family: "Gilroy Semi-Bold";
+}
+.sec2_about .title > div:last-child {
+    font-family: "Gilroy";
+    font-size: 0.7em;
+}
+
+.sec2_intro {
+    display: flex;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2)
+}
+.sec2_intro > div {
+    width: 20%;
+    border-right: 1px solid rgba(255,255,255,0.2)
+}
+.sec2_intro > div span {
+    color: #fff;
+}
+.sec2_intro > div p {
+    color: #fff;
+}
+.sec2_intro > div:last-child {
+    border-right: 0;
+}
+.sec2_intro .img_wrap {
+    width: 40%;
+}
+.sec2_intro .img_wrap .img {
+    background: url(https://kimhyunwoo72.github.io/webs_class/portfolio/assets/img/about01.jpg) no-repeat center center;
+    height: 600px;
+    background-size: cover;
+}
+
+
+#section3 {
+    height: 4000px;
 }

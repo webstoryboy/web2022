@@ -16,7 +16,23 @@
     radial-gradient(circle closest-side at 50% 35%, #d35 30%, rgba(221,51,85,0) 31%) 50px 50px;
     background-color:#b03;
     background-size:100px 100px;
+    background-blend-mode: hard-light;
+    animation: hue-rotate 3s linear infinite;
 }
+@keyframes hue-rotate {
+    from {
+      -webkit-filter: hue-rotate(0);
+      -moz-filter: hue-rotate(0);
+      -ms-filter: hue-rotate(0);
+      filter: hue-rotate(0);
+    }
+    to {
+      -webkit-filter: hue-rotate(360deg);
+      -moz-filter: hue-rotate(360deg);
+      -ms-filter: hue-rotate(360deg);
+      filter: hue-rotate(360deg);
+    }
+  }
 
 #section2 {
     height: 100vh;
@@ -68,7 +84,10 @@ canvas {
     color: #fff;
     z-index: 1000;
     font-family: Abel;
+    z-index: 10000;
+    animation: neon .1s ease-in-out infinite alternate;
 }
+
 .sec1_text span {
     pointer-events: none;
 }
@@ -83,9 +102,9 @@ canvas {
     z-index: 100;
 }
 .sec1_bg span {
-    width: 1px;
+    width: 2px;
     height: 100vh;
-    background: rgb(149, 0, 40);
+    background: rgba(255,255,255,0.2);
     margin-left: 20%;
     display: block;
 }
@@ -140,4 +159,9 @@ canvas {
     height: 150px;
     background: url(https://uploads-ssl.webflow.com/5f83677f5913488dd24dd8d0/60f587cbcda5c63f5ab5d8c2_Scroll.svg) no-repeat center center;
     background-size: contain;
+    text-align: center;
+    padding-top: 40px;
+}
+.sec1_scroll img {
+    width: 40px;
 }

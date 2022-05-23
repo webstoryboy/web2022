@@ -52,9 +52,17 @@
         <!-- //section1 -->
 
         <section id="section2">
-            <div class="sec2">
-                
+            <div class="container">
+                <div class="sec2">
+                    <h2>about</h2>
+                </div>
+                <div class="sec2_text">
+                    <div>PARK <em>JONG HO</em></div>
+                    <div>NEW FRONTEND</div>
+                    <div>DEVELOPER</div>
+                </div>
             </div>
+            
         </section>
         <!-- //section2 -->
 
@@ -75,6 +83,16 @@
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
 
             document.querySelector(".scroll").innerText = Math.round(scrollTop);
+
+            const headerTop = document.getElementById("header").offsetTop
+
+            console.log(headerTop)
+            if(scrollTop > headerTop){
+                document.getElementById("header").classList.add("fixed")
+            } 
+            if(scrollTop < window.innerHeight){
+                document.getElementById("header").classList.remove("fixed")
+            }
         })
 	</script>
     <script type="module">

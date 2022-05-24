@@ -3,13 +3,15 @@
     position: fixed;
     left: 0; top: 0;
     width: 100%;
-    background: #000;
+    background: rgba(0,0,0,.5);
+    backdrop-filter: blur(10px);
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-family: 'Koulen';
     padding: 0 20px;
+    z-index: 10000;
 }
 #header h1 {
     padding: 10px 0;
@@ -67,6 +69,21 @@
     background: url(https://ohserin.github.io/webs_class/webs_class/portfolio/img/test.jpg) no-repeat center center;
     background-size: cover;
 }
+.sec1_text2 {
+    font-size: 5vw;
+    line-height: 0.9;
+    font-family: 'GmarketSans';
+    color: #fff;
+    position: relative;
+    left: 20vw;
+    z-index: 100;
+    font-weight: 300;
+    padding-top: 22vh;
+}
+.sec1_text2 em {
+    font-weight: 500;
+}
+
 @media (max-width: 800px) {
     .sec1_text1 {
         font-size: 50px;
@@ -97,7 +114,43 @@
 
 /* section2 */
 #section2 {
-    background: blue;
+    background: #fff;
     height: 2000px;
-
+}
+.sec2_text1 {
+    font-size: 80px;
+    line-height: 1.2;
+    font-family: 'GmarketSans';
+    padding: 14vw 4vw 14vw 6vw;
+    font-weight: 100;
+}
+.sec2_img {
+    display: flex;
+    position: relative;
+}
+.sec2_img .left {
+    width: 40%;
+    height: 100vh;
+    background: url(https://images.unsplash.com/photo-1506079478915-3f458c5077a7?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687) no-repeat center center;
+    background-size: cover;
+}
+.sec2_img .right {
+    width: 60%;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    font-family: 'GmarketSans';
+    font-weight: 100;
+    font-size: 24px;
+}
+.sec2_img .circle {
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    background: url(https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687) no-repeat center top ;
+    background-size: cover;
+    position: absolute;
+    left: 50%;
+    top: -15vw;
+    transform: translateX(-50%);
 }

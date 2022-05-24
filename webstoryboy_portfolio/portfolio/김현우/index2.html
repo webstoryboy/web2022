@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP</title>
+
+    <link rel="stylesheet" href="assets/css/locomotive.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+
+        /* layout */
+        #section3 {background-color: #b9b3a9; height: 100vh;}
+
+        
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1>dev</h1>
+        <nav>
+            <span></span>
+        </nav>
+    </header>
+    <!-- //header -->
+
+
+    <main id="main">
+        <section id="section1" class="vertical">
+            <div class="sec1_wrap">
+                <section class="sec1-1">
+                    <div id="bg_effect" class="sec1_bg">
+        
+                    </div>
+                    <div class="sec1_title">
+                        <div class="t1">frontend</div>
+                        <div class="t2">developer script site</div>
+                    </div>
+                    <div class="sec1_line">
+                        <span class="line1"></span>
+                        <span class="line2"></span> 
+                        <span class="line3"></span>
+                        <span class="line4"></span>
+                        <span class="line-last"></span>
+                    </div>
+                </section>
+                <section class="sec1-2">
+                    <div class="sec2">
+                        <div class="sec2_tit">
+                            <span>Korea 2022</span>
+                            <span>LEE HUN WO</span>
+                        </div>
+                        <div class="sec2_img">
+                            <div class="bg"></div>
+                        </div>
+                        <div class="sec2_about">
+                            <div class="title">
+                                <div>FRONTEND</div>
+                                <div>About Me</div>
+                            </div>
+                        </div>
+                        <div class="sec2_intro">
+                            <div class="img_wrap">
+                                <div class="img"></div>
+                            </div>
+                            <div>
+                                <span>1.</span>
+                                <p>처음 프론트엔드 개발자를 꿈꿨을 때, 제 주변 사람들이 30대에 IT업계로 이직하는 것은 너무 큰 도전이며, 이미 따라가기엔 늦었다고 다들 걱정 한 것이 기억에 남습 니다. 부족하다면 다른 사람보다 더 시간 을 투자해서 내것으로 만들면 된다고 생 각하며, 내가 하고 싶은 일을 했을 때, 성 취감은 물론 업무 성과물도 더 좋다고 생 각을 하기 때문에 끊임없이 노력하는 개 발자가 되고자 합니다.</p>
+                            </div>
+                            <div>
+                                <span>2.</span>
+                                <p>책임감은 자신 있습니다! 지오다노회사에서 점장으로 있으면서 리 더의 책임감이 어떤것인지 크게 깨닫고, 최고의 성과를 얻기 위해 항상 고민하고 발전해 갔습니다.</p>
+                            </div>
+                            <div>
+                                <span>3</span>
+                                <p>혼자서는 속도적인 부분에서 한계가 있다고 생각합니다. 그래서 도움이 되는 직원 이 되고, 협업할 수 있는 직원이 되기 위 해 끊임없이 노력할 것입니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section id="section2">
+            <div class="sec2_title">
+                <div class="left">
+                    <div>javascript</div>
+                    <div>script</div>
+                </div>
+                <div class="right">
+                    항공기계설계를 전공으로 공부하였고,  다양한 분야의 업무를 하며 나의 적성에  맞는 일을 찾고자 노력을 했습니다.
+                </div>
+            </div>
+            <div class="sec2_wrap">
+                <div class="sec2-1">
+                    <div class="left">
+                        <div class="top">parallax Effect01</div>
+                        <div class="bom">
+                            자바스크립트를 이용한<br>패랠랙스 효과
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="iframe"></div>
+                    </div>
+                </div>
+                <div class="sec2-2">sec2-2</div>
+                <div class="sec2-3">sec2-3</div>
+            </div>
+        </section>
+        <section id="section3">section3</section>
+    </main>
+
+    <script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const pageContents = document.getElementById("main");
+        const scroller = new LocomotiveScroll({
+            el: pageContents,
+            smooth: true
+        });
+        scroller.on("scroll", ScrollTrigger.update);
+
+        ScrollTrigger.scrollerProxy(pageContents, {
+            scrollTop(value) {
+                return arguments.length ?
+                    scroller.scrollTo(value, 0, 0) :
+                    scroller.scroll.instance.scroll.y;
+            },
+            getBoundingClientRect() {
+                return {
+                    left: 0,
+                    top: 0,
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                };
+            },
+            pinType: pageContents.style.transform ? "transform" : "fixed"
+        });
+
+        window.addEventListener("load", function () {
+            let sec2WrapWidth = document.querySelector(".sec2_wrap").offsetWidth;
+            let horizontal2 = sec2WrapWidth - window.innerWidth;
+
+            gsap.to("#section2 .sec2_wrap", {
+                scrollTrigger: {
+                    scroller: pageContents,
+                    scrub: true,
+                    trigger: "#section2",
+                    pin: true,
+                    start: "top top",
+                    // markers: true,
+                    end: sec2WrapWidth
+                },
+                x: -horizontal2,
+                ease: "none"
+            });
+
+            ScrollTrigger.addEventListener("refresh", () => scroller.update());
+            ScrollTrigger.refresh();
+        });
+    </script>
+
+<script id="vertexShader" type="x-shader/x-vertex">
+    void main() {
+        gl_Position = vec4( position, 1.0 );
+    }
+</script>
+
+<script id="fragmentShader" type="x-shader/x-fragment">
+    precision highp float;
+
+    uniform vec2 resolution;
+    uniform float time;
+    uniform vec2 mouse;
+    uniform sampler2D backbuffer;
+
+    vec3 wave(vec2 uv,float speed, float thickness, float amplitude, float delay, vec3 color){
+        float shake = mix(0.0, 1.0, amplitude);
+        float wave = sin(delay + mod(uv.x+uv.y/2.0,0.25) * 1.0 - time * speed ) / 5.0 * shake;
+        float colwave = thickness /  abs((1.0-length(uv))+wave); 
+        return color * colwave;
+    }
+    
+    float random (in vec2 st) {
+        return fract(cos(dot(st.xy,vec2(12.9898,78.233))) * 43758.5453123);
+    }
+
+    void main(void) {
+        vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / min(resolution.x, resolution.y);
+        vec3 col0 = wave(uv,0.1,0.08,8.0,5., vec3(0.6, 0.6, 0.6));
+        vec3 col1 = wave(uv,0.2,0.08,9.0,6., vec3(0.4, 0.9, 0.9));
+        vec3 col2 = wave(uv,0.2,0.08,10.0,7., vec3(0.6, 0.9, 0.9));
+        vec3 col3 = wave(uv,0.1,0.08,11.0,8., vec3(0.6, 0.6, 0.6));
+
+        //vec3 col = col0+col1+col2+col3;
+        vec3 col = col0+col1;
+
+        gl_FragColor = vec4(vec3(col), 1.0);
+    }
+</script>
+<script>
+    var container;
+    var camera, scene, renderer;
+    var uniforms;
+
+    init();
+    animate();
+
+    function init() {
+        container = document.getElementById('bg_effect');
+
+        camera = new THREE.Camera();
+        camera.position.z = 1;
+
+        scene = new THREE.Scene();
+
+        var geometry = new THREE.PlaneBufferGeometry(2, 2);
+
+        uniforms = {
+            time: {
+                type: "f",
+                value: 1.0
+            },
+            resolution: {
+                type: "v2",
+                value: new THREE.Vector2()
+            }
+        };
+
+        var material = new THREE.ShaderMaterial({
+            uniforms: uniforms,
+            vertexShader: document.getElementById('vertexShader').textContent,
+            fragmentShader: document.getElementById('fragmentShader').textContent
+        });
+
+        var mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        renderer = new THREE.WebGLRenderer();
+        renderer.setPixelRatio(window.devicePixelRatio);
+
+        container.appendChild(renderer.domElement);
+
+        onWindowResize();
+        window.addEventListener('resize', onWindowResize, false);
+    }
+
+    function onWindowResize(event) {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        uniforms.resolution.value.x = renderer.domElement.width;
+        uniforms.resolution.value.y = renderer.domElement.height;
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+        render();
+    }
+
+    function render() {
+        uniforms.time.value += 0.05;
+        renderer.render(scene, camera);
+    }
+</script>
+</body>
+
+</html>

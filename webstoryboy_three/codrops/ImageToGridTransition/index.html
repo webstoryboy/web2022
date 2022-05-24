@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image To Grid Transition | Codrops</title>
+    <link rel="stylesheet" href="https://use.typekit.net/pgm7mid.css">
+    <link rel="stylesheet" href="css/base.css" />
+    <script>
+        document.documentElement.className = "js";
+        var supportsCssVars = function () {
+            var e, t = document.createElement("style");
+            return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS &&
+                    window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode
+                .removeChild(t), e
+        };
+        supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+    </script>
+
+</head>
+
+<body class="loading">
+    <main>
+        <div class="frame">
+            <div class="frame__title">
+                <h1 class="frame__title-main">Image To Grid Transition</h1>
+                <a aria-label="Back to the article" class="frame__title-back"
+                    href="https://tympanus.net/codrops/?p=63608">
+                    <span class="oh__inner">Back to the article</span>
+                    <svg width="18px" height="18px" viewBox="0 0 24 24">
+                        <path
+                            d="M18.25 15.5a.75.75 0 00.75-.75v-9a.75.75 0 00-.75-.75h-9a.75.75 0 000 1.5h7.19L6.22 16.72a.75.75 0 101.06 1.06L17.5 7.56v7.19c0 .414.336.75.75.75z">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+            <button class="button-menu unbutton show" aria-label="Open menu"></button>
+        </div>
+        <div class="content">
+            <div class="content__item">
+                <div class="content__item-img" style="background-image:url(img/1.jpg)"></div>
+                <h2 class="content__item-title">
+                    <span>Siobhan</span>
+                    <span>O'dwaya</span>
+                </h2>
+                <button class="content__enter unbutton button-circle">
+                    <span class="button-circle__text"><span data-text="Enter">Enter</span></span>
+                    <svg class="button-circle__deco" viewBox="0 0 100 100">
+                        <circle vector-effect="non-scaling-stroke" cx="50" cy="50" r="48" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="grid">
+            <h2 class="grid__item grid__item--title">
+                <span>Siobhan</span>
+                <span>O'dwaya</span>
+            </h2>
+            <div class="grid__item grid__item--back">
+                <button class="button-back unbutton">
+                    <svg width="100px" height="18px" viewBox="0 0 50 9">
+                        <path vector-effect="non-scaling-stroke" d="m0 4.5 5-3m-5 3 5 3m45-3h-77"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="grid__item" style="--c: 18;--r: 1;--cs: 22;--rs: 26;">
+                <div class="grid__item-img" style="background-image:url(img/5.jpg)"></div>
+                <h3 class="grid__item-title oh"><span class="oh__inner">Carrutha Method</span></h3>
+            </div>
+            <div class="grid__item" style="--c: 5;--r: 47;--cs: 16;--rs: 22;">
+                <div class="grid__item-img" style="background-image:url(img/8.jpg)"></div>
+                <h3 class="grid__item-title oh"><span class="oh__inner">Maria Coluga</span></h3>
+            </div>
+            <div class="grid__item" style="--c: 19;--r: 81;--cs: 16;--rs: 20;">
+                <div class="grid__item-img" style="background-image:url(img/3.jpg)"></div>
+                <h3 class="grid__item-title grid__item-title--above oh"><span class="oh__inner">Gabeta Quest</span></h3>
+            </div>
+            <div class="grid__item" style="--c: 29;--r: 35;--cs: 9;--rs: 20;">
+                <div class="grid__item-img" style="background-image:url(img/4.jpg)"></div>
+                <h3 class="grid__item-title oh"><span class="oh__inner">Lithera Britta</span></h3>
+            </div>
+            <div class="grid__item grid__item--target" style="--c: 47;--r: 40;--cs: 9;--rs: 21;">
+                <h3 class="grid__item-title oh"><span class="oh__inner">Franka Oumata</span></h3>
+            </div>
+            <div class="grid__item" style="--c: 39;--r: 66;--cs: 11;--rs: 17;">
+                <div class="grid__item-img" style="background-image:url(img/6.jpg)"></div>
+                <h3 class="grid__item-title oh"><span class="oh__inner">Manata Poly</span></h3>
+            </div>
+            <div class="grid__item" style="--c: 50;--r: 6;--cs: 10;--rs: 22;">
+                <div class="grid__item-img" style="background-image:url(img/7.jpg)"></div>
+                <h3 class="grid__item-title oh"><span class="oh__inner">Ghata Manabra</span></h3>
+            </div>
+            <div class="grid__item" style="--c: 81;--r: 3;--cs: 11;--rs: 37;">
+                <div class="grid__item-img" style="background-image:url(img/2.jpg)"></div>
+                <h3 class="grid__item-title oh"><span class="oh__inner">Tamara Shubaya</span></h3>
+            </div>
+            <div class="grid__item" style="--c: 63;--r: 31;--cs: 11;--rs: 23;">
+                <div class="grid__item-img" style="background-image:url(img/9.jpg)"></div>
+                <h3 class="grid__item-title oh"><span class="oh__inner">Linda Christa</span></h3>
+            </div>
+            <div class="grid__item" style="--c: 86;--r: 60;--cs: 15;--rs: 37;">
+                <div class="grid__item-img" style="background-image:url(img/10.jpg)"></div>
+                <h3 class="grid__item-title oh"><span class="oh__inner">Daniela Walters</span></h3>
+            </div>
+            <div class="grid__item" style="--c: 58;--r: 65;--cs: 23;--rs: 24;">
+                <div class="grid__item-img" style="background-image:url(img/11.jpg)"></div>
+                <h3 class="grid__item-title oh"><span class="oh__inner">Maria Del Mar</span></h3>
+            </div>
+        </div>
+    </main>
+
+    <script src="../imagesloaded.pkgd.min.js"></script>
+    <script type="module" src="js/index.js"></script>
+    <script>
+        import {preloadImages, map} from './utils';
+        import {gsap} from 'gsap';
+        import {Flip} from 'gsap/Flip';
+        gsap.registerPlugin(Flip);
+
+        let winsize = {
+            width: window.innerWidth,
+            height: window.innerHeight
+        };
+        window.addEventListener('resize', () => winsize = {
+            width: window.innerWidth,
+            height: window.innerHeight
+        });
+
+        const DOM = {
+            // the grid
+            grid: document.querySelector('.grid'),
+            // enter button
+            enterCtrl: document.querySelector('.content__enter'),
+            // back button
+            backCtrl: document.querySelector('.button-back'),
+
+            // initial image element that we want to move into the final grid
+            contentItem: document.querySelector('.content__item-img'),
+            // where to insert the initial image element when the grid is open
+            gridItemTarget: document.querySelector('.grid__item--target'),
+            // and when it's closed 
+            gridItemOriginalTarget: document.querySelector('.content__item'),
+
+            // initial title element spans
+            contentTitleTexts: document.querySelectorAll('.content__item-title > span'),
+            // grid title element spans
+            gridTitleTexts: document.querySelectorAll('.grid__item--title > span'),
+
+            // all grid items (except the .grid__item--target, .grid__item--back and grid__item--title)
+            gridItems: document.querySelectorAll(
+                '.grid > .grid__item:not(.grid__item--target):not(.grid__item--title):not(.grid__item--back)'),
+        };
+
+        const animationSettings = {
+            duration: 1,
+            ease: 'expo.inOut'
+        };
+
+        const body = document.body;
+        // original bg color
+        const bgcolor = getComputedStyle(body).getPropertyValue('--color-bg');
+
+        let isAnimating = false;
+
+        // Calculates the position of an element when the element is [distanceDifference]px more far from the center of the page than it was previously
+        const getInitialPosition = (element, distanceDifference = 400) => {
+            const elCenter = {
+                x: element.offsetLeft + element.offsetWidth / 2,
+                y: element.offsetTop + element.offsetHeight / 2
+            };
+            const angle = Math.atan2(Math.abs(winsize.height / 2 - elCenter.y), Math.abs(winsize.width / 2 -
+                elCenter.x));
+
+            let x = Math.abs(Math.cos(angle) * distanceDifference);
+            let y = Math.abs(Math.sin(angle) * distanceDifference);
+
+            return {
+                x: elCenter.x < winsize.width / 2 ? x * -1 : x,
+                y: elCenter.y < winsize.height / 2 ? y * -1 : y
+            };
+        };
+
+        // Distance from the element's center point to the center of the page
+        const getDistance = element => {
+            const elCenter = {
+                x: element.offsetLeft + element.offsetWidth / 2,
+                y: element.offsetTop + element.offsetHeight / 2
+            };
+            return Math.hypot(elCenter.x - winsize.width / 2, elCenter.y - winsize.height / 2);
+        }
+
+        // opens up the grid
+        const showGrid = () => {
+
+            if (isAnimating) return;
+            isAnimating = true;
+
+            const tl = gsap.timeline({
+                    onComplete: () => {
+                        isAnimating = false;
+                    }
+                })
+                .addLabel('start', 0)
+                // hide enter button
+                .to(DOM.enterCtrl, {
+                    duration: animationSettings.duration,
+                    ease: animationSettings.ease,
+                    opacity: 0,
+                    onComplete: () => gsap.set(DOM.enterCtrl, {
+                        pointerEvents: 'none'
+                    })
+                }, 'start')
+                // use the gsap Flip plugin to animate the main image to the grid
+                .add(() => {
+
+                    DOM.grid.classList.add('grid--open');
+
+                    const imageState = Flip.getState(DOM.contentItem);
+                    DOM.gridItemTarget.appendChild(DOM.contentItem);
+                    Flip.from(imageState, {
+                        duration: animationSettings.duration,
+                        ease: animationSettings.ease,
+                    });
+
+                }, 'start');
+
+            for (let item of DOM.gridItems) {
+                const {
+                    x,
+                    y
+                } = getInitialPosition(item);
+                const delay = map(getDistance(item), 0, 1000, 0, 0.4);
+
+                tl
+                    // animate in the grid item's labels
+                    .to(item.querySelector('.oh__inner'), {
+                        duration: animationSettings.duration * 1.7,
+                        ease: animationSettings.ease,
+                        startAt: {
+                            yPercent: 101
+                        },
+                        yPercent: 0,
+                        delay: delay,
+                    }, 'start')
+                    // Set the original positions of the grid items and animate them in
+                    // The position will be relative to the center of the page and outwards
+                    .set(item, {
+                        x: x,
+                        y: y,
+                        opacity: 0
+                    }, 'start')
+                    .to(item, {
+                        duration: animationSettings.duration,
+                        ease: 'expo',
+                        x: 0,
+                        y: 0,
+                        delay: delay,
+                        opacity: 1
+                    }, 'start+=0.4')
+            }
+
+            tl
+                // Animate in the main image label
+                .to(DOM.gridItemTarget.querySelector('.oh__inner'), {
+                    duration: animationSettings.duration * 1.7,
+                    ease: animationSettings.ease,
+                    startAt: {
+                        yPercent: 101
+                    },
+                    yPercent: 0
+                }, 'start')
+                // Animate out the big title spans and animate in the small title spans
+                .to(DOM.contentTitleTexts, {
+                    duration: animationSettings.duration,
+                    ease: animationSettings.ease,
+                    yPercent: pos => pos % 2 ? 100 : -100,
+                    opacity: 0
+                }, 'start')
+                .to(DOM.gridTitleTexts, {
+                    duration: animationSettings.duration,
+                    ease: animationSettings.ease,
+                    startAt: {
+                        xPercent: pos => pos % 2 ? 50 : -50,
+                        opacity: 0
+                    },
+                    xPercent: 0,
+                    opacity: 1
+                }, 'start')
+                // Animate the back button
+                .to(DOM.backCtrl, {
+                    duration: animationSettings.duration,
+                    ease: animationSettings.ease,
+                    startAt: {
+                        xPercent: 40,
+                        opacity: 0
+                    },
+                    xPercent: 0,
+                    opacity: 1
+                }, 'start')
+                // Animate the color of the page
+                .to(body, {
+                    duration: animationSettings.duration,
+                    ease: animationSettings.ease,
+                    backgroundColor: '#CDD1CD'
+                }, 'start');
+
+        };
+
+        const hideGrid = () => {
+
+            if (isAnimating) return;
+            isAnimating = true;
+
+            const tl = gsap.timeline({
+                    onComplete: () => {
+                        DOM.grid.classList.remove('grid--open');
+                        isAnimating = false;
+                    }
+                })
+                .addLabel('start', 0)
+                .to(body, {
+                    duration: animationSettings.duration,
+                    ease: animationSettings.ease,
+                    backgroundColor: bgcolor
+                }, 'start')
+                .to(DOM.gridItemTarget.querySelector('.oh__inner'), {
+                    duration: animationSettings.duration,
+                    ease: animationSettings.ease,
+                    yPercent: 101
+                }, 'start');
+
+            for (let item of DOM.gridItems) {
+                const {
+                    x,
+                    y
+                } = getInitialPosition(item);
+                const delay = map(getDistance(item), 0, 1000, 0.4, 0);
+
+                tl
+                    .to(item, {
+                        duration: animationSettings.duration,
+                        ease: animationSettings.ease,
+                        x: x,
+                        y: y,
+                        opacity: 0,
+                        delay: delay
+                    }, 'start')
+                    .to(item.querySelector('.oh__inner'), {
+                        duration: animationSettings.duration * .5,
+                        ease: animationSettings.ease,
+                        yPercent: 101,
+                        delay: delay,
+                    }, 'start')
+            }
+
+            tl
+                .to(DOM.gridTitleTexts, {
+                    duration: animationSettings.duration,
+                    ease: animationSettings.ease,
+                    xPercent: pos => pos % 2 ? 50 : -50,
+                    opacity: 0
+                }, 'start')
+                .to(DOM.backCtrl, {
+                    duration: animationSettings.duration,
+                    ease: animationSettings.ease,
+                    xPercent: 20,
+                    opacity: 0
+                }, 'start')
+                .to(DOM.contentTitleTexts, {
+                    duration: animationSettings.duration,
+                    ease: animationSettings.ease,
+                    yPercent: 0,
+                    opacity: 1
+                }, 'start+=0.4')
+                .to(DOM.enterCtrl, {
+                    duration: animationSettings.duration,
+                    ease: animationSettings.ease,
+                    opacity: 1,
+                    onComplete: () => gsap.set(DOM.enterCtrl, {
+                        pointerEvents: 'auto'
+                    })
+                }, 'start+=0.4')
+                .add(() => {
+
+                    const imageState = Flip.getState(DOM.contentItem);
+                    DOM.gridItemOriginalTarget.appendChild(DOM.contentItem);
+                    Flip.from(imageState, {
+                        duration: animationSettings.duration,
+                        ease: animationSettings.ease,
+                    });
+
+                }, 'start+=0.4');
+
+        };
+
+        DOM.enterCtrl.addEventListener('click', () => showGrid());
+        DOM.backCtrl.addEventListener('click', () => hideGrid());
+
+        // Preload images
+        preloadImages('.grid__item-img').then(_ => document.body.classList.remove('loading'));
+    </script>
+</body>
+
+</html>

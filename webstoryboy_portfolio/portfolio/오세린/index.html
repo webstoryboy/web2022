@@ -19,22 +19,42 @@
     </header>
     <!-- //header -->
 
-    <main id="contents">
+    <main id="contents" data-scroll-container>
         <section id="section1">
             <div class="sec1_text1">
                 <div class="split">WELCOME</div>
-                <div class="split">TO MY</div>
-                <div class="split">PORTFOLIO</div>
+                <div class="split" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">TO MY</div>
+                <div class="split" data-scroll data-scroll-speed="-1" data-scroll-direction="horizontal">PORTFOLIO</div>
             </div>
             <div class="sec1_cir">
                 <div class="circle1"></div>
                 <div class="circle2"></div>
             </div>
-            <div class="sec1_text2"></div>
-            <div class="sec1_box1"></div>
+            <div class="sec1_text2" data-scroll data-scroll-speed="1" data-scroll-direction="horizontal">JUSTLIKE <em>ME</em></div>
+            <div class="sec1_box1" data-scroll data-scroll-speed="2"></div>
         </section>
         <!-- //section1 -->
-        <section id="section2"></section><!-- //section2 -->
+
+        <section id="section2">
+            <div class="sec2_text1">
+                <div>A NATURAL </div>
+                <div>PRODUCT </div>
+                <div>WITH NOTHING </div>
+                <div>TO ADD</div>
+            </div>
+            <div class="sec2_img">
+                <div class="left"></div>
+                <div class="right">
+                    어떤 일이라도 노력하고 즐기면  그 결과는 빛을 바란다고 생각합니다.<br>
+                    신입의 열정과 도전정신을 깊숙히 새기며 배움에 있어 겸손함을 유지하며<br>
+                    세부적인 곳까지 파고드는 개발자가 되겠습니다.
+                </div>
+                <div class="circle">
+
+                </div>
+            </div>
+        </section>
+        <!-- //section2 -->
         <section id="section3"></section><!-- //section3 -->
         <section id="section4"></section><!-- //section4 -->
         <section id="section5"></section><!-- //section5 -->
@@ -42,7 +62,13 @@
     </main>
 
     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
     <script>
+        const scroller = new LocomotiveScroll({
+            el: document.querySelector('[data-scroll-container]'),
+            smooth: true
+        });
+
         document.querySelectorAll(".split").forEach(desc => {
             let splitText = desc.innerText;
             let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");

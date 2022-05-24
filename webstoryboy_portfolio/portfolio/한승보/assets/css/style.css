@@ -40,10 +40,9 @@ img {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 50px 10vw;
 }
 .pin-wrap > div{
-    min-width: 80vw;
+    min-width: 40vw;
 }
 
 /* header */
@@ -100,8 +99,24 @@ img {
     font-weight: 200;
 }
 
-.sec2_3 {background: #333; height: 40vh;}
-.sec2_4 {background: #444; height: 40vh;}
+.pin-wrap .sec2_1 {
+    min-width: 100vw;
+}
+.pin-wrap .sec2_2 {
+    min-width: 60vw;
+}
+.pin-wrap .sec2_3 {
+    min-width: 60vw;
+}
+.pin-wrap .sec2_4 {
+    min-width: 60vw;
+    margin-right: 20vw;
+}
+.pin-wrap .sec2_5 {
+    min-width: 200vw;
+    height: 100vh;
+    background: #000;
+}
 .sec2_1 {
     display: flex;
     align-items: center;    
@@ -116,22 +131,89 @@ img {
 }
 .sec2_2 .title .imgWrap {
     width: 40vw;
-    height: 300px;
+    height: 40vh;
+    overflow: hidden;
+    position: relative;
 }
 .sec2_2 .title .imgWrap .img {
-    background: url(https://images.unsplash.com/photo-1586652272501-1f671c68b70a?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687) no-repeat center top -350px;
+    background: url(https://images.unsplash.com/photo-1653226439336-177c4c1ccc51?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170) no-repeat center center;
     background-size: cover;
-    width: 100%;
-    height: 100%;
+    width: 130%;
+    height: 130%;
+    position: absolute;
+    left: -15%;
+    top: -15%;
 }
-
 .sec2_2 .title .desc {
     width: 30vw;
     font-family: 'IropkeBatang';
+    margin-left: 15vw;
 }
 .sec2_2 .title .desc h3 {
-    padding: 1vw 0;
+    padding: 5vw 0 1vw 0;
 }
 
-.sec2_3 {}
-.sec2_4 {}
+.sec2_3 {
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    width: 40vw;
+    height: 100vh;
+}
+.sec2_3 .title {
+    display: flex;
+}
+.sec2_3 .title .imgWrap {
+    width: 20vw;
+    height: 70vh;
+    margin-top: -10vw;
+    position: relative;
+    overflow: hidden;
+}
+.sec2_3 .title .imgWrap .img {
+    background: url(https://images.unsplash.com/photo-1653161926079-ae2fde0fd6e1?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764) no-repeat center center;
+    background-size: cover;
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    left: -25%;
+    top: -25%;
+}
+.sec2_3 .title .desc {
+    width: 20vw;
+    font-family: 'IropkeBatang';
+    margin-right: 5vw;
+}
+.sec2_3 .title .desc h3 {
+    padding: 3vw 0 1vw 0;
+}
+
+.sec2_4 {
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    height: 100vh;
+}
+.sec2_4 .title .imgWrap {
+    width: 40vw;
+    height: 40vh;
+    overflow: hidden;
+    position: relative;
+}
+.sec2_4 .title .imgWrap .img {
+    background: url(https://images.unsplash.com/photo-1653226439336-177c4c1ccc51?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170) no-repeat center center;
+    background-size: cover;
+    width: 130%;
+    height: 130%;
+    position: absolute;
+    left: -15%;
+    top: -15%;
+}
+.sec2_4 .title .desc {
+    width: 30vw;
+    font-family: 'IropkeBatang';
+    margin-left: 15vw;
+}
+.sec2_4 .title .desc h3 {
+    padding: 5vw 0 1vw 0;
+}

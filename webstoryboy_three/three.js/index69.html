@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100vh;
+            cursor: grab;
+        }
+
+        body {
+            display: grid;
+            place-content: start;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="module">
+        import * as $ from '//unpkg.com/three@0.118.3/build/three.module.js'
+        import {OrbitControls} from '//unpkg.com/three@0.118.3/examples/jsm/controls/OrbitControls.js'
+
+        const renderer = new $.WebGLRenderer();
+        document.body.prepend(renderer.domElement);
+        window.addEventListener('resize', () => {
+            const {
+                clientWidth,
+                clientHeight
+            } = renderer.domElement;
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(clientWidth, clientHeight, false);
+            camera.aspect = clientWidth / clientHeight;
+            camera.updateProjectionMatrix();
+        });
+
+        const radius0 = 8;
+        const radius1 = 4;
+        const nSeed = 20;
+
+        const radius = radius0 + radius1;
+        const scene = new $.Scene();
+        const camera = new $.PerspectiveCamera(32, 2, .1, 1000);
+        const controls = new OrbitControls(camera, renderer.domElement);
+        camera.position.set(0, 0, 64);
+        scene.background = new $.Color('papayawhip');
+
+        const seeds = []; {
+            const geom = new $.SphereBufferGeometry(radius1, 16, 16);
+            for (let i = 0, I = nSeed; i < I; ++i) {
+                const mat = new $.MeshPhongMaterial({
+                    color: new $.Color().setHSL(0, 0.1, 0.1)
+                });
+                const mesh = new $.Mesh(geom, mat);
+                const alpha = i / I * Math.PI / 2; // rx from N
+                const beta = -Math.PI + Math.random() * Math.PI * 2; // ry from E
+                const radius = radius0;
+                const y = radius * Math.cos(alpha);
+                const r = radius * Math.sin(alpha);
+                const x = r * Math.cos(beta);
+                const z = -r * Math.sin(beta);
+                mesh.position.set(x, y, z);
+                const velocity = new $.Vector2(Math.random() * Math.PI / 4, Math.PI / 3);
+                mesh.castShadow = true;
+                mesh.receiveShadow = true;
+                scene.add(mesh);
+                seeds.push({
+                    mesh,
+                    velocity,
+                    alpha,
+                    beta
+                });
+            }
+        }
+
+        const core = new $.Mesh(); {
+            const geom = new $.SphereBufferGeometry(radius0, 32, 32);
+            const mat = new $.MeshLambertMaterial({
+                color: scene.background
+            });
+            core.geometry = geom;
+            core.material = mat;
+            scene.add(core);
+            core.receiveShadow = true;
+            core.castShadow = true;
+        }
+
+        const light0 = new $.PointLight('white', .5);
+        light0.position.set(radius0, 0, radius0 + radius1 * 3);
+        light0.castShadow = true;
+        light0.shadow.camera.far = radius * 2;
+        light0.shadow.mapSize.set(1024, 1024);
+        scene.add(light0);
+
+        const light1 = new $.AmbientLight('white', .5);
+        scene.add(light1);
+
+        window.dispatchEvent(new Event('resize'));
+        const clock = new $.Clock();
+        renderer.shadowMap.enabled = true;
+        renderer.setAnimationLoop(() => {
+            renderer.render(scene, camera);
+            controls.update();
+            const dt = clock.getDelta();
+            for (const seed of seeds) {
+                updatePosition({
+                    seed,
+                    dt
+                });
+            }
+        });
+
+        function updatePosition({
+            seed,
+            dt
+        }) {
+            seed.alpha = (seed.alpha + seed.velocity.x * dt) % (Math.PI * 2);
+            seed.beta = (seed.beta + seed.velocity.y * dt) % (Math.PI * 2);
+            const y = radius * Math.cos(seed.alpha);
+            const r = radius * Math.sin(seed.alpha);
+            const x = r * Math.cos(seed.beta);
+            const z = r * Math.sin(seed.beta);
+            seed.mesh.position.set(x, y, z);
+        }
+    </script>
+</body>
+
+</html>

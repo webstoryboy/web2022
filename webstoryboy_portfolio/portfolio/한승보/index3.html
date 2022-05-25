@@ -35,7 +35,7 @@
         <section id="section2" class="horizontal-scroll" data-textcolor="#bcb8ad" data-bgcolor="#815946">
             <div class="pin-wrap">
                 <div class="sec2_1">
-                    <h2>복잡성을 통제하는 것이 컴퓨터 프로그래밍의 기초다</h2>
+                    <h2 class="show">복잡성을 통제하는 것이 컴퓨터 프로그래밍의 기초다</h2>
                 </div>
                 <div class="sec2_2">
                     <div class="title">
@@ -117,8 +117,9 @@
         gsap.set(".show", {opacity: 0, y: 100 })
 
         function scroll() {
-
             const move = document.querySelector(".move");
+
+            console.log(move.getBoundingClientRect())
 
             if(move.getBoundingClientRect().x < 0 + window.innerWidth){
                 gsap.to(".move", {x: move.getBoundingClientRect().x/20})
@@ -158,6 +159,7 @@
                     return arguments.length ?
                         scroller.scrollTo(value, 0, 0) :
                         scroller.scroll.instance.scroll.y;
+                    //console.log(scroller.scroll.instance.scroll.y)
                 },
                 getBoundingClientRect() {
                     return {

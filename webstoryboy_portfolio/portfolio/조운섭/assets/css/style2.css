@@ -69,12 +69,8 @@
     padding: 1vw 2vw;
     background: #fff;
 }
-#header .nav a {
 
-}
-
-
-/* section1 */
+/* sec1_bg */
 .sec1_bg {
     margin-top: 6vw;
     height: 350px;
@@ -127,8 +123,7 @@
     height: 100%;
 }
 
-
-/* section2 */
+/* sec1-2 */
 .sec2_bg {
     width: 100%;
     height: 500px;
@@ -166,7 +161,4 @@
 }
 
 
-/* section3 */
-#section3 {
-    height: 4000px;
-}
+/* sec1-3 */

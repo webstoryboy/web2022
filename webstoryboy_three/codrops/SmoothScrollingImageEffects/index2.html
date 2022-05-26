@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smooth scrolling and inner image animation | Codrops</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+        }
+
+        :root {
+            font-size: 16px;
+        }
+
+        body {
+            margin: 0;
+            --color-text: #1c1b1b;
+            --color-bg: #efe6e1;
+            --color-link: #b07656;
+            --color-link-hover: #000;
+            --color-deco: #e4dbd6;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            font-family: paralucent, sans-serif;
+            font-family: quiroh, sans-serif;
+            font-family: mr-eaves-xl-sans, sans-serif;
+        }
+
+        /* Page Loader */
+        .js .loading::before {
+            content: '';
+            position: fixed;
+            z-index: 100000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-bg);
+        }
+
+        .js .loading::after {
+            content: '';
+            position: fixed;
+            z-index: 100000;
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            height: 60px;
+            margin: -30px 0 0 -30px;
+            pointer-events: none;
+            border-radius: 50%;
+            opacity: 0.4;
+            background: var(--color-link);
+            animation: loaderAnim 0.7s linear infinite alternate forwards;
+        }
+
+        @keyframes loaderAnim {
+            to {
+                opacity: 1;
+                transform: scale3d(0.5, 0.5, 1);
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-link);
+            outline: none;
+        }
+
+        a:hover,
+        a:focus {
+            color: var(--color-link-hover);
+            outline: none;
+        }
+
+        [data-scroll] {
+            will-change: transform;
+        }
+
+        .frame {
+            padding: 2.5rem 3rem;
+            position: absolute;
+            z-index: 10;
+        }
+
+        .frame__title {
+            font-size: 1rem;
+            margin: 0 0 2.5rem;
+        }
+
+        .frame__links {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .frame a {
+            margin: 0.25rem 0;
+            text-transform: lowercase;
+        }
+
+        .frame__github,
+        .frame__links a:not(:last-child),
+        .frame__demos a:not(:last-child) {
+            margin-right: 1rem;
+        }
+
+        .frame__demos {
+            margin: 1rem 0;
+        }
+
+        .frame__demo--current,
+        .frame__demo--current:hover {
+            color: var(--color-text);
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            align-items: center;
+            padding: 12rem 0;
+            counter-reset: figure;
+        }
+
+        .item {
+            margin: 10vh auto;
+            max-width: 100%;
+            position: relative;
+            will-change: transform;
+        }
+
+        .item::before {
+            counter-increment: figure;
+            content: counter(figure, decimal-leading-zero);
+            position: absolute;
+            font-family: paralucent, sans-serif;
+            font-size: 10rem;
+            color: var(--color-deco);
+            bottom: calc(100% - 3rem);
+        }
+
+        .item:nth-child(even)::before {
+            right: 0;
+        }
+
+        .item__img-wrap {
+            --aspect-ratio: 1/1.5;
+            overflow: hidden;
+            width: 500px;
+            margin: 0 auto;
+            padding-bottom: calc(100% / (var(--aspect-ratio)));
+            max-width: calc(100% - 2rem);
+            will-change: transform;
+        }
+
+        .item:first-child .item__img-wrap {
+            --aspect-ratio: 8/10;
+            --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/1.jpg);
+        }
+
+        .item:nth-child(2) .item__img-wrap {
+            width: 1000px;
+            --aspect-ratio: 120/76;
+            --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/2.jpg);
+        }
+
+        .item:nth-child(3) .item__img-wrap {
+            --aspect-ratio: 60/75;
+            --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/3.jpg);
+        }
+
+        .item:nth-child(4) .item__img-wrap {
+            width: 800px;
+            --aspect-ratio: 900/505;
+            --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/4.jpg);
+        }
+
+        .item:nth-child(5) .item__img-wrap {
+            --aspect-ratio: 6/8;
+            --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/5.jpg);
+        }
+
+        .item:nth-child(6) .item__img-wrap {
+            width: calc(100vw - 2rem);
+            --aspect-ratio: 1500/844;
+            --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/6.jpg);
+        }
+
+        .item:nth-child(7) .item__img-wrap {
+            width: 900px;
+            --aspect-ratio: 1000/749;
+            --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/7.jpg);
+        }
+
+        .item:nth-child(8) .item__img-wrap {
+            width: 900px;
+            --aspect-ratio: 1000/562;
+            --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/8.jpg);
+        }
+
+        .item:nth-child(9) .item__img-wrap {
+            --aspect-ratio: 60/75;
+            --image: url(https://tympanus.net/Tutorials/SmoothScrollAnimations/img/9.jpg);
+        }
+
+        .item__img {
+            --overflow: 40px;
+            height: calc(100% + (2 * var(--overflow)));
+            top: calc(-1 * var(--overflow));
+            width: 100%;
+            position: absolute;
+            background-image: var(--image);
+            background-size: cover;
+            background-position: 50% 0%;
+            will-change: transform;
+        }
+
+        .item__img--t1 {
+            --overflow: 60px;
+        }
+
+        .item__img--t2 {
+            --overflow: 80px;
+        }
+
+        .item__img--t3 {
+            --overflow: 120px;
+        }
+
+        .item__caption {
+            padding: 2rem 1rem;
+        }
+
+        .item__caption-title {
+            font-family: paralucent, sans-serif;
+            font-weight: 400;
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .item__caption-copy {
+            margin: 0;
+        }
+
+        .item__caption-copy::before {
+            content: '__';
+            line-height: 1;
+            color: var(--color-link);
+            font-weight: 700;
+            font-size: 3rem;
+            margin: 0 0 1rem;
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="loading">
+    <main>
+        <div data-scroll>
+            <div class="frame">
+                <div class="frame__title-wrap">
+                    <h1 class="frame__title">Smooth scrolling and inner image animation</h1>
+                </div>
+                <div class="frame__links">
+                    <a href="https://tympanus.net/Development/DraggableMenu/">Previous Demo</a>
+                    <a href="https://tympanus.net/codrops/?p=41030">Article</a>
+                    <a href="https://github.com/codrops/SmoothScrollAnimations/">GitHub</a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="item">
+                    <div class="item__img-wrap">
+                        <div class="item__img item__img--t1"></div>
+                    </div>
+                    <div class="item__caption">
+                        <h2 class="item__caption-title">Central view</h2>
+                        <p class="item__caption-copy">Great turbulent clouds emerged into consciousness citizens.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__img-wrap">
+                        <div class="item__img item__img--t2"></div>
+                    </div>
+                    <div class="item__caption">
+                        <h2 class="item__caption-title">Lost in time</h2>
+                        <p class="item__caption-copy">Brain is the seed of intelligence the sky calls to us a very small
+                            stage.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__img-wrap">
+                        <div class="item__img item__img--t3"></div>
+                    </div>
+                    <div class="item__caption">
+                        <h2 class="item__caption-title">Ready to land</h2>
+                        <p class="item__caption-copy">Cosmos encyclopaedia galactica a billion trillion culture cosmic
+                            ocean.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__img-wrap">
+                        <div class="item__img item__img--t1"></div>
+                    </div>
+                    <div class="item__caption">
+                        <h2 class="item__caption-title">All equal</h2>
+                        <p class="item__caption-copy">Network of wormholes dream of the mind's eye finite but unbounded
+                            concept.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__img-wrap">
+                        <div class="item__img item__img--t2"></div>
+                    </div>
+                    <div class="item__caption">
+                        <h2 class="item__caption-title">Connections</h2>
+                        <p class="item__caption-copy">Two ghostly white figures in coveralls and helmets are softly
+                            dancing vastness.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__img-wrap">
+                        <div class="item__img item__img--t3"></div>
+                    </div>
+                    <div class="item__caption">
+                        <h2 class="item__caption-title">The state of divergence</h2>
+                        <p class="item__caption-copy">Vastness is bearable only through love invent the universe
+                            vanquish.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__img-wrap">
+                        <div class="item__img item__img--t1"></div>
+                    </div>
+                    <div class="item__caption">
+                        <h2 class="item__caption-title">Open perspective</h2>
+                        <p class="item__caption-copy">The only home we've ever known concept of the number one.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__img-wrap">
+                        <div class="item__img item__img--t3"></div>
+                    </div>
+                    <div class="item__caption">
+                        <h2 class="item__caption-title">Discovery of shapes</h2>
+                        <p class="item__caption-copy">Decipherment explorations tesseract as a patch of light.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item__img-wrap">
+                        <div class="item__img item__img--t2"></div>
+                    </div>
+                    <div class="item__caption">
+                        <h2 class="item__caption-title">The Observer</h2>
+                        <p class="item__caption-copy">Astonishment muse about dispassionate extraterrestrial observer.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../imagesloaded.pkgd.min.js"></script>
+    <script>
+        const MathUtils = {
+            // map number x from range [a, b] to [c, d]
+            map: (x, a, b, c, d) => (x - a) * (d - c) / (b - a) + c,
+            // linear interpolation
+            lerp: (a, b, n) => (1 - n) * a + n * b
+        };
+
+        // body element
+        const body = document.body;
+
+        let winsize;
+        const calcWinsize = () => winsize = {
+            width: window.innerWidth,
+            height: window.innerHeight
+        };
+        calcWinsize();
+        window.addEventListener('resize', calcWinsize);
+
+        let docScroll;
+        const getPageYScroll = () => docScroll = window.pageYOffset || document.documentElement.scrollTop;
+        window.addEventListener('scroll', getPageYScroll);
+
+        // Item
+        class Item {
+            constructor(el) {
+                this.DOM = {el: el};
+                this.DOM.image = this.DOM.el.querySelector('.item__img');
+                this.renderedStyles = {
+                    innerTranslationY: {
+                        previous: 0,
+                        current: 0,
+                        ease: 0.1,
+                        maxValue: parseInt(getComputedStyle(this.DOM.image).getPropertyValue('--overflow'), 10),
+
+                        setValue: () => {
+                            const maxValue = this.renderedStyles.innerTranslationY.maxValue;
+                            const minValue = -1 * maxValue;
+                            return Math.max(Math.min(MathUtils.map(this.props.top - docScroll, winsize
+                                    .height, -1 * this.props.height, minValue, maxValue), maxValue),
+                                minValue)
+                        }
+                    }
+                };
+                this.update();
+                this.observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => this.isVisible = entry.intersectionRatio > 0);
+                });
+                this.observer.observe(this.DOM.el);
+                this.initEvents();
+            }
+            update() {
+                this.getSize();
+                for (const key in this.renderedStyles) {
+                    this.renderedStyles[key].current = this.renderedStyles[key].previous = this.renderedStyles[key]
+                        .setValue();
+                }
+                this.layout();
+            }
+            getSize() {
+                const rect = this.DOM.el.getBoundingClientRect();
+                this.props = {
+                    height: rect.height,
+                    top: docScroll + rect.top
+                }
+            }
+            initEvents() {
+                window.addEventListener('resize', () => this.resize());
+            }
+            resize() {
+                this.update();
+            }
+            render() {
+                for (const key in this.renderedStyles) {
+                    this.renderedStyles[key].current = this.renderedStyles[key].setValue();
+                    this.renderedStyles[key].previous = MathUtils.lerp(this.renderedStyles[key].previous, this
+                        .renderedStyles[key].current, this.renderedStyles[key].ease);
+                }
+                this.layout();
+            }
+            layout() {
+                this.DOM.image.style.transform =`translate3d(0,${this.renderedStyles.innerTranslationY.previous}px,0)`;
+            }
+        }
+
+        // SmoothScroll
+        class SmoothScroll {
+            constructor() {
+                this.DOM = {main: document.querySelector('main')};
+                this.DOM.scrollable = this.DOM.main.querySelector('div[data-scroll]');
+                this.items = [];
+                [...this.DOM.main.querySelectorAll('.content > .item')].forEach(item => this.items.push(new Item(item)));
+                this.renderedStyles = {
+                    translationY: {
+                        previous: 0,
+                        current: 0,
+                        ease: 0.1,
+                        setValue: () => docScroll
+                    }
+                };
+                this.setSize();
+                this.update();
+                this.style();
+                this.initEvents();
+                requestAnimationFrame(() => this.render());
+            }
+            update() {
+                for (const key in this.renderedStyles) {
+                    this.renderedStyles[key].current = this.renderedStyles[key].previous = this.renderedStyles[key]
+                        .setValue();
+                }
+                this.layout();
+            }
+            layout() {
+                this.DOM.scrollable.style.transform =`translate3d(0,${-1*this.renderedStyles.translationY.previous}px,0)`;
+            }
+            setSize() {
+                body.style.height = `${this.DOM.scrollable.scrollHeight}px`;
+            }
+            style() {
+                this.DOM.main.style.position = 'fixed';
+                this.DOM.main.style.width = this.DOM.main.style.height = '100%';
+                this.DOM.main.style.top = this.DOM.main.style.left = 0;
+                this.DOM.main.style.overflow = 'hidden';
+            }
+            initEvents() {
+                // on resize reset the body's height
+                window.addEventListener('resize', () => this.setSize());
+            }
+            render() {
+                // update the current and interpolated values
+                for (const key in this.renderedStyles) {
+                    this.renderedStyles[key].current = this.renderedStyles[key].setValue();
+                    this.renderedStyles[key].previous = MathUtils.lerp(this.renderedStyles[key].previous, this
+                        .renderedStyles[key].current, this.renderedStyles[key].ease);
+                }
+                this.layout();
+
+                for (const item of this.items) {
+                    if (item.isVisible) {
+                        item.render();
+                    }
+                }
+                requestAnimationFrame(() => this.render());
+            }
+        }
+
+       
+        getPageYScroll();
+        new SmoothScroll();
+    </script>
+</body>
+
+</html>

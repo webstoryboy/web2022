@@ -145,7 +145,7 @@
             const scroller = new LocomotiveScroll({
                 el: pageContainer,
                 smooth: true,
-                getDirection: true
+                getDirection: true,
             });
 
             scroller.on("scroll", function (t) {
@@ -153,13 +153,13 @@
             });
 
             scroller.on("scroll", ScrollTrigger.update);
+            
 
             ScrollTrigger.scrollerProxy(pageContainer, {
                 scrollTop(value) {
                     return arguments.length ?
                         scroller.scrollTo(value, 0, 0) :
                         scroller.scroll.instance.scroll.y;
-                    //console.log(scroller.scroll.instance.scroll.y)
                 },
                 getBoundingClientRect() {
                     return {
@@ -171,6 +171,8 @@
                 },
                 pinType: pageContainer.style.transform ? "transform" : "fixed"
             });
+            console.log(scroller.scroll.instance.scroll.y)
+            
 
             let horizontalSections = document.querySelectorAll(".horizontal-scroll");
 

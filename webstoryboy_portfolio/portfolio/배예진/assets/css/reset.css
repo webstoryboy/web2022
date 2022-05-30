@@ -1,23 +1,25 @@
 @font-face {
-    src: url("https://assets.codepen.io/2479807/gilroy-regular.ttf");
-    font-family: "Gilroy";
-}
-
-@font-face {
-    src: url("https://assets.codepen.io/2479807/gilroy-semibold.woff2");
-    font-family: "Gilroy Semi-Bold";
-}
-@font-face {
-    font-family: 'GmarketSans';
-    font-weight: 300;
+    font-family: 'SaintMonicaRegular';
+    font-weight: normal;
     font-style: normal;
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
+    src: url('../fonts/SaintMonicaRegular.eot');
+    src: url('../fonts/SaintMonicaRegular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SaintMonicaRegular.woff2') format('woff2'),
+         url('../fonts/SaintMonicaRegular.woff') format('woff'),
+         url('../fonts/SaintMonicaRegular.ttf') format("truetype");
     font-display: swap;
-} 
+}
+@font-face {
+    font-family: 'SaintMonicaItalic';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/SaintMonicaItalic.eot');
+    src: url('../fonts/SaintMonicaItalic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SaintMonicaItalic.woff2') format('woff2'),
+         url('../fonts/SaintMonicaItalic.woff') format('woff'),
+         url('../fonts/SaintMonicaItalic.ttf') format("truetype");
+    font-display: swap;
+}
 @font-face {
     font-family: 'IropkeBatang';
     font-weight: normal;
@@ -29,28 +31,43 @@
          url('https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.ttf') format("truetype");
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
+    font-display: swap;
+}
+
 @font-face {
     font-family: 'GmarketSans';
     font-weight: 500;
     font-style: normal;
     src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
     src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
     font-display: swap;
-} 
+}
+
 @font-face {
     font-family: 'GmarketSans';
     font-weight: 700;
     font-style: normal;
     src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
     src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
-         url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
     font-display: swap;
-} 
+}
+
 /* border-box 초기화 */
 *,
 *:before,
@@ -220,27 +237,94 @@ select {
 }
 
 /* 간격 셋팅 */
-.mt0   {margin-top: 0;}
-.mt10  {margin-top: 10px;}
-.mt20  {margin-top: 20px;}
-.mt30  {margin-top: 30px;}
-.mt40  {margin-top: 40px;}
-.mt50  {margin-top: 50px;}
-.mt60  {margin-top: 60px;}
-.mt70  {margin-top: 70px;}
-.mt80  {margin-top: 80px;}
-.mt90  {margin-top: 90px;}
-.mt100 {margin-top: 100px;}
+.mt0 {
+    margin-top: 0;
+}
 
-.pt0   {padding-top: 0;}
-.pt10  {padding-top: 10px;}
-.pt20  {padding-top: 20px;}
-.pt30  {padding-top: 30px;}
-.pt40  {padding-top: 40px;}
-.pt50  {padding-top: 50px;}
-.pt60  {padding-top: 60px;}
-.pt70  {padding-top: 70px;}
-.pt80  {padding-top: 80px;}
-.pt90  {padding-top: 90px;}
-.pt100 {padding-top: 100px;}
-.pt200 {padding-top: 200px;}
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mt30 {
+    margin-top: 30px;
+}
+
+.mt40 {
+    margin-top: 40px;
+}
+
+.mt50 {
+    margin-top: 50px;
+}
+
+.mt60 {
+    margin-top: 60px;
+}
+
+.mt70 {
+    margin-top: 70px;
+}
+
+.mt80 {
+    margin-top: 80px;
+}
+
+.mt90 {
+    margin-top: 90px;
+}
+
+.mt100 {
+    margin-top: 100px;
+}
+
+.pt0 {
+    padding-top: 0;
+}
+
+.pt10 {
+    padding-top: 10px;
+}
+
+.pt20 {
+    padding-top: 20px;
+}
+
+.pt30 {
+    padding-top: 30px;
+}
+
+.pt40 {
+    padding-top: 40px;
+}
+
+.pt50 {
+    padding-top: 50px;
+}
+
+.pt60 {
+    padding-top: 60px;
+}
+
+.pt70 {
+    padding-top: 70px;
+}
+
+.pt80 {
+    padding-top: 80px;
+}
+
+.pt90 {
+    padding-top: 90px;
+}
+
+.pt100 {
+    padding-top: 100px;
+}
+
+.pt200 {
+    padding-top: 200px;
+}

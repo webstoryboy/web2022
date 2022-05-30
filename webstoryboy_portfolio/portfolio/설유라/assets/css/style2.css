@@ -1,0 +1,153 @@
+html.has-scroll-smooth {
+    overflow: hidden;
+}
+
+html.has-scroll-dragging {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.has-scroll-smooth body {
+    overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+    min-height: 1000vh;
+}
+
+[data-scroll-direction='horizontal'] [data-scroll-container] {
+    white-space: nowrap;
+    height: 100vh;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+[data-scroll-direction='horizontal'] [data-scroll-section] {
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    height: 100%;
+}
+/* layout */
+.contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.section_wrap {
+    display: flex;
+}
+
+
+#section1 {width: 100vw; height: 100vh; background: rgb(59, 55, 55);}
+#section2 {height: 100vh; background: #fdf7ed;}
+#section3 {width: 100vw; height: 100vh; background: #333;}
+#section4 {width: 100vw; height: 100vh; background: #444;}
+#section5 {width: 100vw; height: 100vh; background: #555;}
+#section6 {width: 100vw; height: 100vh; background: #666;}
+
+/* header */
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 84px;
+    height: 100vh;
+    background: rgba(255,255,255,0.4);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+}
+#header .logo {
+    color: #fff;
+    font-family: 'Abel';
+    text-transform: uppercase;
+    font-size: 40px;
+    transform: rotate(-90deg);
+    margin-top: 106px;
+}
+
+/* section1 */
+#section1 {
+    background: url(https://cogcod.github.io/Portfolio__02/assets/images/main_swiss.jpg) no-repeat center;
+    background-size: cover;
+}
+.sec1 {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+.sec1 h1 {
+    text-align: center;
+    width: 100%;
+}
+.sec1 h1 em {
+    color: #fff;
+    display: block;
+    font-size: 4vw;
+    font-family: 'GmarketSans';
+    font-weight: 100;
+    margin-bottom: 1vw;
+}
+.sec1 h1 strong {
+    display: block;
+    font-family: "Gilroy Semi-Bold";
+    font-size: 9vw;
+}
+.sec1 h1 {
+    color: #fff;
+    line-height: 1;
+    text-transform: uppercase;
+    padding-left: 8vw;
+}
+
+/* section2 */
+#section2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 400px;
+}
+.sec2-1 {width: 70vw; height: 70vh; margin-right: 10vw;}
+.sec2-2 {width: 70vw; height: 70vh; margin-right: 10vw;}
+.sec2-3 {width: 70vw; height: 70vh;}
+
+.about_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.about_wrap .about_img {
+    width: 28%;
+    height: 80%;
+    background: url(https://cogcod.github.io/Portfolio__02/assets/images/aboutme_img1.png) no-repeat center center;
+    background-size: cover;
+    border-radius: 300px;
+}
+.about_wrap .about_txt {
+    width: 64%;
+    height: 100%;
+    white-space: normal;
+}
+.about_wrap .about_txt h3 {
+    font-family: 'GmarketSans';
+    font-size: 4.5vw;
+    font-weight: 100;
+    line-height: 1.2;
+    margin-bottom: 2vw;
+}
+.about_wrap .about_txt h4 {
+    font-family: 'IropkeBatang';
+    font-size: 22px;
+    margin-bottom: 1vw;
+}
+.about_wrap .about_txt p {
+    font-family: 'IropkeBatang';
+    width: 100%;
+    white-space: normal;
+    font-size: 18px;
+    line-height: 1.6;
+}

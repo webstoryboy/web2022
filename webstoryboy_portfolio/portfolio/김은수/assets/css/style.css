@@ -147,6 +147,7 @@ body {
     padding: 2%;
     border-right: 2px solid #E4DEC9;
     position: relative;
+    overflow: hidden;
 }
 .about .left .circle1 {
     position: absolute;

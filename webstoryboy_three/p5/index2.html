@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        body {
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <script>
+        const g = {
+            w: window.innerWidth,
+            h: window.innerHeight,
+            s: Math.min(window.innerWidth, window.innerHeighth),
+        };
+
+        function setup() {
+            g.w = window.innerWidth;
+            g.h = window.innerHeight;
+            g.s = min(g.w, g.h);
+            g.cx = g.w * 0.5;
+            g.cy = g.h * 0.5;
+            createCanvas(g.w, g.h);
+        }
+
+        let n = 0;
+
+        function draw() {
+            background(0);
+            n += 0.5;
+            drawStars();
+            drawPlanet(
+                g.s * (-noise(12) + 0.5),
+                g.s * (-noise(312) * 0.5 + 0.15),
+                -0.15 + sin(n) * 0.03,
+                0.5
+            );
+            drawMountain();
+        }
+
+        function drawPlanet(x, y, r, s) {
+            push();
+            strokeWeight(g.s / 200);
+            translate(g.cx + x, g.cy + y);
+            rotate(PI * r);
+            let num = 10;
+
+            stroke(0);
+            fill(0);
+            circle(0, 0, s * g.s * 0.27);
+
+            stroke(255);
+            noFill();
+            let i_n,
+                o_y,
+                e_w,
+                e_h,
+                a_s = 0,
+                a_e = TWO_PI;
+
+            strokeWeight((s * g.s) / 110);
+            for (let i = 0; i < num; i++) {
+                i_n = i / num;
+                o_y = s * g.s * 0.023 * i_n;
+                e_w = s * g.s * (0.42 + 0.23 * i_n);
+                e_h = s * g.s * (0.08 + 0.069 * i_n);
+                arc(0, o_y, e_w, e_h, a_s, a_e, OPEN);
+            }
+            strokeWeight(g.s / 200);
+
+            stroke(0);
+            fill(0);
+            arc(0, 0, s * g.s * 0.27, s * g.s * 0.27, PI * 0.95, PI * 0.05, OPEN);
+
+            stroke(255);
+            fill(0);
+            arc(0, 0, s * g.s * 0.26, s * g.s * 0.26, PI * 0.95, PI * 0.05, OPEN);
+            arc(0, 0, s * g.s * 0.26, s * g.s * 0.26, PI * 0.28, PI * 0.73, OPEN);
+            pop();
+        }
+
+        function drawStars() {
+            const num = 300;
+            push();
+            stroke(255);
+            strokeWeight(g.s / 200);
+            fill(0);
+            translate(g.cx, g.cy);
+            let no, r, a;
+            for (let i = 0; i < num; i++) {
+                no = noise((i / num) * 10.3) * 7.9;
+                r = no * TWO_PI;
+                a = noise(n * 0.005, 10 + i * 0.3) * g.s * 1.5;
+                point(sin(r) * a, cos(r) * a);
+            }
+            pop();
+        }
+
+        function drawMountain() {
+            const numPts = 5;
+            const points = [];
+            let no,
+                pt,
+                i_n,
+                max_h = g.s * 0.3;
+            for (let i = 0; i <= numPts; i++) {
+                i_n = i / numPts;
+                no = noise((i / numPts) * 111.83);
+                pt = {
+                    x: i_n * g.w,
+                    y: g.h - no * max_h,
+                };
+                points.push(pt);
+            }
+            points.unshift({
+                x: -g.s * 0.2,
+                y: g.h,
+            });
+            points.unshift({
+                x: -g.s * 0.2,
+                y: g.h,
+            });
+            points.push({
+                x: g.w + g.s * 0.3,
+                y: g.h,
+            });
+            points.push({
+                x: g.w + g.s * 0.3,
+                y: g.h,
+            });
+
+            push();
+            beginShape();
+            stroke(255);
+            strokeWeight(g.s / 200);
+            points.forEach((pt) => {
+                curveVertex(pt.x, pt.y);
+            });
+            fill(0);
+            endShape();
+            pop();
+        }
+
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+            g.w = window.innerWidth;
+            g.h = window.innerHeight;
+            g.s = min(g.w, g.h);
+            g.cx = g.w * 0.5;
+            g.cy = g.h * 0.5;
+        }
+    </script>
+</body>
+
+</html>

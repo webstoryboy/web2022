@@ -1,0 +1,63 @@
+body {
+    background-color: #FEFBF8;
+}
+
+/* header */
+#header {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+#header ul {
+    display: inline-block;
+    background: #0074BD;
+    color: #fff;
+    font-family: 'GmarketSans';
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+#header li {
+    display: inline;
+}
+#header li a {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+/* section1 */
+#section1 {
+    width: 100%;
+    text-align: center;
+}
+.sec1_tit {
+    font-size: 20vw;
+    line-height: 1;
+    font-family: 'SaintMonicaRegular';
+    padding-top: 5vw;
+}
+.sec1_img {
+    margin: 0 auto;
+    width: 100%;
+    height: 60vh;
+    background: url(https://images.unsplash.com/photo-1627483262769-04d0a1401487?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80) no-repeat center center;
+    background-size: cover;
+    border-radius: 300px;
+}
+.sec1_txt {
+    position: absolute;
+    left: 25%;
+    top: 80px;
+    width: 20vw;
+    text-align: left;
+    font-family: 'IropkeBatang';
+}
+
+
+/* section2 */
+#section2 {
+    height: 100vh;
+    width: 100%;
+    background: #ccc;
+}

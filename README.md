@@ -15,6 +15,10 @@
 4.  레이아웃 유형02 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc04.html">문서</a>
 5.  레이아웃 유형02 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc05.html">문서</a>
 
+https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/javascriptTest05-4.html
+
+
+
 ### Classic 배너 유형
 
 1.  배너 유형01 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_banner/banner_doc01.html">문서</a>
@@ -391,7 +395,8 @@ https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index71.html
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index72.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index73.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index74.html  
-https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index75.html
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index75.html  
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index76.html
 
 https://webstoryboy.github.io/web2022/webstoryboy_three/canvas/index1.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/canvas/index2.html  

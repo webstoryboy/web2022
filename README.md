@@ -320,6 +320,11 @@ https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/blink.html
 
 ## CSS REFERENCE
 
+## gsap REFERENCE
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.to.html
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.from.html
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.fromTo.html
+
 ## THREE.JS
 
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index.html  

@@ -72,14 +72,156 @@
                 <h4 class="pt50">문법(Syntax)</h4>
                 <p class="blue">gsap.from("타겟", {속성: 속성값, ....});</p>
                 <ul>
-                    <li>타겟(targets): 애니메이션을 적용할 개체를 선택합니다. (CSS 선택자, Javascript 선택자 가능)</li>
-                    <li>속성(values) : 애니메이션과 관련된 모든 속성과 속성 값을 설정합니다. (ease, duration, delay, onComplete)</li>
+                    <li>타겟(targets) : 애니메이션을 적용할 개체를 선택합니다. (CSS 선택자, Javascript 선택자 가능)</li>
+                    <li>속성(values) : 애니메이션과 관련된 속성을 설정합니다.</li>
                 </ul>
+
+                <h4>속성(Property)</h4>
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 30%" />
+                            <col style="width: 70%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>속성값</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>callbackScope</th>
+                                <td>콜백함수를 설정합니다. (onStart, onUpdate, onComplete, etc)</td>
+                            </tr>
+                            <tr>
+                                <th>data</th>
+                                <td>속성 데이터를 추가하여 움직임을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>delay</th>
+                                <td>애니메이션이 시작되기 전 시간을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>duration</th>
+                                <td>애니메이션 지속 시간을 설정합니다. 기본 값은 0.5초</td>
+                            </tr>
+                            <tr>
+                                <th>ease</th>
+                                <td>애니메이션의 변경 속도를 설정합니다. 기본 값은 "power1.out"</td>
+                            </tr>
+                            <tr>
+                                <th>id</th>
+                                <td>고유 식별자 id 값을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>immediateRender</th>
+                                <td>애니메이션을 즉시 렌더링 하도록 설정합니다. 기본 값은 false</td>
+                            </tr>
+                            <tr>
+                                <th>inherit</th>
+                                <td>애니메이션을 부모로 부터 상속 받지 않도록 설정합니다. inherit: false.</td>
+                            </tr>
+                            <tr>
+                                <th>lazy</th>
+                                <td>특정 애니메이션에 대해여 지연 렌더링을 비활성화하려면 lazy: false를 설정합니다. 기본 값은 Default: true</td>
+                            </tr>
+                            <tr>
+                                <th>onComplete</th>
+                                <td>애니메이션이 완료 되었을 때 함수를 호출합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>onCompleteParams</th>
+                                <td>onComplete 함수를 전달할 매개 변수를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>onRepeat</th>
+                                <td>애니메이션을 반복 할 때 함수를 호출합니다. 반복을 설정한 경우에 발생합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>onRepeatParams</th>
+                                <td>onRepeat 함수를 전달할 매개 변수를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>onReverseComplete</th>
+                                <td>애니메이션이 역방향에서 다시 시작점에 도달했을 때 함수를 호출합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>onReverseCompleteParams</th>
+                                <td>onReverseComplete 함수를 전달할 매개 변수를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>onStart</th>
+                                <td>애니메이션이 시작할 때 함수를 호출합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>onStartParams</th>
+                                <td>onStart 함수를 전달할 매개 변수를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>onUpdate</th>
+                                <td>애니메이션이 업데이트 될 때마다 함수를 호출합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>onUpdateParams</th>
+                                <td>onUpdate 함수를 전달할 매개 변수를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>overwrite</th>
+                                <td>애니메이션이 처음 렌더링 될 때 다른 애니메이션과의 관계를 통해 종료 여부를 설정합니다. 기본값은 false</td>
+                            </tr>
+                            <tr>
+                                <th>paused</th>
+                                <td>true이면 애니메이션이 일시 중지됩니다. 기본값은 false</td>
+                            </tr>
+                            <tr>
+                                <th>repeat</th>
+                                <td>애니메이션 반복 횟수를 설정합니다. repeat: 1은 총 2번을 반복하게 됩니다. 기본값은 0</td>
+                            </tr>
+                            <tr>
+                                <th>repeatDelay</th>
+                                <td>애니메이션 반복 사이의 대기 시간을 설정합니다. 기본값은 0</td>
+                            </tr>
+                            <tr>
+                                <th>repeatRefresh</th>
+                                <td>repeatRefresh: true를 설정하면 반복 애니메이션이 무효화됩니다. 이것은 랜덤값을 설정할 때 유용합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>reversed</th>
+                                <td>true이면, 애니메이션이 반대로 움직입니다.</td>
+                            </tr>
+                            <tr>
+                                <th>runBackwards</th>
+                                <td>true이면, 애니메이션이 시작 값과 끝나는 값을 반전시킵니다.</td>
+                            </tr>
+                            <tr>
+                                <th>stagger</th>
+                                <td>여러개의 요소를 각각 시간차를 두고 애니메이션을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>startAt</th>
+                                <td>모든 속성의 시작 값을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>yoyo</th>
+                                <td>true이면, 애니메이션을 반복적으로 실행하여, 앞뒤로 이동하는 것처럼 보입니다.</td>
+                            </tr>
+                            <tr>
+                                <th>yoyoEase</th>
+                                <td>애니메이션이 반복적으로 실행될 때 움직임을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>keyframes</th>
+                                <td>다양한 애니메이션을 주고 싶을 때 설정합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <h4>정의(Definition)</h4>
                 <ul>
                     <li>gsap.from() 메서드는 애니메이션의 시작되는 점을 지정하는 애니메이션입니다.</li>
-                    <li>gsap.from() 메서드는 CSS의 애니메이션 관련된 모든 속성을 사용할 수 있습니다.</li>
+                    <li>gsap.from() 메서드는 CSS의 애니메이션과 관련된 모든 속성을 사용할 수 있습니다.</li>
                     <li>gsap.from() 메서드를 제어하려면, 여러가지 컨트롤 메서드를 사용할 수 있습니다.</li>
                 </ul>
 
@@ -124,9 +266,9 @@
                                 <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
                                 <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
                                 <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
-                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러6 -->
-                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러7 -->
-                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러8 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
                                 <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러9 -->
                                 <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러10 -->
                                 <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러11 -->

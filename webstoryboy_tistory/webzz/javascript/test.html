@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "javascript reference".indexOf('javascript') //0
+        "javascript reference".indexOf('javascripts') //-1
+        "javascript reference".indexOf('j') //0
+        "javascript reference".indexOf('a') //1
+        "javascript reference".indexOf('jv') //-1
+        "javascript reference".indexOf('reference') //11
+        "javascript reference".indexOf('r') //6
+        "javascript reference".indexOf('javascript', 0) //0
+        "javascript reference".indexOf('javascript', 1) //-1
+        "javascript reference".indexOf('reference', 0) //11
+        "javascript reference".indexOf('reference', 11) //11
+        "javascript reference".indexOf('reference', 12) //-1
+        "javascript reference".indexOf('r', 7) //11
+        "javascript reference".indexOf('r', 12) //15
+
+        "javascript reference".search('javascript') //0
+        "javascript reference".search('reference') //11
+        "javascript reference".search('r') //6
+        "javascript reference".search('a') //1
+        "javascript reference".search('jv') //-1
+        "javascript reference".search(/reference/) //11
+        "javascript reference".search(/Reference/) //-1
+        "javascript reference".search(/Reference/i) //11
+        "javascript reference".search(/[a-z]/g) //0
+        "javascript reference".search(/[.]/g) //0
+
+        "javascript reference".match('javascript') //javascript
+        "javascript reference".match('reference') //reference
+        "javascript reference".match('r') //r
+        "javascript reference".match(/reference/) //reference
+        "javascript reference".match(/Reference/) //null
+        "javascript reference".match(/Reference/i) //reference
+        "javascript reference".match(/r/g) //r r r
+        "javascript reference".match(/w/g) //null
+
+        "javascript reference".charAt() //j
+        "javascript reference".charAt('0') //j
+        "javascript reference".charAt('1') //a
+        "javascript reference".charAt('2') //v
+
+        "javascript reference".charCodeAt() //106
+        "javascript reference".charCodeAt('0') //106
+        "javascript reference".charCodeAt('1') //97
+        "javascript reference".charCodeAt('2') //118
+
+
+        console.log("javascript reference".charCodeAt('2'))
+    </script>
+</body>
+</html>

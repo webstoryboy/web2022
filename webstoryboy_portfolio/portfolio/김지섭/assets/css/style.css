@@ -318,3 +318,86 @@ html.has-scroll-dragging {
 .sec1_menu .box4:hover~.box3 {
     width: 20%;
 }
+
+
+/* section2 */
+#section2 {
+    background: #d3b9b2;
+    position: relative;
+}
+
+/* menu_box */
+.menu_box {
+    position: absolute;
+    left: 20vw;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    font-family: 'Sulphur Point';
+    text-transform: uppercase;
+}
+.menu_box span {
+    padding-top: 20px;
+    opacity: 1;
+}
+.menu_box .about {
+    background: #F0A398;
+    width: 10vw;
+    height: 50px;
+}
+.menu_box .site {
+    background: #BA85CC;
+    width: 10vw;
+    height: 50px;
+}
+.menu_box .script {
+    background: #85B2CC;
+    width: 10vw;
+    height: 50px;
+}
+.menu_box .contact {
+    background: #FFD395;
+    width: 10vw;
+    height: 50px;
+}
+.menu_box .active {
+    width: 20vw;
+    height: 40vh;
+}
+.menu_box span {
+    font-family: 'IropkeBatang';
+    opacity: 0;
+}
+.menu_box em {
+    font-family: 'IropkeBatang';
+    opacity: 0;
+}
+.menu_box .active span {
+    font-size: 4vw;
+    display: block;
+    opacity: 1;
+}
+.menu_box .active em {
+    padding: 1vw 2vw;
+    font-size: 16px;
+    opacity: 1;
+    white-space: normal;
+    display: block;
+    text-align: left;
+}
+.menu_box .about.active span { 
+    font-size: 4.4vw;
+    font-family: 'Raleway Dots';
+}
+.menu_box .site.active span {
+    font-size: 3.6vw; 
+    line-height: 1.7;
+    font-family: 'Monoton';
+}
+.menu_box .script.active span { 
+    font-family: 'Rubik Moonrocks';
+}
+.menu_box .contact.active span { 
+    font-family: 'Bungee Inline';
+}

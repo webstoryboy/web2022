@@ -23,6 +23,20 @@
         "javascript reference".indexOf('r', 7) //11
         "javascript reference".indexOf('r', 12) //15
 
+        "javascript reference".lastIndexOf('javascript') //0
+        "javascript reference".lastIndexOf('javascripts') //-1
+        "javascript reference".lastIndexOf('j') //-1
+        "javascript reference".lastIndexOf('a') //3
+        "javascript reference".lastIndexOf('jv') //-1
+        "javascript reference".lastIndexOf('reference') //11
+        "javascript reference".lastIndexOf('r') //15
+        "javascript reference".lastIndexOf('javascript', 0) //0
+        "javascript reference".lastIndexOf('javascript', 1) //0
+        "javascript reference".lastIndexOf('reference', 0) //-1
+        "javascript reference".lastIndexOf('reference', 1) //-1
+        "javascript reference".lastIndexOf('reference', 11) //11
+        "javascript reference".lastIndexOf('reference', 12) //11
+
         "javascript reference".search('javascript') //0
         "javascript reference".search('reference') //11
         "javascript reference".search('r') //6
@@ -60,7 +74,15 @@
         "javascript reference".includes('reference', 11) //true
         "javascript reference".includes('reference', 12) //false
 
-        console.log("javascript reference".includes('reference', 11))
+        const text1 = "javascript";
+        const text2 = "reference";
+
+        text1.concat(text2) //javascriptreference
+        text1.concat(' ', text2) //javascript reference
+        text1.concat(', ', text2) //javascript, reference
+        text1.concat('+', text2) //javascript+reference
+
+        console.log(text1.concat(text2)) 
     </script>
 </body>
 </html>

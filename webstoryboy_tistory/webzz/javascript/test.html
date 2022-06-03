@@ -53,8 +53,14 @@
         "javascript reference".charCodeAt('1') //97
         "javascript reference".charCodeAt('2') //118
 
+        "javascript reference".includes('javascript') //true
+        "javascript reference".includes('j') //true
+        "javascript reference".includes('ra') //false
+        "javascript reference".includes('reference') //true
+        "javascript reference".includes('reference', 11) //true
+        "javascript reference".includes('reference', 12) //false
 
-        console.log("javascript reference".charCodeAt('2'))
+        console.log("javascript reference".includes('reference', 11))
     </script>
 </body>
 </html>

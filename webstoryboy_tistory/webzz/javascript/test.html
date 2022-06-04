@@ -81,8 +81,24 @@
         text1.concat(' ', text2) //javascript reference
         text1.concat(', ', text2) //javascript, reference
         text1.concat('+', text2) //javascript+reference
+        
 
-        console.log(text1.concat(text2)) 
+        "javascript reference".endsWith('reference') //true
+        "javascript reference".endsWith('e') //true
+        "javascript reference".endsWith('refer') //false
+        "javascript reference".endsWith('javascript') //false
+        "javascript reference".endsWith() //false
+        "javascript reference".endsWith('') //true
+
+        "javascript reference".startsWith('javascript') //true
+        "javascript reference".startsWith('j') //true
+        "javascript reference".startsWith('java') //true
+        "javascript reference".startsWith('reference') //false
+        "javascript reference".startsWith() //false
+        "javascript reference".startsWith('') //true
+
+
+        console.log("javascript reference".startsWith('')) 
     </script>
 </body>
 </html>

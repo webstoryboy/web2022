@@ -298,7 +298,6 @@ https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/jav
     패럴랙스 이펙트 - 가로 효과
 
 ## HTML REFERENCE
-
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/a.html  
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/abbr.html  
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/acronym.html  
@@ -323,10 +322,25 @@ https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/blink.html
 ## gsap REFERENCE
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.to.html
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.from.html
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.fromTo.html
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.fromTo.html   
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.getById.html    
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.getProperty.html    
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.killTweensOf.html    
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.set.html    
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.timeline.html    
+
+## Javascript REFERENCE
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/indexOf.html      
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/lastIndexOf.html      
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/search.html         
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/march.html            
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/charAt.html               
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/charCodeAt.html                  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/concat.html   
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/startsWith.html      
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/endsWith.html      
 
 ## THREE.JS
-
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index2.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index3.html  

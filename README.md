@@ -50,7 +50,6 @@
 9.  브라우저 객체
 10. 요소 객체
 11. 이벤트 객체
-    <br>
 12. 메뉴 스크립트
 13. 검색 스크립트
 14. 퀴즈 스크립트
@@ -71,226 +70,48 @@
 
 ### WEBS : 스크립트 : 퀴즈 이펙트
 
+1. 퀴즈 이펙트01 : 주관식 : 버튼을 클릭하면 정답을 보여주는 스타일
+2. 퀴즈 이펙트02 : 주관식 : 정답을 적고 확인하는 스타일
+3. 퀴즈 이펙트03 : 주관식 : 정답을 적고 정답을 확인, 여러 문제
+4. 퀴즈 이펙트04 : 객관식 : 정답을 선택하고 정답 확인하기, 한 문제
+5. 퀴즈 이펙트05 : 객관식 : 정답을 선택하고 정답 확인하기, 여러 문제를 풀고 정답과 오답을 알려주는 스타일
+6. 퀴즈 이펙트06 : 객관식 : 정답을 선택하고 정답 확인하기, 다수의 문제를 이미지 슬라이드 형식으로 보여주는 스타일
+
 ### WEBS : 스크립트 : 마우스 이펙트
+
+1. 마우스 이펙트01 : 마우스 따라다니기
+2. 마우스 이펙트02 : 마우스 따라다니기(GSAP)
+3. 마우스 이펙트03 : 조명 효과
+4. 마우스 이펙트04 : 이미지 효과
+5. 마우스 이펙트05 : 기울기 효과
+6. 마우스 이펙트06 : 텍스트 효과
+7. 마우스 이펙트07 : 이미지오버 효과
 
 ### WEBS : 스크립트 : 슬라이드 이펙트
 
+1. 슬라이트 이펙트01 : 트랜지션 효과
+2. 슬라이트 이펙트02 : 좌로 움직이기
+3. 슬라이트 이펙트03 : 좌로 움직이기(무한)
+4. 슬라이트 이펙트04 : 이미지 슬라이드(버튼)
+5. 슬라이트 이펙트05 : 이미지 슬라이드(버튼, 닷버튼)
+6. 슬라이트 이펙트06 : 이미지 슬라이드(버튼, 닷버튼, 무한)
+7. 슬라이트 이펙트07 : 이미지 슬라이드(버튼, 닷버튼, 무한, 플레이 버튼, 정지 버튼, 자동 플레이)
+
 ### WEBS : 스크립트 : 게임 이펙트
-
-> 01 검색 이펙트 유형01 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc01.html">결과보기</a>
-    indexOf()를 이용하여 CSS 속성 검색하기
-    querySelector, querySelectorAll, addEventListener, value, dataset, indexOf, classList, if문
-
-> 02 검색 이펙트 유형02 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc02.html">결과보기</a>
-    includes()를 이용하여 CSS 속성 검색하기
-    querySelector, querySelectorAll, addEventListener, value, dataset, includes, classList, innerHTML, if문, forEach
-
-> 03 검색 이펙트 유형03 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc03.html">결과보기</a>
-    charAt()를 이용하여 알파벳 별로 검색하기
-    querySelector, querySelectorAll, addEventListener, value, dataset, forEach, innerText, dataset, charAt, classList
-
-> 04 검색 이펙트 유형04 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc04.html">결과보기</a>
-    find()를 이용하여 속성을 검색하면 설명 보여주기
-    querySelector, querySelectorAll, addEventListener, value, dataset, forEach, 배열, 객체, 함수, if문, map(), innerText, textContent, innerHTML
-
-> 05 검색 이펙트 유형05 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc05.html">결과보기</a>
-    filter()를 이용하여 조회수 검색하기
-    querySelector, querySelectorAll, addEventListener, value, dataset, 배열, 객체, 함수, for of, filter, innerHTML
-
-> 06 검색 이펙트 유형06 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/02_searchEffect/search_doc06.html">결과보기</a>
-    sort(), reverse()를 이용하여 정렬하기
-    querySelector, querySelectorAll, addEventListener, value, dataset, 배열, 객체, 함수, forEach, reverse, sort, localeCompare, localeCompare
-
-### Classic 퀴즈 이펙트
-
-> 01 퀴즈 이펙트 유형01 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quiz_result01.html">결과보기</a>
-    주관식 : 버튼을 클릭하면 정답을 보여주는 스타일
-    querySelector, textContent, classList, style
-
-> 02 퀴즈 이펙트 유형02 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quiz_result02.html">결과보기</a>
-    주관식 : 정답을 적고 확인하는 스타일
-    querySelector, textContent, addEventListener, classList, style, if문
-
-> 03 퀴즈 이펙트 유형03 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quiz_result03.html">결과보기</a>
-    주관식 : 정답을 적고 정답을 확인, 여러 문제
-    querySelector, querySelectorAll, textContent, innerHTML, addEventListener, classList, style, if문, forEach문, 배열
-
-> 04 퀴즈 이펙트 유형04 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quiz_result04.html">결과보기</a>
-    객관식 : 정답을 선택하고 정답 확인하기, 한 문제
-    querySelector, querySelectorAll, 배열, 함수, for문, if문, checked, value, classList, style
-
-> 05 퀴즈 이펙트 유형05 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_quizEffect/quiz_result05.html">결과보기</a>
-    객관식 : 정답을 선택하고 정답 확인하기, 여러 문제를 풀고 정답과 오답을 알려주는 스타일
-    querySelector, querySelectorAll, 배열, 객체, 함수, forEach, push, innerHTML, join, style, classList, addEventListener, createElement, checked, value, appendChild, if문
-
-> 06 퀴즈 이펙트 유형06(X) :
-
-    객관식 : 정답을 선택하고 정답 확인하기, 다수의 문제를 이미지 슬라이드 형식으로 보여주는 스타일
-
-### Classic 마우스 이펙트
-
-> 01 마우스 이펙트 유형01 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result01.html">결과보기</a>
-    마우스 이펙트 - 마우스 따라다니기
-    clientX, clientY, offsetX, offsetY, pageX, pageY, screenX, screenY, addEventListener, querySelector, style, innerText, classList, for(), forEach(), getAttribute
-
-> 02 마우스 이펙트 유형02 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result02.html">결과보기</a>
-    마우스 이펙트 - 마우스 따라다니기(GSAP)
-    querySelector, querySelectorAll, addEventListener, pageX, pageY, classList, forEach, innerText
-    gsap : to
-
-> 03 마우스 이펙트 유형03 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result03.html">결과보기</a>
-    마우스 이펙트 - 조명 효과 :
-    querySelector, clientWidth, offsetWidth, pageX, pageY, getBoundingClientRect, innerText, addEventListener
-
-> 04 마우스 이펙트 유형04 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result04.html">결과보기</a>
-    마우스 이펙트 - 이미지 효과 :
-    querySelector, getBoundingClientRect, addEventListener, pageX, pageY, innerWidth, outerWidth, screen.width, screen.height, style, textContent
-    gsap : to
-
-> 05 마우스 이펙트 유형05 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result05.html">결과보기</a>
-    마우스 이펙트 - 기울기 효과 :
-    querySelector, getBoundingClientRect, addEventListener, pageX, pageY, innerWidth, outerWidth, Math.max, Math.min, style, textContent
-    gsap : to
-
-> 06 마우스 이펙트 유형06 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result06.html">결과보기</a>
-    마우스 이펙트 - 텍스트 효과 :
-    pageX, pageY, innerWidth, addEventListener
-    gsap : to
-
-> 07 마우스 이펙트 유형07 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/06_script/05_mouseEffect/mouse_result07.html">결과보기</a>
-    마우스 이펙트 - 이미지 오버 효과 :
-    querySelector, querySelectorAll, forEach(), getBoundingClientRect(), addEventListener(), Math.abs
-    gsap : to, set
-
-### Classic 슬라이드 이펙트
-
-> 01 슬라이드 이펙트 유형01 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/04_sliderEffect/slider_result01.html">결과보기</a>
-    패럴랙스 이펙트 - 트랜지션 효과
-    querySelector(), querySelectorAll(), setInterval(), style, forEach()
-
-> 02 슬라이드 이펙트 유형02 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/04_sliderEffect/slider_result02.html">결과보기</a>
-    패럴랙스 이펙트 - 좌로 움직이기
-    querySelector(), querySelectorAll(), setInterval(), style
-    gsap : to
-
-> 03 슬라이드 이펙트 유형03 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/04_sliderEffect/slider_result03.html">결과보기</a>
-    패럴랙스 이펙트 - 좌로 움직이기(무한)
-    querySelector(), querySelectorAll(), setInterval(), style, length, offsetWidth, firstElementChild, cloneNode, appendChild, if()
-
-> 04 슬라이드 이펙트 유형04 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/04_sliderEffect/slider_result04.html">결과보기</a>
-    패럴랙스 이펙트 - 이미지 슬라이드(버튼)
-    querySelector(), querySelectorAll(), setInterval(), style, length, offsetWidth, style, addEventListener(),
-
-> 05 슬라이드 이펙트 유형05 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/04_sliderEffect/slider_result05.html">결과보기</a>
-    패럴랙스 이펙트 - 이미지 슬라이드(버튼, 닷버튼)
-    querySelector(), querySelectorAll(), setInterval(), style, length, offsetWidth, style, addEventListener(), forEach(), innerHTML, classList
-
-> 06 슬라이드 이펙트 유형06 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/04_sliderEffect/slider_result06.html">결과보기</a>
-    패럴랙스 이펙트 - 이미지 슬라이드(버튼, 닷버튼, 무한)
-    querySelector(), querySelectorAll(), setInterval(), style, length, offsetWidth, style, addEventListener(),
-    cloneNode, appendChild, insertBefore, for(), firstElementChild, classList,
-
-> 07 슬라이드 이펙트 유형07 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/04_sliderEffect/slider_result07.html">결과보기</a>
-    패럴랙스 이펙트 - 이미지 슬라이드(버튼, 닷버튼, 무한, 플레이 버튼, 정지 버튼, 자동 플레이)
-
-### Classic 게임 이펙트
-
-<br>
 
 ## WEBS : 패럴랙스 사이트 만들기
 
-### Classic 패럴랙스 이펙트
+### 패럴랙스 기본 이펙트
 
-> 01 패럴랙스 이펙트 유형01 :
+1. 패럴랙스 이펙트01 : 메뉴 이동
+2. 패럴랙스 이펙트02 : 숨김 메뉴
+3. 패럴랙스 이펙트03 : 나타나기
+4. 패럴랙스 이펙트04 : 이질감 효과
+5. 패럴랙스 이펙트05 : 텍스트 효과
+6. 패럴랙스 이펙트06 : 리빌 효과
+7. 패럴랙스 이펙트07 : 가로 효과
 
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result01.html">결과보기</a>
-    패럴랙스 이펙트 - 메뉴 이동
-    querySelector(), querySelectorAll(), forEach() , addEventListener(), scroll(), scrollTo(), scrollBy(), getAttribute(), scrollIntoView(), pageYOffset, scrollTop, scrollY, classList, innerText, Math.round()
-
-> 02 패럴랙스 이펙트 유형02 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result02.html">결과보기</a>
-    패럴랙스 이펙트 - 숨김 메뉴
-    querySelector(), querySelectorAll(), forEach(), preventDefault(), getAttribute(), scrollIntoView(), pageYOffset, scrollTop, scrollY, classList, offsetTop, innerText, Math.round()
-
-> 03 패럴랙스 이펙트 유형03 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result03.html">결과보기</a>
-    패럴랙스 이펙트 - 나타나기
-    querySelector(), querySelectorAll(), pageYOffset, scrollTop, scrollY, classList, offsetTop, innerHeight, requestAnimationFrame()
-
-> 04 패럴랙스 이펙트 유형04 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result04.html">결과보기</a>
-    패럴랙스 이펙트 - 이질감 효과
-    querySelector(), querySelectorAll(), pageYOffset, scrollTop, scrollY, classList, offsetTop, innerHeight, requestAnimationFrame(), forEach(), style
-
-> 05 패럴랙스 이펙트 유형05 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result05.html">결과보기</a>
-    패럴랙스 이펙트 - 텍스트 효과
-    querySelector(), querySelectorAll(), pageYOffset, scrollTop, scrollY, classList, offsetTop, innerHeight, requestAnimationFrame(), forEach(), style, split(), join(), innerHTML, setAttribute(), setTimeout
-
-> 06 패럴랙스 이펙트 유형06 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result06.html">결과보기</a>
-    패럴랙스 이펙트 - 리빌 효과
-    querySelector(), querySelectorAll(), pageYOffset, scrollTop, scrollY, classList, offsetTop, innerHeight, requestAnimationFrame(), forEach(), style, innerText, dataset, setTimeout()
-
-> 07 패럴랙스 이펙트 유형07 :
-
-    <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/07_parallax/parallax_result07.html">결과보기</a>
-    패럴랙스 이펙트 - 가로 효과
+### 패럴랙스 GSAP 이펙트
 
 ## HTML REFERENCE
 

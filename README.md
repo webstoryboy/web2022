@@ -2,31 +2,34 @@
 
 ## WEBS : 사이트 만들기
 
-01_layout :
-02_layout :
-03_layout :
-04_layout :
-05_layout :
-06_menuType :
-07_bannerType :
-08_imageType :
-09_imageType :
-10_imgTextType :
-11_textType :  
-12_footerType :
-13_sliderType :
-14_complete :
-
-https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc.html  
-https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_layout/layout_doc.html  
-https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/03_layout/layout_doc.html  
-https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/04_layout/layout_doc.html  
-https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/05_layout/layout_doc.html  
-https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/06_menuType/menu_doc.html  
-https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/07_bannerType/banner_doc.html  
-https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/08_imageType/image_doc.html  
-https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/09_cardType/card_doc.html  
-https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/10_imgTextType/imgText_doc.html
+01_layout : 레이아웃 유형1  
+02_layout : 레이아웃 유형2  
+03_layout : 레이아웃 유형3  
+04_layout : 레이아웃 유형4  
+05_layout : 레이아웃 유형5  
+06_menuType : 메뉴 유형1  
+07_bannerType : 배너 유형1  
+08_imageType : 이미지 유형1  
+09_cardType : 카드 유형1  
+10_imgTextType : 이미지텍스트 유형1  
+11_textType : 텍스트 유형1  
+12_footerType : 푸터 유형1  
+13_sliderType : 슬라이드 유형1  
+14_complete : 완성 사이트1  
+<br> 01. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc.html  
+02. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_layout/layout_doc.html  
+03. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/03_layout/layout_doc.html  
+04. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/04_layout/layout_doc.html  
+05. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/05_layout/layout_doc.html  
+06. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/06_menuType/menu_doc.html  
+07. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/07_bannerType/banner_doc.html  
+08. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/08_imageType/image_doc.html  
+09. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/09_cardType/card_doc.html  
+10. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/10_imgTextType/imgText_doc.html  
+11.  
+12.  
+13.  
+14.
 
 ### Classic 레퍼런스
 

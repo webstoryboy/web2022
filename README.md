@@ -2,11 +2,11 @@
 
 ## WEBS : 사이트 만들기
 
-01_layout : 레이아웃 유형1  
-02_layout : 레이아웃 유형2  
-03_layout : 레이아웃 유형3  
-04_layout : 레이아웃 유형4  
-05_layout : 레이아웃 유형5  
+01_layout : 레이아웃 유형1 : float, flex, grid, 반응형  
+02_layout : 레이아웃 유형2 : float, flex, grid, 반응형  
+03_layout : 레이아웃 유형3 : float, flex, grid, 반응형  
+04_layout : 레이아웃 유형4 : float, flex, grid, 반응형  
+05_layout : 레이아웃 유형5 : float, flex, grid, 반응형  
 06_menuType : 메뉴 유형1  
 07_bannerType : 배너 유형1  
 08_imageType : 이미지 유형1  
@@ -16,7 +16,8 @@
 12_footerType : 푸터 유형1  
 13_sliderType : 슬라이드 유형1  
 14_complete : 완성 사이트1  
-<br> 01. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc.html  
+<br>  
+01. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc.html  
 02. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_layout/layout_doc.html  
 03. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/03_layout/layout_doc.html  
 04. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/04_layout/layout_doc.html  
@@ -31,21 +32,24 @@
 13.  
 14.
 
-### Classic 레퍼런스
+### 레퍼런스
 
 1.  인라인구조 블록구조 차이점
 2.  시멘틱 태그
 
-## WEBS : 스크립트 조작하기
+## WEBS : 스크립트
 
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/pdf01.html">문서1</a>,
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/pdf02.html">문서2</a>,
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/pdf03.html">문서3</a>,
-<a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/pdf04.html">문서4</a>
-
-<br>
-
-## WEBS : 스크립트 실행하기
+1.  데이터 저장하기
+2.  데이터 출력하기
+3.  데이터 실행하기
+4.  데이터 제어하기
+5.  문자열 객체
+6.  배열 객체
+7.  수학 객체
+8.  숫자 객체
+9.  브라우저 객체
+10. 요소 객체
+11. 이벤트 객체
 
 ### Classic 메뉴 이펙트
 

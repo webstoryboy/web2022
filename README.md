@@ -2,20 +2,31 @@
 
 ## WEBS : 사이트 만들기
 
-01_layout : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc.html  
-02_layout : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_layout/layout_doc.html  
-03_layout : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/03_layout/layout_doc.html  
-04_layout : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/04_layout/layout_doc.html  
-05_layout : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/05_layout/layout_doc.html  
-06_menuType : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/06_menuType/menu_doc.html  
-07_bannerType : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/07_bannerType/banner_doc.html  
-08_imageType : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/08_imageType/image_doc.html  
-09_imageType : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/09_cardType/card_doc.html  
-10_imgTextType : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/10_imgTextType/imgText_doc.html
+01_layout :
+02_layout :
+03_layout :
+04_layout :
+05_layout :
+06_menuType :
+07_bannerType :
+08_imageType :
+09_imageType :
+10_imgTextType :
 11_textType :  
 12_footerType :
 13_sliderType :
 14_complete :
+
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc.html  
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_layout/layout_doc.html  
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/03_layout/layout_doc.html  
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/04_layout/layout_doc.html  
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/05_layout/layout_doc.html  
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/06_menuType/menu_doc.html  
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/07_bannerType/banner_doc.html  
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/08_imageType/image_doc.html  
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/09_cardType/card_doc.html  
+https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/10_imgTextType/imgText_doc.html
 
 ### Classic 레퍼런스
 

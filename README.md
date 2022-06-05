@@ -2,72 +2,27 @@
 
 ## WEBS : 사이트 만들기
 
+01_layout : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc.html  
+02_layout : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_layout/layout_doc.html  
+03_layout : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/03_layout/layout_doc.html  
+04_layout : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/04_layout/layout_doc.html  
+05_layout : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/05_layout/layout_doc.html  
+06_menuType : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/06_menuType/menu_doc.html  
+07_bannerType : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/07_bannerType/banner_doc.html  
+08_imageType : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/08_imageType/image_doc.html  
+09_imageType : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/09_cardType/card_doc.html  
+10_imgTextType : https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/10_imgTextType/imgText_doc.html
+11_textType :  
+12_footerType :
+13_sliderType :
+14_complete :
+
 ### Classic 레퍼런스
 
 1.  인라인구조 블록구조 차이점
 2.  시멘틱 태그
 
-### Classic 레이아웃 유형
-
-1.  레이아웃 유형01 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc01.html">문서</a>
-2.  레이아웃 유형02 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc02.html">문서</a>
-3.  레이아웃 유형02 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc03.html">문서</a>
-4.  레이아웃 유형02 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc04.html">문서</a>
-5.  레이아웃 유형02 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc05.html">문서</a>
-
-https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/javascriptTest05-4.html
-
-
-
-### Classic 배너 유형
-
-1.  배너 유형01 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_banner/banner_doc01.html">문서</a>
-
-### Classic 이미지 유형
-
-1.  이미지 유형01 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/03_image/image_doc01.html">문서</a>
-
-### Classic 카드 유형
-
-1.  카드 유형01 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/04_card/card_doc01.html">문서</a>
-
-### Classic 이미지/텍스트 유형
-
-1.  이미지/텍스트 유형01 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/05_imgText/imgText_doc01.html">문서</a>
-
-<br>
-
 ## WEBS : 스크립트 조작하기
-
-### Classic 데이터 저장하기
-
-1.  데이터 저장하기 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/01_DataStorage/index.html">문서</a>
-
-### Classic 데이터 출력하기
-
-1.  데이터 출력하기 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/02_DataImport/index.html">문서</a>
-
-### Classic 데이터 실행하기
-
-1.  데이터 실행하기 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/03_DataExcute/index.html">문서</a>
-
-### Classic 데이터 제어하기
-
-1.  데이터 제어하기 : <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/04_DataControl/index.html">문서</a>
-
-### Classic 문자열 객체
-
-### Classic 배열 객체
-
-### Classic 수학 객체
-
-### Classic 브라우저 객체
-
-### Classic 요소 객체
-
-### Classic 이벤트 객체
-
-### Classic 테스트
 
 <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/pdf01.html">문서1</a>,
 <a href="https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/pdf02.html">문서2</a>,
@@ -298,6 +253,7 @@ https://webstoryboy.github.io/web2022/webstoryboy_book/05_javascript/12_test/jav
     패럴랙스 이펙트 - 가로 효과
 
 ## HTML REFERENCE
+
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/a.html  
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/abbr.html  
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/acronym.html  
@@ -320,27 +276,30 @@ https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/blink.html
 ## CSS REFERENCE
 
 ## gsap REFERENCE
+
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.to.html
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.from.html
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.fromTo.html   
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.getById.html    
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.getProperty.html    
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.killTweensOf.html    
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.set.html    
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.timeline.html    
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.fromTo.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.getById.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.getProperty.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.killTweensOf.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.set.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.timeline.html
 
 ## Javascript REFERENCE
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/indexOf.html      
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/lastIndexOf.html      
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/search.html         
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/march.html            
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/charAt.html               
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/charCodeAt.html                  
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/concat.html   
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/startsWith.html      
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/endsWith.html      
+
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/indexOf.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/lastIndexOf.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/search.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/march.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/charAt.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/charCodeAt.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/concat.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/startsWith.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/endsWith.html
 
 ## THREE.JS
+
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index2.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index3.html  

@@ -531,6 +531,12 @@ body.intro #footer {
     border-bottom: 1px solid #e6e6e6;
     padding: 20px 20px 10px 20px;
 }
+#explanation .sample .sampleDesc {
+    border-bottom: 1px solid #e6e6e6;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 300;
+} 
 #explanation .sample .sampleBtn a {
     border: 1px solid #e6e6e6;
     border-radius: 100px;
@@ -539,6 +545,11 @@ body.intro #footer {
     display: inline-block;
     margin-bottom: 10px;
     transition: all 0.2s;
+    color: #666;
+}
+#explanation .sample .sampleBtn a:hover {
+    border-color: #FF4B4B;
+    color: #FF4B4B;
 }
 #explanation .sample .sampleOption {
     border-bottom: 1px solid #e6e6e6;

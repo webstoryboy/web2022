@@ -116,47 +116,46 @@
 
 ### 패럴랙스 GSAP 이펙트
 
-
 ## HTML REFERENCE
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/a.html   
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/abbr.html   
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/acronym.html   
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/address.html   
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/applet.html   
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/area.html   
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/article.html    
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/aside.html    
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/audio.html   
 
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/b.html   
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/base.html   
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/basefont.html   
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/bdi.html   
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/bdo.html   
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/big.html   
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/blink.html   
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/blockquote.html    
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/body.html     
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/br.html     
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/button.html     
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/a.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/abbr.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/acronym.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/address.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/applet.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/area.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/article.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/aside.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/audio.html
 
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/canvas.html     
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/caption.html     
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/center.html     
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/cite.html      
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/b.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/base.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/basefont.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/bdi.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/bdo.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/big.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/blink.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/blockquote.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/body.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/br.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/button.html
 
-
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/canvas.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/caption.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/center.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/cite.html
 
 ## CSS REFERENCE
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/align-content.html
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/align-items.html
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/align-self.html
+
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/align-content.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/align-items.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/align-self.html  
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/all.html
 
-
 ## GSAP REFERENCE
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.to.html
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.from.html
+
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.to.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.from.html  
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.fromTo.html  
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.getById.html  
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.getProperty.html  
@@ -164,8 +163,8 @@ https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.killTw
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.set.html  
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/gsap/gsap.timeline.html
 
-
 ## Javascript REFERENCE
+
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/indexOf.html  
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/lastIndexOf.html  
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/search.html  
@@ -176,8 +175,8 @@ https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/conca
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/startsWith.html  
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/javascript/endsWith.html
 
-
 ## THREE.JS
+
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index2.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index3.html  
@@ -201,19 +200,19 @@ https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index20.html
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index21.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index22.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index23.html  
-https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index24.html
-https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index26.html
-https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index27.html
-https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index28.html
-https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index29.html
-https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index30.html
-https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index31.html
-https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index32.html
-https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index33.html
-https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index34.html
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index24.html  
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index26.html  
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index27.html  
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index28.html  
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index29.html  
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index30.html  
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index31.html  
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index32.html  
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index33.html  
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index34.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index35.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index36.html  
-https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index37.html
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index37.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index38.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index39.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index40.html  

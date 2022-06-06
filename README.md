@@ -251,7 +251,9 @@ https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index72.html
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index73.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index74.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index75.html  
-https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index76.html
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index76.html  
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index77.html  
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index78.html
 
 https://webstoryboy.github.io/web2022/webstoryboy_three/canvas/index1.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/canvas/index2.html  

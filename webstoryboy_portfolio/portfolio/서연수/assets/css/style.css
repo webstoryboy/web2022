@@ -92,8 +92,7 @@ body {
 #section2 {
 }
 #section3 {
-  background: rgba(0, 0, 0, 0.3);
-  height: 100vh;
+  
 }
 #section4 {
   background: rgba(0, 0, 0, 0.3);
@@ -199,11 +198,66 @@ body {
 
 /* section3 */
 #section3 {
-  background: #fff;
+  
 }
-.sec3-1 {
-  width: 100vw;
-
+.sec3_1 {
+  padding: 200px 0;
 }
 .sec3-2 {}
 .sec3-3 {}
+
+.site {
+  display: flex;
+}
+.site .left {
+  width: 50%;
+  height: 40vh;
+}
+.site .left h2 {
+  font-family: "SantiagoRegular";
+  font-size: 5vw;
+  line-height: 1.1;
+  font-weight: bold;
+  
+}
+.site .left h3 {
+  font-family: "IropkeBatang";
+  margin-bottom: 20px;
+  font-size: 30px;
+  padding-left: 20vw;
+}
+.site .left p {
+  font-family: "IropkeBatang";
+  font-weight: 300;
+  line-height: 1.6;
+  padding-right: 0vw;
+}
+
+.site .left ul {
+  margin-top: 10px;
+  padding-left: 18px;
+}
+.site .left li {
+  font-family: "IropkeBatang";
+  font-weight: 300;
+  line-height: 1.6;
+  list-style-type: disc;
+}
+.site .left .btn {
+  margin-top: 40px;
+}
+.site .left .btn a {
+  display: inline-block;
+  background: #fcca56;
+  padding: 10px 50px;
+  text-transform: uppercase;
+  color: #000;
+  font-family: "Abel";
+  border: 1px solid #000;
+}
+
+
+.site .right {
+  width: 50%;
+  height: 40vh;
+}

@@ -1,7 +1,7 @@
 /* layout */
 .section {
     height: 100vh;
-    background: #ccc;
+    background: #EBEBEB;
 }
 #section2 {
     height: 100vh;
@@ -118,7 +118,7 @@ body {
 
 /* sec2 */
 .sec2 {
-    padding: 50vh 0;
+    padding: 200px 0 0 0;
 }
 .sec2 h2 {
     font-size: 14vw;
@@ -132,4 +132,22 @@ body {
     font-size: 20px;
     line-height: 1.6;
 
+}
+.sec2_img {
+    height: 400px;
+    background: #ccc;
+}
+
+
+.sec2_1 {
+    width: 80vw;
+    height: 20vh;
+}
+.sec2_2 {
+    width: 80vw;
+    height: 20vh;
+}
+.sec2_3 {
+    width: 80vw;
+    height: 20vh;
 }

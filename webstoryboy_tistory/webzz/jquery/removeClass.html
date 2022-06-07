@@ -19,7 +19,7 @@
 
 <body class="white">
     <header id="header">
-        <h1><a href="#">WEBS : JQUERY 레퍼런스 : addClass()</a></h1>
+        <h1><a href="#">WEBS : JQUERY 레퍼런스 : removeClass()</a></h1>
         <nav>
             <ul>
                 <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
@@ -32,14 +32,14 @@
 
         <section id="explanation">
             <div class="container">
-                <h2 class="hide">addClass()</h2>
+                <h2 class="hide">removeClass()</h2>
                 <p>
-                    addClass() 메서드는 선택한 요소한테 클래스 이름을 추가합니다.
+                    removeClass() 메서드는 선택한 요소한테 클래스 이름을 삭제합니다.
                 </p>
                 <hr>
 
-                <h3>addClass()</h3>
-                <p class="blue">addClass() 메서드는 선택한 요소한테 클래스 이름을 추가합니다.</p>
+                <h3>removeClass()</h3>
+                <p class="blue">removeClass() 메서드는 선택한 요소한테 클래스 이름을 삭제합니다.</p>
 
                 <div class="table">
                     <table>
@@ -60,7 +60,7 @@
                             </tr>
                             <tr>
                                 <th>결과값(return)</th>
-                                <td>클래스 추가</td>
+                                <td>클래스 삭제</td>
                             </tr>
                             <tr>
                                 <th>사용성</th>
@@ -72,24 +72,24 @@
 
                 <h4 class="pt50">문법(Syntax)</h4>
                 <p class="blue">
-                    "선택자".addClass(클래스 이름)<br>
-                    "선택자".addClass(함수)<br>
+                    "선택자".removeClass(클래스 이름)<br>
+                    "선택자".removeClass(함수)<br>
                 </p>
-<pre><code class="language-javascript">//클래스 이름을 추가하는 경우
-$("div").addClass("className");
+<pre><code class="language-javascript">//클래스 이름을 삭제하는 경우
+$("div").removeClass("className");
 
 //함수를 사용하는 경우
-$("div").addClass(function(){});
+$("div").removeClass(function(){});
 </code></pre>
                 <ul class="mt15">
-                    <li>선택자(selector) : 클래스 이름을 추가할 선택자를 설정합니다.</li>
-                    <li>클래스 이름(class name) : 추가할 클래스 이름을 설정합니다.</li>
-                    <li>함수(function) : 클래스를 추가한 후 실행되는 함수를 설정합니다.</li>
+                    <li>선택자(selector) : 클래스 이름을 삭제할 선택자를 설정합니다.</li>
+                    <li>클래스 이름(class name) : 삭제할 클래스 이름을 설정합니다.</li>
+                    <li>함수(function) : 클래스를 삭제한 후 실행되는 함수를 설정합니다.</li>
                 </ul>
 
                 <h4>정의(Definition)</h4>
                 <ul>
-                    <li>addClass() 메서드는 선택한 요소한테 클래스 이름을 추가합니다.</li>
+                    <li>removeClass() 메서드는 선택한 요소한테 클래스 이름을 삭제합니다.</li>
                 </ul>
 
                 <h4>클래스와 관련된 메서드(class Related method)</h4>
@@ -102,8 +102,8 @@ $("div").addClass(function(){});
  
                 <h4>비교(Compare)</h4>
                 <ul>
-                    <li>jQuery에서 클래스 추가는 addClass()를 사용합니다.</li>
-                    <li>Javascript에서 클래스 추가는 classList.add를 사용합니다.</li>
+                    <li>jQuery에서 클래스 삭제는 removeClass()를 사용합니다.</li>
+                    <li>Javascript에서 클래스 삭제는 classList.remove를 사용합니다.</li>
                 </ul>
 
 
@@ -149,17 +149,17 @@ $("div").addClass(function(){});
                     <div class="sampleView">
                         <!-- ex -->
                         <div class="jsample">
-                            <div><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="샘플이미지1"></div>
-                            <div><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover02.jpg" alt="샘플이미지2"></div>
-                            <div><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover03.jpg" alt="샘플이미지3"></div>
-                            <div><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지4"></div>
-                            <div><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지5"></div>
+                            <div class="selected"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="샘플이미지1"></div>
+                            <div class="selected"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover02.jpg" alt="샘플이미지2"></div>
+                            <div class="selected"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover03.jpg" alt="샘플이미지3"></div>
+                            <div class="selected"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지4"></div>
+                            <div class="selected"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지5"></div>
                         </div>
                         <!-- ex -->
                     </div>
                     <div class="sampleBtn">
                         <a href="#" class="reset">리셋</a>
-                        <a href="#" class="btn1">버튼을 클릭하면 클래스가 추가되어 이미지 효과가 나타납니다.</a>
+                        <a href="#" class="btn1">버튼을 클릭하면 클래스가 삭제되어 이미지 효과가 없어집니다.</a>
                     </div>
                     <div class="sampleCode">
                         <div class="scMenu">
@@ -170,11 +170,11 @@ $("div").addClass(function(){});
                         <div class="scCont">
                             <div>
 <pre class="language-html"><code>&lt;div class="jsample"&gt;
-    &lt;div&gt;&lt;img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="샘플이미지1"&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover02.jpg" alt="샘플이미지2"&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover03.jpg" alt="샘플이미지3"&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지4"&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지5"&gt;&lt;/div&gt;
+    &lt;div class="selected"&gt;&lt;img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="샘플이미지1"&gt;&lt;/div&gt;
+    &lt;div class="selected"&gt;&lt;img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover02.jpg" alt="샘플이미지2"&gt;&lt;/div&gt;
+    &lt;div class="selected"&gt;&lt;img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover03.jpg" alt="샘플이미지3"&gt;&lt;/div&gt;
+    &lt;div class="selected"&gt;&lt;img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지4"&gt;&lt;/div&gt;
+    &lt;div class="selected"&gt;&lt;img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지5"&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
                             </div>
@@ -216,11 +216,11 @@ $("div").addClass(function(){});
                             <div>
 <pre class="language-javascript"><code>$(".sampleBtn .reset").click(function(e){
     e.preventDefault();
-    $(".jsample > div").removeClass("selected");
+    $(".jsample > div").addClass("selected");
 });
 $(".sampleBtn .btn1").click(function(e){
     e.preventDefault();
-    $(".jsample > div").addClass("selected");
+    $(".jsample > div").removeClass("selected");
 });
 </code></pre>
                             </div>
@@ -231,11 +231,11 @@ $(".sampleBtn .btn1").click(function(e){
                 <script>
                     $(".sampleBtn .reset").click(function(e){
                         e.preventDefault();
-                        $(".jsample > div").removeClass("selected");
+                        $(".jsample > div").addClass("selected");
                     });
                     $(".sampleBtn .btn1").click(function(e){
                         e.preventDefault();
-                        $(".jsample > div").addClass("selected");
+                        $(".jsample > div").removeClass("selected");
                     });
                 </script>
 
@@ -250,7 +250,8 @@ $(".sampleBtn .btn1").click(function(e){
                         </colgroup>
                         <thead>
                             <tr>
-                                <th></th>
+                                <th class="ce">메서드</th>
+                                <th class="ce">버전</th>
                                 <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-chrome1.png" alt="크롬 아이콘" title="크롬 브라우저"></th>
                                 <th scope="col"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/icon-firefox1.png" alt="파이어폭스 아이콘" title="파이어폭스 브라우저"></th>
                                 <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-safari1.png" alt="사파리 아이콘" title="사파리 브라우저"></th>
@@ -326,7 +327,7 @@ $(".sampleBtn .btn1").click(function(e){
 
                 <h4 class="pt30">참고 사이트(Reference)</h4>
                 <ul>
-                    <li><a href="https://api.jquery.com/addClass/" target="_blank">jquery</a></li>
+                    <li><a href="https://api.jquery.com/removeClass/" target="_blank">jquery</a></li>
                 </ul>
 
                 <hr>

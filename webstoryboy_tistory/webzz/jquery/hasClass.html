@@ -19,7 +19,7 @@
 
 <body class="white">
     <header id="header">
-        <h1><a href="#">WEBS : JQUERY 레퍼런스 : addClass()</a></h1>
+        <h1><a href="#">WEBS : JQUERY 레퍼런스 : hasClass()</a></h1>
         <nav>
             <ul>
                 <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
@@ -32,14 +32,14 @@
 
         <section id="explanation">
             <div class="container">
-                <h2 class="hide">addClass()</h2>
+                <h2 class="hide">hasClass()</h2>
                 <p>
-                    addClass() 메서드는 선택한 요소한테 클래스 이름을 추가합니다.
+                    hasClass() 메서드는 선택한 요소한테 클래스가 있는지 확인하고 불린을 반환합니다.
                 </p>
                 <hr>
 
-                <h3>addClass()</h3>
-                <p class="blue">addClass() 메서드는 선택한 요소한테 클래스 이름을 추가합니다.</p>
+                <h3>hasClass()</h3>
+                <p class="blue">hasClass() 메서드는 선택한 요소한테 클래스가 있는지 확인하고 불린을 반환합니다.</p>
 
                 <div class="table">
                     <table>
@@ -60,7 +60,7 @@
                             </tr>
                             <tr>
                                 <th>결과값(return)</th>
-                                <td>클래스 추가</td>
+                                <td>불린(true or false)</td>
                             </tr>
                             <tr>
                                 <th>사용성</th>
@@ -72,14 +72,14 @@
 
                 <h4 class="pt50">문법(Syntax)</h4>
                 <p class="blue">
-                    "선택자".addClass(클래스 이름)<br>
-                    "선택자".addClass(함수)<br>
+                    "선택자".hasClass(클래스 이름)<br>
+                    "선택자".hasClass(함수)<br>
                 </p>
 <pre><code class="language-javascript">//클래스 이름을 추가하는 경우
-$("div").addClass("className");
+$("div").hasClass("className");
 
 //함수를 사용하는 경우
-$("div").addClass(function(){});
+$("div").hasClass(function(){});
 </code></pre>
                 <ul class="mt15">
                     <li>선택자(selector) : 클래스 이름을 추가할 선택자를 설정합니다.</li>
@@ -89,7 +89,7 @@ $("div").addClass(function(){});
 
                 <h4>정의(Definition)</h4>
                 <ul>
-                    <li>addClass() 메서드는 선택한 요소한테 클래스 이름을 추가합니다.</li>
+                    <li>hasClass() 메서드는 선택한 요소한테 클래스 이름을 추가합니다.</li>
                 </ul>
 
                 <h4>클래스와 관련된 메서드(class Related method)</h4>
@@ -103,7 +103,7 @@ $("div").addClass(function(){});
                 <h4>비교(Compare)</h4>
                 <ul>
                     <li>jQuery에서 클래스 추가는 addClass()를 사용합니다.</li>
-                    <li>Javascript에서 클래스 추가는 classList.add를 사용합니다.</li>
+                    <li>Javascript에서 클래스 추가는 classList.contains를 사용합니다.</li>
                 </ul>
 
 

@@ -47,9 +47,9 @@ const lessonBtn = document.querySelector(".lesson-btn");
 //     navBtn.classList.toggle("open");
 // });
 
-lessonBtn.addEventListener("click", function() {
-    lesson.classList.toggle("open");
-});
+// lessonBtn.addEventListener("click", function() {
+//     lesson.classList.toggle("open");
+// });
 
 //tab 
 const codeLink = document.querySelectorAll(".code_link .sub li");

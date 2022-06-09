@@ -16,7 +16,7 @@ $(".soFar.code > div").click(function(){
 
 
 window.addEventListener("scroll", function(){
-    let scrollTop = document.documentElement.scrollTop || window.scrollY || window.pageYOffset;
+    let scrollTop = document.documentElement.scrollTop || window.pageYOffset;
 
     if(scrollTop > document.querySelector("#youtube .desc .left").offsetTop - 62){
         document.querySelector("#youtube .video").classList.add("absolute");

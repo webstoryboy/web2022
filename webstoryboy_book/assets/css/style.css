@@ -488,6 +488,7 @@ body.intro #footer {
 }
 #explanation .folder .icon2 {
     display: block;
+    margin-left: 24px;
 }
 #explanation .folder .icon2:before {
     content: '';

@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="../../assets/css/reset.css">
     <link rel="stylesheet" href="../../assets/css/dracula.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- script -->
+    <script src="../../assets/js/gsap.min.js"></script>
 </head>
 
 <body class="white">
@@ -70,10 +73,87 @@
 
                 <h4>문법(Syntax)</h4>
                 <p class="blue">gsap.to("타겟", {속성: 속성값, ....});</p>
+<pre><code class="language-javascript">//오른쪽으로 1000px를 이동하는 경우
+gsap.to(".animation", {x: 1000})
+
+//1초동안 오른쪽으로 1000px를 이동하는 경우
+gsap.to(".animation", {duration:1, x: 1000})
+
+//1초동안 오른쪽으로 1000px를 이동하면서 360도 회전하는 경우
+gsap.to(".animation", {duration:1, x: 1000, rotation: 360})
+</code></pre>
                 <ul>
                     <li>타겟(targets) : 애니메이션을 적용할 개체를 선택합니다. (CSS 선택자, Javascript 선택자 가능)</li>
                     <li>속성(values) : 애니메이션과 관련된 속성을 설정합니다.</li>
                 </ul>
+
+                <h4>CSS, GSAP 속성비교</h4>
+                <div class="table">
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col style="width: 50%" />
+                                <col style="width: 50%" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>CSS 속성</th>
+                                    <th>GSAP 속성</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>transform: translateX(100px)</td>
+                                    <th>x: 100</th>
+                                </tr>
+                                <tr>
+                                    <td>transform: translateY(100px)</td>
+                                    <th>y: 100</th>
+                                </tr>
+                                <tr>
+                                    <td>transform: rotate(360deg)</td>
+                                    <th>rotation: 360</th>
+                                </tr>
+                                <tr>
+                                    <td>transform: rotateX(360deg)</td>
+                                    <th>rotationX: 360</th>
+                                </tr>
+                                <tr>
+                                    <td>transform: rotateY(360deg)</td>
+                                    <th>rotationY: 360</th>
+                                </tr>
+                                <tr>
+                                    <td>transform: skewX(30deg)</td>
+                                    <th>skewX: 30</th>
+                                </tr>
+                                <tr>
+                                    <td>transform: skewY(30deg)</td>
+                                    <th>skewY: 30</th>
+                                </tr>
+                                <tr>
+                                    <td>transform: scale(2)</td>
+                                    <th>scale: 2</th>
+                                </tr>
+                                <tr>
+                                    <td>transform: scaleX(2)</td>
+                                    <th>scaleX: 2</th>
+                                </tr>
+                                <tr>
+                                    <td>transform: scaleY(2)</td>
+                                    <th>scaleY: 2</th>
+                                </tr>
+                                <tr>
+                                    <td>transform: translateX(-50%)</td>
+                                    <th>xPercent: -50</th>
+                                </tr>
+                                <tr>
+                                    <td>transform: translateY(-50%)</td>
+                                    <th>yPercent: -50</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
                 <h4>속성(Property)</h4>
                 <div class="table">
@@ -231,7 +311,132 @@
                     <li>gsap.fromTo() 메서드를 움직임의 시작 점과 끝나는 점을 지정하는 애니메이션입니다.</li>
                 </ul>
 
-                
+                <style>
+                    .animation-box {
+                        counter-reset: items;
+                    }
+                    .animation-box .box {
+                        width: 60px;
+                        height: 60px;
+                        line-height: 60px;
+                        text-align: center;
+                        border-radius: 50%;
+                        color: #fff;
+                        position: relative;
+                        font-size: 12px;
+                        overflow: hidden;
+                        margin: 10px;
+                        background-color: #A2CBFA;
+                        border: 1px solid #4390E1;
+                        box-shadow: 0 2px 2px rgba(0,90,250,0.05), 0 4px 4px rgba(0,90,250,0.05), 0 8px 8px rgba(0,90,250,0.05), 0 16px 16px rgba(0,90,250,0.05);
+                    }
+                    .animation-box .box::before {
+                        counter-increment: items;
+                        content: counter(items);
+                    }
+                </style>
+                <!-- Sample1 -->
+                <h4>예제1(Sample)</h4>
+                <div class="sample" id="sample1">
+                    <h5>버튼을 클릭하면 움직이는 예제입니다.</h5>
+                    <div class="sampleView">
+                        <!-- ex -->
+                        <div class="jsample">
+                            <div class="animation-box">
+                                <div class="box"></div>
+                                <div class="box"></div>
+                                <div class="box"></div>
+                                <div class="box"></div>
+                            </div>
+                        </div>
+                        <!-- ex -->
+                    </div>
+                    <div class="sampleBtn">
+                        <a href="#" class="btn0">리셋</a>
+                        <a href="#" class="btn1">버튼을 클릭하면 원이 움직입니다.</a>
+                        <a href="#" class="btn2">버튼을 클릭하면 원이 움직이고 사각형으로 변합니다.</a>
+                        <a href="#" class="btn3">버튼을 클릭하면 원이 움직이고 회전합니다.</a>
+                    </div>
+                    <div class="sampleCode">
+                        <div class="scMenu">
+                            <div>HTML</div>
+                            <div>CSS</div>
+                            <div>SCRIPT</div>
+                        </div>
+                        <div class="scCont">
+                            <div>
+<pre class="language-html"><code>&lt;div class="animation-box"&gt;
+    &lt;div class="box"&gt;&lt;/div&gt;
+    &lt;div class="box"&gt;&lt;/div&gt;
+    &lt;div class="box"&gt;&lt;/div&gt;
+    &lt;div class="box"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-css"><code>.animation-box {
+    counter-reset: items;
+}
+.animation-box .box {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    position: relative;
+    font-size: 12px;
+    overflow: hidden;
+    margin: 10px;
+    background-color: #A2CBFA;
+    border: 1px solid #4390E1;
+    box-shadow: 0 2px 2px rgba(0,90,250,0.05), 0 4px 4px rgba(0,90,250,0.05), 0 8px 8px rgba(0,90,250,0.05), 0 16px 16px rgba(0,90,250,0.05);
+}
+.animation-box .box::before {
+    counter-increment: items;
+    content: counter(items);
+}
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-javascript"><code>document.querySelector(".sampleBtn .btn0").addEventListener("click", ()=>{
+    gsap.to(".animation-box .box", {x: 0, borderRadius: "50%", rotationY: 0})
+})
+document.querySelector(".sampleBtn .btn1").addEventListener("click", () => {
+    gsap.to(".animation-box .box", {duration: 1, x: 1000})
+})
+document.querySelector(".sampleBtn .btn2").addEventListener("click", () => {
+    gsap.to(".animation-box .box", {duration: 1, x: 1000, borderRadius:0})
+})
+document.querySelector(".sampleBtn .btn3").addEventListener("click", () => {
+    gsap.to(".animation-box .box", {duration: 1, x: 1000, rotationY: 360})
+})
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //Sample1 -->
+                <script>
+                    const width = document.querySelector(".sampleView").clientWidth;
+
+                    document.querySelector(".sampleBtn .btn0").addEventListener("click", (e)=>{
+                        e.preventDefault();
+                        gsap.to(".animation-box .box", {x: 0, borderRadius: "50%", rotationY: 0})
+                    })
+                    document.querySelector(".sampleBtn .btn1").addEventListener("click", (e)=>{
+                        e.preventDefault();
+                        gsap.to(".animation-box .box", {duration: 1, x: width - 130})
+                    })
+                    document.querySelector(".sampleBtn .btn2").addEventListener("click", (e)=>{
+                        e.preventDefault();
+                        gsap.to(".animation-box .box", {duration: 1, x: width - 130, borderRadius:0 })
+                    })
+                    document.querySelector(".sampleBtn .btn3").addEventListener("click", (e)=>{
+                        e.preventDefault();
+                        gsap.to(".animation-box .box", {duration: 1, x: width - 130, rotationY: 360 })
+                    })
+                </script>
 
 
                 <h4><a href="http://webzz.tistory.com/227">호환성(Compatibility)</a></h4>

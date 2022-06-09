@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="div"></div>
     <script>
         "javascript reference".indexOf('javascript') //0
         "javascript reference".indexOf('javascripts') //-1
@@ -74,13 +75,13 @@
         "javascript reference".includes('reference', 11) //true
         "javascript reference".includes('reference', 12) //false
 
-        const text1 = "javascript";
-        const text2 = "reference";
+        // const text1 = "javascript";
+        // const text2 = "reference";
 
-        text1.concat(text2) //javascriptreference
-        text1.concat(' ', text2) //javascript reference
-        text1.concat(', ', text2) //javascript, reference
-        text1.concat('+', text2) //javascript+reference
+        // text1.concat(text2) //javascriptreference
+        // text1.concat(' ', text2) //javascript reference
+        // text1.concat(', ', text2) //javascript, reference
+        // text1.concat('+', text2) //javascript+reference
         
 
         "javascript reference".endsWith('reference') //true
@@ -97,8 +98,23 @@
         "javascript reference".startsWith() //false
         "javascript reference".startsWith('') //true
 
+        const arr = [100, 200, 300, 400, 500];
 
-        console.log("javascript reference".endsWith('reference', 1)) 
+        // const text1 = arr.join("*");    //100*200*300*400*500
+        // const text2 = arr.join("-");    //100-200-300-400-500
+        const text3 = arr.join();     //100200300400500
+        // const text3 = arr.join("");     //100200300400500
+        // const text4 = arr.join(" ");    //100 200 300 400 500
+
+        // const text = arr.push(600);
+
+        // document.querySelector(".div").innerHTML = text;
+        // document.querySelector(".div").innerHTML = arr;
+
+        // const text = arr.shift();
+
+        console.log(text3)
+        // console.log(arr)
     </script>
 </body>
 </html>

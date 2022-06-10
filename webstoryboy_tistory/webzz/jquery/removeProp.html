@@ -19,7 +19,7 @@
 
 <body class="white">
     <header id="header">
-        <h1><a href="#">WEBS : JQUERY 레퍼런스 : attr()</a></h1>
+        <h1><a href="#">WEBS : JQUERY 레퍼런스 : removeProp()</a></h1>
         <nav>
             <ul>
                 <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
@@ -32,14 +32,14 @@
 
         <section id="explanation">
             <div class="container">
-                <h2 class="hide">attr()</h2>
+                <h2 class="hide">removeProp()</h2>
                 <p>
-                    attr() 메서드는 요소의 속성 값을 가져오거나 변경합니다.
+                    removeProp() 메서드는 요소의 속성 값을 삭제합니다.
                 </p>
                 <hr>
 
-                <h3>attr()</h3>
-                <p class="blue">attr() 메서드는 요소의 속성 값을 가져오거나 변경합니다.</p>
+                <h3>removeProp()</h3>
+                <p class="blue">removeProp() 메서드는 요소의 속성 값을 삭제합니다.</p>
 
                 <div class="table">
                     <table>
@@ -60,11 +60,11 @@
                             </tr>
                             <tr>
                                 <th>결과값(return)</th>
-                                <td>클래스 추가</td>
+                                <td>속성 삭제</td>
                             </tr>
                             <tr>
                                 <th>사용성</th>
-                                <td>★★★★☆</td>
+                                <td>★★★☆☆</td>
                             </tr>
                         </tbody>
                     </table>
@@ -72,28 +72,19 @@
 
                 <h4 class="pt50">문법(Syntax)</h4>
                 <p class="blue">
-                    "선택자".attr(속성 이름)<br>
-                    "선택자".attr(속성 이름, 속성 값)<br>
-                    "선택자".attr(속성 이름, 함수)
+                    "선택자".removeProp("속성 이름")
                 </p>
-<pre><code class="language-javascript">//속성 이름을 가져오는 경우
-$("div").attr("attributeName");
-
-//속성 이름의 속성 값을 변경하는 경우 경우
-$("div").attr("attribute", "Name");
-
-//콜백함수를 사용하는 경우
-$("div").attr("attr", function(){});
+<pre><code class="language-javascript">//속성 이름을 삭제하는 경우
+$("div").removeProp("propertieName");
 </code></pre>
                 <ul class="mt15">
                     <li>선택자(selector) : 클래스 이름을 추가할 선택자를 설정합니다.</li>
-                    <li>속성 이름(attribute name) : 속성 이름을 설정합니다.</li>
-                    <li>함수(function) : 속성 값을 가져온 후 실행되는 함수를 설정합니다.</li>
+                    <li>속성 이름(properties name) : 속성 이름을 설정합니다.</li>
                 </ul>
 
                 <h4>정의(Definition)</h4>
                 <ul>
-                    <li>attr() 메서드는 요소의 속성 값을 가져오거나 변경합니다.</li>
+                    <li>removeProp() 메서드는 요소의 속성 값을 삭제합니다.</li>
                 </ul>
 
                 <h4>속성 관련된 메서드(Attribute Related method)</h4>
@@ -121,23 +112,45 @@ $("div").attr("attr", function(){});
                     .jsample .text {
                         margin-top: 10px;
                     }
+                    .jsample label {
+                        display: block;
+                    }
                 </style>
                 <!-- Sample1 -->
                 <h4>예제1(Sample)</h4>
                 <div class="sample" id="sample1">
-                    <h5>버튼을 클릭하면 이미지에 속성 값을 가져오는 예제입니다.</h5>
+                    <h5>라디오 버튼을 클릭하면 input의 checked 속성을 보여주는 예제입니다.</h5>
                     <div class="sampleView">
                         <!-- ex -->
                         <div class="jsample">
-                            <img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="샘플이미지" class="img" width="300">
-                            <div class="text">여기에 표시됩니다.</div>
+                            <form>
+                                <label>
+                                    <input class="check1" type="radio" name="radio" checked/>
+                                    <span>HTML</span>
+                                </label>
+                                <label>
+                                    <input class="check2" type="radio" name="radio"/>
+                                    <span>CSS</span>
+                                </label>
+                                <label>
+                                    <input class="check3" type="radio" name="radio"/>
+                                    <span>JAVASCRIPT</span>
+                                </label>
+                                <label>
+                                    <input class="check4" type="radio" name="radio"/>
+                                    <span>JQUERY</span>
+                                </label>
+                            </form>
+                            <br>
+                            <div class="text1">여기에 표시됩니다.</div>
+                            <div class="text2">여기에 표시됩니다.</div>
+                            <div class="text3">여기에 표시됩니다.</div>
+                            <div class="text4">여기에 표시됩니다.</div>
                         </div>
                         <!-- ex -->
                     </div>
                     <div class="sampleBtn">
-                        <a href="#" class="btn1">버튼을 클릭하면 이미지의 주소 속성 값을 가져옵니다.</a>
-                        <a href="#" class="btn2">버튼을 클릭하면 이미지의 alt 속성 값을 가져옵니다.</a>
-                        <a href="#" class="btn3">버튼을 클릭하면 이미지의 clsss 속성 값을 가져옵니다.</a>
+                        <a href="#" class="btn1">버튼을 클릭하면 속성 값을 삭제됩니다.</a>
                     </div>
                     <div class="sampleCode">
                         <div class="scMenu">
@@ -148,8 +161,29 @@ $("div").attr("attr", function(){});
                         <div class="scCont">
                             <div>
 <pre class="language-html"><code>&lt;div class="jsample"&gt;
-    &lt;img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/image03.jpg" alt="샘플이미지2" class="img"&gt;
-    &lt;div class="text"&gt;여기에 표시됩니다.&lt;/div&gt;
+    &lt;form&gt;
+        &lt;label&gt;
+            &lt;input class="check1" type="radio" name="radio" checked/&gt;
+            &lt;span&gt;HTML&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label&gt;
+            &lt;input class="check2" type="radio" name="radio"/&gt;
+            &lt;span&gt;CSS&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label&gt;
+            &lt;input class="check3" type="radio" name="radio"/&gt;
+            &lt;span&gt;JAVASCRIPT&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label&gt;
+            &lt;input class="check4" type="radio" name="radio"/&gt;
+            &lt;span&gt;JQUERY&lt;/span&gt;
+        &lt;/label&gt;
+    &lt;/form&gt;
+    &lt;br&gt;
+    &lt;div class="text1"&gt;여기에 표시됩니다.&lt;/div&gt;
+    &lt;div class="text2"&gt;여기에 표시됩니다.&lt;/div&gt;
+    &lt;div class="text3"&gt;여기에 표시됩니다.&lt;/div&gt;
+    &lt;div class="text4"&gt;여기에 표시됩니다.&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
                             </div>
@@ -161,10 +195,22 @@ $("div").attr("attr", function(){});
 .jsample .text {
     margin-top: 10px;
 }
+.jsample label {
+    display: block;
+}
 </code></pre>
                             </div>
                             <div>
-<pre class="language-javascript"><code>
+<pre class="language-javascript"><code>$(".jsample input").change(function(){
+    const ch1 =  $(".jsample .check1").prop("checked");
+    $("#sample1 .text1").text("checked 속성 값은 : " + ch1 + "입니다.");
+    const ch2 =  $(".jsample .check2").prop("checked");
+    $("#sample1 .text2").text("checked 속성 값은 : " + ch2 + "입니다.");
+    const ch3 =  $(".jsample .check3").prop("checked");
+    $("#sample1 .text3").text("checked 속성 값은 : " + ch3 + "입니다.");
+    const ch4 =  $(".jsample .check4").prop("checked");
+    $("#sample1 .text4").text("checked 속성 값은 : " + ch4 + "입니다.");
+})
 </code></pre>
                             </div>
                         </div>
@@ -172,90 +218,24 @@ $("div").attr("attr", function(){});
                 </div>
                 <!-- //Sample1 -->
                 <script>
-                    $("#sample1 .btn1").click(function(e){
+                
+                    const ch1 =  $(".jsample .check1").prop("checked");
+                    $("#sample1 .text1").text("checked 속성 값은 : " + ch1 + "입니다.");
+                    const ch2 =  $(".jsample .check2").prop("checked");
+                    $("#sample1 .text2").text("checked 속성 값은 : " + ch2 + "입니다.");
+                    const ch3 =  $(".jsample .check3").prop("checked");
+                    $("#sample1 .text3").text("checked 속성 값은 : " + ch3 + "입니다.");
+                    const ch4 =  $(".jsample .check4").prop("checked");
+                    $("#sample1 .text4").text("checked 속성 값은 : " + ch4 + "입니다.");
+
+                    $(".sampleBtn .btn1").click(function(e){
                         e.preventDefault();
-                        const src = $("#sample1 .jsample .img").attr("src");
-                        $("#sample1 .text").text("이 사진의 주소 값은 : " + src + "입니다.");
-                    });
-                    $("#sample1 .btn2").click(function(e){
-                        e.preventDefault();
-                        const alt = $("#sample1 .jsample .img").attr("alt");
-                        $("#sample1 .text").text("이 사진의 alt 값은 : " + alt + "입니다.");
-                    });
-                    $("#sample1 .btn3").click(function(e){
-                        e.preventDefault();
-                        $("#sample1 .text").text("이 사진의 class 이름은 : " + $("#sample1 .jsample .img").attr("class") + "입니다." );
+                        $(".jsample .check1").removeProp("checked")
                     });
                 </script>
 
 
-                <!-- Sample2 -->
-                <h4>예제2(Sample)</h4>
-                <div class="sample" id="sample2">
-                    <h5>버튼을 클릭하면 이미지에 속성 값을 변경하는 예제입니다.</h5>
-                    <div class="sampleView">
-                        <!-- ex -->
-                        <div class="jsample">
-                            <img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/image03.jpg" alt="샘플이미지2" class="img">
-                            <div class="text">여기에 표시됩니다.</div>
-                        </div>
-                        <!-- ex -->
-                    </div>
-                    <div class="sampleBtn">
-                        <a href="#" class="btn1">버튼을 클릭하면 이미지의 속성값(image04.jpg)을 변경합니다.</a>
-                        <a href="#" class="btn2">버튼을 클릭하면 이미지의 속성값(image05.jpg)을 가져옵니다.</a>
-                        <a href="#" class="btn3">버튼을 클릭하면 이미지의 속성값(image06.jpg)을 가져옵니다.</a>
-                    </div>
-                    <div class="sampleCode">
-                        <div class="scMenu">
-                            <div>HTML</div>
-                            <div>CSS</div>
-                            <div>SCRIPT</div>
-                        </div>
-                        <div class="scCont">
-                            <div>
-<pre class="language-html"><code>&lt;div class="jsample"&gt;
-    &lt;img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/image03.jpg" alt="샘플이미지2" class="img"&gt;
-    &lt;div class="text"&gt;여기에 표시됩니다.&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-                            </div>
-                            <div>
-<pre class="language-css"><code>.jsample img {
-    border-radius: 3px;
-    max-width: 300px
-}
-.jsample .text {
-    margin-top: 10px;
-}
-</code></pre>
-                            </div>
-                            <div>
-<pre class="language-javascript"><code>
-</code></pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- //Sample2 -->
-                <script>
-                    $("#sample2 .btn1").click(function(e){
-                        e.preventDefault();
-                        $("#sample2 .img").attr("src","https://tistory4.daumcdn.net/tistory/2933724/skin/images/image04.jpg");
-                        $("#sample2 .text").text("src 값이 'https://tistory4.daumcdn.net/tistory/2933724/skin/images/image04.jpg'으로 변경되었습니다.");
-                    });
-                    $("#sample2 .btn2").click(function(e){
-                        e.preventDefault();
-                        $("#sample2 .img").attr("src","https://tistory4.daumcdn.net/tistory/2933724/skin/images/image05.jpg");
-                        $("#sample2 .text").text("src 값이 'https://tistory4.daumcdn.net/tistory/2933724/skin/images/image05.jpg'으로 변경되었습니다.");
-                    });
-                    $("#sample2 .btn3").click(function(e){
-                        e.preventDefault();
-                        $("#sample2 .img").attr("src","https://tistory4.daumcdn.net/tistory/2933724/skin/images/image06.jpg");
-                        $("#sample2 .text").text("src 값이 'https://tistory4.daumcdn.net/tistory/2933724/skin/images/image06.jpg'으로 변경되었습니다.");
-                    });
-                </script>
-
+               
 
 
                 
@@ -267,7 +247,6 @@ $("div").attr("attr", function(){});
                         </colgroup>
                         <thead>
                             <tr>
-                                <th></th>
                                 <th></th>
                                 <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-chrome1.png" alt="크롬 아이콘" title="크롬 브라우저"></th>
                                 <th scope="col"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/icon-firefox1.png" alt="파이어폭스 아이콘" title="파이어폭스 브라우저"></th>
@@ -287,7 +266,7 @@ $("div").attr("attr", function(){});
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="ce" scope="row" rowspan="3">.attr()</td>
+                                <td class="ce" scope="row" rowspan="3">.removeAttr()</td>
                                 <td class="ce">jQeury 1.x 버전</td>
                                 <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
                                 <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
@@ -344,7 +323,7 @@ $("div").attr("attr", function(){});
 
                 <h4 class="pt30">참고 사이트(Reference)</h4>
                 <ul>
-                    <li><a href="https://api.jquery.com/addClass/" target="_blank">jquery</a></li>
+                    <li><a href="https://api.jquery.com/removeattr/" target="_blank">jquery</a></li>
                 </ul>
 
                 <hr>

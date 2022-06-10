@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"포트폴리오가 실력이다" : JAVASCRIPT 레퍼런스</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- SCRIPT -->
+    <script src="../../assets/js/jquery-3.6.0.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+</head>
+
+<body class="white">
+    <header id="header">
+        <h1><a href="#">WEBS : JAVASCRIPT 레퍼런스 : hasAttributes()</a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+
+        <section id="explanation">
+            <div class="container">
+                <h2 class="hide">hasAttributes()</h2>
+                <p>
+                    hasAttributes() 메서드는 선택한 요소의 지정된 속성의 여부를 확인하고 불린을 반환합니다.
+                </p>
+                <hr>
+
+                <h3>hasAttributes()</h3>
+                <p class="blue">hasAttributes() 메서드는 선택한 요소의 지정된 속성의 여부를 확인하고 불린을 반환합니다.</p>
+
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 30%">
+                            <col style="width: 70%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>특징</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>버전(version)</th>
+                                <td>ES1</td>
+                            </tr>
+                            <tr>
+                                <th>결과값(return)</th>
+                                <td>undefined</td>
+                            </tr>
+                            <tr>
+                                <th>사용성</th>
+                                <td>★★☆☆☆</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="pt50">문법(Syntax)</h4>
+                <p class="blue">
+                    "선택자".hasAttributes("속성 이름")
+                </p>
+<pre><code class="language-javascript">//속성 값 변경하기
+documemt.querySelector("div").hasAttributes("class");
+</code></pre>
+                <ul class="mt15">
+                    <li>선택자(selector) : 속성 값을 설정할 선택자를 설정합니다.</li>
+                    <li>속성 이름(attributeName) : 속성 이름을 설정합니다.</li>
+                </ul>
+
+                <h4>정의(Definition)</h4>
+                <ul>
+                    <li>hasAttributes() 메서드는 선택한 요소의 지정된 속성의 여부를 확인하고 불린을 반환합니다.</li>
+                </ul>
+
+                <h4>속성과 관련된 메서드(Attribute Related method)</h4>
+                <ul>
+                    <li>setAttribute() 메서드는 선택한 요소의 속성 값을 설정합니다.</li>
+                    <li>getAttribute() 메서드는 선택한 요소의 속성 값을 가져옵니다.</li>
+                    <li>removeAttribute() 메서드는 선택한 요소의 속성 값을 삭제합니다.</li>
+                    <li>hasAttribute() 메서드는 선택한 요소의 지정된 속성의 여부를 확인하고 불린을 반환합니다.</li>
+                    <li>hasAttributes() 메서드는 선택한 요소의 지정된 속성의 여부를 확인하고 불린을 반환합니다.</li>
+                </ul>
+                
+                
+                <h4>호환성(Compatibility)</h4>
+                <div class="table">
+                    <table class="compatibility">
+                        <colgroup>
+                            <col style="width:20%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-chrome1.png" alt="크롬 아이콘" title="크롬 브라우저"></th>
+                                <th scope="col"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/icon-firefox1.png" alt="파이어폭스 아이콘" title="파이어폭스 브라우저"></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-safari1.png" alt="사파리 아이콘" title="사파리 브라우저"></th>
+                                <th scope="col"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/icon-opera1.png" alt="오페라 아이콘" title="오페라 브라우저"></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-whale1.png" alt="네이버 웨일" title="네이버 웨일 브라우저"></th>
+                                <th scope="col"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/icon-ie6.png" alt="익스플로러6 아이콘" title="인터넷 익스플로러6 브라우저"><em>6</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie7.png" alt="익스플로러7 아이콘" title="인터넷 익스플로러7 브라우저"><em>7</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie7.png" alt="익스플로러8 아이콘" title="인터넷 익스플로러8 브라우저"><em>8</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie9.png" alt="익스플로러9 아이콘" title="인터넷 익스플로러9 브라우저"><em>9</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie10.png" alt="익스플로러10 아이콘" title="인터넷 익스플로러10 브라우저"><em>10</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie11.png" alt="익스플로러11 아이콘" title="인터넷 익스플로러11 브라우저"><em>11</em></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-edge.png" alt="엣지 아이콘" title="엣지 브라우저"></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-android.png" alt="안드로이드 아이콘" title="모바일 안드로이드 브라우저"></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ios.png" alt="ios 아이콘" title="모바일 아이폰 브라우저"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td scope="row" class="ce">removeAttribute()</td>
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러6 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러7 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러8 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러9 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러10 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러11 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="pt30">참고 사이트(Reference)</h4>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute" target="_blank">MDN</a></li>
+                </ul>
+
+                <hr>
+
+            </div>
+        </section>
+        <!-- //explanation -->
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer> 
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/script.js"></script> 
+</body>
+</html>

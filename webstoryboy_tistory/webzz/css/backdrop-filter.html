@@ -94,16 +94,16 @@
                 <p class="blue">
                     /* 기본 속성 */<br>
                     backdrop-filter : none; <br>
-                    backdrop-filter : blur()<br>
-                    backdrop-filter : brightness();<br>
-                    backdrop-filter : contrast(); <br>
-                    backdrop-filter : drop-shadow();<br>
-                    backdrop-filter : grayscale();<br>
-                    backdrop-filter : hue-rotate();<br>
-                    backdrop-filter : invert();<br>
-                    backdrop-filter : opacity();<br>
-                    backdrop-filter : sepia();<br>
-                    backdrop-filter : saturate();<br>
+                    backdrop-filter : blur(10px)<br>
+                    backdrop-filter : brightness(50%);<br>
+                    backdrop-filter : contrast(40%); <br>
+                    backdrop-filter : drop-shadow(4px 4px 4px black);<br>
+                    backdrop-filter : grayscale(75%);<br>
+                    backdrop-filter : hue-rotate(30deg);<br>
+                    backdrop-filter : invert(50%);<br>
+                    backdrop-filter : opacity(30%);<br>
+                    backdrop-filter : sepia(60%);<br>
+                    backdrop-filter : saturate(100%);<br>
                 </p>
 
                 <h4>속성(Property)</h4>
@@ -265,11 +265,7 @@
 </code></pre>
                             </div>
                             <div>
-<pre class="language-javascript"><code>$(".sampleOption a").click(function (e) {
-    e.preventDefault();
-    var attr = $(this).attr("data-value");
-    $(this).parent().prev().children().children().children().attr("src","https://tistory1.daumcdn.net/tistory/2933724/skin/images/"+attr+".jpg");
-});
+<pre class="language-javascript"><code>//javascript none
 </code></pre>
                             </div>
                         </div>
@@ -280,10 +276,10 @@
 
                 <style>
                     .brightness > div:nth-child(1) strong {backdrop-filter: brightness(0%);}
-                    .brightness > div:nth-child(2) strong {backdrop-filter: brightness(2%);}
-                    .brightness > div:nth-child(3) strong {backdrop-filter: brightness(5%);}
-                    .brightness > div:nth-child(4) strong {backdrop-filter: brightness(10%);}
-                    .brightness > div:nth-child(5) strong {backdrop-filter: brightness(15%);}
+                    .brightness > div:nth-child(2) strong {backdrop-filter: brightness(25%);}
+                    .brightness > div:nth-child(3) strong {backdrop-filter: brightness(50%);}
+                    .brightness > div:nth-child(4) strong {backdrop-filter: brightness(75%);}
+                    .brightness > div:nth-child(5) strong {backdrop-filter: brightness(100%);}
                 </style>
                 <h4>예제2(Sample)</h4>
                 <div class="sample" id="sample2">
@@ -291,11 +287,11 @@
                     <div class="sampleView">
                         <!-- ex -->
                         <div class="box brightness">
-                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"><strong>blur(0px)</strong></div>
-                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"><strong>blur(2px)</strong></div>
-                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"><strong>blur(5px)</strong></div>
-                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"><strong>blur(10px)</strong></div>
-                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"><strong>blur(15px)</strong></div>
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지"><strong>brightness(0%)</strong></div>
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지"><strong>brightness(25%)</strong></div>
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지"><strong>brightness(50%)</strong></div>
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지"><strong>brightness(75%)</strong></div>
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지"><strong>brightness(100%)</strong></div>
                         </div>
                         <!-- ex -->
                     </div>
@@ -314,28 +310,24 @@
                         <div class="scCont">
                             <div>
 <pre class="language-html"><code>&lt;div class="box filter-box"&gt;
-    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"&gt;&lt;strong&gt;blur(0px)&lt;/strong&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"&gt;&lt;strong&gt;blur(2px)&lt;/strong&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"&gt;&lt;strong&gt;blur(5px)&lt;/strong&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"&gt;&lt;strong&gt;blur(10px)&lt;/strong&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"&gt;&lt;strong&gt;blur(15px)&lt;/strong&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지"&gt;&lt;strong&gt;brightness(0%)&lt;/strong&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지"&gt;&lt;strong&gt;brightness(25%)&lt;/strong&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지"&gt;&lt;strong&gt;brightness(50%)&lt;/strong&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지"&gt;&lt;strong&gt;brightness(75%)&lt;/strong&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지"&gt;&lt;strong&gt;brightness(100%)&lt;/strong&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
                             </div>
                             <div>
-<pre class="language-css"><code>.filter-box > div:nth-child(1) strong {backdrop-filter: blur(0px);}
-.filter-box > div:nth-child(2) strong {backdrop-filter: blur(2px);}
-.filter-box > div:nth-child(3) strong {backdrop-filter: blur(5px);}
-.filter-box > div:nth-child(4) strong {backdrop-filter: blur(10px);}
-.filter-box > div:nth-child(5) strong {backdrop-filter: blur(15px);}
+<pre class="language-css"><code>.brightness > div:nth-child(1) strong {backdrop-filter: brightness(0%);}
+.brightness > div:nth-child(2) strong {backdrop-filter: brightness(25%);}
+.brightness > div:nth-child(3) strong {backdrop-filter: brightness(50%);}
+.brightness > div:nth-child(4) strong {backdrop-filter: brightness(75%);}
+.brightness > div:nth-child(5) strong {backdrop-filter: brightness(100%);}
 </code></pre>
                             </div>
                             <div>
-<pre class="language-javascript"><code>$(".sampleOption a").click(function (e) {
-    e.preventDefault();
-    var attr = $(this).attr("data-value");
-    $(this).parent().prev().children().children().children().attr("src","https://tistory1.daumcdn.net/tistory/2933724/skin/images/"+attr+".jpg");
-});
+<pre class="language-javascript"><code>//javascript none
 </code></pre>
                             </div>
                         </div>
@@ -345,6 +337,66 @@
 
 
 
+                <style>
+                    .contrast > div:nth-child(1) strong {backdrop-filter: contrast(0%);}
+                    .contrast > div:nth-child(2) strong {backdrop-filter: contrast(25%);}
+                    .contrast > div:nth-child(3) strong {backdrop-filter: contrast(50%);}
+                    .contrast > div:nth-child(4) strong {backdrop-filter: contrast(75%);}
+                    .contrast > div:nth-child(5) strong {backdrop-filter: contrast(100%);}
+                </style>
+                <h4>예제3(Sample)</h4>
+                <div class="sample" id="sample3">
+                    <h5>이미지의 contrast 효과를 설정하는 예제입니다.</h5>
+                    <div class="sampleView">
+                        <!-- ex -->
+                        <div class="box contrast">
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover06.jpg" alt="샘플이미지"><strong>contrast(0%)</strong></div>
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover06.jpg" alt="샘플이미지"><strong>contrast(25%)</strong></div>
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover06.jpg" alt="샘플이미지"><strong>contrast(50%)</strong></div>
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover06.jpg" alt="샘플이미지"><strong>contrast(75%)</strong></div>
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover06.jpg" alt="샘플이미지"><strong>contrast(100%)</strong></div>
+                        </div>
+                        <!-- ex -->
+                    </div>
+                    <div class="sampleOption">
+                        <a href="#" data-value="hover04"></a>
+                        <a href="#" data-value="hover05"></a>
+                        <a href="#" data-value="hover06"></a>
+                        <a href="#" data-value="hover07"></a>
+                    </div>
+                    <div class="sampleCode">
+                        <div class="scMenu">
+                            <div>HTML</div>
+                            <div>CSS</div>
+                            <div>SCRIPT</div>
+                        </div>
+                        <div class="scCont">
+                            <div>
+<pre class="language-html"><code>&lt;div class="box filter-box"&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지"&gt;&lt;strong&gt;contrast(0%)&lt;/strong&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지"&gt;&lt;strong&gt;contrast(25%)&lt;/strong&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지"&gt;&lt;strong&gt;contrast(50%)&lt;/strong&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지"&gt;&lt;strong&gt;contrast(75%)&lt;/strong&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="샘플이미지"&gt;&lt;strong&gt;contrast(100%)&lt;/strong&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-css"><code>.brightness > div:nth-child(1) strong {backdrop-filter: contrast(0%);}
+.brightness > div:nth-child(2) strong {backdrop-filter: contrast(25%);}
+.brightness > div:nth-child(3) strong {backdrop-filter: contrast(50%);}
+.brightness > div:nth-child(4) strong {backdrop-filter: contrast(75%);}
+.brightness > div:nth-child(5) strong {backdrop-filter: contrast(100%);}
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-javascript"><code>//javascript none
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //Sample3 -->
 
 
                 <script>

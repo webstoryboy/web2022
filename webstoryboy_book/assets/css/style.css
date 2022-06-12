@@ -285,7 +285,7 @@ body.intro #footer {
     display: flex;
 }
 #youtube .desc .left {
-    width: 50%;
+    width: 45%;
     background: #705df2;
     padding: 40px;
     border-radius: 0 0 0 10px;
@@ -306,7 +306,7 @@ body.intro #footer {
     font-size: 0.8em;
 }
 #youtube .desc .right {
-    width: 50%;
+    width: 55%;
     background: #6151D2;
     border-radius: 0 0 10px 0px;
     padding: 40px;

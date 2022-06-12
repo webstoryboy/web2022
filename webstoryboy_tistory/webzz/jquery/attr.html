@@ -35,6 +35,7 @@
                 <h2 class="hide">attr()</h2>
                 <p>
                     attr() 메서드는 요소의 속성 값을 가져오거나 변경합니다.
+                    여러개의 속성 값을 적용 할 수 있으며, 콜백 함수도 설정이 가능합니다.
                 </p>
                 <hr>
 
@@ -60,7 +61,7 @@
                             </tr>
                             <tr>
                                 <th>결과값(return)</th>
-                                <td>클래스 추가</td>
+                                <td>속성 추가</td>
                             </tr>
                             <tr>
                                 <th>사용성</th>
@@ -72,37 +73,42 @@
 
                 <h4 class="pt50">문법(Syntax)</h4>
                 <p class="blue">
-                    "선택자".attr(속성 이름)<br>
-                    "선택자".attr(속성 이름, 속성 값)<br>
-                    "선택자".attr(속성 이름, 함수)
+                    "선택자".attr("속성 이름")<br>
+                    "선택자".attr("속성 이름", "속성 값")<br>
+                    "선택자".attr({"속성 이름":"속성 값", "속성 이름":"속성 값", .... });<br>
+                    "선택자".attr("속성 이름", "함수")
                 </p>
 <pre><code class="language-javascript">//속성 이름을 가져오는 경우
-$("div").attr("attributeName");
+$("div").attr("title");
 
-//속성 이름의 속성 값을 변경하는 경우 경우
-$("div").attr("attribute", "Name");
+//속성 이름의 속성 값을 변경하는 경우
+$("div").attr("title", "타이틀입니다.");
+
+//여러 개의 속성 값을 변경하는 경우
+$("div").attr({"title" : "타이틀입니다.", "class" : "클래스입니다."});
 
 //콜백함수를 사용하는 경우
-$("div").attr("attr", function(){});
+$("div").attr("title", function(){});
 </code></pre>
                 <ul class="mt15">
                     <li>선택자(selector) : 클래스 이름을 추가할 선택자를 설정합니다.</li>
                     <li>속성 이름(attribute name) : 속성 이름을 설정합니다.</li>
-                    <li>함수(function) : 속성 값을 가져온 후 실행되는 함수를 설정합니다.</li>
+                    <li>함수(function) : 속성 값을 가져온 후 실행되는 콜백 함수를 설정합니다.</li>
                 </ul>
 
                 <h4>정의(Definition)</h4>
                 <ul>
                     <li>attr() 메서드는 요소의 속성 값을 가져오거나 변경합니다.</li>
+                    <li>attr() 메서드는 여러개의 속성 값을 적용할 수 있으며, 콜백함수 설정도 가능합니다.</li>
                 </ul>
 
                 <h4>속성 관련된 메서드(Attribute Related method)</h4>
                 <ul>
-                    <li>attr() 메서드는 요소의 속성 값을 가져오거나 변경합니다.</li>
+                    <li>attr() 메서드는 요소의 속성(attribute) 값을 가져오거나 변경합니다.</li>
                     <li>removeAttr() 메서드는 요소의 속성 값을 삭제합니다.</li>
-                    <li>prop() 메서드는 요소의 속성 값을 가져오거나 변경합니다.</li>
+                    <li>prop() 메서드는 요소의 속성(property) 값을 가져오거나 변경합니다.</li>
                     <li>removeProp() 메서드는 요소의 속성 값을 삭제합니다.</li>
-                    <li>val() 메서드는 속성 값을 가져오거나 변경합니다.</li>
+                    <li>val() 메서드는 속성(value) 값을 가져오거나 변경합니다.</li>
                 </ul>
  
                 <h4>비교(Compare)</h4>
@@ -111,6 +117,7 @@ $("div").attr("attr", function(){});
                     <li>Javascript에서 속성 값을 가져올 때에는 getAttribute()를 사용합니다.</li>
                     <li>Javascript에서 속성 값을 변경할 때에는 setAttribute()를 사용합니다.</li>
                 </ul>
+
 
 
                 <style>
@@ -164,7 +171,20 @@ $("div").attr("attr", function(){});
 </code></pre>
                             </div>
                             <div>
-<pre class="language-javascript"><code>
+<pre class="language-javascript"><code>$("#sample1 .btn1").click(function(e){
+    e.preventDefault();
+    const src = $("#sample1 .jsample .img").attr("src");
+    $("#sample1 .text").text("이 사진의 주소 값은 : " + src + "입니다.");
+});
+$("#sample1 .btn2").click(function(e){
+    e.preventDefault();
+    const alt = $("#sample1 .jsample .img").attr("alt");
+    $("#sample1 .text").text("이 사진의 alt 값은 : " + alt + "입니다.");
+});
+$("#sample1 .btn3").click(function(e){
+    e.preventDefault();
+    $("#sample1 .text").text("이 사진의 class 이름은 : " + $("#sample1 .jsample .img").attr("class") + "입니다." );
+});
 </code></pre>
                             </div>
                         </div>
@@ -231,7 +251,21 @@ $("div").attr("attr", function(){});
 </code></pre>
                             </div>
                             <div>
-<pre class="language-javascript"><code>
+<pre class="language-javascript"><code>$("#sample2 .btn1").click(function(e){
+    e.preventDefault();
+    $("#sample2 .img").attr("src","https://tistory4.daumcdn.net/tistory/2933724/skin/images/image04.jpg");
+    $("#sample2 .text").text("src 값이 'https://tistory4.daumcdn.net/tistory/2933724/skin/images/image04.jpg'으로 변경되었습니다.");
+});
+$("#sample2 .btn2").click(function(e){
+    e.preventDefault();
+    $("#sample2 .img").attr("src","https://tistory4.daumcdn.net/tistory/2933724/skin/images/image05.jpg");
+    $("#sample2 .text").text("src 값이 'https://tistory4.daumcdn.net/tistory/2933724/skin/images/image05.jpg'으로 변경되었습니다.");
+});
+$("#sample2 .btn3").click(function(e){
+    e.preventDefault();
+    $("#sample2 .img").attr("src","https://tistory4.daumcdn.net/tistory/2933724/skin/images/image06.jpg");
+    $("#sample2 .text").text("src 값이 'https://tistory4.daumcdn.net/tistory/2933724/skin/images/image06.jpg'으로 변경되었습니다.");
+});
 </code></pre>
                             </div>
                         </div>
@@ -344,7 +378,7 @@ $("div").attr("attr", function(){});
 
                 <h4 class="pt30">참고 사이트(Reference)</h4>
                 <ul>
-                    <li><a href="https://api.jquery.com/addClass/" target="_blank">jquery</a></li>
+                    <li><a href="https://api.jquery.com/attr/" target="_blank">jquery</a></li>
                 </ul>
 
                 <hr>

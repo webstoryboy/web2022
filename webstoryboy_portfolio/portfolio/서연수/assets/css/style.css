@@ -150,16 +150,22 @@ body {
   width: 35%;
   height: 70%;
 }
-
 .sec1 .right .img {
   position: absolute;
   left: 47vw; top: 140px;
   width: 30vw;
-  height: 70vh;
-  background: url(https://cogcod.github.io/Portfolio__02/assets/images/main.jpg) no-repeat center center;
+  height: 75vh;
+  background: url(https://ysseo0411.github.io/portfolio/src/img/mainview011.jpg) no-repeat center center;
   background-size: cover;
   border: 2px solid #000;
   border-radius: 30vw 30vw 0 0;
+}
+.sec1 .circle {
+  position: absolute;
+  left: 30vw;
+  top: 40vw;
+  z-index: 100;
+  width: 12vw;
 }
 .line {
   width: 2px;
@@ -182,19 +188,87 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 50px 10vw;
 }
 
 .pin-wrap > div {
-  min-width: 60vw;
+  min-width: 100vw;
   padding: 0 5vw;
-  background: #ccc;
-  height: 30vh;
+  height: 80vh;
+  margin-top: 7vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.about {
+  display: flex;
+  position: relative;
+}
+.about .left {
+  width: 50%;
+  position: relative;
+}
+.about .left .circle1 {
+  width: 40vw;
+  height: 40vw;
+  border: 1px solid #000;
+  border-radius: 50%;
+  background-blend-mode: difference
+}
+.about .left .circle2 {
+  width: 38vw;
+  height: 38vw;
+  border-radius: 50%;
+  position: absolute;
+  left: 3vw; top: 3vw;
+  background: #fad7d7;
+  background-blend-mode: difference
+}
+.about .left .circle3 {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "SantiagoRegular";
+  font-size: 2vw;
+  white-space: nowrap;
+}
+.about .left .circle4 {
+  position: absolute;
+  left: 20%; top: 0%;
+  width: 22vw;
+}
+
+.about .right {
+  width: 50%;
+}
+.about .right h3 {
+  font-family: "SantiagoRegular";
+  font-size: 4vw;
+  font-weight: bold;
+  margin-bottom: 2vh;
+}
+.about .right h4 {
+  font-family: "IropkeBatang";
+  font-size: 1.5em;
+  margin-bottom: 1.5vh;
+}
+.about .right p {
+  font-family: "IropkeBatang";
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 1vh;
+}
+
+.about1 {
+  margin-right: 10vw;
+  margin-left: 10vw;
+}
+.about .cir2 {
+  position: absolute;
+  right: 10vw;
+  bottom: 2vw;
+  width: 130px;
+}
 
 /* section3 */
 #section3 {

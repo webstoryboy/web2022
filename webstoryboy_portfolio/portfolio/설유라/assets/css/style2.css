@@ -44,8 +44,6 @@ html.has-scroll-dragging {
 #section1 {width: 100vw; height: 100vh; background: rgb(59, 55, 55);}
 #section2 {height: 100vh; background: #fdf7ed;}
 
-#section4 {width: 100vw; height: 100vh; background: #444;}
-#section5 {width: 100vw; height: 100vh; background: #555;}
 #section6 {width: 100vw; height: 100vh; background: #666;}
 
 /* header */
@@ -55,7 +53,7 @@ html.has-scroll-dragging {
     top: 0;
     width: 84px;
     height: 100vh;
-    background: rgba(255,255,255,0.4);
+    background: #fdf7ed70;
     z-index: 10000;
     display: flex;
     flex-direction: column;
@@ -63,7 +61,7 @@ html.has-scroll-dragging {
     backdrop-filter: blur(10px);
 }
 #header .logo {
-    color: #fff;
+    color: #000;
     font-family: 'Abel';
     text-transform: uppercase;
     font-size: 40px;
@@ -165,7 +163,7 @@ html.has-scroll-dragging {
     margin: 0 10vh;
 }
 .sec3 {
-    background: url(https://cogcod.github.io/Portfolio__02/assets/images/site_main.JPG) no-repeat center;
+    background: url(https://cogcod.github.io/Portfolio__02/assets/images/aboutme_3.png) no-repeat center;
     background-size: cover;
     width: 100vw;
     display: flex;
@@ -195,7 +193,6 @@ html.has-scroll-dragging {
     text-transform: uppercase;
     padding-left: 8vw;
 }
-
 .site {
     position: relative;
     display: flex;
@@ -208,7 +205,7 @@ html.has-scroll-dragging {
     z-index: 1;
 }
 .site .left .num {
-    font-size: 20vw;
+    font-size: 23vw;
     font-family: 'Exo';
     line-height: 1.2;
     -webkit-text-fill-color: transparent;
@@ -270,7 +267,6 @@ html.has-scroll-dragging {
     font-family: "Gilroy Semi-Bold";
     text-transform: uppercase;
 }
-
 .site .right {
     position: absolute;
     right: 10vw; bottom: 4vw;
@@ -291,4 +287,191 @@ html.has-scroll-dragging {
     background: url(https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80) no-repeat center center;
     background-size: cover;
     overflow: hidden;
+}
+
+
+
+/* section4 */
+#section4 {
+    background: #fdf7ed;
+    height: 100vh;
+    display: flex;
+}
+.sec4 {
+    background: url(https://cogcod.github.io/Portfolio__02/assets/images/aboutme_3.png) no-repeat center;
+    background-size: cover;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+.sec4 h1 {
+    text-align: center;
+    width: 100%;
+}
+.sec4 h1 em {
+    color: #fff;
+    display: block;
+    font-size: 4vw;
+    font-family: 'GmarketSans';
+    font-weight: 100;
+    margin-bottom: 1vw;
+}
+.sec4 h1 strong {
+    display: block;
+    font-family: "Gilroy Semi-Bold";
+    font-size: 9vw;
+}
+.sec4 h1 {
+    color: #fff;
+    line-height: 1;
+    text-transform: uppercase;
+    padding-left: 8vw;
+}
+
+.script {
+    width: 30vw;
+    height: 100vh;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.script h3 {
+    font-size: 6vw;
+    font-family: "Gilroy Semi-Bold";
+    color: #b32c35;
+    padding-right: 20vw;
+    position: relative;
+}
+.script .num {
+    position: absolute;
+    left: -2vw;
+    top: -2vw;
+    font-family: "Abril Fatface";
+    font-size: 2vw;
+    /* -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 1px #b32c35; */
+}
+.script .tag {
+    position: absolute;
+    bottom: 10vh;
+    right: -5vw;
+}
+.script .tag span {
+    background: #b32c35;
+    padding: 5px 10px;
+    color: #fff;
+}
+.script1 {
+    background: url("https://images.unsplash.com/photo-1654159498809-1c10bcfe7ccb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=985&q=80") no-repeat center center;
+    background-size: cover;
+}
+.script2 {
+    background: url("https://images.unsplash.com/photo-1651852508107-d57b42de79b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=988&q=80") no-repeat center center;
+    background-size: cover;
+}
+
+.script1 {
+    margin-left: 40vw;
+}
+.script6 {
+    margin-right: 40vw;
+}
+
+
+
+
+/* section4 */
+#section5 {
+    background: #fdf7ed;
+    height: 100vh;
+    display: flex;
+}
+.sec5 {
+    background: url(https://cogcod.github.io/Portfolio__02/assets/images/aboutme_3.png) no-repeat center;
+    background-size: cover;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+.sec5 h1 {
+    text-align: center;
+    width: 100%;
+}
+.sec5 h1 em {
+    color: #fff;
+    display: block;
+    font-size: 4vw;
+    font-family: 'GmarketSans';
+    font-weight: 100;
+    margin-bottom: 1vw;
+}
+.sec5 h1 strong {
+    display: block;
+    font-family: "Gilroy Semi-Bold";
+    font-size: 9vw;
+}
+.sec5 h1 {
+    color: #fff;
+    line-height: 1;
+    text-transform: uppercase;
+    padding-left: 8vw;
+}
+
+.front {
+    width: 70vw;
+    height: 60vh;
+    margin-right: 20vw;
+    margin-left: 20vw;
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.front h3 {
+    font-size: 8vw;
+    line-height: 1;
+    color: #b32c35;
+    font-family: "Abril Fatface";
+    position: absolute;
+    left: -6vw; top: -4vw;
+}
+.front .btn {
+    position: absolute;
+    right: -80px;
+    bottom: -80px;
+    width: 200px;
+    height: 200px;
+    background: #b32c35;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 200px;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "Abril Fatface";
+    font-size: 2vw;
+}
+.front .desc {
+    position: absolute;
+    left: 2vw; top: 5vw;
+    font-family: 'IropkeBatang';
+    max-width: 500px;
+    background: #fdf7ed;
+    white-space: normal;
+    padding: 10px 20px;
+    color: #b32c35;
+    line-height: 1.5;
+}
+.front1 {
+    background: url(https://images.unsplash.com/photo-1652707804106-9b1abf3b4960?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2371&q=80) no-repeat center center;
+    background-size: cover;
 }

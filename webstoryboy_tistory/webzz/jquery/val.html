@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="../../assets/css/dracula.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
 
+    <link href="https://webfontworld.github.io/NanumSquare/NanumSquare.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/tmoney/TmoneyRoundWind.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/Healthset/HealthsetLuckybag.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/ssf/BeanPole.css" rel="stylesheet">
+
     <!-- SCRIPT -->
     <script src="../../assets/js/jquery-3.6.0.js"></script>
     <script src="../../assets/js/jquery-ui.js"></script>
@@ -64,7 +69,7 @@
                             </tr>
                             <tr>
                                 <th>사용성</th>
-                                <td>★★★☆☆</td>
+                                <td>★★★★☆</td>
                             </tr>
                         </tbody>
                     </table>
@@ -73,18 +78,17 @@
                 <h4 class="pt50">문법(Syntax)</h4>
                 <p class="blue">
                     "선택자".val()<br>
-                    "선택자".val(속성)<br>
-                    "선택자".val(함수)
+                    "선택자".val("속성")<br>
+                    "선택자".val("함수")
                 </p>
-<pre><code class="language-javascript">//select 메뉴의 속성값을 가져오는 경우
+<pre><code class="language-javascript">//select 메뉴의 속성 값을 가져오는 경우
 $("select option:checked").val();
 
-//input의 속성값을 가져오는 경우
+//input의 속성 값을 가져오는 경우
 $("input[type=checkbox]:checked").val();
 
-
 //콜백함수를 사용하는 경우
-$("div").attr("attr", function(){});
+$("input[type=checkbox]").val(function(){});
 </code></pre>
                 <ul class="mt15">
                     <li>선택자(selector) : 클래스 이름을 추가할 선택자를 설정합니다.</li>
@@ -99,11 +103,11 @@ $("div").attr("attr", function(){});
 
                 <h4>속성 관련된 메서드(Attribute Related method)</h4>
                 <ul>
-                    <li>attr() 메서드는 요소의 속성 값을 가져오거나 변경합니다.</li>
+                    <li>attr() 메서드는 요소의 속성(attribute) 값을 가져오거나 변경합니다.</li>
                     <li>removeAttr() 메서드는 요소의 속성 값을 삭제합니다.</li>
-                    <li>prop() 메서드는 요소의 속성 값을 가져오거나 변경합니다.</li>
+                    <li>prop() 메서드는 요소의 속성(property) 값을 가져오거나 변경합니다.</li>
                     <li>removeProp() 메서드는 요소의 속성 값을 삭제합니다.</li>
-                    <li>val() 메서드는 속성 값을 가져오거나 변경합니다.</li>
+                    <li>val() 메서드는 속성(value) 값을 가져오거나 변경합니다.</li>
                 </ul>
  
                 <h4>비교(Compare)</h4>
@@ -123,6 +127,7 @@ $("div").attr("attr", function(){});
                         margin-top: 10px;
                     }
                     .jsample select {
+                        border: 1px solid #ccc;
                         padding: 5px 20px;
                     }
                 </style>
@@ -143,10 +148,8 @@ $("div").attr("attr", function(){});
                         </div>
                         <!-- ex -->
                     </div>
-                    <div class="sampleBtn">
-                        <a href="#" class="btn1">버튼을 클릭하면 이미지의 주소 속성 값을 가져옵니다.</a>
-                        <a href="#" class="btn2">버튼을 클릭하면 이미지의 alt 속성 값을 가져옵니다.</a>
-                        <a href="#" class="btn3">버튼을 클릭하면 이미지의 clsss 속성 값을 가져옵니다.</a>
+                    <div class="sampleDesc">
+                        선택 메뉴를 선택하면 속성 값이 표시됩니다.
                     </div>
                     <div class="sampleCode">
                         <div class="scMenu">
@@ -156,10 +159,12 @@ $("div").attr("attr", function(){});
                         </div>
                         <div class="scCont">
                             <div>
-<pre class="language-html"><code>&lt;div class="jsample"&gt;
-    &lt;img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/image03.jpg" alt="샘플이미지2" class="img"&gt;
-    &lt;div class="text"&gt;여기에 표시됩니다.&lt;/div&gt;
-&lt;/div&gt;
+<pre class="language-html"><code>&lt;select name="select1" id="select1"&gt;
+    &lt;option value="select1"&gt;선택하기1&lt;/option&gt;
+    &lt;option value="select2"&gt;선택하기2&lt;/option&gt;
+    &lt;option value="select3"&gt;선택하기3&lt;/option&gt;
+    &lt;option value="select4"&gt;선택하기4&lt;/option&gt;
+&lt;/select&gt;
 </code></pre>
                             </div>
                             <div>
@@ -173,7 +178,9 @@ $("div").attr("attr", function(){});
 </code></pre>
                             </div>
                             <div>
-<pre class="language-javascript"><code>
+<pre class="language-javascript"><code>$(".jsample select").change(function(){
+    $("#sample1 .text").text("속성 값은 : " + $("#select1").val() + "입니다.");
+});
 </code></pre>
                             </div>
                         </div>
@@ -184,41 +191,31 @@ $("div").attr("attr", function(){});
                     $(".jsample select").change(function(){
                         $("#sample1 .text").text("속성 값은 : " + $("#select1").val() + "입니다.");
                     });
-
-
-                    $("#sample1 .btn1").click(function(e){
-                        e.preventDefault();
-                        const src = $("#sample1 .jsample .img").attr("src");
-                        $("#sample1 .text").text("이 사진의 주소 값은 : " + src + "입니다.");
-                    });
-                    $("#sample1 .btn2").click(function(e){
-                        e.preventDefault();
-                        const alt = $("#sample1 .jsample .img").attr("alt");
-                        $("#sample1 .text").text("이 사진의 alt 값은 : " + alt + "입니다.");
-                    });
-                    $("#sample1 .btn3").click(function(e){
-                        e.preventDefault();
-                        $("#sample1 .text").text("이 사진의 class 이름은 : " + $("#sample1 .jsample .img").attr("class") + "입니다." );
-                    });
                 </script>
 
 
+                <style>
+                    #sample2 input {
+                        border: 1px solid #ccc;
+                        padding: 10px;
+                        min-width: 350px;
+                        color: #666;
+                    }
+                </style>
                 <!-- Sample2 -->
                 <h4>예제2(Sample)</h4>
                 <div class="sample" id="sample2">
-                    <h5>버튼을 클릭하면 이미지에 속성 값을 변경하는 예제입니다.</h5>
+                    <h5>버튼을 클릭하면 input의 글씨가 변경되는 예제입니다.</h5>
                     <div class="sampleView">
                         <!-- ex -->
                         <div class="jsample">
-                            <img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/image03.jpg" alt="샘플이미지2" class="img">
-                            <div class="text">여기에 표시됩니다.</div>
+                            INPUT : <input type="text" value="클릭하면 글씨가 변경됩니다." class="text">
                         </div>
                         <!-- ex -->
                     </div>
                     <div class="sampleBtn">
-                        <a href="#" class="btn1">버튼을 클릭하면 이미지의 속성값(image04.jpg)을 변경합니다.</a>
-                        <a href="#" class="btn2">버튼을 클릭하면 이미지의 속성값(image05.jpg)을 가져옵니다.</a>
-                        <a href="#" class="btn3">버튼을 클릭하면 이미지의 속성값(image06.jpg)을 가져옵니다.</a>
+                        <a href="#" class="btn0">리셋</a>
+                        <a href="#" class="btn1">버튼을 클릭하면 input에 글씨가 변경됩니다.</a>
                     </div>
                     <div class="sampleCode">
                         <div class="scMenu">
@@ -228,24 +225,25 @@ $("div").attr("attr", function(){});
                         </div>
                         <div class="scCont">
                             <div>
-<pre class="language-html"><code>&lt;div class="jsample"&gt;
-    &lt;img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/image03.jpg" alt="샘플이미지2" class="img"&gt;
-    &lt;div class="text"&gt;여기에 표시됩니다.&lt;/div&gt;
-&lt;/div&gt;
+<pre class="language-html"><code>INPUT : &lt;input type="text" value="클릭하면 글씨가 변경됩니다." class="text"&gt;
 </code></pre>
                             </div>
                             <div>
-<pre class="language-css"><code>.jsample img {
-    border-radius: 3px;
-    max-width: 300px
-}
-.jsample .text {
-    margin-top: 10px;
+<pre class="language-css"><code>#sample2 input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-width: 350px;
+    color: #666;
 }
 </code></pre>
                             </div>
                             <div>
-<pre class="language-javascript"><code>
+<pre class="language-javascript"><code>("#sample2 .btn0").click(function() {
+    $("#sample2 .text").val("클릭하면 글씨가 변경됩니다.");
+});
+$("#sample2 .btn1").click(function() {
+    $("#sample2 .text").val($(this).text());
+});
 </code></pre>
                             </div>
                         </div>
@@ -253,26 +251,274 @@ $("div").attr("attr", function(){});
                 </div>
                 <!-- //Sample2 -->
                 <script>
-                    $("#sample2 .btn1").click(function(e){
+                    $("#sample2 .btn0").click(function(e) {
                         e.preventDefault();
-                        $("#sample2 .img").attr("src","https://tistory4.daumcdn.net/tistory/2933724/skin/images/image04.jpg");
-                        $("#sample2 .text").text("src 값이 'https://tistory4.daumcdn.net/tistory/2933724/skin/images/image04.jpg'으로 변경되었습니다.");
+                        $("#sample2 .text").val("클릭하면 글씨가 변경됩니다.");
                     });
-                    $("#sample2 .btn2").click(function(e){
+                    $("#sample2 .btn1").click(function(e) {
                         e.preventDefault();
-                        $("#sample2 .img").attr("src","https://tistory4.daumcdn.net/tistory/2933724/skin/images/image05.jpg");
-                        $("#sample2 .text").text("src 값이 'https://tistory4.daumcdn.net/tistory/2933724/skin/images/image05.jpg'으로 변경되었습니다.");
-                    });
-                    $("#sample2 .btn3").click(function(e){
-                        e.preventDefault();
-                        $("#sample2 .img").attr("src","https://tistory4.daumcdn.net/tistory/2933724/skin/images/image06.jpg");
-                        $("#sample2 .text").text("src 값이 'https://tistory4.daumcdn.net/tistory/2933724/skin/images/image06.jpg'으로 변경되었습니다.");
+                        $("#sample2 .text").val($(this).text());
                     });
                 </script>
 
 
+                <style>
+                    .form {
+                        display: flex;
+                        align-items: center;
+                    }
+                    .form label {
+                        overflow: hidden; 
+                        position: absolute; 
+                        width: 0; 
+                        height: 0; 
+                        line-height: 0; 
+                        text-indent: -9999px;
+                    }
+                    .form input {
+                        border: 1px solid #ccc;
+                        padding: 5px 15px;
+                        vertical-align: 2px;
+                        margin: 0 5px;
+                    }
+                    .form select {
+                        border: 1px solid #ccc;
+                        padding: 7px;
+                        min-width: 250px;
+                    }
+                </style>
+                <!-- Sample3 -->
+                <h4>예제3(Sample)</h4>
+                <div class="sample" id="sample3">
+                    <h5>이메일을 선택하면 자동으로 설정되는 예제입니다.</h5>
+                    <div class="sampleView">
+                        <!-- ex -->
+                        <div class="jsample">
+                            <div class="form">
+                                <div>
+                                    <label for="email1">이메일 아이디</label>
+                                    <input type="text" id="email1" name="email1">
+                                </div>
+                                @
+                                <div>
+                                    <label for="email2" class="ir_su">이메일 주소</label>
+                                    <input type="text" id="email2" name="email2">
+                                </div>
+                                <div>
+                                    <label for="email3" class="ir_su">메일 선택</label>
+                                    <select id="email3" name="email3" title="이메일 주소 선택">
+                                        <option value=""> :: 이메일주소 직접입력 :: </option>
+                                        <option value="naver.com">naver.com</option>
+                                        <option value="nate.com">nate.com</option>
+                                        <option value="gmail.com">gmail.com</option>
+                                        <option value="yahoo.com">yahoo.com</option>
+                                        <option value="hanmail.net">hanmail.net</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ex -->
+                    </div>
+                    <div class="sampleDesc">
+                        이메일을 선택하면 글씨가 자동으로 변경됩니다.
+                    </div>
+                    <div class="sampleCode">
+                        <div class="scMenu">
+                            <div>HTML</div>
+                            <div>CSS</div>
+                            <div>SCRIPT</div>
+                        </div>
+                        <div class="scCont">
+                            <div>
+<pre class="language-html"><code>&lt;div class="form"&gt;
+    &lt;div&gt;
+        &lt;label for="email1"&gt;이메일 아이디&lt;/label&gt;
+        &lt;input type="text" id="email1" name="email1"&gt;
+    &lt;/div&gt;
+    @
+    &lt;div&gt;
+        &lt;label for="email2" class="ir_su"&gt;이메일 주소&lt;/label&gt;
+        &lt;input type="text" id="email2" name="email2"&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;label for="email3" class="ir_su"&gt;메일 선택&lt;/label&gt;
+        &lt;select id="email3" name="email3" title="이메일 주소 선택"&gt;
+            &lt;option value=""&gt; :: 이메일주소 직접입력 :: &lt;/option&gt;
+            &lt;option value="naver.com"&gt;naver.com&lt;/option&gt;
+            &lt;option value="nate.com"&gt;nate.com&lt;/option&gt;
+            &lt;option value="gmail.com"&gt;gmail.com&lt;/option&gt;
+            &lt;option value="yahoo.com"&gt;yahoo.com&lt;/option&gt;
+            &lt;option value="hanmail.net"&gt;hanmail.net&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-css"><code>.form {
+    display: flex;
+    align-items: center;
+}
+.form label {
+    overflow: hidden; 
+    position: absolute; 
+    width: 0; 
+    height: 0; 
+    line-height: 0; 
+    text-indent: -9999px;
+}
+.form input {
+    border: 1px solid #ccc;
+    padding: 5px 15px;
+    vertical-align: 2px;
+    margin: 0 5px;
+}
+.form select {
+    border: 1px solid #ccc;
+    padding: 7px;
+    min-width: 250px;
+}
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-javascript"><code>$("#email3").change(function(){
+    $("#email2").val($("#email3").val());
+});
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //Sample3 -->
+                <script>
+                    $("#email3").change(function(){
+                        $("#email2").val($("#email3").val());
+                    });
+                </script>
 
+
+                <!-- Sample4 -->
+                <h4>예제4(Sample)</h4>
+                <div class="sample" id="sample4">
+                    <h5>메뉴를 선택하면 해당 주소로 이동하는 예제입니다.</h5>
+                    <div class="sampleView">
+                        <!-- ex -->
+                        <div class="jsample">
+                            <select id="address">
+                                <option value="https://wtss.tistory.com/">튜토리얼 사이트</option>
+                                <option value="https://wess.tistory.com/">폰트 사이트</option>
+                                <option value="https://wiss.tistory.com/">웹지엘 사이트</option>
+                                <option value="https://wsss.tistory.com/">애니메이션 사이트</option>
+                            </select>
+                        </div>
+                        <!-- ex -->
+                    </div>
+                    <div class="sampleDesc">
+                        메뉴를 선택하면 해당 사이트로 이동합니다.
+                    </div>
+                    <div class="sampleCode">
+                        <div class="scMenu">
+                            <div>HTML</div>
+                            <div>CSS</div>
+                            <div>SCRIPT</div>
+                        </div>
+                        <div class="scCont">
+                            <div>
+<pre class="language-html"><code>&lt;select id="address"&gt;
+    &lt;option value="https://wtss.tistory.com/"&gt;튜토리얼 사이트&lt;/option&gt;
+    &lt;option value="https://wess.tistory.com/"&gt;폰트 사이트&lt;/option&gt;
+    &lt;option value="https://wiss.tistory.com/"&gt;웹지엘 사이트&lt;/option&gt;
+    &lt;option value="https://wsss.tistory.com/"&gt;애니메이션 사이트&lt;/option&gt;
+&lt;/select&gt;
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-css"><code>/* CSS none */
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-javascript"><code>$("#address").change(function(){
+    var url = $(this).val();
+    if(url) location.href= url;
+});
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //Sample4 -->
+                <script>
+                    $("#address").change(function(){
+                        var url = $(this).val();
+                        if(url) location.href= url;
+                    });
+                </script>
+
+
+                <!-- Sample5 -->
+                <h4>예제5(Sample)</h4>
+                <div class="sample" id="sample4">
+                    <h5>폰트를 선택하면 해당 폰트로 변경되는 예제입니다.</h5>
+                    <div class="sampleView">
+                        <!-- ex -->
+                        <div class="jsample">
+                            <select id="font">
+                                <option value="'NexonLv1Gothic'">넥슨고딕</option>
+                                <option value="'NanumSquare'">나눔스퀘어</option>
+                                <option value="'TmoneyRoundWind'">티머니 둥근바람</option>
+                                <option value="'HealthsetLuckybag'">헬스셋 복조리체</option>
+                                <option value="'BeanPole'">빈폴</option>
+                            </select>
+                        </div>
+                        <!-- ex -->
+                    </div>
+                    <div class="sampleDesc">
+                        메뉴를 선택하면 폰트가 변경됩니다.<br>
+                        웹 폰트가 연동되어 있으면 작동합니다.<br>
+                        &lt;link href="https://webfontworld.github.io/NanumSquare/NanumSquare.css" rel="stylesheet"&gt;<br>
+                        &lt;link href="https://webfontworld.github.io/tmoney/TmoneyRoundWind.css" rel="stylesheet"&gt;<br>
+                        &lt;link href="https://webfontworld.github.io/Healthset/HealthsetLuckybag.css" rel="stylesheet"&gt;<br>
+                        &lt;link href="https://webfontworld.github.io/ssf/BeanPole.css" rel="stylesheet"&gt;<br>
+                    </div>
+                    <div class="sampleCode">
+                        <div class="scMenu">
+                            <div>HTML</div>
+                            <div>CSS</div>
+                            <div>SCRIPT</div>
+                        </div>
+                        <div class="scCont">
+                            <div>
+<pre class="language-html"><code>&lt;select id="font"&gt;
+    &lt;option value="'NexonLv1Gothic'"&gt;넥슨고딕&lt;/option&gt;
+    &lt;option value="'NanumSquare'"&gt;나눔스퀘어&lt;/option&gt;
+    &lt;option value="'TmoneyRoundWind'"&gt;티머니 둥근바람&lt;/option&gt;
+    &lt;option value="'HealthsetLuckybag'"&gt;헬스셋 복조리체&lt;/option&gt;
+    &lt;option value="'BeanPole'"&gt;빈폴&lt;/option&gt;
+&lt;/select&gt;
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-css"><code>/* CSS none */
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-javascript"><code>$("#font").change(function(){
+    $("#explanation").css("font-family", $(this).val());
+});
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //Sample5 -->
                 
+                <script>
+                    $("#font").change(function(){
+                        $("#explanation").css("font-family", $(this).val());
+                    });
+                </script>
+
+
                 <h4>호환성(Compatibility)</h4>
                 <div class="table">
                     <table class="compatibility">

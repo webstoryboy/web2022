@@ -75,7 +75,7 @@
                     "선택자".removeProp("속성 이름")
                 </p>
 <pre><code class="language-javascript">//속성 이름을 삭제하는 경우
-$("div").removeProp("propertieName");
+$("div").removeProp("title");
 </code></pre>
                 <ul class="mt15">
                     <li>선택자(selector) : 클래스 이름을 추가할 선택자를 설정합니다.</li>
@@ -89,11 +89,11 @@ $("div").removeProp("propertieName");
 
                 <h4>속성 관련된 메서드(Attribute Related method)</h4>
                 <ul>
-                    <li>attr() 메서드는 요소의 속성 값을 가져오거나 변경합니다.</li>
+                    <li>attr() 메서드는 요소의 속성(attribute) 값을 가져오거나 변경합니다.</li>
                     <li>removeAttr() 메서드는 요소의 속성 값을 삭제합니다.</li>
-                    <li>prop() 메서드는 요소의 속성 값을 가져오거나 변경합니다.</li>
+                    <li>prop() 메서드는 요소의 속성(property) 값을 가져오거나 변경합니다.</li>
                     <li>removeProp() 메서드는 요소의 속성 값을 삭제합니다.</li>
-                    <li>val() 메서드는 속성 값을 가져오거나 변경합니다.</li>
+                    <li>val() 메서드는 속성(value) 값을 가져오거나 변경합니다.</li>
                 </ul>
  
                 <h4>비교(Compare)</h4>
@@ -102,141 +102,6 @@ $("div").removeProp("propertieName");
                     <li>Javascript에서 속성 값을 가져올 때에는 getAttribute()를 사용합니다.</li>
                     <li>Javascript에서 속성 값을 변경할 때에는 setAttribute()를 사용합니다.</li>
                 </ul>
-
-
-                <style>
-                    .jsample img {
-                        border-radius: 3px;
-                        max-width: 300px
-                    }
-                    .jsample .text {
-                        margin-top: 10px;
-                    }
-                    .jsample label {
-                        display: block;
-                    }
-                </style>
-                <!-- Sample1 -->
-                <h4>예제1(Sample)</h4>
-                <div class="sample" id="sample1">
-                    <h5>라디오 버튼을 클릭하면 input의 checked 속성을 보여주는 예제입니다.</h5>
-                    <div class="sampleView">
-                        <!-- ex -->
-                        <div class="jsample">
-                            <form>
-                                <label>
-                                    <input class="check1" type="radio" name="radio" checked/>
-                                    <span>HTML</span>
-                                </label>
-                                <label>
-                                    <input class="check2" type="radio" name="radio"/>
-                                    <span>CSS</span>
-                                </label>
-                                <label>
-                                    <input class="check3" type="radio" name="radio"/>
-                                    <span>JAVASCRIPT</span>
-                                </label>
-                                <label>
-                                    <input class="check4" type="radio" name="radio"/>
-                                    <span>JQUERY</span>
-                                </label>
-                            </form>
-                            <br>
-                            <div class="text1">여기에 표시됩니다.</div>
-                            <div class="text2">여기에 표시됩니다.</div>
-                            <div class="text3">여기에 표시됩니다.</div>
-                            <div class="text4">여기에 표시됩니다.</div>
-                        </div>
-                        <!-- ex -->
-                    </div>
-                    <div class="sampleBtn">
-                        <a href="#" class="btn1">버튼을 클릭하면 속성 값을 삭제됩니다.</a>
-                    </div>
-                    <div class="sampleCode">
-                        <div class="scMenu">
-                            <div>HTML</div>
-                            <div>CSS</div>
-                            <div>SCRIPT</div>
-                        </div>
-                        <div class="scCont">
-                            <div>
-<pre class="language-html"><code>&lt;div class="jsample"&gt;
-    &lt;form&gt;
-        &lt;label&gt;
-            &lt;input class="check1" type="radio" name="radio" checked/&gt;
-            &lt;span&gt;HTML&lt;/span&gt;
-        &lt;/label&gt;
-        &lt;label&gt;
-            &lt;input class="check2" type="radio" name="radio"/&gt;
-            &lt;span&gt;CSS&lt;/span&gt;
-        &lt;/label&gt;
-        &lt;label&gt;
-            &lt;input class="check3" type="radio" name="radio"/&gt;
-            &lt;span&gt;JAVASCRIPT&lt;/span&gt;
-        &lt;/label&gt;
-        &lt;label&gt;
-            &lt;input class="check4" type="radio" name="radio"/&gt;
-            &lt;span&gt;JQUERY&lt;/span&gt;
-        &lt;/label&gt;
-    &lt;/form&gt;
-    &lt;br&gt;
-    &lt;div class="text1"&gt;여기에 표시됩니다.&lt;/div&gt;
-    &lt;div class="text2"&gt;여기에 표시됩니다.&lt;/div&gt;
-    &lt;div class="text3"&gt;여기에 표시됩니다.&lt;/div&gt;
-    &lt;div class="text4"&gt;여기에 표시됩니다.&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-                            </div>
-                            <div>
-<pre class="language-css"><code>.jsample img {
-    border-radius: 3px;
-    max-width: 300px
-}
-.jsample .text {
-    margin-top: 10px;
-}
-.jsample label {
-    display: block;
-}
-</code></pre>
-                            </div>
-                            <div>
-<pre class="language-javascript"><code>$(".jsample input").change(function(){
-    const ch1 =  $(".jsample .check1").prop("checked");
-    $("#sample1 .text1").text("checked 속성 값은 : " + ch1 + "입니다.");
-    const ch2 =  $(".jsample .check2").prop("checked");
-    $("#sample1 .text2").text("checked 속성 값은 : " + ch2 + "입니다.");
-    const ch3 =  $(".jsample .check3").prop("checked");
-    $("#sample1 .text3").text("checked 속성 값은 : " + ch3 + "입니다.");
-    const ch4 =  $(".jsample .check4").prop("checked");
-    $("#sample1 .text4").text("checked 속성 값은 : " + ch4 + "입니다.");
-})
-</code></pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- //Sample1 -->
-                <script>
-                
-                    const ch1 =  $(".jsample .check1").prop("checked");
-                    $("#sample1 .text1").text("checked 속성 값은 : " + ch1 + "입니다.");
-                    const ch2 =  $(".jsample .check2").prop("checked");
-                    $("#sample1 .text2").text("checked 속성 값은 : " + ch2 + "입니다.");
-                    const ch3 =  $(".jsample .check3").prop("checked");
-                    $("#sample1 .text3").text("checked 속성 값은 : " + ch3 + "입니다.");
-                    const ch4 =  $(".jsample .check4").prop("checked");
-                    $("#sample1 .text4").text("checked 속성 값은 : " + ch4 + "입니다.");
-
-                    $(".sampleBtn .btn1").click(function(e){
-                        e.preventDefault();
-                        $(".jsample .check1").removeProp("checked")
-                    });
-                </script>
-
-
-               
-
 
                 
                 <h4>호환성(Compatibility)</h4>
@@ -266,7 +131,7 @@ $("div").removeProp("propertieName");
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="ce" scope="row" rowspan="3">.removeAttr()</td>
+                                <td class="ce" scope="row" rowspan="3">.removeProp()</td>
                                 <td class="ce">jQeury 1.x 버전</td>
                                 <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
                                 <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
@@ -323,7 +188,7 @@ $("div").removeProp("propertieName");
 
                 <h4 class="pt30">참고 사이트(Reference)</h4>
                 <ul>
-                    <li><a href="https://api.jquery.com/removeattr/" target="_blank">jquery</a></li>
+                    <li><a href="https://api.jquery.com/removeprop/" target="_blank">jquery</a></li>
                 </ul>
 
                 <hr>

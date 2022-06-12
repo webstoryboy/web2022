@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"포트폴리오가 실력이다" : CSS 레퍼런스</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- SCRIPT -->
+    <script src="../../assets/js/jquery-3.6.0.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+</head>
+
+<body class="white">
+    <header id="header">
+        <h1><a href="#">WEBS : CSS 레퍼런스 : backdrop-filter</a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+
+        <section id="explanation">
+            <div class="container">
+                <h2 class="hide">backdrop-filter</h2>
+                <p>
+                    backdrop-filter 속성은 배경에 그래픽 효과를 설정합니다.
+                </p>
+
+                <hr>
+
+                <h3>backdrop-filter</h3>
+                <p class="blue">backdrop-filter 속성은 배경에 그래픽 효과를 설정합니다.</p>
+
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 30%">
+                            <col style="width: 70%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>특징</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>기본 값</th>
+                                <td>backdrop-filter : none</td>
+                            </tr>
+                            <tr>
+                                <th>적용</th>
+                                <td>animation</td>
+                            </tr>
+                            <tr>
+                                <th>버전</th>
+                                <td>CSS3</td>
+                            </tr>
+                            <tr>
+                                <th>사용성</th>
+                                <td>★★★☆☆</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>정의(Definition)</h4>
+                <ul>
+                    <li>backdrop-filter 속성은 배경에 그래픽 효과를 설정합니다.</li>
+                    <li>요소의 배경을 반투명 설정하여야 효과를 확인할 수 있습니다.</li>
+                </ul>
+
+                <h4>그래픽 효과와 관련된 속성(Graphic Related Properties)</h4>
+                <ul>
+                    <li>filter 속성은 그래픽 효과를 설정합니다.</li>
+                    <li>backdrop-filter 속성은 배경에 그래픽 효과를 설정합니다.</li>
+                    <li>background-blend-mode 속성은 배경을 혼합했을 때 그래픽 효과를 설정합니다.</li>
+                    <li>mix-blend-mode 속성은 요소를 혼합했을 때 그래픽 효과를 설정합니다.</li>
+                </ul>
+
+                <h4>문법(Syntax)</h4>
+                <p class="blue">backdrop-filter : none | blur() | brightness() | contrast() | drop-shadow() | grayscale() | hue-rotate() | invert() | opacity() | sepia() | saturate()</p>
+                <p class="blue">
+                    /* 기본 속성 */<br>
+                    backdrop-filter : none; <br>
+                    backdrop-filter : blur()<br>
+                    backdrop-filter : brightness();<br>
+                    backdrop-filter : contrast(); <br>
+                    backdrop-filter : drop-shadow();<br>
+                    backdrop-filter : grayscale();<br>
+                    backdrop-filter : hue-rotate();<br>
+                    backdrop-filter : invert();<br>
+                    backdrop-filter : opacity();<br>
+                    backdrop-filter : sepia();<br>
+                    backdrop-filter : saturate();<br>
+                </p>
+
+                <h4>속성(Property)</h4>
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 30%">
+                            <col style="width: 70%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">속성값</th>
+                                <th scope="col">설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>none</th>
+                                <td>이미지의 아무런 효과를 주지 않습니다.</td>
+                            </tr>
+                            <tr>
+                                <th>blur(px)</th>
+                                <td>이미지의 블러 효과를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>brightness(%)</th>
+                                <td>이미지의 밝고 어두움 정도를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>contrast(%)</th>
+                                <td>이미지의 대비를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>drop-shadow()</th>
+                                <td>이미지의 그림자를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>grayscale(%)</th>
+                                <td>이미지의 그레이스케일를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>hue-rotate(deg)</th>
+                                <td>이미지의 색조를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>invert(%)</th>
+                                <td>이미지를 반전합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>opacity(%)</th>
+                                <td>이미지의 투명도를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>saturate(%)</th>
+                                <td>이미지의 채도를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>sepia(%)</th>
+                                <td>이미지의 세피아 효과를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>url()</th>
+                                <td>이미지의 경로를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>inherit</th>
+                                <td>상위 요소의 속성 값을 상속받습니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Sample1 -->
+                <style>
+                    .sample .box {
+                        overflow: hidden;
+                    }
+                    .sample .box > div {
+                        position: relative;
+                        width: 20%;
+                        display: block;
+                        float: left;
+                        background: url(https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg);
+                    }
+                    .sample .box > div strong {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        background: rgba(0,0,0,0.3);
+                        color: #fff;
+                        padding: 10% 20%;
+                    }
+                    
+                    .filter-box > div:nth-child(1) strong {backdrop-filter: blur(0px);}
+                    .filter-box > div:nth-child(2) strong {backdrop-filter: blur(2px);}
+                    .filter-box > div:nth-child(3) strong {backdrop-filter: blur(5px);}
+                    .filter-box > div:nth-child(4) strong {backdrop-filter: blur(10px);}
+                    .filter-box > div:nth-child(5) strong {backdrop-filter: blur(15px);}
+
+                    .sampleOption a {
+                        width: 41px; height: 41px;
+                        border-radius: 50%;
+                        display: inline-block;
+                        text-align: center;
+                        line-height: 41px;
+                        background-position: center;
+                        background-size: cover;
+                    }
+                    .sampleOption a:nth-child(1){background-image: url(https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg);}
+                    .sampleOption a:nth-child(2){background-image: url(https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg);}
+                    .sampleOption a:nth-child(3){background-image: url(https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover06.jpg);}
+                    .sampleOption a:nth-child(4){background-image: url(https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover07.jpg);}
+                    
+                </style>
+                <h4>예제1(Sample)</h4>
+                <div class="sample" id="sample1">
+                    <h5>이미지의 blur 효과를 설정하는 예제입니다.</h5>
+                    <div class="sampleView">
+                        <!-- ex -->
+                        <div class="box filter-box">
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"><strong>blur(0px)</strong></div>
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"><strong>blur(2px)</strong></div>
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"><strong>blur(5px)</strong></div>
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"><strong>blur(10px)</strong></div>
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"><strong>blur(15px)</strong></div>
+                        </div>
+                        <!-- ex -->
+                    </div>
+                    <div class="sampleOption">
+                        <a href="#" data-value="hover04"></a>
+                        <a href="#" data-value="hover05"></a>
+                        <a href="#" data-value="hover06"></a>
+                        <a href="#" data-value="hover07"></a>
+                    </div>
+                    <div class="sampleCode">
+                        <div class="scMenu">
+                            <div>HTML</div>
+                            <div>CSS</div>
+                            <div>SCRIPT</div>
+                        </div>
+                        <div class="scCont">
+                            <div>
+<pre class="language-html"><code>&lt;div class="box filter-box"&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"&gt;&lt;strong&gt;blur(0px)&lt;/strong&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"&gt;&lt;strong&gt;blur(2px)&lt;/strong&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"&gt;&lt;strong&gt;blur(5px)&lt;/strong&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"&gt;&lt;strong&gt;blur(10px)&lt;/strong&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"&gt;&lt;strong&gt;blur(15px)&lt;/strong&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-css"><code>.filter-box > div:nth-child(1) strong {backdrop-filter: blur(0px);}
+.filter-box > div:nth-child(2) strong {backdrop-filter: blur(2px);}
+.filter-box > div:nth-child(3) strong {backdrop-filter: blur(5px);}
+.filter-box > div:nth-child(4) strong {backdrop-filter: blur(10px);}
+.filter-box > div:nth-child(5) strong {backdrop-filter: blur(15px);}
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-javascript"><code>$(".sampleOption a").click(function (e) {
+    e.preventDefault();
+    var attr = $(this).attr("data-value");
+    $(this).parent().prev().children().children().children().attr("src","https://tistory1.daumcdn.net/tistory/2933724/skin/images/"+attr+".jpg");
+});
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //Sample1 -->
+
+
+                <style>
+                    .brightness > div:nth-child(1) strong {backdrop-filter: brightness(0%);}
+                    .brightness > div:nth-child(2) strong {backdrop-filter: brightness(2%);}
+                    .brightness > div:nth-child(3) strong {backdrop-filter: brightness(5%);}
+                    .brightness > div:nth-child(4) strong {backdrop-filter: brightness(10%);}
+                    .brightness > div:nth-child(5) strong {backdrop-filter: brightness(15%);}
+                </style>
+                <h4>예제2(Sample)</h4>
+                <div class="sample" id="sample2">
+                    <h5>이미지의 brightness 효과를 설정하는 예제입니다.</h5>
+                    <div class="sampleView">
+                        <!-- ex -->
+                        <div class="box brightness">
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"><strong>blur(0px)</strong></div>
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"><strong>blur(2px)</strong></div>
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"><strong>blur(5px)</strong></div>
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"><strong>blur(10px)</strong></div>
+                            <div><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"><strong>blur(15px)</strong></div>
+                        </div>
+                        <!-- ex -->
+                    </div>
+                    <div class="sampleOption">
+                        <a href="#" data-value="hover04"></a>
+                        <a href="#" data-value="hover05"></a>
+                        <a href="#" data-value="hover06"></a>
+                        <a href="#" data-value="hover07"></a>
+                    </div>
+                    <div class="sampleCode">
+                        <div class="scMenu">
+                            <div>HTML</div>
+                            <div>CSS</div>
+                            <div>SCRIPT</div>
+                        </div>
+                        <div class="scCont">
+                            <div>
+<pre class="language-html"><code>&lt;div class="box filter-box"&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"&gt;&lt;strong&gt;blur(0px)&lt;/strong&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"&gt;&lt;strong&gt;blur(2px)&lt;/strong&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"&gt;&lt;strong&gt;blur(5px)&lt;/strong&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"&gt;&lt;strong&gt;blur(10px)&lt;/strong&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="샘플이미지"&gt;&lt;strong&gt;blur(15px)&lt;/strong&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-css"><code>.filter-box > div:nth-child(1) strong {backdrop-filter: blur(0px);}
+.filter-box > div:nth-child(2) strong {backdrop-filter: blur(2px);}
+.filter-box > div:nth-child(3) strong {backdrop-filter: blur(5px);}
+.filter-box > div:nth-child(4) strong {backdrop-filter: blur(10px);}
+.filter-box > div:nth-child(5) strong {backdrop-filter: blur(15px);}
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-javascript"><code>$(".sampleOption a").click(function (e) {
+    e.preventDefault();
+    var attr = $(this).attr("data-value");
+    $(this).parent().prev().children().children().children().attr("src","https://tistory1.daumcdn.net/tistory/2933724/skin/images/"+attr+".jpg");
+});
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //Sample2 -->
+
+
+
+
+
+                <script>
+                    $(".sampleOption a").click(function (e) {
+                        e.preventDefault();
+                        var attr = $(this).attr("data-value");
+                        $(this).parent().prev().children().children().children().attr("src","https://tistory1.daumcdn.net/tistory/2933724/skin/images/"+attr+".jpg");
+                    });
+                </script>
+
+
+
+
+                <h4>호환성(Compatibility)</h4>
+                <div class="table">
+                    <table class="compatibility">
+                        <colgroup>
+                            <col style="width:20%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-chrome1.png" alt="크롬 아이콘" title="크롬 브라우저"></th>
+                                <th scope="col"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/icon-firefox1.png" alt="파이어폭스 아이콘" title="파이어폭스 브라우저"></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-safari1.png" alt="사파리 아이콘" title="사파리 브라우저"></th>
+                                <th scope="col"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/icon-opera1.png" alt="오페라 아이콘" title="오페라 브라우저"></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-whale1.png" alt="네이버 웨일" title="네이버 웨일 브라우저"></th>
+                                <th scope="col"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/icon-ie6.png" alt="익스플로러6 아이콘" title="인터넷 익스플로러6 브라우저"><em>6</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie7.png" alt="익스플로러7 아이콘" title="인터넷 익스플로러7 브라우저"><em>7</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie7.png" alt="익스플로러8 아이콘" title="인터넷 익스플로러8 브라우저"><em>8</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie9.png" alt="익스플로러9 아이콘" title="인터넷 익스플로러9 브라우저"><em>9</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie10.png" alt="익스플로러10 아이콘" title="인터넷 익스플로러10 브라우저"><em>10</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie11.png" alt="익스플로러11 아이콘" title="인터넷 익스플로러11 브라우저"><em>11</em></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-edge.png" alt="엣지 아이콘" title="엣지 브라우저"></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-android.png" alt="안드로이드 아이콘" title="모바일 안드로이드 브라우저"></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ios.png" alt="ios 아이콘" title="모바일 아이폰 브라우저"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td scope="row">backdrop-filter</td>
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러9 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러10 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러11 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="pt30">참고 사이트(Reference)</h4>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter" target="_blank">MDN</a></li>
+                </ul>
+
+                <hr>
+
+            </div>
+        </section>
+        <!-- //explanation -->
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer> 
+    <!-- //footer -->
+
+
+    <!-- script -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/script.js"></script> 
+</body>
+</html>

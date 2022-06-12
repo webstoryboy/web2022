@@ -72,18 +72,18 @@
 
                 <h4 class="pt50">문법(Syntax)</h4>
                 <p class="blue">
-                    "선택자".prop(속성 이름)<br>
-                    "선택자".prop(속성 이름, 속성 값)<br>
-                    "선택자".prop(속성 이름, 함수)
+                    "선택자".prop("속성 이름")<br>
+                    "선택자".prop("속성 이름", "속성 값")<br>
+                    "선택자".prop("속성 이름", "함수")
                 </p>
 <pre><code class="language-javascript">//속성 이름을 가져오는 경우
-$("div").prop("properties");
+$("div").prop("checked");
 
 //속성 이름의 속성 값을 변경하는 경우 경우
-$("div").prop("properties", "Name");
+$("div").prop("checked", true);
 
 //콜백함수를 사용하는 경우
-$("div").prop("properties", function(){});
+$("div").prop("checked", function(){});
 </code></pre>
                 <ul class="mt15">
                     <li>선택자(selector) : 클래스 이름을 추가할 선택자를 설정합니다.</li>

@@ -36,6 +36,9 @@
 .gmarket {
     font-family: "GmarketSans";
 }
+.nexon {
+    font-family: "NexonLv1Gothic";
+}
 
 /* 가운데 영역 */
 .container {
@@ -43,4 +46,9 @@
     margin: 0 auto;
     padding: 0 20px;
     /* background: rgba(0,0,0,0.3); */
+}
+
+/* 배경색 */
+.gray {
+    background-color: #F0F0F0;
 }

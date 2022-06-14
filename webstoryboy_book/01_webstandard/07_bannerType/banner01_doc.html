@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"포트폴리오가 실력이다" : 웹 표준 사이트 만들기</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">WEBS : 웹 표준 사이트 만들기 :  배너 유형01</a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <aside id="aside">
+            <button class="aside-btn"><span></span></button>
+            <div class="chapter">
+                <div class="chapter-title">
+                    <div class="label">Chapter 01</div>
+                    <div class="class">Classic 레이아웃 유형</div>
+                </div>
+                <div class="chapter-sub">
+                    <ul>
+                        <li><a href="../01_layout/layout_doc01.html">01. 레이아웃 유형 : 레이아웃01</a></li>
+                        <li><a href="../01_layout/layout_doc02.html">02. 레이아웃 유형 : 레이아웃02</a></li>
+                        <li><a href="../01_layout/layout_doc03.html">03. 레이아웃 유형 : 레이아웃03</a></li>
+                        <li><a href="../01_layout/layout_doc04.html">04. 레이아웃 유형 : 레이아웃04</a></li>
+                        <li><a href="../01_layout/layout_doc05.html">05. 레이아웃 유형 : 레이아웃05</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <!-- //aside -->
+
+        <section id="youtube" class="container ">
+            <div class="desc">
+                <div class="left">
+                    <span class="num">01.</span>
+                    <h3 class="title">배너 유형 : 배너 유형 01</h3>
+                    <span class="difficulty">난이도 <span>쉬움</span></span>
+                </div>
+                <div class="right">
+                    <h3>소스 다운로드</h3>
+                    <a href="#" target="_blank" class="sampleBtn">완성 화면 보기</a>
+                    <a href="#" target="_blank" class="sampleBtn">완성 코드 보기</a>
+                    <a href="#" target="_blank" class="sampleBtn">영상 보기</a>
+                </div>
+            </div>
+        </section>
+        <!-- //youtube -->
+
+        <section id="explanation">
+            <div class="container">
+                <h2>소개</h2>
+                <p>
+                    안녕하세요!. 웹스토리보이입니다.
+                    이번 주제는 배너유형입니다. 
+                    구조는 아주 단순하기 때문에 쉽게 따라 할 수 있습니다. 
+                    그럼 바로 시작해보겠습니다.
+                </p>
+
+                <h2>이론</h2>
+                <div class="iframe">
+                    <iframe width="800" height="350" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FiD3Ehm4HRhe16Vx6kxz3ob%2F%255B%25ED%258F%25AC%25ED%258A%25B8%25ED%258F%25B4%25EB%25A6%25AC%25EC%2598%25A4%25EA%25B0%2580-%25EC%258B%25A4%25EB%25A0%25A5%25EC%259D%25B4%25EB%258B%25A4%255D-%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EC%25A0%259C%25EC%259E%2591%25ED%258E%25B8%3Fnode-id%3D4930%253A61" allowfullscreen></iframe>
+                </div>
+                <p data-num="01" class="mt50">
+                    우리가 이번에 만들어 볼 유형은 이런 디자인입니다. 
+                    배경에 이미지가 있고, 가운데 영역에 텍스트가 있는 구조입니다.
+                    지금까지 잘 따라 오셨다면 폴더 구조는 이렇게 되어 있을겁니다.
+                    <code>webstandard</code> 폴더에 <code>06_banner01.html</code> 페이지를 만들겠습니다.  
+                </p>
+                <div class="folder">
+                    <ul>
+                        <li><span class="icon1">webstandard</span>
+                            <ul>
+                                <li class="icon1 mb5">site
+                                    <ul>
+                                        <li class="icon1">css</li>
+                                        <li class="icon1">js</li>
+                                        <li class="icon1">img</li>
+                                        <li class="icon2">index.html</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li class="icon2">01_layout01.html</li>
+                                <li class="icon2">02_layout02.html</li>
+                                <li class="icon2">03_layout03.html</li>
+                                <li class="icon2">04_layout04.html</li>
+                                <li class="icon2">05_layout05.html</li>
+                                <li class="icon2">06_banner01.html</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <p data-num="02">
+                    <code>!</code>를 치고 <code>tab</code>을 누르겠습니다.
+                    언어를 <code>ko</code>로 변경하고 <code>title</code>은 배너 유형01로 변경하겠습니다.
+                </p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;배너 유형01&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;section class="banner-wrap"&gt;
+        
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+                <p data-num="03">
+                    <strong>시멘틱 태그<sup>1</sup></strong> <code>&lt;section&gt;</code> 이용하여 배너 영역임을 표현합니다. 
+                    클래스 이름은 <code>banner-wrap</code>이라고 설정하겠습니다. 
+                </p>
+                <p data-num="04">
+                    <code>banner-wrap</code> 클래스 이미지를 넣겠습니다. 
+                    웹 사이트를 만들 때 <strong>이미지를 표현하는 방법<sup>2</sup></strong>은 3가지 있습니다. 
+                    첫번째는 의미가 없는 이미지는 css를 통해 표현하고, 두번째 의미가 있는 이미지는 img 태그를 통해 표현합니다. 
+                    이게 이미지를 표현 하는 가장 기본적인 방법이고, 세번째 방법은 웹 표준을 준수하기 위한 방법으로 추후에 배우게 될 것입니다.
+                    우선 그냥 해보겠습니다. 해보면 알게됩니다. ☺️
+                </p>
+
+<pre><code class="language-html">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;배너 유형01&lt;/title&gt;
+    &lt;style&gt;
+        .banner-wrap {
+            background-image: url(../../assets/img/banner_bg01@2x.jpg);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 500px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+</code></pre> 
+                <p data-num="05">
+                    디자인 작업을 해주는 <strong>CSS는 선언하는 규칙<sup>3</sup></strong>이 3가지 정도 있습니다. 
+                    우리는 첫 번째 방법으로 <code>head</code> 요소 안에 <code>style</code>을 선언하고 작업하겠습니다. 
+                </p>
+                <p data-num="06">
+                    <code>background-image</code> 속성을 통해 이미지를 넣으면 됩니다. 
+                    우선 영역이 없기 때문에 가상의 영역을 잡아주기 위해서 <code>height: 500px</code>을 추가할 것입니다.
+                    이미지 파일을 넣을 때는 <strong>상대주소<sup>4</sup></strong>를 이용하여 넣을 것입니다.
+                    <code>background-position</code> 속성을 통해 이미지의 위치를 설정하고, 
+                    <code>background-size</code>를 통해 이미지를 영역 크기에 맞추고, 
+                    <code>background-repeat</code>를 통해 이미지를 한번만 나오게 할 것입니다. 
+                    이렇게 <strong>백그라운드 속성<sup>5</sup></strong>은 다양하게 있으며, 상황에 따라 적절하게 사용하면 됩니다. 
+                    아직 처음이라 이런 속성들을 전부 알 수 없습니다. 
+                    하나씩 따라하면 점점 익숙해지고, 알게 될 것입니다.
+                </p>
+                <p data-num="07">
+                    여기까지 잘 따라하셨다면 결과를 확인해야 합니다. 
+                    결과는 VScode의 <strong>Live Server<sup>6</sup></strong>를 통해 확인하셔도 되고,
+                    우리가 만든 파일을 클릭해서 확인을 해도 됩니다.
+                </p>
+                <p data-num="08">
+                    결과를 확인해보면 여백이 생기는 것을 확인 할 수 있습니다. 
+                    초기에 사이트 작업시 모든 태그에는 보이지 않는 여백이 존재합니다. 
+                    이런 부분을 <strong>초기화<sup>7</sup></strong> 시켜주어야 합니다. 
+                </p>
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+</code></pre> 
+                <p data-num="09">
+                    지금 간단하게 바깥쪽 여백, 안쪽 여백, 패딩 값 포함 유무 정도만 설정하였습니다. 
+                    실전 사이트에서 더 디테일하게 설정할 것입니다. 
+                    이렇게 하면 여백없이 이미지가 잘 나올 것입니다. 
+                    제가 작업한거랑 한번 확인해보세요! 🥺
+                </p>
+                <div class="soFar ">
+                    <div class="click mb5">여기까지 결과 확인하기 <span>(banner_result01_01.html)</span></div>
+                </div> 
+            </div>
+            <!-- ..container -->
+
+            <div class="none">
+                <iframe style="width: 100%; height: 500px; background: #fff;" src="banner_result01_01.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="container">
+                <div class="soFar code">
+                    <div class="click">여기까지 코드 확인하기 <span>(banner_result01_01.html)</span></div>
+                </div>
+                <div class="none">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+    &lt;html lang="ko"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+        &lt;title&gt;배너 유형01&lt;/title&gt;
+        &lt;style&gt;
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .banner-wrap {
+                background-image: url(../../assets/img/banner_bg01@2x.jpg);
+                background-position: center center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                height: 500px;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;section class="banner-wrap"&gt;
+            
+        &lt;/section&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+                </div>
+                <p>
+                    그럼 이번에는 <code>banner-wrap</code> 요소를 작업해 보겠습니다. 
+                </p>
+<pre><code class="language-html">&lt;div class="banner__inner"&gt;
+    &lt;h3&gt;유튜버 웹보이&lt;/h3&gt;
+    &lt;p&gt;
+        더 다양한 강의는 유튜브를 통해 제공하고 있습니다.
+        &lt;a href="#"&gt;youtube.com/c/Webstoryboy&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;span&gt;배너 영역01&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+
+                <p data-num="10">
+                    제목은 <code>h3</code> 태그, 설명은 <code>p</code> 태그, 배너 영역 글씨는 마땅한게 없으니 <code>span</code> 태그를 사용하겠습니다. 
+                    <code>span</code> 태그는 마땅한게 없을 때 쓰는 인라인 요소입니다. 
+                    물론 자기가 생각하기에 또는 구조상 의미상 설명 부분이 맞다고 생각하면 <code>p</code> 태그를 사용하셔도 됩니다. 
+                    항상 얘기 했듯이 정답은 없습니다. 
+                    가장 효과적인 방법과 효율적인 방법으로 작업하시면 됩니다. 
+                    가장 효과적인 방법과 효율적인 방법은 경험을 통해서 조금씩 생기니, 천천히, 조금씩, 반복적으로 따라하시면 됩니다. 🥶
+                </p>
+
+                <p>
+                    이번에는 <strong>웹 폰트<sup>8</sup></strong>를 설정하겠습니다. 
+                </p>
+
+<pre><code class="language-html">&lt;link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet"&gt;</code></pre>
+   
+                <p data-num="11">
+                    웹 폰트를 설정하는 방법도 여러가가 있지만, 우리는 링크 방식을 이용해서 <code>title</code> 태그 밑에 추가하겠습니다. 
+                    웹 폰트를 사용하는 이유는 사용자 컴퓨터에 해당 폰트가 없으면, 해당 폰트를 다운하고 보여주는 방식입니다. 
+                    사이트 제작시 폰트는 아주 중요합니다. 폰트가 깨진다면 디자인 많이 이상해 질 것입니다. 
+                    그래서 저는 웹 폰트를 많이 사용합니다. 
+                    하지만 파일 용량이 크기 때문에 처음에 시작할 때는 시간이 지연 될 수 있는 단점이 있습니다. 
+                    그렇지만 자주 사용하는 폰트나 용량을 최적화 시킨 폰트를 사용한다면 크게 문제되지 않습니다. 
+                </p>
+                <p>
+                    이번에는 이름을 부여하겠습니다. 
+                </p>
+<pre><code class="language-html">&lt;div class="banner__inner"&gt;
+    &lt;h3 class="title"&gt;유튜버 웹보이&lt;/h3&gt;
+    &lt;p class="desc"&gt;
+        더 다양한 강의는 유튜브를 통해 제공하고 있습니다.
+        &lt;a href="#"&gt;youtube.com/c/Webstoryboy&lt;/a&gt;
+    &lt;/p&gt;
+    &lt;span class="sub"&gt;배너 영역01&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>   
+                <p>
+                    클래스 이름을 주는 것은 아주 중요합니다. 
+                    사이트가 복잡해지나, 여러 명에서 작업시 클래스 이름이나 아이디는 신중하게 정해야 합니다. 
+                    여러분들의 스킬이 쌓이면 이해가 될 것입니다. 
+                    그럼 이름을 지웠으니, 선택해서 속성을 주겠습니다. 이것을 <strong>선택자<sup>9</sup></strong>라고 하죠!
+                </p>
+
+<pre><code class="language-css">.banner__inner {
+    padding: 120px 0;
+    text-align: center;
+    color: #fff;
+    font-family: "GmarketSans";
+}
+</code></pre> 
+                <p data-num="12">
+                    위 아래로 여백을 주고, 글씨는 가운데 정렬하겠습니다. 
+                    모든 글씨는 하얀색으로 설정하고, 폰트는 지마켓으로 하겠습니다. 
+                </p>
+<pre><code class="language-css">.banner__inner .title {
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+.banner__inner .desc {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 70px;
+}
+.banner__inner .desc a {
+    display: block;
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 70px;
+}
+.banner__inner .sub {
+    font-size: 16px;
+    font-weight: 300;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+</code></pre> 
+                <p data-num="13">
+                    각각의 속성에 폰트 사이즈, 줄 간격, 폰트 두께, 바깥쪽 여백, 밑줄 속성을 주겠습니다. 
+                    각각의 사이즈는 피그마 또는 제플린을 확인하시면 됩니다. 
+                    <code>.banner__inner .desc a</code> 속성은 블록구조로 변경하시면, 줄바꿈 되는 것을 확인 할 수 있습니다. 
+                    <code>.banner__inner</code>에 color 속성을 적용하였지만, <code>a</code> 태그에만 적용되지 않습니다. 
+                    <code>a</code> 요소에는 따로 설정해주셔야 합니다. 또한 기본 값이 파란색 글씨와 밑줄이 생기니 이 부분도 수정했습니다. 
+                </p>
+                <p>
+                    그럼 여기까지 잘 따라했는지 확인해보겠습니다. 
+                </p>
+                <div class="soFar ">
+                    <div class="click mb5">여기까지 결과 확인하기 <span>(banner_result01_02.html)</span></div>
+                </div> 
+            </div>
+            <!-- ..container -->
+
+            <div class="none">
+                <iframe style="width: 100%; height: 500px; background: #fff;" src="banner_result01_02.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="container">
+                <div class="soFar code">
+                    <div class="click">여기까지 코드 확인하기 <span>(banner_result01_01.html)</span></div>
+                </div>
+                <div class="none">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;배너 유형01&lt;/title&gt;
+
+    &lt;link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet"&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .banner-wrap {
+            background-image: url(../../assets/img/banner_bg01@2x.jpg);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 500px;
+        }
+        .banner__inner {
+            padding: 120px 0;
+            text-align: center;
+            color: #fff;
+            font-family: "GmarketSans";
+        }
+        .banner__inner .title {
+            font-size: 50px;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+        .banner__inner .desc {
+            font-size: 24px;
+            line-height: 1.5;
+            font-weight: 300;
+            margin-bottom: 70px;
+        }
+        .banner__inner .desc a {
+            display: block;
+            font-size: 24px;
+            line-height: 1.5;
+            font-weight: 300;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 70px;
+        }
+        .banner__inner .sub {
+            font-size: 16px;
+            font-weight: 300;
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;section class="banner-wrap"&gt;
+        &lt;div class="banner__inner"&gt;
+            &lt;h3 class="title"&gt;유튜버 웹보이&lt;/h3&gt;
+            &lt;p class="desc"&gt;
+                더 다양한 강의는 유튜브를 통해 제공하고 있습니다.
+                &lt;a href="#"&gt;youtube.com/c/Webstoryboy&lt;/a&gt;
+            &lt;/p&gt;
+            &lt;span class="sub"&gt;배너 영역01&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+
+                <p>
+                    여기까지 하시면 1차적으로 완성한 것입니다. 
+                    이번에는 조금더 각색을 해보겠습니다. 
+                    재활용 가능하도록 클래스 이름을 변경하고, 공통요소들은 따로 설정하겠습니다. 
+                    왜 이렇게 하는지는 당장에 바로 설명하기가 힘듭니다. 
+                    사이트를 다 완성하면 왜 이렇게 했는지 이해가 될 것입니다. 
+                </p>
+
+                <p data-num="13">
+                    우선 <code>section</code> 태그를 사용하게 되면, 제목을 나타내는 &lt;h1&gt; ~ &lt;h6&gt; 태그가 포함되어야 합니다.
+                </p>
+<pre><code class="language-html">&lt;section class="banner-wrap"&gt;
+    &lt;h2 class="blind"&gt;배너 광고 영역&lt;/h2&gt;
+    &lt;div class="banner__inner"&gt;
+        ....
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre> 
+
+                <p data-num="14">
+                    <code>h2</code> 태그 제목은 웹 표준을 준수하기 위해서 필요합니다. 
+                    하지만 우리 눈에는 필요가 없습니다. 
+                    즉 시각장애인을 위한 시각 리더기에서는 읽어야 하고, 우리 눈에는 안보이게 효과를 주어야 합니다. 
+                    그래서 <strong>블라인드 효과<sup>10</sup></strong>를 줄 것입니다. 
+                </p>
+
+<pre><code class="language-css">.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden
+}
+</code></pre> 
+                <p data-num="15">
+                    블라인드 효과는 다른 유형에서도 사용할 것이므로 나중에 공통요소로 뺄 것입니다. 
+                    <code>position</code> 속성을 주어 위치를 설정하고, 
+                    <code>clip</code> 속성을 이용하여, 영역을 0으로 설정합니다. 
+                    영역을 1px로 설정하고 안보이게 마진을 -1px로 설정하고, 
+                    지정한 영역이외에는 보이지 않도록 <code>overflow: hidden</code>를 설정하였습니다. 
+                    이렇게 하면 우리 눈에는 보이지 않는 효과가 생깁니다. 
+                    웹 표준을 준수하기 위해서 만들어낸 속성입니다. 
+                </p>
+
+<pre><code class="language-css">.section {
+    padding: 120px 0;
+}
+.gmarket {
+    font-family: "GmarketSans";
+}
+</code></pre> 
+                <p data-num="15">
+                    <code>banner__inner</code>에 주었던 속성도 <code>section</code>과 <code>gmarket</code> 클래스에 따로 주겠습니다. 
+                    좀 더 효율적으로 작업하기 위한 방법으로 사이트를 다 만들었을 때 이해할 수 있습니다. 
+                </p>
+
+<pre><code class="language-html">&lt;section class="banner-wrap section gmarket"&gt;
+    &lt;h2 class="blind"&gt;배너 광고 영역&lt;/h2&gt;
+    &lt;div class="banner__inner"&gt;
+        .....
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre> 
+                
+                <p data-num="15">
+                    <code>banner__inner</code> 클래스 옆에 <code>section</code> 클래스와 <code>gmarket</code> 클래스를 추가하면 
+                    똑같이 적용되는 것을 확인 할 수 있습니다. 
+                </p>
+
+                <div class="layout">
+                    <div class="culumn6">
+<pre><code class="language-html">&lt;section class="banner-wrap"&gt;
+    &lt;div class="banner__inner"&gt;
+        &lt;h3 class="title"&gt;유튜버 웹보이&lt;/h3&gt;
+        &lt;p class="desc"&gt;
+            더 다양한 강의는 유튜브를 통해 제공하고 있습니다.
+            &lt;a href="#"&gt;youtube.com/c/Webstoryboy&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;span class="sub"&gt;배너 영역01&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+                    </div>
+                    <div class="culumn6">
+<pre><code class="language-html">&lt;section class="banner-wrap section gmarket"&gt;
+    &lt;h2 class="blind"&gt;배너 광고 영역&lt;/h2&gt;
+    &lt;div class="banner__inner"&gt;
+        &lt;h3 class="banner__title"&gt;유튜버 웹보이&lt;/h3&gt;
+        &lt;p class="banner__desc"&gt;
+            더 다양한 강의는 유튜브를 통해 제공하고 있습니다.
+            &lt;a href="#"&gt;youtube.com/c/Webstoryboy&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;span class="banner__sub"&gt;배너 영역01&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+                    </div>
+                </div>
+
+                <p>
+                    왼쪽은 기본적으로 완성된 코드이고, 오른쪽은 좀 더 효과적으로 만든 코드입니다.
+                    어떤게 정답이라고 확실히 말할 수 없지만, 웹 표준을 준수하기 위해서 제목 태그를 추가하였으며,
+                    이름도 "__"을 써서 작업하였습니다. 
+                    이렇게 하게 되면 이름이 구체적이기 때문에 부모 자식간의 관계를 생략하고 CSS 이름을 표현 할 수 있습니다. 
+                </p>
+
+                <div class="layout">
+                    <div class="culumn6">
+<pre><code class="language-css">.banner__inner {
+    padding: 120px 0;
+    text-align: center;
+    color: #fff;
+    font-family: "GmarketSans";
+}
+.banner__inner .title {
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+.banner__inner .desc {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 70px;
+}
+.banner__inner .desc a {
+    display: block;
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 70px;
+}
+.banner__inner .sub {
+    font-size: 16px;
+    font-weight: 300;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+</code></pre>
+                    </div>
+                    <div class="culumn6">
+<pre><code class="language-css">.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden
+}
+.section {
+    padding: 120px 0;
+}
+.gmarket {
+    font-family: "GmarketSans";
+}
+.banner__inner {
+    text-align: center;
+    color: #fff;
+}
+.banner__title {
+    font-size: 50px;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+.banner__desc {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 70px;
+}
+.banner__desc a {
+    display: block;
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 70px;
+}
+.banner__sub {
+    font-size: 16px;
+    font-weight: 300;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+</code></pre>
+                    </div>
+                </div>
+
+                <p>
+                    CSS 부분도 어떤게 좋다고 확실하게 말 할 수 없습니다. 
+                    지금은 구조가 간단하니 왼쪽이 좋아 볼 수도 있지만 구조가 복잡해지고, 여러명에 작업한다면, 오른쪽이 더 효율적일 수 있습니다. 
+                    코딩 할 때 제일 중요한 점은 가독성이 좋아야 하고, 유지 보수가 용이해야 합니다. 
+                    사이트를 만드는 것도 중요하지만, 나중에 수정할 것을 가정하고 코딩을 하는 것도 중요합니다. 
+                </p>
+                <p>
+                    이제 배너 영역01도 끝이 났습니다. 최종 소스 확인해 보시고, 이 유형은 site 폴더에 index.html에 적용하시면 됩니다. 
+                </p>
+
+                <div class="soFar ">
+                    <div class="click mb5">여기까지 결과 확인하기 <span>(banner_result01_03.html)</span></div>
+                </div> 
+            </div>
+            <!-- ..container -->
+
+            <div class="none">
+                <iframe style="width: 100%; height: 500px; background: #fff;" src="banner_result01_03.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="container">
+                <div class="soFar code">
+                    <div class="click">여기까지 코드 확인하기 <span>(banner_result01_03.html)</span></div>
+                </div>
+                <div class="none">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;배너 유형01&lt;/title&gt;
+
+    &lt;link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet"&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .gmarket {
+            font-family: "GmarketSans";
+        }
+        .banner-wrap {
+            background-image: url(../../assets/img/banner_bg01@2x.jpg);
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 500px;
+        }
+        .banner__inner {
+            text-align: center;
+            color: #fff;
+        }
+        .banner__title {
+            font-size: 50px;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+        .banner__desc {
+            font-size: 24px;
+            line-height: 1.5;
+            font-weight: 300;
+            margin-bottom: 70px;
+        }
+        .banner__desc a {
+            display: block;
+            font-size: 24px;
+            line-height: 1.5;
+            font-weight: 300;
+            color: #fff;
+            text-decoration: none;
+            margin-bottom: 70px;
+        }
+        .banner__sub {
+            font-size: 16px;
+            font-weight: 300;
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;section class="banner-wrap section gmarket"&gt;
+        &lt;h2 class="blind"&gt;배너 광고 영역&lt;/h2&gt;
+        &lt;div class="banner__inner"&gt;
+            &lt;h3 class="banner__title"&gt;유튜버 웹보이&lt;/h3&gt;
+            &lt;p class="banner__desc"&gt;
+                더 다양한 강의는 유튜브를 통해 제공하고 있습니다.
+                &lt;a href="#"&gt;youtube.com/c/Webstoryboy&lt;/a&gt;
+            &lt;/p&gt;
+            &lt;span class="banner__sub"&gt;배너 영역01&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+            </div>
+            <!-- ..container -->
+           
+            <div class="container">
+                <h2>참고</h2>
+                <ul class="refer">
+                    <li><sup>1</sup> <a href="#">시멘틱 태그</a></li>
+                    <li><sup>2</sup> <a href="#">이미지 표현 방법</a></li>
+                    <li><sup>3</sup> <a href="#">CSS 선언 규칙</a></li>
+                    <li><sup>4</sup> <a href="#">상대주소/절대주소</a></li>
+                    <li><sup>5</sup> <a href="#">백그라운드 속성</a></li>
+                    <li><sup>6</sup> <a href="#">VScode 확장기능</a></li>
+                    <li><sup>7</sup> <a href="#">CSS 초기화</a></li>
+                    <li><sup>8</sup> <a href="#">웹 폰트</a></li>
+                    <li><sup>9</sup> <a href="#">CSS 선택자</a></li>
+                    <li><sup>10</sup> <a href="#">블라인드 효과</a></li>
+                </ul>
+            </div>
+        </section>
+        <!-- //explanation -->
+
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer> 
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="../../assets/js/jquery-3.6.0.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/script.js"></script> 
+</body>
+</html>

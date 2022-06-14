@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            height: 100%;
+            background-color: #000;
+        }
+
+        body {
+            margin: 0;
+            height: 100%;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        #myCanvas {
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #myCanvas canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="myCanvas"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script id="fragmentShader" type="x-shader/x-fragment">
+        #define TWO_PI 6.2831853072
+        #define PI 3.14159265359
+
+        precision highp float;
+        uniform vec2 resolution;
+        uniform float time;
+        varying vec2 vUv;
+
+        void main(void) {
+            vec2 uv = - 1.0 + 2.0 * vUv;
+            float t = time*0.05;
+            float lineWidth = 0.001;
+
+            vec3 color = vec3(0.0);
+                for(int j = 0; j < 3; j++){
+                for(int i=0; i < 10; i++){
+                    color[j] += lineWidth*(float(i)/4.0) / abs(fract(t*0.2 - 0.001*float(j)*4.0+float(i)*0.1)*5.0 - length(uv));   
+                    color += lineWidth / abs(fract(t*0.2 - 0.1*float(i))*4.0 - length(uv));
+                }
+            }
+
+            gl_FragColor = vec4(color[0],color[1],color[2],1.0);
+        }
+    </script>
+
+    <script id="vertexShader" type="x-shader/x-vertex">
+        varying vec2 vUv;
+        void main(){
+            vUv = uv;
+            vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+            gl_Position = projectionMatrix * mvPosition;
+        }
+    </script>
+    <script>
+        class Canvas {
+            constructor() {
+                this.scrollY = 0;
+                this.mouse = new THREE.Vector2(0, 0);
+                this.w = window.innerWidth;
+                this.h = window.innerHeight;
+
+                this.renderer = new THREE.WebGLRenderer({
+                    antialias: true
+                });
+                this.renderer.setSize(this.w, this.h); 
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.renderer.setClearColor(0x000000);
+
+                const container = document.getElementById("myCanvas");
+                container.appendChild(this.renderer.domElement);
+
+                const fov = 50;
+                const fovRad = (fov / 2) * (Math.PI / 180);
+                const dist = (this.h / 2) / Math.tan(fovRad); 
+                this.camera = new THREE.PerspectiveCamera(fov, this.w / this.h, 1, dist * 2);
+                this.camera.position.z = dist;
+
+                this.scene = new THREE.Scene();
+
+                //uniform
+                this.uniforms = {
+                    "time": {
+                        value: 1.0
+                    },
+                    "resolution": {
+                        type: "v2",
+                        value: new THREE.Vector2(this.renderer.domElement.width, this.renderer.domElement.height)
+                    }
+                };
+
+                this.meshList = [];
+                for (let i = 0; i < 36; i++) {
+                    this.mesh = new Donuts(dist / 2, this.uniforms); //引数:size,uniforms
+                    this.mesh.position.set(
+                        0,
+                        0,
+                        0
+                    );
+                    this.mesh.position.normalize();
+
+                    this.mesh.rotation.set(
+                        i * 10 * (Math.PI / 180),
+                        i * 10 * (Math.PI / 180),
+                        i * 45 * (Math.PI / 180)
+                    );
+
+                    this.meshList.push(this.mesh);
+                    this.scene.add(this.mesh);
+                }
+                this.renderer.render(this.scene, this.camera);
+                this.render();
+            }
+
+            render() {
+                requestAnimationFrame(() => {
+                    this.render();
+                });
+                const sec = performance.now() / 1000;
+
+                for (let i = 0; i < this.meshList.length; i++) {
+                    this.mesh = this.meshList[i];
+                }
+
+                this.camera.lookAt(this.scene.position); 
+                this.camera.position.x += (this.mouse.x - this.camera.position.x) * .01;
+                this.camera.position.y += (-this.mouse.y - this.camera.position.y) * .01;
+                this.uniforms.time.value += 0.05;
+                this.renderer.render(this.scene, this.camera);
+            }
+
+            mouseMoved(x, y) {
+                this.mouse.x = x - (this.w / 2); 
+                this.mouse.y = -y + (this.h / 2); 
+            }
+
+            scrolled(y) {
+                this.scrollY = y;
+            }
+
+            resized() {
+                this.w = window.innerWidth;
+                this.h = window.innerHeight;
+                this.renderer.setSize(this.w, this.h);
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.camera.aspect = this.w / this.h;
+                this.camera.updateProjectionMatrix();
+                this.uniforms.resolution.value.x = this.renderer.domElement.width;
+                this.uniforms.resolution.value.y = this.renderer.domElement.height;
+            }
+        };
+
+        class Donuts extends THREE.Mesh {
+            constructor(size, uniform) {
+                const geometry = new THREE.TorusGeometry(size, 10, 32, 100);
+                const material = new THREE.ShaderMaterial({
+                    uniforms: uniform,
+                    vertexShader: document.getElementById('vertexShader').textContent,
+                    fragmentShader: document.getElementById('fragmentShader').textContent
+                });
+                //const material = new THREE.MeshBasicMaterial({color: 0x6699FF});
+
+                super(geometry, material);
+            }
+        }
+
+        function getRandom(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        window.addEventListener('load', function () {
+
+            const canvas = new Canvas();
+            canvas.scrolled(window.scrollY);
+
+            window.addEventListener('mousemove', e => {
+                canvas.mouseMoved(e.clientX, e.clientY);
+            });
+
+            window.addEventListener('scroll', e => {
+                canvas.scrolled(window.scrollY);
+            });
+
+            window.addEventListener('resize', e => {
+                canvas.resized();
+            });
+        });
+    </script>
+</body>
+
+</html>

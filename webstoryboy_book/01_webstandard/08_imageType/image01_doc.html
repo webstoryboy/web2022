@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"포트폴리오가 실력이다" : 웹 표준 사이트 만들기</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">WEBS : 웹 표준 사이트 만들기 : 이미지 유형01</a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <aside id="aside">
+            <button class="aside-btn"><span></span></button>
+            <div class="chapter">
+                <div class="chapter-title">
+                    <div class="label">Chapter 01</div>
+                    <div class="class">Classic 레이아웃 유형</div>
+                </div>
+                <div class="chapter-sub">
+                    <ul>
+                        <li><a href="../01_layout/layout_doc01.html">01. 레이아웃 유형 : 레이아웃01</a></li>
+                        <li><a href="../01_layout/layout_doc02.html">02. 레이아웃 유형 : 레이아웃02</a></li>
+                        <li><a href="../01_layout/layout_doc03.html">03. 레이아웃 유형 : 레이아웃03</a></li>
+                        <li><a href="../01_layout/layout_doc04.html">04. 레이아웃 유형 : 레이아웃04</a></li>
+                        <li><a href="../01_layout/layout_doc05.html">05. 레이아웃 유형 : 레이아웃05</a></li>
+                    </ul>
+                </div>
+                <div class="chapter-title">
+                    <div class="label">Chapter 02</div>
+                    <div class="class">Classic 사이트 제작</div>
+                </div>
+                <div class="chapter-sub">
+                    <ul>
+                        <li><a href="../02_site/site_doc01.html">01. 사이트 : 소개</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <!-- //aside -->
+
+        <section id="youtube" class="container ">
+            <div class="desc">
+                <div class="left">
+                    <span class="num">01.</span>
+                    <h3 class="title">이미지 유형 : 이미지 유형01</h3>
+                    <span class="difficulty">난이도 <span>쉬움</span></span>
+                </div>
+                <div class="right">
+                    <h3>소스 다운로드</h3>
+                    <a href="#" target="_blank" class="sampleBtn">완성 소스 다운받기</a>
+                </div>
+            </div>
+        </section>
+        <!-- //youtube -->
+
+        <section id="explanation">
+            <div class="container">
+                <h2>소개</h2>
+                <p>
+                    안녕하세요!. 웹스토리보이입니다.
+                    이번 주제는 이미지 유형입니다. 
+                    이미지가 주 콘텐츠가 되는 유형입니다. 마우스 오버시 여러가지 효과를 만들 수 있는 구조입니다. 
+                    이미지 유형도 사이트 제작시 많이 사용하는 유형이니 잘 만들어 보겠습니다. 그럼 렛츠기릿 🤪 
+                </p>
+
+                <h2>이론</h2>
+                <div class="iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FiD3Ehm4HRhe16Vx6kxz3ob%2F%255B%25ED%258F%25AC%25ED%258A%25B8%25ED%258F%25B4%25EB%25A6%25AC%25EC%2598%25A4%25EA%25B0%2580-%25EC%258B%25A4%25EB%25A0%25A5%25EC%259D%25B4%25EB%258B%25A4%255D-%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EC%25A0%259C%25EC%259E%2591%25ED%258E%25B8%3Fnode-id%3D4061%253A37" allowfullscreen></iframe>
+                </div>
+                <p data-num="01" class="mt50">
+                    우리가 이번에 만들어 볼 유형은 이런 디자인입니다. 
+                    이미지가 두개가 있고, 마우스 오버하면 살짝 효과가 생기는 구조입니다. 
+                    지금까지 잘 따라 오셨다면 폴더 구조는 이렇게 되어 있을겁니다.
+                    <code>webstandard</code> 폴더에 <code>07_image01.html</code> 페이지를 만들겠습니다.  
+                </p>
+                <div class="folder">
+                    <ul>
+                        <li><span class="icon1">webstandard</span>
+                            <ul>
+                                <li class="icon1">site</li>
+                            </ul>
+                            <ul>
+                                <li class="icon2">01_layout01.html</li>
+                                <li class="icon2">02_layout02.html</li>
+                                <li class="icon2">03_layout03.html</li>
+                                <li class="icon2">04_layout04.html</li>
+                                <li class="icon2">05_layout05.html</li>
+                                <li class="icon2">06_banner01.html</li>
+                                <li class="icon2">07_image01.html</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <p data-num="02">
+                    <code>!</code>를 치고 <code>tab</code>을 누르겠습니다.
+                    언어를 <code>ko</code>로 변경하고 <code>title</code>은 이미지 유형01로 변경하겠습니다.
+                </p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;이미지 유형01&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;section class="image-wrap"&gt;
+        &lt;div class="container"&gt;
+
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+
+                <p data-num="03">
+                    <strong>시멘틱 태그<sup>1</sup></strong> <code>&lt;section&gt;</code> 이용하여 배너 영역임을 표현합니다. 
+                    클래스 이름은 <code>image-wrap</code>이라고 설정하겠습니다. 
+                </p>
+                <p data-num="04">
+                    가운데 영역을 설정하기 위해서 <code>container</code> 박스를 만들었습니다. 
+                    레이아웃 작업할 때 가운데 영역 기억하시죠? 
+                </p>
+
+<pre><code class="language-css">.image-wrap {
+    width: 100%;
+    background: rgba(0,0,0,0.2);
+}
+.container {
+    width: 1160px;
+    margin: 0 auto;
+    padding: 0 20px;
+    background: rgba(0,0,0,0.3);
+    height: 300px;
+}
+</code></pre> 
+                <p data-num="04">
+                    <code>image-wrap</code> 요소는 전체 영역이기 때문에 <code>width: 100%;</code>을 설정하겠습니다. 
+                    <code>container</code>는 <strong>가운데 정렬<sup>2</sup></strong>을 위해서 <code>margin: 0 auto;</code> 속성을 설정하겠습니다. 
+                    양쪽에 패딩값을 주고 영역을 확인하기 위해서 백그라운드와 높이 값을 가상으로 설정하겠습니다. 
+                </p>
+
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+</code></pre> 
+                <p data-num="04">
+                    여백을 초기화하기 위해 <strong>CSS를 초기화<sup>3</sup></strong> 하겠습니다. 
+                </p>
+
+                <div class="soFar ">
+                    <div class="click mb5">여기까지 결과 확인하기 <span>(image_result01_01.html)</span></div>
+                </div> 
+            </div>
+            <!-- ..container -->
+
+            <div class="none">
+                <iframe style="width: 100%; height: 350px; background: #fff;" src="image_result01_01.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="container">
+                <div class="soFar code">
+                    <div class="click">여기까지 코드 확인하기 <span>(image_result01_01.html)</span></div>
+                </div>
+                <div class="none">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;이미지 유형01&lt;/title&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .image-wrap {
+            width: 100%;
+            background: rgba(0,0,0,0.2);
+        }
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background: rgba(0,0,0,0.3);
+            height: 300px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;section class="image-wrap"&gt;
+        &lt;div class="container"&gt;
+
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+
+                <p class="mt20">
+                    제목과 설명을 추가하겠습니다. 
+                </p>
+
+<pre><code class="language-html">&lt;section class="image-wrap section gmark"&gt;
+    &lt;div class="container"&gt;
+        &lt;h2 class="h2"&gt;포트폴리오가 실력이다.&lt;/h2&gt;
+        &lt;p class="desc"&gt;&lt;em&gt;이미지 유형입니다.&lt;/em&gt; 마우스 오버시 자세한 정보가 나와는 구조입니다.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+
+                <p data-num="05">
+                    <code>section</code> 클래스와 <code>gmark</code> 클래스를 추가하겠습니다. 
+                </p>
+
+<pre><code class="language-css">.section {
+    padding: 120px 0;
+    text-align: center;
+}
+.section h2 {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+.section .desc {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 70px;
+    line-height: 1.5;
+    color: #777;
+}
+.section .desc em {
+    font-style: normal;
+    text-decoration: underline;
+    text-underline-position: under;
+}
+</code></pre>
+
+                <p data-num="06">
+                    <code>section</code> 요소는 반복적으로 사용되는 공통요소이기 때문에 따로 설정했습니다. 
+                    폰트 사이즈, 폰트 굵기, 줄 간격, 폰트 색 등을 설정하였습니다. 
+                </p>
+
+<pre><code class="language-html">&lt;link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet"&gt;</code></pre>
+   
+                <p data-num="07">
+                    웹 폰트를 설정하겠습니다. <code>title</code> 밑에 링크 소스를 추가하겠습니다. 
+                </p>
+
+<pre><code class="language-css">.gmark {
+    font-family: "GmarketSans";
+}
+</code></pre>
+
+                <p data-num="08">
+                    <code>font-family: "GmarketSans";</code>를 설정하겠습니다. 
+                    가상으로 주었던 <code>container</code>의 높이 값은 지워주겠습니다. 
+                </p>
+
+                <div class="soFar ">
+                    <div class="click mb5">여기까지 결과 확인하기 <span>(image_result01_02.html)</span></div>
+                </div> 
+            </div>
+            <!-- ..container -->
+
+            <div class="none">
+                <iframe style="width: 100%; height: 500px; background: #fff;" src="image_result01_02.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="container">
+                <div class="soFar code">
+                    <div class="click">여기까지 코드 확인하기 <span>(image_result01_02.html)</span></div>
+                </div>
+                <div class="none">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;이미지 유형01&lt;/title&gt;
+
+    &lt;link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet"&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .section {
+            padding: 120px 0;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 50px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        .section .desc {
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 70px;
+            line-height: 1.5;
+            color: #777;
+        }
+        .section .desc em {
+            font-style: normal;
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+        .gmark {
+            font-family: "GmarketSans";
+        }
+        .image-wrap {
+            width: 100%;
+            background: rgba(0,0,0,0.2);
+        }
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background: rgba(0,0,0,0.3);
+            /* height: 300px; */
+        }
+        
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;section class="image-wrap section gmark"&gt;
+        &lt;div class="container"&gt;
+            &lt;h2 class="h2"&gt;포트폴리오가 실력이다.&lt;/h2&gt;
+            &lt;p class="desc"&gt;&lt;em&gt;이미지 유형입니다.&lt;/em&gt; 마우스 오버시 자세한 정보가 나와는 구조입니다.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+
+                <p>
+                    이미지를 추가하겠습니다. 
+                </p>
+
+<pre><code class="language-html">&lt;div class="image-inner"&gt;
+    &lt;div class="image"&gt;
+        &lt;img src="../../assets/img/imagetype01.jpg" alt="애교만점 웰시코기"&gt;
+    &lt;/div&gt;
+    &lt;div class="image"&gt;
+        &lt;img src="../../assets/img/imagetype02.jpg" alt="코카스 파니엘"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+                <p data-num="08">
+                    <code>image-inner</code>박스를 만들고 두개의 박스를 만들었습니다. 
+                    <code>img</code> 태그를 사용하여 <strong>이미지를 표현<sup>4</sup></strong>했습니다. 
+                </p>
+
+<pre><code class="language-css">.image-inner {
+    display: flex;
+    justify-content: space-between;
+}
+.image-inner .image {
+    width: 570px;
+}
+.image-inner .image img {
+    width: 100%;
+    vertical-align: top;
+}
+</code></pre>
+                <p data-num="09">
+                    <code>flex</code>를 이용하여 가로 정렬을 하였고, 이미지 크기는 570px로 고정하였습니다. 
+                    이미지를 박스 영역에 맞추기 위해서 <code>width: 100%</code>를 주었습니다. 
+                    이미지는 인라인 요소이기 때문에 여백이 생깁니다. 그럴 때 <code>vertical-align: top</code>을 주면 여백이 사랍니다. 
+                </p>
+
+<pre><code class="language-html">&lt;div class="image-inner"&gt;
+    &lt;div class="image"&gt;
+        &lt;img src="../../assets/img/imagetype01.jpg" alt="애교만점 웰시코기"&gt;
+        &lt;div class="image-text"&gt;
+            &lt;h3&gt;애교만점 웰시코기&lt;/h3&gt;
+            &lt;p&gt;제목은 넥슨 풋볼 고딕 폰트입니다.&lt;br&gt;설명부분은 넥슨 LV1 고딕 16px 140% 입니다.&lt;/p&gt;
+            &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="image"&gt;
+        &lt;img src="../../assets/img/imagetype02.jpg" alt="코카스 파니엘"&gt;
+        &lt;div class="image-text"&gt;
+            &lt;h3&gt;애교만점 웰시코기&lt;/h3&gt;
+            &lt;p&gt;제목은 넥슨 풋볼 고딕 폰트입니다.&lt;br&gt;설명부분은 넥슨 LV1 고딕 16px 140% 입니다.&lt;/p&gt;
+            &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+                <p data-num="09">
+                    제목과 글씨, 자세히 보기를 추가하였습니다. 
+                </p>
+
+<pre><code class="language-css">.image-inner .image .image-text {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    color: #fff;
+    text-align: left;
+}
+.image-inner .image .image-text h3 {
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+.image-inner .image .image-text p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 16px;
+}
+.image-inner .image .image-text a {
+    text-decoration: none;
+    color: #fff;
+    background: #BE4E15;
+    padding: 10px 20px;
+    display: inline-block;
+}
+.image-inner .image:last-child .image-text a {
+    background: #C9931D;
+}
+</code></pre>
+                <p data-num="09">
+                    해당 부분의 폰트 사이즈, 폰트 두께, 줄 간격, 패딩, 백그라운드를 설정하였습니다. 
+                    글씨는 이미지 위에 올라와야 하기 때문에 <code>position: absolute</code>를 사용하였습니다. 여기까지 확인해보겠습니다. 
+                </p>
+                <div class="soFar">
+                    <div class="click mb5">여기까지 결과 확인하기 <span>(image_result01_04.html)</span></div>
+                </div> 
+            </div>  
+            <!-- ..container -->
+
+            <div class="none">
+                <iframe style="width: 100%; height: 500px; background: #fff;" src="image_result01_04.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="container">
+                <div class="soFar code">
+                    <div class="click">여기까지 코드 확인하기 <span>(image_result01_04.html)</span></div>
+                </div>
+                <div class="none">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;이미지 유형01&lt;/title&gt;
+
+    &lt;link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet"&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .section {
+            padding: 120px 0;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 50px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        .section .desc {
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 70px;
+            line-height: 1.5;
+            color: #777;
+        }
+        .section .desc em {
+            font-style: normal;
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+        .gmark {
+            font-family: "GmarketSans";
+        }
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background: rgba(0,0,0,0.3);
+        }
+        .image-wrap {
+            width: 100%;
+            background: rgba(0,0,0,0.2);
+        }
+        .image-inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .image-inner .image {
+            width: 570px;
+            position: relative;
+        }
+        .image-inner .image img {
+            width: 100%;
+            vertical-align: top;
+        }
+        .image-inner .image .image-text {
+            position: absolute;
+            left: 30px;
+            bottom: 30px;
+            color: #fff;
+            text-align: left;
+        }
+        .image-inner .image .image-text h3 {
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        .image-inner .image .image-text p {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 140%;
+            margin-bottom: 16px;
+        }
+        .image-inner .image .image-text a {
+            text-decoration: none;
+            color: #fff;
+            background: #BE4E15;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+        .image-inner .image:last-child .image-text a {
+            background: #C9931D;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;section class="image-wrap section gmark"&gt;
+        &lt;div class="container"&gt;
+            &lt;h2 class="h2"&gt;포트폴리오가 실력이다.&lt;/h2&gt;
+            &lt;p class="desc"&gt;&lt;em&gt;이미지 유형입니다.&lt;/em&gt; 마우스 오버시 자세한 정보가 나와는 구조입니다.&lt;/p&gt;
+            &lt;div class="image-inner"&gt;
+                &lt;div class="image"&gt;
+                    &lt;img src="../../assets/img/imagetype01.jpg" alt="애교만점 웰시코기"&gt;
+                    &lt;div class="image-text"&gt;
+                        &lt;h3&gt;애교만점 웰시코기&lt;/h3&gt;
+                        &lt;p&gt;제목은 넥슨 풋볼 고딕 폰트입니다.&lt;br&gt;설명부분은 넥슨 LV1 고딕 16px 140% 입니다.&lt;/p&gt;
+                        &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="image"&gt;
+                    &lt;img src="../../assets/img/imagetype02.jpg" alt="코카스 파니엘"&gt;
+                    &lt;div class="image-text"&gt;
+                        &lt;h3&gt;애교만점 웰시코기&lt;/h3&gt;
+                        &lt;p&gt;제목은 넥슨 풋볼 고딕 폰트입니다.&lt;br&gt;설명부분은 넥슨 LV1 고딕 16px 140% 입니다.&lt;/p&gt;
+                        &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+
+                <p>
+                    이번에는 웹 표준에 맞게 시멘틱 태그를 사용하고 네이밍도 다시 설정하겠습니다.
+                    &lt;article&gt; 태그는 사이트의 독립적인 컨텐츠 섹션을 설정할 때 사용하므로
+                    이미지 섹션은 &lt;article&gt; 태그로 설정하겠습니다.
+                    &lt;figure&gt; 태그는 이미지를 표현 할 때 사용하므로 &lt;img&gt; 태그와 같이 사용하겠습니다.
+                    전체적인 구조를 image__header와 image__body로 나누어서 좀 더 체계적으로 설정하였고,
+                    네이밍도 알기 쉽게 체계화하였습니다.
+                </p>
+
+                <div class="layout">
+                    <div class="culumn6">
+<pre><code class="language-html">&lt;div class="image-inner"&gt;
+    &lt;div class="image"&gt;
+        &lt;img src="../../assets/img/imagetype01.jpg" alt="애교만점 웰시코기"&gt;
+        &lt;div class="image-text"&gt;
+            &lt;h3&gt;애교만점 웰시코기&lt;/h3&gt;
+            &lt;p&gt;제목은 넥슨 풋볼 고딕 폰트입니다.&lt;br&gt;설명부분은 넥슨 LV1 고딕 16px 140% 입니다.&lt;/p&gt;
+            &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="image"&gt;
+        &lt;img src="../../assets/img/imagetype02.jpg" alt="코카스 파니엘"&gt;
+        &lt;div class="image-text"&gt;
+            &lt;h3&gt;애교만점 웰시코기&lt;/h3&gt;
+            &lt;p&gt;제목은 넥슨 풋볼 고딕 폰트입니다.&lt;br&gt;설명부분은 넥슨 LV1 고딕 16px 140% 입니다.&lt;/p&gt;
+            &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="culumn6">
+<pre><code class="language-html">&lt;div class="image__inner"&gt;
+    &lt;article class="image"&gt;
+        &lt;div class="image__header"&gt;
+            &lt;figure class="image__figure"&gt;
+                &lt;img src="../../assets/img/imagetype01.jpg" alt="애교만점 웰시코기"&gt;
+            &lt;/figure&gt;
+        &lt;/div&gt;
+        &lt;div class="image__body"&gt;
+            &lt;h3 class="image__title"&gt;애교만점 웰시코기&lt;/h3&gt;
+            &lt;p class="image__desc"&gt;제목은 넥슨 풋볼 고딕 폰트입니다.&lt;br&gt;설명부분은 넥슨 LV1 고딕 16px 140% 입니다.&lt;/p&gt;
+            &lt;a href="#" class="image__btn"&gt;자세히 보기&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
+    &lt;article class="image"&gt;
+        &lt;div class="image__header"&gt;
+            &lt;figure class="image__figure"&gt;
+                &lt;img src="../../assets/img/imagetype02.jpg" alt="코카스 파니엘"&gt;
+            &lt;/figure&gt;
+        &lt;/div&gt;
+        &lt;div class="image__body"&gt;
+            &lt;h3 class="image__title"&gt;코카스 파니엘&lt;/h3&gt;
+            &lt;p class="image__desc"&gt;제목은 넥슨 풋볼 고딕 폰트입니다.&lt;br&gt;설명부분은 넥슨 LV1 고딕 16px 140% 입니다.&lt;/p&gt;
+            &lt;a href="#" class="image__btn yellow"&gt;자세히 보기&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+                </div>
+
+                <p>
+                    여러분들도 이렇게 코딩을 다시 한번 해보시고 저랑 비교해 보면 좋을 것 같습니다.
+                    클래스 이름도 부모-자식 관계로 써도 좋지만,
+                    하이픈(__)을 사용하여 쓰는 방법도 있습니다.
+                    클래스 이름 표현하는 방법도 여러가지가 있지만,
+                    여러분 나름대로 효과적이고, 효율적인 방법으로 사용하면 됩니다.
+                    또는 회사에서 쓰는 규칙이 있다면 그 방법을 사용해도 됩니다.
+                </p>
+
+                <div class="layout">
+                    <div class="culumn6">
+<pre><code class="language-css">.image-inner {
+    display: flex;
+    justify-content: space-between;
+}
+.image-inner .image {
+    width: 570px;
+    position: relative;
+}
+.image-inner .image img {
+    width: 100%;
+    vertical-align: top;
+}
+.image-inner .image .image-text {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    color: #fff;
+    text-align: left;
+}
+.image-inner .image .image-text h3 {
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+.image-inner .image .image-text p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 16px;
+}
+.image-inner .image .image-text a {
+    text-decoration: none;
+    color: #fff;
+    background: #BE4E15;
+    padding: 10px 20px;
+    display: inline-block;
+}
+.image-inner .image:last-child .image-text a {
+    background: #C9931D;
+}
+</code></pre>
+                    </div>
+                    <div class="culumn6">
+<pre><code class="language-css">.image__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.image__inner .image {
+    width: 570px;
+    position: relative;
+}
+.image__figure img {
+    width: 100%;
+    vertical-align: top;
+}
+.image__body {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    color: #fff;
+    text-align: left;
+}
+.image__title {
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+.image__desc {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 16px;
+}
+.image__btn {
+    text-decoration: none;
+    color: #fff;
+    background: #BE4E15;
+    padding: 10px 20px;
+    display: inline-block;
+}
+.image__btn.yellow {
+    background: #C9931D;
+}
+</code></pre>
+                    </div>
+                </div>
+                <p>
+                    CSS도 변경하였습니다. 기존에 사용하던 방법보다는 조금 더 깔끔해지고, 가독성이 좋아졌습니다. 
+                    기존에 가상으로 주었던 백그라운드 역시 제거하겠습니다. 최종적으로 확인해보겠습니다. 
+                </p>
+
+                <div class="soFar">
+                    <div class="click mb5">여기까지 결과 확인하기 <span>(image_result01_05.html)</span></div>
+                </div> 
+            </div>
+
+            <div class="none">
+                <iframe style="width: 100%; height: 500px; background: #fff;" src="image_result01_05.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="container">
+                <div class="soFar code">
+                    <div class="click">여기까지 코드 확인하기 <span>(image_result01_05.html)</span></div>
+                </div>
+                <div class="none">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;이미지 유형01&lt;/title&gt;
+
+    &lt;link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet"&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .section {
+            padding: 120px 0;
+            text-align: center;
+        }
+        .section__h2 {
+            font-size: 50px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        .section__desc {
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 70px;
+            line-height: 1.5;
+            color: #777;
+        }
+        .section__desc em {
+            font-style: normal;
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+        .gmark {
+            font-family: "GmarketSans";
+        }
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+            /* background: rgba(0,0,0,0.3); */
+        }
+        .image-wrap {
+            width: 100%;
+            /* background: rgba(0,0,0,0.2); */
+        }
+        .image__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .image__inner .image {
+            width: 570px;
+            position: relative;
+        }
+        .image__figure img {
+            width: 100%;
+            vertical-align: top;
+        }
+        .image__body {
+            position: absolute;
+            left: 30px;
+            bottom: 30px;
+            color: #fff;
+            text-align: left;
+        }
+        .image__title {
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        .image__desc {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 140%;
+            margin-bottom: 16px;
+        }
+        .image__btn {
+            text-decoration: none;
+            color: #fff;
+            background: #BE4E15;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+        .image__btn.yellow {
+            background: #C9931D;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;section class="image-wrap section gmark"&gt;
+        &lt;div class="container"&gt;
+            &lt;h2 class="section__h2"&gt;포트폴리오가 실력이다.&lt;/h2&gt;
+            &lt;p class="section__desc"&gt;&lt;em&gt;이미지 유형입니다.&lt;/em&gt; 마우스 오버시 자세한 정보가 나와는 구조입니다.&lt;/p&gt;
+            &lt;div class="image__inner"&gt;
+                &lt;article class="image"&gt;
+                    &lt;div class="image__header"&gt;
+                        &lt;figure class="image__figure"&gt;
+                            &lt;img src="../../assets/img/imagetype01.jpg" alt="애교만점 웰시코기"&gt;
+                        &lt;/figure&gt;
+                    &lt;/div&gt;
+                    &lt;div class="image__body"&gt;
+                        &lt;h3 class="image__title"&gt;애교만점 웰시코기&lt;/h3&gt;
+                        &lt;p class="image__desc"&gt;제목은 넥슨 풋볼 고딕 폰트입니다.&lt;br&gt;설명부분은 넥슨 LV1 고딕 16px 140% 입니다.&lt;/p&gt;
+                        &lt;a href="#" class="image__btn"&gt;자세히 보기&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+                &lt;article class="image"&gt;
+                    &lt;div class="image__header"&gt;
+                        &lt;figure class="image__figure"&gt;
+                            &lt;img src="../../assets/img/imagetype02.jpg" alt="코카스 파니엘"&gt;
+                        &lt;/figure&gt;
+                    &lt;/div&gt;
+                    &lt;div class="image__body"&gt;
+                        &lt;h3 class="image__title"&gt;코카스 파니엘&lt;/h3&gt;
+                        &lt;p class="image__desc"&gt;제목은 넥슨 풋볼 고딕 폰트입니다.&lt;br&gt;설명부분은 넥슨 LV1 고딕 16px 140% 입니다.&lt;/p&gt;
+                        &lt;a href="#" class="image__btn yellow"&gt;자세히 보기&lt;/a&gt;
+                    &lt;/div&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+            </div>
+            <!-- ..container -->
+           
+            <div class="container">
+                <h2>참고</h2>
+                <ul class="refer">
+                    <li><sup>1</sup> <a href="#">시멘틱 태그</a></li>
+                    <li><sup>2</sup> <a href="#">가운데 정렬</a></li>
+                    <li><sup>3</sup> <a href="#">CSS 초기화</a></li>
+                    <li><sup>4</sup> <a href="#">이미지 표현 방법</a></li>
+
+
+                    
+                    <li><sup>3</sup> <a href="#">CSS 선언 규칙</a></li>
+                    <li><sup>4</sup> <a href="#">상대주소/절대주소</a></li>
+                    <li><sup>5</sup> <a href="#">백그라운드 속성</a></li>
+                    <li><sup>6</sup> <a href="#">VScode 확장기능</a></li>
+                    
+                    <li><sup>8</sup> <a href="#">웹 폰트</a></li>
+                    <li><sup>9</sup> <a href="#">CSS 선택자</a></li>
+                    <li><sup>10</sup> <a href="#">블라인드 효과</a></li>
+                </ul>
+            </div>
+        </section>
+        <!-- //explanation -->
+
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer> 
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="../../assets/js/jquery-3.6.0.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/script.js"></script> 
+</body>
+</html>

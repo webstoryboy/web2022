@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/logo.css">
+    <link rel="stylesheet" href="assets/css/style2.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* layout */
+        #section2 {background-color: #7d7565;}
+        #section3 {background-color: #b9b3a9; height: 100vh;}
+
+        #section2 {
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            left: 0;
+        }
+        .sec2_wrap {
+            height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .sec2_wrap > div {
+            min-width: 100vw;
+            height: 100vh;
+        }
+        .sec2-1 {background-color: #51442b; margin-top: 40vh;} 
+        .sec2-2 {background-color: #b9b3a9;} 
+        .sec2-3 {background-color: #51442b;} 
+        .sec2-4 {background-color: #ff00ff;} 
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <h1>PORTFLIO</h1>
+        <nav></nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main" data-scroll-container>
+        <section id="section1" data-textcolor="#bcb8ad" data-bgcolor="#032f35">
+            <div class="sec1_wrap">
+                <div class="sec1-1">
+                    <canvas id="sec1_bg"></canvas>
+                    <div class="sec1_text">
+                        <div class="t1">WELCOME</div>
+                        <div class="t2" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">THE WORLSPACE</div>
+                        <div class="t3" data-scroll data-scroll-speed="1" data-scroll-direction="horizontal">OF MY </div>
+                        <div class="t4" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">PORTFLIO</div>
+                    </div>
+                    <div class="sec1_img">
+                        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="">
+                    </div>
+                    <div class="sec1_desc">
+                        <p>
+                            항공기계설계를 전공으로 공부하였고, <br>
+                            다양한 분야의 업무를 하며 나의 적성에 맞는 일을 찾고자 노력을 했습니다. <br>
+                            국비지원학원에서 약 6개월간의 여정을 시작했습니다. <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="sec1-2">
+                    <h2>about me</h2>
+                    <p>
+                        어떤 일이라도 노력하고 <em>즐기면</em> 그 결과는 빛을 바란다고 생각합니다.<br>
+                        신입의 열정과 <em>도전정신</em>을 깊숙히 새기며 <em>배움</em>에 있어 <em>겸손함</em>을 유지하며<br>
+                        세부적인 곳까지 파고드는 <em>개발자</em>가 되겠습니다.
+                    </p>
+                    <div class="img" data-scroll data-scroll-speed="1">
+                        <img src="https://images.unsplash.com/photo-1567186937675-a5131c8a89ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="">
+                    </div>
+                </div>
+                <div class="sec1-3">
+                    <h2>skill</h2>
+                    <p class="line1" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">REACT JAVASCRIPT VUE PHP FIGMA REACT JAVASCRIPT VUE PHP FIGMA</p>
+                    <p class="line2" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">JAVASCRIPT VUE PHP FIGMA REACT JAVASCRIPT VUE PHP FIGMA REACT</p>
+                </div>
+            </div>
+        </section>
+        <style>
+            .iframe iframe{
+                width: 100vw; height: 500px;
+            }
+        </style>
+        <section id="section2" data-textcolor="#bcb8ad" data-bgcolor="#815946">
+            <div class="sec2_wrap">
+                <div class="sec2-1">
+                    <div class="iframe">
+                        <iframe src="https://yuram2.github.io/webs_class/javascript/effect/parallaxEffect01.html" frameborder="0"></iframe>
+                    </div>
+                </div>
+                <div class="sec2-2">sec2-2</div>
+                <div class="sec2-3">sec2-3</div>
+                <div class="sec2-4">sec2-4</div>
+            </div>
+        </section>
+        <section id="section3" data-textcolor="#bcb8ad" data-bgcolor="#032f35">section3</section>
+    </main>
+
+    <script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js'></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const pageContents = document.getElementById("main");
+        const scroller = new LocomotiveScroll({
+            el: pageContents,
+            smooth: true
+        });
+        scroller.on("scroll", ScrollTrigger.update);
+
+        ScrollTrigger.scrollerProxy(pageContents, {
+            scrollTop(value) {
+                return arguments.length ?
+                    scroller.scrollTo(value, 0, 0) :
+                    scroller.scroll.instance.scroll.y;
+            },
+            getBoundingClientRect() {
+                return {
+                    left: 0,
+                    top: 0,
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                };
+            },
+            pinType: pageContents.style.transform ? "transform" : "fixed"
+        });
+
+        window.addEventListener("load", function () {
+            let sec2WrapWidth = document.querySelector(".sec2_wrap").offsetWidth;
+            let horizontal2 = sec2WrapWidth - window.innerWidth;
+
+            gsap.to("#section2 .sec2_wrap", {
+                scrollTrigger: {
+                    scroller: pageContents,
+                    scrub: true,
+                    trigger: "#section2",
+                    pin: true,
+                    start: "top top",
+                    markers: true,
+                    end: sec2WrapWidth
+                },
+                x: -horizontal2,
+                ease: "none"
+            });
+
+            const scrollColorElems = document.querySelectorAll("[data-bgcolor]");
+            scrollColorElems.forEach((colorSection, i) => {
+                const prevBg = i === 0 ? "" : scrollColorElems[i - 1].dataset.bgcolor;
+                const prevText = i === 0 ? "" : scrollColorElems[i - 1].dataset.textcolor;
+
+                ScrollTrigger.create({
+                trigger: colorSection,
+                scroller: "[data-scroll-container]",
+                start: "top 50%",
+                onEnter: () =>
+                    gsap.to("body", {
+                    backgroundColor: colorSection.dataset.bgcolor,
+                    color: colorSection.dataset.textcolor,
+                    overwrite: "auto"
+                    }),
+                onLeaveBack: () =>
+                    gsap.to("body", {
+                    backgroundColor: prevBg,
+                    color: prevText,
+                    overwrite: "auto"
+                    })
+                });
+            });
+
+            ScrollTrigger.addEventListener("refresh", () => scroller.update());
+            ScrollTrigger.refresh();
+        });
+    </script>
+    
+</body>
+
+</html>

@@ -150,7 +150,18 @@ https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/html/cite.html
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/align-content.html  
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/align-items.html  
 https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/align-self.html  
-https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/all.html
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/all.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/animation-delay.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/animation-direction.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/animation-duration.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/animation-fill-mode.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/animation-iteration-count.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/animation-name.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/animation-play-state.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/animation-timing-function.html  
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/animation.html
+
+https://webstoryboy.github.io/web2022/webstoryboy_tistory/webzz/css/backface-visibility.html
 
 ## GSAP REFERENCE
 
@@ -253,7 +264,8 @@ https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index74.html
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index75.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index76.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index77.html  
-https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index78.html
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index78.html  
+https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index79.html
 
 https://webstoryboy.github.io/web2022/webstoryboy_three/canvas/index1.html  
 https://webstoryboy.github.io/web2022/webstoryboy_three/canvas/index2.html  

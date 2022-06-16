@@ -151,18 +151,15 @@ documemt.querySelector("div").setAttribute("class", "attribute");
 </code></pre>
                             </div>
                             <div>
-<pre class="language-javascript"><code>document.querySelector(".sampleBtn .btn1").addEventListener("click", (e) => {
-    e.preventDefault();
+<pre class="language-javascript"><code>document.querySelector(".sampleBtn .btn1").addEventListener("click", () => {
     document.querySelector(".jsample .img").setAttribute("src","https://tistory4.daumcdn.net/tistory/2933724/skin/images/image04.jpg");
     document.querySelector(".jsample .text").innerText = "src 값이 'https://tistory4.daumcdn.net/tistory/2933724/skin/images/image04.jpg'으로 변경되었습니다.";
 })
-document.querySelector(".sampleBtn .btn2").addEventListener("click", (e) => {
-    e.preventDefault();
+document.querySelector(".sampleBtn .btn2").addEventListener("click", () => {
     document.querySelector(".jsample .img").setAttribute("src","https://tistory4.daumcdn.net/tistory/2933724/skin/images/image05.jpg");
     document.querySelector(".jsample .text").innerText = "src 값이 'https://tistory4.daumcdn.net/tistory/2933724/skin/images/image05.jpg'으로 변경되었습니다.";
 })
-document.querySelector(".sampleBtn .btn3").addEventListener("click", (e) => {
-    e.preventDefault();
+document.querySelector(".sampleBtn .btn3").addEventListener("click", () => {
     document.querySelector(".jsample .img").setAttribute("src","https://tistory4.daumcdn.net/tistory/2933724/skin/images/image06.jpg");
     document.querySelector(".jsample .text").innerText = "src 값이 'https://tistory4.daumcdn.net/tistory/2933724/skin/images/image06.jpg'으로 변경되었습니다.";
 })
@@ -239,7 +236,7 @@ document.querySelector(".sampleBtn .btn3").addEventListener("click", (e) => {
 
                 <h4 class="pt30">참고 사이트(Reference)</h4>
                 <ul>
-                    <li><a href="https://developer.mozilla.org/ko/docs/Web/API/Element/classList" target="_blank">MDN</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute" target="_blank">MDN</a></li>
                     <li><a href="https://unsplash.com/" target="_blank">이미지</a></li>
                 </ul>
 

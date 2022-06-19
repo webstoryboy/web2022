@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"포트폴리오가 실력이다" : CSS 레퍼런스</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- SCRIPT -->
+    <script src="../../assets/js/jquery-3.6.0.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+</head>
+
+<body class="white">
+    <header id="header">
+        <h1><a href="#">WEBS : CSS 레퍼런스 : background</a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+
+        <section id="explanation">
+            <div class="container">
+                <h2 class="hide">background</h2>
+                <p>
+                    background 속성은 백그라운드 속성을 일괄적으로 설정합니다.<br>
+                    background 속성은 CSS를 통해 이미지를 표현하는 방법으로 HTML에 &lt;img&gt; 태그와 비교가 됩니다.
+                    이미지의 의미가 있다면 &lt;img&gt; 태그를 사용하고, 의미가 없고 장식용에 가깝다면 background 속성을 이용합니다.
+                    background 속성은 고정, 위치, 컬러, 기준점, 반복, 사이트를 통해 컨트롤 할 수 있습니다.
+                </p>
+
+                <hr>
+
+                <h3>background</h3>
+                <p class="blue">background 속성은 백그라운드 속성을 일괄적으로 설정합니다.</p>
+
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 30%">
+                            <col style="width: 70%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>특징</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>기본 값</th>
+                                <td>
+                                    background-attachment: scroll;<br>
+                                    background-clip: border-box;<br>
+                                    background-color: transparent;<br>
+                                    background-image: none;<br>
+                                    background-origin: padding-box;<br>
+                                    background-position: 0% 0%;<br>
+                                    background-repeat: repeat;<br>
+                                    background-size: auto auto;
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>적용</th>
+                                <td>background</td>
+                            </tr>
+                            <tr>
+                                <th>버전</th>
+                                <td>CSS1</td>
+                            </tr>
+                            <tr>
+                                <th>사용성</th>
+                                <td>★★★★★</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>정의(Definition)</h4>
+                <ul>
+                    <li>background 속성은 백그라운드 속성을 일괄적으로 설정합니다.</li>
+                </ul>
+
+                <h4>애니메이션과 관련된 속성(Animation Related Properties)</h4>
+                <ul>
+                    <li>background 속성은 백그라운드 속성을 일괄적으로 설정합니다.</li>
+                    <li>background-attachment 속성은 배경 이미지의 고정 여부를 설정합니다.</li>
+                    <li>background-blend-mode 속성은 배경을 혼합했을 때의 상태를 설정합니다.</li>
+                    <li>background-clip 속성은 백그라운드 이미지의 위치 기준점을 설정합니다.</li>
+                    <li>background-color 속성은 백그라운드 색을 설정합니다.</li>
+                    <li>background-image 속성은 백그라운드 이미지 및 배경 속성을 설정합니다.</li>
+                    <li>background-origin 속성은 백그라운드 이미지의 위치 기준점을 설정합니다.</li>
+                    <li>background-position 속성은 백그라운드 이미지의 위치 영역을 설정합니다.</li>
+                    <li>background-repeat 속성은 백그라운드 이미지 반복 여부를 설정합니다.</li>
+                    <li>background-size 속성은 백그라운드 이미지 사이즈를 설정합니다.</li>
+                </ul>
+
+                <h4>문법(Syntax)</h4>
+                <p class="blue">background : background-attachment | background-clip | background-color | background-image | background-origin | background-position | background-repeat | background-size | inherit;</p>
+<pre class="language-css"><code>/* 이미지, 반복(background-image | background-repeat) */
+background: url(../images/images01.jpg) no-repeat;
+
+/* 이미지, 반복, 위치(background-image | background-repeat | background-position) */
+background: url(../images/images01.jpg) no-repeat 50% 70%;
+
+/* 색상, 이미지, 반복, 위치(background-color | background-image | background-repeat | background-position) */
+background: #000 url(../images/images01.jpg) no-repeat 50% 70%;
+</code></pre>
+                  
+
+
+                <h4>속성(Property)</h4>
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col width="30%">
+                            <col width="80%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>속성값</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>background-attachment</th>
+                                <td>배경 이미지의 고정 여부를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>background-clip</th>
+                                <td>백그라운드 이미지의 위치 기준점을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>background-color</th>
+                                <td>백그라운드 색을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>background-image</th>
+                                <td>백그라운드 이미지 및 배경 속성을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>background-origin</th>
+                                <td>백그라운드 이미지의 위치 기준점을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>background-position</th>
+                                <td>백그라운드 이미지의 위치 영역을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>background-repeat</th>
+                                <td>백그라운드 이미지 반복 여부를 설정합니다</td>
+                            </tr>
+                            <tr>
+                                <th>background-size</th>
+                                <td>백그라운드 이미지 사이즈를 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <th>inherit</th>
+                                <td>속성 값을 상위 요소한테 상속받습니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>호환성(Compatibility)</h4>
+                <div class="table">
+                    <table class="compatibility">
+                        <colgroup>
+                            <col style="width:20%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-chrome1.png" alt="크롬 아이콘" title="크롬 브라우저"></th>
+                                <th scope="col"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/icon-firefox1.png" alt="파이어폭스 아이콘" title="파이어폭스 브라우저"></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-safari1.png" alt="사파리 아이콘" title="사파리 브라우저"></th>
+                                <th scope="col"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/icon-opera1.png" alt="오페라 아이콘" title="오페라 브라우저"></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-whale1.png" alt="네이버 웨일" title="네이버 웨일 브라우저"></th>
+                                <th scope="col"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/icon-ie6.png" alt="익스플로러6 아이콘" title="인터넷 익스플로러6 브라우저"><em>6</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie7.png" alt="익스플로러7 아이콘" title="인터넷 익스플로러7 브라우저"><em>7</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie7.png" alt="익스플로러8 아이콘" title="인터넷 익스플로러8 브라우저"><em>8</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie9.png" alt="익스플로러9 아이콘" title="인터넷 익스플로러9 브라우저"><em>9</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie10.png" alt="익스플로러10 아이콘" title="인터넷 익스플로러10 브라우저"><em>10</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie11.png" alt="익스플로러11 아이콘" title="인터넷 익스플로러11 브라우저"><em>11</em></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-edge.png" alt="엣지 아이콘" title="엣지 브라우저"></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-android.png" alt="안드로이드 아이콘" title="모바일 안드로이드 브라우저"></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ios.png" alt="ios 아이콘" title="모바일 아이폰 브라우저"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td scope="row">background</td>
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러6 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러7 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러8 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러9 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러10 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러11 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
+                            </tr>
+                            <tr>
+                                <td scope="row">background-attachment</td>
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러6 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러7 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러8 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러9 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러10 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러11 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
+                            </tr>
+                            <tr>
+                                <td scope="row">background-blend-mode</td>
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러6 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러7 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러8 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러9 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러10 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러11 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
+                            </tr>
+                            <tr>
+                                <td scope="row">background-clip</td>
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러9 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러10 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러11 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
+                            </tr>
+                            <tr>
+                                <td scope="row">background-color</td>
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러6 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러7 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러8 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러9 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러10 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러11 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
+                            </tr>
+                            <tr>
+                                <td scope="row">background-image</td>
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러6 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러7 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러8 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러9 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러10 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러11 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
+                            </tr>
+                            <tr>
+                                <td scope="row">background-origin</td>
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러9 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러10 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러11 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
+                            </tr>
+                            <tr>
+                                <td scope="row">background-position</td>
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러6 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러7 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러8 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러9 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러10 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러11 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
+                            </tr>
+                            <tr>
+                                <td scope="row">background-repeat</td>
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러6 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러7 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러8 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러9 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러10 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러11 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
+                            </tr>
+                            <tr>
+                                <td scope="row">background-size</td>
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러9 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러10 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러11 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="pt30">참고 사이트(Reference)</h4>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/ko/docs/Web/CSS/background" target="_blank">MDN</a></li>
+                </ul>
+
+                <hr>
+
+            </div>
+        </section>
+        <!-- //explanation -->
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer> 
+    <!-- //footer -->
+
+
+    <!-- script -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/script.js"></script> 
+</body>
+</html>

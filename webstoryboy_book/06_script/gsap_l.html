@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style2.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header id="header">
+        
+    </header>
+    <!-- //header -->
+
+    <main data-scroll-container>
+        <div class="contents">
+            <div class="section_wrap">
+                <section id="section1" class="section">
+                    section1
+                </section>
+                <!-- //section1 -->
+
+                <section id="section2" class="section">
+                    section2
+                </section>
+                <!-- //section2 -->
+
+                <section id="section3" class="section">
+                    section3
+                </section>
+                <!-- //section3 -->
+                
+                <section id="section4" class="section">
+                    section4
+                </section>
+                <!-- //section4 -->
+
+                <section id="section5" class="section">
+                    section5
+                </section>
+                <!-- //section5 -->
+
+                <section id="section6" class="section">
+                    section6
+                </section>
+                <!-- //section6 -->
+            </div>
+        </div>
+    </main>
+
+    <script type="module">
+        import locomotiveScroll from "https://cdn.skypack.dev/locomotive-scroll@4.0.6";
+
+        const lscroll = new locomotiveScroll({
+            el: document.querySelector("[data-scroll-container]"),
+            smooth: true,
+            direction: "horizontal"
+        });
+    </script>
+</body>
+
+</html>

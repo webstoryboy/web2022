@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style2.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header id="header">
+        
+    </header>
+    <!-- //header -->
+
+    <main data-scroll-container>
+        <div class="contents">
+            <div class="section_wrap">
+                <section id="section1" class="section">
+                    <div class="sec1">
+                        <h1 class="logo" data-scroll data-scroll-speed="2">portfolio</h1>
+                        <div class="sec1_img"></div>
+                        <div class="sec1_txt">
+                            <p>어떤 일이라도 노력하고 즐기면  그 결과는 빛을 바란다고 생각합니다. 신입의 열정과 도전정신을 깊숙히 새기며 배움에 있어 겸손함을 유지하며 세부적인 곳까지 파고드는 개발자가 되겠습니다.</p>
+                            <em>개발자 김은수</em>
+                        </div>
+                    </div>
+                </section>
+                <!-- //section1 -->
+
+                <section id="section2" class="section">
+                    <div class="sec2">
+                        <div class="sec2_txt">
+                            <div data-scroll data-scroll-speed="0.5">I AM</div>
+                            <div data-scroll data-scroll-speed="2">FRONTEND</div>
+                            <div data-scroll data-scroll-speed="1">DEVELOPER</div>
+                        </div>
+                    </div>
+                </section>
+                <!-- //section2 -->
+
+                <section id="section3" class="section">
+                    section3
+                </section>
+                <!-- //section3 -->
+                
+                <section id="section4" class="section">
+                    section4
+                </section>
+                <!-- //section4 -->
+
+                <section id="section5" class="section">
+                    section5
+                </section>
+                <!-- //section5 -->
+
+                <section id="section6" class="section">
+                    section6
+                </section>
+                <!-- //section6 -->
+            </div>
+        </div>
+    </main>
+
+    <script type="module">
+        import locomotiveScroll from "https://cdn.skypack.dev/locomotive-scroll@4.0.6";
+
+        const lscroll = new locomotiveScroll({
+            el: document.querySelector("[data-scroll-container]"),
+            smooth: true,
+            direction: "horizontal"
+        });
+    </script>
+</body>
+
+</html>

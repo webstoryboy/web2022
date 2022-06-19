@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'IropkeBatang';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.woff2') format('woff2'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.woff') format('woff'),
+         url('https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.ttf') format("truetype");
+    font-display: swap;
+}
+
+html.has-scroll-smooth {
+    overflow: hidden;
+}
+
+html.has-scroll-dragging {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.has-scroll-smooth body {
+    overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+    min-height: 1000vh;
+}
+
+[data-scroll-direction='horizontal'] [data-scroll-container] {
+    white-space: nowrap;
+    height: 100vh;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+[data-scroll-direction='horizontal'] [data-scroll-section] {
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+    height: 100%;
+}
+
+/* layout */
+.contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.section_wrap {
+    display: flex;
+}
+
+#section3 {width: 100vw; height: 100vh; background: #333;}
+#section4 {width: 100vw; height: 100vh; background: #444;}
+#section5 {width: 100vw; height: 100vh; background: #555;}
+#section6 {width: 100vw; height: 100vh; background: #666;}
+
+
+/* section1 */
+#section1 {
+    width: 1200px; height: 100vh;
+}
+.sec1 .logo {
+    position: absolute;
+    left: 450px;
+    top: 60vh;
+    width: 260px;
+    height: 260px;
+    line-height: 260px;
+    background: #000;
+    text-align: center;
+    color: #fff;
+    font-family: 'Jura';
+    text-transform: uppercase;
+    border-radius: 50%;
+}
+.sec1_img {
+    width: 530px;
+    height: 75vh;
+    background: url("https://images.unsplash.com/photo-1655480669704-ed1ba50f0fd6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80");
+    background-size: cover;
+}
+.sec1_txt {
+    position: absolute;
+    top: 40px;
+    left: 620px;
+    font-family: 'IropkeBatang';
+    width: 420px;
+    white-space: normal;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.5;
+}
+.sec1_txt em {
+    display: inline-block;
+    margin-top: 20px;
+    float: right;
+    opacity: 0.6;
+}
+
+/* section2 */
+#section2 {
+    height: 100vh;
+}
+.sec2_txt {
+    margin: 16px 20px 20px;
+}
+.sec2_txt > div {
+    font-size: 41.5vh;
+    line-height: .77;
+    font-family: 'Cormorant Garamond';
+    font-weight: 100;
+}
+.sec2_txt > div:nth-child(2){
+    padding-left: 20vw;
+}
+.sec2_txt > div:nth-child(3){}

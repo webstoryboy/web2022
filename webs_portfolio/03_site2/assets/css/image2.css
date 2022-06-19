@@ -1,0 +1,70 @@
+.type2 .image__inner ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+.type2 .image__inner li {
+    width: 32%;
+    margin-bottom: 2%;
+    background-size: 100%;
+    position: relative;
+    perspective: 800px;
+}
+.type2 .image__inner li::after {
+    content: '';
+    display: block;
+    background: #fff;
+    position: absolute;
+    left: 30px;
+    right: 30px;
+    top: 30px;
+    bottom: 30px;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    transform: rotateX(-90deg);
+}
+.type2 .image__inner li:hover::after {
+    opacity: 0.8;
+    transform: rotateX(0deg);
+}
+.type2 .image__inner li span {
+    position: absolute;
+    left: 50%; 
+    top: calc(50% + 36px);
+    color: #000;
+    z-index: 100;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+.type2 .image__inner li span em {
+    display: block;
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+    transition: all 0.3s;
+}
+.type2 .image__inner li span a {
+    display: block;
+    background: #000;
+    border-radius: 40px;
+    font-weight: 300;
+    margin-top: 5px;
+    padding: 7px 10px 5px 10px;
+    color: #fff;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.type2 .image__inner li:hover span {
+    top: 50%;
+}
+.type2 .image__inner li:hover span em {
+    color: #000;
+}
+.type2 .image__inner li:hover span a {
+    opacity: 1;
+}
+
+
+

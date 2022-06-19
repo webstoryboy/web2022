@@ -409,7 +409,7 @@ body.intro #footer {
     color: #000;
 }
 #explanation .refer li a {
-    color: #fff;
+    color: #000;
     font-size: 16px;
     line-height: 2;
     margin-bottom: 20px;
@@ -538,7 +538,6 @@ body.intro #footer {
     vertical-align: 2px;
     border-radius: 5px;
 }
-
 
 /* intro */
 .intro {

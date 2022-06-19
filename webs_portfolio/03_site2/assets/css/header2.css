@@ -1,0 +1,21 @@
+.header__inner {
+    border-bottom: 1px solid #ccc;
+    padding: 0 20px;
+    text-align: center;
+}
+.header__logo a {
+    font-size: 30px;
+    display: inline-block;
+    padding: 15px;
+    display: inline-block;
+}
+.header__menu {
+    text-align: center;
+}
+.header__menu li {
+    display: inline;
+}
+.header__menu li a {
+    padding: 10px 40px 20px;
+    display: inline-block;
+}

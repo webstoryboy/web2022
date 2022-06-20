@@ -1,5 +1,9 @@
 # web2022 : 이번엔 끝내자!!! 화이팅!!
 
+# 이미지
+https://webstoryboy.github.io/web2022/webs_img/image_bg01.jpg   
+https://webstoryboy.github.io/web2022/webs_img/image_bg02.jpg   
+
 ## WEBS : 사이트 만들기
 
 01_layout : 레이아웃 유형1 : float, flex, grid, 반응형  

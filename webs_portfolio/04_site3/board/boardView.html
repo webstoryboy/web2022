@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP 사이트 만들기</title>
+ 
+    <!-- META -->
+    <meta name="acthor" content="webstroyboy">
+    <meta name="description" content="웹 표준을 준수한 사이트입니다.">
+    <meta name="keywords" content="웹표준, 웹접근성, 웹호환성, 사이트제작, 사이트만들기, 포트폴리오">
+    <meta name="robots" content="all">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- 아이콘 & 파비콘 -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" sizes="16x16" href="img/favicon_16.png">
+    <link rel="icon" sizes="96x96" href="img/favicon_96.png">
+    <link rel="icon" sizes="120x120" href="img/favicon_120.png">
+    <link rel="icon" sizes="192x192" href="img/favicon_192.png">
+
+    <!-- CSS(리셋) -->
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/reset.css">
+    <link rel="stylesheet" href="../assets/css/common.css">
+
+    <!-- CSS(섹션) -->
+    <link rel="stylesheet" href="../assets/css/header.css"> <!-- 헤더 유형(유형1) -->
+    <link rel="stylesheet" href="../assets/css/board.css"> <!-- 게시판 유형(유형1) -->
+</head>
+<body>
+    <div id="skip">
+        <a href="#main">컨텐츠 바로가기</a>
+        <a href="#footer">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <header id="headerType" class="header__wrap">
+        <div class="header__inner">
+            <h1 class="header__logo">
+                <a href="../main/main.html">PHP <em>class</em></a>
+            </h1>
+            <nav class="header__menu">
+                <h2 class="ir_so">메인 메뉴</h2>
+                <ul>
+                    <li><a href="../join/join.html">회원가입</a></li>
+                    <li><a href="../comment/comment.html">댓글</a></li>
+                    <li><a href="../board/board.html">게시판</a></li>
+                    <li><a href="../blog/blog.html">블로그</a></li>
+                    <li><a href="../admin/admin.html">관리자</a></li>
+                </ul>
+            </nav>
+            <div class="header__member">
+                <a href="../join/join.html">회원가입</a>
+                <a href="../login/login.html">로그인</a>
+            </div>
+        </div>
+    </header>
+    <!-- //headerType -->
+
+    <main id="mainType">
+        <section id="boardType" class="board__wrap section nexon">
+            <h2>게시글 보기</h2>
+            <p>강의와 관련된 게시판입니다. 궁금한 점은 여기를 확인하세요!</p>
+            <div class="board__inner container">
+                <div class="board__table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 30%">
+                            <col style="width: 70%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>제목</th>
+                                <td class="left">게시판 타이틀299입니다.</td>
+                            </tr>
+                            <tr>
+                                <th>글쓴이</th>
+                                <td class="left">황상연</td>
+                            </tr>
+                            <tr>
+                                <th>등록일</th>
+                                <td class="left">2022-06-19 10:59</td>
+                            </tr>
+                            <tr>
+                                <th>조회수</th>
+                                <td class="left">1</td>
+                            </tr>
+                            <tr>
+                                <th>내용</th>
+                                <td class="left height">
+                                    게시판 내용299입니다. 어제는 사람이 쫌 있었는데. 오늘은 없네. 교실이 썰렁합니다. 집에서 하면 좋니?
+                                </td>
+                            </tr>                            
+                        </tbody>
+                    </table>
+                </div>
+                <div class="board__btn">
+                    <a href="#">삭제하기</a>
+                    <a href="boardModify.html">수정하기</a>
+                    <a href="board.html">목록보기</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- //mainType -->
+
+    <header id="footerType">
+
+    </header>
+    <!-- //footerType -->
+</body>
+</html>

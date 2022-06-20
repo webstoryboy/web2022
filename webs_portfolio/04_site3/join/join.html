@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP 사이트 만들기</title>
-
+ 
     <!-- META -->
     <meta name="acthor" content="webstroyboy">
     <meta name="description" content="웹 표준을 준수한 사이트입니다.">
@@ -44,7 +44,7 @@
             <nav class="header__menu">
                 <h2 class="ir_so">메인 메뉴</h2>
                 <ul>
-                    <li><a href="../login/join.hml">회원가입</a></li>
+                    <li><a href="../join/join.html">회원가입</a></li>
                     <li><a href="../comment/comment.html">댓글</a></li>
                     <li><a href="../board/board.html">게시판</a></li>
                     <li><a href="../blog/blog.html">블로그</a></li>
@@ -99,15 +99,11 @@
                                 <input type="text" id="youName" name="youName" maxlength="5" placeholder="이름을 적어주세요!" autocomplete="off" required>
                             </div>
                             <div>
-                                <label for="youBirth">생년월일</label>   
-                                <input type="text" id="youBirth" name="youBirth" placeholder="YYYY-MM-DD" maxlength="12" autocomplete="off" required>
-                            </div>
-                            <div>
                                 <label for="youPhone">휴대폰 번호</label>   
                                 <input type="text" id="youPhone" name="youPhone" placeholder="000-0000-0000" maxlength="15" autocomplete="off" required>
                             </div>
                         </div>
-                        <button id="joinBtn" class="join-submit" type="submit">회원가입 완료</button>
+                        <button class="join__btn" type="submit">회원가입 완료</button>
                     </fieldset>
                 </form>
             </div>

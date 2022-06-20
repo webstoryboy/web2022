@@ -89,6 +89,10 @@ img {
 img, fieldset, button {
     border: 0;
 }
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
 
 /* 스킵 메뉴 */
 #skip {

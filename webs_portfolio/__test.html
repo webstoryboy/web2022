@@ -4,7 +4,7 @@
     &lt;meta charset="UTF-8"&gt;
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;슬라이드 유형01&lt;/title&gt;
+    &lt;title&gt;이미지 유형01&lt;/title&gt;
     &lt;style&gt;
         /* font */
         @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
@@ -28,146 +28,106 @@
         em {
             font-style: normal;
         }
-        .ir_pm {
-            display: block;
-            overflow: hidden;
-            font-size: 0;
-            line-height: 0;
-            text-indent: -9999px;
-        }
-        .ir_so {
-            overflow: hidden;
-            position: absolute;
-            width: 0;
-            height: 0;
-            line-height: 0;
-            text-indent: -9999px;
-        }
 
-        /* sliderType */
-        .slider {
-            position: relative;
-        }
-        .slider__img {
-            background-image: url(https://raw.githubusercontent.com/webstoryboy/web2022/main/webs_portfolio/02_site1/assets/img/slider_bg01.jpg);
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 100%;
-            /* height: 500px; */
-        }
-        .slider__img .desc {
+        /* common */
+        .container {
             width: 1160px;
             margin: 0 auto;
-            padding: 100px 20px;
-            color: #fff;
+            padding: 0 20px;
         }
-        .slider__img .desc span {
-            font-size: 16px;
-            background: #fff;
-            color: #000;
-            padding: 2px 15px 0px;
-            border-radius: 30px;
+        .section {
+            padding: 120px 0;
         }
-        .slider__img .desc h3 {
-            font-size: 110px;
+        .section &gt; h2 {
+            font-size: 50px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            line-height: 1;
+            text-align: center;
+        }
+        .section &gt; p {
+            font-size: 22px;
             font-weight: 300;
-            margin-left: -8px;
+            margin-bottom: 70px;
+            line-height: 1.5;
+            color: #777;
+            text-align: center;
+        }
+
+        /* imageType */
+        .image__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .image__inner .image {
+            width: 570px;
+            position: relative;
+        }
+        .image__figure img {
+            width: 100%;
+            vertical-align: top;
+        }
+        .image__body {
+            position: absolute;
+            left: 30px;
+            bottom: 30px;
+            color: #fff;
+            text-align: left;
+        }
+        .image__title {
+            font-size: 32px;
+            font-weight: 300;
             margin-bottom: 10px;
         }
-        .slider__img .desc p {
-            font-size: 20px;
-            font-weight: 300;
-            line-height: 1.4;
-            margin-bottom: 130px;
-        }
-        .slider__img .desc .btn a {
+        .image__desc {
             font-size: 16px;
-            padding: 11px 50px;
-            display: inline-block;
+            font-weight: 400;
+            line-height: 140%;
+            margin-bottom: 16px;
         }
-        .slider__img .desc .btn .white {
-            background: #fff;
-            color: #000;
-        }
-        .slider__img .desc .btn .black {
-            background: #000;
+        .image__btn {
+            text-decoration: none;
             color: #fff;
-        }
-        .slider__arrow a {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 27px;
-            height: 39px;
-            background: url(https://raw.githubusercontent.com/webstoryboy/web2022/5696ace8af6491ffb8d68743f823ab35c6d9f745/webs_portfolio/02_site1/assets/img/slider_icon.svg);
-        }
-        .slider__arrow .left{
-            left: 10px;
-            background-position: 0 -50px;
-        }
-        .slider__arrow .right {
-            right: 10px;
-            background-position: -23px -50px;
-        }
-        .slider__dot {
-            position: absolute;
-            left: 50%;
-            bottom: 25px;
-            transform: translateX(-50%);
-        }
-        .slider__dot a {
-            width: 14px;
-            height: 14px;
-            background: url(https://raw.githubusercontent.com/webstoryboy/web2022/5696ace8af6491ffb8d68743f823ab35c6d9f745/webs_portfolio/02_site1/assets/img/slider_icon.svg);
+            background: #BE4E15;
+            padding: 10px 20px;
             display: inline-block;
-            margin: 2px;
         }
-        .slider__dot .dot {
-            background-position: -70px -50px;
-        }
-        .slider__dot .dot.active {
-            background-position: -50px -50px;
-        }
-        .slider__dot .play {
-            background-position: -88px -50px;
-        }
-        .slider__dot .stop {
-            background-position: -110px -50px;
+        .image__btn.yellow {
+            background: #C9931D;
         }
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;section id="sliderType" class="slider__wrap nexon"&gt;
-        &lt;h2 class="ir_so"&gt;슬라이드 영역&lt;/h2&gt;
-        &lt;div class="slider__inner"&gt;
-            &lt;div class="slider"&gt;
-                &lt;div class="slider__img"&gt;
-                    &lt;div class="desc"&gt;
-                        &lt;span&gt;DEVELOPER&lt;/span&gt;
-                        &lt;h3&gt;NEW FRONTEND&lt;/h3&gt;
-                        &lt;p&gt;당신이 만들어갈 새로운 이야기&lt;br&gt; 당신도 할 수 있습니다.&lt;/p&gt;
-                        &lt;div class="btn"&gt;
-                            &lt;a href="#" class="white"&gt;자세히 보기&lt;/a&gt;
-                            &lt;a href="#" class="black"&gt;사이트 보기&lt;/a&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
+    &lt;section id="imageType" class="image__wrap nexon section"&gt;
+        &lt;h2&gt;포트폴리오가 실력이다.&lt;/h2&gt;
+        &lt;p&gt;이미지 유형입니다. 마우스 오버시 자세한 정보가 나와는 구조입니다.&lt;/p&gt;
+        &lt;div class="image__inner container"&gt;
+            &lt;article class="image"&gt;
+                &lt;div class="image__header"&gt;
+                    &lt;figure class="image__figure"&gt;
+                        &lt;img src="https://webstoryboy.github.io/web2022/webs_img/image_bg01.jpg" alt="애교만점 웰시코기"&gt;
+                    &lt;/figure&gt;
                 &lt;/div&gt;
-                &lt;div class="slider__arrow"&gt;
-                    &lt;a href="#" class="left"&gt;&lt;span class="ir_pm"&gt;이전이미지&lt;/span&gt;&lt;/a&gt;
-                    &lt;a href="#" class="right"&gt;&lt;span class="ir_pm"&gt;다음이미지&lt;/span&gt;&lt;/a&gt;
+                &lt;div class="image__body"&gt;
+                    &lt;h3 class="image__title"&gt;애교만점 웰시코기&lt;/h3&gt;
+                    &lt;p class="image__desc"&gt;제목은 넥슨 풋볼 고딕 폰트입니다.&lt;br&gt;설명부분은 넥슨 LV1 고딕 16px 140% 입니다.&lt;/p&gt;
+                    &lt;a href="#" class="image__btn"&gt;자세히 보기&lt;/a&gt;
                 &lt;/div&gt;
-                &lt;div class="slider__dot"&gt;
-                    &lt;a href="#" class="dot active"&gt;&lt;span class="ir_pm"&gt;1&lt;/span&gt;&lt;/a&gt;
-                    &lt;a href="#" class="dot"&gt;&lt;span class="ir_pm"&gt;2&lt;/span&gt;&lt;/a&gt;
-                    &lt;a href="#" class="dot"&gt;&lt;span class="ir_pm"&gt;3&lt;/span&gt;&lt;/a&gt;
-                    &lt;a href="#" class="dot"&gt;&lt;span class="ir_pm"&gt;4&lt;/span&gt;&lt;/a&gt;
-                    &lt;a href="#" class="play"&gt;&lt;span class="ir_pm"&gt;자동플레이&lt;/span&gt;&lt;/a&gt;
-                    &lt;a href="#" class="stop"&gt;&lt;span class="ir_pm"&gt;정지&lt;/span&gt;&lt;/a&gt;
+            &lt;/article&gt;
+            &lt;article class="image"&gt;
+                &lt;div class="image__header"&gt;
+                    &lt;figure class="image__figure"&gt;
+                        &lt;img src="https://webstoryboy.github.io/web2022/webs_img/image_bg02.jpg" alt="코카스 파니엘"&gt;
+                    &lt;/figure&gt;
                 &lt;/div&gt;
-            &lt;/div&gt;
+                &lt;div class="image__body"&gt;
+                    &lt;h3 class="image__title"&gt;코카스 파니엘&lt;/h3&gt;
+                    &lt;p class="image__desc"&gt;제목은 넥슨 풋볼 고딕 폰트입니다.&lt;br&gt;설명부분은 넥슨 LV1 고딕 16px 140% 입니다.&lt;/p&gt;
+                    &lt;a href="#" class="image__btn yellow"&gt;자세히 보기&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
         &lt;/div&gt;
     &lt;/section&gt;
-    &lt;!-- //headerType --&gt;
+    &lt;!-- //imageType --&gt;
 &lt;/body&gt;
 &lt;/html&gt;

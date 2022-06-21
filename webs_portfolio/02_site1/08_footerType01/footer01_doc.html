@@ -14,7 +14,7 @@
 </head>
 <body>
     <header id="header">
-        <h1><a href="#">WEBS : 웹 표준 사이트 만들기 : 슬라이드 유형01</a></h1>
+        <h1><a href="#">WEBS : 웹 표준 사이트 만들기 : 푸터 유형01</a></h1>
         <nav>
             <ul>
                 <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
@@ -29,11 +29,11 @@
             <div class="chapter">
                 <div class="chapter-title">
                     <div class="label">Chapter 01</div>
-                    <div class="class">Classic 슬라이드 유형</div>
+                    <div class="class">Classic 푸터 유형</div>
                 </div>
                 <div class="chapter-sub">
                     <ul>
-                        <li><a href="slider01_doc.html">01. 슬라이드 유형 : 슬라이드 01</a></li>
+                        <li><a href="text01_doc.html">01. 푸터 유형 : 푸터 01</a></li>
                     </ul>
                 </div>
             </div>
@@ -44,7 +44,7 @@
             <div class="desc">
                 <div class="left">
                     <span class="num">01.</span>
-                    <h3 class="title">슬라이드 유형 : 슬라이드 01</h3>
+                    <h3 class="title">텍스트 유형 : 푸터 01</h3>
                     <span class="difficulty">난이도 <span>쉬움</span></span>
                 </div>
                 <div class="right">
@@ -62,7 +62,7 @@
                 <h2>소개</h2>
                 <p>
                     안녕하세요!. 웹스토리보이입니다.
-                    가장 기본적인 슬라이드 유형01을 만들어 보겠습니다. 
+                    가장 기본적인 푸터 유형01을 만들어 보겠습니다. 
                     쉬우니까 잘 따라해보세요~
                 </p>
                 <div class="folder">
@@ -70,10 +70,10 @@
                         <li>
                             <span class="icon1">webstandard</span>
                             <ul>
-                                <li class="icon1">01_sliderType01</li>
+                                <li class="icon1">01_footerType01</li>
                             </ul>
                             <ul>
-                                <li class="icon2">slider01_01.html :</li>
+                                <li class="icon2">footer01_01.html :</li>
                             </ul>
                         </li>
                     </ul>
@@ -81,7 +81,7 @@
 
                 <h2>디자인</h2>
                 <div class="iframe">
-                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FiD3Ehm4HRhe16Vx6kxz3ob%2F%255B%25ED%258F%25AC%25ED%258A%25B8%25ED%258F%25B4%25EB%25A6%25AC%25EC%2598%25A4%25EA%25B0%2580-%25EC%258B%25A4%25EB%25A0%25A5%25EC%259D%25B4%25EB%258B%25A4%255D-%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EC%25A0%259C%25EC%259E%2591%25ED%258E%25B8%3Fnode-id%3D4990%253A269" allowfullscreen></iframe>
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FiD3Ehm4HRhe16Vx6kxz3ob%2F%255B%25ED%258F%25AC%25ED%258A%25B8%25ED%258F%25B4%25EB%25A6%25AC%25EC%2598%25A4%25EA%25B0%2580-%25EC%258B%25A4%25EB%25A0%25A5%25EC%259D%25B4%25EB%258B%25A4%255D-%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EC%25A0%259C%25EC%259E%2591%25ED%258E%25B8%3Fnode-id%3D4958%253A672" allowfullscreen></iframe>
                 </div>
                 <p class="mt50">
                     디자인도 간단합니다. 
@@ -111,13 +111,13 @@
     &lt;meta charset="UTF-8"&gt;
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;슬라이드 유형01&lt;/title&gt;
+    &lt;title&gt;이미지 유형01&lt;/title&gt;
     &lt;style&gt;
         /* font */
-        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
         
-        .nexon {
-            font-family: "NexonLv1Gothic";
+        .gmarket {
+            font-family: 'GmarketSans';
         }
 
         /* reset */
@@ -135,12 +135,11 @@
         em {
             font-style: normal;
         }
-        .ir_pm {
-            display: block;
-            overflow: hidden;
-            font-size: 0;
-            line-height: 0;
-            text-indent: -9999px;
+        img {
+            vertical-align: top;
+        }
+        address {
+            font-style: normal;
         }
         .ir_so {
             overflow: hidden;
@@ -151,131 +150,120 @@
             text-indent: -9999px;
         }
 
-        /* sliderType */
-        .slider {
-            position: relative;
-        }
-        .slider__img {
-            background-image: url(https://raw.githubusercontent.com/webstoryboy/web2022/main/webs_portfolio/02_site1/assets/img/slider_bg01.jpg);
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 100%;
-            /* height: 500px; */
-        }
-        .slider__img .desc {
+        /* common */
+        .container {
             width: 1160px;
             margin: 0 auto;
-            padding: 100px 20px;
-            color: #fff;
+            padding: 0 20px;
         }
-        .slider__img .desc span {
-            font-size: 16px;
-            background: #fff;
-            color: #000;
-            padding: 2px 15px 0px;
-            border-radius: 30px;
+        .section {
+            padding: 120px 0;
         }
-        .slider__img .desc h3 {
-            font-size: 110px;
+        .section &gt; h2 {
+            font-size: 50px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            line-height: 1;
+            text-align: center;
+        }
+        .section &gt; p {
+            font-size: 22px;
             font-weight: 300;
-            margin-left: -8px;
-            margin-bottom: 10px;
+            margin-bottom: 70px;
+            line-height: 1.5;
+            color: #777;
+            text-align: center;
         }
-        .slider__img .desc p {
-            font-size: 20px;
-            font-weight: 300;
-            line-height: 1.4;
-            margin-bottom: 130px;
+
+        /* footerType */
+        .footer__menu {
+            display: flex;
+            justify-content: space-between;
         }
-        .slider__img .desc .btn a {
+        .footer__menu &gt; div {
+            width: 16%;
+            text-align: left;
+        }
+        .footer__menu &gt; div h3 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .footer__menu &gt; div li a {
             font-size: 16px;
-            padding: 11px 50px;
-            display: inline-block;
+            line-height: 1.6;
+            color: #777;
+            font-weight: 300;
         }
-        .slider__img .desc .btn .white {
-            background: #fff;
-            color: #000;
-        }
-        .slider__img .desc .btn .black {
-            background: #000;
-            color: #fff;
-        }
-        .slider__arrow a {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 27px;
-            height: 39px;
-            background: url(https://raw.githubusercontent.com/webstoryboy/web2022/5696ace8af6491ffb8d68743f823ab35c6d9f745/webs_portfolio/02_site1/assets/img/slider_icon.svg);
-        }
-        .slider__arrow .left{
-            left: 10px;
-            background-position: 0 -50px;
-        }
-        .slider__arrow .right {
-            right: 10px;
-            background-position: -23px -50px;
-        }
-        .slider__dot {
-            position: absolute;
-            left: 50%;
-            bottom: 25px;
-            transform: translateX(-50%);
-        }
-        .slider__dot a {
-            width: 14px;
-            height: 14px;
-            background: url(https://raw.githubusercontent.com/webstoryboy/web2022/5696ace8af6491ffb8d68743f823ab35c6d9f745/webs_portfolio/02_site1/assets/img/slider_icon.svg);
-            display: inline-block;
-            margin: 2px;
-        }
-        .slider__dot .dot {
-            background-position: -70px -50px;
-        }
-        .slider__dot .dot.active {
-            background-position: -50px -50px;
-        }
-        .slider__dot .play {
-            background-position: -88px -50px;
-        }
-        .slider__dot .stop {
-            background-position: -110px -50px;
+        .footer__right {
+            border-top: 1px solid #ccc;
+            margin-top: 50px;
+            padding-top: 50px;
+            text-align: center;
         }
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;section id="sliderType" class="slider__wrap nexon"&gt;
-        &lt;h2 class="ir_so"&gt;슬라이드 영역&lt;/h2&gt;
-        &lt;div class="slider__inner"&gt;
-            &lt;div class="slider"&gt;
-                &lt;div class="slider__img"&gt;
-                    &lt;div class="desc"&gt;
-                        &lt;span&gt;DEVELOPER&lt;/span&gt;
-                        &lt;h3&gt;NEW FRONTEND&lt;/h3&gt;
-                        &lt;p&gt;당신이 만들어갈 새로운 이야기&lt;br&gt; 당신도 할 수 있습니다.&lt;/p&gt;
-                        &lt;div class="btn"&gt;
-                            &lt;a href="#" class="white"&gt;자세히 보기&lt;/a&gt;
-                            &lt;a href="#" class="black"&gt;사이트 보기&lt;/a&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
+    &lt;footer id="footerType" class="footer__wrap section gmarket gray"&gt;
+        &lt;h2 class="ir_so"&gt;푸터 영역&lt;/h2&gt;
+        &lt;div class="footer__inner container"&gt;
+            &lt;div class="footer__menu"&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;레이아웃 영역&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;레이아웃 유형01&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;레이아웃 유형02&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;레이아웃 유형03&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;레이아웃 유형04&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;레이아웃 유형05&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
                 &lt;/div&gt;
-                &lt;div class="slider__arrow"&gt;
-                    &lt;a href="#" class="left"&gt;&lt;span class="ir_pm"&gt;이전이미지&lt;/span&gt;&lt;/a&gt;
-                    &lt;a href="#" class="right"&gt;&lt;span class="ir_pm"&gt;다음이미지&lt;/span&gt;&lt;/a&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;헤더 영역&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;메뉴 유형01&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
                 &lt;/div&gt;
-                &lt;div class="slider__dot"&gt;
-                    &lt;a href="#" class="dot active"&gt;&lt;span class="ir_pm"&gt;1&lt;/span&gt;&lt;/a&gt;
-                    &lt;a href="#" class="dot"&gt;&lt;span class="ir_pm"&gt;2&lt;/span&gt;&lt;/a&gt;
-                    &lt;a href="#" class="dot"&gt;&lt;span class="ir_pm"&gt;3&lt;/span&gt;&lt;/a&gt;
-                    &lt;a href="#" class="dot"&gt;&lt;span class="ir_pm"&gt;4&lt;/span&gt;&lt;/a&gt;
-                    &lt;a href="#" class="play"&gt;&lt;span class="ir_pm"&gt;자동플레이&lt;/span&gt;&lt;/a&gt;
-                    &lt;a href="#" class="stop"&gt;&lt;span class="ir_pm"&gt;정지&lt;/span&gt;&lt;/a&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;메인 영역&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;이미지 유형01&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;동영상 유형02&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;슬라이드 유형03&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;컨텐츠 영역&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;텍스트 유형01&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;이미지 유형02&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;이미지/텍스트03&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;카드 유형04&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;배너 유형05&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;푸터 영역&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;컨택트 유형01&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;푸터 유형02&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;사이트 영역&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;반응형 사이트&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;패럴랙스 사이트&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;포트폴리오 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
+            &lt;address class="footer__right"&gt;
+                ©2022 webstroyboy. All rights reserved.
+            &lt;/address&gt;
         &lt;/div&gt;
-    &lt;/section&gt;
-    &lt;!-- //headerType --&gt;
+    &lt;/footer&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
@@ -302,6 +290,8 @@
                 <ul class="refer">
                     <li><sup>1</sup> <a href="#">이미지 대체(IR) 효과</a></li>
                     <li><sup>2</sup> <a href="#">이미지 스프라이트</a></li>
+                    <li><sup>2</sup> <a href="#">이미지 표현방법</a></li>
+                    <li><sup>2</sup> <a href="#">한줄 효과, 다줄 효과</a></li>
                 </ul>
             </div>
             <!-- //container -->

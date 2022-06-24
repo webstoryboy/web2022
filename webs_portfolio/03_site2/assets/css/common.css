@@ -39,14 +39,11 @@
 }
 
 /* 배경색 */
-body {
-    background-color: #F6F8FD;
-}
 .gray {
     background-color: #F0F0F0;
 }
 .gray2 {
-    background-color: #EBF1FF;
+    background-color: #F6F8FD;
 }
 
 

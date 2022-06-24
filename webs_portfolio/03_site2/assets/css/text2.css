@@ -5,10 +5,9 @@
 }
 .text__title {
     width: 30%;
-    height: 500px;
 }
 .text__title span {
-    background: #000;
+    background: #FF3344;
     color: #fff;
     padding: 3px 20px;
     display: inline-block;
@@ -24,7 +23,7 @@
 }
 .text__title p {
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1.6;
     word-break: keep-all;
 }
@@ -36,6 +35,9 @@
 }
 .text__text .text {
     width: 46%;
+}
+.text__text .text:nth-child(1){
+    margin-bottom: 60px;
 }
 .text__text .text h3 {
     font-size: 24px;

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP 사이트 만들기</title>
+    <title>PHP 사이트 만들기 : 블로그</title>
  
     <!-- META -->
     <meta name="acthor" content="webstroyboy">
@@ -27,7 +27,7 @@
 
     <!-- CSS(섹션) -->
     <link rel="stylesheet" href="../assets/css/header.css"> <!-- 헤더 유형(유형1) -->
-    <link rel="stylesheet" href="../assets/css/board.css"> <!-- 게시판 유형(유형1) -->
+    <link rel="stylesheet" href="../assets/css/blog.css"> <!-- 게시판 유형(유형1) -->
 </head>
 <body>
     <div id="skip">
@@ -72,46 +72,30 @@
     <!-- //headerType -->
 
     <main id="mainType">
-        <section id="boardType" class="board__wrap section nexon">
-            <h2>게시글 보기</h2>
-            <p>강의와 관련된 게시판입니다. 궁금한 점은 여기를 확인하세요!</p>
-            <div class="board__inner container">
-                <div class="board__table">
-                    <table>
-                        <colgroup>
-                            <col style="width: 30%">
-                            <col style="width: 70%">
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <th>제목</th>
-                                <td class="left">게시판 타이틀299입니다.</td>
-                            </tr>
-                            <tr>
-                                <th>글쓴이</th>
-                                <td class="left">황상연</td>
-                            </tr>
-                            <tr>
-                                <th>등록일</th>
-                                <td class="left">2022-06-19 10:59</td>
-                            </tr>
-                            <tr>
-                                <th>조회수</th>
-                                <td class="left">1</td>
-                            </tr>
-                            <tr>
-                                <th>내용</th>
-                                <td class="left height">
-                                    게시판 내용299입니다. 어제는 사람이 쫌 있었는데. 오늘은 없네. 교실이 썰렁합니다. 집에서 하면 좋니?
-                                </td>
-                            </tr>                            
-                        </tbody>
-                    </table>
+        <section id="cardType" class="blog__wrap nexon">
+            <div class="blog__label">
+                <h2>블로그 제목은 여기에 나옵니다.</h2>
+                <div>
+                    <span class="author"><a href="#">web</a></span>
+                    <span class="date">2022-03-04</span><br>
+                    <span class="modify"><a href="#">수정</a></span>
+                    <span class="delete"><a href="#">삭제</a></span>
                 </div>
-                <div class="board__btn">
-                    <a href="#">삭제하기</a>
-                    <a href="boardModify.html">수정하기</a>
-                    <a href="board.html">목록보기</a>
+            </div>
+            <div class="blog__inner container">
+                <div class="blog__layout">
+                    <div class="blog__left">
+                        <h4>블로그 제목입니다.</h4>
+                        원숭이두창 국내 의사환자(의심자) 1명이 22일 방역당국의 유전자증폭(PCR) 검사에서 양성 판정을 받은 것으로 알려졌다. 방역당국은 이들에 대한 진단검사 결과를 오후 3시 브리핑을 통해 발표한다.
+                        방역당국은 전날 신고된 원숭이두창 의심환자 2명에 대해 검사를 실시했는데, 이 중 독일에서 입국한 내국인 A씨가 양성 판정을 받은 것으로 전해졌다.
+                        A씨는 지난 21일 오후 인천공항을 통해 귀국한 후 스스로 질병관리청에 의심 신고를 해 공항 검역소와 중앙역학조사관에 의해 의사환자로 분류됐다. 공항 격리시설에서 대기 후 국가지정 입원치료병상인 인천의료원에 격리 중이다. 그는 현재 비교적 건강한 상태인 것으로 전해졌다.
+                        또 다른 의심환자인 외국인 B씨는 진단 검사에서 음성 판정을 받은 것으로 알려졌다. 그는 현재 부산 소재 병원(국가지정 입원치료병상)에 내원해 치료를 받고 있다.
+                    </div>
+                    <div class="blog__right">
+                        <div class="ad">
+                            <iframe src="https://ads-partners.coupang.com/widgets.html?id=572079&template=carousel&trackingCode=AF4781241&subId=&width=300&height=300" width="300" height="300" frameborder="0" scrolling="no" referrerpolicy="unsafe-url"></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

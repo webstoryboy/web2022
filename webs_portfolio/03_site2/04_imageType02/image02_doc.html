@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"포트폴리오가 실력이다" : 웹 표준 사이트 만들기</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">WEBS : 웹 표준 사이트 만들기 : 이미지 유형02</a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <aside id="aside">
+            <button class="aside-btn"><span></span></button>
+            <div class="chapter">
+                <div class="chapter-title">
+                    <div class="label">Chapter 01</div>
+                    <div class="class">Classic 이미지 유형</div>
+                </div>
+                <div class="chapter-sub">
+                    <ul>
+                        <li><a href="slider02_doc.html">01. 이미지 유형 : 이미지 02</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <!-- //aside -->
+
+        <section id="youtube" class="container ">
+            <div class="desc">
+                <div class="left">
+                    <span class="num">01.</span>
+                    <h3 class="title">이미지 유형 : 이미지 02</h3>
+                    <span class="difficulty">난이도 <span>쉬움</span></span>
+                </div>
+                <div class="right">
+                    <h3>소스 다운로드</h3>
+                    <a href="#" target="_blank" class="sampleBtn">완성 화면 보기</a>
+                    <a href="#" target="_blank" class="sampleBtn">피그마 보기</a>
+                    <a href="#" target="_blank" class="sampleBtn">영상 보기</a>
+                </div>
+            </div>
+        </section>
+        <!-- //youtube -->
+
+        <section id="explanation">
+            <div class="container">
+                <h2>소개</h2>
+                <p>
+                    안녕하세요!. 웹스토리보이입니다.
+                    가장 기본적인 이미지 유형02을 만들어 보겠습니다. 
+                    쉬우니까 잘 따라해보세요~
+                </p>
+                <div class="folder">
+                    <ul>
+                        <li>
+                            <span class="icon1">webstandard</span>
+                            <ul>
+                                <li class="icon1">01_imageType01</li>
+                                <li class="icon1">02_imageType02</li>
+                            </ul>
+                            <ul>
+                                <li class="icon2">image02_01.html :</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <h2>디자인</h2>
+                <div class="iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FiD3Ehm4HRhe16Vx6kxz3ob%2F%255B%25ED%258F%25AC%25ED%258A%25B8%25ED%258F%25B4%25EB%25A6%25AC%25EC%2598%25A4%25EA%25B0%2580-%25EC%258B%25A4%25EB%25A0%25A5%25EC%259D%25B4%25EB%258B%25A4%255D-%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EC%25A0%259C%25EC%259E%2591%25ED%258E%25B8%3Fnode-id%3D18263%253A1305" allowfullscreen></iframe>
+                </div>
+                <p class="mt50">
+                    디자인도 간단합니다. 
+                </p>
+
+                <h2>이론</h2>
+                <p data-num="01">
+                    <code>!</code>를 치고 <code>tab</code>을 누르겠습니다.
+                    언어를 <code>ko</code>로 변경하고 <code>title</code>은 메뉴 유형01로 변경하겠습니다.
+                </p>
+
+                <h2>코드</h2>
+                <div class="code__tab">
+                    <div class="code_link">
+                        <ul class="sub">
+                            <li class="active"><a href="#">01</a></li>
+                            <li><a href="#">02</a></li>
+                            <li><a href="#">03</a></li>
+                            <li><a href="#">04</a></li>
+                        </ul>
+                    </div>
+                    <div class="code_view">
+                        <div class="view1">
+<pre class="language-html"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;슬라이드 유형02&lt;/title&gt;
+    &lt;style&gt;
+        /* font */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+        
+        .gmarket {
+            font-family: "GmarketSans";
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        li {
+            list-style: none;
+        }
+        em {
+            font-style: normal;
+        }
+        .ir_so {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        /* common */
+        .gray {
+            background-color: #F6F8FD;
+        }
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            padding: 0 20px;
+            /* background: rgba(0,0,0,0.3); */
+        }
+        .section {
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        /* textType */
+        .text__inner {
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+        }
+        .text__title {
+            width: 30%;
+        }
+        .text__title span {
+            background: #FF3344;
+            color: #fff;
+            padding: 3px 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        .text__title h3 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            word-break: keep-all;
+        }
+        .text__title p {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.6;
+            word-break: keep-all;
+        }
+        .text__text {
+            width: 66%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .text__text .text {
+            width: 46%;
+        }
+        .text__text .text:nth-child(1){
+            margin-bottom: 60px;
+        }
+        .text__text .text h3 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            padding-top: 60px;
+            position: relative;
+        }
+        .text__text .text h3::before {
+            content: '';
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            left: 0; top: 0;
+            background-image: url(../img/text_bg01.svg);
+            background-size: 160px;
+        }
+        .text__text .text:nth-child(1n) h3::before {
+            background-position: 5px 5px;
+            background-color: #D3D8FA;
+        }
+        .text__text .text:nth-child(2n) h3::before {
+            background-position: -36px 5px;
+            background-color: #CEF6EE;
+        }
+        .text__text .text:nth-child(3n) h3::before {
+            background-position: -75px 5px;
+            background-color: #F6F4E0;
+        }
+        .text__text .text:nth-child(4n) h3::before {
+            background-position: -115px 5px;
+            background-color: #F8D1D8;
+        }
+        .text__text .text p {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.6;
+            text-align: justify;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;section id="textType" class="text__wrap section gmarket gray"&gt;
+        &lt;h2 class="ir_so"&gt;텍스트 유형2&lt;/h2&gt;
+        &lt;div class="text__inner container type2"&gt;
+            &lt;div class="text__title"&gt;
+                &lt;span&gt;frontent&lt;/span&gt;
+                &lt;h3&gt;프론트앤드 과정&lt;/h3&gt;
+                &lt;p&gt;
+                    프론트앤드 개발자로 취업하기 위한&lt;br&gt;
+                    전문 과정입니다.&lt;br&gt;
+                    여러분들도 도전해보세요!
+                &lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="text__text"&gt;
+                &lt;div class="text"&gt;
+                    &lt;h3&gt;웹 디자인&lt;/h3&gt;
+                    &lt;p&gt;웹디자이너가 포함된 웹 및 멀티미디어 디자이너는 다른 직업과 비교하여 임금과 복리후생이 낮은 편이다.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="text"&gt;
+                    &lt;h3&gt;웹 퍼블리셔&lt;/h3&gt;
+                    &lt;p&gt;퍼블리싱은 웹 사이트를 제작할 때, 웹 디자이너가 디자인한 것을 웹 표준성과 접근성에 부합하도록 재정&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="text"&gt;
+                    &lt;h3&gt;프론트앤드 개발자&lt;/h3&gt;
+                    &lt;p&gt;사이트와 상호작용하는 모든 부분에 대한 개발, 관리, 유지 보수를 하는 것 솔루션의 프로세스&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class="text"&gt;
+                    &lt;h3&gt;백앤드 개발자&lt;/h3&gt;
+                    &lt;p&gt;용어 자체에서 알 수 있듯이, 백엔드는 웹사이트나 웹 애플리케이션 또는 모바일 솔루션의 프로세스와 관련된입니다.&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;!-- //텍스트 영역(유형2) --&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                        </div>
+                        <div class="view2">
+<pre class="language-html"><code>view2
+    
+</code></pre>
+                        </div>
+                        <div class="view3">
+<pre class="language-html"><code>view3
+    
+</code></pre>
+                        </div>
+                        <div class="view4">
+<pre class="language-html"><code>view4
+    
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>참고</h2>
+                <ul class="refer">
+                    <li><sup>1</sup> <a href="#">블록/인라인 요소</a></li>
+                </ul>
+            </div>
+            <!-- //container -->
+        </section>
+        <!-- //explanation -->
+    
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer> 
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="../../assets/js/jquery-3.6.0.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/script.js"></script> 
+</body>
+</html>

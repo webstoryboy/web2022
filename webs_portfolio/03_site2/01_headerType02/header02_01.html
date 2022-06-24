@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>헤더 유형02</title>
+    <style>
+        /* font */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+        
+        .gmarket {
+            font-family: "GmarketSans";
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        li {
+            list-style: none;
+        }
+        em {
+            font-style: normal;
+        }
+        .ir_so {
+            overflow: hidden;
+            position: absolute;
+            width: 0;
+            height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+
+        /* common */
+        .gray {
+            background-color: #F6F8FD;
+        }
+
+
+        /* headerType */
+        .header__inner {
+            padding: 0 20px;
+            text-align: center;
+        }
+        .header__logo a {
+            font-size: 30px;
+            display: inline-block;
+            padding: 10px;
+            margin: 5px 0;
+            display: inline-block;
+        }
+        .header__menu {
+            text-align: center;
+        }
+        .header__menu li {
+            display: inline;
+        }
+        .header__menu li a {
+            padding: 10px 5%;
+            display: inline-block;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .header__menu li a:hover {
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header id="headerType" class="header__wrap gmarket gray">
+        <div class="header__inner">
+            <div class="container">
+                <h1 class="header__logo">
+                    <a href="#">WEB <em>site</em></a>
+                </h1>
+                <nav class="header__menu">
+                    <h2 class="ir_so">메인 메뉴</h2>
+                    <ul>
+                        <li><a href="#">레이아웃</a></li>
+                        <li><a href="#">메뉴 영역</a></li>
+                        <li><a href="#">헤더 영역</a></li>
+                        <li><a href="#">컨텐츠 영역</a></li>
+                        <li><a href="#">푸터 영역</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- //headerType -->
+</body>
+</html>

@@ -25,7 +25,7 @@
         li {
             list-style: none;
         }
-        em {
+        em, address {
             font-style: normal;
         }
         .ir_so {
@@ -33,6 +33,13 @@
             position: absolute;
             width: 0;
             height: 0;
+            line-height: 0;
+            text-indent: -9999px;
+        }
+        .ir_pm {
+            display: inline-block;
+            overflow: hidden;
+            font-size: 0;
             line-height: 0;
             text-indent: -9999px;
         }
@@ -71,144 +78,148 @@
         }
 
         /* textType */
-        .review__inner {
+        .footer__inner {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
             text-align: left;
         }
-        .review__inner .review {
-            width: 32%;
-            background: #fff;
-            padding: 30px;
-            box-sizing: border-box;
-            border-radius: 10px;
+        .footer__logo {
+            width: 30%;
         }
-        .review__desc {
+        .footer__logo h3 {
             font-size: 18px;
-            line-height: 1.5;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 7; 
-            -webkit-box-orient: vertical;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #d9d9d9;
-            margin-bottom: 20px;
-            min-height: 210px;
-        }
-        .review__info {
-            padding-left: 60px;
-            position: relative;
-        }
-        .review__info:before {
-            content: '';
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            position: absolute;
-            left: 0; 
-            top: 0;
-        } 
-        .review__info.icon1:before {
-            background: url(https://webstoryboy.github.io/web2022/webs_img/text03_icon01.png);
-            background-size: cover;
-        }
-        .review__info.icon2:before {
-            background: url(https://webstoryboy.github.io/web2022/webs_img/text03_icon02.png);
-            background-size: cover;
-        }
-        .review__info.icon3:before {
-            background: url(https://webstoryboy.github.io/web2022/webs_img/text03_icon03.png);
-            background-size: cover;
-        }
-        .review__info h3 {
-            font-size: 26px;
             font-weight: 500;
+            margin-bottom: 20px;
         }
-        .review__info h3 em {
-            font-size: 16px;
-            font-weight: 300;
-        }
-        .review__info .star span {
-            display: inline-block;
-            width: 17px;
-            height: 16px;
-            background: url(https://webstoryboy.github.io/web2022/webs_img/text03_star.svg);
-            margin-top: 5px;
-        }
-        .review__info .star span.not {
-            background-position: -19px 0;
-        }
-        .review__more {
-            margin-top: 20px;
-            text-align: center;
-            border-top: 1px solid #d9d9d9;
-            padding-top: 20px;
-        }
-        .review__more a {
-            background: #4857EC;
-            color: #fff;
-            padding: 10px 24px;
-            border-radius: 20px;
+        .footer__logo p {
             font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .footer__logo .sns ul {
+            display: flex;
+        }
+        .footer__logo .sns li {
+            margin-right: 5px;
+        }
+        .footer__logo .sns li a {
             display: inline-block;
+            width: 45px;
+            height: 45px;
+            background-color: #F5F5F5;
+            border-radius: 50%;
+            background-image: url(https://webstoryboy.github.io/web2022/webs_img/footer02_icon.svg);
+        }
+        .footer__logo .sns li:nth-child(2) a {
+            background-position: -45px 0;
+        }
+        .footer__logo .sns li:nth-child(3) a {
+            background-position: -90px 0;
+        }
+        .footer__logo .sns li:nth-child(4) a {
+            background-position: -135px 0;
+        }
+        .footer__logo .sns li:nth-child(5) a {
+            background-position: -180px 0;
+        }
+        .footer__menu {
+            width: 70%;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer__menu h3 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        .footer__menu li a {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 300;
+            margin-bottom: 7px;
+        }
+        .footer__right {
+            margin-top: 80px;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 300;
         }
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;section id="textType" class="review__wrap section gray gmarket"&gt;
-        &lt;h2&gt;스터디 후기&lt;/h2&gt;
-        &lt;p&gt;취업을 축하해요😍 정성스러운 후기 감사합니다.&lt;/p&gt;
-        &lt;div class="review__inner container"&gt;
-            &lt;article class="review"&gt;
-                &lt;p class="review__desc nexon"&gt;
-                    불과 3달전만해도 여러 원인들로 인해 자존감이 밑바닥이였던 저에게 이 스터디는 너무 소중한 시간이었어요. 매일 마음속으로 울고싶다를 외쳤던 저였는데 이제는 조금이나마 이겨 낼 수 있을 것 같네요. 다음에 선생님 만났을 때는 많이 발전해있는 제가 되었으면 좋겠네요...버리지 않아주셔서 감사...합니다
+    &lt;footer id="footerType" class="footer__wrap section gmarket gray"&gt;
+        &lt;h2 class="ir_so"&gt;푸터 영역&lt;/h2&gt;
+        &lt;div class="footer__inner container"&gt;
+            &lt;div class="footer__logo"&gt;
+                &lt;h3&gt;Webstoryboy&lt;/h3&gt;
+                &lt;p&gt;
+                    안녕하세요!&lt;br&gt;
+                    문의사항은 메일로 부탁드립니다.&lt;br&gt;
+                    &lt;a href="mailto:webstoryboy@naver.com"&gt;webstoryboy@naver.com&lt;/a&gt;
                 &lt;/p&gt;
-                &lt;div class="review__info icon1"&gt;
-                    &lt;h3&gt;이태용 &lt;em&gt;웹스 24기&lt;/em&gt;&lt;/h3&gt;
-                    &lt;div class="star"&gt;
-                        &lt;span&gt;&lt;/span&gt;
-                        &lt;span&gt;&lt;/span&gt;
-                        &lt;span&gt;&lt;/span&gt;
-                        &lt;span&gt;&lt;/span&gt;
-                        &lt;span&gt;&lt;/span&gt;
-                    &lt;/div&gt;
+                &lt;div class="sns"&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;span class="ir_pm"&gt;페이스북&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;span class="ir_pm"&gt;인스타&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;span class="ir_pm"&gt;유튜브&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;span class="ir_pm"&gt;깃헙&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;&lt;span class="ir_pm"&gt;디스코드&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
                 &lt;/div&gt;
-                &lt;div class="review__more"&gt;&lt;a href="#"&gt;자세히 보기&lt;/a&gt;&lt;/div&gt;
-            &lt;/article&gt;
-            &lt;article class="review"&gt;
-                &lt;p class="review__desc nexon"&gt;
-                    진심 학교나 학원보다 더 많이 배운거라고 생각하고, 무지하고 말안듣고 자존감바닥인 저를 팩폭도 해주시고, 버리지 않아주셔서 감사...합니다 쌤!!!!!!!!!! 회사에서 잘리지않고,,, 존버하겠습니다!!!!!!!!!!!!  버리지 않아주셔서 감사...합니다
-                &lt;/p&gt;
-                &lt;div class="review__info icon2"&gt;
-                    &lt;h3&gt;이희진 &lt;em&gt;웹스 24기&lt;/em&gt;&lt;/h3&gt;
-                    &lt;div class="star"&gt;
-                        &lt;span&gt;&lt;/span&gt;
-                        &lt;span&gt;&lt;/span&gt;
-                        &lt;span&gt;&lt;/span&gt;
-                        &lt;span&gt;&lt;/span&gt;
-                        &lt;span class="not"&gt;&lt;/span&gt;
-                    &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="footer__menu"&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;레이아웃 영역&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;레이아웃 유형01&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;레이아웃 유형02&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;레이아웃 유형03&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;레이아웃 유형04&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;레이아웃 유형05&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
                 &lt;/div&gt;
-                &lt;div class="review__more"&gt;&lt;a href="#"&gt;자세히 보기&lt;/a&gt;&lt;/div&gt;
-            &lt;/article&gt;
-            &lt;article class="review"&gt;
-                &lt;p class="review__desc nexon"&gt;
-                    제가 게을러서 의도치않게 자꾸 말을 안듣는 학생이 되었었지만 정말 선생님 말씀 틀린거 하나도 없었다는거 잘 알고있습니다,,, ㅎㅎ 아 그리고 마지막 하고 싶은 말은 저 새벽 5~6시에 자는 ㄹㅇ올빼미형인간인데... 쌤이랑 두달 공부했다고.....
-                &lt;/p&gt;
-                &lt;div class="review__info icon3"&gt;
-                    &lt;h3&gt;정승연 &lt;em&gt;웹스 24기&lt;/em&gt;&lt;/h3&gt;
-                    &lt;div class="star"&gt;
-                        &lt;span&gt;&lt;/span&gt;
-                        &lt;span&gt;&lt;/span&gt;
-                        &lt;span&gt;&lt;/span&gt;
-                        &lt;span&gt;&lt;/span&gt;
-                        &lt;span&gt;&lt;/span&gt;
-                    &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;메인 영역&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;이미지 유형01&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;동영상 유형02&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;슬라이드 유형03&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
                 &lt;/div&gt;
-                &lt;div class="review__more"&gt;&lt;a href="#"&gt;자세히 보기&lt;/a&gt;&lt;/div&gt;
-            &lt;/article&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;컨텐츠 영역&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;텍스트 유형01&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;이미지 유형02&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;이미지/텍스트03&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;카드 유형04&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;배너 유형05&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;푸터 영역&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;컨택트 유형01&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;푸터 유형02&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h3&gt;사이트 영역&lt;/h3&gt;
+                    &lt;ul&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;웹표준 사이트&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;반응형 사이트&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;패럴랙스 사이트&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;포트폴리오 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;address class="footer__right"&gt;
+                ©2022 webstroyboy. All rights reserved.
+            &lt;/address&gt;
         &lt;/div&gt;
-    &lt;/section&gt;
+    &lt;/footer&gt;
+    &lt;!-- //푸터 영역(유형2) --&gt;
 &lt;/body&gt;
 &lt;/html&gt;

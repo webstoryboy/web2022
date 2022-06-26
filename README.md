@@ -1,40 +1,69 @@
-# web2022 : 이번엔 끝내자!!! 화이팅!!
+# web2022 : 포트폴리오가 실력이다.
 
 # 이미지
-https://webstoryboy.github.io/web2022/webs_img/image_bg01.jpg   
-https://webstoryboy.github.io/web2022/webs_img/image_bg02.jpg   
 
-## WEBS : 사이트 만들기
+https://webstoryboy.github.io/web2022/webs_img/image_bg01.jpg  
+https://webstoryboy.github.io/web2022/webs_img/image_bg02.jpg
 
-01_layout : 레이아웃 유형1 : float, flex, grid, 반응형  
-02_layout : 레이아웃 유형2 : float, flex, grid, 반응형  
-03_layout : 레이아웃 유형3 : float, flex, grid, 반응형  
-04_layout : 레이아웃 유형4 : float, flex, grid, 반응형  
-05_layout : 레이아웃 유형5 : float, flex, grid, 반응형  
-06_menuType : 메뉴 유형1  
-07_bannerType : 배너 유형1  
-08_imageType : 이미지 유형1  
-09_cardType : 카드 유형1  
-10_imgTextType : 이미지텍스트 유형1  
-11_textType : 텍스트 유형1  
-12_footerType : 푸터 유형1  
-13_sliderType : 슬라이드 유형1  
-14_complete : 완성 사이트1  
-<br>  
-01. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/01_layout/layout_doc.html  
-02. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/02_layout/layout_doc.html  
-03. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/03_layout/layout_doc.html  
-04. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/04_layout/layout_doc.html  
-05. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/05_layout/layout_doc.html  
-06. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/06_menuType/menu_doc.html  
-07. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/07_bannerType/banner_doc.html  
-08. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/08_imageType/image_doc.html  
-09. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/09_cardType/card_doc.html  
-10. https://webstoryboy.github.io/web2022/webstoryboy_book/01_webstandard/10_imgTextType/imgText_doc.html  
-11.  
-12.  
-13.  
-14.
+## WEBS : 유형별 연습
+
+### 레이아웃 유형
+
+01_layout : 레이아웃 유형01 : float, flex, grid, 반응형  
+02_layout : 레이아웃 유형02 : float, flex, grid, 반응형  
+03_layout : 레이아웃 유형03 : float, flex, grid, 반응형  
+04_layout : 레이아웃 유형04 : float, flex, grid, 반응형  
+05_layout : 레이아웃 유형05 : float, flex, grid, 반응형
+
+### 헤더 유형
+
+01_header : 헤더 유형01  
+02_header : 헤더 유형02
+
+### 슬라이드 유형
+
+01_slider : 슬라이드 유형01  
+02_slider : 슬라이드 유형02
+
+### 이미지 유형
+
+01_image : 이미지 유형01  
+02_image : 이미지 유형02
+
+### 이미지/텍스트 유형
+
+01_imgText : 이미지/텍스트 유형01  
+02_imgText : 이미지/텍스트 유형02
+
+### 배너 유형
+
+01_banner : 배너 유형01  
+02_banner : 배너 유형02
+
+### 텍스트 유형
+
+01_text : 텍스트 유형01  
+02_text : 텍스트 유형02
+03_text : 텍스트 유형03
+
+### 푸터 유형
+
+01_footer : 푸터 유형01
+02_footer : 푸터 유형02
+
+## WEBS : 사이트 만들기1 : 웹표준 사이트1 - 유형별 연습, 반응형, 스크립트
+
+## WEBS : 사이트 만들기2 : 웹표준 사이트2 - 유형별 연습, 반응형, 스크립트
+
+## WEBS : 사이트 만들기3 : PHP 사이트1 - 로그인, 회원가입, 댓글, 게시판
+
+## WEBS : 사이트 만들기4 : PHP 사이트2 - 로그인, 회원가입, 블로그, 퀴즈
+
+## WEBS : 사이트 만들기5 : 웹표준 사이트1 - 리액트로 만들기
+
+## WEBS : 사이트 만들기6 : 웹표준 사이트1 - 뷰로 만들기
+
+## WEBS : 사이트 만들기7 : 포트폴리오 사이트1
 
 ### 레퍼런스
 

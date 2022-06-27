@@ -14,7 +14,7 @@
 </head>
 <body>
     <header id="header">
-        <h1><a href="#">WEBS : 패럴랙스 스크롤링 이펙트 : 메뉴 이동</a></h1>
+        <h1><a href="#">WEBS : 패럴랙스 스크롤링 이펙트 : 리빌 효과</a></h1>
         <nav>
             <ul>
                 <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
@@ -29,22 +29,22 @@
             <div class="chapter">
                 <div class="chapter-title">
                     <div class="label">Chapter 01</div>
-                    <div class="class">Classic 메뉴 이동</div>
+                    <div class="class">Classic 리빌 효과</div>
                 </div>
                 <div class="chapter-sub">
                     <ul>
-                        <li><a href="menu01_doc.html">01. 패럴랙스 스크롤링 이펙트 : 메뉴 이동</a></li>
+                        <li><a href="menu01_doc.html">07. 패럴랙스 스크롤링 이펙트 : 리빌 효과</a></li>
                     </ul>
                 </div>
             </div>
         </aside>
         <!-- //aside -->
 
-        <section id="youtube" class="container ">
+        <section id="youtube" class="container">
             <div class="desc">
                 <div class="left">
-                    <span class="num">01.</span>
-                    <h3 class="title">패럴랙스 스크롤링 이펙트 : 메뉴 이동</h3>
+                    <span class="num">07.</span>
+                    <h3 class="title">패럴랙스 스크롤링 이펙트 : 리빌 효과</h3>
                     <span class="difficulty">난이도 <span>쉬움</span></span>
                 </div>
                 <div class="right">
@@ -71,9 +71,14 @@
                             <span class="icon1">parallax</span>
                             <ul>
                                 <li class="icon1">01_parallax01</li>
+                                <li class="icon1">02_parallax02</li>
+                                <li class="icon1">03_parallax03</li>
+                                <li class="icon1">04_parallax04</li>
+                                <li class="icon1">05_parallax05</li>
+                                <li class="icon1">06_parallax06</li>
                             </ul>
                             <ul>
-                                <li class="icon2">parallax01_01.html :</li>
+                                <li class="icon2">parallax06_01.html :</li>
                             </ul>
                         </li>
                     </ul>
@@ -229,7 +234,7 @@
         .content__item__imgWrap {
             width: 100%;
             padding-bottom: 56.25%;
-            background: #000;
+            /* background: #000; */
             position: relative;
             overflow: hidden;
         }
@@ -243,11 +248,11 @@
             background-position: center center;
             background-size: cover;
             filter: saturate(0%);
-            transition: all 1s;
+            /* transition: transform 0.33s linear; */
         }
         .content__item__img:hover {
             filter: saturate(100%);
-            transform: scale(1.025);
+            /* transform: scale(1.025); */
         }
         .content__item:nth-child(1) .content__item__img {
             background-image: url(https://webstoryboy.github.io/web2022/webs_img/para_images01@2.jpg);
@@ -289,210 +294,247 @@
             margin-left: auto;
             margin-right: -4vw;
         }
-        .parallax__scrollTop {
-            position: fixed;
-            left: 20px;
-            bottom: 20px;
-            z-index: 1000;
-            background: rgba(0,0,0,0.4);
-            color: #fff;
-            padding: 10px 30px;
-            border-radius: 50px;
+
+        /* option */
+        .reveal &gt; span,
+        .reveal &gt; div {
+            opacity: 0;
+        }
+        .reveal.show &gt; span,
+        .reveal.show &gt; div {
+            animation: opacity 1s linear forwards;
+        }
+        .reveal {
+            position: relative;
+        }
+        .reveal::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0; 
+            height: 100%;
+            background: #fff;
+            z-index: 1;
+        }
+        .reveal.reveal-two::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            z-index: 1;
+            background: orange;
+        }
+
+        /* 기본값 */
+        .reveal.show::before {
+            animation: reveal 1s;
+        }
+        .reveal.reveal-RTL.show::before {
+            animation: reveal-RTL 1s;
+        }
+        .reveal.reveal-TTB.show::before {
+            animation: reveal-TTB 1s;
+        }
+        .reveal.reveal-BTT.show::before {
+            animation: reveal-BTT 1s;
+        }
+
+        /* 두가지 */
+        .reveal.show::after {
+            animation: reveal 1000ms 300ms;
+        }
+        .reveal.reveal-RTL.show::after {
+            animation: reveal-RTL 1000ms 300ms;
+        }
+        .reveal.reveal-TTB.show::after {
+            animation: reveal-TTB 1000ms 300ms;
+        }
+        .reveal.reveal-BTT.show::after {
+            animation: reveal-BTT 1000ms 300ms;
+        }
+
+        @keyframes opacity {
+            0%   {opacity: 0;}
+            60%  {opacity: 0;}
+            70%  {opacity: 1;}
+            100% {opacity: 1;}
+        }
+        @keyframes reveal {
+            0%   {width: 0;    left: 0}
+            50%  {width: 100%; left: 0}
+            80%  {width: 100%; left: 0}
+            100% {width: 0;    left: 100%}
+        }
+        @keyframes reveal-RTL {
+            0%   {width: 0;    right: 0}
+            50%  {width: 100%; right: 0}
+            80%  {width: 100%; right: 0}
+            100% {width: 0;    right: 100%}
+        }
+        @keyframes reveal-TTB {
+            0%   {width: 100%; height: 0;    top: 0}
+            50%  {width: 100%; height: 100%; top: 0}
+            80%  {width: 100%; height: 100%; top: 0}
+            100% {width: 100%; height: 0;    top: 100%}
+        }
+        @keyframes reveal-BTT {
+            0%   {width: 100%; height: 0;    top: auto; bottom: 0}
+            50%  {width: 100%; height: 100%; top: auto; bottom: 0}
+            80%  {width: 100%; height: 100%; top: auto; bottom: 0}
+            100% {width: 100%; height: 0;    top: auto; bottom: 100%}
         }
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
     &lt;header id="parallax__title"&gt;
-        &lt;h1&gt;&lt;a href="parallaxEffect.html"&gt;JavaScript Parallax Effect01&lt;/a&gt;&lt;/h1&gt;
-        &lt;p&gt;패럴랙스 스크롤링 효과 - 메뉴 이동&lt;/p&gt;
+        &lt;h1&gt;&lt;a href="parallaxEffect.html"&gt;JavaScript Parallax Effect06&lt;/a&gt;&lt;/h1&gt;
+        &lt;p&gt;패럴랙스 스크롤링 효과 - 리빌 효과&lt;/p&gt;
         &lt;ul&gt;
-            &lt;li class="active"&gt;&lt;a href="parallax_result01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallax_result01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="parallax_result02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="parallax_result03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="parallax_result04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="parallax_result05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="parallax_result06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="parallax_result07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="active"&gt;&lt;a href="parallax_result07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="parallax_result08.html"&gt;8&lt;/a&gt;&lt;/li&gt;
             &lt;li&gt;&lt;a href="parallax_result09.html"&gt;9&lt;/a&gt;&lt;/li&gt;
         &lt;/ul&gt;
     &lt;/header&gt;
     &lt;!-- //parallax__title  --&gt;
 
-    &lt;nav id="parallax__nav"&gt;
-        &lt;ul&gt;
-            &lt;li class="active"&gt;&lt;a href="#section1"&gt;s1&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section2"&gt;s2&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section3"&gt;s3&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section4"&gt;s4&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section5"&gt;s5&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section6"&gt;s6&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section7"&gt;s7&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section8"&gt;s8&lt;/a&gt;&lt;/li&gt;
-            &lt;li&gt;&lt;a href="#section9"&gt;s9&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/nav&gt;
-    &lt;!-- //parallax__nav --&gt;
-
     &lt;main id="parallax__cont"&gt;
-        &lt;section id="section1" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;01&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;Section1&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;높은 목표를 세우고, 스스로 채찍질 한다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section1 --&gt;
-
-        &lt;section id="section2" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;02&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;Section2&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;결과도 중요하지만, 과정을 더 중요하게 생각한다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section2 --&gt;
-
-        &lt;section id="section3" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;03&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;Section3&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;매 순간에 최선을 다하고, 끊임없이 변화한다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section3 --&gt;
-
-        &lt;section id="section4" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;04&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;Section4&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;모든 일에는 기본을 중요하게 생각한다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section4 --&gt;
-
-        &lt;section id="section5" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;05&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;Section5&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;열정을 잃지 않고 실패에서 실패로 걸어가는 것이 성공이다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section5 --&gt;
-
-        &lt;section id="section6" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;06&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;Section6&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;천 마디 말보단 하나의 행동이 더 값지다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section6 --&gt;
-
-        &lt;section id="section7" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;07&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;Section7&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;조그만 성공에 만족하지 않으며, 방심을 경계한다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section7 --&gt;
-
-        &lt;section id="section8" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;08&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;Section8&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;나는 내가 더 노력할수록 운이 더 좋아진다는 걸 발견했다&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section8 --&gt;
-
-        &lt;section id="section9" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;09&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;Section9&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;꿈이 있다면, 그 꿈을 잡고 절대 놓아주지마라.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section9 --&gt;
+        &lt;div id="contents"&gt;
+            &lt;section id="section1" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;Section1&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap reveal"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc reveal reveal-text"&gt;높은 목표를 세우고, 스스로 채찍질 한다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section1 --&gt;
+    
+            &lt;section id="section2" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;Section2&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap reveal reveal-RTL"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc reveal reveal-text reveal-RTL"&gt;결과도 중요하지만, 과정을 더 중요하게 생각한다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section2 --&gt;
+    
+            &lt;section id="section3" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;Section3&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap reveal reveal-TTB"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc reveal reveal-text reveal-TTB"&gt;매 순간에 최선을 다하고, 끊임없이 변화한다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section3 --&gt;
+    
+            &lt;section id="section4" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;Section4&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap reveal reveal-BTT"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc reveal reveal-text reveal-BTT"&gt;모든 일에는 기본을 중요하게 생각한다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section4 --&gt;
+    
+            &lt;section id="section5" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;Section5&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap reveal reveal-two"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc reveal reveal-text reveal-two"&gt;열정을 잃지 않고 실패에서 실패로 걸어가는 것이 성공이다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section5 --&gt;
+    
+            &lt;section id="section6" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;Section6&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap reveal reveal-two reveal-BTT"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc reveal reveal-text reveal-two reveal-TTB" data-delay="500"&gt;천 마디 말보단 하나의 행동이 더 값지다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section6 --&gt;
+    
+            &lt;section id="section7" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;Section7&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;조그만 성공에 만족하지 않으며, 방심을 경계한다.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section7 --&gt;
+    
+            &lt;section id="section8" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;Section8&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;나는 내가 더 노력할수록 운이 더 좋아진다는 걸 발견했다&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section8 --&gt;
+    
+            &lt;section id="section9" class="content__item"&gt;
+                &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+                &lt;h2 class="content__item__title"&gt;Section9&lt;/h2&gt;
+                &lt;figure class="content__item__imgWrap"&gt;
+                    &lt;div class="content__item__img"&gt;&lt;/div&gt;
+                &lt;/figure&gt;
+                &lt;p class="content__item__desc"&gt;꿈이 있다면, 그 꿈을 잡고 절대 놓아주지마라.&lt;/p&gt;
+            &lt;/section&gt;
+            &lt;!-- //section9 --&gt;
+        &lt;/div&gt;
     &lt;/main&gt;
     &lt;!-- //parallax__cont --&gt;
 
-    &lt;div class="parallax__scrollTop"&gt;
-        scrollTop : &lt;span&gt;0&lt;/span&gt;px
-    &lt;/div&gt;
-    &lt;!-- //parallax__scrollTop --&gt;
-
     &lt;script&gt;
-        document.querySelectorAll("#parallax__nav li a").forEach((element, index) =&gt; {
-            element.addEventListener("click", (e) =&gt; {
-                e.preventDefault();
-                //let sectionOffset = document.querySelectorAll(".content__item")[index].offsetTop
-                
-                //window.scroll(0, sectionOffset);
-                //window.scroll({left: 0, top: sectionOffset});
-                //window.scroll({left: 0, top: sectionOffset, behavior: 'smooth'});
-
-                //window.scrollTo(0, sectionOffset);
-                //window.scrollTo({left: 0, top: sectionOffset});
-                //window.scrollTo({left: 0, top: sectionOffset, behavior: 'smooth'});
-
-                //window.scrollBy(0, sectionOffset);
-                //window.scrollBy({left: 0, top: sectionOffset});
-                //window.scrollBy({left: 0, top: sectionOffset, behavior: 'smooth'});
-
-                document.querySelector(element.getAttribute("href")).scrollIntoView({behavior:"smooth"})
-            })
+        document.querySelectorAll(".reveal-text").forEach(reveal =&gt; {
+            let revealText = reveal.innerText;
+            let revealWrap = "&lt;span&gt;" + revealText + "&lt;/span&gt;";
+            reveal.innerHTML = revealWrap;
         });
 
-        window.addEventListener("scroll", () =&gt; {
+        function scroll(){
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
 
-            // if(scrollTop &gt; document.getElementById("section1").offsetTop){
-            //     document.querySelectorAll("#parallax__nav ul li").forEach( li =&gt; {
-            //         li.classList.remove("active");
-            //     })
-            //     document.querySelectorAll("#parallax__nav ul li")[0].classList.add("active");
-            // }
-            // if(scrollTop &gt; document.getElementById("section2").offsetTop){
-            //     document.querySelectorAll("#parallax__nav ul li").forEach( li =&gt; {
-            //         li.classList.remove("active");
-            //     })
-            //     document.querySelectorAll("#parallax__nav ul li")[1].classList.add("active");
-            // }
+            const reveal = document.querySelectorAll(".reveal");
 
-            //for
-            const parallaxItem = document.querySelectorAll(".content__item");
-            const parallaxNav = document.querySelectorAll("#parallax__nav ul li");
+            reveal.forEach(elem =&gt; {
+                let revealOffetset = elem.offsetTop + elem.parentElement.offsetTop;
+                let revealDelay = elem.dataset.delay;
+                
+                // if(scrollTop &gt;= revealOffetset - window.innerHeight/2){
+                //     elem.classList.add("show");
+                // }
 
-            // for(let i=0; i&lt;parallaxItem.length; i++){
-            //     if(scrollTop &gt;= parallaxItem[i].offsetTop - 2){
-            //         parallaxNav.forEach( li =&gt; {
-            //             li.classList.remove("active");
-            //         })
-            //         parallaxNav[i].classList.add("active")
-            //     }     
-            // }
-
-            parallaxItem.forEach((element, index) =&gt; {
-                if( scrollTop &gt;= element.offsetTop -2 ){
-                    parallaxNav.forEach(li =&gt; li.classList.remove("active"));
-                    parallaxNav[index].classList.add("active")
+                if(scrollTop &gt;= revealOffetset - window.innerHeight/2){
+                    if(revealDelay == undefined){
+                        elem.classList.add("show");
+                    } else {
+                        setTimeout(() =&gt; {
+                            elem.classList.add("show");
+                        }, revealDelay)
+                    }
                 }
             })
-
-            //출력
-            document.querySelector(".parallax__scrollTop span").innerText = Math.round(scrollTop);
-        });
+            
+            requestAnimationFrame(scroll);
+        }
+        scroll();
     &lt;/script&gt;
 
 &lt;/body&gt;

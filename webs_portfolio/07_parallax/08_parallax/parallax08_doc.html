@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"포트폴리오가 실력이다" : 패럴랙스 스크롤링 이펙트</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">WEBS : 패럴랙스 스크롤링 이펙트 : 가로 효과</a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <aside id="aside">
+            <button class="aside-btn"><span></span></button>
+            <div class="chapter">
+                <div class="chapter-title">
+                    <div class="label">Chapter 01</div>
+                    <div class="class">Classic 가로 효과</div>
+                </div>
+                <div class="chapter-sub">
+                    <ul>
+                        <li><a href="menu01_doc.html">08. 패럴랙스 스크롤링 이펙트 : 가로 효과</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <!-- //aside -->
+
+        <section id="youtube" class="container">
+            <div class="desc">
+                <div class="left">
+                    <span class="num">08.</span>
+                    <h3 class="title">패럴랙스 스크롤링 이펙트 : 가로 효과</h3>
+                    <span class="difficulty">난이도 <span>쉬움</span></span>
+                </div>
+                <div class="right">
+                    <h3>소스 다운로드</h3>
+                    <a href="#" target="_blank" class="sampleBtn">완성 화면 보기</a>
+                    <a href="#" target="_blank" class="sampleBtn">피그마 보기</a>
+                    <a href="#" target="_blank" class="sampleBtn">영상 보기</a>
+                </div>
+            </div>
+        </section>
+        <!-- //youtube -->
+
+        <section id="explanation">
+            <div class="container">
+                <h2>소개</h2>
+                <p>
+                    안녕하세요!. 웹스토리보이입니다.
+                    가장 기본적인 패럴랙스 스크롤링 이펙트 메뉴 이동을 만들어 보겠습니다. 
+                    쉬우니까 잘 따라해보세요~
+                </p>
+                <div class="folder">
+                    <ul>
+                        <li>
+                            <span class="icon1">parallax</span>
+                            <ul>
+                                <li class="icon1">01_parallax01</li>
+                                <li class="icon1">02_parallax02</li>
+                                <li class="icon1">03_parallax03</li>
+                                <li class="icon1">04_parallax04</li>
+                                <li class="icon1">05_parallax05</li>
+                                <li class="icon1">06_parallax06</li>
+                                <li class="icon1">07_parallax07</li>
+                                <li class="icon1">08_parallax08</li>
+                            </ul>
+                            <ul>
+                                <li class="icon2">parallax08_01.html :</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- <h2>디자인</h2>
+                <div class="iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FiD3Ehm4HRhe16Vx6kxz3ob%2F%255B%25ED%258F%25AC%25ED%258A%25B8%25ED%258F%25B4%25EB%25A6%25AC%25EC%2598%25A4%25EA%25B0%2580-%25EC%258B%25A4%25EB%25A0%25A5%25EC%259D%25B4%25EB%258B%25A4%255D-%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EC%25A0%259C%25EC%259E%2591%25ED%258E%25B8%3Fnode-id%3D18263%253A1397" allowfullscreen></iframe>
+                </div>
+                <p class="mt50">
+                    디자인도 간단합니다. 
+                </p> -->
+
+                <h2>이론</h2>
+                <p data-num="01">
+                    <code>!</code>를 치고 <code>tab</code>을 누르겠습니다.
+                    언어를 <code>ko</code>로 변경하고 <code>title</code>은 메뉴 유형01로 변경하겠습니다.
+                </p>
+
+                <h2>코드</h2>
+                <div class="code__tab">
+                    <div class="code_link">
+                        <ul class="sub">
+                            <li class="active"><a href="#">01</a></li>
+                            <li><a href="#">02</a></li>
+                            <li><a href="#">03</a></li>
+                            <li><a href="#">04</a></li>
+                        </ul>
+                    </div>
+                    <div class="code_view">
+                        <div class="view1">
+<pre class="language-html"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;패랠랙스 이펙트&lt;/title&gt;
+    &lt;link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet"&gt;
+    &lt;link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet"&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        body {
+            color: #fff;
+            font-family: "NexonLv1Gothic";
+            font-weight: 300;
+        }
+        #parallax__title {
+            position: fixed;
+            left: 0; top: 0;
+            padding: 20px;
+            z-index: 1000;
+        }
+        #parallax__title h1 {
+            font-size: 30px;
+            border-bottom: 1px dashed #fff;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            font-weight: 400;
+            display: inline-block;
+        }
+        #parallax__title p {
+            font-size: 16px;
+        }
+        #parallax__title ul {
+            margin-top: 10px;
+        }
+        #parallax__title li {
+            display: inline;
+        }
+        #parallax__title li a {
+            width: 20px; 
+            height: 20px;
+            border-radius: 50%;
+            border: 1px dashed #fff;
+            display: inline-block;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+        }
+        #parallax__title li.active a {
+            background: #fff;
+            color: #000;
+        }
+        #parallax__nav {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            z-index: 1000;
+            background-color: rgba(0,0,0,0.4);
+            padding: 15px 20px;
+            border-radius: 50px;
+        }
+        #parallax__nav li {
+            list-style: none;
+            display: inline;
+        }
+        #parallax__nav li a {
+            display: inline-block;
+            width: 30px; 
+            height: 30px;
+            padding: 5px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #parallax__nav li.active a {
+            background: #fff;
+            color: #000;
+            border-radius: 50%;
+        }
+
+        /* parallax__cont */
+        #parallax__cont {
+            position: fixed;
+            left: 0; 
+            top: 0;
+            display: flex;
+        }
+        .content__item {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        #section1 {background-color: #111;}
+        #section2 {background-color: #222;}
+        #section3 {background-color: #333;}
+        #section4 {background-color: #444;}
+        #section5 {background-color: #555;}
+        #section6 {background-color: #666;}
+        #section7 {background-color: #777;}
+        #section8 {background-color: #888;}
+        #section9 {background-color: #999;}
+
+        .content__item__num {
+            position: absolute;
+            bottom: 20px; 
+            right: 20px;
+            color: #fff;
+            font-size: 20vw;
+            z-index: 10000;
+            font-family: 'Lato';
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header id="parallax__title"&gt;
+        &lt;h1&gt;&lt;a href="parallaxEffect.html"&gt;JavaScript Parallax Effect08&lt;/a&gt;&lt;/h1&gt;
+        &lt;p&gt;패럴랙스 스크롤링 효과 - 가로 효과&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="parallax_result01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallax_result02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallax_result03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallax_result04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallax_result05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallax_result06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallax_result07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
+            &lt;li class="active"&gt;&lt;a href="parallax_result08.html"&gt;8&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="parallax_result09.html"&gt;9&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/header&gt;
+    &lt;!-- //parallax__title  --&gt;
+
+    &lt;main id="parallax__cont"&gt;
+        &lt;section id="section1" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+        &lt;/section&gt;
+        &lt;!-- //section1 --&gt;
+        &lt;section id="section2" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+        &lt;/section&gt;
+        &lt;!-- //section2 --&gt;
+        &lt;section id="section3" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+        &lt;/section&gt;
+        &lt;!-- //section3 --&gt;
+        &lt;section id="section4" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+        &lt;/section&gt;
+        &lt;!-- //section4 --&gt;
+        &lt;section id="section5" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+        &lt;/section&gt;
+        &lt;!-- //section5 --&gt;
+        &lt;section id="section6" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+        &lt;/section&gt;
+        &lt;!-- //section6 --&gt;
+        &lt;section id="section7" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+        &lt;/section&gt;
+        &lt;!-- //section7 --&gt;
+        &lt;section id="section8" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+        &lt;/section&gt;
+        &lt;!-- //section8 --&gt;
+        &lt;section id="section9" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+        &lt;/section&gt;
+        &lt;!-- //section9 --&gt;
+    &lt;/main&gt;
+    &lt;!-- //parallax__cont --&gt;
+
+
+    &lt;script src="https://unpkg.com/gsap@3/dist/gsap.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        const parallaxCont = document.getElementById("parallax__cont");
+        const parallaxItem = document.querySelector(".content__item");
+
+        function scroll(){
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
+
+            let parallaxWidth = parallaxCont.offsetWidth;
+            document.body.style.height = parallaxWidth + 'px';
+
+            let viewWidth = parallaxWidth - window.innerWidth;
+            let viewHeight = parallaxWidth - window.innerHeight;
+            let goLeft = scrollTop * (viewWidth / viewHeight);
+
+            gsap.to(parallaxCont, {left: -goLeft})
+
+            requestAnimationFrame(scroll);
+        }
+        scroll();
+
+        window.addEventListener("resize", scroll);
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                        </div>
+                        <div class="view2">
+<pre class="language-html"><code>view2
+    
+</code></pre>
+                        </div>
+                        <div class="view3">
+<pre class="language-html"><code>view3
+    
+</code></pre>
+                        </div>
+                        <div class="view4">
+<pre class="language-html"><code>view4
+    
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+                
+                <h2>참고</h2>
+                <ul class="refer">
+                    <li><sup>1</sup> <a href="#">블록/인라인 요소</a></li>
+                </ul>
+            </div>
+            <!-- //container -->
+        </section>
+        <!-- //explanation -->
+    
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer> 
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="../../assets/js/jquery-3.6.0.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/script.js"></script> 
+</body>
+</html>

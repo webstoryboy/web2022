@@ -87,19 +87,7 @@
                     <li>clientHeight 속성은 요소의 세로 값(마진/보더 불포함)을 가져옵니다.</li>
                     <li>offsetWidth 속성은 요소의 가로 값(보더/패딩 포함)을 가져옵니다.</li>
                     <li>offsetHeight 속성은 요소의 세로 값(보더/패딩 포함)을 가져옵니다.</li>
-                    <li>getBoundingClientRect() 메서드는 위치 정보를 가져오거나 설정합니다.</li>
-                </ul>
-
-                <h4>크기와 관련된 메서드(Dimensions Related method) - jQuery</h4>
-                <ul>
-                    <li>width() 메서드는 선택한 요소의 가로 값(패딩/보더/마진 불포함)을 가져오거나 설정합니다.</li>
-                    <li>innerWidth() 메서드는 선택한 요소의 가로 값(패딩 포함)을 가져오거나 설정합니다.</li>
-                    <li>outerWidth() 메서드는 선택한 요소의 가로 값(패딩/보더 포함)을 가져오거나 설정합니다.</li>
-                    <li>outerWidth(true) 메서드는 선택한 요소의 가로 값(패딩/보더/마진 포함)을 가져오거나 설정합니다.</li>
-                    <li>height() 메서드는 선택한 요소의 세로 값(패딩/보더/마진 불포함)을 가져오거나 설정합니다.</li>
-                    <li>innerHeight() 메서드는 선택한 요소의 세로 값(패딩 포함)을 가져오거나 설정합니다.</li>
-                    <li>outerHeight() 메서드는 선택한 요소의 세로 값(패딩/보더 포함)을 가져오거나 설정합니다.</li>
-                    <li>outerHeight(true) 메서드는 선택한 요소의 세로 값(패딩/보더/마진 포함)을 가져오거나 설정합니다.</li>
+                    <li>getBoundingClientRect() 메서드는 위치 및 크기 정보를 가져오거나 설정합니다.</li>
                 </ul>
 
                 <style>
@@ -194,19 +182,19 @@
 
                     document.querySelector(".sampleBtn .btn1").addEventListener("click", (e) => {
                         e.preventDefault();
-                        document.querySelector(".jsample .desc").innerHTML = "이 박스의 가로 값은 "+ box.clientWidth + "px 입니다.";
+                        document.querySelector(".jsample .desc").innerHTML = "이 박스의 가로 값은 "+ box.clientWidth + "px 입니다.(마진/보더 불포함)";
                     });
                     document.querySelector(".sampleBtn .btn2").addEventListener("click", (e) => {
                         e.preventDefault();
-                        document.querySelector(".jsample .desc").innerHTML = "이 박스의 세로 값은 "+ box.clientHeight + "px 입니다.";
+                        document.querySelector(".jsample .desc").innerHTML = "이 박스의 세로 값은 "+ box.clientHeight + "px 입니다.(마진/보더 불포함)";
                     });
                     document.querySelector(".sampleBtn .btn3").addEventListener("click", (e) => {
                         e.preventDefault();
-                        document.querySelector(".jsample .desc").innerHTML = "이 박스의 가로 값은 "+ box.offsetWidth  + "px 입니다.";
+                        document.querySelector(".jsample .desc").innerHTML = "이 박스의 가로 값은 "+ box.offsetWidth  + "px 입니다.(보더/패딩 포함)";
                     });
                     document.querySelector(".sampleBtn .btn4").addEventListener("click", (e) => {
                         e.preventDefault();
-                        document.querySelector(".jsample .desc").innerHTML = "이 박스의 세로 값은 "+ box.offsetHeight  + "px 입니다.";
+                        document.querySelector(".jsample .desc").innerHTML = "이 박스의 세로 값은 "+ box.offsetHeight  + "px 입니다.(보더/패딩 포함)";
                     });
                 </script>
                 
@@ -258,7 +246,19 @@
                     </table>
                 </div>
 
-                <h4 class="pt30">참고 사이트(Reference)</h4>
+                <h4>크기와 관련된 메서드(Dimensions Related method) - jQuery</h4>
+                <ul>
+                    <li>width() 메서드는 선택한 요소의 가로 값(패딩/보더/마진 불포함)을 가져오거나 설정합니다.</li>
+                    <li>innerWidth() 메서드는 선택한 요소의 가로 값(패딩 포함)을 가져오거나 설정합니다.</li>
+                    <li>outerWidth() 메서드는 선택한 요소의 가로 값(패딩/보더 포함)을 가져오거나 설정합니다.</li>
+                    <li>outerWidth(true) 메서드는 선택한 요소의 가로 값(패딩/보더/마진 포함)을 가져오거나 설정합니다.</li>
+                    <li>height() 메서드는 선택한 요소의 세로 값(패딩/보더/마진 불포함)을 가져오거나 설정합니다.</li>
+                    <li>innerHeight() 메서드는 선택한 요소의 세로 값(패딩 포함)을 가져오거나 설정합니다.</li>
+                    <li>outerHeight() 메서드는 선택한 요소의 세로 값(패딩/보더 포함)을 가져오거나 설정합니다.</li>
+                    <li>outerHeight(true) 메서드는 선택한 요소의 세로 값(패딩/보더/마진 포함)을 가져오거나 설정합니다.</li>
+                </ul>
+
+                <h4>참고 사이트(Reference)</h4>
                 <ul>
                     <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/innerWidth" target="_blank">MDN</a></li>
                 </ul>

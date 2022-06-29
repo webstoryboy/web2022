@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"포트폴리오가 실력이다" : JQUERY 레퍼런스</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- SCRIPT -->
+    <script src="../../assets/js/jquery-3.6.0.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+</head>
+
+<body class="white">
+    <header id="header">
+        <h1><a href="#">WEBS : JQUERY 레퍼런스 : innerWidth()</a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+
+        <section id="explanation">
+            <div class="container">
+                <h2 class="hide">jQuery vs Javascript</h2>
+                <p>
+                    jQuery와 Javascript를 비교합니다.
+                </p>
+                <hr>
+
+                <h3>method</h3>
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="ce">종류</th>
+                                <th>jquery</th>
+                                <th>javascript</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th rowspan="5" class="ce">Attributes</th>
+                                <td><a href="/106">attr()</a></td>
+                                <td>setAttribute() / getAttribute()</td>
+                                <td>요소의 속성 값을 가져오거나 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/108">removeAttr()</a></td>
+                                <td>removeAttribute()</td>
+                                <td>요소의 속성 값을 삭제합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/107">prop()</a></td>
+                                <td></td>
+                                <td>요소의 속성 값을 가져오거나 변경합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/109">removeProp()</a></td>
+                                <td></td>
+                                <td>요소의 속성 값을 삭제합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/110">.val()</a></td>
+                                <td></td>
+                                <td>요소의 속성 값을 가져오거나 변경합니다.</td>
+                            </tr>
+
+                            <tr>
+                                <th rowspan="5" class="ce">CSS</th>
+                                <td>css()</td>
+                                <td></td>
+                                <td>속성을 가져오거나 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/112">addClass()</a></td>
+                                <td></td>
+                                <td>선택한 요소에 클래스 이름을 추가합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/115">removeClass()</a></td>
+                                <td></td>
+                                <td>선택한 요소에 클래스 이름을 삭제합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/116">toggleClass()</a></td>
+                                <td></td>
+                                <td>선택한 요소에 클래스를 추기/삭제합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/114">hasClass()</a></td>
+                                <td></td>
+                                <td>선택한 요소에 클래스가 있는지 확인하고 불린을 반환합니다.</td>
+                            </tr>
+
+                            <tr>
+                                <th rowspan="8" class="ce">Dimensions</th>
+                                <td><a href="/123">width()</a></td>
+                                <td></td>
+                                <td>선택한 요소의 가로 값을 가져오거나 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/120">innerWidth()</a></td>
+                                <td></td>
+                                <td>선택한 요소의 가로 값(패딩 포함)을 가져오거나 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/122">outerWidth()</a></td>
+                                <td></td>
+                                <td>선택한 요소의 가로 값(패딩/보더 포함)을 가져오거나 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/122">outerWidth(true)</a></td>
+                                <td></td>
+                                <td>선택한 요소의 가로 값(패딩/보더/마진 포함)을 가져오거나 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/118">height()</a></td>
+                                <td></td>
+                                <td>선택한 요소의 세로 값(패딩/보더/마진 불포함)을 가져오거나 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/119">innerHeight()</a></td>
+                                <td></td>
+                                <td>선택한 요소의 세로 값(패딩 포함)을 가져오거나 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/121">outerHeight()</a></td>
+                                <td></td>
+                                <td>선택한 요소의 세로 값(패딩 포함)을 가져오거나 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="/121">outerHeight(true)</a></td>
+                                <td></td>
+                                <td>선택한 요소의 세로 값(패딩/보더/마진 포함)을 가져옵니다.</td>
+                            </tr>
+
+                            <tr>
+                                <th rowspan="8" class="ce">Offset</th>
+                                <td>offset().top</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>offset().left</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>offsetParent()</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>position()</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>scrollLeft()</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>scrollTop()</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 
+
+                    //크기
+                    window.innerWidth 속성은 가로 값을 가져옵니다.
+                    window.outerWidth 속성은 가로 값을 가져옵니다.
+                
+                    window.innerHeight 속성은 가로 값을 가져옵니다.
+                    window.outerHeight 속성은 가로 값을 가져옵니다.
+                
+
+                    element.offsetHeight
+                    element.offsetWidth
+                    document.documentElement.clientWidth 
+                    document.documentElement.clientHeight 
+                    getBoundingClientRect()
+
+                clientLeft
+                clientTop
+                clientWidth
+                clientHeight
+
+                scrollWidth
+                scrollHeight
+                scrollLeft
+                scrollTop
+
+                //위치
+                offsetParent
+                offsetTop 요소의 top 위치 값(margin 값 포함)을 가져옵니다.
+                offsetLeft 요소의 left 위치 값(margin 값 포함)을 가져옵니다.
+                window.pageXOffset는 문서의 스크롤 가로 값을 가져옵니다.
+                window.pageYOffset는 문서의 스크롤 세로 값을 가져옵니다.
+                window.scrollX는 문서의 스크롤 가로 값을 가져옵니다.
+                window.scrollY는 문서의 스크롤 세로 값을 가져옵니다.
+
+                window.scroll() 메서드는 특정 위치로 스크롤 합니다.
+                window.scrollTo() 메서드는 문서의 지정된 위치(상대 위치)로 스크롤 합니다.
+                window.scrollBy() 메서드는 문서의 지정된 위치(절대 위치)로 스크롤 합니다.
+                
+                window.screenLeft
+                window.screenTop
+                window.screenX
+                window.screenY
+
+                elem.scrollIntoView(top)
+
+                document.documentElement.scrollTop
+                document.documentElement.scrollLeft
+                 -->
+
+                <hr>
+
+            </div>
+        </section>
+        <!-- //explanation -->
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer> 
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/script.js"></script> 
+</body>
+</html>

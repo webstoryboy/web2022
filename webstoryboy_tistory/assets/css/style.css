@@ -638,7 +638,8 @@ body.intro #footer {
     margin-bottom: 20px;
 }
 #explanation table a {
-    color: #fff;
+    color: #5c43f5;
+    border-bottom: 1px dotted #5c43f5;
 }
 #explanation table {
     border: 1px solid #ddd;
@@ -660,7 +661,7 @@ body.intro #footer {
     vertical-align: middle;
     text-align: left;
     font-weight: normal;
-    font-weight: 300;
+    /* font-weight: 300; */
 }
 #explanation .table table tr:nth-child(even) > th,
 #explanation .table table tr:nth-child(even) > td {

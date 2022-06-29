@@ -19,7 +19,7 @@
 
 <body class="white">
     <header id="header">
-        <h1><a href="#">WEBS : JQUERY 레퍼런스 : innerWidth()</a></h1>
+        <h1><a href="#">WEBS : JQUERY 레퍼런스 : offset()</a></h1>
         <nav>
             <ul>
                 <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
@@ -32,14 +32,14 @@
 
         <section id="explanation">
             <div class="container">
-                <h2 class="hide">innerWidth()</h2>
+                <h2 class="hide">offset()</h2>
                 <p>
-                    innerWidth() 메서드는 선택한 요소의 가로 값(패딩 포함)을 가져오거나 설정합니다.
+                    offset() 메서드는 선택한 요소의 위치 좌표 값(문서 기준)을 설정하거나 반환합니다.
                 </p>
                 <hr>
 
-                <h3>innerWidth()</h3>
-                <p class="blue">innerWidth() 메서드는 선택한 요소의 가로 값(패딩 포함)을 가져오거나 설정합니다.</p>
+                <h3>offset()</h3>
+                <p class="blue">offset() 메서드는 선택한 요소의 위치 좌표 값(문서 기준)을 설정하거나 반환합니다.</p>
 
                 <div class="table">
                     <table>
@@ -60,11 +60,11 @@
                             </tr>
                             <tr>
                                 <th>결과값(return)</th>
-                                <td>숫자(number)</td>
+                                <td>문자열(string)</td>
                             </tr>
                             <tr>
                                 <th>사용성</th>
-                                <td>★★★★☆</td>
+                                <td>★★★★★</td>
                             </tr>
                         </tbody>
                     </table>
@@ -72,113 +72,117 @@
 
                 <h4 class="pt50">문법(Syntax)</h4>
                 <p class="blue">
-                    "선택자".innerWidth()<br>
-                    "선택자".innerWidth(속성값)<br>
-                    "선택자".innerWidth(함수)<br>
+                    $("선택자").offset();
+                    $("선택자").offset().top;
+                    $("선택자").offset().left;
+                    $("선택자").offset({ top: "속성값", left: "속성값" })
+                    $("선택자").offset("함수");
                 </p>
-<pre><code class="language-javascript">//가로 값을 가져오는 경우
-$("div").innerWidth();
+<pre><code class="language-javascript">//속성 값을 가져오는 경우
+$("div").offset();
 
-//가로 속성 값을 변경하는 경우
-$("div").innerWidth("100");
+//속성 값을 가져오는 경우
+$("div").offset().top;
 
-//콜백 함수를 사용하는 경우
-$("div").innerWidth(function(){});
+//속성 값을 가져오는 경우
+$("div").offset().left;
+
+// 속성 값을 변경하는 경우
+$("div").offset(function(){});
+
+//콜백함수를 사용하는 경우
+$("div").offset(function(){});
 </code></pre>
                 <ul class="mt15">
-                    <li>선택자(selector) : 가로 값을 구할 요소 선택자를 설정합니다.</li>
-                    <li>속성값(value) : 변경할 속성 값을 설정합니다.</li>
-                    <li>함수(function) : 가로 값을 구한 후 실행되는 함수를 설정합니다.</li>
+                    <li>선택자(selector) : 선택자를 설정합니다.</li>
+                    <li>속성 값(attribute value) : 속성 값을 설정합니다.</li>
+                    <li>함수(function) : 콜백 함수를 설정합니다.</li>
                 </ul>
 
                 <h4>정의(Definition)</h4>
                 <ul>
-                    <li>innerWidth() 메서드는 선택한 요소의 가로 값(패딩 포함)을 가져오거나 설정합니다.</li>
+                    <li>offset() 메서드는 선택한 요소의 위치 좌표 값(문서 기준)을 설정하거나 반환합니다.</li>
+                    <li>offset().top 메서드는 선택한 요소에 Y축 좌표 값을 가져옵니다.</li>
+                    <li>offset().left 메서드는 선택한 요소에 X축 좌표 값을 가져옵니다.</li>
+                    <li>offset({ top: "속성값", left: "속성값" }) 메서드는 선택한 요소에 X축, Y축 좌표로 변경합니다.</li>
+                    <li>offset("함수") 메서드는 선택한 요소에 콜백 함수를 설정합니다.</li>
                 </ul>
 
-                <h4>크기와 관련된 메서드(Dimensions Related method)</h4>
+                <h4>위치와 관련된 메서드(Position Related method)</h4>
                 <ul>
-                    <li>width() 메서드는 선택한 요소의 가로 값(패딩/보더/마진 불포함)을 가져오거나 설정합니다.</li>
-                    <li>innerWidth() 메서드는 선택한 요소의 가로 값(패딩 포함)을 가져오거나 설정합니다.</li>
-                    <li>outerWidth() 메서드는 선택한 요소의 가로 값(패딩/보더 포함)을 가져오거나 설정합니다.</li>
-                    <li>outerWidth(true) 메서드는 선택한 요소의 가로 값(패딩/보더/마진 포함)을 가져오거나 설정합니다.</li>
-                    <li>height() 메서드는 선택한 요소의 세로 값(패딩/보더/마진 불포함)을 가져오거나 설정합니다.</li>
-                    <li>innerHeight() 메서드는 선택한 요소의 세로 값(패딩 포함)을 가져오거나 설정합니다.</li>
-                    <li>outerHeight() 메서드는 선택한 요소의 세로 값(패딩/보더 포함)을 가져오거나 설정합니다.</li>
-                    <li>outerHeight(true) 메서드는 선택한 요소의 세로 값(패딩/보더/마진 포함)을 가져오거나 설정합니다.</li>
+                    <li>offset() 메서드는 선택한 요소의 위치 좌표 값(문서 기준)을 설정하거나 반환합니다.</li>
+                    <li>offsetParent() 메서드는 선택한 요소의 부모 위치 좌표 값(문서 기준)을 설정하거나 반환합니다.</li>
+                    <li>position() 메서드는 선택한 요소의 위치 좌표 값(기준점 기준)을 설정하거나 반환합니다.</li>
+                    <li>scrollLeft() 메서드는 선택한 요소의 가로 스크롤 값을 설정하거나 반환합니다.</li>
+                    <li>scrollTop() 메서드는 선택한 요소의 세로 스크롤 값을 설정하거나 반환합니다.</li>
                 </ul>
  
                 <h4>비교(Compare)</h4>
                 <ul>
-                    <li>jQuery에서 가로값(패딩/보더 포함)을 설정할 때 innerWidth()를 사용합니다.</li>
-                    <li>Javascript에서 가로값(패딩/보더 포함)을 설정할 때 element.offsetWidth를 사용합니다.</li>
-                    <li>jQuery에서 가로값(패딩 포함)을 설정할 때 outerWidth()를 사용합니다.</li>
-                    <li>Javascript에서 가로값(패딩 포함)을 설정할 때 element.clientWidth를 사용합니다.</li>
+                    <li>jQuery에서 CSS 속성 값을 가져오거나 변경할 때에는 css()를 사용합니다.</li>
+                    <li>Javascript에서 CSS 속성 값을 변경할 때에는 element.style를 사용합니다.</li>
                 </ul>
+
+                
+
+                
+
 
                 <style>
                     .jsample {
-                        text-align: center;
+                        overflow: hidden;
                     }
-                    .jsample .box {
-                        margin: 20px auto;
-                        width: 400px;
-                        height: 200px;
-                        background-color: #A2CBFA;
-                        border: 1px solid #4390E1;
-                        padding: 20px;
-                        position: relative;
+                    .jsample > div {
+                        float: left;
+                        width: 18%;
+                        height: 150px;
+                        margin: 1%;
+                        border-radius: 10px;
+                        box-sizing: border-box;
+                    }
+                    .jsample > div a {
+                        display: block;
+                        height: 100%;
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                    }
-                    .jsample .box::before {
-                        content: '';
-                        width: 358px;
-                        height: 158px;
-                        border: 1px dashed #4390E1;
-                        position: absolute;
-                        left: 20px; top: 20px;
-                    }
-                    .jsample .box::after {
-                        content: '';
-                        width: 440px;
-                        height: 240px;
-                        border: 1px dashed #4390E1;
-                        position: absolute;
-                        left: -21px; top: -21px;
-                    }
-                    .jsample .box span {
                         color: #fff;
                     }
-                    .jsample .desc {
-                        padding-top: 10px;
+                    .jsample > div:nth-child(1){
+                        background-color:darkgreen;
+                    }
+                    .jsample > div:nth-child(2){
+                        background-color:indianred;
+                    }
+                    .jsample > div:nth-child(3){
+                        background-color:brown;
+                    }
+                    .jsample > div:nth-child(4){
+                        background-color:blueviolet;
+                    }
+                    .jsample > div:nth-child(5){
+                        background-color:chocolate;
                     }
                 </style>
                 <!-- Sample1 -->
                 <h4>예제1(Sample)</h4>
-                <div class="sample">
-                    <h5>버튼을 클릭하면 박스의 가로 값을 구하는 예제입니다.</h5>
+                <div class="sample" id="sample1">
+                    <h5>버튼을 클릭하면 속성 값을 가져오는 예제입니다.</h5>
                     <div class="sampleView">
                         <!-- ex -->
                         <div class="jsample">
-                            <div class="box">
-                                <span>
-                                    width: 400px<br>
-                                    margin: 20px<br>
-                                    border: 1px<br>
-                                    padding: 20px<br>
-                                </span>
-                            </div>
-                            <div class="desc">여기에 결과값이 표시됩니다.</div>
+                            <div><a href="#"><span>aquamarine</span></a></div>
+                            <div><a href="#"><span>indianred</span></a></div>
+                            <div><a href="#"><span>brown</span></a></div>
+                            <div><a href="#"><span>blueviolet</span></a></div>
+                            <div><a href="#"><span>chocolate</span></a></div>
                         </div>
                         <!-- ex -->
                     </div>
                     <div class="sampleBtn">
-                        <a href="#" class="btn1">버튼을 클릭하면 width()을 구합니다.</a>
-                        <a href="#" class="btn2">버튼을 클릭하면 innerWidth()을 구합니다.</a>
-                        <a href="#" class="btn3">버튼을 클릭하면 outerWidth()을 구합니다.</a>
-                        <a href="#" class="btn4">버튼을 클릭하면 outerWidth(true)을 구합니다.</a>
+                        <a href="#" class="btn1">버튼을 클릭하면 색상 값이 표시됩니다.</a>
+                        <a href="#" class="btn2">버튼을 클릭하면 가로 값이 표시됩니다.</a>
+                        <a href="#" class="btn3">버튼을 클릭하면 높이 값이 표시됩니다.</a>
                     </div>
                     <div class="sampleCode">
                         <div class="scMenu">
@@ -189,70 +193,69 @@ $("div").innerWidth(function(){});
                         <div class="scCont">
                             <div>
 <pre class="language-html"><code>&lt;div class="jsample"&gt;
-    &lt;div class="box"&gt;
-        &lt;span&gt;
-            width: 400px&lt;br&gt;
-            margin: 20px&lt;br&gt;
-            border: 1px&lt;br&gt;
-            padding: 20px&lt;br&gt;
-        &lt;/span&gt;
-    &lt;/div&gt;
-    &lt;p class="desc"&gt;여기에 결과값이 표시됩니다.&lt;/p&gt;
+    &lt;div&gt;&lt;a href="#"&gt;&lt;span&gt;aquamarine&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;a href="#"&gt;&lt;span&gt;indianred&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;a href="#"&gt;&lt;span&gt;brown&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;a href="#"&gt;&lt;span&gt;blueviolet&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div&gt;&lt;a href="#"&gt;&lt;span&gt;chocolate&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
                             </div>
                             <div>
 <pre class="language-css"><code>.jsample {
-    text-align: center;
+    overflow: hidden;
 }
-.jsample .box {
-    margin: 20px auto;
-    width: 400px;
-    height: 200px;
-    background-color: #A2CBFA;
-    border: 1px solid #4390E1;
-    padding: 20px;
-    position: relative;
+.jsample > div {
+    float: left;
+    width: 18%;
+    height: 150px;
+    margin: 1%;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.jsample > div a {
+    display: block;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.jsample .box::before {
-    content: '';
-    width: 358px;
-    height: 158px;
-    border: 1px dashed #4390E1;
-    position: absolute;
-    left: 20px; top: 20px;
-}
-.jsample .box::after {
-    content: '';
-    width: 440px;
-    height: 240px;
-    border: 1px dashed #4390E1;
-    position: absolute;
-    left: -21px; top: -21px;
-}
-.jsample .box span {
     color: #fff;
 }
-.jsample .desc {
-    padding-top: 10px;
+.jsample > div:nth-child(1){
+    background-color:darkgreen;
+}
+.jsample > div:nth-child(2){
+    background-color:indianred;
+}
+.jsample > div:nth-child(3){
+    background-color:brown;
+}
+.jsample > div:nth-child(4){
+    background-color:blueviolet;
+}
+.jsample > div:nth-child(5){
+    background-color:chocolate;
 }
 </code></pre>
                             </div>
                             <div>
-<pre class="language-javascript"><code>$(".sampleBtn .btn1").click(function(){
-    $(".jsample .desc").text("이 박스의 가로 값은 "+$(".jsample .box").width()+"px 입니다.(패딩, 마진, 보더 불포함)");
+<pre class="language-javascript"><code>$("#sample1 .btn1").click(function(e){
+    e.preventDefault();
+    $("#sample1 .jsample > div").each(function(){
+        $(this).find("span").text($(this).css('background-color'));
+    })
 });
-$(".sampleBtn .btn2").click(function(){
-    $(".jsample .desc").text("이 박스의 가로 값은 "+$(".jsample .box").innerWidth()+"px 입니다.(패딩 포함 / 마진, 보더 불포함)");
+$("#sample1 .btn2").click(function(e){
+    e.preventDefault();
+    $("#sample1 .jsample > div").each(function(){
+        $(this).find("span").text($(this).css('width'));
+    })
 });
-$(".sampleBtn .btn3").click(function(){
-    $(".jsample .desc").text("이 박스의 가로 값은 "+$(".jsample .box").outerWidth()+"px 입니다.(패딩, 보더 포함 / 마진 불포함)");
-});
-$(".sampleBtn .btn4").click(function(){
-    $(".jsample .desc").text("이 박스의 가로 값은 "+$(".jsample .box").outerWidth(true)+"px 입니다.(패딩, 보더, 마진 포함)");
+$("#sample1 .btn3").click(function(e){
+    e.preventDefault();
+    $("#sample1 .jsample > div").each(function(){
+        $(this).find("span").text($(this).css('height'));
+    })
 });
 </code></pre>
                             </div>
@@ -261,141 +264,25 @@ $(".sampleBtn .btn4").click(function(){
                 </div>
                 <!-- //Sample1 -->
                 <script>
-                    $(".sampleBtn .btn1").click(function(e){
+                    $("#sample1 .btn1").click(function(e){
                         e.preventDefault();
-                        $(".jsample .desc").text("이 박스의 가로 값은 "+$(".jsample .box").width()+"px 입니다.(패딩, 마진, 보더 불포함)");
+                        $("#sample1 .jsample > div").each(function(){
+                            $(this).find("span").text($(this).css('background-color'));
+                        })
                     });
-                    $(".sampleBtn .btn2").click(function(e){
+                    $("#sample1 .btn2").click(function(e){
                         e.preventDefault();
-                        $(".jsample .desc").text("이 박스의 가로 값은 "+$(".jsample .box").innerWidth()+"px 입니다.(패딩 포함 / 마진, 보더 불포함)");
+                        $("#sample1 .jsample > div").each(function(){
+                            $(this).find("span").text($(this).css('width'));
+                        })
                     });
-                    $(".sampleBtn .btn3").click(function(e){
+                    $("#sample1 .btn3").click(function(e){
                         e.preventDefault();
-                        $(".jsample .desc").text("이 박스의 가로 값은 "+$(".jsample .box").outerWidth()+"px 입니다.(패딩, 보더 포함 / 마진 불포함)");
-                    });
-                    $(".sampleBtn .btn4").click(function(e){
-                        e.preventDefault();
-                        $(".jsample .desc").text("이 박스의 가로 값은 "+$(".jsample .box").outerWidth(true)+"px 입니다.(패딩, 보더, 마진 포함)");
-                    });
-                </script>
-
-
-                <style>
-                    .jsample .box2 {
-                        margin: 20px auto;
-                        width: 400px;
-                        height: 200px;
-                        background-color: #A2CBFA;
-                        border: 1px solid #4390E1;
-                        padding: 20px;
-                        position: relative;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                    .jsample .box2 span {
-                        color: #fff;
-                    }
-                </style>
-                <!-- Sample2 -->
-                <h4>예제2(Sample)</h4>
-                <div class="sample" id="sample2">
-                    <h5>버튼을 클릭하면 박스의 가로 값을 변경하는 예제입니다.</h5>
-                    <div class="sampleView">
-                        <!-- ex -->
-                        <div class="jsample">
-                            <div class="box2">
-                                <span>innerWidth: 400px</span>
-                            </div>
-                        </div>
-                        <!-- ex -->
-                    </div>
-                    <div class="sampleBtn">
-                        <a href="#" class="btn0">리셋</a>
-                        <a href="#" class="btn1">버튼을 클릭하면 가로 값을 100px로 변경합니다.</a>
-                        <a href="#" class="btn2">버튼을 클릭하면 가로 값을 600px로 변경합니다.</a>
-                        <a href="#" class="btn3">버튼을 클릭하면 가로 값을 20%로 변경합니다.</a>
-                    </div>
-                    <div class="sampleCode">
-                        <div class="scMenu">
-                            <div>HTML</div>
-                            <div>CSS</div>
-                            <div>SCRIPT</div>
-                        </div>
-                        <div class="scCont">
-                            <div>
-<pre class="language-html"><code>&lt;div class="jsample"&gt;
-    &lt;div class="box2"&gt;
-        &lt;span&gt;width: 400px&lt;br&gt;&lt;/span&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-                            </div>
-                            <div>
-<pre class="language-css"><code>.jsample .box2 {
-    margin: 20px auto;
-    width: 400px;
-    height: 200px;
-    background-color: #A2CBFA;
-    border: 1px solid #4390E1;
-    padding: 20px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.jsample .box2 span {
-    color: #fff;
-}
-</code></pre>
-                            </div>
-                            <div>
-<pre class="language-javascript"><code>$(".sampleBtn .btn0").click(function(){
-    $(".jsample .box2").innerWidth("400");
-    $(".jsample .box2 span").text("innerWidth: 400px");
-});
-$(".sampleBtn .btn1").click(function(){
-    $(".jsample .box2").innerWidth(100);
-    $(".jsample .box2 span").text("innerWidth: 100px");
-});
-$(".sampleBtn .btn2").click(function(){
-    $(".jsample .box2").innerWidth(600);
-    $(".jsample .box2 span").text("innerWidth: 600px");
-});
-$(".sampleBtn .btn3").click(function(){
-    $(".jsample .box2").innerWidth("20%");
-    $(".jsample .box2 span").text("innerWidth: 20%");
-});
-</code></pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- //Sample2 -->
-                <script>
-                    $(".sampleBtn .btn0").click(function(e){
-                        e.preventDefault();
-                        $("#sample2 .jsample .box2").innerWidth("400");
-                        $("#sample2 .jsample .box2 span").text("innerWidth: 400px");
-                    });
-                    $(".sampleBtn .btn1").click(function(e){
-                        e.preventDefault();
-                        $("#sample2 .jsample .box2").innerWidth(100);
-                        $("#sample2 .jsample .box2 span").text("innerWidth: 100px");
-                    });
-                    $(".sampleBtn .btn2").click(function(e){
-                        e.preventDefault();
-                        $("#sample2 .jsample .box2").innerWidth(600);
-                        $("#sample2 .jsample .box2 span").text("innerWidth: 600px");
-                    });
-                    $(".sampleBtn .btn3").click(function(e){
-                        e.preventDefault();
-                        $("#sample2 .jsample .box2").innerWidth("20%");
-                        $("#sample2 .jsample .box2 span").text("innerWidth: 20%");
+                        $("#sample1 .jsample > div").each(function(){
+                            $(this).find("span").text($(this).css('height'));
+                        })
                     });
                 </script>
-
-
 
                 
                 <h4>호환성(Compatibility)</h4>
@@ -426,7 +313,7 @@ $(".sampleBtn .btn3").click(function(){
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="ce" scope="row" rowspan="3">width()</td>
+                                <td class="ce" scope="row" rowspan="3">.offset()</td>
                                 <td class="ce">jQeury 1.x 버전</td>
                                 <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
                                 <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
@@ -483,7 +370,7 @@ $(".sampleBtn .btn3").click(function(){
 
                 <h4 class="pt30">참고 사이트(Reference)</h4>
                 <ul>
-                    <li><a href="https://api.jquery.com/innerwidth/" target="_blank">jquery</a></li>
+                    <li><a href="https://api.jquery.com/offset/" target="_blank">jquery</a></li>
                 </ul>
 
                 <hr>

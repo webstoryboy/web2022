@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"포트폴리오가 실력이다" : JQUERY 레퍼런스</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- SCRIPT -->
+    <script src="../../assets/js/jquery-3.6.0.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+</head>
+
+<body class="white">
+    <header id="header">
+        <h1><a href="#">WEBS : JQUERY 레퍼런스 : innerWidth()</a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+
+        <section id="explanation">
+            <div class="container">
+                <h2 class="hide">Javascript</h2>
+                <p>
+                    Javascript를 비교합니다.
+                </p>
+                <hr>
+
+                <h3>method</h3>
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="ce">종류</th>
+                                <th>javascript</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th rowspan="8" class="ce">String</th>
+                                <td><a href="769">indexOf()</a></td>
+                                <td>문자열에서 특정 문자의 위치를 찾습니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="772">lastIndexOf()</a></td>
+                                <td>문자열을 역순으로 검색하고 위치값(숫자)을 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="799">search()</a></td>
+                                <td>문자열(정규식)을 검색하고 위치값(숫자)을 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="793">match()</a></td>
+                                <td>문자열(정규식)을 검색하고 문자값(배열)을 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="788">charAt()</a></td>
+                                <td>지정한 숫자(index)의 단일 문자 값을 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="789">charCodeAt()</a></td>
+                                <td>지정한 숫자(index)의 유니코드 값을 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="758">concat()</a></td>
+                                <td>둘 이상의 문자열을 결합합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="768">includes()</a></td>
+                                <td>문자열 포함 여부를 검색하여 불린(true, false)을 반환합니다.</td>
+                            </tr>
+
+                            <tr>
+                                <th rowspan="5" class="ce">classList</th>
+                                <td><a href="714">classList.add()</a></td>
+                                <td>문자열에서 특정 문자의 위치를 찾습니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="715">classList.remove()</a></td>
+                                <td>선택한 요소한테 클래스 이름을 삭제합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="716">classList.toggle()</a></td>
+                                <td>선택한 요소한테 클래스를 추가/삭제합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="717">classList.contains()</a></td>
+                                <td>선택한 요소한테 클래스가 있는지 확인하고 불린을 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="713">classList.replace()</a></td>
+                                <td>선택한 요소의 클래스 이름을 변경합니다.</td>
+                            </tr>
+                           
+                            <tr>
+                                <th rowspan="5" class="ce">Attribute</th>
+                                <td><a href="712">setAttribute()</a></td>
+                                <td>선택한 요소의 속성 값을 설정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="873">getAttribute</a></td>
+                                <td>선택한 요소의 속성 값을 가져옵니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="874">removeAttribute()</a></td>
+                                <td>선택한 요소의 속성 값을 삭제합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="875">hasAttribute()</a></td>
+                                <td>선택한 요소의 지정된 속성의 여부를 확인하고 불린을 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="876">hasAttributes()</a></td>
+                                <td>선택한 요소의 지정된 속성의 여부를 확인하고 불린을 반환합니다.</td>
+                            </tr>
+
+                            <tr>
+                                <th rowspan="5" class="ce">Array</th>
+                                <td><a href="770">join()</a></td>
+                                <td>배열의 문자열을 하나로 문자열로 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="779">shift()</a></td>
+                                <td>배열 처음 요소를 제거하고, 제거한 요소를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="786">unshift()</a></td>
+                                <td>배열 앞에 요소를 추가하고, 배열의 새로운 길이 값을 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="774">pop()</a></td>
+                                <td>배열 마지막 요소를 제거하고, 제거한 요소를 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="775">push()</a></td>
+                                <td>배열 끝에 요소를 추가하고, 배열의 새로운 길이 값을 반환합니다.</td>
+                            </tr>
+
+                            <tr>
+                                <th rowspan="4" class="ce">Window</th>
+                                <td><a href="882">window.innerWidth</a></td>
+                                <td>브라우저의 가로 값(스크롤바 미포함)을 가져옵니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="883">window.innerHeight</a></td>
+                                <td>배열 끝에 요소를 추가하고, 배열의 새로운 길이 값을 반환합니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="884">window.outerWidth</a></td>
+                                <td>브라우저의 가로 값(스크롤바 포함)을 가져옵니다.</td>
+                            </tr>
+                            <tr>
+                                <td><a href="885">window.outerHeight</a></td>
+                                <td>브라우저의 세로 값(스크롤바 포함)을 가져옵니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+             
+
+                <hr>
+
+            </div>
+        </section>
+        <!-- //explanation -->
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer> 
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/script.js"></script> 
+</body>
+</html>

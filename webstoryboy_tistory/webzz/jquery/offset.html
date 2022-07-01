@@ -72,11 +72,11 @@
 
                 <h4 class="pt50">문법(Syntax)</h4>
                 <p class="blue">
-                    $("선택자").offset();
-                    $("선택자").offset().top;
-                    $("선택자").offset().left;
-                    $("선택자").offset({ top: "속성값", left: "속성값" })
-                    $("선택자").offset("함수");
+                    $("선택자").offset();<br>
+                    $("선택자").offset().top;<br>
+                    $("선택자").offset().left;<br>
+                    $("선택자").offset({ top: "속성값", left: "속성값" });<br>
+                    $("선택자").offset("함수");<br>
                 </p>
 <pre><code class="language-javascript">//속성 값을 가져오는 경우
 $("div").offset();
@@ -87,8 +87,8 @@ $("div").offset().top;
 //속성 값을 가져오는 경우
 $("div").offset().left;
 
-// 속성 값을 변경하는 경우
-$("div").offset(function(){});
+//속성 값을 변경하는 경우
+$("div").offset({ top: 100, left: 100 });
 
 //콜백함수를 사용하는 경우
 $("div").offset(function(){});
@@ -102,6 +102,7 @@ $("div").offset(function(){});
                 <h4>정의(Definition)</h4>
                 <ul>
                     <li>offset() 메서드는 선택한 요소의 위치 좌표 값(문서 기준)을 설정하거나 반환합니다.</li>
+                    <li>offset() 메서드는 문서의 시작점 (0, 0)으로부터 위치 값을 가져오고, position() 메서드는 기준점(position:relative)으로 부터 위치 값을 가져옵니다.</li>
                     <li>offset().top 메서드는 선택한 요소에 Y축 좌표 값을 가져옵니다.</li>
                     <li>offset().left 메서드는 선택한 요소에 X축 좌표 값을 가져옵니다.</li>
                     <li>offset({ top: "속성값", left: "속성값" }) 메서드는 선택한 요소에 X축, Y축 좌표로 변경합니다.</li>
@@ -110,79 +111,85 @@ $("div").offset(function(){});
 
                 <h4>위치와 관련된 메서드(Position Related method)</h4>
                 <ul>
-                    <li>offset() 메서드는 선택한 요소의 위치 좌표 값(문서 기준)을 설정하거나 반환합니다.</li>
-                    <li>offsetParent() 메서드는 선택한 요소의 부모 위치 좌표 값(문서 기준)을 설정하거나 반환합니다.</li>
-                    <li>position() 메서드는 선택한 요소의 위치 좌표 값(기준점 기준)을 설정하거나 반환합니다.</li>
-                    <li>scrollLeft() 메서드는 선택한 요소의 가로 스크롤 값을 설정하거나 반환합니다.</li>
-                    <li>scrollTop() 메서드는 선택한 요소의 세로 스크롤 값을 설정하거나 반환합니다.</li>
+                    <li><a href="/125">offset()</a> 메서드는 선택한 요소의 위치 좌표 값(문서 기준)을 설정하거나 반환합니다.</li>
+                    <li><a href="/127">position()</a> 메서드는 선택한 요소의 위치 좌표 값(기준점 기준)을 설정하거나 반환합니다.</li>
+                    <li><a href="/128">scrollLeft()</a> 메서드는 선택한 요소의 가로 스크롤 값을 설정하거나 반환합니다.</li>
+                    <li><a href="/129">scrollTop()</a> 메서드는 선택한 요소의 세로 스크롤 값을 설정하거나 반환합니다.</li>
                 </ul>
  
-                <h4>비교(Compare)</h4>
+                <h4>비교(Compare) : Javascript</h4>
                 <ul>
-                    <li>jQuery에서 CSS 속성 값을 가져오거나 변경할 때에는 css()를 사용합니다.</li>
-                    <li>Javascript에서 CSS 속성 값을 변경할 때에는 element.style를 사용합니다.</li>
+                    <li><a href="/888">clientTop</a> 속성은 요소의 Y축 위치 값(부모 기준)을 가져옵니다.</li>
+                    <li><a href="/889">clientLeft</a> 속성은 요소의 X축 위치 값(부모 기준)을 가져옵니다.</li>
+                    <li><a href="/892">offsetTop</a> 속성은 요소의 Y축 위치 값(문서 기준)을 가져옵니다.</li>
+                    <li><a href="/893">offsetLeft</a> 속성은 요소의 X축 위치 값(문서 기준)을 가져옵니다.</li>
+                    <li><a href="/895">getBoundingClientRect()</a> 메서드는 요소의 크기 및 위치 정보를 가져옵니다.</li>
+                    <li><a href="/896">getClientRect()</a> 메서드는 요소의 크기 및 위치 정보를 가져옵니다.</li>
                 </ul>
-
-                
-
-                
-
-
+            
                 <style>
                     .jsample {
-                        overflow: hidden;
+                        text-align: center;
                     }
-                    .jsample > div {
-                        float: left;
-                        width: 18%;
-                        height: 150px;
-                        margin: 1%;
-                        border-radius: 10px;
-                        box-sizing: border-box;
-                    }
-                    .jsample > div a {
-                        display: block;
-                        height: 100%;
+                    .jsample .box {
+                        margin: 20px auto;
+                        width: 400px;
+                        height: 200px;
+                        background-color: #f9f2f4;
+                        border: 2px solid #a51a3d;
+                        padding: 20px;
+                        position: relative;
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        color: #fff;
                     }
-                    .jsample > div:nth-child(1){
-                        background-color:darkgreen;
+                    .jsample .box::before {
+                        content: '';
+                        width: 358px;
+                        height: 158px;
+                        border: 1px dashed #a51a3d;
+                        position: absolute;
+                        left: 20px; top: 20px;
                     }
-                    .jsample > div:nth-child(2){
-                        background-color:indianred;
+                    .jsample .box::after {
+                        content: '';
+                        width: 440px;
+                        height: 240px;
+                        border: 1px dashed #a51a3d;
+                        position: absolute;
+                        left: -21px; top: -21px;
                     }
-                    .jsample > div:nth-child(3){
-                        background-color:brown;
+                    .jsample .box span {
+                        color: #c7254e;
                     }
-                    .jsample > div:nth-child(4){
-                        background-color:blueviolet;
-                    }
-                    .jsample > div:nth-child(5){
-                        background-color:chocolate;
+                    .jsample .desc {
+                        padding-top: 10px;
                     }
                 </style>
                 <!-- Sample1 -->
                 <h4>예제1(Sample)</h4>
                 <div class="sample" id="sample1">
-                    <h5>버튼을 클릭하면 속성 값을 가져오는 예제입니다.</h5>
+                    <h5>버튼을 클릭하면 박스의 위치 값을 가져오는 예제입니다.</h5>
                     <div class="sampleView">
                         <!-- ex -->
                         <div class="jsample">
-                            <div><a href="#"><span>aquamarine</span></a></div>
-                            <div><a href="#"><span>indianred</span></a></div>
-                            <div><a href="#"><span>brown</span></a></div>
-                            <div><a href="#"><span>blueviolet</span></a></div>
-                            <div><a href="#"><span>chocolate</span></a></div>
+                            <div class="box">
+                                <span>
+                                    width: 400px<br>
+                                    margin: 20px<br>
+                                    border: 2px<br>
+                                    padding: 20px<br>
+                                </span>
+                            </div>
+                            <div class="desc">여기에 결과값이 표시됩니다.</div>
                         </div>
                         <!-- ex -->
                     </div>
                     <div class="sampleBtn">
-                        <a href="#" class="btn1">버튼을 클릭하면 색상 값이 표시됩니다.</a>
-                        <a href="#" class="btn2">버튼을 클릭하면 가로 값이 표시됩니다.</a>
-                        <a href="#" class="btn3">버튼을 클릭하면 높이 값이 표시됩니다.</a>
+                        <a href="#" class="btn1">버튼을 클릭하면 offset().top 값이 표시됩니다.</a>
+                        <a href="#" class="btn2">버튼을 클릭하면 offset().left 값이 표시됩니다.</a>
+                        <a href="#" class="btn3">버튼을 클릭하면 position().top 값이 표시됩니다.</a>
+                        <a href="#" class="btn4">버튼을 클릭하면 position().left 값이 표시됩니다.</a>
                     </div>
                     <div class="sampleCode">
                         <div class="scMenu">
@@ -193,70 +200,77 @@ $("div").offset(function(){});
                         <div class="scCont">
                             <div>
 <pre class="language-html"><code>&lt;div class="jsample"&gt;
-    &lt;div&gt;&lt;a href="#"&gt;&lt;span&gt;aquamarine&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;a href="#"&gt;&lt;span&gt;indianred&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;a href="#"&gt;&lt;span&gt;brown&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;a href="#"&gt;&lt;span&gt;blueviolet&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-    &lt;div&gt;&lt;a href="#"&gt;&lt;span&gt;chocolate&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+    &lt;div class="box"&gt;
+        &lt;span&gt;
+            width: 400px&lt;br&gt;
+            margin: 20px&lt;br&gt;
+            border: 2px&lt;br&gt;
+            padding: 20px&lt;br&gt;
+        &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="desc"&gt;여기에 결과값이 표시됩니다.&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
                             </div>
                             <div>
 <pre class="language-css"><code>.jsample {
-    overflow: hidden;
+    text-align: center;
 }
-.jsample > div {
-    float: left;
-    width: 18%;
-    height: 150px;
-    margin: 1%;
-    border-radius: 10px;
-    box-sizing: border-box;
-}
-.jsample > div a {
-    display: block;
-    height: 100%;
+.jsample .box {
+    margin: 20px auto;
+    width: 400px;
+    height: 200px;
+    background-color: #f9f2f4;
+    border: 2px solid #a51a3d;
+    padding: 20px;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
 }
-.jsample > div:nth-child(1){
-    background-color:darkgreen;
+.jsample .box::before {
+    content: '';
+    width: 358px;
+    height: 158px;
+    border: 1px dashed #a51a3d;
+    position: absolute;
+    left: 20px; top: 20px;
 }
-.jsample > div:nth-child(2){
-    background-color:indianred;
+.jsample .box::after {
+    content: '';
+    width: 440px;
+    height: 240px;
+    border: 1px dashed #a51a3d;
+    position: absolute;
+    left: -21px; top: -21px;
 }
-.jsample > div:nth-child(3){
-    background-color:brown;
+.jsample .box span {
+    color: #c7254e;
 }
-.jsample > div:nth-child(4){
-    background-color:blueviolet;
-}
-.jsample > div:nth-child(5){
-    background-color:chocolate;
+.jsample .desc {
+    padding-top: 10px;
 }
 </code></pre>
                             </div>
                             <div>
-<pre class="language-javascript"><code>$("#sample1 .btn1").click(function(e){
-    e.preventDefault();
-    $("#sample1 .jsample > div").each(function(){
-        $(this).find("span").text($(this).css('background-color'));
-    })
-});
-$("#sample1 .btn2").click(function(e){
-    e.preventDefault();
-    $("#sample1 .jsample > div").each(function(){
-        $(this).find("span").text($(this).css('width'));
-    })
-});
-$("#sample1 .btn3").click(function(e){
-    e.preventDefault();
-    $("#sample1 .jsample > div").each(function(){
-        $(this).find("span").text($(this).css('height'));
-    })
-});
+<pre class="language-javascript"><code>const box = $("#sample1 .jsample > div");
+
+    $("#sample1 .btn1").click(function(e){
+        e.preventDefault();
+        $("#sample1 .jsample .desc").text("이 박스의 top값은 " + box.offset().top + "px 입니다.");
+    });
+    $("#sample1 .btn2").click(function(e){
+        e.preventDefault();
+        $("#sample1 .jsample .desc").text("이 박스의 left값은 " + box.offset().left + "px 입니다.");
+    });
+    $("#sample1 .btn3").click(function(e){
+        e.preventDefault();
+        $("#sample1 .jsample .desc").text("이 박스의 top값은 " + box.position().top + "px 입니다.");
+    });
+    $("#sample1 .btn4").click(function(e){
+        e.preventDefault();
+        $("#sample1 .jsample .desc").text("이 박스의 left값은 " + box.position().left + "px 입니다.");
+    });
 </code></pre>
                             </div>
                         </div>
@@ -264,23 +278,136 @@ $("#sample1 .btn3").click(function(e){
                 </div>
                 <!-- //Sample1 -->
                 <script>
+                    const box = $("#sample1 .jsample > div");
+
                     $("#sample1 .btn1").click(function(e){
                         e.preventDefault();
-                        $("#sample1 .jsample > div").each(function(){
-                            $(this).find("span").text($(this).css('background-color'));
-                        })
+                        $("#sample1 .jsample .desc").text("이 박스의 top값은 " + box.offset().top + "px 입니다.");
                     });
                     $("#sample1 .btn2").click(function(e){
                         e.preventDefault();
-                        $("#sample1 .jsample > div").each(function(){
-                            $(this).find("span").text($(this).css('width'));
-                        })
+                        $("#sample1 .jsample .desc").text("이 박스의 left값은 " + box.offset().left + "px 입니다.");
                     });
                     $("#sample1 .btn3").click(function(e){
                         e.preventDefault();
-                        $("#sample1 .jsample > div").each(function(){
-                            $(this).find("span").text($(this).css('height'));
-                        })
+                        $("#sample1 .jsample .desc").text("이 박스의 top값은 " + box.position().top + "px 입니다.");
+                    });
+                    $("#sample1 .btn4").click(function(e){
+                        e.preventDefault();
+                        $("#sample1 .jsample .desc").text("이 박스의 left값은 " + box.position().left + "px 입니다.");
+                    });
+                </script>
+
+                <style>
+                    #sample2 .jsample {
+                        min-height: 300px;
+                        position: relative;
+                    }
+                    #sample2 .jsample .circle {
+                        width: 100px;
+                        height: 100px;
+                        color: #c7254e;
+                        background-color: #f9f2f4;
+                        border-radius: 50%;
+                        border: 1px dashed #a51a3d;
+                        line-height: 100px;
+                    }
+                    #sample2 .jsample .desc {
+                        position: absolute;
+                        bottom: 0px;
+                        left: 0px;
+                        text-align: left;
+                    }
+                </style>
+                <!-- Sample2 -->
+                <h4>예제2(Sample)</h4>
+                <div class="sample" id="sample2">
+                    <h5>원을 드래그 하면 위치 값을 가져오는 예제입니다.</h5>
+                    <div class="sampleView">
+                        <!-- ex -->
+                        <div class="jsample">
+                            <div class="circle">drag</div>
+                            <div class="desc">
+                                offset().left : <span class="d1">0</span><br>
+                                offset().top : <span class="d2">0</span><br>
+                                position().left : <span class="d3">0</span><br>
+                                position().top : <span class="d4">0</span>
+                            </div>
+                        </div>
+                        <!-- ex -->
+                    </div>
+                    <div class="sampleDesc">
+                        원을 드래그 하면 위치값이 표시됩니다.
+                    </div>
+                    <div class="sampleCode">
+                        <div class="scMenu">
+                            <div>HTML</div>
+                            <div>CSS</div>
+                            <div>SCRIPT</div>
+                        </div>
+                        <div class="scCont">
+                            <div>
+<pre class="language-html"><code>&lt;div class="jsample"&gt;
+    &lt;div class="circle"&gt;drag&lt;/div&gt;
+    &lt;div class="desc"&gt;
+        offset().left : &lt;span class="d1"&gt;0&lt;/span&gt;&lt;br&gt;
+        offset().top : &lt;span class="d2"&gt;0&lt;/span&gt;&lt;br&gt;
+        position().left : &lt;span class="d3"&gt;0&lt;/span&gt;&lt;br&gt;
+        position().top : &lt;span class="d4"&gt;0&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+            <div>
+<pre class="language-css"><code>#sample2 .jsample {
+    min-height: 300px;
+    position: relative;
+}
+#sample2 .jsample .circle {
+    width: 100px;
+    height: 100px;
+    color: #c7254e;
+    background-color: #f9f2f4;
+    border-radius: 50%;
+    border: 1px dashed #a51a3d;
+    line-height: 100px;
+}
+#sample2 .jsample .desc {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    text-align: left;
+}
+</code></pre>
+            </div>
+            <div>
+<pre class="language-javascript"><code>const circle = $("#sample2 .jsample .circle");
+
+circle.draggable({
+    drag:function(){
+        $('#sample2 .desc .d1').text( circle.offset().left + "px");
+        $('#sample2 .desc .d2').text( circle.offset().top + "px");
+        $('#sample2 .desc .d3').text( circle.position().left + "px");
+        $('#sample2 .desc .d4').text( circle.position().top + "px");
+    }
+});
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //Sample1 -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+                <script>
+                    const circle = $("#sample2 .jsample .circle");
+
+                    circle.draggable({
+                        drag:function(){
+                            $('#sample2 .desc .d1').text( circle.offset().left + "px");
+                            $('#sample2 .desc .d2').text( circle.offset().top + "px");
+                            $('#sample2 .desc .d3').text( circle.position().left + "px");
+                            $('#sample2 .desc .d4').text( circle.position().top + "px");
+                        }
                     });
                 </script>
 
@@ -313,7 +440,7 @@ $("#sample1 .btn3").click(function(e){
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="ce" scope="row" rowspan="3">.offset()</td>
+                                <td class="ce" scope="row" rowspan="3">offset()</td>
                                 <td class="ce">jQeury 1.x 버전</td>
                                 <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
                                 <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->

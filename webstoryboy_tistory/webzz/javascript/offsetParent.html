@@ -15,7 +15,7 @@
 
 <body class="white">
     <header id="header">
-        <h1><a href="#">WEBS : JAVASCRIPT 레퍼런스 : clientWidth</a></h1>
+        <h1><a href="#">WEBS : JAVASCRIPT 레퍼런스 : offsetParent</a></h1>
         <nav>
             <ul>
                 <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
@@ -28,14 +28,14 @@
 
         <section id="explanation"> 
             <div class="container">
-                <h2 class="hide">clientWidth</h2>
+                <h2 class="hide">offsetParent</h2>
                 <p>
-                    clientWidth 속성은 요소의 가로 값(마진/보더 불포함)을 가져옵니다.
+                    offsetParent 속성은 부모 요소를 기준으로 위치 정보를 가져옵니다.
                 </p>
                 <hr>
 
-                <h3>clientWidth</h3>
-                <p class="blue">clientWidth 속성은 요소의 가로 값(마진/보더 불포함)을 가져옵니다.</p>
+                <h3>offsetParent</h3>
+                <p class="blue">offsetParent 속성은 부모 요소를 기준으로 위치 정보를 가져옵니다.</p>
 
                 <div class="table">
                     <table>
@@ -64,7 +64,7 @@
                             </tr>
                             <tr>
                                 <th>사용성</th>
-                                <td>★★☆☆☆</td>
+                                <td>★☆☆☆☆</td>
                             </tr>
                         </tbody>
                     </table>
@@ -72,12 +72,12 @@
 
                 <h4 class="pt50">문법(Syntax)</h4>
                 <p class="blue">
-                    element.clientWidth
+                    element.offsetParent
                 </p>
 
                 <h4>정의(Definition)</h4>
                 <ul>
-                    <li>clientWidth 속성은 요소의 가로 값(마진/보더 불포함)을 가져옵니다.</li>
+                    <li>offsetParent 속성은 부모 요소를 기준으로 위치 정보를 가져옵니다.</li>
                 </ul>
 
                 <h4>크기 및 위치와 관련된 메서드(Dimensions Related method)</h4>
@@ -330,7 +330,7 @@ document.querySelector(".sampleBtn .btn8").addEventListener("click", (e) => {
                         </thead>
                         <tbody>
                             <tr>
-                                <td scope="row" class="ce">clientHeight</td>
+                                <td scope="row" class="ce">offsetParent</td>
                                 <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
                                 <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
                                 <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
@@ -350,7 +350,7 @@ document.querySelector(".sampleBtn .btn8").addEventListener("click", (e) => {
                     </table>
                 </div>
 
-                <h4>참고 : 크기와 관련된 메서드(Dimensions Related method) - jQuery</h4>
+                <h4>크기와 관련된 메서드(Dimensions Related method) - jQuery</h4>
                 <ul>
                     <li><a href="/123">width()</a> 메서드는 선택한 요소의 가로 값(패딩/보더/마진 불포함)을 가져오거나 설정합니다.</li>
                     <li><a href="/120">innerWidth()</a> 메서드는 선택한 요소의 가로 값(패딩 포함)을 가져오거나 설정합니다.</li>
@@ -362,9 +362,9 @@ document.querySelector(".sampleBtn .btn8").addEventListener("click", (e) => {
                     <li><a href="/121">outerHeight(true)</a> 메서드는 선택한 요소의 세로 값(패딩/보더/마진 포함)을 가져오거나 설정합니다.</li>
                 </ul>
 
-                <h4>참고 : 사이트(Reference)</h4>
+                <h4>참고 사이트(Reference)</h4>
                 <ul>
-                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/clientWidth" target="_blank">MDN</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetParent" target="_blank">MDN</a></li>
                 </ul>
 
                 <hr>

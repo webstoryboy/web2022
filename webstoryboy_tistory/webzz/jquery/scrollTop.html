@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"포트폴리오가 실력이다" : JQUERY 레퍼런스</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- SCRIPT -->
+    <script src="../../assets/js/jquery-3.6.0.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+</head>
+
+<body class="white">
+    <header id="header">
+        <h1><a href="#">WEBS : JQUERY 레퍼런스 : scrollLeft()</a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+
+        <section id="explanation">
+            <div class="container">
+                <h2 class="hide">scrollTop()</h2>
+                <p>
+                    scrollTop() 메서드는 선택한 요소의 세로 스크롤 값을 가져오거나 설정합니다.
+                </p>
+                <hr>
+
+                <h3>scrollTop()</h3>
+                <p class="blue">scrollTop() 메서드는 선택한 요소의 세로 스크롤 값을 가져오거나 설정합니다.</p>
+
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 30%">
+                            <col style="width: 70%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>특징</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>버전(version)</th>
+                                <td>1.x</td>
+                            </tr>
+                            <tr>
+                                <th>결과값(return)</th>
+                                <td>문자열(string)</td>
+                            </tr>
+                            <tr>
+                                <th>사용성</th>
+                                <td>★★☆☆☆</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="pt50">문법(Syntax)</h4>
+                <p class="blue">
+                    $("선택자").scrollLeft();<br>
+                    $("선택자").position().left;<br>
+                    $("선택자").position().top;<br>
+                </p>
+<pre><code class="language-javascript">//속성 값을 가져오는 경우
+$("div").position();
+
+//속성 값을 가져오는 경우
+$("div").position().top;
+
+//속성 값을 가져오는 경우
+$("div").position().left;
+</code></pre>
+                <ul class="mt15">
+                    <li>선택자(selector) : 선택자를 설정합니다.</li>
+                </ul>
+
+                <h4>정의(Definition)</h4>
+                <ul>
+                    <li>scrollTop() 메서드는 선택한 요소의 세로 스크롤 값을 가져오거나 설정합니다.</li>
+                </ul>
+
+                <h4>위치와 관련된 메서드(Position Related method)</h4>
+                <ul>
+                    <li>offset() 메서드는 선택한 요소의 위치 좌표 값(문서 기준)을 가져오거나 설정합니다.</li>
+                    <li>position() 메서드는 선택한 요소의 위치 좌표 값(기준점 기준)을 가져오거나 설정합니다.</li>
+                    <li>scrollTop() 메서드는 선택한 요소의 세로 스크롤 값을 가져오거나 설정합니다.</li>
+                    <li>scrollLeft() 메서드는 선택한 요소에 가로 스크롤 값을 가져오거나 설정합니다.</li>
+                </ul>
+            
+                <style>
+                    .jsample {
+                        text-align: center;
+                    }
+                    .jsample .box {
+                        margin: 20px auto;
+                        width: 400px;
+                        height: 200px;
+                        background-color: #f9f2f4;
+                        border: 2px solid #a51a3d;
+                        padding: 20px;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .jsample .box::before {
+                        content: '';
+                        width: 358px;
+                        height: 158px;
+                        border: 1px dashed #a51a3d;
+                        position: absolute;
+                        left: 20px; top: 20px;
+                    }
+                    .jsample .box::after {
+                        content: '';
+                        width: 440px;
+                        height: 240px;
+                        border: 1px dashed #a51a3d;
+                        position: absolute;
+                        left: -21px; top: -21px;
+                    }
+                    .jsample .box span {
+                        color: #c7254e;
+                    }
+                    .jsample .desc {
+                        padding-top: 10px;
+                    }
+                </style>
+                <!-- Sample1 -->
+                <h4>예제1(Sample)</h4>
+                <div class="sample" id="sample1">
+                    <h5>버튼을 클릭하면 박스의 위치 값을 가져오는 예제입니다.</h5>
+                    <div class="sampleView">
+                        <!-- ex -->
+                        <div class="jsample">
+                            <div class="box">
+                                <span>
+                                    width: 400px<br>
+                                    margin: 20px<br>
+                                    border: 2px<br>
+                                    padding: 20px<br>
+                                </span>
+                            </div>
+                            <div class="desc">여기에 결과값이 표시됩니다.</div>
+                        </div>
+                        <!-- ex -->
+                    </div>
+                    <div class="sampleBtn">
+                        <a href="#" class="btn1">버튼을 클릭하면 offset().top 값이 표시됩니다.</a>
+                        <a href="#" class="btn2">버튼을 클릭하면 offset().left 값이 표시됩니다.</a>
+                        <a href="#" class="btn3">버튼을 클릭하면 position().top 값이 표시됩니다.</a>
+                        <a href="#" class="btn4">버튼을 클릭하면 position().left 값이 표시됩니다.</a>
+                    </div>
+                    <div class="sampleCode">
+                        <div class="scMenu">
+                            <div>HTML</div>
+                            <div>CSS</div>
+                            <div>SCRIPT</div>
+                        </div>
+                        <div class="scCont">
+                            <div>
+<pre class="language-html"><code>&lt;div class="jsample"&gt;
+    &lt;div class="box"&gt;
+        &lt;span&gt;
+            width: 400px&lt;br&gt;
+            margin: 20px&lt;br&gt;
+            border: 2px&lt;br&gt;
+            padding: 20px&lt;br&gt;
+        &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class="desc"&gt;여기에 결과값이 표시됩니다.&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-css"><code>.jsample {
+    text-align: center;
+}
+.jsample .box {
+    margin: 20px auto;
+    width: 400px;
+    height: 200px;
+    background-color: #f9f2f4;
+    border: 2px solid #a51a3d;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.jsample .box::before {
+    content: '';
+    width: 358px;
+    height: 158px;
+    border: 1px dashed #a51a3d;
+    position: absolute;
+    left: 20px; top: 20px;
+}
+.jsample .box::after {
+    content: '';
+    width: 440px;
+    height: 240px;
+    border: 1px dashed #a51a3d;
+    position: absolute;
+    left: -21px; top: -21px;
+}
+.jsample .box span {
+    color: #c7254e;
+}
+.jsample .desc {
+    padding-top: 10px;
+}
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-javascript"><code>const box = $("#sample1 .jsample > div");
+
+    $("#sample1 .btn1").click(function(e){
+        e.preventDefault();
+        $("#sample1 .jsample .desc").text("이 박스의 top값은 " + box.offset().top + "px 입니다.");
+    });
+    $("#sample1 .btn2").click(function(e){
+        e.preventDefault();
+        $("#sample1 .jsample .desc").text("이 박스의 left값은 " + box.offset().left + "px 입니다.");
+    });
+    $("#sample1 .btn3").click(function(e){
+        e.preventDefault();
+        $("#sample1 .jsample .desc").text("이 박스의 top값은 " + box.position().top + "px 입니다.");
+    });
+    $("#sample1 .btn4").click(function(e){
+        e.preventDefault();
+        $("#sample1 .jsample .desc").text("이 박스의 left값은 " + box.position().left + "px 입니다.");
+    });
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //Sample1 -->
+                <script>
+                    const box = $("#sample1 .jsample > div");
+
+                    $("#sample1 .btn1").click(function(e){
+                        e.preventDefault();
+                        $("#sample1 .jsample .desc").text("이 박스의 top값은 " + box.offset().top + "px 입니다.");
+                    });
+                    $("#sample1 .btn2").click(function(e){
+                        e.preventDefault();
+                        $("#sample1 .jsample .desc").text("이 박스의 left값은 " + box.offset().left + "px 입니다.");
+                    });
+                    $("#sample1 .btn3").click(function(e){
+                        e.preventDefault();
+                        $("#sample1 .jsample .desc").text("이 박스의 top값은 " + box.position().top + "px 입니다.");
+                    });
+                    $("#sample1 .btn4").click(function(e){
+                        e.preventDefault();
+                        $("#sample1 .jsample .desc").text("이 박스의 left값은 " + box.position().left + "px 입니다.");
+                    });
+                </script>
+
+                <style>
+                    #sample2 .jsample {
+                        min-height: 300px;
+                        position: relative;
+                    }
+                    #sample2 .jsample .circle {
+                        width: 100px;
+                        height: 100px;
+                        color: #c7254e;
+                        background-color: #f9f2f4;
+                        border-radius: 50%;
+                        border: 1px dashed #a51a3d;
+                        line-height: 100px;
+                    }
+                    #sample2 .jsample .desc {
+                        position: absolute;
+                        bottom: 0px;
+                        left: 0px;
+                        text-align: left;
+                    }
+                </style>
+                <!-- Sample2 -->
+                <h4>예제2(Sample)</h4>
+                <div class="sample" id="sample2">
+                    <h5>원을 드래그 하면 위치 값을 가져오는 예제입니다.</h5>
+                    <div class="sampleView">
+                        <!-- ex -->
+                        <div class="jsample">
+                            <div class="circle">drag</div>
+                            <div class="desc">
+                                offset().left : <span class="d1">0</span><br>
+                                offset().top : <span class="d2">0</span><br>
+                                position().left : <span class="d3">0</span><br>
+                                position().top : <span class="d4">0</span>
+                            </div>
+                        </div>
+                        <!-- ex -->
+                    </div>
+                    <div class="sampleDesc">
+                        원을 드래그 하면 위치값이 표시됩니다.
+                    </div>
+                    <div class="sampleCode">
+                        <div class="scMenu">
+                            <div>HTML</div>
+                            <div>CSS</div>
+                            <div>SCRIPT</div>
+                        </div>
+                        <div class="scCont">
+                            <div>
+<pre class="language-html"><code>
+</code></pre>
+            </div>
+            <div>
+<pre class="language-css"><code>
+</code></pre>
+            </div>
+            <div>
+<pre class="language-javascript"><code>
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //Sample1 -->
+                <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+                <script>
+                    const circle = $("#sample2 .jsample .circle");
+
+                    circle.draggable({
+                        drag:function(){
+                            $('#sample2 .desc .d1').text( circle.offset().left + "px");
+                            $('#sample2 .desc .d2').text( circle.offset().top + "px");
+                            $('#sample2 .desc .d3').text( circle.position().left + "px");
+                            $('#sample2 .desc .d4').text( circle.position().top + "px");
+                        }
+                    });
+                </script>
+
+                
+                <h4>호환성(Compatibility)</h4>
+                <div class="table">
+                    <table class="compatibility">
+                        <colgroup>
+                            <col style="width:20%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-chrome1.png" alt="크롬 아이콘" title="크롬 브라우저"></th>
+                                <th scope="col"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/icon-firefox1.png" alt="파이어폭스 아이콘" title="파이어폭스 브라우저"></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-safari1.png" alt="사파리 아이콘" title="사파리 브라우저"></th>
+                                <th scope="col"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/icon-opera1.png" alt="오페라 아이콘" title="오페라 브라우저"></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-whale1.png" alt="네이버 웨일" title="네이버 웨일 브라우저"></th>
+                                <th scope="col"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/icon-ie6.png" alt="익스플로러6 아이콘" title="인터넷 익스플로러6 브라우저"><em>6</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie7.png" alt="익스플로러7 아이콘" title="인터넷 익스플로러7 브라우저"><em>7</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie7.png" alt="익스플로러8 아이콘" title="인터넷 익스플로러8 브라우저"><em>8</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie9.png" alt="익스플로러9 아이콘" title="인터넷 익스플로러9 브라우저"><em>9</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie10.png" alt="익스플로러10 아이콘" title="인터넷 익스플로러10 브라우저"><em>10</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie11.png" alt="익스플로러11 아이콘" title="인터넷 익스플로러11 브라우저"><em>11</em></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-edge.png" alt="엣지 아이콘" title="엣지 브라우저"></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-android.png" alt="안드로이드 아이콘" title="모바일 안드로이드 브라우저"></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ios.png" alt="ios 아이콘" title="모바일 아이폰 브라우저"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ce" scope="row" rowspan="3">scrollTop()</td>
+                                <td class="ce">jQeury 1.x 버전</td>
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러6 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러7 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러8 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러9 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러10 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러11 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
+                            </tr>
+                            <tr>
+                                <td class="ce">jQeury 2.x 버전</td>
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러9 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러10 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러11 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
+                            </tr>
+                            <tr>
+                                <td class="ce">jQeury 3.x 버전</td>
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러9 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러10 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러11 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="pt30">참고 사이트(Reference)</h4>
+                <ul>
+                    <li><a href="https://api.jquery.com/position/" target="_blank">jquery</a></li>
+                </ul>
+
+                <hr>
+
+            </div>
+        </section>
+        <!-- //explanation -->
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer> 
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/script.js"></script> 
+</body>
+</html>

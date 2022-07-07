@@ -84,21 +84,13 @@ body {
     display: flex;
     left: 0;
 }
-.section5, .section7 {
+.section7 {
     width: 100%;
     height: 100vh;
     color: #fff;
 }
 
-.section4 .pin-wrap {
-    height: 100vh;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-.section4 .pin-wrap > div {
-    min-width: 60vw;
-}
+
 
 
 /* section1 */
@@ -229,18 +221,14 @@ body {
     font-size: 20px;
     margin-right: 5px;
     margin-bottom: 10px;
-}   
-
-/* sec3 */
-.sec3 {
-    
 }
 
+/* sec3 */
 .sec3 .site {
     color: #000;
     height: 100vh;
 }
-.sec3 .site1 {}
+.sec3 .site1 {border-bottom: 1px solid #2e382848;}
 .sec3 .site2 {background: #555;}
 .sec3 .site3 {background: #666;}
 .sec3 .site4 {background: #777;}
@@ -251,6 +239,7 @@ body {
 .sec3 .site .left {
     flex-basis: 70%;
     border-right: 1px solid #2e382848;
+    overflow: hidden;
 }
 .sec3 .site .left figcaption {
     padding: 2%;
@@ -260,13 +249,15 @@ body {
     color: #2e3828;
     text-transform: capitalize;
 }
-
 .sec3 .site .left figure {
     border-bottom: 1px solid #2e382848;
+    overflow: hidden;
+    height: 100%;
 }
 .sec3 .site .right {
     flex-basis: 30%;
     padding: 3%;
+    overflow: hidden;
 }
 .sec3 .site .right h3 {
     font-family: 'Saint Monica Regular';
@@ -290,3 +281,104 @@ body {
     padding: 10px;
     font-size: 20px;
 }
+
+
+/* section4 */
+.section4 {
+    background: #2E3828;
+}
+.section4 .top {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%;
+    height: 60vh;
+    background: #2E3828;
+    color: #fff;
+    font-family: 'Saint Monica Regular';
+    padding: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.section4 .top h2 {
+    font-size: 12vw;
+    white-space: nowrap;
+    line-height: 0.91;
+}
+
+.section4 .pin-wrap {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.section4 .pin-wrap > div {
+    min-width: 60vw;
+    margin-top: 60vh;
+    height: 40vh;
+    background: #2E3828;
+    color: #fff;
+    border-right: 1px solid #fff;
+    border-top: 1px solid #fff;
+}
+
+.section4 .pin-wrap > div {
+    padding: 2%;
+}
+.section4 .pin-wrap > div h3 {
+    font-family: 'Saint Monica Regular';
+    font-weight: 300;
+    font-size: 42px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+.section4 .pin-wrap > div p {
+    font-family: 'GmarketSans';
+    font-weight: 300;
+    font-size: 22px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+.section4 .pin-wrap > div .key span {
+    font-family: 'Saint Monica Regular';
+    border: 1px solid #fff;
+    border-radius: 50px;
+    display: inline-block;
+    padding: 4px 40px;
+    font-size: 20px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+.sec4 .site {
+    color: #000;
+    height: 100vh;
+}
+
+
+/* section5 */
+.script-wrap {}
+
+.script {
+    height: 100vh;
+    color: #fff;
+}
+.script .top {
+    height: 50vh;
+    background: url(https://images.unsplash.com/photo-1611996575749-79a3a250f948?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80);
+    background-size: cover;
+    background-position: center center;
+}
+.script .bom {
+    height: 50vh;
+    background: #555;
+}
+
+
+
+.script1 {
+    background: #000;
+}
+.script2 {
+    background: #ccc;
+}
+.script3 {}
+.script4 {}

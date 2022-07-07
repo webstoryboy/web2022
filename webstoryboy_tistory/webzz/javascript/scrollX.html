@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"포트폴리오가 실력이다" : JAVASCRIPT 레퍼런스</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+
+<body class="white">
+    <header id="header">
+        <h1><a href="#">WEBS : JAVASCRIPT 레퍼런스 : scrollX</a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+
+        <section id="explanation"> 
+            <div class="container">
+                <h2 class="hide">window.scrollX</h2>
+                <p>
+                    window.scrollX 요소는 선택한 요소의 가로 스크롤 값(브라우저 기준)을 가져옵니다.
+                    window.scrollX 요소는 속성값만 가져올 수 있는 읽기 전용 속성이며,
+                    window.scrollX 요소와 window.pageXOffset 요소는 동일합니다.
+                </p>
+                <hr>
+
+                <h3>window.scrollX</h3>
+                <p class="blue">window.scrollX 요소는 선택한 요소의 가로 스크롤 값(브라우저 기준)을 가져옵니다.</p>
+
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 30%">
+                            <col style="width: 70%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>특징</th>
+                                <th>설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>유형(type)</th>
+                                <td>window</td>
+                            </tr>
+                            <tr>
+                                <th>버전(version)</th>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <th>결과값(return)</th>
+                                <td>숫자(number)</td>
+                            </tr>
+                            <tr>
+                                <th>사용성</th>
+                                <td>★★★☆☆</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4 class="pt50">문법(Syntax)</h4>
+                <p class="blue">
+                    window.scrollX / scrollX
+                </p>
+
+<pre><code class="language-javascript">//속성 값을 가져오는 경우
+document.querySelector("div").innerHTML = window.scrollX;
+
+//속성 값을 가져오는 경우
+document.querySelector("div").innerHTML = scrollX;
+</code></pre>
+
+                <h4>정의(Definition)</h4>
+                <ul>
+                    <li>window.scrollX 요소는 선택한 요소의 세로 스크롤 값(브라우저 기준)을 가져옵니다.</li>
+                    <li>window.scrollX 요소는 속성값만 가져올 수 있는 읽기 전용 속성입니다.</li>
+                    <li>window.scrollX 요소와 window.pageXOffset 요소는 동일합니다.</li>
+                    <li>window는 생략 가능합니다.</li>
+                </ul>
+
+                <h4>스크롤과 관련된 메서드(Scroll Related method)</h4>
+                <ul>
+                    <li><a href="/897">window.pageXOffset</a> 속성은 선택한 요소의 가로 스크롤 값(브라우저 기준)을 가져옵니다.</li>
+                    <li><a href="/898">window.pageYOffset</a> 속성은 선택한 요소의 세로 스크롤 값(브라우저 기준)을 가져옵니다.</li>
+                    <li><a href="/899">window.scrollX</a> 속성은 선택한 요소의 가로 스크롤 값(브라우저 기준)을 가져옵니다.</li>
+                    <li><a href="/900">window.scrollY</a> 속성은 선택한 요소의 세로 스크롤 값(브라우저 기준)을 가져옵니다.</li>
+                    <li><a href="/901">window.scroll()</a> 메서드는 선택한 요소에 스크롤 값을 설정합니다.</li>
+                    <li><a href="/902">window.scrollTo()</a> 메서드는 선택한 요소에 스크롤 값(상대 위치)을 설정합니다.</li>
+                    <li><a href="/903">window.scrollBy()</a> 메서드는 선택한 요소에 스크롤 값(절대 위치)을 설정합니다.</li>
+                    <li><a href="/904">element.scrollLeft</a> 속성은 선택한 요소에 가로 스크롤 값을 가져오거나 설정합니다.</li>
+                    <li><a href="/905">element.scrollTop</a> 속성은 선택한 요소에 세로 스크롤 값을 가져오거나 설정합니다.</li>
+                    <li><a href="/906">element.scrollIntoView()</a> 메서드는 선택한 요소를 기준으로 이동하거나 설정합니다.</li>
+                </ul>
+
+                <h4>위치 및 스크롤과 관련된 메서드(Position & Scroll Related method) - jQuery</h4>
+                <ul>
+                    <li><a href="/125">offset()</a> 메서드는 선택한 요소의 위치 좌표 값(문서 기준)을 가져오거나 설정합니다.</li>
+                    <li><a href="/127">position()</a> 메서드는 선택한 요소의 위치 좌표 값(기준점 기준)을 가져오거나 설정합니다.</li>
+                    <li><a href="/128">scrollLeft()</a> 메서드는 선택한 요소의 가로 스크롤 값(브라우저 기준)을 가져오거나 설정합니다.</li>
+                    <li><a href="/129">scrollTop()</a> 메서드는 선택한 요소의 세로 스크롤 값(브라우저 기준)을 가져오거나 설정합니다.</li>
+                </ul>
+
+                <style>
+                    .jsample {
+                        text-align: center;
+                    }
+                    .jsample .circle {
+                        width: 150px;
+                        height: 150px;
+                        line-height: 150px;
+                        border-radius: 50%;
+                        box-sizing: border-box;
+                        background-color: #dfecfa;
+                        border: 1px dashed #4390E1;
+                        color: #4390E1;
+                        text-align: center;
+                        display: inline-block;
+                        margin: 5px 5px 25px;
+                        position: relative;
+                    }
+                    .jsample .circle::before {
+                        position: absolute;
+                        left: 50%;
+                        bottom: -100px;
+                        transform: translateX(-50%);
+                    }
+                    .jsample .circle:nth-child(1)::before {
+                        content: "pageXOffset";
+                    }
+                    .jsample .circle:nth-child(2)::before{
+                        content: "pageYOffset";
+                    }
+                    .jsample .circle:nth-child(3)::before {
+                        content: "scrollLeft";
+                    }
+                    .jsample .circle:nth-child(4)::before{
+                        content: "scrolltop";
+                    }
+                    .jsample .circle:nth-child(5)::before {
+                        content: "scrollX";
+                    }
+                    .jsample .circle:nth-child(6)::before{
+                        content: "scrollY";
+                    }
+                </style>
+                <!-- Sample1 -->
+                <h4>예제1(Sample)</h4>
+                <div class="sample">
+                    <h5>스크롤 위치 값을 구하는 예제입니다.</h5>
+                    <div class="sampleView">
+                        <!-- ex -->
+                        <div class="jsample">
+                            <div class="circle">
+                                <span class="px">0</span> px
+                            </div>
+                            <div class="circle">
+                                <span class="py">0</span> px
+                            </div>
+                            <div class="circle">
+                                <span class="sl">0</span> px
+                            </div>
+                            <div class="circle">
+                                <span class="st">0</span> px
+                            </div>
+                            <div class="circle">
+                                <span class="sx">0</span> px
+                            </div>
+                            <div class="circle">
+                                <span class="sy">0</span> px
+                            </div>
+                        </div>
+                        <!-- ex -->
+                    </div>
+                    <div class="sampleDesc">
+                        스크롤을 하면 값이 표시됩니다.
+                    </div>
+                    <div class="sampleCode">
+                        <div class="scMenu">
+                            <div>HTML</div>
+                            <div>CSS</div>
+                            <div>SCRIPT</div>
+                        </div>
+                        <div class="scCont">
+                            <div>
+<pre class="language-html"><code>&lt;div class="jsample"&gt;
+    &lt;div class="circle"&gt;
+        &lt;span class="px"&gt;0&lt;/span&gt; px
+    &lt;/div&gt;
+    &lt;div class="circle"&gt;
+        &lt;span class="py"&gt;0&lt;/span&gt; px
+    &lt;/div&gt;
+    &lt;div class="circle"&gt;
+        &lt;span class="sl"&gt;0&lt;/span&gt; px
+    &lt;/div&gt;
+    &lt;div class="circle"&gt;
+        &lt;span class="st"&gt;0&lt;/span&gt; px
+    &lt;/div&gt;
+    &lt;div class="circle"&gt;
+        &lt;span class="sx"&gt;0&lt;/span&gt; px
+    &lt;/div&gt;
+    &lt;div class="circle"&gt;
+        &lt;span class="sy"&gt;0&lt;/span&gt; px
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-css"><code>.jsample {
+    text-align: center;
+}
+.jsample .circle {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: #dfecfa;
+    border: 1px dashed #4390E1;
+    color: #4390E1;
+    text-align: center;
+    display: inline-block;
+    margin: 5px 5px 25px;
+    position: relative;
+}
+.jsample .circle::before {
+    position: absolute;
+    left: 50%;
+    bottom: -100px;
+    transform: translateX(-50%);
+}
+.jsample .circle:nth-child(1)::before {
+    content: "pageXOffset";
+}
+.jsample .circle:nth-child(2)::before{
+    content: "pageYOffset";
+}
+.jsample .circle:nth-child(3)::before {
+    content: "scrollLeft";
+}
+.jsample .circle:nth-child(4)::before{
+    content: "scrolltop";
+}
+.jsample .circle:nth-child(5)::before {
+    content: "scrollX";
+}
+.jsample .circle:nth-child(6)::before{
+    content: "scrollY";
+}
+</code></pre>
+                            </div>
+                            <div>
+<pre class="language-javascript"><code>function scroll(){
+    document.querySelector(".jsample .px").innerHTML = window.pageXOffset;
+    document.querySelector(".jsample .py").innerHTML = window.pageYOffset;
+    document.querySelector(".jsample .sl").innerHTML = document.documentElement.scrollLeft;
+    document.querySelector(".jsample .st").innerHTML = document.documentElement.scrollTop;
+    document.querySelector(".jsample .sx").innerHTML = window.scrollX;
+    document.querySelector(".jsample .sy").innerHTML = window.scrollY;
+    
+    requestAnimationFrame(scroll);
+}
+scroll();
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //Sample1 -->
+                <script>
+                    function scroll(){
+                        document.querySelector(".jsample .px").innerHTML = window.pageXOffset;
+                        document.querySelector(".jsample .py").innerHTML = window.pageYOffset;
+                        document.querySelector(".jsample .sl").innerHTML = document.documentElement.scrollLeft;
+                        document.querySelector(".jsample .st").innerHTML = document.documentElement.scrollTop;
+                        document.querySelector(".jsample .sx").innerHTML = window.scrollX;
+                        document.querySelector(".jsample .sy").innerHTML = window.scrollY;
+                        
+                        requestAnimationFrame(scroll);
+                    }
+                    scroll();
+                </script>
+                
+
+                <h4>호환성(Compatibility)</h4>
+                <div class="table">
+                    <table class="compatibility">
+                        <colgroup>
+                            <col style="width:20%" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-chrome1.png" alt="크롬 아이콘" title="크롬 브라우저"></th>
+                                <th scope="col"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/icon-firefox1.png" alt="파이어폭스 아이콘" title="파이어폭스 브라우저"></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-safari1.png" alt="사파리 아이콘" title="사파리 브라우저"></th>
+                                <th scope="col"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/icon-opera1.png" alt="오페라 아이콘" title="오페라 브라우저"></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-whale1.png" alt="네이버 웨일" title="네이버 웨일 브라우저"></th>
+                                <th scope="col"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/icon-ie6.png" alt="익스플로러6 아이콘" title="인터넷 익스플로러6 브라우저"><em>6</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie7.png" alt="익스플로러7 아이콘" title="인터넷 익스플로러7 브라우저"><em>7</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie7.png" alt="익스플로러8 아이콘" title="인터넷 익스플로러8 브라우저"><em>8</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie9.png" alt="익스플로러9 아이콘" title="인터넷 익스플로러9 브라우저"><em>9</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie10.png" alt="익스플로러10 아이콘" title="인터넷 익스플로러10 브라우저"><em>10</em></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie11.png" alt="익스플로러11 아이콘" title="인터넷 익스플로러11 브라우저"><em>11</em></th>
+                                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-edge.png" alt="엣지 아이콘" title="엣지 브라우저"></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-android.png" alt="안드로이드 아이콘" title="모바일 안드로이드 브라우저"></th>
+                                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ios.png" alt="ios 아이콘" title="모바일 아이폰 브라우저"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td scope="row" class="ce">scrollX</td>
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
+                                <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러9 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러10 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 익스플로러11 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
+                                <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>참고 사이트(Reference)</h4>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollX" target="_blank">MDN</a></li>
+                </ul>
+
+                <hr>
+
+            </div>
+        </section>
+        <!-- //explanation -->
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer> 
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="../../assets/js/jquery-3.6.0.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/script.js"></script> 
+</body>
+</html>

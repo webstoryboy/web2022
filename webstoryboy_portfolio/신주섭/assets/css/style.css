@@ -1,0 +1,183 @@
+/* section1 */
+.contents {
+    /* display: flex;
+    flex-wrap: wrap; */
+    border: 1px solid #D6D6D6;
+    border-top: 0;
+    font-family: 'IropkeBatang';
+    line-height: 1.6;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-areas: 
+        "box01 box02 box03 box04"        
+        "box05 box06 box07 box07"        
+        "box09 box10 box11 box12"        
+        "box13 box10 box15 box16"        
+    ;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(4, 25vh);
+}
+
+.contents .box01 {grid-area: box01;}
+.contents .box02 {grid-area: box02;}
+.contents .box03 {grid-area: box03;}
+.contents .box04 {grid-area: box04;}
+.contents .box05 {grid-area: box05;}
+.contents .box06 {grid-area: box06;}
+.contents .box07 {grid-area: box07;}
+.contents .box08 {grid-area: box08;}
+.contents .box09 {grid-area: box09;}
+.contents .box10 {grid-area: box10;}
+.contents .box11 {grid-area: box11;}
+.contents .box12 {grid-area: box12;}
+.contents .box13 {grid-area: box13;}
+.contents .box14 {grid-area: box14;}
+.contents .box15 {grid-area: box15;}
+.contents .box16 {grid-area: box16;}
+
+
+.contents > div {
+    border-right: 1px solid #D6D6D6;
+    border-bottom: 1px solid #D6D6D6;
+    padding: 1%;
+}
+.contents > div:nth-child(4n){
+    border-right: 0;
+}
+.contents > div:nth-child(13){
+    border-bottom: 0;
+}
+.contents > div:nth-child(14){
+    border-bottom: 0;
+}
+.contents > div:nth-child(15){
+    border-bottom: 0;
+}
+.contents > div:nth-child(16){
+    border-bottom: 0;
+}
+
+.desc {
+    text-align: justify;
+    font-size: 16px;
+    overflow: hidden;
+}
+.title {
+    font-size: 5.4vmax;
+    font-family: 'GmarketSans';
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+    margin-left: -.51vw;
+    position: relative;
+}
+.title span {
+    position: absolute;
+    right: 0;
+    bottom: -.51vw;
+}
+.subTitle {
+    font-size: 40px;
+    font-weight: 300;
+    font-family: 'GmarketSans';
+    white-space: nowrap;
+    line-height: 1;
+    overflow: hidden;
+}
+.subTitle em {
+    font-size: 10px;
+    color: #666;
+    padding-left: 10px;
+}
+.page {
+    
+}
+.page a {
+    font-family: 'GmarketSans';
+    width: 44px;
+    height: 44px;
+    border: 1px solid #000;
+    display: inline-block;
+    text-align: center;
+    line-height: 44px;
+    border-radius: 50%;
+    font-weight: 300;
+    font-size: 20px;
+}
+.black {
+    background: #000;
+    color: #fff;
+}
+.h60 {
+    height: 60%;
+}
+.h40 {
+    height: 40%;
+}
+.h20 {
+    height: 20%;
+}
+.pt10 {
+    padding-top: 10px;
+}
+
+@media (max-width: 1000px){
+    .contents {
+        height: 200vh;
+        grid-template-areas: 
+            "box01 box02"
+            "box03 box04"        
+            "box05 box06" 
+            "box07 box07"        
+            "box09 box10" 
+            "box11 box12"        
+            "box13 box14" 
+            "box15 box16"        
+        ;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(8, 25vh);
+    }
+    .contents > div:nth-child(2n){
+        border-right: 0;
+    }
+    .contents > div:nth-child(13){
+        border-bottom: 1px solid #D6D6D6;
+    }
+    .contents > div:nth-child(14){
+        border-bottom: 1px solid #D6D6D6;
+    }
+}
+
+@media (max-width: 600px){
+    .contents {
+        height: 400vh;
+        grid-template-areas: 
+            "box01"
+            "box02"        
+            "box03" 
+            "box04"        
+            "box05" 
+            "box06"        
+            "box07" 
+            "box08"        
+            "box09"        
+            "box10"        
+            "box11"        
+            "box12"        
+            "box13"
+            "box14"        
+            "box15"        
+            "box16"        
+        ;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(16, 25vh);
+    }
+    .contents > div {
+        border-right: 0;
+    }
+    .contents > div:nth-child(15){
+        border-bottom: 1px solid #D6D6D6;
+    }
+}

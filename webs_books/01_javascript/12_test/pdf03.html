@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font.css">
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism-okaidia.min.css">
+    <style>
+        /* PrismJS 1.26.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+code[class*=language-],
+        pre[class*=language-] {
+            color: #000;
+            background: 0 0;
+            text-shadow: 0 1px #fff;
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            font-size: 1em;
+            text-align: left;
+            /* white-space: pre;
+            word-spacing: normal; */
+            word-spacing: break-spaces;
+            /* word-break: normal;
+            word-wrap: normal; */
+            white-space:pre-wrap;
+            line-height: 1.5;
+            -moz-tab-size: 4;
+            -o-tab-size: 4;
+            tab-size: 4;
+            -webkit-hyphens: none;
+            -moz-hyphens: none;
+            -ms-hyphens: none;
+            hyphens: none
+        }
+
+        code[class*=language-] ::-moz-selection,
+        code[class*=language-]::-moz-selection,
+        pre[class*=language-] ::-moz-selection,
+        pre[class*=language-]::-moz-selection {
+            text-shadow: none;
+            background: #b3d4fc
+        }
+
+        code[class*=language-] ::selection,
+        code[class*=language-]::selection,
+        pre[class*=language-] ::selection,
+        pre[class*=language-]::selection {
+            text-shadow: none;
+            background: #b3d4fc
+        }
+
+        @media print {
+
+            code[class*=language-],
+            pre[class*=language-] {
+                text-shadow: none
+            }
+        }
+
+        pre[class*=language-] {
+            padding: 1em;
+            margin: .5em 0;
+            overflow: auto
+        }
+
+        :not(pre)>code[class*=language-],
+        pre[class*=language-] {
+            background: #f5f2f0
+        }
+
+        :not(pre)>code[class*=language-] {
+            padding: .1em;
+            border-radius: .3em;
+            white-space: normal
+        }
+
+        .token.cdata,
+        .token.comment,
+        .token.doctype,
+        .token.prolog {
+            color: #708090
+        }
+
+        .token.punctuation {
+            color: #999
+        }
+
+        .token.namespace {
+            opacity: .7
+        }
+
+        .token.boolean,
+        .token.constant,
+        .token.deleted,
+        .token.number,
+        .token.property,
+        .token.symbol,
+        .token.tag {
+            color: #905
+        }
+
+        .token.attr-name,
+        .token.builtin,
+        .token.char,
+        .token.inserted,
+        .token.selector,
+        .token.string {
+            color: #690
+        }
+
+        .language-css .token.string,
+        .style .token.string,
+        .token.entity,
+        .token.operator,
+        .token.url {
+            color: #9a6e3a;
+            background: hsla(0, 0%, 100%, .5)
+        }
+
+        .token.atrule,
+        .token.attr-value,
+        .token.keyword {
+            color: #07a
+        }
+
+        .token.class-name,
+        .token.function {
+            color: #dd4a68
+        }
+
+        .token.important,
+        .token.regex,
+        .token.variable {
+            color: #e90
+        }
+
+        .token.bold,
+        .token.important {
+            font-weight: 700
+        }
+
+        .token.italic {
+            font-style: italic
+        }
+
+        .token.entity {
+            cursor: help
+        }
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NEXON Lv1 Gothic OTF';
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        body {
+            padding: 5%;
+            margin-bottom: 400px;
+        }
+
+        h1 {
+            padding-bottom: 40px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        hr {
+            margin: 10% 0 5% 0;
+            border-style: dashed;
+            border-color: #e6e6e6;
+            border-width: 1px;
+        }
+
+        img {
+            vertical-align: top;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .sample {
+            /* border: 1px solid #e6e6e6; */
+            border-radius: 5px;
+        }
+        .sample .code {
+            border: 1px solid #e6e6e6;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .sample h2 {
+            position: relative;
+            font-size: 14px;
+            background-color: #f2f2f2;
+            padding: 15px 15px 12px 15px;
+            border-bottom: 1px solid #e6e6e6;
+            border-radius: 5px 5px 0 0;
+            border: 1px solid #e6e6e6;
+            border-bottom: 0;;
+        }
+
+        .sample h2 .dot {
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+
+        .sample h2 .dot::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            border-radius: 50%;
+            position: absolute;
+            left: -15px;
+            top: 0;
+        }
+
+        .sample h2 .dot::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            position: absolute;
+            border-radius: 50%;
+            right: -15px;
+            top: 0;
+        }
+        .sample .ex {
+            padding: 20px;
+        }
+
+        .sample .ex .text {
+            margin: 10px 0;
+        }
+
+        .sample .re {
+            padding: 20px;
+            border-top: 1px solid #e6e6e6;
+        }
+
+        .sample .re a {
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #333;
+            border-radius: 30px;
+            padding: 10px 30px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .sample .re a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .sample .problem {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+            line-height: 1.6;
+        }
+
+        .sample pre {
+            margin: 0 !important;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .sample .desc {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .sample .desc dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+
+        .sample .desc dd {
+            padding: 3px 0 16px 0;
+            line-height: 1.6;
+        }
+
+        .sample .sam {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .sample .sam dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+
+        .sample .sam dd {
+            padding: 3px 0 16px 0;
+        }
+
+        ol {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        ol li {
+            display: inline;
+            text-align: center;
+            line-height: 40px;
+            margin-bottom: 5px;
+        }
+
+        ol li a {
+            display: inline-block;
+            border-radius: 30px;
+            padding: 2px 20px 0px 20px;
+            border: 1px solid #000;
+        }
+
+        ol li a:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        ol li.active {
+            background: #000;
+        }
+
+        ol li.active a {
+            color: #fff;
+        }
+        .mt20 {
+            margin-top: 20px;
+        }
+        .sample {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Javascript 데이터 실행하기</h1>
+
+    <div class="wrap">
+        <div id="sample01" class="sample">
+            <h2>01. 함수를 표현하는 가장 기본적인 방법이며, 선언적 함수라고 합니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func(){
+        document.write("함수가 실행되었습니다.");
+    }
+    func();
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample01 -->
+
+        <div id="sample02" class="sample">
+            <h2>02. 함수를 변수 안에 넣고 설정하는 방법이며, 익명 함수라고 합니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const func = function(){
+        document.write("함수가 실행되었습니다.");
+    }
+    func();
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample02 -->
+
+        <div id="sample03" class="sample">
+            <h2>03. 함수를 매개변수를 통해 설정하는 방법이며, 매개변수 함수라고 합니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func(str){
+        document.write(str);
+    }
+    func("함수가 실행되었습니다.");
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample03 -->
+
+        <div id="sample04" class="sample">
+            <h2>04. 함수를 리턴값을 통해 설정하는 방법이며, 리턴값 함수라고 합니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func(){
+        const str = "함수가 실행되었습니다.";
+        return str;
+    }
+    document.write(func());
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample04 -->
+
+        <div id="sample05" class="sample">
+            <h2>05. 선언적 함수를 화살표 함수로 표현합니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    // function func(){
+    //     document.write("함수가 실행되었습니다.");
+    // }
+    // func();
+
+    func = () => {
+        document.write("함수가 실행되었습니다.");
+    }
+    func();
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample05 -->
+
+        <div id="sample06" class="sample">
+            <h2>06. 익명 함수를 화살표 함수로 표현합니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    // const func = function(){
+    //     document.write("함수가 실행되었습니다.");
+    // }
+    // func();
+
+    const func = () => {
+        document.write("함수가 실행되었습니다")
+    }
+    func();
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample06 -->
+
+        <div id="sample07" class="sample">
+            <h2>07. 매개변수 함수를 화살표 함수로 표현합니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    // function func(str){
+    //     document.write(str);
+    // }
+    // func("함수가 실행되었습니다.");
+
+    func = (str) => {
+        document.write(str);
+    }
+    func("함수가 실행되었습니다.");
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample07 -->
+
+        <div id="sample08" class="sample">
+            <h2>08. 리턴값 함수를 화살표 함수로 표현합니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    // function func(){
+    //     const str = "함수가 실행되었습니다.";
+    //     return str;
+    // }
+    // document.write(func());
+
+    func = () => {
+        const str = "함수가 실행되었습니다.";
+        return str;
+    }
+    document.write(func());
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample08 -->
+
+        <div id="sample09" class="sample">
+            <h2>09. 익명함수, 매개변수, 리턴값을 같이 사용하는 화살표 함수 입니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const func = (str) => {
+        return str;
+    }
+    document.write(func("함수가 실행되었습니다."));
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample09 -->
+
+        <div id="sample10" class="sample">
+            <h2>10. 익명함수, 매개변수, 리턴값, 괄호 생략을 같이 사용하는 화살표 함수 입니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const func = str => {
+        return str;
+    }
+    document.write(func("함수가 실행되었습니다."));
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample10 -->
+
+        <div id="sample11" class="sample">
+            <h2>11. 익명함수, 매개변수, 리턴값, 괄호 생략, 리턴 생략을 같이 사용하는 화살표 함수 입니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const func = str => str;
+            
+    document.write(func("함수가 실행되었습니다."));
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample11 -->
+
+        <div id="sample12" class="sample">
+            <h2>12. 선언적함수, 매개변수, 리턴값, 괄호 생략, 리턴 생략을 같이 사용하는 화살표 함수입니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    func = str => str;
+            
+    document.write(func("함수가 실행되었습니다."));
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample12 -->
+
+        <div id="sample13" class="sample">
+            <h2>13. 함수를 선언하지 않고 바로 실행시키는 즉시 실행 함수입니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    (function (){
+        document.write("함수가 실행되었습니다.");
+    })();
+
+    (() => {
+        document.write("함수가 실행되었습니다.");
+    })();
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample13 -->
+
+        <div id="sample14" class="sample">
+            <h2>14. 파라미터 함수 : 매개 변수를 전달하는 함수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func(str = "함수가 실행되었습니다."){
+        document.write(str);
+    }
+    func();
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample14 -->
+
+        <div id="sample15" class="sample">
+            <h2>15. 아규먼트 함수 : 인자를 전달하는 함수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func1(a, b) {
+        document.write(arguments[0]);
+        document.write(arguments[1]);
+    }
+
+    func1("함수A가 실행되었습니다.", "함수B가 실행되었습니다.");
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample15 -->
+
+        <div id="sample16" class="sample">
+            <h2>16. 재귀 함수 : 자기 자신을 다시 호출하는 함수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    // function func(){
+    //     document.write("함수가 실행되었습니다.");
+    //     func();
+    // }
+    // func();
+
+    function func(num){
+        if(num &lt;= 1){
+            document.write("함수가 실행되었습니다.");
+        } else {
+            document.write("함수가 실행되었습니다.");
+            func(num - 1);    
+        }
+    }
+    func(5);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample16 -->
+
+        <div id="sample17" class="sample">
+            <h2>17. 콜백 함수 : 다른 함수에 인수로 넘겨지는 함수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func(){
+        document.write("함수2가 실행되었습니다.");
+    }
+    function callback(str){
+        document.write("함수1가 실행되었습니다.");
+        str();
+    }
+    callback(func);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample17 -->
+
+        <div id="sample18" class="sample">
+            <h2>18. 콜백 함수 : 반복문</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func(){
+        document.write("함수가 실행되었습니다.");
+    }
+    function callblack(num){
+        for( let i=1; i&lt=5; i++ ){
+            num(i);
+        }
+    }
+    callblack(func);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample18 -->
+
+        <div id="sample19" class="sample">
+            <h2>19. 콜백 함수 : 동기/비동기</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    //01
+    function funcA(){
+        document.write("funcA가 실행되었습니다.");
+    }
+    function funcB(){
+        document.write("funcB 실행되었습니다.");
+    }
+    funcA();
+    funcB();
+
+    //02
+    function funcC(){
+        setTimeout(()=>{
+            console.log("C");
+        },1000)
+    }
+    function funcD(){
+        console.log("D");
+    }
+    funcC();
+    funcD();
+
+    //03
+    function funcE(callback){
+        setTimeout(() => {
+            console.log("E");
+            callback();
+        }, 1000);
+    }
+    function funcF(){
+        console.log("F");
+    
+    funcE(function(){
+        funcF();
+    });
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample19 -->
+
+
+        <div id="sample20" class="sample">
+            <h2>20. 함수 유형 : 함수와 매개변수를 이용한 형태</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func(num, name, job){
+        document.write(num + ". 내이름은 " + name + "이며, 직업은 " + job + "입니다.");
+    }
+
+    func("1", "웹쓰", "웹 퍼블리셔");
+    func("2", "웹스토리보이", "프론트앤드개발자");
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample20 -->
+
+        <div id="sample21" class="sample">
+            <h2>21. 함수 유형 : 함수와 변수를 이용한 형태</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func(num, name, job){
+        document.write(num + ". 내이름은 " + name + "이며, 직업은 " + job + "입니다.");
+    }
+
+    const yumNum1 = "1";
+    const yumName1 = "웹쓰";
+    const yumJob1 = "웹 퍼블리셔";
+    const yumNum2 = "2";
+    const yumName2 = "웹스토리보이";
+    const yumJob2 = "프론트앤트개발자";
+
+    func(yumNum1, yumName1, yumJob1);
+    func(yumNum2, yumName2, yumJob2);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample21 -->
+
+        <div id="sample22" class="sample">
+            <h2>22. 함수 유형 : 함수와  배열, 객체를 이용한 형태</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    unction func(num, name, job){
+        document.write(num + ". 내이름은 " + name + "이며, 직업은 " + job + "입니다.");
+    }
+
+    const info = [
+        {
+            num : "1",
+            name : "웹쓰",
+            job : "웹퍼블리셔"
+        },{
+            num : "2",
+            name : "웹스토리보이",
+            job : "프론트앤드개발자"
+        }
+    ]
+
+    func(info[0].num, info[0].name, info[0].job);
+    func(info[1].num, info[1].name, info[1].job);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample22 -->
+
+        <div id="sample23" class="sample">
+            <h2>23. 함수 유형 : 객체 안에 변수와 함수를 이용한 형태</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const info = {
+        num1: 1,
+        name1: "웹쓰",
+        job1: "웹퍼블리셔",
+        num2: 2,
+        name2: "웹스토리보이",
+        job2: "프론트앤트개발자",
+
+        result1 : function(){
+            document.write(this.num1 + ". 내이름은 " + this.name1 + "이며, 직업은 " + this.job1 + "입니다.");
+        },
+        result2 : function(){
+            document.write(this.num2 + ". 내이름은 " + this.name2 + "이며, 직업은 " + this.job2 + "입니다.");
+        }
+    }
+    
+    info.result1();
+    info.result2();
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample23 -->
+
+        <div id="sample24" class="sample">
+            <h2>24. 함수 유형 : 객체 생성자 함수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func(num, name, job){
+        this.num = num;
+        this.name = name;
+        this.job = job;
+
+        this.result = function(){
+            document.write(this.num + ". 내이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.");
+        }
+    }
+
+    //인스턴스 생성
+    const info1 = new func("1", "웹쓰", "웹 퍼블리셔");
+    const info2 = new func("2", "웹스토리보이", "프론트앤드개발자");
+
+    info1.result();
+    info2.result();
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample24 -->
+
+        <div id="sample25" class="sample">
+            <h2>25. 함수 유형 : 프로토타입 함수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func(num, name, job){
+        this.num = num;
+        this.name = name;
+        this.job = job;
+    }
+
+    func.prototype.result = function(){
+        document.write(this.num + ". 내이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.");
+    }
+
+    //인스턴스 생성
+    const info1 = new func("1", "웹쓰", "웹 퍼블리셔");
+    const info2 = new func("2", "웹스토리보이", "프론트앤드개발자");
+
+    info1.result();
+    info2.result();
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample25 -->
+
+        <div id="sample26" class="sample">
+            <h2>26. 함수 유형 : 객체 리터럴 함수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func(num, name, job){
+        this.num = num;
+        this.name = name;
+        this.job = job;
+    }
+
+    func.prototype = {
+        result1 : function(){
+            document.write(this.num + ". 내이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.");
+        },
+        result2 : function(){
+            document.write(this.num + ". 내이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.");
+        }
+    }
+
+    //인스턴스 생성
+    const info1 = new func("1", "웹쓰", "웹 퍼블리셔");
+    const info2 = new func("2", "웹스토리보이", "프론트앤드개발자");
+
+    info1.result1();
+    info2.result2();
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample26 -->
+
+        <div id="sample27" class="sample">
+            <h2>27. 함수 유형 : 객체 리터럴 함수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    class study {
+        constructor(num, name, job){
+            this.num = num;
+            this.name = name;
+            this.job = job;
+        }
+        result(){
+            document.write(this.num + ". 내이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.");
+        }
+    }
+
+    const info1 = new study("1", "웹쓰", "웹 퍼블리셔");
+    const info2 = new study("2", "웹스토리보이", "프론트앤드개발자");
+
+    info1.result();
+    info2.result();
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample27 -->
+
+        <div id="sample28" class="sample">
+            <h2>28. 클래스 : 클래스 상속</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    class study {
+        constructor(num, name, job){
+            this.num = num;
+            this.name = name;
+            this.job = job;
+        }
+        result(){
+            document.write(this.num + ". 내이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.");
+        }
+    }
+
+    class study2 extends study {
+        constructor(num, name, job, age){
+            super(num, name, job);
+            this.age = age;
+        }
+        result2(){
+            document.write(this.num + ". 내이름은 " + this.name + "이며, 직업은 " + this.job + "이며 나이는" + this.age + "살 입니다.");
+        }
+    }
+
+    const info1 = new study("1", "웹쓰", "웹 퍼블리셔");
+    const info2 = new study2("2", "웹스토리보이", "프론트앤드개발자", 100);
+
+    info1.result();
+    info2.result();
+    info2.result2();
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample28 -->
+
+     
+
+        
+    </div>
+    
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
+    <script>
+
+    </script>
+</body>
+    
+</html>

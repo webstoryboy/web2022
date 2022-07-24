@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font.css">
+    <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/themes/prism-okaidia.min.css">
+    <style>
+        /* PrismJS 1.26.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+code[class*=language-],
+        pre[class*=language-] {
+            color: #000;
+            background: 0 0;
+            text-shadow: 0 1px #fff;
+            font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+            font-size: 1em;
+            text-align: left;
+            /* white-space: pre;
+            word-spacing: normal; */
+            word-spacing: break-spaces;
+            /* word-break: normal;
+            word-wrap: normal; */
+            white-space:pre-wrap;
+            line-height: 1.5;
+            -moz-tab-size: 4;
+            -o-tab-size: 4;
+            tab-size: 4;
+            -webkit-hyphens: none;
+            -moz-hyphens: none;
+            -ms-hyphens: none;
+            hyphens: none
+        }
+
+        code[class*=language-] ::-moz-selection,
+        code[class*=language-]::-moz-selection,
+        pre[class*=language-] ::-moz-selection,
+        pre[class*=language-]::-moz-selection {
+            text-shadow: none;
+            background: #b3d4fc
+        }
+
+        code[class*=language-] ::selection,
+        code[class*=language-]::selection,
+        pre[class*=language-] ::selection,
+        pre[class*=language-]::selection {
+            text-shadow: none;
+            background: #b3d4fc
+        }
+
+        @media print {
+
+            code[class*=language-],
+            pre[class*=language-] {
+                text-shadow: none
+            }
+        }
+
+        pre[class*=language-] {
+            padding: 1em;
+            margin: .5em 0;
+            overflow: auto
+        }
+
+        :not(pre)>code[class*=language-],
+        pre[class*=language-] {
+            background: #f5f2f0
+        }
+
+        :not(pre)>code[class*=language-] {
+            padding: .1em;
+            border-radius: .3em;
+            white-space: normal
+        }
+
+        .token.cdata,
+        .token.comment,
+        .token.doctype,
+        .token.prolog {
+            color: #708090
+        }
+
+        .token.punctuation {
+            color: #999
+        }
+
+        .token.namespace {
+            opacity: .7
+        }
+
+        .token.boolean,
+        .token.constant,
+        .token.deleted,
+        .token.number,
+        .token.property,
+        .token.symbol,
+        .token.tag {
+            color: #905
+        }
+
+        .token.attr-name,
+        .token.builtin,
+        .token.char,
+        .token.inserted,
+        .token.selector,
+        .token.string {
+            color: #690
+        }
+
+        .language-css .token.string,
+        .style .token.string,
+        .token.entity,
+        .token.operator,
+        .token.url {
+            color: #9a6e3a;
+            background: hsla(0, 0%, 100%, .5)
+        }
+
+        .token.atrule,
+        .token.attr-value,
+        .token.keyword {
+            color: #07a
+        }
+
+        .token.class-name,
+        .token.function {
+            color: #dd4a68
+        }
+
+        .token.important,
+        .token.regex,
+        .token.variable {
+            color: #e90
+        }
+
+        .token.bold,
+        .token.important {
+            font-weight: 700
+        }
+
+        .token.italic {
+            font-style: italic
+        }
+
+        .token.entity {
+            cursor: help
+        }
+        @font-face {
+            font-family: 'NEXON Lv1 Gothic OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'NEXON Lv1 Gothic OTF';
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        body {
+            padding: 5%;
+            margin-bottom: 400px;
+        }
+
+        h1 {
+            padding-bottom: 40px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        hr {
+            margin: 10% 0 5% 0;
+            border-style: dashed;
+            border-color: #e6e6e6;
+            border-width: 1px;
+        }
+
+        img {
+            vertical-align: top;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .sample {
+            /* border: 1px solid #e6e6e6; */
+            border-radius: 5px;
+        }
+        .sample .code {
+            border: 1px solid #e6e6e6;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .sample h2 {
+            position: relative;
+            font-size: 14px;
+            background-color: #f2f2f2;
+            padding: 15px 15px 12px 15px;
+            border-bottom: 1px solid #e6e6e6;
+            border-radius: 5px 5px 0 0;
+            border: 1px solid #e6e6e6;
+            border-bottom: 0;;
+        }
+
+        .sample h2 .dot {
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            display: block;
+            border-radius: 50%;
+            position: absolute;
+            right: 30px;
+            top: 20px;
+        }
+
+        .sample h2 .dot::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            border-radius: 50%;
+            position: absolute;
+            left: -15px;
+            top: 0;
+        }
+
+        .sample h2 .dot::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            background: #989898;
+            position: absolute;
+            border-radius: 50%;
+            right: -15px;
+            top: 0;
+        }
+        .sample .ex {
+            padding: 20px;
+        }
+
+        .sample .ex .text {
+            margin: 10px 0;
+        }
+
+        .sample .re {
+            padding: 20px;
+            border-top: 1px solid #e6e6e6;
+        }
+
+        .sample .re a {
+            color: #333;
+            text-decoration: none;
+            border: 1px solid #333;
+            border-radius: 30px;
+            padding: 10px 30px;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        .sample .re a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .sample .problem {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+            line-height: 1.6;
+        }
+
+        .sample pre {
+            margin: 0 !important;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .sample .desc {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .sample .desc dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+
+        .sample .desc dd {
+            padding: 3px 0 16px 0;
+            line-height: 1.6;
+        }
+
+        .sample .sam {
+            padding: 25px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+
+        .sample .sam dt {
+            padding: 3px 0;
+            margin-bottom: 6px;
+        }
+
+        .sample .sam dd {
+            padding: 3px 0 16px 0;
+        }
+
+        ol {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        ol li {
+            display: inline;
+            text-align: center;
+            line-height: 40px;
+            margin-bottom: 5px;
+        }
+
+        ol li a {
+            display: inline-block;
+            border-radius: 30px;
+            padding: 2px 20px 0px 20px;
+            border: 1px solid #000;
+        }
+
+        ol li a:hover {
+            background: #000;
+            color: #fff;
+        }
+
+        ol li.active {
+            background: #000;
+        }
+
+        ol li.active a {
+            color: #fff;
+        }
+        .mt20 {
+            margin-top: 20px;
+        }
+        .sample {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Javascript 데이터 저장하기</h1>
+
+    <div class="wrap">
+        <div id="sample01" class="sample">
+            <h2>01. 변수</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    var x = 100;            
+    var y = 200;            
+    var z = "javascript";   
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample01 -->
+
+        <div id="sample02" class="sample">
+            <h2>02. 변수 : 변수는 데이터 저장도 하고 변경도 합니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x = 300;
+    y = 400;
+    z = "jquery";
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample02 -->
+
+        <div id="sample03" class="sample">
+            <h2>03. 변수 : 변수는 데이터를 저장하고, 변경하고, 추가 할 수 있습니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x += 300;
+    y += 400;
+    z += "jquery";
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample03 -->
+
+        <div id="sample04" class="sample">
+            <h2>04. 변수 : 변수는 어디에 쓰냐에 따라 지역변수와 전역변수로 나눌 수 있습니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    let x = 100;   
+    let y = 200;   
+
+    function func(){
+        let x = 100;            
+        let z = "javascript";   
+        x = 200;        
+        y = 300;        
+
+        document.write("함수 안");
+        document.write(x);
+        document.write(y);
+        document.write(z);
+    }
+    func();
+
+    document.write("함수 밖");
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample02 -->
+
+        <div id="sample05" class="sample">
+            <h2>05. 상수 : 상수는 데이터를 저장 할 수 있지만 변경 할 수는 없습니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const x = 100;
+    const y = 200;
+    const z = "javascript";
+
+    //x = 300;
+    //y = 400;
+    //z = "jquery";
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample02 -->
+
+        <div id="sample06" class="sample">
+            <h2>06. 배열은 여러개의 데이터를 저장할 수 있는 저장소입니다. 표현 방법도 여러가지가 있습니다. 그 중 첫 번째 방법입니다. </h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arr = new Array();
+    arr[0] = 100;
+    arr[1] = 200;
+    arr[2] = "javascript";
+
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2]);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample06 -->
+
+        <div id="sample07" class="sample">
+            <h2>07. 배열을 표현하는 두번째 방법입니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arr = new Array(100, 200, "javascript");
+
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2]);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample07 -->
+
+        <div id="sample08" class="sample">
+            <h2>08. 배열을 표현하는 세번째 방법입니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [];
+
+    arr[0] = 100;
+    arr[1] = 200;
+    arr[2] = "javascript";
+
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2]);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample08 -->
+
+        <div id="sample09" class="sample">
+            <h2>09. 배열을 표현하는 세번째 방법입니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, "javascript"];
+
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2]);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample09 -->
+
+        <div id="sample10" class="sample">
+            <h2>10. 객체는 키와 값으로 구성된 데이터 값을 저장합니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = new Object();
+            
+    obj[0] = 100;
+    obj[1] = 200;
+    obj[2] = "javascript";
+
+    document.write(obj[0]);
+    document.write(obj[1]);
+    document.write(obj[2]);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample10 -->
+
+        <div id="sample11" class="sample">
+            <h2>11. 객체는 키와 값으로 구성된 데이터 값을 저장합니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = new Object();
+            
+    obj.a = 100;
+    obj.b = 200;
+    obj.c = "javascript";
+
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample11 -->
+
+        <div id="sample12" class="sample">
+            <h2>12. 객체는 키와 값으로 구성된 데이터 값을 저장합니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = {};
+            
+    obj.a = 100;
+    obj.b = 200;
+    obj.c = "javascript";
+
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample12 -->
+
+        <div id="sample13" class="sample">
+            <h2>13. 객체는 키와 값으로 구성된 데이터 값을 저장합니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = { a: 100, b: 200, c: "javascript" }
+
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample13 -->
+
+        <div id="sample14" class="sample">
+            <h2>14. 객체는 키와 값으로 구성된 데이터 값을 저장합니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = [
+        {a: 100, b: 200},
+        {c: "javascript"}
+    ];
+
+    document.write(obj[0].a);
+    document.write(obj[0].b);
+    document.write(obj[1].c);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample14 -->
+
+        <div id="sample15" class="sample">
+            <h2>15. 객체는 키와 값으로 구성된 데이터 값을 저장합니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: [200, 300],
+        c: {x: 400, y: 500},
+        d: "javascript"
+    }
+
+    document.write(obj.a);
+    document.write(obj.b[0]);
+    document.write(obj.b[1]);
+    document.write(obj.c.x);
+    document.write(obj.c.y);
+    document.write(obj.d);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample15 -->
+
+        <div id="sample16" class="sample">
+            <h2>16. 객체는 키와 값으로 구성된 데이터 값을 저장합니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const a = 100;
+    const b = 200;
+    const c = "javascript";
+
+    const obj = { a, b, c };
+
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample16 -->
+
+        <div id="sample17" class="sample">
+            <h2>17. 객체는 키와 값으로 구성된 데이터 값을 저장합니다.</h2>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: [200, 300],
+        c: {x: 400, y: 500},
+        d: "javascript",
+        e: function(){
+            document.write("javascript가 실행되었습니다.");
+        },
+        f: function(){
+            document.write(obj.d + "가 실행되었습니다.");
+        },
+        g: function(){
+            document.write(this.d + "가 실행되었습니다.");
+        }
+    }
+
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.b[0]);
+    document.write(obj.b[1]);
+    document.write(obj.c.x);
+    document.write(obj.c.y);
+    obj.e();
+    obj.f();
+    obj.g();
+}
+</code></pre>
+            </div>
+        </div>
+        <!-- /sample17 -->
+
+    </div>
+    
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
+    <script>
+
+    </script>
+</body>
+    
+</html>

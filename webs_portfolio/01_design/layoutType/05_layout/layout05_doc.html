@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"포트폴리오가 실력이다" : 웹 표준 사이트 만들기</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/css/fonts.css">
+    <link rel="stylesheet" href="../../assets/css/reset.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="#">WEBS : 웹 표준 사이트 만들기 : 레이아웃 유형 05</a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <aside id="aside">
+            <button class="aside-btn"><span></span></button>
+            <div class="chapter">
+                <div class="chapter-title">
+                    <div class="label">Chapter 01</div>
+                    <div class="class">Classic 레이아웃 유형</div>
+                </div>
+                <div class="chapter-sub">
+                    <ul>
+                        <li><a href="layout_doc01.html">01. 레이아웃 유형 : 레이아웃01</a></li>
+                        <li><a href="layout_doc02.html">02. 레이아웃 유형 : 레이아웃02</a></li>
+                        <li><a href="layout_doc03.html">03. 레이아웃 유형 : 레이아웃03</a></li>
+                        <li><a href="layout_doc04.html">04. 레이아웃 유형 : 레이아웃04</a></li>
+                        <li class="active"><a href="layout_doc05.html">05. 레이아웃 유형 : 레이아웃05</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <!-- //aside -->
+
+        <section id="youtube" class="container ">
+            <div class="desc">
+                <div class="left">
+                    <span class="num">01.</span>
+                    <h3 class="title">레이아웃 유형 : 레이아웃 05</h3>
+                    <span class="difficulty">난이도 <span>쉬움</span></span>
+                </div>
+                <div class="right">
+                    <h3>소스 다운로드</h3>
+                    <a href="#" target="_blank" class="sampleBtn">완성 화면 보기</a>
+                    <a href="#" target="_blank" class="sampleBtn">피그마 보기</a>
+                    <a href="#" target="_blank" class="sampleBtn">영상 보기</a>
+                </div>
+            </div>
+        </section>
+        <!-- //youtube -->
+
+        <section id="explanation">
+            <div class="container">
+                <h2>소개</h2>
+                <p>
+                    안녕하세요!. 웹스토리보이입니다.
+                    오늘은 마지막 레이아웃 5번째 레이아웃을 만들어보겠습니다. 
+                    네번째 레이아웃 유형과 구성은 동일하고 조금 더 디테일하게 작업해보겠습니다.
+                    마지막 레이아웃이기 때문에 복잡하면서도 심플하게 구성을 잡아봐습니다. 
+                </p>
+                <div class="folder">
+                    <ul>
+                        <li><span class="icon1">webstandard</span>
+                            <ul>
+                                <li class="icon1">03_layout</li>
+                            </ul>
+                            <ul>
+                                <li class="icon2">layout03_01.html : 1. float으로 레이아웃 구성하기</li>
+                                <li class="icon2">layout03_02.html : 2. float으로 레이아웃 구성하기 - 반응형</li>
+                                <li class="icon2">layout03_03.html : 3. flex로 레이아웃 구성하기</li>
+                                <li class="icon2">layout03_04.html : 4. flex로 레이아웃 구성하기 - 반응형</li>
+                                <li class="icon2">layout03_05.html : 5. grid로 레이아웃 구성하기</li>
+                                <li class="icon2">layout03_05.html : 6. grid로 레이아웃 구성하기 - 반응형</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <h2>이론</h2>
+                <div class="iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FiD3Ehm4HRhe16Vx6kxz3ob%2F%255B%25ED%258F%25AC%25ED%258A%25B8%25ED%258F%25B4%25EB%25A6%25AC%25EC%2598%25A4%25EA%25B0%2580-%25EC%258B%25A4%25EB%25A0%25A5%25EC%259D%25B4%25EB%258B%25A4%255D-%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EC%25A0%259C%25EC%259E%2591%25ED%258E%25B8%3Fnode-id%3D8194%253A82" allowfullscreen></iframe>
+                </div>
+                <p class="mt50">
+                    오늘 배울 레이아웃은 전체 영역과 가운데 영역이 포함된 구조입니다. 
+                    전체적으로 헤더, 내비, 컨텐츠, 푸터로 나누어 집니다. 
+                    컨턴츠 영역에 4개의 박스가 들어가는 구조입니다. 
+                    그럼 시작해보겠습니다.
+                </p>
+                <p>가장 먼저 VScode에서 <code>webstandard</code> 폴더에서 <code>05_layout05.html</code> 파일을 만들겠습니다.</p>
+                <p data-num="01">
+                    <code>!</code>를 치고 <code>tab</code>을 누르겠습니다. 언어를 <code>ko</code>로 변경하고 <code>title</code>은 레이아웃 유형05로 변경하겠습니다.
+                </p>
+                <p data-num="02">
+                    <strong>블록요소<sup>1</sup></strong>를 이용하여 레이아웃 작업을 할 것이며, 레이아웃은 크게 헤더, 네비, 콘텐츠, 푸터 영역으로 설정하겠습니다. 
+                    전체 영역은 아이디 <strong>선택자<sup>2</sup></strong>를 사용하겠습니다.
+                </p>
+<pre><code class="language-html">&lt;div id="wrap"&gt;
+    &lt;div id="header"&gt;&lt;/div&gt;
+    &lt;div id="nav"&gt;&lt;/div&gt;
+    &lt;div id="contents"&gt;&lt;/div&gt;
+    &lt;div id="footer"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-css">* {
+    margin: 0;
+    padding: 0;
+}
+#wrap {
+    width: 100%;
+}
+#header {
+    width: 100%;
+    height: 100px;
+    background-color: #EEEBE9;
+}
+#nav {
+    width: 100%;
+    height: 100px;
+    background-color: #B9AAA5;
+}
+#contents {
+    width: 100%;
+    height: 780px;
+    background-color: #886F65;
+}
+#footer {
+    width: 100%;
+    height: 100px;
+    background-color: #4E342E;
+}
+</code></pre>
+                <p data-num="03">
+                    여백을 없애주기 위해서 <strong>CSS 초기화<sup>3</sup></strong>를 하고, 각각의 요소한테 영역을 주기 위해서
+                    <code>width</code>, <code>height</code>, <code>background-color</code>를 주겠습니다. 
+                </p>
+
+<pre><code class="language-html">&lt;div id="wrap"&gt;
+    &lt;div id="header"&gt;
+        &lt;div class="container"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="nav"&gt;
+        &lt;div class="container"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="contents"&gt;
+        &lt;div class="container"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="footer"&gt;
+        &lt;div class="container"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                <p data-num="04">
+                    가운데 영역을 표현 하기 위해서 <code>container</code> 클래스를 반복하여 재사용하였습니다.
+                    <strong>id와 class의 차이점<sup>4</sup></strong> 중 id는 한 번만 사용 가능하고, class는 여러번 사용 가능합니다. 
+                    그래서 클래스 <code>container</code>는 각 섹션에 반복적으로 사용되었습니다. 
+                </p>
+
+<pre><code class="language-css">.container {
+    width: 1200px;
+    height: inherit;
+    background-color: rgba(0,0,0,0.3);
+    margin: 0 auto;
+}
+</code></pre>
+
+                <p data-num="05">
+                    <code>height</code> 값은 부모 박스한테 상속을 받고 <code>background-color</code>는 <strong>rgba 방식<sup>5</sup></strong> 이용하여 표현했습니다. 
+                    rgba 방식을 이용하면, 투명도를 설정할 수 있습니다. <code>a</code> 부분이 투명도를 설정할 수 있으며, 0과 1사이에 값을 설정 할 수 있습니다. 
+                    <strong>블록구조인 #wrap을 가운데<sup>6</sup></strong>로 오기 위해서 <code>margin: 0 auto;</code>를 사용하였습니다. 
+                </p>
+
+                <div class="soFar">
+                    <div class="click mb5">여기까지 결과 확인하기 <span>(layout_result05_02.html)</span></div>
+                </div> 
+            </div>
+            <!-- ..container -->
+
+            <div class="none">
+                <iframe style="width: 100%; height: 500px; background: #fff;" src="layout_result05_02.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="container">
+                <div class="soFar code">
+                    <div class="click">여기까지 코드 확인하기 <span>(layout_result05_02.html)</span></div>
+                </div>
+                <div class="none">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;레이아웃 유형05&lt;/title&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 100%;
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #EEEBE9;
+        }
+        #nav {
+            width: 100%;
+            height: 100px;
+            background-color: #B9AAA5;
+        }
+        #contents {
+            width: 100%;
+            height: 780px;
+            background-color: #886F65;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #4E342E;
+        }
+        .container {
+            width: 1200px;
+            height: inherit;
+            background-color: rgba(0,0,0,0.3);
+            margin: 0 auto;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="wrap"&gt;
+        &lt;div id="header"&gt;
+            &lt;div class="container"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id="nav"&gt;
+            &lt;div class="container"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id="contents"&gt;
+            &lt;div class="container"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id="footer"&gt;
+            &lt;div class="container"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+
+<pre><code class="language-html">&lt;div id="contents"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="content1"&gt;&lt;/div&gt;
+        &lt;div class="content2"&gt;&lt;/div&gt;
+        &lt;div class="content3"&gt;&lt;/div&gt;
+        &lt;div class="content4"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                <p data-num="06">
+                    <code>contents</code>의 자식 요소로 4개의 박스를 만들고, 클래스를 설정하였습니다. 
+                </p>
+            
+<pre><code class="language-css">.content1 {
+    width: 1200px;
+    height: 100px;
+    background-color: #74574A;
+}
+.content2 {
+    width: 1200px;
+    height: 200px;
+    background-color: #684D43;
+}
+.content3 {
+    width: 600px;
+    height: 480px;
+    background-color: #594139;
+}
+.content4 {
+    width: 600px;
+    height: 480px;
+    background-color: #4A352F;
+}
+</code></pre>
+                <p data-num="07">
+                    각각의 자식요소에게 <code>width</code>, <code>height</code>, <code>background-color</code>를 설정합니다. 
+                </p>
+                
+                <p>
+                    이렇게 하면 <code>content4</code> 박스는 밑으로 내려갑니다. 
+                    블록구조이기 때문에 가로로 정렬이 필요합니다. 
+                    지금까지 우리가 연습 <code>float</code>, <code>flex</code>, <code>grid</code> 중 한가지 밥법을 골라서 하면 됩니다. 
+                </p>
+
+<pre><code class="language-css">.content3 {
+    float: left;
+}
+.content4 {
+    float: left;
+}
+</code></pre>
+
+                <p data-num="08">
+                    <code>.content3</code>, <code>.content3</code> 요소에 <code>float: left;</code>를 추가합니다. 
+                </p>
+
+                <h3>2. 시멘틱 태그로 변경하기</h3>
+                <p>
+                    그럼 이번에는 <strong>시멘틱 태그<sup>8</sup></strong>로 변경하겠습니다. 
+                </p>
+
+                <div class="layout">
+                    <div class="culumn6">
+<pre><code class="language-html">&lt;div id="wrap"&gt;
+    &lt;div id="header"&gt;
+        &lt;div class="container"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="nav"&gt;
+        &lt;div class="container"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="contents"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="content1"&gt;&lt;/div&gt;
+            &lt;div class="content2"&gt;&lt;/div&gt;
+            &lt;div class="content3"&gt;&lt;/div&gt;
+            &lt;div class="content4"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="footer"&gt;
+        &lt;div class="container"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="culumn6">
+<pre><code class="language-html">&lt;div id="wrap"&gt;
+    &lt;header id="header"&gt;
+        &lt;div class="container"&gt;&lt;/div&gt;
+    &lt;/header&gt;
+    &lt;nav id="nav"&gt;
+        &lt;div class="container"&gt;&lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;main id="contents"&gt;
+        &lt;div class="container"&gt;
+            &lt;article class="content1"&gt;&lt;/article&gt;
+            &lt;article class="content2"&gt;&lt;/article&gt;
+            &lt;section class="content3"&gt;&lt;/section&gt;
+            &lt;section class="content4"&gt;&lt;/section&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+    &lt;footer id="footer"&gt;
+        &lt;div class="container"&gt;&lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+                </div>
+
+                <p data-num="09">
+                    기존이랑 동일하게 변경하시면 됩니다. 
+                    크게 다른 점은 없지만, <code>article</code>요소와 <code>section</code> 요소의 사용방법입니다.
+                    <code>article</code> 태그는 사이트의 독립적인 컨텐츠 섹션을 설정하고,
+                    <code>section</code> 태그는 주제별 그룹의 콘텐츠 섹션을 설정합니다.
+                    여러분이 생각하기에 해당 섹션이 맞는거 같으면 그 <strong>섹션 태그<sup>7</sup></strong>를 사용하시면 됩니다. 
+                    코딩에 정답은 없습니다. 가장 효율적인 방법과 효과적인 방법을 사용하면 됩니다. 
+                    처음에는 어떤 태그를 써야 할까? 고민을 많이 하지만, 
+                    이런 부분에 있어 왜 <code>article</code> 태그를 썼냐? <code>section</code> 태그를 썼냐?
+                    시비거는 사람은 없습니다. 본인이 생각하기에 그 주제에 맞다고 생각하시면 쓰시면 됩니다. 
+                    대신 태그의 의미를 정확하게 사용하는 것이 중요하겠죠 😼
+                </p>
+
+                <h3>3. flex으로 레이아웃 구성하기</h3>
+                <p>
+                    레이아웃을 변경하지 않고, CSS를 수정해서 해보겠습니다.
+                </p>
+
+<pre><code class="language-html">&lt;main id="contents"&gt;
+&lt;div class="container content__inner"&gt;
+    &lt;article class="content1"&gt;&lt;/article&gt;
+    &lt;article class="content2"&gt;&lt;/article&gt;
+    &lt;section class="content3"&gt;&lt;/section&gt;
+    &lt;section class="content4"&gt;&lt;/section&gt;
+&lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+                <p data-num="10">  
+                    <code>container</code> 클래스에 <code>content__inner</code> 클래스를 추가하겠습니다. 
+                    클래스는 중복해서 사용할 수 있습니다. 클래스 옆에 한칸을 띄우고 속성값을 설정하면 됩니다.
+                </p> 
+<pre><code class="language-css">.content__inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+</code></pre>   
+                <p>
+                    <code>display: flex;</code>를 선언하고, <code>flex-wrap: wrap;</code>을 설정하면,
+                    자식 요소 크기만큼 레이아웃이 잡힙니다. 
+                    끝났습니다. 간단하죠? 확인 한번 해보죠 👍
+                </p>
+
+                <div class="soFar">
+                    <div class="click mb5">여기까지 결과 확인하기 <span>(layout_result05_05.html)</span></div>
+                </div> 
+            </div>
+            <!-- ..container -->
+
+            <div class="none">
+                <iframe style="width: 100%; height: 500px; background: #fff;" src="layout_result05_05.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="container">
+                <div class="soFar code">
+                    <div class="click">여기까지 코드 확인하기 <span>(layout_result05_05.html)</span></div>
+                </div>
+                <div class="none">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;레이아웃 유형05&lt;/title&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 100%;
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #EEEBE9;
+        }
+        #nav {
+            width: 100%;
+            height: 100px;
+            background-color: #B9AAA5;
+        }
+        #contents {
+            width: 100%;
+            height: 780px;
+            background-color: #886F65;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #4E342E;
+        }
+        .container {
+            width: 1200px;
+            height: inherit;
+            background-color: rgba(0,0,0,0.3);
+            margin: 0 auto;
+        }
+        .content__inner {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .content1 {
+            width: 1200px;
+            height: 100px;
+            background-color: #74574A;
+        }
+        .content2 {
+            width: 1200px;
+            height: 200px;
+            background-color: #684D43;
+        }
+        .content3 {
+            width: 600px;
+            height: 480px;
+            background-color: #594139;
+        }
+        .content4 {
+            width: 600px;
+            height: 480px;
+            background-color: #4A352F;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="wrap"&gt;
+        &lt;header id="header"&gt;
+            &lt;div class="container"&gt;&lt;/div&gt;
+        &lt;/header&gt;
+        &lt;nav id="nav"&gt;
+            &lt;div class="container"&gt;&lt;/div&gt;
+        &lt;/nav&gt;
+        &lt;main id="contents"&gt;
+            &lt;div class="container content__inner"&gt;
+                &lt;article class="content1"&gt;&lt;/article&gt;
+                &lt;article class="content2"&gt;&lt;/article&gt;
+                &lt;section class="content3"&gt;&lt;/section&gt;
+                &lt;section class="content4"&gt;&lt;/section&gt;
+            &lt;/div&gt;
+        &lt;/main&gt;
+        &lt;footer id="footer"&gt;
+            &lt;div class="container"&gt;&lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+
+                <h3>4. grid로 레이아웃 구성하기</h3> 
+                <p>
+                    이번에도 레이아웃을 변경하지 않고, CSS를 수정해서 해보겠습니다.
+                    참고로 레이아웃을 위한 CSS는 <code>grid</code> 속성이기 때문에 그리드를 통해 
+                    레이아웃을 표현하는 방법은 한가지만 있는 것이 아닙니다. 
+                    하지만 저희는 제일 쉬운거 먼저 익히고, 하나씩 하나씩 깊이 들어 갈 것입니다.
+                    쉽다고 느끼시는 분들은 조금만 기다리세요 👮
+                </p>
+<pre><code class="language-css">.content1 {
+    background-color: #74574A;
+    grid-area: content1;
+}
+.content2 {
+    background-color: #684D43;
+    grid-area: content2;
+}
+.content3 {
+    background-color: #594139;
+    grid-area: content3;
+}
+.content4 {
+    background-color: #4A352F;
+    grid-area: content4;
+}
+</code></pre>   
+
+                <p data-num="10">  
+                    우선 자식 요소에게 <code>width</code>, <code>height</code> 값을 지우고,
+                    그리드 영역 이름을 지정해주겠습니다. 
+                </p> 
+
+<pre><code class="language-css">.content__inner {
+    display: grid;
+    grid-template-areas: 
+        "content1 content1"
+        "content2 content2"
+        "content3 content4"
+    ;
+    grid-template-columns: 600px 600px;
+    grid-template-rows: 100px 200px 480px;
+}
+</code></pre>  
+                <p data-num="11">  
+                    <code>display: grid</code>를 설정하고, 그리드 영역, 가로 크기, 세로 크기를 설정해주면 됩니다.
+                    그럼 완성 👩🏽‍🌾 
+                    여기까지 확인해볼게요! 
+                </p> 
+
+                <div class="soFar">
+                    <div class="click mb5">여기까지 결과 확인하기 <span>(layout_result05_06.html)</span></div>
+                </div>  
+            </div>
+            <!-- ..container -->
+
+            <div class="none">
+                <iframe style="width: 100%; height: 500px; background: #fff;" src="layout_result05_06.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="container">
+                <div class="soFar code">
+                    <div class="click">여기까지 코드 확인하기 <span>(layout_result03_04.html)</span></div>
+                </div>
+                <div class="none">
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;레이아웃 유형05&lt;/title&gt;
+    &lt;style&gt;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 100%;
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background-color: #EEEBE9;
+        }
+        #nav {
+            width: 100%;
+            height: 100px;
+            background-color: #B9AAA5;
+        }
+        #contents {
+            width: 100%;
+            height: 780px;
+            background-color: #886F65;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            background-color: #4E342E;
+        }
+        .container {
+            width: 1200px;
+            height: inherit;
+            background-color: rgba(0,0,0,0.3);
+            margin: 0 auto;
+        }
+        .content__inner {
+            display: grid;
+            grid-template-areas: 
+                "content1 content1"
+                "content2 content2"
+                "content3 content4"
+            ;
+            grid-template-columns: 600px 600px;
+            grid-template-rows: 100px 200px 480px;
+        }
+        .content1 {
+            background-color: #74574A;
+            grid-area: content1;
+        }
+        .content2 {
+            background-color: #684D43;
+            grid-area: content2;
+        }
+        .content3 {
+            background-color: #594139;
+            grid-area: content3;
+        }
+        .content4 {
+            background-color: #4A352F;
+            grid-area: content4;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="wrap"&gt;
+        &lt;header id="header"&gt;
+            &lt;div class="container"&gt;&lt;/div&gt;
+        &lt;/header&gt;
+        &lt;nav id="nav"&gt;
+            &lt;div class="container"&gt;&lt;/div&gt;
+        &lt;/nav&gt;
+        &lt;main id="contents"&gt;
+            &lt;div class="container content__inner"&gt;
+                &lt;article class="content1"&gt;&lt;/article&gt;
+                &lt;article class="content2"&gt;&lt;/article&gt;
+                &lt;section class="content3"&gt;&lt;/section&gt;
+                &lt;section class="content4"&gt;&lt;/section&gt;
+            &lt;/div&gt;
+        &lt;/main&gt;
+        &lt;footer id="footer"&gt;
+            &lt;div class="container"&gt;&lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+
+                <p>
+                    여기까지 레이아웃 유형이였습니다. 잘 따라하셨나요? 레이아웃은 이게 끝이 아닙니다. 
+                    반응형까지 추가하게 되면, 모든 레이아웃을 만들 수 있다고 생각하시면 됩니다. 
+                    그 부분은 반응형 사이트 만들기 파트에서 만나보겠습니다. 
+                    이제 우리는 레이아웃을 익혔으니, 레이아웃 들어가는 레이아웃을 배워야 합니다. 
+                    레이아웃 안에는 배너 유형, 카드 유형, 이미지 유형, 푸터 유형, 메뉴 유형 등 여러가지 유형들이 들어갑니다. 
+                    이렇게 유형별로 하나씩 배우면, 가장 기본적인 사이트가 완성이 되겠죠 👨‍🏫 
+                    그래서 사이트 레이아웃과 유형별로 만들는 법만 익히다면, 사이트 만들기는 식은 죽 먹기가 됩니다. 
+                    그럼 수고하셨고요~ 다음 파트에서 만나겠습니다. 
+                </p>
+            </div>
+            <!-- ..container -->
+
+
+
+            <div class="container">
+                <h2>참고</h2>
+                <ul class="refer">
+                    <li><sup>1</sup> <a href="#">블록/인라인 요소</a></li>
+                    <li><sup>2</sup> <a href="#">선택자</a></li>
+                    <li><sup>3</sup> <a href="#">CSS 초기화</a></li>
+                    <li><sup>4</sup> <a href="#">id와 class의 차이점</a></li>
+                    <li><sup>5</sup> <a href="#">CSS 색상 표현</a></li>
+                    <li><sup>6</sup> <a href="#">블록구조 가운데 정렬</a></li>
+                    <li><sup>7</sup> <a href="#">시멘틱 태그</a></li>
+                </ul>
+            </div>
+        </section>
+        <!-- //explanation -->
+    
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer> 
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="../../assets/js/jquery-3.6.0.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/script.js"></script> 
+</body>
+</html>

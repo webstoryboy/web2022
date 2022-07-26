@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body >
+  <body>
+
+    <div class="scroll">0</div>
+
     <div class="wrap1">
       <header id="header">
         <ul>
@@ -35,7 +38,12 @@
             적성에 맞는 일을 찾고자 노력을 했습니다.
           </div>
           <div class="sec1_txt2">
-            <div>안녕하세요, 저의 공간에 오신것을 환영합니다.<br>
+            <div
+              data-600 = "transform: translateX(0px)"
+              data-1200 = "transform: translateX(500px)"
+            >
+              
+              안녕하세요, 저의 공간에 오신것을 환영합니다.<br>
        
               신입의 열정과 도전정신을 깊숙히 새기며 배움에 있어 겸손함을 유지하며<br>
      
@@ -106,5 +114,19 @@
       <!-- //main -->
     </div>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script>
+        var s = skrollr.init({
+          smoothScrolling: true
+        });
+
+        function scroll(){
+          let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+          document.querySelector(".scroll").innerHTML = scrollTop;
+          requestAnimationFrame(scroll);
+        }
+        scroll();
+    </script>
   </body>
 </html>

@@ -100,15 +100,18 @@ body {
 .sec1 h1 {
     text-align: left;
     color: #2E3828;
-    font-size: 19.5vw;
+    font-size: 19vw;
     line-height: 0.91;
     font-family: 'Saint Monica Regular';
     padding-left: 1vw;
     margin-top: 10px;
     text-transform: uppercase;
 }
-.sec1 h1 span {
+.sec1 h1 em {
     display: block;
+}
+.sec1 h1 em span {
+    display: inline-block;
 }
 .sec1 .about {
     border-top: 1px solid #2e382848;

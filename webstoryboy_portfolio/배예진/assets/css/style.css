@@ -36,6 +36,13 @@ body {
     background-color: #FEFBF8;
 }
 
+.scroll {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    
+}
+
 /* header */
 #header {
     position: fixed;

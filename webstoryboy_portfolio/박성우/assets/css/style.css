@@ -18,6 +18,17 @@
     box-sizing: border-box;
 }
 #section1 > div {background: #fff; position: relative;}
+#section1 > div::before {
+    content: 'ss';
+    width: 100%;
+    height: 100%;
+    background: #000;
+    position: absolute;
+    left: 0; top: 0;
+}
+
+
+
 #section1 > div:nth-child(1)  {grid-area: box1; }
 #section1 > div:nth-child(2)  {grid-area: box2; }
 #section1 > div:nth-child(3)  {grid-area: box3; }

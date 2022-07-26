@@ -1,17 +1,25 @@
 /* layout */
 #contents {}
 #section1 {
-    height: 100vh;
+    height: 6000px;
     background-color: #C3BFBD;
 }
 #section2 {
-    height: 100vh;
+    height: 3000px;
     background-color: #ddd;
 }
 #section3 {}
 #section4 {}
 #section1 {}
 #section6 {}
+
+/* scroll */
+.scroll {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    font-family: 'SaintMonicaRegular';
+}
 
 /* header */
 #header {
@@ -78,7 +86,10 @@
     font-family: 'SaintMonicaRegular';
     text-transform: uppercase;
     color: #2E3828;
-    position: relative; 
+    position: fixed; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     z-index: 100;
 }
 .sec1_text > div:first-child {
@@ -88,7 +99,7 @@
     padding-left: 40vw;
 }
 .sec1_desc {
-    position: absolute;
+    position: fixed;
     left: 18%;
     bottom: 22%;
     width: 24vw;
@@ -110,8 +121,9 @@
     position: absolute;
     left: 5%;
     top: 5%;
-    position: absolute;
+    position: fixed;
     z-index: 1;
+    transform-origin: right top;
 }
 .circle2 {
     width: 10vw;
@@ -120,5 +132,81 @@
     background-color: #D5F153;
     right: 10%;
     top: 45%;
+    position: fixed;
+    transform-origin: left bottom;
+}
+
+
+/* sec2 */
+.sec2_circle {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    z-index: 10000;
+    background: #2E3828;
+}
+.sec2_circle span {
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: 'SaintMonicaRegular';
+    font-size: 70px;
+    text-transform: uppercase;
+}
+.sec2_square {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 700px;
+}   
+.sec2_square > div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 150px;
+}
+.sec2_square > div:nth-child(1){
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+.sec2_square > div:nth-child(2){
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.sec2_square > div:nth-child(3){
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+.sec2_square > div:nth-child(4){
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+.sec2_square > div span {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #D5F153;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+.sec2_square > div span.f {
+    left: 0;
+}
+.sec2_square > div span.b {
+    right: 0;
+}
+.sec2_square > div span em {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'IropkeBatang';
+    color: #2E3828;
 }

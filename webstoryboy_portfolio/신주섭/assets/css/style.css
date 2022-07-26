@@ -1,8 +1,9 @@
+
 /* section1 */
 .contents {
     /* display: flex;
     flex-wrap: wrap; */
-    border: 1px solid #D6D6D6;
+    /* border: 1px solid #D6D6D6; */
     border-top: 0;
     font-family: 'IropkeBatang';
     line-height: 1.6;
@@ -19,6 +20,7 @@
     grid-template-columns: repeat(4, 25%);
     grid-template-rows: repeat(4, 25vh);
 }
+
 
 .contents .box01 {grid-area: box01;}
 .contents .box02 {grid-area: box02;}
@@ -42,7 +44,25 @@
     border-right: 1px solid #D6D6D6;
     border-bottom: 1px solid #D6D6D6;
     padding: 1%;
+    position: relative;
+    z-index: 100;
 }
+.contents > div::before {
+    content: '';
+    width: 0%;
+    height: 100%;
+    background: #000;
+    position: absolute;
+    left: 0; top: 0;
+    transition: width 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+    z-index: 1000;
+}
+.contents > div.active::before {
+    width: 100%;
+}
+
+
+
 .contents > div:nth-child(4n){
     border-right: 0;
 }

@@ -15,6 +15,8 @@
 </head>
 <body>
 
+    <div class="scroll">0</div>
+
     <header id="header">
         <h1>PORTFOLIO<span class="circle"></span>DEVEOLPER</h1>
         <nav id="nav">
@@ -29,19 +31,65 @@
         <section id="section1">
             <div class="sec1_text">
                 <div>
-                    <div>MY PORTFOLIO</div>
-                    <div>CREATIVE FRONTEND</div>
-                    <div>PORT<span class="arrow"></span>FOLIO</div>
+                    <div 
+                        data-3000 = "transform: translateX(0px)";
+                        data-3400 = "transform: translateX(-2000px)";
+                    >MY PORTFOLIO</div>
+                    <div class="t2"
+                        data-3000 = "opacity:1;"
+                        data-3400 = "opacity:0;";
+                    >CREATIVE FRONTEND</div>
+                    <div
+                        data-3000 = "transform: translateX(0px)";
+                        data-3400 = "transform: translateX(2000px)";
+                    >PORT<span class="arrow"></span>FOLIO</div>
+                    <div class="box"
+                        data-0 = "top:100vh;"
+                        data-1000 = "top:0vh;"
+                        data-2000 = "top:-100vh;"
+                    ></div>
+                    <div class="img"
+                        data-2300 = "top: 120%; transform: rotate(10deg)"
+                        data-3300 = "top: -120%; transform: rotate(-60deg)"
+                    >
+                        <img src="assets/img/a.jpg" alt="dd">
+                    </div>
                 </div>
             </div>
         </section>
         <!-- //section1 -->
-        <section id="section2"></section><!-- //section2 -->
+
+        <section id="section2">
+            <div class="sec2">
+                <div class="sec2_circle1"
+                    data-3400="border-radius: 100%; transform: translate(-50%, -50%) scale(0) rotate(0deg);"
+                    data-4400="border-radius: 1000%; transform: translate(-50%, -50%) scale(1) rotate(360deg);"
+                ></div>
+            </div>
+        </section>
+        <!-- //section2 -->
         <section id="section3"></section><!-- //section3 -->
         <section id="section4"></section><!-- //section4 -->
         <section id="section5"></section><!-- //section5 -->
         <section id="section6"></section><!-- //section6 -->
     </div>
     <!-- //contents -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script>
+        var s = skrollr.init({
+            smoothScrolling: true
+        });
+
+        function scroll(){
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            document.querySelector(".scroll").innerHTML = scrollTop;
+
+            requestAnimationFrame(scroll);
+        }
+        scroll();
+
+    </script>
 </body>
 </html>

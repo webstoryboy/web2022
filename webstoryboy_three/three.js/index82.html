@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #fff;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            position: absolute;
+            background-color: #999;
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
+    <script>
+        let canvas = document.getElementById("canvas");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // MSAA
+        let multiplier = 2.0;
+        var AA = true;
+
+        // Initialize the GL context
+        let gl = canvas.getContext('webgl');
+        if (!gl) {
+            console.error("Unable to initialize WebGL.");
+        }
+
+        let time = 0.0;
+        let scene = 0;
+        let palette = 0;
+
+        let sceneNames = ["Circle", "Heart", "Star", "Infinity"];
+        let paletteNames = ["Grayscale", "Rainbow", "Red", "Blue"];
+
+        let sceneSelector = {
+            scene: "Circle"
+        };
+        let paletteSelector = {
+            palette: "Rainbow"
+        };
+
+        setScene(sceneSelector.scene);
+        setPalette(paletteSelector.palette);
+
+
+        //Shader sources 
+        let vertexSource = `
+            attribute vec2 position;
+            void main() {
+                gl_Position = vec4(position, 0.0, 1.0);
+            }
+        `;
+
+        //Replace with GLSL fragment shader code
+        let fragmentSource = `
+            precision highp float;
+
+            uniform vec2 resolution;
+            uniform float time;
+            uniform float u_scene;
+            uniform float u_palette;
+
+            #define PI 3.1415926536
+            #define TWO_PI 6.2831853072
+
+            float signedAngle(vec2 a, vec2 b){
+                return atan(a.x*b.y - a.y*b.x, dot(a, b));
+            }
+
+            vec3 getColour(float t, int palette){
+
+                if(palette == 0){
+                    return vec3(-0.5 * t + 0.45);
+                }
+
+                vec3 a;
+                vec3 b;
+                vec3 c;
+                vec3 d;
+
+                if(palette == 1){
+                    t *= 0.45;
+                    t += 0.1 * time;
+
+                    a = vec3(0.65);
+                    b = 1.0 - a;
+                    c = vec3(1.0,1.0,1.0);
+                    d = vec3(0.15,0.5,0.75);
+
+                } else if(palette == 2){
+                    t *= -0.3;
+                    t += 0.65;
+
+                    a = vec3(0.55, 0.5, 0.7);
+                    b = 1.0-a;
+                    c = vec3(1.0,1.0,1.0);
+                    d = vec3(0.15,0.95,0.8);
+
+                } else if(palette == 3){
+                    t *= 0.35;
+                    t += 0.3;
+
+                    a = vec3(0.55, 0.5, 0.7);
+                    b = 1.0-a;
+                    c = vec3(1.0,1.0,1.0);
+                    d = vec3(0.15,0.95,0.8);
+                }
+                return a + b * cos(TWO_PI *(c * t + d));
+            }
+
+            vec2 getCircle(float t){
+                return vec2(sin(t), cos(t));
+            }
+
+            vec2 getLemniscate(float t){
+                float a = 1.5;
+                return vec2((a * cos(t)) / (1.0 + (sin(t) * sin(t))), (a * sin(t) * cos(t))/ (1.0 + (sin(t) * sin(t))));
+            }
+
+            vec2 getHeart(float t){
+                return 0.05 * vec2(1, -1) * vec2(16.0 * sin(t) * sin(t) * sin(t),
+                    -(13.0 * cos(t) - 5.0 * cos(2.0 * t)
+                    - 2.0 * cos(3.0 * t) - cos(4.0 * t))) + vec2(0, 0.1);
+            }
+
+            vec2 rotate2d(vec2 v, float a){
+                return v * mat2(cos(a),-sin(a), sin(a), cos(a));
+            }
+
+            vec2 getHypotrochoid(float t){
+                float a = 5.0;
+                float b = 3.0;
+                float h = 5.0;
+                float a_b  = a - b;
+                float t_ab = t * a_b / b;
+                return vec2(a_b * cos(t) + h * cos(t_ab), a_b * sin(t) - h * sin(t_ab));
+            }
+
+            vec2 getPosition(float t, int scene){
+                if(scene == 0){
+                    return getCircle(t);
+                }else if(scene == 1){
+                    return getHeart(t);
+                }else if(scene == 2){
+                    return getHypotrochoid(t);
+                }else{
+                    return getLemniscate(t);
+                }
+            }
+
+            void main(){
+                vec2 uv = gl_FragCoord.xy/resolution;
+
+                uv -= 0.5;
+                uv.y /= resolution.x / resolution.y;
+                uv *= 4.0 + max(0.0, (resolution.x / resolution.y) - 0.5);
+
+                float angle = 0.0;
+                float segments = 16.0;
+
+                float delta = (0.25 * (TWO_PI)) / segments;
+
+                float speed = 2.0;
+                float radius = 1.0;
+                
+                int scene = int(u_scene);
+                int palette = int(u_palette);
+
+                // Heart
+                if(scene == 1){
+                    segments = 16.0;
+                    speed = 2.0;
+                    delta = (0.15 * (TWO_PI)) / segments;
+                }
+
+                // Star
+                if(scene == 2){
+                    radius = 0.142;
+                    speed = 4.0;
+                    delta = (0.08 * (6.0 * PI)) / segments;
+                    // Rotate star
+                    uv = rotate2d(uv, -0.31415);
+                }
+
+                // Lemniscate
+                if(scene == 3){
+                    segments = 32.0;
+                    speed = 2.5;
+                    delta = (0.25 * (TWO_PI)) / segments;
+                }
+
+                vec2 c0;
+                vec2 c1;
+                
+                float t = speed * time;
+                const float SEGMENTS = 32.0;
+                
+                for(float i = 0.0; i < SEGMENTS; i += 1.0){
+                
+                    if(i >= segments){
+                        break;
+                    }
+
+                    c0 = radius * getPosition(t + (i) * delta, scene);
+                    c1 = radius * getPosition(t + (i + 1.0) * delta, scene);
+                    angle += signedAngle(c0-uv, c1-uv);
+
+                    // Circle
+                    if(scene == 0){
+                        c0 = 0.333 * radius * getPosition(2.2 * t + (i) * delta, scene);
+                        c1 = 0.333 * radius * getPosition(2.2 * t + (i + 1.0) * delta, scene);
+                        angle -= signedAngle(c0-uv, c1-uv);
+
+                        c0 = 0.666 * radius * getPosition(-t + (i) * delta, scene);
+                        c1 = 0.666 * radius * getPosition(-t + (i + 1.0) * delta, scene);
+                        angle += signedAngle(c0-uv, c1-uv);
+                    }
+
+                    // Heart
+                    if(scene == 1){
+                        c0 = radius * getPosition(t + (i) * delta + 3.0, scene);
+                        c1 = radius * getPosition(t + (i + 1.0) * delta + 3.0, scene);
+                        angle += signedAngle(c0-uv, c1-uv);
+                    }
+                            
+                    // Star
+                    if(scene == 2){
+                        c0 = radius * getPosition(t + (i) * delta + 3.0, scene);
+                        c1 = radius * getPosition(t + (i + 1.0) * delta + 3.0, scene);
+                        angle += signedAngle(c0-uv, c1-uv);
+                    }
+                }
+
+                vec3 col = getColour(angle / TWO_PI, palette);
+                gl_FragColor = vec4(col, 1.0);
+            }
+        `;
+
+        //Utility functions 
+window.addEventListener('resize', onWindowResize, false);
+
+function onWindowResize() {
+    canvas.width = multiplier * window.innerWidth;
+    canvas.height = multiplier * window.innerHeight;
+
+    gl.viewport(0, 0, canvas.width, canvas.height);
+
+    gl.uniform2fv(resolutionHandle, [canvas.width, canvas.height]);
+}
+
+function compileShader(shaderSource, shaderType) {
+    let shader = gl.createShader(shaderType);
+    gl.shaderSource(shader, shaderSource);
+    gl.compileShader(shader);
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        console.error("Shader compile failed with: " + gl.getShaderInfoLog(shader));
+    }
+    return shader;
+}
+
+function getAttribLocation(program, name) {
+    let attributeLocation = gl.getAttribLocation(program, name);
+    if (attributeLocation == -1) {
+        console.error("Cannot find attribute <", name, ">.", "Unused variables are optimised out.");
+    }
+    return attributeLocation;
+}
+
+function getUniformLocation(program, name) {
+    let uniformLocation = gl.getUniformLocation(program, name);
+    if (uniformLocation == null) {
+        console.error("Cannot find uniform <", name, ">.", "Unused variables are optimised out.");
+    }
+    return uniformLocation;
+}
+
+// shaders
+let vertexShader = compileShader(vertexSource, gl.VERTEX_SHADER);
+let fragmentShader = compileShader(fragmentSource, gl.FRAGMENT_SHADER);
+
+let program = gl.createProgram();
+gl.attachShader(program, vertexShader);
+gl.attachShader(program, fragmentShader);
+gl.linkProgram(program);
+
+gl.useProgram(program);
+
+let vertexData = new Float32Array([
+    -1.0, 1.0, // top left
+    -1.0, -1.0, // bottom left
+    1.0, 1.0, // top right
+    1.0, -1.0, // bottom right
+]);
+
+let vertexDataBuffer = gl.createBuffer();
+gl.bindBuffer(gl.ARRAY_BUFFER, vertexDataBuffer);
+gl.bufferData(gl.ARRAY_BUFFER, vertexData, gl.STATIC_DRAW);
+
+let positionHandle = getAttribLocation(program, 'position');
+gl.enableVertexAttribArray(positionHandle);
+gl.vertexAttribPointer(positionHandle, 2, gl.FLOAT, false, 0, 0);
+
+let timeHandle = getUniformLocation(program, "time");
+let resolutionHandle = getUniformLocation(program, "resolution");
+let sceneHandle = getUniformLocation(program, "u_scene");
+let paletteHandle = getUniformLocation(program, "u_palette");
+
+onWindowResize();
+gl.uniform1f(sceneHandle, scene);
+gl.uniform1f(paletteHandle, palette);
+
+function setScene(name) {
+    switch (name) {
+        case "Circle":
+            scene = 0;
+            break;
+        case "Heart":
+            scene = 1;
+            break;
+        case "Star":
+            scene = 2;
+            break;
+        default:
+            scene = 3;
+    }
+}
+
+function setPalette(name) {
+    switch (name) {
+        case "Grayscale":
+            palette = 0;
+            break;
+        case "Rainbow":
+            palette = 1;
+            break;
+        case "Red":
+            palette = 2;
+            break;
+        default:
+            palette = 3;
+    }
+}
+
+let lastFrame = Date.now();
+let thisFrame;
+
+function draw() {
+    thisFrame = Date.now();
+    time += (thisFrame - lastFrame) / 1000.0;
+    lastFrame = thisFrame;
+
+    gl.uniform1f(timeHandle, time);
+    gl.uniform1f(sceneHandle, scene);
+    gl.uniform1f(paletteHandle, palette);
+
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+
+    requestAnimationFrame(draw);
+}
+
+draw();
+    </script>
+</body>
+
+</html>

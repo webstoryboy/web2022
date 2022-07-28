@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"포트폴리오가 실력이다" : 자바스크립트 </title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/dracula.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="white">
+    <header id="header">
+        <h1><a href="#">WEBS : 자바스크립트</a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://discord.gg/d7zMDrG">질문하기</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+
+        <section id="youtube" class="container">
+            <div class="desc">
+                <div class="left">
+                    <span class="num">01.</span>
+                    <h3 class="title">자바스크립트 목록</h3>
+                    <span class="difficulty">난이도 <span>쉬움</span></span>
+                </div>
+                <div class="right">
+                    <!--<h3>소스 다운로드</h3>
+                    <a href="#" target="_blank" class="sampleBtn">완성 화면 보기</a>
+                    <a href="#" target="_blank" class="sampleBtn">피그마 보기</a> -->
+                </div>
+            </div>
+        </section>
+        <!-- //youtube -->
+
+        <section id="explanation">
+            <div class="container">
+
+                <h2>문자열 객체</h2>
+                <ul class="unlist">
+                    <li><a href="#sample01">문자열 : 문자열 결합 / 템플릿 문자열 </a></li>
+                    <li><a href="#sample02">문자열 속성 : length : 문자열 길이 구하기 : 반환(숫자)</a></li>
+                    <li><a href="#sample03">문자열 메서드 : toUpperCase() : 문자열 대문자 변경 : 반환(문자열)</a></li>
+                    <li><a href="#sample03">문자열 메서드 : toLowerCase() : 문자열 소문자 변경 : 반환(문자열)</a></li>
+                    <li><a href="#sample04">문자열 메서드 : trim() : 문자열 공백 제거 : 반환(문자열)</a></li>
+                    <li><a href="#sample05">문자열 메서드 : indexOf() : 문자열 검색 : 반환(숫자)</a> <a href="../13_effect/searchEffect01.html" target="_blank" class="link">searchEffect01</a></li>
+                    <li><a href="#sample05">문자열 메서드 : lastIndexOf() : 문자열 검색 : 반환(숫자)</a></li>
+                    <li><a href="#sample05">문자열 메서드 : search() : 문자열 검색 : 반환(숫자)</a> <a href="../13_effect/searchEffect01.html" target="_blank" class="link">searchEffect01</a></li>
+                    <li><a href="#sample05">문자열 메서드 : includes() : 문자열 포함 여부 검색 : 반환(불린)</a> <a href="../13_effect/searchEffect02.html" target="_blank" class="link">searchEffect02</a></li>
+                    <li><a href="#sample05">문자열 메서드 : startsWidth() : 문자열 포함 여부 검색 : 반환(불린)</a></li>
+                    <li><a href="#sample05">문자열 메서드 : endWidth() : 문자열 포함 여부 검색 : 반환(불린)</a></li>
+                    <li><a href="#sample06">문자열 메서드 : charAt() : 지정한 인덱스의 문자를 추출 : 반환(문자열)</a> <a href="../13_effect/searchEffect03.html" target="_blank" class="link">searchEffect03</a></li>
+                    <li><a href="#sample07">문자열 메서드 : slice() : 지정한 범위 내 문자열을 추출 : 반환(문자열)</a></li>
+                    <li><a href="#sample07">문자열 메서드 : substring() : 지정한 범위 내 문자열을 추출 : 반환(문자열)</a></li>
+                    <li><a href="#sample07">문자열 메서드 : substr() : 지정한 범위 내 문자열을 추출 : 반환(문자열)</a></li>
+                    <li><a href="#sample08">문자열 메서드 : replace() : 문자열 변경 : 반환(문자열)</a></li>
+                    <li><a href="#sample09">문자열 메서드 : split() : 문자열 반환 : 반환(문자열)</a></li>
+                    <li><a href="#sample10">문자열 메서드 : padStart() : 문자열 시작 부분에 문자열 추가 : 반환(문자열)</a></li>
+                    <li><a href="#sample10">문자열 메서드 : padEnd() : 문자열 끝 부분에 문자열 추가 : 반환(문자열)</a></li>
+                    <li><a href="#sample11">문자열 메서드 : encodeURL() : 문자열을 인코딩 : 반환(문자열)</a></li>
+                    <li><a href="#sample11">문자열 메서드 : encodeURLComponent() : 문자열을 인코딩 : 반환(문자열)</a></li>
+                    <li><a href="#sample11">문자열 메서드 : decodeURL() : 문자열을 디코딩 : 반환(문자열)</a></li>
+                    <li><a href="#sample11">문자열 메서드 : decodeURLComponent(): 문자열을 디코딩 : 반환(문자열)</a></li>
+                </ul>
+
+                <h2>배열 객체</h2>
+                <ul class="unlist">
+                    <li><a href="#sample01">배열 속성 : length : 배열 길이 구하기 : 반환(숫자)</a></li>
+                    <li><a href="#sample02">배열 메서드 : join() : 배열 요소 문자열 결합 : 반환(문자열)</a></li>
+                    <li><a href="#sample03">배열 메서드 : push() : 배열 마지막 요소에 추가 : 반환(숫자)</a></li>
+                    <li><a href="#sample03">배열 메서드 : pop() : 배열 마지막 요소에 삭제 : 반환(삭제된 요소)</a></li>
+                    <li><a href="#sample04">배열 메서드 : unshift() : 배열 처음 요소에 추가 : 반환(숫자)</a></li>
+                    <li><a href="#sample04">배열 메서드 : shift() : 배열 처음 요소 삭제 : 반환(삭제된 요소)</a></li>
+                    <li><a href="#sample05">배열 메서드 : reverse() : 배열 요소의 순서를 반대로 정렬 : 반환(배열)</a> <a href="../13_effect/searchEffect06.html" target="_blank" class="link">searchEffect06</a></li>
+                    <li><a href="#sample05">배열 메서드 : sort() : 배열 요소를 정렬 : 반환(배열)</a> <a href="../13_effect/searchEffect06.html" target="_blank" class="link">searchEffect06</a></li>
+                    <li><a href="#sample06">배열 메서드 : concat() : 배열 요소를 결합 : 반환(배열)</a></li>
+                    <li><a href="#sample07">배열 메서드 : reduce() : 배열 요소 하나로 정리 : 반환(결괏값)</a></li>
+                    <li><a href="#sample07">배열 메서드 : reduceRight() : 배열 요소 하나로 정리 : 반환(결괏값)</a></li>
+                    <li><a href="#sample08">배열 메서드 : slice() : 배열 요소를 다른 요소로 변경 : 반환(배열)</a></li>
+                    <li><a href="#sample09">배열 메서드 : splice() : 배열 요소를 다른 요소로 변경 : 반환(배열)</a></li>
+                    <li><a href="#sample10">배열 메서드 : indexOf() : 배열 요소 검색 : 반환(숫자)</a></li>
+                    <li><a href="#sample10">배열 메서드 : lastIndexOf() : 배열 요소 끝에서 검색 : 반환(숫자)</a></li>
+                    <li><a href="#sample10">배열 메서드 : includes() : 배열 요소 검색 : 반환(불린)</a></li>
+                    <li><a href="#sample11">배열 메서드 : find() : 배열 요소 검색 : 반환(요소) <a href="../13_effect/searchEffect04.html" target="_blank" class="link">searchEffect04</a></li> 
+                    <li><a href="#sample11">배열 메서드 : findIndex() : 배열 첫 요소 검색 : 반환(숫자)</a></li>
+                    <li><a href="#sample12">배열 메서드 : filter() : 조건에 만족하는 배열 요소 검색 : 반환(배열)</a> <a href="../13_effect/searchEffect05.html" target="_blank" class="link">searchEffect05</a></li>
+                    <li><a href="#sample13">배열 메서드 : map() : 배열 요소 추출하여 새로운 배열로 만듦 : 반환(배열)</a></li>
+                    <li><a href="#sample14">배열 메서드 : Array.from() : 배열로 변환하기 : 반환(배열)</a></li>
+                </ul>
+
+                <h2>수학 객체</h2>
+                <ul class="unlist">
+                    <li><a href="#sample01">수학 메서드 : Math.round() : 반올림 : 반환(숫자)</a></li>
+                    <li><a href="#sample01">수학 메서드 : Math.floor() : 버림 : 반환(숫자)</a></li>
+                    <li><a href="#sample01">수학 메서드 : Math.ceil() : 올림 : 반환(숫자)</a></li>
+                    <li><a href="#sample01">수학 메서드 : Math.trunc() : 값의 정수 부분만 반환 : 반환(숫자)</a></li>
+                    <li><a href="#sample02">수학 메서드 : Math.random() : 0과 1사이의 난수 값을 반환 : 반환(숫자)</a></li>
+                    <li><a href="#sample03">수학 메서드 : Math.max() : 가장 큰 값을 반환 : 반환(숫자)</a></li>
+                    <li><a href="#sample03">수학 메서드 : Math.min() : 가장 작은 값을 반환 : 반환(숫자)</a></li>
+                    <li><a href="#sample04">수학 메서드 : Math.abs() : 절대값 값을 반환 : 반환(숫자)</a></li>
+                </ul>
+
+                <h2>브라우저 객체</h2>
+                <ul class="unlist">
+                    <li>브라우저 객체 : window 객체 메서드 : window.alert() : 알림창 표시하기</a></li>
+                    <li>브라우저 객체 : window 객체 메서드 : window.confirm() : 확인창 표시하기</a></li>
+                    <li>브라우저 객체 : window 객체 메서드 : window.prompt() : 입력창 표시하기</a></li>
+                    <li>브라우저 객체 : window 객체 메서드 : window.open() : 새로운 창 열기</li>
+                    <li>브라우저 객체 : window 객체 메서드 : window.close() : 새로운 창 닫기</li>
+                    <li>브라우저 객체 : window 객체 메서드 : window.focus() : 페이지 포커스 설정</li>
+                    <li>브라우저 객체 : window 객체 메서드 : window.blur() : 페이지 포커스 벗어났을 때 설정</li>
+                    <br>
+                    <li>브라우저 속성 : window 객체 속성 : Window.innerWidth : 브라우저의 화면 가로 값</li>
+                    <li>브라우저 속성 : window 객체 속성 : Window.innerHeight : 브라우저의 화면 세로 값</li>
+                    <li>브라우저 속성 : window 객체 속성 : Window.outerWidth : 브라우저의 화면 전체 가로 값</li>
+                    <li>브라우저 속성 : window 객체 속성 : Window.outerHeight : 브라우저의 화면 전체 세로 값</li>
+                    <li>브라우저 속성 : window 객체 속성 : Window.screenTop : 브라우저의 윗쪽 위치 값</li>
+                    <li>브라우저 속성 : window 객체 속성 : Window.screenLeft : 브라우저의 왼쪽 위치 값</li>
+                    <li>브라우저 속성 : window 객체 속성 : Window.screenY : 브라우저의 윗쪽 위치 값</li>
+                    <li>브라우저 속성 : window 객체 속성 : Window.screenX : 브라우저의 왼쪽 위치 값</li>
+                    <br>
+                    <li>브라우저 객체 : window 객체 메서드 : Window.moveBy() : 브라우저의 위치를 상대적으로 이동</li>
+                    <li>브라우저 객체 : window 객체 메서드 : Window.moveTo() : 브라우저의 위치를 절대값으로 이동</li>
+                    <li>브라우저 객체 : window 객체 메서드 : Window.resizeBy() : 브라우저의 크기를 상대값으로 조절</li>
+                    <li>브라우저 객체 : window 객체 메서드 : Window.resizeTo() : 브라우저의 크기를 절대값으로 조절</li>
+                    <li>브라우저 객체 : window 객체 메서드 : Window.scrollBy() : 브라우저의 스크롤 위치를 상대적으로 조절</li>
+                    <li>브라우저 객체 : window 객체 메서드 : Window.scrollTo() : 브라우저의 스크롤 위치를 절대적으로 조절</li>
+                    <li>브라우저 객체 : window 객체 속성 : Window.scrollX : 브라우저의 가로 스크롤 크기</li>
+                    <li>브라우저 객체 : window 객체 속성 : Window.scrollY : 브라우저의 세로 스크롤 크기</li>
+                    <br>
+                    <li>브라우저 객체 : screen 객체 속성 : window.screen.width : 화면의 가로 값</li>
+                    <li>브라우저 객체 : screen 객체 속성 : window.screen.height : 화면의 세로 값</li>
+                    <li>브라우저 객체 : screen 객체 속성 : window.screen.availWidth : 실제 이용 가능한 화면의 가로 값</li>
+                    <li>브라우저 객체 : screen 객체 속성 : window.screen.availHeight : 실제 이용 가능한 화면의 세로 값</li>
+                    <li>브라우저 객체 : screen 객체 속성 : window.screen.colorDepth : 사용 가능한 색상 수</li>
+                    <li>브라우저 객체 : screen 객체 속성 : window.screen.pixelDepth : 한 픽실당 비트 수</li>
+                    <br>
+                    <li>브라우저 객체 : location 객체 메서드 : location.assign() : 현재 위치를 이동</li>
+                    <li>브라우저 객체 : location 객체 메서드 : location.reload() : 새로 고침</li>
+                    <li>브라우저 객체 : location 객체 메서드 : location.replace() : 위치 이동</li>
+                    <li>브라우저 객체 : location 객체 메서드 : location.toString() : 주소 문자열 반환</li>
+                    <li>브라우저 객체 : location 객체 속성 : location.href : 주소</li>
+                    <li>브라우저 객체 : location 객체 속성 : location.host : 호스트 이름</li>
+                    <li>브라우저 객체 : location 객체 속성 : location.hostname : 호스트 이름</li>
+                    <li>브라우저 객체 : location 객체 속성 : location.port : 포트 번호</li>
+                    <li>브라우저 객체 : location 객체 속성 : location.pathname : 디렉토리 경로</li>
+                    <li>브라우저 객체 : location 객체 속성 : location.hash : 앵커이름</li>
+                    <li>브라우저 객체 : location 객체 속성 : location.search : 요청 매개변수</li>
+                    <li>브라우저 객체 : location 객체 속성 : location.protocol : 프로토콜 종류</li>
+                    <br>
+                    <li>브라우저 객체 : navigator 객체 속성 : navigator.appCodeName : 브라우저의 코드명을 반환</li>
+                    <li>브라우저 객체 : navigator 객체 속성 : navigator.appName : 브라우저의 이름을 반환</li>
+                    <li>브라우저 객체 : navigator 객체 속성 : navigator.appVersion : 브라우저의 버전을 반환</li>
+                    <li>브라우저 객체 : navigator 객체 속성 : navigator.cookieEnabled : 브라우저의 쿠키 사용 가능 여부를 반환</li>
+                    <li>브라우저 객체 : navigator 객체 속성 : navigator.language : 브라우저에서 사용되는 언어를 반환</li>
+                    <li>브라우저 객체 : navigator 객체 속성 : navigator.onLine : 브라우저가 온라인인지 여부를 반환</li>
+                    <li>브라우저 객체 : navigator 객체 속성 : navigator.platform : 브라우저가 실행되는 플랫폼 정보를 반환</li>
+                    <li>브라우저 객체 : navigator 객체 속성 : navigator.product : 브라우저에서 사용되는 엔진 이름을 반환</li>
+                    <li>브라우저 객체 : navigator 객체 속성 : navigator.userAgent : 브라우저와 운영체제 정보를 반환</li>
+                    <li>브라우저 객체 : navigator 객체 속성 : navigator.onLine : 네트워크 상태 가져오기(225)</li>
+                    <br>
+                    <li>브라우저 객체 : history 객체 속성 : history.length : URL 개수를 반환</li>
+                    <li>브라우저 객체 : history 객체 메서드 : history.back() : 페이지 뒤로 가기</li>
+                    <li>브라우저 객체 : history 객체 메서드 : history.forward() : 페이지 앞으로 가기</li>
+                    <li>브라우저 객체 : history 객체 메서드 : history.go() : 원하는 페이지로 이동</li>
+                </ul>
+
+                <h2>요소 객체</h2>
+                <ul class="unlist">
+                    <li>요소 메서드 : 선택자 : Document.querySelector() : 요소 선택자</li>
+                    <li>요소 메서드 : 선택자 : Document.querySelectorAll() : 모든 요소 선택자</li>
+                    <li>요소 메서드 : 선택자 : Document.getElementById() : 아이디 요소 선택자</li>
+                    <li>요소 메서드 : 선택자 : Document.getElementByClassName() : 클래스 요소 선택자</li>
+                    <li>요소 메서드 : 요소 : Document.createElement() : 요소 만들기</li>
+                    <br>
+                    <li>요소 속성 : 선택자 : Element.firstElementChild : 첫 번째 자식 요소 선택자</li>
+                    <li>요소 속성 : 선택자 : Element.lastElementChild : 마지막 번째 자식 요소 선택자</li>
+                    <li>요소 속성 : 선택자 : Element.nextElementSibling : 형제 다음 요소 선택자</li>
+                    <li>요소 속성 : 선택자 : Element.previousElementSibling : 형제 이전 요소 선택자</li>
+                    <br>
+                    <li>요소 속성 : Element.clientWidth : 요소의 가로값</li>
+                    <li>요소 속성 : Element.clientHeight : 요소의 세로값</li>
+                    <li>요소 속성 : Element.offsetWidth : 요소의 가로값</li>
+                    <li>요소 속성 : Element.offsetHeight : 요소의 세로값</li>
+                    <li>요소 메서드 : Element.getBoundingClientRect() : 요소의 정보값</li>
+                    <br>
+                    <li>요소 메서드 : Node.cloneNode() : 요소 복사</li>
+                    <li>요소 메서드 : Node.appendChild() : 자식 요소 추가</li>
+                    <li>요소 메서드 : Node.insertBefore() : 요소 추가</li>
+                    <li>요소 메서드 : Node.removeChild() : 자식 요소 삭제</li>
+                    <li>요소 메서드 : Node.hasChild() : 자식 요소 존재 여부 확인</li>
+                    <li>요소 메서드 : Node.replaceChild() : 자식 요소 교체</li>
+                    <li>요소 속성 : Node.parentElement : 부모 요소 선택</li>
+                    <br>
+                    <li>요소 메서드 : Element.insertAdjacentHTML() : 요소 추가</li>
+                    <li>요소 메서드 : Element.before() : 요소 앞에 추가</li>
+                    <li>요소 메서드 : Element.after() : 요소 뒤에 추가</li>
+                    <li>요소 메서드 : Element.remove() : 요소 삭제</li>
+                    <li>요소 메서드 : Element.replaceWith() : 요소 교체</li>
+                    <br>
+                    <li>요소 메서드 : 클래스 : classList.add() : 클래스 추가하기</li>
+                    <li>요소 메서드 : 클래스 : classList.remove() : 클래스 삭제하기</li>
+                    <li>요소 메서드 : 클래스 : classList.toggle() : 클래스 추가/삭제하기</li>
+                    <li>요소 메서드 : 클래스 : classList.contains() : 클래스 존재 여부 확인하기</li>
+                    <br>
+                    <li>요소 메서드 : 속성 : setAttribute() : 요소 속성 설정하기</li>
+                    <li>요소 메서드 : 속성 : getAttribute() : 요소 속성 가져오기</li>
+                    <li>요소 메서드 : 속성 : hasAttribute() : 요소 속성 존재 여부 확인하기</li>
+                    <li>요소 메서드 : 텍스트 : textContent() : 요소에 텍스트 설정하기</li>
+                    <li>요소 메서드 : 텍스트 : innerText() : 요소에 텍스트 설정하기</li>
+                    <li>요소 메서드 : 텍스트 : innerHTML() : 요소에 HTML 텍스트 설정하기</li>
+                    <li>요소 메서드 : 텍스트 : outerHTML() : 요소에 HTML 텍스트 설정하기</li>
+                </ul>
+
+                <h2>이벤트 객체</h2>
+                <ul class="unlist">
+                    <li>이벤트 메서드 : addEventListener('click') : 클릭 했을 때</li>
+                    <li>이벤트 메서드 : addEventListener('scroll') : 스크롤 했을 때</li>
+                    <li>이벤트 메서드 : addEventListener('resize') : 브라우저 사이즈 변경 됐을 때</li>
+                    <li>이벤트 메서드 : addEventListener('selectstart') : 텍스트 선택을 시작 했을 때</li>
+                    <li>이벤트 메서드 : addEventListener('visibilitychange') : 브라우저의 탭 상태가 변경 됐을 때</li>
+                    <li>이벤트 메서드 : addEventListener('DOMContentLoaded') : 로딩이 끝난 후</li>
+                    <br>
+                    <li>이벤트 메서드 : addEventListener('mousedown') : 마우스 버튼을 눌렀을 때</li>
+                    <li>이벤트 메서드 : addEventListener('mouseup') : 마우스 버튼을 떼는 경우</li>
+                    <li>이벤트 메서드 : addEventListener('mousemove') : 마우스를 움직이는 경우</li>
+                    <li>이벤트 메서드 : addEventListener('mouseenter') : 포인터가 요소의 위치에 있을 때</li>
+                    <li>이벤트 메서드 : addEventListener('mouseleave') : 포인터가 요소의 위치를 벗어났을 때</li>
+                    <li>이벤트 메서드 : addEventListener('mouseover') : 포인터가 요소의 위치에 있을 때(이벤트 버블링)</li>
+                    <li>이벤트 메서드 : addEventListener('mouseout') : 포인터가 요소의 위치를 벗어났을 때(이벤트 버블링)</li>
+                    <br>
+                    <li>이벤트 속성 : 마우스 : MouseEvent.clientX : 브라우저 기준 X좌표</li>
+                    <li>이벤트 속성 : 마우스 : MouseEvent.clientY : 브라우저 기준 Y좌표</li>
+                    <li>이벤트 속성 : 마우스 : MouseEvent.offsetX : 요소 기준 X좌표</li>
+                    <li>이벤트 속성 : 마우스 : MouseEvent.offsetY : 요소 기준 Y좌표</li>
+                    <li>이벤트 속성 : 마우스 : MouseEvent.pageX : 페이지 기준 X좌표</li>
+                    <li>이벤트 속성 : 마우스 : MouseEvent.pageY : 페이지 기준 Y좌표</li>
+                    <li>이벤트 속성 : 마우스 : MouseEvent.screenX : 디바이스 기준 X좌표</li>
+                    <li>이벤트 속성 : 마우스 : MouseEvent.screenY : 디바이스 기준 X좌표</li>
+                    <br>
+                    <li>이벤트 메서드 : addEventListener('touchstart') : 터치가 시작 됐을 때</li>
+                    <li>이벤트 메서드 : addEventListener('touchsmove') : 터치가 움직이고 있을 때</li>
+                    <li>이벤트 메서드 : addEventListener('touchend') : 터치가 끝났을 때</li>
+                    <br>
+                    <li>이벤트 메서드 : addEventListener('keydown') : 키를 눌렀을 때(한번만 실행)</li>
+                    <li>이벤트 메서드 : addEventListener('keypress') : 키를 눌렀을 때(누르고 있으면 계속 실행)</li>
+                    <li>이벤트 메서드 : addEventListener('keyup') : 키를 누르고 떼을 때</li>
+                    <li>이벤트 속성 : 키보드 : event.key : 눌러진 키의 값</li>
+                    <li>이벤트 속성 : 키보드 : event.code : 눌러진 버튼의 코드</li>
+                    <li>이벤트 속성 : 키보드 : event.altKey : 눌러진 버튼의 코드</li>
+                    <li>이벤트 속성 : 키보드 : event.ctrlKey : 눌러진 버튼의 코드</li>
+                    <li>이벤트 속성 : 키보드 : event.shiftKey : 눌러진 버튼의 코드</li>
+                    <li>이벤트 속성 : 키보드 : event.metaKey : 눌러진 버튼의 코드</li>
+                    <li>이벤트 속성 : 키보드 : event.repeat : 눌러진 버튼의 코드</li>
+                    <li>이벤트 속성 : 키보드 : event.isComposing : 눌러진 버튼의 코드</li>
+                    <li>이벤트 속성 : 키보드 : event.keyCode : 눌러진 버튼의 코드</li>
+                    <br>
+                    <li>이벤트 메서드 : addEventListener('dragstart') : 드래그 시작 했을 때</li>
+                    <li>이벤트 메서드 : addEventListener('drag') : 드래그 중인 경우</li>
+                    <li>이벤트 메서드 : addEventListener('dragend') : 드래그 끝났을 때</li>
+                    <li>이벤트 메서드 : addEventListener('dragenter') : 요소의 위치에 드래그 했을 때</li>
+                    <li>이벤트 메서드 : addEventListener('dragover') : 요소의 위치 위에 있을 때</li>
+                    <li>이벤트 메서드 : addEventListener('dragleave') : 요소의 위치 위에서 벗어 났을 때</li>
+                    <li>이벤트 메서드 : addEventListener('drop') : 요소의 위치에 드롭 했을 때</li>
+                    <br>
+                    <li>이벤트 메서드 : preventDefault() : 이벤트 작동 해지</li>
+                    <li>이벤트 메서드 : dispatchDefault() : 이벤트 작동 해지</li>
+                </ul>
+
+                <h2>Search Effect</h2>
+                <ul class="unlist">
+                    <li><a href="_effect/searchEffect01.html">검색 효과 : indexOf()를 이용하여 CSS 속성 검색하기</a></li>
+                    <li><a href="_effect/searchEffect02.html">검색 효과 : includes()를 이용하여 CSS 속성 검색하기</a></li>
+                    <li><a href="_effect/searchEffect03.html">검색 효과 : charAt()를 이용하여 알파벳 별로 검색하기</a></li>
+                    <li><a href="_effect/searchEffect04.html">검색 효과 : find()를 이용하여 속성을 검색하면 설명 보여주기</a></li>
+                    <li><a href="_effect/searchEffect05.html">검색 효과 : filter()를 이용하여 조회수 검색하기</a></li>
+                    <li><a href="_effect/searchEffect06.html">검색 효과 : sort(), reverse()를 이용하여 정렬하기</a></li>
+                </ul>
+
+                <h2>Quiz Effect</h2>
+                <ul class="unlist">
+                    <li><a href="_effect/quizEffect01.html">퀴즈 효과 : 정답 확인하기</a></li>
+                    <li><a href="_effect/quizEffect02.html">퀴즈 효과 : 주관식 정답 확인하기</a></li>
+                    <li><a href="_effect/quizEffect03.html">퀴즈 효과 : 주관식(여러문제) 정답 확인하기</a></li>
+                    <li><a href="_effect/quizEffect04.html">퀴즈 효과 : 객관식 정답 확인하기</a></li>
+                    <li><a href="_effect/quizEffect05.html">퀴즈 효과 : 객관식(여러문제) 정답 확인하기</a></li>
+                </ul>
+
+                <h2>Image Effect</h2>
+                <ul class="unlist">
+                    <li><a href="_effect/sliderEffect01.html">슬라이드 효과 : 트랜지션 효과</a></li>
+                    <li><a href="_effect/sliderEffect02.html">슬라이드 효과 : 좌로 움직이기</a></li>
+                    <li><a href="_effect/sliderEffect03.html">슬라이드 효과 : 좌로 움직이기(무한)</a></li>
+                    <li><a href="_effect/sliderEffect04.html">슬라이드 효과 : 이미지 슬라이드(버튼)</a></li>
+                    <li><a href="_effect/sliderEffect05.html">슬라이드 효과 : 이미지 슬라이드(버튼, 닷버튼)</a></li>
+                    <li><a href="_effect/sliderEffect06.html">슬라이드 효과 : 이미지 슬라이드(버튼, 닷버튼, 무한)</a></li>
+                    <li><a href="_effect/sliderEffect07.html">슬라이드 효과 : 이미지 슬라이드(버튼, 닷버튼, 무한, 플레이 버튼, 정지 버튼, 자동 플레이)</a></li>
+                </ul>
+
+                <h2>Mouse Effect</h2>
+                <ul class="unlist">
+                    <li><a href="_effect/mouseEffect01.html">마우스 효과 : 마우스 따라다니기</a></li>
+                    <li><a href="_effect/mouseEffect02.html">마우스 효과 : 마우스 따라다니기(GSAP)</a></li>
+                    <li><a href="_effect/mouseEffect03.html">마우스 효과 : 조명 효과</a></li>
+                    <li><a href="_effect/mouseEffect04.html">마우스 효과 : 이미지 효과</a></li>
+                    <li><a href="_effect/mouseEffect05.html">마우스 효과 : 기울기 효과</a></li>
+                    <li><a href="_effect/mouseEffect06.html">마우스 효과 : 텍스트 효과</a></li>
+                    <li><a href="_effect/mouseEffect07.html">마우스 효과 : 이미지 오버 효과</a></li>
+                </ul>
+
+                <h2>Parallax Effect</h2>
+                <ul class="unlist">
+                    <li><a href="_effect/parallaxEffect01.html">패럴랙스 효과 : 메뉴 이동 </a></li>
+                    <li><a href="_effect/parallaxEffect02.html">패럴랙스 효과 : 사이드 메뉴 </a></li>
+                    <li><a href="_effect/parallaxEffect03.html">패럴랙스 효과 : 숨김 메뉴 </a></li>
+                    <li><a href="_effect/parallaxEffect04.html">패럴랙스 효과 : 나타나기 </a></li>
+                    <li><a href="_effect/parallaxEffect05.html">패럴랙스 효과 : 이질감 효과 </a></li>
+                    <li><a href="_effect/parallaxEffect06.html">패럴랙스 효과 : 텍스트 효과 </a></li>
+                    <li><a href="_effect/parallaxEffect07.html">패럴랙스 효과 : 리빌 효과</a></li>
+                    <li><a href="_effect/parallaxEffect08.html">패럴랙스 효과 : 가로 모드 효과</a></li>
+                    <li><a href="_effect/parallaxEffect09.html">패럴랙스 효과 : 가로/세로 모드 효과</a></li>
+                </ul>
+
+                <h2>Game Effect</h2>
+                <ul class="unlist">
+                    <li><a href="#sample01">검색 게임</a></li>
+                    <li><a href="#sample01">퀴즈 게임</a></li>
+                    <li><a href="#sample01">카드 게임</a></li>
+                    <li><a href="#sample01">타자 게임</a></li>
+                </ul>
+            </div>
+        </section>
+        <!-- //explanation -->
+
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer> 
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="../../assets/js/jquery-3.6.0.js"></script>
+    <script src="../../assets/js/jquery-ui.js"></script>
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/script.js"></script> 
+
+    <script>
+
+
+    </script>
+</body>
+</html>

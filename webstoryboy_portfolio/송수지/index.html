@@ -15,6 +15,8 @@
 </head>
 <body>
 
+    <div class="scroll">0</div>
+
     <header id="header">
         <h1>PORT</h1>
         <nav class="nav">
@@ -63,11 +65,64 @@
                         신입의 열정과 도전정신을 깊숙히 새기며 배움에 있어 겸손함을 유지하며<br>
                         세부적인 곳까지 파고드는 개발자가 되겠습니다.
                     </div>
+                    <div class="intro">
+                        <div class="left">
+                            <h3>송수지<em>sung su ki(1933.4.23)</em></h3>
+                            <p>
+                                어떤 일이라도 노력하고 즐기면  그 결과는 빛을 바란다고 생각합니다.
+                                신입의 열정과 도전정신을 깊숙히 새기며 배움에 있어 겸손함을 유지하며
+                                세부적인 곳까지 파고드는 개발자가 되겠습니다.
+                            </p>
+                            <div class="skill">
+                                <dl>
+                                    <dt>사용 스킬</dt>
+                                    <dd>HTML/CSS</dd>
+                                    <dd>HTML/CSS</dd>
+                                    <dd>HTML/CSS</dd>
+                                    <dd>HTML/CSS</dd>
+                                    <dd>HTML/CSS</dd>
+                                    <dd>HTML/CSS</dd>
+                                    <dd>HTML/CSS</dd>
+                                    <dd>HTML/CSS</dd>
+                                </dl>
+                                <dl>
+                                    <dt>사용 스킬</dt>
+                                    <dd>HTML/CSS</dd>
+                                    <dd>HTML/CSS</dd>
+                                    <dd>HTML/CSS</dd>
+                                    <dd>HTML/CSS</dd>
+                                    <dd>HTML/CSS</dd>
+                                    <dd>HTML/CSS</dd>
+                                    <dd>HTML/CSS</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <span>intro</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         <!-- //section2 -->
-        <section id="section3"></section><!-- //section3 -->
+
+        <section id="section3">
+            <div class="sec3">
+                <div class="sec3_site">
+                    <h3>SITE Project</h3>
+                    <div class="site__wrap">
+                        <div class="site site1"
+                            data-2000 = "width: 49%; height: 500px;"
+                            data-4000 = "width: 19%; height: 100px;"
+                            
+                        ></div>
+                        <div class="site site2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //section3 -->
+
         <section id="section4"></section><!-- //section4 -->
         <section id="section5"></section><!-- //section5 -->
         <section id="section6"></section><!-- //section6 -->
@@ -80,6 +135,13 @@
         var s = skrollr.init({
             smoothScrolling: true
         });
+
+        function scroll(){
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            document.querySelector(".scroll").innerHTML = scrollTop;
+            requestAnimationFrame(scroll);
+        }
+        scroll();
 
     </script>
 </body>

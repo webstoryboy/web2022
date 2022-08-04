@@ -5,9 +5,27 @@
 
 #section2 {
     background: #f1f1f1;
-    height: 4000px;
+    height: 2000px;
 }
 
+#section3 {
+    background: #f1f1f1;
+    height: 2000px;
+}
+
+/* scroll */
+.scroll {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.3);
+    text-align: center;
+    line-height: 40px;
+    z-index: 10000;
+    color: #fff;
+}
 
 /* header */
 #header {
@@ -105,13 +123,77 @@
 }
 .sec2_about {
     background-color: #CDEA68;
-    height: 800px;
     padding: 10%;
     font-family: 'GmarketSans';
     font-size: 40px;
     font-weight: 300;
     border-radius: 60px 60px 0 0;
     margin-top: -100px;
+}
+.sec2_about .title {
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+    border-bottom: 1px solid #000;;
+}
+.sec2_about .intro {
+    display: flex;
+    justify-content: space-between;
+}
+.sec2_about .intro .left {
+    width: 53%;
+}
+.sec2_about .intro .left h3 {
+    font-size: 5vw;
+    font-weight: 300;
+}
+.sec2_about .intro .left h3 em {
+    display: block;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-size: 3vw;
+    padding-bottom: 4vw;
+}
+.sec2_about .intro .left p {
+    font-size: 26px;
+}
+.sec2_about .intro .left .skill {
+    display: flex;
+    margin-top: 5vw
+}
+.sec2_about .intro .left .skill dl {
+    margin-right: 5vw;
+}
+.sec2_about .intro .left .skill dd {
+    font-size: 18px;
+    line-height: 1.9;
+}
+.sec2_about .intro .left .skill dt {
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 1.9;
+}
+
+
+.sec2_about .intro .right {
+    width: 44%;
+    max-height: 500px;
+    background-image: url(https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80);
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    position: relative;
+}
+.sec2_about .intro .right span {
+    position: absolute;
+    left: -7vw;
+    bottom: -7vw;
+    width: 14vw;
+    height: 14vw;
+    background-color: #004D43;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 14vw;
+    color: #fff;
 }
 
 
@@ -137,4 +219,77 @@
     .sec1_text2 .arrow {
         top: 90px;
     }
+
+    /* .sec2_about .intro {
+        flex-direction: column-reverse;
+    } */
+    .sec2_about .intro {
+        flex-direction: column-reverse;
+    }
+    .sec2_about .intro .left {
+        width: 100%;
+        margin-top: 40px;
+    }
+    .sec2_about .intro .right {
+        width: 100%;
+        min-height: 350px;
+    }
+    .sec2_about .intro .right span {
+        bottom: auto;
+        top: -50px;
+        font-size: 24px;
+    }
+    .sec2_about .intro .left h3 {
+        font-size: 40px;
+    }
+    .sec2_about .intro .left p {
+        font-size: 18px;
+    }
+    .sec2_about .intro .left .skill dt {
+        font-size: 18px;
+    }
+    .sec2_about .intro .left .skill dd {
+        font-size: 18px;
+    }
 }
+
+
+/* sec3 */
+.sec3 {}
+.sec3_site {
+    background-color: #fff;
+    border-radius: 60px 60px 0 0;
+}
+.sec3_site h3 {
+    padding: 40px;
+    font-family: 'Jost', sans-serif;
+    font-size: 3vw;
+    line-height: 1.1;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+.site__wrap {
+    border-top: 1px solid #000;
+    display: flex;
+    justify-content: space-between;
+    padding: 5%;
+}
+.site__wrap .site {
+    width: 49%;
+    height: 500px;
+    background-color: #F2A4A1;
+    border-radius: 30px;
+}
+.site__wrap .site1 {
+    background-image: url(http://songsj.woobi.co.kr/img/loeuvre.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.site__wrap .site2 {
+    background-image: url(http://songsj.woobi.co.kr/img/laka.svg);
+    background-repeat: no-repeat;
+    background-position: center bottom -200px;
+    background-size: 80%;
+}
+
+

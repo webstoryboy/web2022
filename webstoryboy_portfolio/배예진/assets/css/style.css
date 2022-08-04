@@ -110,17 +110,16 @@ body {
     border-radius: 50%;
     background: url(https://sungilryuu.github.io/webs_class/portfolio/work/assets/img/complete/face1.jpg);
     background-size: cover;
-    margin: 100px auto 550px;
+    margin: 100px auto 700px;
     position: relative;
 }
-.sec1_img2::after {
-    content: '';
+.sec1_img2 .line {
     width: 1px;
     height: 400px;
     background: #0074BD;
     position: absolute;
     left: 50%;
-    bottom: -50vh;
+    top: 600px;
 }
 
 .sec1_about {
@@ -135,7 +134,7 @@ body {
 }
 .sec1_about .about1 {
     background-color: #FF8686;
-    transition: all 0.44s;
+    /* transition: all 0.44s; */
 }
 .sec1_about .about1 .img {
     position: absolute;
@@ -146,7 +145,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    transition: all 0.44s;
+    /* transition: all 0.44s; */
 }
 .sec1_about .about1 .txt {
     height: 100%;
@@ -179,14 +178,17 @@ body {
     opacity: 0;
     transition: all 0.44s;
 }
-.sec1_about .about1:hover {
+.sec1_about .about1:hover, 
+.sec1_about .about1.hover {
     border-radius: 300px;
 }
-.sec1_about .about1:hover .img {
+.sec1_about .about1:hover .img,
+.sec1_about .about1.hover .img{
     opacity: 0;
     border-radius: 300px;
 }
-.sec1_about .about1:hover .camera {
+.sec1_about .about1:hover .camera,
+.sec1_about .about1.hover .camera {
     opacity: 1;
     top: 10%;
 }
@@ -194,7 +196,7 @@ body {
 
 .sec1_about .about2 {
     background-color: #0074BD !important;
-    transition: all 0.44s;
+    /* transition: all 0.44s; */
 }
 .sec1_about .about2 .img {
     position: absolute;
@@ -299,13 +301,16 @@ body {
     opacity: 0;
     transition: all 0.44s;
 }
-.sec1_about .about3:hover {
+.sec1_about .about3:hover,
+.sec1_about .about3.hover {
     border-radius: 300px;
 }
-.sec1_about .about3:hover .img {
+.sec1_about .about3:hover .img, 
+.sec1_about .about3.hover .img {
     opacity: 0;
     border-radius: 300px;
 }
+.sec1_about .about3:hover .camera, 
 .sec1_about .about3:hover .camera {
     opacity: 1;
     top: 10%;

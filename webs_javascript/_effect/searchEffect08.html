@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Effect</title>
+    <style>
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfoantworld/NexonLv1Gothic/NexonLv1GothicRegular.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'TmonMonsori';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'NexonLv1Gothic';
+            font-size: 16px;
+            line-height: 1.6;
+            word-break: break-all;
+            color: #223547;
+        }
+
+        a {
+            text-decoration: none;
+            color: #223547;
+        }
+
+        .number {
+            margin: 10px;
+        }
+
+        .number li {
+            list-style: none;
+            display: inline;
+        }
+
+        .number li a {
+            border: 1px solid #223547;
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            display: inline-block;
+            text-align: center;
+            line-height: 30px;
+            transition: all 0.3s;
+        }
+
+        .number li.active a {
+            background: #223547;
+            color: #fff;
+        }
+
+        .board {
+            margin: 5vw 10vw 10vw 10vw;
+            width: 80vw;
+            background: #f1f3f6;
+            border: 2px solid #223547;
+            padding: 3vw;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .board .sub {
+            font-size: 20px;
+        }
+
+        .board .sub a {
+            font-size: 20px;
+            border-bottom: 1px solid #223547;
+        }
+
+        .board h1 a {
+            font-family: 'TmonMonsori';
+            font-size: 80px;
+            margin-bottom: 1vw;
+        }
+
+        .board .search {
+            margin-bottom: 3vw;
+        }
+
+        .board .search label {
+            display: none;
+        }
+
+        .board .search input {
+            font-size: 24px;
+            border: 2px solid #223547;
+            padding: 10px 40px;
+            border-radius: 40px;
+            width: 50%;
+        }
+
+        .board .count {
+            text-align: right;
+            color: #777;
+        }
+
+        .board .count em {
+            font-style: normal;
+            color: #223547;
+        }
+
+        .board .list {
+            text-align: left;
+        }
+
+        .board .list li {
+            background-color: #bdd6e6;
+            margin: 5px 0;
+            padding: 7px 10px;
+            border-radius: 4px;
+            list-style: none;
+            transition: all 0.3s;
+        }
+
+        .board .list li:hover {
+            background-color: #a5c3d5;
+            cursor: grabbing
+        }
+
+        @media (max-width: 800px) {
+            .board {
+                margin: 2vw 2vw 2vw 2vw;
+                width: 96vw;
+                padding: 4vw 2vw;
+            }
+
+            .board .sub {
+                font-size: 14px;
+            }
+
+            .board .sub a {
+                font-size: 14px;
+            }
+
+            .board h1 a {
+                font-size: 40px;
+            }
+
+            .board .search input {
+                font-size: 16px;
+                padding: 5px 20px;
+                width: 100%;
+            }
+
+            .board .list li {
+                font-size: 14px;
+            }
+        }
+
+        .item bold {
+            background-color: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            font-weight: bold;
+            padding: 1px 3px;
+            margin: 2px 2px;
+            border-radius: 3px;
+            display: inline-block;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="number">
+            <ul>
+                <li><a href="searchEffect01.html">1</a></li>
+                <li><a href="searchEffect02.html#">2</a></li>
+                <li><a href="searchEffect03.html">3</a></li>
+                <li><a href="searchEffect04.html">4</a></li>
+                <li><a href="searchEffect05.html">5</a></li>
+                <li><a href="searchEffect06.html">6</a></li>
+                <li><a href="searchEffect07.html">7</a></li>
+                <li class="active"><a href="searchEffect08.html">8</a></li>
+            </ul>
+        </div>
+        <div class="board">
+            <span class="sub"><a href="../javascript06.html#sample10">includes( )</a>를 이용하여 CSS 속성 검색하기</span>
+            <h1><a href="searchEffect.html">CSS 속성 검색하기</a></h1>
+
+            <div class="search">
+                <label for="search-box">검색하기</label>
+                <input type="text" oninput="highlighter(this)" placeholder="CSS 속성을 입력해주세요!!">
+            </div>
+
+            <div class="count">
+                전체 속성 갯수 : <em>0</em>개
+            </div>
+
+            <div class="list">
+                <div class="item">all : all 속성은 CSS 속성을 재설정하는데 사용할 수 있는 약식 속성입니다.</div>
+                <div class="item">animation : animation 속성은 애니메이션 속성을 설정하기 위한 약식 속성입니다.</div>
+                <div class="item">animation-delay : animation-delay 속성은 애니메이션이 시작되는 시간을 설정합니다.</div>
+                <div class="item">animation-direction : animation-direction 속성은 애니메이션이 움직이는 방향을 설정합니다.</div>
+                <div class="item">animation-duration : animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다.</div>
+                <div class="item">animation-fill-mode : animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다.</div>
+                <div class="item">animation-iteration-count : animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다.</div>
+                <div class="item">animation-name : animation-name 속성은 애니메이션 키프레임 이름을 설정합니다.</div>
+                <div class="item">animation-play-state : animation-play-state 속성은 애니메이션의 진행상태를 설정합니다.</div>
+                <div class="item">backdrop-filter : backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다.</div>
+                <div class="item">backface-visibility : backface-visibility 속성은 요소 뒷면 출력 여부 설정합니다.</div>
+                <div class="item">caption-side : caption-side 속성은 테이블 caption의 위치를 설정합니다.</div>
+            </div>
+        </div>
+    </div> 
+
+    <!-- script -->
+    <script>
+        const searchBox = document.querySelector("#search-box");
+        const list = document.querySelector(".list").innerHTML;
+
+        function getAllIndexes(str, word) {
+            
+            let indexes = [],
+                i = -1;
+            while ((i = str.indexOf(word, i + 1)) != -1) {
+                indexes.push(i);
+            }
+            return indexes;
+        }
+
+        const highlighter = ({value: inputs}) => {  //글씨를 받아옴
+            
+            // 글씨를 단어로 쪼개고, 갯수를 파악한다.
+            inputs = inputs.split(" ").filter((x) => x.length);
+            
+            // search can not be substring of "<bold> </bold>"
+            inputs = inputs.filter(i => !"<bold> </bold>".includes(i))
+
+            // remove duplicates  
+            inputs = inputs.filter((a, b) => inputs.indexOf(a) === b)
+
+            // reset to original before every change in search
+            document.querySelector(".list").innerHTML = list;
+
+            // for empty input do nothing
+            if (!inputs.length) {
+                return null;
+            }
+
+            const items = Array.from(document.querySelectorAll(".item"));
+            const nodeContainsInput = (node, input) => node.textContent.toLowerCase().includes(input);
+
+            // if a node has atleast one matching word from its textContent, display it,  else hide
+            const hasInput = node => inputs.some(input => nodeContainsInput(node, input));
+            const hideEm = items.filter(i => !hasInput(i));
+            const showEm = items.filter(i => hasInput(i));
+
+            hideEm.forEach(i => (i.style.display = "none"));
+            showEm.forEach(i => (i.style.display = "block"));
+
+            inputs.forEach(input => {
+                input = input.toLowerCase();
+
+                showEm.forEach(i => {
+                    let org = i.innerHTML;
+                    const starts = getAllIndexes(org.toLowerCase(), input);
+
+                    for (let i = starts.length - 1; i >= 0; i--) {
+                        const x = starts[i];
+                        const y = x + input.length;
+
+                        const part1 = org.substring(0, x);
+                        const part2 = org.substring(x, y);
+                        const part3 = org.substring(y);
+                        org = `${part1}<bold>${part2}</bold>${part3}`;
+                    }
+
+                    i.innerHTML = org;
+                });
+            });
+        };
+    </script>
+</body>
+
+</html>

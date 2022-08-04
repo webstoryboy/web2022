@@ -168,6 +168,32 @@
             content: 'view : ';
             text-transform: uppercase;
         }
+        .board .prop {
+            text-align: left;
+            margin-top: 10px;
+        }
+        .board .prop ul li {
+            line-height: 1.6;
+            list-style: none;
+            background-color: #bdd6e6;
+            margin: 5px 0;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        .board .search span {
+            border: 1px solid #000;
+            border-radius: 40px;
+            padding: 3px 20px;
+            margin: 3px 0;
+            font-size: 16px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .board .search span:hover {
+            background: #bdd6e6;
+            color: #fff;
+            border-color: #bdd6e6;
+        }
     </style>
 </head>
 <body>
@@ -175,33 +201,23 @@
         <div class="number">
             <ul>
                 <li><a href="searchEffect01.html">1</a></li>
-                <li><a href="searchEffect02.html#">2</a></li>
+                <li><a href="searchEffect02.html">2</a></li>
                 <li><a href="searchEffect03.html">3</a></li>
                 <li><a href="searchEffect04.html">4</a></li>
-                <li class="active"><a href="searchEffect05.html">5</a></li>
+                <li><a href="searchEffect05.html">5</a></li>
                 <li><a href="searchEffect06.html">6</a></li>
-                <li><a href="searchEffect07.html">7</a></li>
+                <li class="active"><a href="searchEffect07.html">7</a></li>
                 <li><a href="searchEffect08.html">8</a></li>
             </ul>
         </div>
         <div class="board">
-            <span class="sub"><a href="../javascript06.html#sample11">filter()</a>를 이용하여 조회수 검색하기</span>
-            <h1><a href="searchEffect.html">CSS 속성 검색하기</a></h1>
+            <span class="sub">피셔 에이츠 알고리즘 사용하여 정렬하기</span>
+            <h1><a href="#">CSS 속성 검색하기</a></h1>
 
-            <!-- 검색 영역 -->
             <div class="search">
-                <span data-view="1">조회수 10개 이상</span>
-                <span data-view="2">조회수 20개 이상</span>
-                <span data-view="3">조회수 30개 이상</span>
-                <span data-view="4">조회수 40개 이상</span>
-                <span data-view="5">조회수 50개 이상</span>
+                <span class="btn1">랜덤정렬</span>
             </div>
-
-            <!-- 전체 목록 갯수 -->
-            <div class="count">전체 목록 갯수 : 0개</div>
-
-            <!-- CSS 속성 리스트 -->
-            <div class="list">
+            <div class="prop">
                 <ul></ul>
             </div>
         </div>
@@ -210,84 +226,48 @@
     <!-- script -->
     <script>
         const cssProperty = [
-            {view: 4, name: "all", desc: "all 속성은 CSS 속성을 재설정하는데 사용할 수 있는 약식 속성입니다."},
-            {view: 1, name: "animation", desc: "animation 속성은 애니메이션 속성을 설정하기 위한 약식 속성입니다."},
-            {view: 1, name: "animation-delay", desc: "animation-delay 속성은 애니메이션이 시작되는 시간을 설정합니다."},
-            {view: 5, name: "animation-direction", desc: "animation-direction 속성은 애니메이션이 움직이는 방향을 설정합니다."},
-            {view: 2, name: "animation-duration", desc: "animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다."},
-            {view: 5, name: "animation-fill-mode", desc: "animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다."},
-            {view: 3, name: "animation-iteration-count", desc: "animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다."},
-            {view: 5, name: "animation-name", desc: "animation-name 속성은 애니메이션 키프레임 이름을 설정합니다."},
-            {view: 5, name: "animation-play-state", desc: "animation-play-state 속성은 애니메이션의 진행상태를 설정합니다."},
-            {view: 5, name: "backdrop-filter", desc: "backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다."},
-            {view: 4, name: "backface-visibility", desc: "backface-visibility 속성은 요소 뒷면 출력 여부 설정합니다."},
-            {view: 5, name: "caption-side", desc: "caption-side 속성은 테이블 caption의 위치를 설정합니다."},
-            {view: 5, name: "direction", desc: "direction 속성은 문장의 방향을 설정합니다."},
-            {view: 5, name: "filter", desc: "filter 속성은 그래픽 효과를 설정합니다."},
-            {view: 2, name: "flex", desc: "flex 속성은 콘텐츠의 성질을 flex로 정의합니다."},
-            {view: 5, name: "grid-template-columns", desc: "grid-template-columns 속성은 가로 컬럼의 크기와 위치 설정합니다."},
-        ];
+            {num: 1, name: "align-content", desc: "align-content 속성은 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다."},
+            {num: 2, name: "align-items", desc: "align-items 속성은 콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다."},
+            {num: 3, name: "align-self", desc: "align-self 속성은 개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다."},
+            {num: 4, name: "all", desc: "all 속성은 요소의 속성을 초기화 또는 상속을 설정합니다."},
+            {num: 5, name: "animation", desc: "animation 속성은 애니메이션과 관련된 속성을 일괄적으로 설정합니다."},
+            {num: 6, name: "animation-delay", desc: "animation-delay 속성은 애니메이션 지연 시간을 설정합니다."},
+            {num: 7, name: "animation-direction", desc: "animation-direction 속성은 애니메이션 움직임 방향을 설정합니다."},
+            {num: 8, name: "animation-duration", desc: "animation-duration 속성은 애니메이션 움직임 시간을 설정합니다."},
+            {num: 9, name: "animation-fill-mode", desc: "animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다."},
+        ]
+        const searchBox = document.querySelector("#search-box");
+        const cssProp = document.querySelector(".prop ul");
+        const cssCount = document.querySelector(".count");
+        let listHtml = [];
 
-        const searchBox = document.querySelectorAll(".search span");    
-        const cssList = document.querySelector(".list ul");       
-        const cssCount = document.querySelector(".count em");    
-        
-        let listHTML = "";
+        // 데이터 표시
+        function updateList(){
+            // for (const data of cssProperty) {
+            //     listHtml.push(`<li>${data.num}. ${data.name} : ${data.desc}</li>`);
+            //     // cssProp.innerHTML += listHtml[data.num]
+            // }
 
-        //목록 보여주기
-        function updataList(list){
-            listHTML = "";
-
-            for(const data of list){
-                listHTML += `<li>${data.name} : ${data.desc} <span>${data.view}</span></li>`;
-            }
-            cssList.innerHTML = listHTML;
+            cssProperty.map((data, num) => {
+                listHtml.push(`<li>${data.num}. ${data.name} : ${data.desc}</li>`);
+                cssProp.innerHTML += listHtml[num]
+            })
         }
-        updataList(cssProperty);
+        updateList();
 
-        //버튼 클릭하기
-        searchBox.forEach(span => {
-            span.addEventListener("click", () => {
-                const target = span.dataset.view;
-                const filterList = cssProperty.filter(data => data.view == target);
+        //피셔 에이츠 알고리즘
+        function shuffle(data){
+            for(let i=data.length-1; i>=0; i--){
+                const randomIndex = Math.floor(Math.random() * (i+1));
+                [data[i], data[randomIndex]] = [data[randomIndex], data[i]];
+                cssProp.innerHTML += data[i]
+            }
+        }
 
-                updataList(filterList);
-            });
-        })
-
-        
-
-
-
-        // //for문
-        // for(let i = 0; i < cssProperty.length; i++){
-        //     console.log(cssProperty[i].view);
-        // }
-        // //forEach문
-        // cssProperty.forEach(ele => {
-        //     console.log(ele.name);
-        // });
-        // //map()
-        // cssProperty.map(ele => {
-        //     console.log(ele.desc);
-        // });
-        // //for of
-        // for(let data of cssProperty){
-        //     console.log(data.view);
-        // }
-
-        // for( let i=0; i<cssProperty.length; i++ ){
-        //     list += "<li>"+ cssProperty[i].view +"</li>";
-        // }
-
-        // cssProperty.forEach(li => {
-        //     list += "<li>"+ li.view +"</li>";
-        // });
-
-        // for(let li of cssProperty){
-        //     list += "<li>"+ li.view +"</li>";
-        // }
-      
+        document.querySelector(".btn1").addEventListener("click", () => {
+            cssProp.innerHTML = "";
+            shuffle(listHtml);
+        });
     </script>
 </body>
 </html>

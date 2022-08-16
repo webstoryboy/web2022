@@ -1,0 +1,69 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Keania+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tapestry&display=swap');
+
+.k {font-family: 'Keania One';}
+.f {font-family: 'Faster One';}
+.a {font-family: 'Fascinate Inline';}
+.t {font-family: 'Tapestry';}
+
+/* layout */
+#contents {}
+#section1 {
+    height: 100vh;
+    width: 100%;
+}
+#section2 {
+    height: 2000px;
+    background-color: #777;
+}
+#section3 {}
+#section4 {}
+#section5 {}
+#section6 {}
+
+
+/* sec1 */
+.sec1 {}
+.sec1 .text-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 60%;
+    z-index: 19;
+}
+.sec1 .text-wrap span {
+    font-size: 16vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+}
+.sec1 .text-wrap .t1 {left: 10%; top: 60%; }
+.sec1 .text-wrap .t2 {left: 20%; top: 30%;}
+.sec1 .text-wrap .t3 {left: 30%; top: 65%;}
+.sec1 .text-wrap .t4 {left: 40%; top: 35%;}
+.sec1 .text-wrap .t5 {left: 50%; top: 50%;}
+.sec1 .text-wrap .t6 {left: 60%; top: 65%;}
+.sec1 .text-wrap .t7 {left: 70%; top: 30%;}
+.sec1 .text-wrap .t8 {left: 80%; top: 40%;}
+.sec1 .text-wrap .t9 {left: 90%; top: 60%;}
+
+.sec1 .img-wrap > span {
+    display: block;
+    position: absolute;
+    z-index: 100;
+}
+.sec1 .img-wrap .i1 {
+    width: 10vw;
+    height: 10vw;
+    background: url(../img/nodejs.svg) no-repeat;
+    background-size: cover;
+    left: 20%;
+    top: 15%;
+}

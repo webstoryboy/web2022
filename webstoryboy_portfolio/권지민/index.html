@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="header">
+        <h1>
+            <span aria-hidden="true" class="star">
+                <svg width="40" height="37" viewBox="0 0 40 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 0L24.4903 13.8197H39.0211L27.2654 22.3607L31.7557 36.1803L20 27.6393L8.2443 36.1803L12.7346 22.3607L0.97887 13.8197H15.5097L20 0Z" fill="black"/>
+                </svg>
+            </span>Frontend
+        </h1>
+        <nav><span></span></nav>
+    </header>
+    <!-- //header -->
+
+    <div id="contents">
+        <section id="section1">
+            <div class="sec1">
+                <div class="text_wrap">
+                    <div>Frontend</div>
+                    <div>Devloper</div>
+                    <div>Portfolio</div>
+                    <div>CREATIVE</div>
+                </div>
+                <div class="circle" aria-hidden="true"></div>
+            </div>
+        </section>
+        <!-- //section1 -->
+        <section id="section2"></section><!-- //section2 -->
+        <section id="section3"></section><!-- //section3 -->
+        <section id="section4"></section><!-- //section4 -->
+        <section id="section5"></section><!-- //section5 -->
+        <section id="section6"></section><!-- //section6 -->
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script>
+        var s = skrollr.init({
+            smoothScrolling: true
+        });
+
+        function scroll(){
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            document.querySelector(".scroll").innerHTML = scrollTop;
+            requestAnimationFrame(scroll);
+        }
+        scroll();
+    </script>
+</body>
+</html>

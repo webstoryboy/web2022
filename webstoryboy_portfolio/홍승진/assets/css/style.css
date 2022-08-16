@@ -1,0 +1,115 @@
+/* layout */
+#section1 {
+    height: 5000px;
+}
+#section2 {
+    height: 3000px;
+    background: #000;
+}
+#section3 {}
+#section4 {}
+#section5 {}
+#section6 {}
+
+/* scroll */
+.scroll {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;  
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    z-index: 100000;
+}
+
+/* header */
+#header {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    z-index: 10000;
+    display: flex;  
+    justify-content: space-between;
+}
+#header h1 {
+    padding: 10px;
+    font-family: 'GmarketSans';
+    font-weight: 800;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+#header h1 .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #000;
+    display: inline-block;
+    vertical-align: -4px;
+    margin: 0 5px;
+}
+#header h2 {
+    padding: 10px;
+    font-family: 'GmarketSans';
+    font-weight: 800;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #fff;
+}
+#header h2 .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: inline-block;
+    vertical-align: -4px;
+    margin: 0 5px;
+}
+
+/* common */
+.fixed {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* sec1 */
+.sec1_box1 {
+    width: 50vw;
+    height: 100vh;
+    background: #fff;
+    position: fixed;
+    left: 0;    
+    top: 0;
+}
+.sec1_box2 {
+    width: 50vw;
+    height: 100vh;
+    background: #000 url(https://images.unsplash.com/photo-1659194612634-38b6281e150b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1015&q=80) center no-repeat;
+    background-size: cover;
+    left: 50%;
+    top: 0;
+    position: fixed;
+}
+.sec1_box3 {
+    font-family: 'GmarketSans';
+    font-size: 8vw;
+    font-weight: 300;
+    white-space: nowrap;
+    color: #fff;
+    line-height: 1;
+    mix-blend-mode: difference;
+    z-index: 1000;
+}
+.sec1_box4 {
+    width: 50vw;
+    height: 100vh;
+    background: #000 url(https://images.unsplash.com/photo-1659194612634-38b6281e150b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1015&q=80) center no-repeat;
+    background-size: cover;
+    left: 50%;
+    top: 0;
+    position: fixed;
+}

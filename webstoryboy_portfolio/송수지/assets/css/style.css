@@ -311,4 +311,39 @@
     background-size: 80%;
 }
 
-
+.sec4 {
+    background: #000;
+    width: 1400px;
+    margin: 0 auto;
+}
+.grid {
+    width: 100%;
+    display: grid;
+    gap: 1%;
+    grid-template-areas: 
+        'box1 box1 box3 box4'
+        'box1 box1 box7 box8'
+        'box9 box10 box11 box8'
+        'box13 box14 box15 box16'
+    ;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 200px 100px 100px 200px;
+    
+}
+.grid > div {background: #ccc;}
+.grid > div:nth-child(1) {grid-area: box1}
+.grid > div:nth-child(2) {grid-area: box2}
+.grid > div:nth-child(3) {grid-area: box3}
+.grid > div:nth-child(4) {grid-area: box4}
+.grid > div:nth-child(5) {grid-area: box5}
+.grid > div:nth-child(6) {grid-area: box6}
+.grid > div:nth-child(7) {grid-area: box7}
+.grid > div:nth-child(8) {grid-area: box8}
+.grid > div:nth-child(9) {grid-area: box9}
+.grid > div:nth-child(10) {grid-area: box10}
+.grid > div:nth-child(11) {grid-area: box11}
+.grid > div:nth-child(12) {grid-area: box12}
+.grid > div:nth-child(13) {grid-area: box13}
+.grid > div:nth-child(14) {grid-area: box14}
+.grid > div:nth-child(15) {grid-area: box15}
+.grid > div:nth-child(16) {grid-area: box16}

@@ -1,0 +1,33 @@
+/* layout */
+#contents {
+    position: fixed;
+    left: 0; 
+    top: 0;
+    display: flex;
+}
+#contents > section {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+#section1 {background-color: #111;}
+#section2 {background-color: #222;}
+#section3 {background-color: #333;}
+#section4 {background-color: #444;}
+#section5 {background-color: #555;}
+#section6 {background-color: #666;}
+#section7 {background-color: #777;}
+
+/* scroll */
+.scroll {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.3);
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    z-index: 20000;
+}

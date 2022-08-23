@@ -1,68 +1,73 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>검색 이펙트</title>
+    <title>퀴즈 이펙트</title>
 
-    <link rel="stylesheet" href="../assets/css/search.css">
+    <link rel="stylesheet" href="css/quiz.css">
 
-    <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
-    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/Cafe24Dangdanghae/Cafe24Dangdanghae.css" rel="stylesheet">
 </head>
+
 <body>
+    <!-- 
+        01. 퀴즈 이펙트 - 정답확인하기
+
+    -->
     <header id="header">
+        <h1><a href="../javascript01.html">Quiz</a> <em>주관식 유형</em></h1>
         <nav>
             <ul>
-                <li><a href="searchEffect01.html">1</a></li>
-                <li class="active"><a href="searchEffect02.html">2</a></li>
-                <li><a href="searchEffect03.html">3</a></li>
-                <li><a href="searchEffect04.html">4</a></li>
-                <li><a href="searchEffect05.html">5</a></li>
-                <li><a href="searchEffect06.html">6</a></li>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li class="active"><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+                <li><a href="quizEffect07.html">7</a></li>
             </ul>
         </nav>
     </header>
     <!-- //header -->
 
     <main id="main">
-        <div class="search__wrap">
-            <span>includes()를 이용하여 검색하기</span>
-            <h1>CSS 속성 검색하기</h1>
-            
-            <div class="search__box">
-                <label for="search">검색하기</label>
-                <input type="text" id="search" placeholder="CSS 속성 및 유형을 입력해주세요!">
-            </div>
-            <div class="search__info">
-                <div class="type">플렉스, 애니메이션, 백그라운드, 기타 등등 유형 별로 검색해보세요!</div>
-                <div>전체 속성 갯수 : <span class="num">0</span></div>
-            </div>
-            <div class="search__list">
-                <div class="html">
-                    <ul>
-                        <li data-type="플렉스"><strong>align-content</strong> : 콘텐츠 아이템의 상하관계 정렬 상태를 설정합니다.</li>
-                        <li data-type="플렉스"><strong>align-items</strong> : 콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다.</li>
-                        <li data-type="플렉스"><strong>align-self</strong> : 개별적인 콘텐츠 아이템의 정렬 상태를 설정합니다.</li>
-                        <li data-type="기타"><strong>all</strong> : 요소의 속성을 초기화 또는 상속을 설정합니다.</li>
-                        <li data-type="애니메이션"><strong>animation</strong> : 애니메이션과 관련된 속성을 일괄적으로 설정합니다.</li>
-                        <li data-type="애니메이션"><strong>animation-delay</strong> : 애니메이션 지연 시간을 설정합니다.</li>
-                        <li data-type="애니메이션"><strong>animation-direction</strong> : 애니메이션 움직임 방향을 설정합니다.</li>
-                        <li data-type="애니메이션"><strong>animation-duration</strong> : 애니메이션 움직임 시간을 설정합니다.</li>
-                        <li data-type="애니메이션"><strong>animation-fill-mode</strong> : 애니메이션이 끝난 후의 상태를 설정합니다.</li>
-                        <li data-type="애니메이션"><strong>animation-iteration-count</strong> : 애니메이션 반복 횟수 설정합니다.</li>
-                        <li data-type="애니메이션"><strong>animation-name</strong> : 애니메이션 keyframe 이름을 설정합니다.</li>
-                        <li data-type="애니메이션"><strong>animation-play-state</strong> : 애니메이션 진행상태를 설정합니다.</li>
-                        <li data-type="애니메이션"><strong>animation-timing-function</strong> : 애니메이션 움직임의 속도를 설정합니다.</li>
-
-                        <li data-type="효과"><strong>backdrop-filter</strong> : 배경에 그래픽 효과를 설정합니다.</li>
-                        <li data-type="기타"><strong>backface-visibility</strong> : 요소의 뒷면을 설정합니다.</li>
-                        <li data-type="백그라운드"><strong>background-attachment</strong> : 배경 이미지의 고정 여부를 설정합니다.</li>
-                        <li data-type="백그라운드"><strong>background-blend-mode</strong> : 배경을 혼합했을 때의 상태를 설정합니다.</li>
-                        <li data-type="백그라운드"><strong>background-clip</strong> : 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다.</li>
-                        <li data-type="백그라운드"><strong>background-color</strong> : 백그라운드 색을 설정합니다.</li>
-                    </ul>
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <span class="quiz__type"></span>
+                <h2 class="quiz__question">
+                    <span class="number"></span>
+                    <div class="ask"></div>
+                </h2>
+                <div class="quiz__view">
+                    <div class="true">정답입니다!</div>
+                    <div class="false">틀렸습니다!</div>
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__answer">
+                    <input type="text" class="input" placeholder="정답을 적어주세요!">
+                    <button class="confirm">정답 확인하기</button>
+                    <div class="result"></div>
                 </div>
             </div>
         </div>
@@ -74,34 +79,50 @@
     </footer>
     <!-- //footer -->
 
-
     <script>
         //선택자
-        const searchBox = document.querySelector(".search__box input");         //검색 영역
-        const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
-        const searchInfo = document.querySelector(".search__info .num");        //전체 갯수
+        const quizType = document.querySelector(".quiz__type");                  //퀴즈 종류
+        const quizNumber = document.querySelector(".quiz__question .number");    //퀴즈 번호
+        const quizAsk = document.querySelector(".quiz__question .ask");          //퀴즈 질문
+        const quizConfirm = document.querySelector(".quiz__answer .confirm");    //정답 확인 버튼
+        const quizResult = document.querySelector(".quiz__answer .result");      //정답 결과
+        const quizInput = document.querySelector(".quiz__answer .input");        //사용자 정답
+        const quizView = document.querySelector(".quiz__view");                  //강아지
+        
+        //문제 정보
+        const answerType = "웹디자인기능사";
+        const answerNum = 1;
+        const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가?";
+        const answerResult = "연변대비";
 
-        //전체 갯수 구하기
-        searchInfo.textContent = searchList.length;
+        //문제 출력
+        quizType.textContent = answerType;
+        quizNumber.textContent = answerNum + ". ";
+        quizAsk.textContent = answerAsk;
+        quizResult.textContent = "정답은 : " + answerResult + " 입니다.";
 
-        //검색 영역
-        searchBox.addEventListener("keyup", () => {
-            const searchWord = searchBox.value;     //사용자가 입력한 키워드
+        //정답 숨기기
+        quizResult.style.display = "none";
 
-            searchList.forEach(el => {
-                const cssType = el.dataset.type;                         //CSS 유형 모든 값
-                const cssName = el.querySelector("strong").innerText;    //CSS 속성 모든 값
-                console.log(cssName)
+        //정답 확인
+        quizConfirm.addEventListener("click", () => {
+            quizInput.style.display = "none";
+            quizResult.style.display = "block";
+            quizConfirm.style.display = "none";
 
-                if(cssName.includes(searchWord) || cssType.includes(searchWord)){
-                    el.classList.remove("hide");
-                } else {
-                    el.classList.add("hide");
-                }
-            });
+            //사용자 정답
+            const userWord = quizInput.value;
+
+            //사용자 정답 == 문제 정답
+            if(userWord == answerResult){
+                //alert("정답입니다.")
+                quizView.classList.add("like");
+            } else {
+                quizView.classList.add("dislike");
+                //alert("오답입니다.")
+            }
         });
-
     </script>
-
 </body>
+
 </html>

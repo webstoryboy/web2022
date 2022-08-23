@@ -22,7 +22,7 @@
     line-height: 40px;
     width: 40px;
     height: 40px;
-    z-index: 100000;
+    z-index: 10000000;
 }
 
 /* header */
@@ -105,11 +105,31 @@
     z-index: 1000;
 }
 .sec1_box4 {
-    width: 50vw;
+    border-radius: 50%;
+    background: #000;
+}
+.sec1_box5 {
+    width: 100%;
     height: 100vh;
-    background: #000 url(https://images.unsplash.com/photo-1659194612634-38b6281e150b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1015&q=80) center no-repeat;
-    background-size: cover;
-    left: 50%;
-    top: 0;
-    position: fixed;
+    background: #ccc;
+    z-index: 1000;
+}
+.sec1_box6 {
+    z-index: 1001;
+    text-align: center;
+    font-size: 2vw;
+    white-space: nowrap;
+    font-weight: 300;
+    
+    perspective: 600px;
+}
+.sec1_box6 div {
+    margin: 5px 0;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+.sec1_box6 div span {
+    display: inline-block;
+    transform: translateY(0px);
+    color: #fff;
 }

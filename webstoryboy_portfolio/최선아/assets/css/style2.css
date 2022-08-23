@@ -1,0 +1,84 @@
+/* layout */
+.horizontal-scroll {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    left: 0;
+}
+.section3, .section5, .section7 {
+    width: 100%;
+    height: 100vh;
+    background: #111;
+    color: #fff;
+}
+.section2 .pin-wrap {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.section2 .pin-wrap > div {
+    min-width: 60vw;
+}
+.section4 .pin-wrap {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.section4 .pin-wrap > div {
+    min-width: 60vw;
+}
+.section6 .pin-wrap {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.section6 .pin-wrap > div {
+    min-width: 60vw;
+}
+
+
+
+/* sec1 */
+.section1 {
+    background: #fff;
+    color: #1941B8;
+}
+.box1 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #1941B8;
+}
+.box1 .title {
+    
+    height: inherit;
+    font-size: 7vw;
+    line-height: 1;
+    font-family: 'GmarketSans';
+    font-weight: 700;
+    color: #1941B8;
+    padding-right: 20%;
+    padding: 20px;
+}
+.box1 .title > div:last-child {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 2px #1941B8;
+}
+.box1 .mail {
+    padding: 20px;
+    color: #1941B8;
+    font-size: 30px;
+    line-height: 1;
+    font-weight: 800;
+}
+.box1 .mail a {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.box2 {}
+.box3 {}

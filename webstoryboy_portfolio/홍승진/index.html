@@ -34,19 +34,44 @@
                 ></div>
                 <div class="sec1_box3 fixed">
                     <div
-                        data-400 = "transform: translatex(0%)"
-                        data-1400 = "transform: translatex(50%)"
+                        data-400 = "transform: translatex(0%) scale(1); opacity: 1"
+                        data-1400 = "transform: translatex(30%) scale(1); opacity: 1"
+                        data-2000 = "transform: translatex(30%) scale(0.8); opacity: 0"
                     >PORTFOLIO</div>
                     <div
-                        data-300 = "transform: translatex(0%)"
-                        data-1300 = "transform: translatex(-50%)"
+                        data-300 = "transform: translatex(0%) scale(1); opacity: 1"
+                        data-1400 = "transform: translatex(-50%) scale(1); opacity: 1"
+                        data-2000 = "transform: translatex(-50%) scale(0.8); opacity: 0"
                     >HONG SEONG JIN</div>
                     <div
-                        data-400 = "transform: translatex(0%)"
-                        data-1400 = "transform: translatex(50%)"
+                        data-400 = "transform: translatex(0%) scale(1); opacity: 1"
+                        data-1400 = "transform: translatex(50%) scale(1); opacity: 1;"
+                        data-2000 = "transform: translatex(50%) scale(0.8); opacity: 0"
                     >FRONTEND</div>
                 </div>
-                <div class="sec1_box4"></div>
+                <div class="sec1_box4 fixed"
+                    data-1400="width: 0vw; height: 0vw"
+                    data-2400="width: 200vw; height: 200vw">
+                </div>
+                <div id="webGL" class="sec1_box5 fixed"
+                    data-2000="opacity:0"
+                    data-3400="opacity:1"
+                    data-3400="opacity:0.5">
+                </div>
+                <div class="sec1_box6 fixed">
+                    <div><span
+                        data-3400="transform: translateY(50px);"
+                        data-4000="transform: translateY(0px);"
+                        >안녕하세요! 프론트앤드 개발자 홍승진입니다.</span></div>
+                    <div><span
+                        data-3600="transform: translateY(50px);"
+                        data-4200="transform: translateY(0px);"
+                        >어떤 일이라도 노력하고 즐기면 그 결과는 빛을 바란다고 생각합니다.</span></div>
+                    <div><span
+                        data-3800="transform: translateY(50px);"
+                        data-4400="transform: translateY(0px);"
+                        >신입의 열정과 도전정신을 깊숙히 파고드는 개발자가 되겠습니다.</span></div>
+                </div>
             </div>
         </section>
         <!-- //section1 -->
@@ -59,6 +84,7 @@
     </div>
 
 
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
     <script>
         var s = skrollr.init({
@@ -72,6 +98,157 @@
             requestAnimationFrame(scroll);
         }
         scroll();
+    </script>
+
+    <script>
+        class Scrooth {
+            constructor({element = window, strength = 14, acceleration = 2, deceleration = 0.975} = {}) {
+                this.element = element;
+                this.distance = strength;
+                this.acceleration = acceleration;
+                this.deceleration = deceleration;
+                this.running = false;
+
+                this.element.addEventListener('wheel', this.scrollHandler.bind(this), {passive: false});
+                this.element.addEventListener('mousewheel', this.scrollHandler.bind(this), {passive: false});
+                this.scroll = this.scroll.bind(this);
+            }
+
+            scrollHandler(e) {
+                e.preventDefault();
+
+                if (!this.running) {
+                    this.top = this.element.pageYOffset || this.element.scrollTop || 0;
+                    this.running = true;
+                    this.currentDistance = e.deltaY > 0 ? 0.1 : -0.1;
+                    this.isDistanceAsc = true;
+                    this.scroll();
+                } else {
+                    this.isDistanceAsc = false;
+                    this.currentDistance = e.deltaY > 0 ? this.distance : -this.distance;
+                }
+            }
+
+            scroll() {
+            if (this.running) {
+                this.currentDistance *= this.isDistanceAsc === true ? this.acceleration : this.deceleration;
+                Math.abs(this.currentDistance) < 0.1 && this.isDistanceAsc === false ? this.running = false : 1;
+                Math.abs(this.currentDistance) >= Math.abs(this.distance) ? this.isDistanceAsc = false : 1;
+
+                this.top += this.currentDistance;
+                this.element.scrollTo(0, this.top);
+                
+                requestAnimationFrame(this.scroll);
+                }
+            }
+        }
+
+        // const body = new Scrooth();
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
+
+    <script id="vertexShader" type="x-shader/x-vertex">
+        void main() {
+            gl_Position = vec4( position, 1.0 );
+        }
+    </script>
+
+    <script id="fragmentShader" type="x-shader/x-fragment">
+        precision highp float;
+
+        uniform vec2 resolution;
+        uniform float time;
+        uniform vec2 mouse;
+        uniform sampler2D backbuffer;
+
+        vec3 wave(vec2 uv,float speed, float thickness, float amplitude, float delay, vec3 color){
+            float shake = mix(0.0, 1.0, amplitude);
+            float wave = sin(delay + mod(uv.x+uv.y/2.0,0.25) * 1.0 - time * speed ) / 5.0 * shake;
+            float colwave = thickness /  abs((1.0-length(uv))+wave); //線の太さ
+            return color * colwave;
+        }
+        
+        float random (in vec2 st) {
+            return fract(cos(dot(st.xy,vec2(12.9898,78.233))) * 43758.5453123);
+        }
+
+        void main(void) {
+            vec2 uv = (gl_FragCoord.xy * 2.0 - resolution.xy) / min(resolution.x, resolution.y);
+            vec3 col0 = wave(uv,0.1,0.08,8.0,5., vec3(0.6, 0.6, 0.6));
+            vec3 col1 = wave(uv,0.2,0.08,9.0,6., vec3(0.4, 0.9, 0.9));
+            vec3 col2 = wave(uv,0.2,0.08,10.0,7., vec3(0.6, 0.9, 0.9));
+            vec3 col3 = wave(uv,0.1,0.08,11.0,8., vec3(0.6, 0.6, 0.6));
+
+            //vec3 col = col0+col1+col2+col3;
+            vec3 col = col0+col1;
+
+            gl_FragColor = vec4(vec3(col), 1.0);
+        }
+    </script>
+    <script>
+        var container;
+        var camera, scene, renderer;
+        var uniforms;
+
+        init();
+        animate();
+
+        function init() {
+            container = document.getElementById('webGL');
+
+            camera = new THREE.Camera();
+            camera.position.z = 1;
+
+            scene = new THREE.Scene();
+
+            var geometry = new THREE.PlaneBufferGeometry(2, 2);
+
+            uniforms = {
+                time: {
+                    type: "f",
+                    value: 1.0
+                },
+                resolution: {
+                    type: "v2",
+                    value: new THREE.Vector2()
+                }
+            };
+
+            var material = new THREE.ShaderMaterial({
+                uniforms: uniforms,
+                vertexShader: document.getElementById('vertexShader').textContent,
+                fragmentShader: document.getElementById('fragmentShader').textContent
+            });
+
+            var mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+
+            renderer = new THREE.WebGLRenderer();
+            renderer.setPixelRatio(window.devicePixelRatio);
+
+            container.appendChild(renderer.domElement);
+
+            onWindowResize();
+            window.addEventListener('resize', onWindowResize, false);
+        }
+
+        function onWindowResize(event) {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            uniforms.resolution.value.x = renderer.domElement.width;
+            uniforms.resolution.value.y = renderer.domElement.height;
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            render();
+        }
+
+        function render() {
+            uniforms.time.value += 0.05;
+            renderer.render(scene, camera);
+        }
     </script>
 </body>
 </html>

@@ -42,7 +42,7 @@
     <main id="main">
         <div class="quiz__wrap exam">
             <div class="left">
-                <div class="quiz">
+                <!-- <div class="quiz">
                     <h2 class="quiz__question">
                         <span class="number">01.</span>
                         <div class="ask">요구사항 분석 시에 필요한 기술로 가장 거리가 먼 것은?</div>
@@ -67,85 +67,7 @@
                             </label>
                         </div>
                     </div>
-                </div>
-                <div class="quiz">
-                    <h2 class="quiz__question">
-                        <span class="number">01.</span>
-                        <div class="ask">요구사항 분석 시에 필요한 기술로 가장 거리가 먼 것은?</div>
-                    </h2>
-                    <div class="quiz__answer">
-                        <div class="quiz__selects">
-                            <label for="select1">
-                                <input type="radio" id="select1" class="select" name="select" value="1">
-                                <span class="choice">청취과 인터뷰 질문 기술</span>
-                            </label>
-                            <label for="select2">
-                                <input type="radio" id="select2" class="select" name="select" value="2">
-                                <span class="choice">분석과 중재기술</span>
-                            </label>
-                            <label for="select3">
-                                <input type="radio" id="select3" class="select" name="select" value="3">
-                                <span class="choice">설계 및 코딩 기술</span>
-                            </label>
-                            <label for="select4">
-                                <input type="radio" id="select4" class="select" name="select" value="4">
-                                <span class="choice">관찰 및 모델 작성 기술</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="quiz">
-                    <h2 class="quiz__question">
-                        <span class="number">01.</span>
-                        <div class="ask">요구사항 분석 시에 필요한 기술로 가장 거리가 먼 것은?</div>
-                    </h2>
-                    <div class="quiz__answer">
-                        <div class="quiz__selects">
-                            <label for="select1">
-                                <input type="radio" id="select1" class="select" name="select" value="1">
-                                <span class="choice">청취과 인터뷰 질문 기술</span>
-                            </label>
-                            <label for="select2">
-                                <input type="radio" id="select2" class="select" name="select" value="2">
-                                <span class="choice">분석과 중재기술</span>
-                            </label>
-                            <label for="select3">
-                                <input type="radio" id="select3" class="select" name="select" value="3">
-                                <span class="choice">설계 및 코딩 기술</span>
-                            </label>
-                            <label for="select4">
-                                <input type="radio" id="select4" class="select" name="select" value="4">
-                                <span class="choice">관찰 및 모델 작성 기술</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="quiz">
-                    <h2 class="quiz__question">
-                        <span class="number">01.</span>
-                        <div class="ask">요구사항 분석 시에 필요한 기술로 가장 거리가 먼 것은?</div>
-                    </h2>
-                    <div class="quiz__answer">
-                        <div class="quiz__selects">
-                            <label for="select1">
-                                <input type="radio" id="select1" class="select" name="select" value="1">
-                                <span class="choice">청취과 인터뷰 질문 기술</span>
-                            </label>
-                            <label for="select2">
-                                <input type="radio" id="select2" class="select" name="select" value="2">
-                                <span class="choice">분석과 중재기술</span>
-                            </label>
-                            <label for="select3">
-                                <input type="radio" id="select3" class="select" name="select" value="3">
-                                <span class="choice">설계 및 코딩 기술</span>
-                            </label>
-                            <label for="select4">
-                                <input type="radio" id="select4" class="select" name="select" value="4">
-                                <span class="choice">관찰 및 모델 작성 기술</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
+                </div> -->
             </div>
             <div class="right">
                 <h3>답안지</h3>
@@ -166,9 +88,52 @@
 
     <script>
         //문제 정보
-        
-        
-        
+        const requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+        };
+
+        fetch("json/quiz.json", requestOptions)
+            .then(response => response.json())
+            .then(result => displayItem(result.items))
+            .catch(error => console.log('error', error));
+
+        const displayItem = (items) => {
+            const left = document.querySelector(".quiz__wrap .left");
+            left.innerHTML = items.map((item) => createDiv(item).join(''));
+            console.log(items)
+        }
+
+        const createDiv = (item) => {
+            return `
+                <div class="quiz">
+                    <h2 class="quiz__question">
+                        <span class="number">${item.answerNum}.</span>
+                        <div class="ask">요구사항 분석 시에 필요한 기술로 가장 거리가 먼 것은?</div>
+                    </h2>
+                    <div class="quiz__answer">
+                        <div class="quiz__selects">
+                            <label for="select1">
+                                <input type="radio" id="select1" class="select" name="select" value="1">
+                                <span class="choice">청취과 인터뷰 질문 기술</span>
+                            </label>
+                            <label for="select2">
+                                <input type="radio" id="select2" class="select" name="select" value="2">
+                                <span class="choice">분석과 중재기술</span>
+                            </label>
+                            <label for="select3">
+                                <input type="radio" id="select3" class="select" name="select" value="3">
+                                <span class="choice">설계 및 코딩 기술</span>
+                            </label>
+                            <label for="select4">
+                                <input type="radio" id="select4" class="select" name="select" value="4">
+                                <span class="choice">관찰 및 모델 작성 기술</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            `
+        }
     </script>
 </body>
 

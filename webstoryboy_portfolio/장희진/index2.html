@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style2.css">
+</head>
+
+<body>
+    <main id="main">
+        <section id="section1">
+            <div class="sec1">
+                <div class="text_wrap">
+                    <div data-scroll data-scroll-speed="1" data-scroll-direction="horizontal">Frontend<span></span></div>
+                    <div data-scroll data-scroll-speed="2" data-scroll-direction="horizontal"><span></span>Devloper</div>
+                    <div data-scroll data-scroll-speed="-1" data-scroll-direction="horizontal">Port<span></span>folio</div>
+                    <div data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">CREATIVE<span></span></div>
+                </div>
+            </div>
+        </section>
+        <!-- //section1 -->
+
+        <section id="section2">section2</section>
+        <section id="section3">section3</section>
+        <section id="section4">section4</section>
+        <section id="section5">section5</section>
+        <section id="section6">
+            <div class="sec6_wrap">
+                <div class="sec6-1">sec2-1</div>
+                <div class="sec6-2">sec2-2</div>
+                <div class="sec6-3">sec2-3</div>
+            </div>
+        </section>
+        <section id="section7">section7</section>
+    </main>
+
+    <script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js'></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const pageContents = document.getElementById("main");
+        const scroller = new LocomotiveScroll({
+            el: pageContents,
+            smooth: true
+        });
+        scroller.on("scroll", ScrollTrigger.update);
+
+        ScrollTrigger.scrollerProxy(pageContents, {
+            scrollTop(value) {
+                return arguments.length ?
+                    scroller.scrollTo(value, 0, 0) :
+                    scroller.scroll.instance.scroll.y;
+            },
+            getBoundingClientRect() {
+                return {
+                    left: 0,
+                    top: 0,
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                };
+            },
+            pinType: pageContents.style.transform ? "transform" : "fixed"
+        });
+
+        window.addEventListener("load", function () {
+            let sec6WrapWidth = document.querySelector(".sec6_wrap").offsetWidth;
+            let horizontal6 = sec6WrapWidth - window.innerWidth;
+
+            gsap.to("#section6 .sec6_wrap", {
+                scrollTrigger: {
+                    scroller: pageContents,
+                    scrub: true,
+                    trigger: "#section6",
+                    pin: true,
+                    start: "top top",
+                    markers: true,
+                    end: sec6WrapWidth
+                },
+                x: -horizontal6,
+                ease: "none"
+            });
+
+            ScrollTrigger.addEventListener("refresh", () => scroller.update());
+            ScrollTrigger.refresh();
+        });
+    </script>
+</body>
+
+</html>

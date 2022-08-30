@@ -6,10 +6,12 @@
     background-color: #131A26;
 }
 #section2 {
-    height: 4000px;
     background-color: #131A26;
 }
-#section3 {}
+#section3 {
+    height: 5000px;
+    background-color: #131A26;
+}
 #section4 {}
 #section5 {}
 #section6 {}
@@ -188,4 +190,33 @@
     position: absolute;
     right: -10vw;
     top: 0;
+}
+
+
+
+/* sec3_text1 */
+.sec3_text1 {
+    text-align: center;
+    position: relative;
+}
+.sec3_text1 h2 {
+    color: #fff;
+    font-family: 'Syncopate';
+    font-size: 8vw;
+    line-height: 0.8;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.sec3_text2 {
+    position: fixed;
+    left: 69.4%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.6vw;
+    height: 0vh;
+    background: #fff;
 }

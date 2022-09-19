@@ -55,6 +55,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     text-transform: uppercase;
+    opacity: 0;
 }
 .sec1 .text-wrap .t1 {left: 6%; top: 70%; font-size: 20vw;}
 .sec1 .text-wrap .t2 {left: 20%; top: 30%;}
@@ -74,18 +75,50 @@
 .sec1 .img-wrap .i1 {
     width: 10vw;
     height: 10vw;
-    background: url(../img/nodejs.svg) no-repeat;
-    background-size: cover;
-    left: 20%;
-    top: 15%;
+    left: 10%;
+    top: 5%;
+}
+.sec1 .img-wrap .i1 .line {
+    animation: stroke 2.2s 1s 1 linear both;
 }
 .sec1 .img-wrap .i2 {
     width: 10vw;
     height: 10vw;
-    background: url(../img/music.svg) no-repeat;
-    background-size: contain;
     left: 55%;
     top: 15%;
+
+}
+
+.sec1 .img-wrap .i2 .line {
+    stroke: rgb(255, 255, 255);
+}
+.sec1 .img-wrap .i2.show .line {
+    animation: stroke 2.2s 1s 1 linear both;
+}
+.sec1 .img-wrap .i2.show .bg {
+    animation: show 2.2s 1.8s 1 linear both;
+}
+@keyframes show {
+    0%   {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes stroke {
+    0%   {
+        stroke: rgb(255, 255, 255);
+        stroke-dashoffset: 25%;
+        stroke-dasharray: 0 90%;
+        stroke-width: 0;
+    }
+    100% {
+        stroke: rgb(0, 0, 0);
+        stroke-dashoffset: -25%;
+        stroke-dasharray: 90% 0;
+        stroke-width: 2;
+    }
 }
 
 /* sec2_about */
@@ -99,6 +132,9 @@
 .sec2_about .left {
     width: 50%;
     position: relative;
+    opacity: 0;
+    transform: translateY(200px);
+    transition: all 0.4s;
 }
 .sec2_about .left .img {
     background: url(https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80) no-repeat center / cover;
@@ -137,6 +173,11 @@
 .sec2_about .right p {
     color: #fff;
     font-family: 'NexonLv1Gothic';
+}
+
+#section2.show .sec2_about .left {
+    opacity: 1;
+    transform: translateY(0px);
 }
 
 /* sec3 */
@@ -211,4 +252,12 @@
     font-family: 'NexonLv1Gothic';
     padding: 10px 50px;
     margin-right: 5px;
+}
+
+
+@media (max-width: 600px){
+    .sec1 .text-wrap .t4 {
+        left: 0%;
+        top: 0%;
+    }
 }

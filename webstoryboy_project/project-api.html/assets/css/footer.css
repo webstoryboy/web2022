@@ -1,0 +1,79 @@
+#footer {
+    position: fixed;
+    left: 0; 
+    bottom: 0;
+    width: 100%;
+    color: var(white);
+    border-top: 1px solid var(--dark_border);
+    background-color: var(--dark_bg);
+    display: flex;
+    align-items: center;
+    font-family: "Rajdhani";
+    z-index: 1000;
+}
+#footer div {
+    text-align: center;
+    padding: 1.45rem;
+}
+#footer h4,
+#footer ul {
+    display: inline-block;
+}
+#footer a {
+    position: relative;
+    color: var(--white);    
+}
+#footer::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--white);
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+}
+#footer::before:hover::before {
+    transform: scaleX(1);
+}
+#footer h4 {
+    font-weight: 600;
+    padding: 0 0.6em;
+    text-transform: capitalize;
+    color: var(--white);
+}
+#footer div:nth-child(1){
+    flex: 1 1 25%;
+    border-right: 1px solid var(--dark_border);
+}
+#footer div:nth-child(2){
+    flex: 1 1 20%;
+    border-right: 1px solid var(--dark_border);
+}
+#footer div:nth-child(3){
+    flex: 1 1 55%;
+}
+#footer li {
+    display: inline;
+}
+#footer a {
+    display: inline-block;
+    padding: 0 0.6em;
+    position: relative;
+    color: var(--white);
+}
+#footer a::before {
+    content: '';
+    position: absolute;
+    left: 0.6em;
+    bottom: 0;
+    width: calc(100% - 1.2em);
+    height: 1px;
+    background: var(--white);
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+}
+#footer a:hover::before {
+    transform: scaleX(1);
+}

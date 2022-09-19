@@ -4,80 +4,149 @@
     &lt;meta charset="UTF-8"&gt;
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;레이아웃 유형01&lt;/title&gt;
+    &lt;title&gt;이미지/텍스트 유형01&lt;/title&gt;
     &lt;style&gt;
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
         * {
             margin: 0;
             padding: 0;
         }
-        body {
-            background-color: #FFF3E0;
+        a {
+            text-decoration: none;
+            color: #000;
         }
-        #wrap {
-            width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-areas: 
-                "header header"
-                "nav nav"
-                "aside section"
-                "footer footer";
-            grid-template-columns: 30% 70%;
-            grid-template-rows: 100px 100px 780px 100px;
+        li {
+            list-style: none;
         }
-        #header {
-            background-color: #FFE0B2;
-            grid-area: header;
-        }
-        #nav {
-            background-color: #FFCC80;
-            grid-area: nav;
-        }
-        #aside {
-            background-color: #FFB74D;
-            grid-area: aside;
-        }
-        #section {
-            background-color: #FFA726;
-            grid-area: section;
-        }
-        #footer {
-            background-color: #FF9800;
-            grid-area: footer;
+        .blind {
+            width: 0;
+            height: 0;
+            line-height: 0;
+            overflow: hidden;
+            position: absolute;
+            text-indent: -9999px;
         }
 
-        /* 미디어쿼리 */
-        @media (max-width: 1300px){
-            #wrap {
-                width: 96%;
-            }
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
         }
-        @media (max-width: 768px){
-            #wrap {
-                width: 100%;
-            }
+        .section {
+            padding: 120px 0;
         }
-        @media (max-width: 480px){
-            #wrap {
-                grid-template-areas: 
-                    "header"
-                    "nav"
-                    "aside"
-                    "section"
-                    "footer";
-                grid-template-columns: 100%;
-                grid-template-rows: 100px 100px 300px 480px 100px;
-            }
+
+        /* imTextType */
+        .imgText__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .imgText__inner &gt; div {
+            width: 32%;
+            height: 500px;
+        }
+        .imgText__txt .small {
+            font-size: 16px;
+            color: #666;
+            text-decoration: underline;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .imgText__txt .title {
+            font-size: 50px;
+            font-weight: 300;
+            word-break: keep-all;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+        .imgText__txt .desc {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.5;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .imgText__txt .list {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        .imgText__txt .list li {
+            position: relative;
+            padding-left: 20px;
+        }
+        .imgText__txt .list li::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            background: #666;
+            border-radius: 50%;
+            position: absolute;
+            left: 5px;
+            top: 9px;
+        }
+        .imgText__txt .list li a {
+            color: #666;
+        }
+        .imgText__img {
+            border-radius: 10px;
+            position: relative;
+        }
+        .imgText__img a {
+            background-color: #7C2B39;
+            color: #fff;
+            padding: 10px 30px;
+            font-size: 18px;
+            border-radius: 30px;
+            display: inline-block;
+            position: absolute;
+            left: 30px;
+            bottom: 30px;
+        }
+        .imgText__img a.blue {
+            background-color: #2B387C;
+        }
+        .imgText__img.img1 {
+            background: url(img/imgText_bg01.jpg) no-repeat center / cover;
+        }
+        .imgText__img.img2 {
+            background: url(img/imgText_bg02.jpg) no-repeat center / cover;
         }
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;div id="wrap"&gt;
-        &lt;header id="header"&gt;&lt;/header&gt;
-        &lt;nav id="nav"&gt;&lt;/nav&gt;
-        &lt;aside id="aside"&gt;&lt;/aside&gt;
-        &lt;section id="section"&gt;&lt;/section&gt;
-        &lt;footer id="footer"&gt;&lt;/footer&gt;
-    &lt;/div&gt;
+    &lt;section id="imTextType" class="imgText__wrap section nexon"&gt;
+        &lt;h2 class="blind"&gt;이미지 텍스트 유형&lt;/h2&gt;
+        &lt;div class="imgText__inner container"&gt;
+            &lt;div class="imgText__txt"&gt;
+                &lt;span class="small"&gt;이미지 텍스트 유형01&lt;/span&gt;
+                &lt;h3 class="title"&gt;유용한 사이트 살펴보기&lt;/h3&gt;
+                &lt;p class="desc"&gt;웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자를 위한 유용한 사이트입니다.&lt;/p&gt;
+                &lt;ul class="list"&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;튜토리얼 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;레퍼런스 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;웹폰트 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;CSS 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;WebGL 사이트&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="/"&gt;Youtube 사이트&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="imgText__img img1"&gt;
+                &lt;a href="/"&gt;레퍼런스 사이트&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class="imgText__img img2"&gt;
+                &lt;a href="/" class="blue"&gt;튜토리얼 사이트&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
 &lt;/body&gt;
 &lt;/html&gt;

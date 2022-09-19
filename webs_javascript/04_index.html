@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,12 @@
     <title>"포트폴리오가 실력이다" : 자바스크립트 </title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../../assets/css/fonts.css">
-    <link rel="stylesheet" href="../../assets/css/reset.css">
-    <link rel="stylesheet" href="../../assets/css/dracula.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/dracula.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class="white">
     <header id="header">
         <h1><a href="#">WEBS : 자바스크립트 : 데이터 제어하기</a></h1>
@@ -49,13 +51,13 @@
                 <h2>소개</h2>
                 <p>
                     안녕하세요!. 웹스토리보이입니다.
-                    자바스크립트를 통해 데이터 저장하는 방법과 출력하는 방법을 배웠으면, 이제는 데이터를 실행하는 방법을 배우겠습니다. 
+                    자바스크립트를 통해 데이터 저장하는 방법과 출력하는 방법을 배웠으면, 이제는 데이터를 실행하는 방법을 배우겠습니다.
                 </p>
 
-            
+
 
                 <h3>01. if문</h3>
-<pre class="language-javascript"><code>{
+                <pre class="language-javascript"><code>{
     //false, "", 0, null, undefined, true, 1, "1", [], {}
     if(true){
         document.write("조건문이 실행되었습니다.(true)");
@@ -65,12 +67,12 @@
 }</code></pre>
 
                 <h3>02. if문 생략</h3>
-<pre class="language-javascript"><code>{
+                <pre class="language-javascript"><code>{
     if(ture) document.write("true");
 }</code></pre>
 
                 <h3>03. 다중 if문</h3>
-<pre class="language-javascript"><code>{
+                <pre class="language-javascript"><code>{
     let num = 100;
 
     if( num == 90 ){
@@ -87,7 +89,7 @@
 }</code></pre>
 
                 <h3>04. 중첩 if문</h3>
-<pre class="language-javascript"><code>{
+                <pre class="language-javascript"><code>{
     let num = 100;
 
     if( num == 100 ){
@@ -104,7 +106,7 @@
 }</code></pre>
 
                 <h3>05. 조건부 연산자</h3>
-<pre class="language-javascript"><code>{
+                <pre class="language-javascript"><code>{
     let num = 100;
 
     // if( num == 100 ){
@@ -117,7 +119,7 @@
 }</code></pre>
 
                 <h3>06. switch문</h3>
-<pre class="language-javascript"><code>{
+                <pre class="language-javascript"><code>{
     let num = 100;
 
     switch( num ){
@@ -137,7 +139,7 @@
 }</code></pre>
 
                 <h3>07. while문</h3>
-<pre class="language-javascript"><code>{
+                <pre class="language-javascript"><code>{
     let num = 1;
     while( num &lt= 10 ){
         document.write( num + ". 반복문이 실행되었습니다.");  
@@ -146,7 +148,7 @@
 }</code></pre>
 
                 <h3>08. do while문</h3>
-<pre class="language-javascript"><code>{
+                <pre class="language-javascript"><code>{
     let num = 1;
     do {
         document.write(num + ". 반복문이 실행되었습니다.");
@@ -155,14 +157,14 @@
 }</code></pre>
 
                 <h3>09. for문</h3>
-<pre class="language-javascript"><code>{
+                <pre class="language-javascript"><code>{
     for( let i=1; i&lt;=10; i++ ){
         document.write(i + ". 반복문이 실행되었습니다.");
     }
 }</code></pre>
 
                 <h3>10. 중첩 for문</h3>
-<pre class="language-javascript"><code>{
+                <pre class="language-javascript"><code>{
     for(var i=1; i&lt;=5; i++){
         document.write(i + ". 반복문(아이)이 실행되었습니다.");
         for(var j=1; j&lt;=5; j++){
@@ -172,7 +174,7 @@
 }</code></pre>
 
                 <h3>11. forEach()</h3>
-<pre class="language-javascript"><code>{
+                <pre class="language-javascript"><code>{
     const num = [100, 200, 300, 400, 500];
 
     document.write(num[0]);
@@ -200,7 +202,7 @@
 }</code></pre>
 
                 <h3>12. for of문</h3>
-<pre class="language-javascript"><code>{
+                <pre class="language-javascript"><code>{
     const num = [100, 200, 300, 400, 500];
 
     for( let i of num ){
@@ -209,7 +211,7 @@
 }</code></pre>
 
                 <h3>13. for in문</h3>
-<pre class="language-javascript"><code>{
+                <pre class="language-javascript"><code>{
     //배열
     const num = [100, 200, 300, 400, 500];
 
@@ -233,7 +235,7 @@
 }</code></pre>
 
                 <h3>14. break문</h3>
-<pre class="language-javascript"><code>{
+                <pre class="language-javascript"><code>{
     let num = 0;
     while (num &lt; 20){
         num++;
@@ -252,7 +254,7 @@
 }</code></pre>
 
                 <h3>15. continue문</h3>
-<pre class="language-javascript"><code>{
+                <pre class="language-javascript"><code>{
     let num = 0;
 
     while( true ){
@@ -274,24 +276,25 @@
 
     <footer id="footer">
         <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
-    </footer> 
+    </footer>
     <!-- //footer -->
 
     <!-- script -->
-    <script src="../../assets/js/jquery-3.6.0.js"></script>
-    <script src="../../assets/js/jquery-ui.js"></script>
-    <script src="../../assets/js/highlight.min.js"></script>
-    <script src="../../assets/js/script.js"></script> 
+    <script src="assets/js/jquery-3.6.0.js"></script>
+    <script src="assets/js/jquery-ui.js"></script>
+    <script src="assets/js/highlight.min.js"></script>
+    <script src="assets/js/script.js"></script>
 
     <script>
-        if( undefined ){
-        document.write("조건문이 실행되었습니다.(true)");
-    } else {
-        document.write("조건문이 실행되었습니다.(false)");
-    }
- 
-       
+        if (undefined) {
+            document.write("조건문이 실행되었습니다.(true)");
+        } else {
+            document.write("조건문이 실행되었습니다.(false)");
+        }
+
+
 
     </script>
 </body>
+
 </html>

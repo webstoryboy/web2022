@@ -1,0 +1,87 @@
+#header {
+    position: fixed;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    color: var(--white);
+    border-bottom: 1px solid var(--dark_border);
+    background-color: var(--dark_bg);
+    display: flex;
+    align-items: center;
+    font-family: "Rajdhani";
+    z-index: 1000;
+}
+
+.header__left {
+    flex: 1 1 40%;
+}
+.header__left li {
+    display: inline;
+}
+.header__left a {
+    display: inline-block;
+    padding: 1rem;
+    text-transform: capitalize;
+    position: relative;
+}
+.header__left a::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    width: calc(100% - 2rem) ;
+    height: 1px;
+    background: var(--white);
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+}
+.header__left a:hover::before {
+    transform: scaleX(1);
+}
+.header__logo {
+    flex: 1 1 20%;
+    text-align: center;
+}
+.header__logo a {
+    display: inline-block;
+    font-size: 1.6rem;
+    padding: 1rem;
+}
+.header__right {
+    flex: 1 1 40%;
+    text-align: right;
+}
+.header__right li {
+    display: inline;
+}
+.header__right li a {
+    display: inline-block;
+    padding: 1rem;
+    position: relative;
+}
+.header__right li a::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    width: calc(100% - 2rem) ;
+    height: 1px;
+    background: var(--white);
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+}
+.header__right li a:hover::before {
+    transform: scaleX(1);
+}
+
+/* 라이트 버전 */
+.light#header {
+    background-color: var(--light_bg);
+    border-color: var(--light_border);
+}
+.light#header a {
+    color: var(--black);
+}
+.light#header a::before {
+    background: var(--black);
+}

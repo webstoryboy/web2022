@@ -172,7 +172,7 @@ code[class*=language-],
         }
 
         hr {
-            margin: 10% 0 5% 0;
+            margin: 1%;
             border-style: dashed;
             border-color: #e6e6e6;
             border-width: 1px;
@@ -398,6 +398,7 @@ code[class*=language-],
 </code></pre>
         </div>
     </div>
+    <!-- 7+4+1 -->
     <!-- 12 -->
     <hr>
 
@@ -553,6 +554,7 @@ code[class*=language-],
 </code></pre>
         </div>
     </div>
+    <!-- 2 4 6 8 10 -->
     <!-- 30 -->
     <hr>
 
@@ -576,6 +578,7 @@ code[class*=language-],
 </code></pre>
         </div>
     </div>
+    <!-- 1 2 3 4 6 7 8 9 -->
     <!-- 40 -->
     <hr>
   
@@ -784,7 +787,15 @@ code[class*=language-],
     <script>
         
         
+        function func(){
+            let a = [];
 
+            for( i=1; i<=15; i+=4){
+                a += i;
+            }
+            document.write(a);
+        }
+        func();
         
     </script>
 </body>

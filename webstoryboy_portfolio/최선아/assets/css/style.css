@@ -3,7 +3,9 @@
 #section1 {
     height: 6000px;
 }
-#section2 {background-color: #222;}
+#section2 {
+    height: 6000px;
+    background-color: #222;}
 #section3 {background-color: #333;}
 #section4 {background-color: #444;}
 #section5 {background-color: #555;}

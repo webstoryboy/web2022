@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,12 +18,14 @@
                 url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
             font-display: swap;
         }
+
         @font-face {
             font-family: 'TmonMonsori';
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/TmonMonsori.woff') format('woff');
             font-weight: normal;
             font-style: normal;
         }
+
         * {
             margin: 0;
             padding: 0;
@@ -33,17 +36,21 @@
             word-break: break-all;
             color: #223547;
         }
+
         a {
             text-decoration: none;
             color: #223547;
         }
+
         .number {
             margin: 10px;
         }
+
         .number li {
             list-style: none;
             display: inline;
         }
+
         .number li a {
             border: 1px solid #223547;
             width: 30px;
@@ -54,10 +61,12 @@
             line-height: 30px;
             transition: all 0.3s;
         }
+
         .number li.active a {
             background: #223547;
             color: #fff;
         }
+
         .board {
             margin: 5vw 10vw 10vw 10vw;
             width: 80vw;
@@ -67,24 +76,30 @@
             text-align: center;
             border-radius: 10px;
         }
+
         .board .sub {
             font-size: 20px;
         }
+
         .board .sub a {
             font-size: 20px;
             border-bottom: 1px solid #223547;
         }
+
         .board h1 a {
             font-family: 'TmonMonsori';
             font-size: 80px;
             margin-bottom: 1vw;
         }
+
         .board .search {
             margin-bottom: 3vw;
         }
+
         .board .search label {
             display: none;
         }
+
         .board .search input {
             font-size: 24px;
             border: 2px solid #223547;
@@ -92,17 +107,21 @@
             border-radius: 40px;
             width: 50%;
         }
+
         .board .count {
             text-align: right;
             color: #777;
         }
+
         .board .count em {
             font-style: normal;
             color: #223547;
         }
+
         .board .list {
             text-align: left;
         }
+
         .board .list li {
             background-color: #bdd6e6;
             margin: 5px 0;
@@ -111,30 +130,37 @@
             list-style: none;
             transition: all 0.3s;
         }
+
         .board .list li:hover {
             background-color: #a5c3d5;
             cursor: grabbing
         }
-        @media (max-width: 800px){
+
+        @media (max-width: 800px) {
             .board {
                 margin: 2vw 2vw 2vw 2vw;
                 width: 96vw;
                 padding: 4vw 2vw;
             }
+
             .board .sub {
                 font-size: 14px;
             }
+
             .board .sub a {
                 font-size: 14px;
             }
+
             .board h1 a {
                 font-size: 40px;
             }
+
             .board .search input {
                 font-size: 16px;
                 padding: 5px 20px;
                 width: 100%;
             }
+
             .board .list li {
                 font-size: 14px;
             }
@@ -149,27 +175,33 @@
             margin: 3px;
             transition: all 0.2s;
         }
+
         .board .search span:hover {
             background: #223547;
             color: #fff;
             cursor: pointer;
         }
+
         .board .list li {
             padding-right: 100px;
             position: relative;
         }
+
         .board .list li span {
             position: absolute;
-            right: 10px; top: 50%;
+            right: 10px;
+            top: 50%;
             font-size: 14px;
             transform: translateY(-50%);
         }
+
         .board .list li span::before {
             content: 'view : ';
             text-transform: uppercase;
         }
     </style>
 </head>
+
 <body>
     <div id="wrap">
         <div class="number">
@@ -210,36 +242,53 @@
     <!-- script -->
     <script>
         const cssProperty = [
-            {view: 4, name: "all", desc: "all 속성은 CSS 속성을 재설정하는데 사용할 수 있는 약식 속성입니다."},
-            {view: 1, name: "animation", desc: "animation 속성은 애니메이션 속성을 설정하기 위한 약식 속성입니다."},
-            {view: 1, name: "animation-delay", desc: "animation-delay 속성은 애니메이션이 시작되는 시간을 설정합니다."},
-            {view: 5, name: "animation-direction", desc: "animation-direction 속성은 애니메이션이 움직이는 방향을 설정합니다."},
-            {view: 2, name: "animation-duration", desc: "animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다."},
-            {view: 5, name: "animation-fill-mode", desc: "animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다."},
-            {view: 3, name: "animation-iteration-count", desc: "animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다."},
-            {view: 5, name: "animation-name", desc: "animation-name 속성은 애니메이션 키프레임 이름을 설정합니다."},
-            {view: 5, name: "animation-play-state", desc: "animation-play-state 속성은 애니메이션의 진행상태를 설정합니다."},
-            {view: 5, name: "backdrop-filter", desc: "backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다."},
-            {view: 4, name: "backface-visibility", desc: "backface-visibility 속성은 요소 뒷면 출력 여부 설정합니다."},
-            {view: 5, name: "caption-side", desc: "caption-side 속성은 테이블 caption의 위치를 설정합니다."},
-            {view: 5, name: "direction", desc: "direction 속성은 문장의 방향을 설정합니다."},
-            {view: 5, name: "filter", desc: "filter 속성은 그래픽 효과를 설정합니다."},
-            {view: 2, name: "flex", desc: "flex 속성은 콘텐츠의 성질을 flex로 정의합니다."},
-            {view: 5, name: "grid-template-columns", desc: "grid-template-columns 속성은 가로 컬럼의 크기와 위치 설정합니다."},
+            { view: 4, name: "all", desc: "all 속성은 CSS 속성을 재설정하는데 사용할 수 있는 약식 속성입니다." },
+            { view: 1, name: "animation", desc: "animation 속성은 애니메이션 속성을 설정하기 위한 약식 속성입니다." },
+            { view: 1, name: "animation-delay", desc: "animation-delay 속성은 애니메이션이 시작되는 시간을 설정합니다." },
+            { view: 5, name: "animation-direction", desc: "animation-direction 속성은 애니메이션이 움직이는 방향을 설정합니다." },
+            { view: 2, name: "animation-duration", desc: "animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다." },
+            { view: 5, name: "animation-fill-mode", desc: "animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다." },
+            { view: 3, name: "animation-iteration-count", desc: "animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다." },
+            { view: 5, name: "animation-name", desc: "animation-name 속성은 애니메이션 키프레임 이름을 설정합니다." },
+            { view: 5, name: "animation-play-state", desc: "animation-play-state 속성은 애니메이션의 진행상태를 설정합니다." },
+            { view: 5, name: "backdrop-filter", desc: "backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다." },
+            { view: 4, name: "backface-visibility", desc: "backface-visibility 속성은 요소 뒷면 출력 여부 설정합니다." },
+            { view: 5, name: "caption-side", desc: "caption-side 속성은 테이블 caption의 위치를 설정합니다." },
+            { view: 5, name: "direction", desc: "direction 속성은 문장의 방향을 설정합니다." },
+            { view: 5, name: "filter", desc: "filter 속성은 그래픽 효과를 설정합니다." },
+            { view: 2, name: "flex", desc: "flex 속성은 콘텐츠의 성질을 flex로 정의합니다." },
+            { view: 5, name: "grid-template-columns", desc: "grid-template-columns 속성은 가로 컬럼의 크기와 위치 설정합니다." },
         ];
 
-        const searchBox = document.querySelectorAll(".search span");    
-        const cssList = document.querySelector(".list ul");       
-        const cssCount = document.querySelector(".count em");    
-        
+        const searchBox = document.querySelectorAll(".search span");
+        const cssList = document.querySelector(".list ul");
+        const cssCount = document.querySelector(".count em");
+
         let listHTML = "";
 
         //목록 보여주기
-        function updataList(list){
+        function updataList(list) {
             listHTML = "";
 
-            for(const data of list){
-                listHTML += `<li>${data.name} : ${data.desc} <span>${data.view}</span></li>`;
+
+
+            for (const data of list) {
+                let star = "";
+
+                if (data.view == 5) {
+                    star = "💜💜💜💜💜"
+                } else if (data.view == 4) {
+                    star = "💜💜💜💜"
+                } else if (data.view == 3) {
+                    star = "💜💜💜"
+                } else if (data.view == 2) {
+                    star = "💜💜"
+                } else if (data.view == 1) {
+                    star = "💜"
+                }
+
+                listHTML += `<li>${data.name} : ${data.desc} <span>${star}</span></li>`;
+
             }
             cssList.innerHTML = listHTML;
         }
@@ -255,7 +304,7 @@
             });
         })
 
-        
+
 
 
 
@@ -287,7 +336,8 @@
         // for(let li of cssProperty){
         //     list += "<li>"+ li.view +"</li>";
         // }
-      
+
     </script>
 </body>
+
 </html>

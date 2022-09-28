@@ -19,8 +19,8 @@
     background: #000;
 }
 #section4 {
-    height: 100vh;
-    background: #fff;
+    height: 5000px;
+    background: #000;
 }
 #section5 {}
 #section6 {}
@@ -66,11 +66,26 @@
     font-family: 'SaintMonicaRegular';
     white-space: nowrap;
 }
+
+/* sec4 */
 .sec4 {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: sticky;
+    top: 0;
+}
+.sec4 .img  {
+    position: absolute;
+    width: 300px;
+    height: 400px;
+    background: #000;
+}
+.sec4 .img > div {
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 .sec4 h3 {
     color: #000;

@@ -241,7 +241,6 @@
             time: { value: 0 }
         }
 
-
         var hoverGeom = new THREE.BoxGeometry(length * 2.75, length * 2.75, length)
 
         let material = new THREE.ShaderMaterial({
@@ -330,7 +329,6 @@
             new Lolipop(Math.random() * 1.2 + .5, { x, y, z }, { x: 0, y: 0, z: Math.random() * Math.PI * 2 }, true)
         }
 
-
         camera.position.z = 55
 
         function animate() {
@@ -346,8 +344,8 @@
             uniforms.time.value = t;
             uniforms.camera.value = vector;
 
-            camera.position.y = mouse.y * 5
-            camera.position.x = mouse.x * 5
+            camera.position.y = mouse.y * 10
+            camera.position.x = mouse.x * 10
             //console.log(hoverables[0].rotation)
 
             objects.map(x => {

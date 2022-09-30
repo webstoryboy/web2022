@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        const canvas = document.createElement('canvas'),
+            width = canvas.width = window.innerWidth,
+            height = canvas.height = window.innerHeight,
+            context = canvas.getContext('2d'),
+            particles = []
+
+        document.body.appendChild(canvas)
+
+
+        for (let i = 0; i < 100; i++) {
+            const x = Math.random() * width,
+                y = Math.random() * height,
+                scale = Math.random() * 1 + 10,
+                vx = Math.random() * 2 - 2,
+                vy = Math.random() * 2 - 4,
+                hue = 100 + Math.random() * 40
+
+            particles.push({ x, y, scale, vx, vy, hue })
+        }
+
+        context.fillStyle = 'rgba(0,0,0,1)'
+        context.fillRect(0, 0, width, height)
+
+        function drawBackground() {
+            context.fillStyle = 'rgba(0,0,0,0.08)'
+            context.fillRect(0, 0, width, height)
+        }
+
+        function resetParticle(particle) {
+            particle.x = Math.random() * width
+            particle.y = Math.random() * height
+        }
+
+        function drawParticles() {
+            particles.map(particle => {
+                const { x, y, scale, hue } = particle;
+                context.fillStyle = 'hsl(' + hue + ', 10%, 100%)'
+                context.fillRect(x, y, scale, scale)
+                particle.x += particle.vx;
+                particle.y += particle.vy;
+
+                if (particle.x < 0 || particle.x > width
+                    || particle.y < 0 || particle.y > height) {
+                    resetParticle(particle)
+                }
+            })
+        }
+
+        function render() {
+            drawBackground()
+            drawParticles()
+
+            requestAnimationFrame(render)
+        }
+
+        render()
+    </script>
+</body>
+
+</html>

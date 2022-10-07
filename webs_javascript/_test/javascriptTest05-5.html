@@ -427,6 +427,7 @@ code[class*=language-],
 </code></pre>
         </div>
     </div>
+    <!-- 1 2 3 4 5 -->
     <!-- 15 -->
 
     <div id="sample5" class="sample">
@@ -572,7 +573,6 @@ code[class*=language-],
         for(let x of s){
             if(x === x.toUpperCase()) answer++; 
         }
-
         return answer;
     }
 
@@ -589,16 +589,14 @@ code[class*=language-],
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
     function solution(s){         
-        let answer = "";
+        let answer = " ";
         for(let x of s){
-            let num=x.charCodeAt();
+            let num = x.charCodeAt();
    
             if(x === x.toLowerCase()) answer += x.toUpperCase();
             else answer += x;
         }
-
         return answer;
-
     }
 
     let str="ItisTimeToStudy";
@@ -622,7 +620,6 @@ code[class*=language-],
         }
         return answer;
     }
-
     console.log(solution("StuDY"));
 }
 </code></pre>
@@ -635,6 +632,7 @@ code[class*=language-],
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
     function solution(s){  
+        //max = Number.MIN_SAFE_INTEGER; 정수값 표현 방식
         let answer = "", max = Number.MIN_SAFE_INTEGER;
         for(let x of s){
             if(x.length > max){
@@ -657,6 +655,7 @@ code[class*=language-],
         <h2>15. 다음의 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
+    //substring() 메서드는 string 객체의 시작 인덱스로 부터 종료 인덱스 전 까지 문자열의 부분 문자열을 반환합니다.
     function solution(s){  
         let answer;
         let mid = Math.floor(s.length/2)
@@ -709,7 +708,80 @@ code[class*=language-],
 </code></pre>
         </div>
     </div>
-    <!-- kset -->
+    <!-- ['good', 'time', 'student'] -->
+
+    <div id="sample18" class="sample">
+        <h2>18. 다음의 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function solution(s){
+        let answer = "YES";
+        stack = [ ];
+        for(let x of s){
+            if(x ==='(') stack.push(x);
+            else {
+                if(stack.length === 0) return "NO";
+                stack.pop();
+            }
+        }
+        if(stack.length > 0) return "NO";  
+        return answer;
+    }
+    
+    let a="(()(()))(()";
+    console.log(solution(a));
+}
+</code></pre>
+        </div>
+    </div>
+    <!-- NO -->
+
+    <div id="sample19" class="sample">
+        <h2>19. 다음의 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function solution(s){  
+        let answer;
+        let stack = [ ];
+        for(let x of s){
+            if( x === ')' ){
+                while(stack.pop() !== '(');
+            }
+            else stack.push(x);
+        }
+        answer = stack.join('');
+        return answer;
+    }
+
+    let str="(A(BC)D)EF(G(H)(IJ)K)LM(N)";
+    console.log(solution(str));
+}
+</code></pre>
+        </div>
+    </div>
+    <!-- EFLM -->
+
+    <div id="sample19" class="sample">
+        <h2>20. 다음의 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function solution(n, k){
+        let answer;
+        let queue = Array.from({length : n}, (v, i) => i+1); 
+        while(queue.length){
+            for(let i=1; i&lt;k; i++) queue.push(queue.shift());
+            queue.shift();
+            if(queue.length === 1) answer = queue.shift();
+        }  
+        return answer;
+    }
+
+    console.log(solution(8, 3));
+}
+</code></pre>
+        </div>
+    </div>
+    <!-- 7 -->
 
 
 
@@ -717,8 +789,21 @@ code[class*=language-],
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
     <script>
-        
-        
+function solution(s){  
+        let answer;
+        let stack = [ ];
+        for(let x of s){
+            if( x === ')' ){
+                while(stack.pop() !== '(');
+            }
+            else stack.push(x);
+        }
+        answer = stack.join('');
+        return answer;
+    }
+
+    let str="(A(BC)D)EF(G(H)(IJ)K)LM(N)";
+    console.log(solution(str));
     </script>
 </body>
     

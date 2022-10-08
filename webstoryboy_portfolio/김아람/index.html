@@ -15,7 +15,7 @@
 <body>
     <header id="header">
         <div class="header_inner">
-            <h1>portfolio</h1>
+            <h1>portfolio <em class="scroll">0</em></h1>
             <nav>
                 <ul>
                     <li><a href="#">work</a></li>
@@ -196,21 +196,80 @@
                 <div class="script-wrap">
                     <div class="script">
                         <div class="title">
-                            <div>J</div>
-                            <div>a</div>
-                            <div>v</div>
-                            <div>a</div>
-                            <div>s</div>
-                            <div>c</div>
-                            <div>r</div>
+                            <div class="box1">J</div>
+                            <div class="box2">a</div>
+                            <div class="box3">v</div>
+                            <div class="box4">a</div>
+                            <div class="box5">s</div>
+                            <div class="box6">c</div>
+                            <div class="box7">r</div>
                         </div>
                         <div class="desc"></div>
                     </div>
                 </div>
+
             </div>
         </section>
         <!-- //section4 -->
-        <section id="section5"></section><!-- //section5 -->
+
+        <section id="section5">
+            <div class="sec5">
+                <div class="script-hor">
+                    <div>11</div>
+                    <div>22</div>
+                    <div>33</div>
+                    <div>44</div>
+                    <div>55</div>
+                </div>
+            </div>
+        </section>
+        <!-- //section5 -->
+
+        <section id="section6">
+           sss
+        </section>
+        <!-- //section6 -->
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script>
+
+        function scroll(){
+            let scrollTop = (window.pageYOffset || document.documentElement.scrollTop || window.scrollY);
+            document.querySelector(".scroll").innerText = Math.round(scrollTop);
+
+
+            let section4 = document.querySelector("#section4").offsetTop;
+            let box = document.querySelectorAll(".sec4 .script-wrap .script .title > div");
+
+            let hor = document.querySelector("#section5").offsetTop;
+            let horBox = document.querySelector(".sec5 .script-hor");
+            let offset = (scrollTop - hor);
+
+            if(scrollTop >= hor){
+                gsap.to(horBox, {left: -offset})
+            }
+
+            if(scrollTop >= section4) {
+                box.forEach((box, index) => {
+                    setTimeout(() => {
+                        box.style.background = "yellow";
+                    }, 100 * index)
+                })
+            } 
+
+
+
+
+            // document.querySelectorAll(".content__item").forEach(item => {
+            //     if(scrollTop >= item.offsetTop){
+            //         item.querySelector(".content__item__desc").classList.add("show");
+            //     }
+            // })
+
+            requestAnimationFrame(scroll);
+        }
+        scroll();
+    </script>
 </body>
 </html>

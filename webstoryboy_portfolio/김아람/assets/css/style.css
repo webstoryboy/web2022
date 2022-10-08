@@ -1,11 +1,12 @@
 /* layout */
 #contents {}
-#section1 {}
-#section2 {}
-#section3 {}
-#section4 {}
-#section5 {}
-#section6 {}
+#contents > section {background: #fff;}
+#section1 {position: relative;  z-index: 6000;}
+#section2 {position: relative; z-index: 5000;}
+#section3 {position: relative; z-index: 4000;}
+#section4 {position: relative; z-index: 3000;}
+#section5 {position: relative; z-index: 2000;}
+#section6 {position: relative; height: 5000px; background: blue !important;}
 
 
 /* section1 */
@@ -199,7 +200,6 @@
 
 /* sec4 */
 .sec4 {
-    height: 5000px;
     padding: 10px;
 }
 .sec4 h2 {
@@ -255,8 +255,29 @@
 .sec4 .script-wrap .script .title > div:nth-child(6){top:600px;}
 .sec4 .script-wrap .script .title > div:nth-child(7){top:700px;}
 
-
-
+/* sec5 */
+#section5 {background: #ccc; height: 450vw;}
+.sec5 {
+    position: fixed;
+    left: 0px;
+    top: 50px;
+    margin: 10px;
+    border: 2px solid #000;
+}
+.sec5 .script-hor {
+    position: relative;
+    display: flex;
+    width: 450vw;
+}
+.sec5 .script-hor > div {
+    width: 90vw;
+    height: 90vh;
+}
+.sec5 .script-hor > div:nth-child(1){background: #333;}
+.sec5 .script-hor > div:nth-child(2){background: #444;}
+.sec5 .script-hor > div:nth-child(3){background: #555;}
+.sec5 .script-hor > div:nth-child(4){background: #666;}
+.sec5 .script-hor > div:nth-child(5){background: #777;}
 
 
 .smallTitle {

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0;padding: 0;}
+    </style>
+</head>
+
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/86/three.min.js"></script>
+    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <script type="text/template" id="vertex-shader">
+        uniform float time;
+        uniform mat4 rotationMatrix;
+        uniform vec3 targetPosition1;
+        uniform vec3 targetPosition2;
+        uniform vec3 targetPosition3;
+        uniform vec3 targetPosition4;
+      
+        attribute float shouldOffset;
+        attribute float range;
+        attribute float randTime;
+        attribute float size;
+        attribute vec3 offsetPosition;
+        attribute float whiteValue;
+      
+        varying float vWhiteValue;
+        varying float vShouldOffset;
+        varying vec3 vPosition;
+      
+        void main () {
+          vec3 newPosition = position;
+          mat4 newRotationMatrix = rotationMatrix;
+      
+          float curTime = mod(time + randTime, 3.0);
+          float rate = curTime / 2.0;
+          float mixFactor = clamp(rate, 0.0, 1.0);
+      
+          vec3 centerPosition = (targetPosition1 + targetPosition2 + targetPosition3 + targetPosition4) / 4.0;
+      
+          if (shouldOffset < 0.1) {
+            newPosition = mix(targetPosition2, newPosition, mixFactor);
+            newRotationMatrix = mat4(1.0);
+          } else if (shouldOffset > 0.1 && shouldOffset <= 0.3) {
+            newPosition.x += cos(newPosition.x * 0.25 + time) * 8.5;
+            newPosition.y += sin(newPosition.y * 0.25 + time) * 8.5;
+          } else if (shouldOffset > 0.3 && shouldOffset < 0.5) {
+           newPosition = mix(targetPosition1, newPosition, mixFactor);
+          } else if (shouldOffset > 0.5 && shouldOffset <= 0.7) {
+            newPosition = mix(targetPosition3, newPosition, mixFactor);
+          } else if (shouldOffset > 0.7 && shouldOffset <= 0.72) {
+            newPosition = mix(newPosition, targetPosition4, mixFactor);
+          } else {        
+            newPosition = mix(position, offsetPosition, mixFactor);
+          }
+      
+          gl_Position = projectionMatrix * modelViewMatrix * (newRotationMatrix * vec4(newPosition, 1.0));
+          gl_PointSize = size;
+      
+          vWhiteValue = whiteValue;
+          vShouldOffset = shouldOffset;
+          vPosition = newPosition;
+      
+        }
+      </script>
+
+    <script type="text/template" id="fragment-shader">
+        uniform float time;
+        uniform float opacity;
+      
+        varying float vWhiteValue;
+        varying float vShouldOffset;
+        varying vec3 vPosition;
+      
+        void main () {
+          if (vShouldOffset > 0.1 && vShouldOffset <= 0.3) {
+            float colorVal = cos(time + vPosition.y);
+            gl_FragColor = vec4(colorVal, colorVal, 0.0, opacity);
+          } else {
+            gl_FragColor = vec4(vWhiteValue, vWhiteValue, vWhiteValue, opacity);  
+          }
+        }
+      </script>
+    <script>
+        class Planet {
+            constructor(position) {
+                this.position = position
+
+                this.sphereGeometry = new THREE.SphereBufferGeometry(20, 100, 100)
+                this.sphereGeometry2 = new THREE.SphereBufferGeometry(40, 100, 100)
+                this.sphereGeometry3 = new THREE.SphereBufferGeometry(60, 100, 100)
+
+                let count = this.sphereGeometry.attributes.position.count
+
+                let shouldOffsetArr = new Float32Array(count)
+                let rangeArr = new Float32Array(count)
+                let timeArray = new Float32Array(count)
+                let sizesArray = new Float32Array(count)
+                let targetArr = new Float32Array(count * 3)
+                let whiteValues = new Float32Array(count)
+
+                let possibleRange = 50
+
+                for (let i = 0; i < count; i += 1) {
+
+                    shouldOffsetArr[i] = Math.random()
+                    rangeArr[i] = possibleRange / 2 + Math.random() * possibleRange
+
+                    let randTime = Math.random() * 50
+                    timeArray[i + 0] = randTime
+                    timeArray[i + 1] = randTime
+                    timeArray[i + 2] = randTime
+
+                    sizesArray[i] = Math.random() * 2 + 1
+
+                    whiteValues[i] = Math.random() * 0.7 + 0.3
+
+                }
+                for (let i = 0; i < count * 3; i += 3) {
+                    let randX = 0
+                    let randY = 0
+                    let randZ = 0
+
+                    if (i % 2 === 0) {
+                        randX = this.sphereGeometry2.attributes.position.array[i + 0]
+                        randY = this.sphereGeometry2.attributes.position.array[i + 1]
+                        randZ = this.sphereGeometry2.attributes.position.array[i + 2]
+                    } else {
+                        randX = this.sphereGeometry3.attributes.position.array[i + 0]
+                        randY = this.sphereGeometry3.attributes.position.array[i + 1]
+                        randZ = this.sphereGeometry3.attributes.position.array[i + 2]
+                    }
+
+                    targetArr[i + 0] = randX
+                    targetArr[i + 1] = randY
+                    targetArr[i + 2] = randZ
+                }
+                this.sphereGeometry.addAttribute('shouldOffset', new THREE.BufferAttribute(shouldOffsetArr, 1))
+                this.sphereGeometry.addAttribute('range', new THREE.BufferAttribute(rangeArr, 1))
+                this.sphereGeometry.addAttribute('offsetPosition', new THREE.BufferAttribute(targetArr, 3))
+                this.sphereGeometry.addAttribute('randTime', new THREE.BufferAttribute(timeArray, 1))
+                this.sphereGeometry.addAttribute('size', new THREE.BufferAttribute(sizesArray, 1))
+                this.sphereGeometry.addAttribute('whiteValue', new THREE.BufferAttribute(whiteValues, 1))
+
+                this.attractor1 = new THREE.Vector3(0, 20, 0)
+                this.attractor2 = new THREE.Vector3(20, 0, 0)
+                this.attractor3 = new THREE.Vector3(0, -20, 0)
+                this.attractor4 = new THREE.Vector3(0, -20, 0)
+
+                this.attractor1.randomAngle = 5
+                this.attractor1.speed = Math.random() + 1
+                this.attractor2.randomAngle = 10
+                this.attractor2.speed = Math.random() + 1
+                this.attractor3.randomAngle = 15
+                this.attractor3.speed = Math.random() + 1
+                this.attractor4.randomAngle = 20
+                this.attractor4.speed = Math.random() + 1
+
+                this.sphereMaterial = new THREE.ShaderMaterial({
+                    uniforms: {
+                        time: {
+                            value: 0
+                        },
+                        rotationMatrix: {
+                            value: new THREE.Matrix4()
+                        },
+                        targetPosition1: {
+                            value: this.attractor1
+                        },
+                        targetPosition2: {
+                            value: this.attractor2
+                        },
+                        targetPosition3: {
+                            value: this.attractor3
+                        },
+                        targetPosition4: {
+                            value: this.attractor4
+                        },
+                        opacity: {
+                            value: 0
+                        }
+                    },
+                    vertexShader: planetVertexShader,
+                    fragmentShader: planetFragmentShader,
+
+                    transparent: true
+                })
+            }
+            init(parentNode) {
+                this.mesh = new THREE.Points(this.sphereGeometry, this.sphereMaterial)
+                this.mesh.position.copy(this.position)
+                this.mesh.rotation.x = 240 * Math.PI / 180
+                this.mesh.rotation.y = 240 * Math.PI / 180
+                parentNode.add(this.mesh)
+                return this
+            }
+            removeFromScene(parentNode) {
+                parentNode.remove(this.mesh)
+                return this
+            }
+            updateFrame(elapsedTime, delta) {
+                this.mesh.material.uniforms.time.value = elapsedTime
+                this.mesh.material.uniforms.rotationMatrix.value.makeRotationY(elapsedTime * 0.5)
+
+                let offset = 20
+
+                let sin = Math.sin(this.attractor1.randomAngle)
+                let cos = Math.cos(this.attractor1.randomAngle)
+                this.attractor1.x = sin * offset
+                this.attractor1.y = cos * offset
+                this.attractor1.randomAngle += delta * this.attractor1.speed
+
+                sin = Math.sin(this.attractor2.randomAngle * 0.75)
+                cos = Math.cos(this.attractor2.randomAngle * 0.75)
+                this.attractor2.x = sin * (offset + 20)
+                this.attractor2.z = cos * (offset + 20)
+                this.attractor2.randomAngle += delta * this.attractor2.speed
+
+                sin = Math.sin(this.attractor3.randomAngle * 0.5)
+                cos = Math.cos(this.attractor3.randomAngle * 0.5)
+                this.attractor3.x = sin * (offset)
+                this.attractor3.y = cos * (offset)
+                this.attractor3.randomAngle += delta * this.attractor3.speed
+
+                sin = Math.sin(this.attractor4.randomAngle * 0.25)
+                cos = Math.cos(this.attractor4.randomAngle * 0.25)
+                this.attractor4.x = sin * (offset + 20)
+                this.attractor4.y = cos * (offset + 20)
+                this.attractor4.randomAngle += delta * this.attractor4.speed
+            }
+        }
+
+        const width = window.innerWidth
+        const height = window.innerHeight
+
+        const scene = new THREE.Scene()
+        const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000)
+        const renderer = new THREE.WebGLRenderer({
+            antialias: true
+        })
+        const clock = new THREE.Clock()
+        //const controls = new THREE.OrbitControls(camera, renderer.domElement)
+
+        const planetVertexShader = document.querySelector('#vertex-shader').text
+        const planetFragmentShader = document.querySelector('#fragment-shader').text
+        const planet = new Planet(new THREE.Vector3()).init(scene)
+
+        let elapsedTime = 0
+
+        setScene()
+        renderFrame()
+
+        function setScene() {
+            renderer.setSize(width, height)
+            renderer.setClearColor(0x111111)
+            renderer.setPixelRatio(window.devicePixelRatio || 1)
+            document.body.appendChild(renderer.domElement)
+
+            camera.position.set(0, 20, 200)
+            camera.lookAt(new THREE.Vector3())
+
+            // scene.add(new THREE.GridHelper(100, 3))
+            let delay = 0.75
+            TweenMax.to(planet.mesh.material.uniforms.opacity, 3, {
+                value: 1,
+                delay
+            })
+            TweenMax.to(planet.mesh.rotation, 2, {
+                x: 240 * Math.PI / 180,
+                y: 240 * Math.PI / 180,
+                delay
+            })
+        }
+
+        function renderFrame() {
+            window.requestAnimationFrame(renderFrame)
+            renderer.render(scene, camera)
+
+            let delta = clock.getDelta()
+            elapsedTime += delta
+            planet.updateFrame(elapsedTime, delta)
+        }
+    </script>
+</body>
+
+</html>

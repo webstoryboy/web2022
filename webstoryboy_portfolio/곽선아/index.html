@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="header">
+        <nav>
+            <span></span>
+        </nav>
+        <div class="logo">
+            <div class="icon">
+                <span class="mo"
+                    data-0 = "transform: translate(-50%, -50%) rotate(0deg);"
+                    data-1000 = "transform: translate(-50%, -50%) rotate(180deg);"
+                ></span>
+            </div>
+        </div>
+        <h1>
+            FE<br>DEVELOPER <span class="scroll">0</span>
+        </h1>
+    </header>
+    <!-- //header -->
+
+    <div id="costents">
+        <section id="section1">
+            <div class="sec1">
+                <div class="title"
+                    data-0="transform: rotate(-5deg) translateX(0px)"
+                    data-1500="transform: rotate(-5deg) translateX(1000px)"
+                >
+                    <span>I’M FRONTEND DEVELOPER</span> <span>I’M FRONTEND DEVELOPER</span> 
+                </div>
+            </div>
+        </section>
+        <!-- //section1 -->
+
+        <section id="section2">
+            <div class="secWrap">
+                <div class="sec2"
+                    data-0="transform: translateX(0px)"
+                    data-1500="transform: translateX(-900px)"
+                >
+                    <div>1</div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>43</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>0</div>
+                </div>
+            </div>
+
+        </section>
+        <!-- //section2 -->
+        <section id="section3">
+            <div class="sec3">
+                <div>
+                    <h3>타이틀</h3>
+                    <div class="imgWrap">
+                        <div class="f">
+                            <img src="https://images.unsplash.com/photo-1666369905573-d9c26caaaff1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80" alt=""
+                                data-2800 = "width: 0%;"
+                                data-4100 = "width: 100%;"
+                            >
+                        </div>
+                        <div class="t">
+                            <img src="https://images.unsplash.com/photo-1666369860835-372c9f87cdef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80" alt=""
+                                data-2800 = "width: 100%;"
+                                data-4100 = "width: 0%;"
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>타이틀</h3>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1666369860835-372c9f87cdef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80" alt="">
+                    </div>
+                </div>
+                <div>
+                    <h3>타이틀</h3>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1666369632167-47db94413680?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80" alt="">
+                    </div>
+                </div>
+                <div></div>
+            </div>
+        </section>
+        <!-- //section3 -->
+        <section id="section4"></section><!-- //section4 -->
+        <section id="section5"></section><!-- //section5 -->
+        <section id="section6"></section><!-- //section6 -->
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script>
+        var s = skrollr.init({
+            smoothScrolling: true
+        });
+
+        function scroll(){
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            document.querySelector(".scroll").innerHTML = scrollTop;
+            requestAnimationFrame(scroll);
+        }
+        scroll();
+
+        function mainCateMove (){
+            const cate = document.querySelector('.mainCate'); 
+            const list = cate.querySelector('.list');
+            const item = cate.querySelector('.list__item');
+
+
+    </script>
+
+</body>
+</html>

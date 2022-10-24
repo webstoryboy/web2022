@@ -14,6 +14,12 @@
 </head>
 <body>
     <header id="header">
+        <div class="header_line">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <div class="header_inner">
             <h1>portfolio <em class="scroll">0</em></h1>
             <nav>
@@ -226,7 +232,8 @@
         <!-- //section5 -->
 
         <section id="section6">
-           sss
+            <div class="sec6">
+            </div>
         </section>
         <!-- //section6 -->
 
@@ -248,6 +255,33 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
     <script>
+        gsap.set(header, {top: 0, opacity: 1})
+
+        gsap.set("#header nav li", {duration: 0.3, y: -100, opacity: 0})
+        gsap.set("#header nav li a", {duration: 0.3, y: 100, opacity: 0})
+
+        gsap.set("#header h1", {duration: 0.3, y: -100, opacity: 0})
+        gsap.set("#section1", {duration: 0.3, y: 100, opacity: 0})
+        gsap.set(".sec5", {duration: 0.3, opacity: 0})
+        gsap.set(".sec1 .img", {duration: 0.3, opacity: 0, y: 200})
+        gsap.set(".sec1 h1", {duration: 0.3, opacity: 0})
+
+        gsap.set(".header_line > div:nth-child(1)", {duration: 0.6, width: "100%"})
+        gsap.set(".header_line > div:nth-child(4)", {duration: 0.6, height: "100%"})
+        gsap.set(".header_line > div:nth-child(3)", {duration: 0.6, width: "100%"})
+        gsap.set(".header_line > div:nth-child(2)", {duration: 0.6, height: "100%"})
+
+
+        setTimeout(() => {
+            let tl = gsap.timeline();
+            tl.to(".header_line > div:nth-child(1)", {duration: 0.6, width: "0%", opacity: 1, ease: "linear"})
+            tl.to(".header_line > div:nth-child(4)", {duration: 0.2, height: "0%", opacity: 1, ease: "linear"})
+            tl.to(".header_line > div:nth-child(3)", {duration: 0.6, width: "0%", opacity: 1, ease: "linear"})
+            tl.to(".header_line > div:nth-child(2)", {duration: 0.2, height: "0%", opacity: 1, ease: "linear"})
+            tl.to("#header nav li", {duration: 0.2, y:0, stagger: 0.3, opacity: 1})
+            tl.to("#header nav li a", {duration: 0.2, y:0, stagger: 0.3, opacity: 1})
+            tl.to("#header h1", {duration: 0.3, opacity: 1, y:0})
+        }, 1000);
 
         function scroll(){
             let scrollTop = (window.pageYOffset || document.documentElement.scrollTop || window.scrollY);
@@ -263,6 +297,8 @@
 
             if(scrollTop >= hor){
                 gsap.to(horBox, {left: -offset})
+            } else {
+                horBox.style.left = "0px";
             }
 
             if(scrollTop >= section4) {

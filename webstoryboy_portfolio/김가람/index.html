@@ -24,8 +24,7 @@
         <div class="logo">
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="1" y="1" width="20" height="20" rx="5" stroke="white" stroke-width="1.5" />
-                <path d="M5 12H7L9 15L13 8L15 12H17" stroke="white" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
+                <path d="M5 12H7L9 15L13 8L15 12H17" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
             <span>2022.09.03 <em class="scroll">0</em></span>
         </div>
@@ -284,10 +283,22 @@
             </div>
         </section>
         <!-- //section4 -->
-        <section id="section5"></section><!-- //section5 -->
-        <section id="section6"></section><!-- //section6 -->
+        <section id="section5">
+            <div class="sec5">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+            </div>
+        </section>
+        <!-- //section5 -->
+        <section id="section6">
+
+        </section><!-- //section6 -->
     </div>
     <!-- //contents -->
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
     <script>
@@ -298,6 +309,14 @@
 
         function scroll(){
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            let offset = document.querySelector("#section5").offsetTop;
+
+            let left = scrollTop - offset
+
+            if(scrollTop > offset){
+                document.querySelector(".sec5").style.transform = "translatex(-"+left+"px)";
+            }
 
             document.querySelector(".scroll").innerHTML = scrollTop;
             requestAnimationFrame(scroll);

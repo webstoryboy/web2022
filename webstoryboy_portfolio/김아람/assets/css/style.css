@@ -24,8 +24,9 @@
     display: flex;
     justify-content: space-between;
     background: rgba(255,255,255,1);
-    
+    overflow: hidden;
     backdrop-filter: blur(10px);
+    position: relative;
 }
 #header h1 {
     font-size: 20px;
@@ -44,6 +45,46 @@
     padding-left: 20px;
 }
 
+.header_line {
+    width: 100%;
+    position: absolute;
+    left: 10px; top: 10px;
+    z-index: 10000;
+    height: 36px;
+}
+.header_line > div {
+    position: absolute;
+    background: red;
+}
+.header_line > div:nth-child(1){
+    right: 0;
+    top: 0;
+    width: calc(100% - 20px);
+    height: 2px;
+    background: #fff;
+}
+.header_line > div:nth-child(2){
+    width: 2px;
+    height: 100%;
+    background: #fff;
+}
+.header_line > div:nth-child(3){
+    width: calc(100% - 20px);
+    height: 3px;
+    bottom: -1px;
+    background: #fff;
+}
+.header_line > div:nth-child(4){
+    width: 2px;
+    height: 100%;
+    right: 20px; top: auto;
+    bottom: 0;
+    left: auto;
+    background: #fff;
+}
+
+
+
 .container {
     max-width: 1200px;
     width: 100%;
@@ -53,7 +94,7 @@
 /* sec1 */
 .sec1 {
     border: 2px solid #000;
-    margin: 55px 10px 5px 10px;
+    margin: 55px 10px 0px 10px;
     padding: 200px 0;
 }
 .sec1 h1 {
@@ -202,6 +243,7 @@
 /* sec4 */
 .sec4 {
     padding: 10px;
+    padding-bottom: 0;
 }
 .sec4 h2 {
     border: 2px solid #000;
@@ -263,7 +305,7 @@
     left: 0px;
     top: 50px;
     margin: 10px;
-    border: 2px solid #000;
+    /* border: 2px solid #000; */
 }
 .sec5 .script-hor {
     position: relative;
@@ -274,11 +316,27 @@
     width: 90vw;
     height: 90vh;
 }
-.sec5 .script-hor > div:nth-child(1){background: #333;}
-.sec5 .script-hor > div:nth-child(2){background: #444;}
-.sec5 .script-hor > div:nth-child(3){background: #555;}
-.sec5 .script-hor > div:nth-child(4){background: #666;}
-.sec5 .script-hor > div:nth-child(5){background: #777;}
+.sec5 .script-hor > div:nth-child(1){
+    border: 2px solid #000;
+    margin: 0px;
+    margin-left: 0px;
+}
+.sec5 .script-hor > div:nth-child(2){
+    border: 2px solid #000;
+    border-left: 0;
+}
+.sec5 .script-hor > div:nth-child(3){
+    border: 2px solid #000;
+    border-left: 0;
+}
+.sec5 .script-hor > div:nth-child(4){
+    border: 2px solid #000;
+    border-left: 0;
+}
+.sec5 .script-hor > div:nth-child(5){
+    /* border: 2px solid #000; */
+    border-left: 0;
+}
 
 
 .smallTitle {
@@ -291,6 +349,17 @@
     padding: 5px;
     background: #fff;
 }
+
+#section6 {
+    padding: 10px;
+    padding-top: 0;
+}
+
+.sec6 {
+    height: 2000px;
+    border: 2px solid #000;
+}
+
 
 #section7 {
     padding: 10px;

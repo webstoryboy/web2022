@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webstoryboy : 웹스토리보이 : 웹과 관련된 모든 정보</title>
+
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/webs.css">
+
+    <link rel="shortcut icon" href="assets/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/favicon-152.png">
+    <link rel="icon" href="assets/ico/favicon.png">
+    <link rel="icon" href="assets/ico/favicon-48.png" sizes="48x48">
+    <link rel="icon" href="assets/ico/favicon-64.png" sizes="64x64">
+    <link rel="icon" href="assets/ico/favicon-128.png" sizes="128x128">
+
+    <meta name="acthor" content="webstroyboy">
+    <meta name="description" content="포트폴리오를 위한 레퍼런스 사이트입니다. 자바스크립트, 애니메이션, Three.js, 리액트, 뷰, PHP 등 다양한 언어를 배우고 포트폴리오에 표현합니다.">
+    <meta name="keywords" content="포트폴리오, 웹스토리보이, 웹쓰, 사이트제작, 사이트만들기, 프로트앤드, 웹 퍼블리셔, portfolio, webstoryboy, frontend, public, javascript, html, css, three.js">
+    <meta name="robots" content="all">
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="웹스토리보이" />
+    <meta property="og:url" content="https://webstoryboy.co.kr/" />
+    <meta property="og:image" content="" />
+    <meta property="og:site_name" content="웹스토리보이" />
+    <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@webstoryboy" />
+    <meta name="twitter:title" content="웹스토리보이" />
+    <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
+    <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+</head>
+<body>
+
+    <div id="skip">
+        <a href="#header">헤더 영역 바로가기</a>
+        <a href="#main">컨텐츠 영역 바로가기</a>
+        <a href="#footer">푸터 영역 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <header id="header">
+        <div class="header__inner">
+            <div class="left">
+                <a href="index.html" class="star"><span class="ir">메인으로</span></a>
+            </div>
+            <h1>
+                <a href="main.html">WEBSTORYBOY</a>
+            </h1>
+            <div class="right">
+                <ul>
+                    <li><a href="login.html">검색</a></li>
+                </ul>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#"><span>회원가입</span></a></li>
+                    <li><a href="#"><span>로그인</span></a></li>
+                    <li><a href="#"><span>게시판</span></a></li>
+                    <li><a href="#"><span>블로그</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- //header -->
+    <style>
+        h2 {
+            margin: 50px 0 10px;
+        }
+        li {
+            line-height: 1.56;
+        }
+        li a:hover {
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+    </style>
+    <main id="main">
+        <div class="container">
+            <div style="margin-top: 100px">
+                <h2>html</h2>
+                <ul>
+                    <li><a href="html/a.html">a</a></li>
+                    <li><a href="html/abbr.html">abbr</a></li>
+                </ul>
+            </div>
+            <div>
+                <h2>css</h2>
+                <ul>
+                    <li><a href="css/animation-delay.html">animation-delay</a></li>
+                    <li><a href="css/animation-direction.html">align-direction</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2>javascript</h2>
+                <ul>
+                    <li><a href="javascript/charAt.html">charAt()</a></li>
+                    <li><a href="javascript/indexOf.html">indexOf()</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+
+    </footer>
+    <!-- //footer -->
+
+    <script src="assets/js/jquery-3.6.0.js"></script>
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+
+        const nav = document.querySelector(".blog__aside");
+        const navBtn = document.querySelector("#header .header__inner .left .star");
+
+        navBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            nav.classList.toggle("open");
+            // navBtn.classList.toggle("open");
+        });
+    </script>
+</body>
+</html>

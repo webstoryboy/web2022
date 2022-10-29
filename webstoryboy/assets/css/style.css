@@ -38,7 +38,7 @@ body.intro #footer {
 }
 #header h1 {
     color: #fff;
-    padding: 20px 20px 18px 20px;
+    padding: 20px 20px 18px 60px;
     font-size: 1rem;    
 } 
 #header h1 a {
@@ -72,12 +72,12 @@ body.intro #footer {
 /* aside */
 #aside {
     position: fixed;
-    left: 0; top: 70px; bottom: 20px;
+    left: 0; top: 0px; bottom: 0px;
     z-index: 10000;
-    width: 500px; height: 90vh;
-    background: rgb(17, 17, 17);
+    width: 500px; height: 100vh;
     border-radius: 0 0 10px 0;
     left: -500px;
+    background: #fff;
     transition: left 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 #aside.nav-open {
@@ -86,14 +86,13 @@ body.intro #footer {
 #aside button {
     position: absolute;
     right: -56px;
-    top: 0;
-    background: #1a1a1a;
+    top: 2px;
     width: 56px; height: 56px;
     border-radius: 0 10px 10px 0;
     transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 #aside button span {
-    background: #fff;
+    background: #000;
     width: 22px; height: 2px;
     display: block;
     margin-left: 16px;
@@ -101,20 +100,20 @@ body.intro #footer {
 #aside button span::before {
     content: '';
     width: 22px; height: 2px;
-    background: #fff;
+    background: #000;
     position: absolute;
     left: 16px; top: 19px;
 }
 #aside button span::after {
     content: '';
     width: 22px; height: 2px;
-    background: #fff;
+    background: #000;
     position: absolute;
     left: 16px; bottom: 19px;
 }
 #aside button.open span {
     opacity: 1;
-    background: rgb(17, 17, 17);;
+    background: rgb(255, 255, 255);;
 }
 #aside button.open span::before {
     transform: rotate(45deg);
@@ -128,16 +127,17 @@ body.intro #footer {
 #aside .chapter {
     font-family: 'NexonLv1Gothic';
     overflow-y: scroll;
-    width: 500px; height: 90vh;
+    width: 500px; height: 100vh;
+    border-right: 1px solid #ccc;
 }
 #aside .chapter .chapter-title {
     padding: 16px 30px 10px 30px;
     color: #705df2;
-    background: #222;
+    border-bottom: 1px solid #ccc;
 }
 #aside .chapter .chapter-title .label {
     font-size: 14px;
-    color: #fff;
+    color: #000;
 }
 #aside .chapter .chapter-title .class {
     font-size: 24px;
@@ -149,11 +149,11 @@ body.intro #footer {
     margin-bottom: 5px;
 }
 #aside .chapter .chapter-sub ul li a {
-    color: #fff;
+    color: #000;
     padding: 14px 30px;
     display: block;
     font-size: 18px;
-    opacity: 0.4;
+    opacity: 1;
     transition: all 0.4s;
 }
 #aside .chapter .chapter-sub ul li a:hover, 
@@ -161,6 +161,7 @@ body.intro #footer {
     background: #1a1a1a;
     border-radius: 50px;
     opacity: 1;
+    color: #fff;
 }
 
 /* lesson */
@@ -484,11 +485,11 @@ body.intro #footer {
     margin-top: 50px;
 }
 #explanation h4 {
-    font-size: 20px;
+    font-size: 18px;
     display: inline-block;
     color: #fff;
     background: #000;
-    padding: 2px 6px 1px 6px;
+    padding: 4px 8px 3px 8px;
     margin-top: 50px;
     margin-bottom: 10px;
     border-radius: 2px;
@@ -525,6 +526,9 @@ body.intro #footer {
     border-radius: 5px;
     color: #666;
     margin-bottom: 10px;
+}
+#explanation .sample .none {
+    display: none;
 }
 #explanation .sample p {
     margin-bottom: 0;
@@ -627,8 +631,6 @@ body.intro #footer {
     background: #fff;
     border-radius: 2px;
 }
-
-
 #explanation .sample .sampleCode .scMenu > div {
     display: inline-block;
     border-right: 1px solid #e6e6e6;
@@ -637,6 +639,9 @@ body.intro #footer {
 }
 #explanation .sample .sampleCode .scCont > div {
     display: none;
+}
+#explanation .sample .sampleCode .scCont > div.active {
+    display: block;
 }
 #explanation table {
     margin-bottom: 20px;
@@ -666,6 +671,7 @@ body.intro #footer {
     text-align: left;
     font-weight: normal;
     /* font-weight: 300; */
+    font-size: 16px;
 }
 #explanation .table table tr:nth-child(even) > th,
 #explanation .table table tr:nth-child(even) > td {
@@ -923,16 +929,28 @@ body.intro #footer {
 
 /* media */
 @media (max-width: 800px) {
-    .container {width: 94%;}
+    .container {width: 92%;}
     #aside {top: 4px;}
-    #header {height: 62px; width: 100%; overflow: hidden;}
+    #header {width: 100%; overflow: hidden; text-align: center;}
     #header nav {display: none;}
-    #header h1 {padding-left: 60px; padding-top: 22px;}
+    #header h1 {width: 100%; height: auto; padding: 10px;}
     #explanation {padding: 0px;}
     #explanation h2 {font-size: 26px; margin-top: 70px; margin-bottom: 20px;}
-    #explanation p {font-size: 14px; line-height: 1.8;}
-    #explanation hr {margin: 20px 0;}
+    #explanation p {font-size: 14px; line-height: 1.7; font-weight: 500;}
+    #explanation ul li {font-size: 14px; line-height: 1.7; font-weight: 500;}
     #explanation .blue {padding: 10px;}
+    #explanation hr {margin: 20px 0;}
+    #explanation h3 {display: none;}
+    #explanation h4 {margin-top: 30px; font-size: 18px; padding: 3px 10px 2px 10px;}
+    #explanation .sample h5 {padding: 5px 10px 4px 10px !important; font-size: 14px !important;}
+    #explanation .sample .sampleView {padding: 10px;}
+    #explanation .sample .sampleBtnNone {padding: 10px;}
+    #explanation .sample .sampleCode .scMenu > div {padding: 10px; font-size: 14px;}
+    #explanation .table table th, #explanation .table table td {padding: 7px 10px; font-size: 14px;}
+    #explanation .table {overflow-x: scroll;}
+    #explanation .table table {width: 600px;}
+    #explanation .table .compatibility {width: 800px;}
+    #explanation .sample pre code.hljs {padding: 10px;}
     pre[class*=language-] {padding: 1em !important;}
     code[class*=language-], pre[class*=language-] {font-size: 14px !important;}
     #youtube .desc .left {padding: 20px;}

@@ -1,0 +1,53 @@
+#contents {
+
+}
+#contents > section {
+    height: 100vh;
+}
+/* #section1 {
+    background: #111;
+}
+#section2 {
+    background: #222;
+}
+#section3 {
+    background: #333;
+}
+#section4 {
+    background: #444;
+}
+#section5 {
+    background: #555;
+}
+#section6 {
+    background: #666;
+} */
+
+#section1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#section1 h1 {
+    font-size: 4vw;
+    color: #fff;
+}
+
+.horizontal-scroll {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    left: 0;
+}
+  
+.pin-wrap {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 50px 10vw;
+}
+.pin-wrap > * {
+    min-width: 60vw;
+    padding: 0 5vw;
+}

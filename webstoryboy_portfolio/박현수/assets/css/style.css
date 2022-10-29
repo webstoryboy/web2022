@@ -157,6 +157,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding-bottom: 400px;
 }
 .sec2 .img > div {
     width: 32vw;
@@ -211,6 +212,7 @@
 /* sec3 */
 .sec3 {
     height: 2000px;
+    background: #d3dcfe;
 }
 .sec3 .title {
     width: 100%;
@@ -224,14 +226,86 @@
     font-weight: 100;
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 .sec3 .desc {
     width: 100%;
-    height: 500px;
-    background: rgb(175, 160, 160);
+    background: #d3dcfe;
+    text-align: center;
+    font-size: 4vw;
+    font-family: 'GmarketSans';
+    font-weight: 300;
+    padding-left: 2vw;
+    color: #344CA4;
+    padding: 150px 0 200px 0;
 }
-.sec3 .img {
+.sec3 .desc em {
+    position: relative;
+    z-index: 1;
+}
+.sec3 .desc em::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 100%;
+    height: 30px;
+    background: rgb(180, 180, 255);
+    border-radius: 30px;
+    z-index: -1;
+    transition: all 0.3s;
+}
+.sec3 .desc em:hover::before {
+    height: 50px;
+}
+.siteWrap {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 200px;
+}
+.siteWrap .site {
+    width: 100%;
+    font-family: 'GmarketSans';
+    border-radius: 50px;
+    display: flex;
+}
+.siteWrap .site .left {
+    width: 50%;
     height: 500px;
-    background: red;
+    background: #0E2A93;
+    border-radius: 50px 0 0 50px;
+    padding: 50px;
+    color: #fff;
+}
+.siteWrap .site .left h3 {
+    font-size: 70px;
+    font-weight: 300;
+}
+.siteWrap .site .left p {
+    font-size: 20px;
+    padding-top: 50px;
+    text-align: left;
+}
+.siteWrap .site .left .btn {
+    margin-top: 50px;
+}
+.siteWrap .site .left .btn a {
+    background: #fff;
+    color: #0E2A93;
+    display: inline-block;
+    padding: 10px 40px;
+    font-size: 18px;
+    border-radius: 40px;
+    margin-right: 10px;
+}
+.siteWrap .site .right {
+    width: 50%;
+    background: #0E2A93;
+    border-radius: 0 50px 50px 0;
+    position: relative;
+}
+.siteWrap .site .right .img {
+    position: absolute;
+    left: -3%; top: -30%;
+    width: 95%;
 }

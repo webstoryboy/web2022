@@ -37,15 +37,16 @@ $(".scMenu > div").click(function (e) {
 //     }
 // });
 
-// const nav = document.querySelector("#aside");
-// const navBtn = document.querySelector(".aside-btn");
-// const lesson = document.querySelector("#lesson");
-const lessonBtn = document.querySelector(".lesson-btn");
+const nav = document.querySelector("#aside");
+const navBtn = document.querySelector(".aside-btn");
 
-// navBtn.addEventListener("click", function() {
-//     nav.classList.toggle("nav-open");
-//     navBtn.classList.toggle("open");
-// });
+navBtn.addEventListener("click", function() {
+    nav.classList.toggle("nav-open");
+    navBtn.classList.toggle("open");
+});
+
+const lesson = document.querySelector("#lesson");
+const lessonBtn = document.querySelector(".lesson-btn");
 
 // lessonBtn.addEventListener("click", function() {
 //     lesson.classList.toggle("open");

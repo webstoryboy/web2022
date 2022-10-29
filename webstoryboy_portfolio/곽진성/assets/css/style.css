@@ -14,7 +14,7 @@
     z-index: 5000;
 }
 #section3 {
-    height: 4000px;
+    height: 400vw;
     background: #000;
     position: relative;
     z-index: 4000;
@@ -135,15 +135,33 @@
 
 .sec3 {
     display: flex;
+    flex-wrap: wrap;
     position: fixed;
     left: 0;
     top: 0;
-    width: 100%;
+    width: 600vw;
 }
 
 .sec3 > div {
-    width: 50%;
     height: 100vh;
-    background: #fff;
-    margin-right: 10px;
+}
+.sec3 .site.s1 {
+    width: 80vw;
+    background: rgb(255, 184, 184);
+}
+.sec3 .site.s2 {
+    width: 80vw;
+    background: rgb(100, 56, 56);
+}
+.sec3 .site.s3 {
+    width: 80vw;
+    background: rgb(228, 37, 37);
+}
+.sec3 .site.s4 {
+    width: 80vw;
+    background: rgb(85, 17, 17);
+}
+.sec3 .site.s5 {
+    width: 80vw;
+    background: rgb(56, 100, 84);
 }

@@ -46,8 +46,8 @@ input,
 select,
 table,
 textarea {
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 16px;
+    line-height: 1.4;
     color: #222;
     font-family: 'NEXONLv1Gothic', AppleSDGothicNeo-Regular, 'Malgun Gothic', '맑은 고딕', dotum, '돋움', sans-serif;
 }

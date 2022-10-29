@@ -133,7 +133,7 @@
                     lookAt: new THREE.Vector3(0, 0, 0),
                     x: 0,
                     y: 0,
-                    z: 7
+                    z: 17
                 }
 
                 this.scene = null;
@@ -182,11 +182,11 @@
                     );
                     this.camera.lookAt(this.cameraParam.lookAt);
 
-                    this.orbitcontrols = new THREE.OrbitControls(
-                        this.camera,
-                        this.renderer.domElement
-                    );
-                    this.orbitcontrols.enableDamping = true;
+                    // this.orbitcontrols = new THREE.OrbitControls(
+                    //     this.camera,
+                    //     this.renderer.domElement
+                    // );
+                    // this.orbitcontrols.enableDamping = true;
                 }
 
                 this.camera.aspect = windowWidth / windowHeight;
@@ -197,13 +197,13 @@
 
             _render() {
                 this.renderer.render(this.scene, this.camera);
-                this.orbitcontrols.update();
+                // this.orbitcontrols.update();
             }
 
             onResize() {
                 this._setCamera();
             }
-
+ 
             onRaf() {
                 this._render();
             }

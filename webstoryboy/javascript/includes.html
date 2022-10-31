@@ -46,7 +46,7 @@
 
     <header id="header">
         <div class="header__inner">
-            <div class="left">
+            <div class="left"> 
                 <a href="../index.html" class="star"><span class="ir">메인으로</span></a>
             </div>
             <h1>
@@ -73,7 +73,7 @@
         <section id="blog">
             <div class="blog__title">
                 <span class="cate">Reference/Javascript</span>
-                <h1 class="title">indexOf() 메서드는 문자열에서 특정 문자의 위치를 찾습니다.</h1>
+                <h1 class="title">includes() 메서드는 문자열 포함 여부를 검색하여, 불린을 반환합니다.</h1>
                 <div class="meta">
                     <span class="author">by @webs</span>
                     <span class="date">2022. 7. 4.</span>
@@ -81,11 +81,9 @@
             </div>
             <div class="blog__inner container">
                 <div class="blog__contents">
-                    <h2>indexOf()</h2>
+                    <h2>includes()</h2>
                     <p>
-                        indexOf() 메서드는 문자열에서 특정 문자의 위치를 찾습니다. 
-                        문자열 내에 문자들은 왼쪽부터 순번이 매겨지고, 결과 값으로 순번이 반환됩니다.
-                        만약 찾는 문자가 없다면, -1 값을 반환합니다.
+                        includes() 메서드는 문자열 포함 여부를 검색하여 불린(true, false)을 반환합니다.
                     </p>
 
                     <hr>
@@ -105,15 +103,15 @@
                             <tbody>
                                 <tr>
                                     <th>유형(type)</th>
-                                    <td>String.prototype.indexOf()</td>
+                                    <td>String.prototype.includes()</td>
                                 </tr>
                                 <tr>
                                     <th>버전(version)</th>
-                                    <td>ES1</td>
+                                    <td>ES6</td>
                                 </tr>
                                 <tr>
                                     <th>결과값(return)</th>
-                                    <td>숫자(mumber)</td>
+                                    <td>불린(true or false)</td>
                                 </tr>
                                 <tr>
                                     <th>사용성</th>
@@ -125,23 +123,15 @@
 
                     <h3>문법(Syntax)</h3>
                     <p class="blue">
-                        "문자열".indexOf(검색값)<br>
-                        "문자열".indexOf(검색값, 위치값)
+                        "문자열".includes(검색값)<br>
+                        "문자열".includes(검색값, 위치값)
                     </p>
-<pre class="bluePre"><code class="language-javascript">"javascript reference".indexOf('javascript') //0
-"javascript reference".indexOf('javascripts') //-1
-"javascript reference".indexOf('j') //0
-"javascript reference".indexOf('a') //1
-"javascript reference".indexOf('jv') //-1
-"javascript reference".indexOf('reference') //11
-"javascript reference".indexOf('r') //6
-"javascript reference".indexOf('javascript', 0) //0
-"javascript reference".indexOf('javascript', 1) //-1
-"javascript reference".indexOf('reference', 0) //11
-"javascript reference".indexOf('reference', 11) //11
-"javascript reference".indexOf('reference', 12) //-1
-"javascript reference".indexOf('r', 7) //11
-"javascript reference".indexOf('r', 12) //15
+<pre class="bluePre"><code class="language-javascript">"javascript reference".includes('javascript') //true
+"javascript reference".includes('j') //true
+"javascript reference".includes('ra') //false
+"javascript reference".includes('reference') //true
+"javascript reference".includes('reference', 11) //true
+"javascript reference".includes('reference', 12) //false
 </code></pre>
                     <ul>
                         <li>문자열(string) : 문자열을 설정합니다.</li>
@@ -151,9 +141,8 @@
 
                     <h3>정의(Definition)</h3>
                     <ul>
-                        <li>indexOf() 메서드는 문자열에서 원하는 값을 찾아 인덱스 값을 반환합니다.</li>
-                        <li>indexOf() 메서드는 일치하는 값이 없으면 -1을 반환합니다.</li>
-                        <li>indexOf() 메서드는 대소문자를 구분합니다.</li>
+                        <li>includes() 메서드는 문자열 포함 여부를 검색하여 불린(true, false)을 반환합니다.</li>
+                        <li>includes() 메서드는 대소문자를 구분합니다.</li>
                     </ul>
 
                     <h3>문자열 검색과 관련된 메서드</h3>
@@ -212,13 +201,16 @@
                             background-color: #A2CBFA;
                             border: 1px solid #4390E1;
                             color: #fff;
-                            padding: 10px;
+                            padding: 2px 5px;
+                        }
+                        #sample1 .indexof-box strong {
+                            border-bottom: 1px solid #000;
                         }
                     </style>
                     <!-- Sample1 -->
                     <h3>예제1(Sample)</h3>
                     <div id="sample1" class="sample">
-                        <h4>문자열을 검색하고 위치값을 반환하는 예제입니다.</h4>
+                        <h4>문자열을 검색하고 불린값을 반환하는 예제입니다.</h4>
                         <div class="sampleView">
                             <!-- ex -->
                             <div class="indexof-box">
@@ -253,13 +245,13 @@
 </code></pre>
                             </div>
                             <div>
-<pre class="language-css"><code>#sample1 .charAt-box {
+<pre class="language-css"><code>#sample1 .indexof-box {
     text-align: center;
 }
-#sample1 .charAt-box .alert {
+#sample1 .indexof-box .alert {
     padding-top: 10px;
 }
-#sample1 .charAt-box span {
+#sample1 .indexof-box span {
     border: 1px solid #e6e6e6;
     padding: 10px 20px;
     display: inline-block;
@@ -269,11 +261,14 @@
     color: #fff;
     border-radius: 40px;
 }
-#sample1 .charAt-box em {
+#sample1 .indexof-box em {
     background-color: #A2CBFA;
     border: 1px solid #4390E1;
     color: #fff;
-    padding: 10px;
+    padding: 2px 5px;
+}
+#sample1 .indexof-box strong {
+    border-bottom: 1px solid #000;
 }
 </code></pre>
                             </div>
@@ -286,12 +281,12 @@ btnAll.forEach(btn => {
     btn.addEventListener("click", (e) => {
         e.preventDefault();
         const char = btn.innerText.trim();
-        const result = text.indexOf(char);
-        
-        if(result > 0){
-            btnAlert.innerHTML = `클릭한 ${char} 글자는 &lt;em&gt;${result}&lt;/em&gt; 번째 위치에 있습니다.`;
+        const result = text.includes(char);
+
+        if (result == true) {
+            btnAlert.innerHTML = `클릭한 ${char} 글자는 <strong>존재합니다</strong>. <em>${result}</em>`;
         } else {
-            btnAlert.innerHTML = `클릭한 ${char} 글자는 존재하지 않습니다.`;
+            btnAlert.innerHTML = `클릭한 ${char} 글자는 <strong>존재하지 않습니다.</strong> <em>${result}</em>`;
         }
     });
 });
@@ -310,12 +305,12 @@ btnAll.forEach(btn => {
                             btn.addEventListener("click", (e) => {
                                 e.preventDefault();
                                 const char = btn.innerText.trim();
-                                const result = text.indexOf(char);
-                                
-                                if(result > 0){
-                                    btnAlert.innerHTML = `클릭한 ${char} 글자는 <em>${result}</em> 번째 위치에 있습니다.`;
+                                const result = text.includes(char);
+
+                                if (result == true) {
+                                    btnAlert.innerHTML = `클릭한 ${char} 글자는 <strong>존재합니다</strong>. <em>${result}</em>`;
                                 } else {
-                                    btnAlert.innerHTML = `클릭한 ${char} 글자는 존재하지 않습니다.`;
+                                    btnAlert.innerHTML = `클릭한 ${char} 글자는 <strong>존재하지 않습니다.</strong> <em>${result}</em>`;
                                 }
                             });
                         });
@@ -351,7 +346,7 @@ btnAll.forEach(btn => {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="ce" scope="row">indexOf()</td>
+                                    <td class="ce" scope="row">includes()</td>
                                     <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
                                     <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
                                     <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
@@ -373,7 +368,7 @@ btnAll.forEach(btn => {
 
                     <h3>참고(Reference)</h3>
                     <ul>
-                        <li><a href="https://tc39.es/ecma262/#sec-string.prototype.indexof" target="_blank">https://tc39.es/ecma262/#sec-string.prototype.indexof</a></li>
+                        <li><a href="https://tc39.es/ecma262/#sec-string.prototype.includes" target="_blank">https://tc39.es/ecma262/#sec-string.prototype.includes</a></li>
                     </ul>
 
                     <hr class="m100">
@@ -382,14 +377,6 @@ btnAll.forEach(btn => {
                 <aside class="blog__aside">
                     <button class="blog__aside__btn"><span></span></button>
                     <div class="blog__aside__chapter">
-                        <h3>HTML</h3>
-                        <ul>
-                            <li class="active"><a href="#">&lt;a&gt;</a></li>
-                            <li><a href="#">&lt;abbr&gt;</a></li>
-                            <li><a href="#">&lt;acronym&gt;</a></li>
-                            <li><a href="#">&lt;address&gt;</a></li>
-                            <li><a href="#">&lt;applet&gt;</a></li>
-                        </ul>
                     </div>
                 </aside>
             </div>

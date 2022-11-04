@@ -887,7 +887,7 @@ code.hljs {
   border-bottom: 1px solid #e6e6e6;
   padding: 20px;
   font-size: 16px;
-  font-weight: 300;
+  line-height: 1.6;
 }
 #blog .sample .sampleBtn a {
   border: 1px solid #e6e6e6;

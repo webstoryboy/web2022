@@ -351,6 +351,10 @@
 .blog__contents .table .ce {
   text-align: center;
 }
+.blog__contents .table .vertical {
+  writing-mode: vertical-rl; 
+  text-align: center;
+}
 .blog__contents .compatibility thead > tr > th img {
   width: 30px;
   display: block;
@@ -720,6 +724,10 @@
 }
 
 /* hljs */
+.blueP code.hljs {
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
 .bluePre {
   border-radius: 5px;
   margin-top: -10px;

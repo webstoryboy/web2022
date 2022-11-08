@@ -73,7 +73,7 @@
         <section id="blog">
             <div class="blog__title">
                 <span class="cate">Reference/HTML</span>
-                <h1 class="title">&lt;link&gt; 태그는 문서의 외부 리소스를 설정합니다.</h1>
+                <h1 class="title">&lt;style&gt; 태그는 문서의 스타일 정보를 설정합니다.</h1>
                 <div class="meta">
                     <span class="author">by @webs</span>
                     <span class="date">2022. 7. 4.</span>
@@ -81,9 +81,11 @@
             </div>
             <div class="blog__inner container">
                 <div class="blog__contents">
-                    <h2>&lt;link&gt;</h2>
+                    <h2>&lt;style&gt;</h2>
                     <p>
-                        &lt;link&gt; 태그는 문서의 외부 리소스를 설정합니다.
+                        &lt;style&gt; 태그는 문서의 스타일 정보를 설정합니다.
+                        스타일을 설정하는 방법은 여러가지가 있습니다. 
+                        그 중 &lt;style&gt; 태그를 통해서 스타일을 설정하는 방법입니다.
                     </p>
 
                     <hr>
@@ -103,11 +105,11 @@
                             <tbody>
                                 <tr>
                                     <th>요소</th>
-                                    <td>인라인 요소(Inline Element)</td>
+                                    <td>-</td>
                                 </tr>
                                 <tr>
                                     <th>닫는 태그</th>
-                                    <td>없음</td>
+                                    <td>적용</td>
                                 </tr>
                                 <tr>
                                     <th>버전</th>
@@ -127,10 +129,50 @@
 
                     <h3>정의(Definition)</h3>
                     <ul>
-                        <li>&lt;link&gt; 태그는 문서의 외부 리소스를 설정합니다.</li>
-                        <li>&lt;link&gt; 태그는 일반적을 스타일시트 파일을 주로 연결하지만 파비콘이나 웹폰트를 연결 할 때도 사용합니다.</li>
-                        <li>CSS 연동은 &lt;link&gt; 요소를 사용하고, SCRIPT 연동은 &lt;script&gt; 요소를 사용합니다.</li>
+                        <li>&lt;style&gt; 태그는 문서의 스타일 정보를 설정합니다.</li>
+                        <li>&lt;style&gt; 태그는 &lt;head&gt; 태그 안에 설정합니다.</li>
+                        <li>일반적으로 스타일은 외부 스타일 시트에 작성하고. &lt;link&gt; 요소로 연결하는 것이 좋습니다.</li>
                     </ul>
+
+                    <h3>웹 문서에 스타일을 적용하는 방법</h3>
+                    <p>1. 태그에 직접 설정하는 방법 : 태그에 직접사용하면 편하지만, 소스가 지저분해지기 때문에 어쩔 수 없는 경우에만 사용</p>
+<pre class="blueP"><code class="language-html">&lt;div style="color: red"&gt;폰트&lt;/div&gt;
+</code></pre>
+
+                    <p>2. head 태그에 직접 설정하는 방법 </p>
+<pre class="blueP"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .class {color: red;}  /* 여기에 작성 */
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                    <p>3. 외부 링크로 설정하는 방법 : 이 방법을 가장 많이 사용함</p>
+<pre class="blueP"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    
+    &lt;link rel="stylesheet" href="assets/css/style.css"&gt; &lt;!-- 외부 링크로 설정하는 방법 --&gt;
+&lt;/head&gt; 
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+
 
                     <h3>문서와 관련된 태그(Document Related Tag)</h3>
                     <ul>
@@ -140,7 +182,7 @@
                         <li>&lt;base&gt; 태그는 문서의 기본 URL을 설정합니다.</li>
                         <li>&lt;link&gt; 태그는 문서의 외부 리소스를 설정합니다.</li>
                         <li>&lt;meta&gt; 태그는 문서의 메타 정보를 설정합니다.</li>
-                        <li>&lt;style&gt; 태그는 문서의 스타일 정보 설정합니다.</li>
+                        <li>&lt;style&gt; 태그는 문서의 스타일 정보를 설정합니다.</li>
                         <li>&lt;title&gt; 태그는 문서의 제목을 설정합니다.</li>
                     </ul>
 
@@ -312,118 +354,16 @@
                                 </tr>
                                 <!-- 개별 속성 -->
                                 <tr>
-                                    <td class="vertical" rowspan="15">개별 속성</td>
-                                    <td>href</td>
-                                    <td>href = "url"</td>
-                                    <td>하이퍼링크 주소를 설정합니다.</td>
-                                    <td class="ce">-</td>
-                                </tr>
-                                <tr>
-                                    <td>crossorigin</td>
-                                    <td>crossorigin = "anonymous"</td>
-                                    <td>CORS 요청을 처리하는 방식을 설정합니다.</td>
-                                    <td class="ce">-</td>
-                                </tr>
-                                <tr>
-                                    <td>rel</td>
-                                    <td>
-                                        rel="alternate"<br /> 
-                                        rel="author"<br /> 
-                                        rel="bookmark"<br /> 
-                                        rel="help"<br /> 
-                                        rel="icon"<br /> 
-                                        rel="license"<br /> 
-                                        rel="next"<br /> 
-                                        rel="nofollow"<br /> 
-                                        rel="noreferrer"<br /> 
-                                        rel="prefetch"<br /> 
-                                        rel="prev"<br /> 
-                                        rel="search"<br /> 
-                                        rel="stylesheet"<br /> 
-                                        rel="tag"
-                                    </td>
-                                    <td>
-                                        문서에 대한 대체 링크를 설정합니다.<br /> 
-                                        문서에 대한 저자 정보 링크를 설정합니다.<br /> 
-                                        문서에 대한 북마크 링크를 설정합니다.<br /> 
-                                        문서에 대한 도움말 정보 링크를 설정합니다.<br /> 
-                                        문서에 대한 아이콘 정보 링크를 설정합니다.<br /> 
-                                        문서에 대한 저작권과 관련된 정보 링크를 설정합니다.<br /> 
-                                        문서에 대한 다음 문서 정보 링크를 제공합니다.<br /> 
-                                        문서에 대한 정보가 작성자에 의해 보증되지 않을 때 설정합니다.<br /> 
-                                        문서에 대한 리퍼럴 보내는 것을 방지할 때 설정합니다. <br /> 
-                                        문서에 대한 링크된 리소스로 미리 가져오는 정보를 설정합니다.<br /> 
-                                        문서에 대한 이전 문서 링크를 설정합니다.<br /> 
-                                        문서에 대한 검색 문서 정보 링크를 설정합니다.<br /> 
-                                        문서에 대한 스타일시트 링크를 설정합니다.<br /> 
-                                        문서에 대한 태그를 설명하는 참조 링크를 설정합니다.
-                                    </td>
-                                    <td class="ce">-</td>
-                                </tr>
-                                <tr>
+                                    <td class="vertical" rowspan="2">개별 속성</td>
                                     <td>media</td>
                                     <td>media = "print"</td>
-                                    <td>미디어 종류를 설정합니다.</td>
-                                    <td class="ce">-</td>
-                                </tr>
-                                <tr>
-                                    <td>integrity</td>
-                                    <td>integrity = "sha384...."</td>
-                                    <td>암호화된 메타데이터를 설정합니다.</td>
-                                    <td class="ce">-</td>
-                                </tr>
-                                <tr>
-                                    <td>hreflang</td>
-                                    <td>hreflang = "ko"</td>
-                                    <td>연결할 리소스의 언어를 설정합니다.</td>
+                                    <td>미디어 종류 및 미디어 쿼리를 설정합니다.</td>
                                     <td class="ce">-</td>
                                 </tr>
                                 <tr>
                                     <td>type</td>
                                     <td>type = "text/html"</td>
                                     <td>콘텐츠 유형을 설정합니다.</td>
-                                    <td class="ce">-</td>
-                                </tr>
-                                <tr>
-                                    <td>referrerpolicy</td>
-                                    <td>referrerpolicy = "origin"</td>
-                                    <td>요청에 필요한 레퍼러 정보를 설정합니다.</td>
-                                    <td class="ce">-</td>
-                                </tr>
-                                <tr>
-                                    <td>sizes</td>
-                                    <td>sizes = "128x128"</td>
-                                    <td>리스소에 연결된 아이콘의 크기를 설정합니다.</td>
-                                    <td class="ce">-</td>
-                                </tr>
-                                <tr>
-                                    <td>imagesrcset</td>
-                                    <td>imagesrcset = "image-400.jpg 400w"</td>
-                                    <td>해상도별 이미지를 설정합니다.</td>
-                                    <td class="ce">-</td>
-                                </tr>
-                                <tr>
-                                    <td>imagesizes</td>
-                                    <td>imagesizes = "100vw"</td>
-                                    <td>해상도별 이미지 사이즈를 설정합니다.</td>
-                                    <td class="ce">-</td>
-                                </tr>
-                                <tr>
-                                    <td>as</td>
-                                    <td>as = "fetch"</td>
-                                    <td>불러오는 콘텐츠의 유형을 설정합니다.</td>
-                                    <td class="ce">-</td>
-                                </tr>
-                                <tr>
-                                    <td>blocking </td>
-                                    <td>blocking</td>
-                                    <td>렌더링 차단 여부를 설정합니다.</td>
-                                    <td class="ce">-</td>
-                                </tr>
-                                <tr>
-                                    <td>disabled </td>
-                                    <td>disabled</td>
-                                    <td>요소를 적용할지 여부를 설정합니다.</td>
                                     <td class="ce">-</td>
                                 </tr>
                             </tbody>
@@ -446,41 +386,29 @@
                     <!-- Sample1 -->
                     <h3>예제1(Sample)</h3>
                     <div class="sample">
-                        <h4>기본 문서 샘플 예제입니다.</h4>
+                        <h4>스타일 적용 샘플 예제입니다.</h4>
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+&lt;html lang="ko"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
     &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;link 사용방법&lt;/title&gt;
+    &lt;title&gt;Document&lt;/title&gt;
     
-    &lt;!-- CSS 연동 설정 --&gt;
-    &lt;link rel="stylesheet" href="style.css"&gt; 
-
-    &lt;!-- 스타일시트 의미를 수정 --&gt;
-    &lt;link rel="alternate stylesheet" href="style.css" title="kor fonts"&gt; 
-
-    &lt;!-- 영어를 대처할 경우 사용 --&gt;
-    &lt;link rel="alternate" href="/en/html" hreflang="en" type="text/html" title="English HTML"&gt; 
-
-    &lt;!-- 아이콘을 사용할 경우 설정 --&gt;
-    &lt;link rel="icon" href="favicon.png" sizes="16x16" type="image/png"&gt;
-    &lt;link rel="icon" href="windows.ico" sizes="32x32 48x48" type="image/vnd.microsoft.icon"&gt;
-    &lt;link rel="icon" href="mac.icns" sizes="128x128 512x512 8192x8192 32768x32768"&gt;
-    &lt;link rel="icon" href="iphone.png" sizes="57x57" type="image/png"&gt;
-    &lt;link rel="icon" href="gnome.svg" sizes="any" type="image/svg+xml"&gt;
-
-    &lt;!-- 파비콘을 사용할 경우 설정 --&gt;
-    &lt;link rel="shortcut icon" href="../assets/ico/favicon.png"&gt;
-
-    &lt;!-- 애플에서 아이콘 설정(예전 방식, 현재는 사용하지 않음) --&gt;
-    &lt;link rel="apple-touch-icon-precomposed" href="favicon.png"&gt;
-    &lt;link rel="apple-touch-icon" href="favicon.png"&gt;
-
+    &lt;style&gt;
+        .style {
+            background-color: white;
+            overflow: hidden;
+            width: 100%;
+            padding: 1%;
+        }
+        .style hr {
+            margin: 20px 0;
+        }
+    &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-    &lt;!-- 본문 내용을 작성하는 곳 --&gt;
+    
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
@@ -517,7 +445,7 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td scope="row" class="ce">&lt;link&gt;</td>
+                                    <td scope="row" class="ce">&lt;style&gt;</td>
                                     <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
                                     <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
                                     <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
@@ -539,9 +467,7 @@
 
                     <h3>참고(Reference)</h3>
                     <ul>
-                        <li><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element" target="_blank">https://html.spec.whatwg.org/multipage/semantics.html#the-link-element</a></li>
-                        <li><a href="https://html.spec.whatwg.org/multipage/links.html#linkTypes" target="_blank">https://html.spec.whatwg.org/multipage/links.html#linkTypes</a></li>
-                        <li><a href="https://github.com/audreyfeldroy/favicon-cheat-sheet" target="_blank">https://github.com/audreyfeldroy/favicon-cheat-sheet</a></li>
+                        <li><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-style-element" target="_blank">https://html.spec.whatwg.org/<wbr>multipage/semantics.html<wbr>#the-style-element</a></li>
                     </ul>
 
                     <hr class="m100">

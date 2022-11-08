@@ -4,6 +4,7 @@
     width: 100%;
     height: 100vh;
     background: #F4F3F3;
+    position: relative;
 }
 #section2 {
     background: #ccc;
@@ -15,6 +16,16 @@
 #section5 {}
 #section6 {}
 
+
+#canvas {
+    position: absolute;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100vh;
+
+}
+
 /* header */
 #header {
     position: fixed;
@@ -25,6 +36,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+    z-index: 10000;
 }
 #header h1 {
     font-family: 'GmarketSans';
@@ -69,10 +81,16 @@
 
 /* section1 */
 .sec1 {
+    position: absolute;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    height: 100vh;
+    text-align: center;
     display: flex;
     align-items: center;
-    justify-content: start;
-    height: 100vh;
+    justify-content: center;
 }
 .sec1 .desc {
     font-size: 4vw;
@@ -81,15 +99,27 @@
     padding-left: 2vw;
     color: #344CA4;
 }
+.sec1 .desc > div {
+    display: inline-block;
+    /* background: #EB5D62; */
+    margin-bottom: 5px;
+}
 .sec1 .desc em {
     color: #EB5D62;
     font-weight: 500;
+    display: inline-block;
+}
+.sec1 .desc i {
+    display: inline-block;
+    font-style: normal;
 }
 .sec1 .desc strong {
     position: relative;
     z-index: 2;
     color: #fff;
     font-weight: 300;
+    display: inline-block;
+    line-height: 1;
 }
 .sec1 .desc strong::before {
     content: '';
@@ -163,6 +193,7 @@
     width: 32vw;
     height: 32vw;
     background: #ffcecf;
+    border-radius: 900px;
 }
 .sec2 .img .box1 {
     background: #ff4349;

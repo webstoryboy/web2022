@@ -46,7 +46,7 @@
 
     <header id="header">
         <div class="header__inner">
-            <div class="left">
+            <div class="left"> 
                 <a href="../index.html" class="star"><span class="ir">메인으로</span></a>
             </div>
             <h1>
@@ -59,8 +59,8 @@
             </div>
             <nav class="nav">
                 <ul>
-                    <li><a href="#"><span>회원가입</span></a></li>
-                    <li><a href="#"><span>로그인</span></a></li>
+                    <li><a href="#"><span>레퍼런스</span></a></li>
+                    <li><a href="#"><span>튜토리얼</span></a></li>
                     <li><a href="#"><span>게시판</span></a></li>
                     <li><a href="#"><span>블로그</span></a></li>
                 </ul>
@@ -73,17 +73,18 @@
         <section id="blog">
             <div class="blog__title">
                 <span class="cate">Reference/Javascript</span>
-                <h1 class="title">charAt() 메서드는 지정한 숫자(index)의 단일 문자 값을 반환합니다.</h1>
+                <h1 class="title">concat() 메서드는 매개변수로 전달된 문자열을 받어, 결합된 새로운 문자열을 반환합니다.</h1>
                 <div class="meta">
                     <span class="author">by @webs</span>
-                    <span class="date">2022. 7. 4.</span>
+                    <span class="date">2022. 11. 7.</span>
                 </div>
             </div>
             <div class="blog__inner container">
                 <div class="blog__contents">
-                    <h2>charAt()</h2>
+                    <h2>concat()</h2>
                     <p>
-                        charAt() 메서드는 지정한 숫자(index)의 단일 문자 값을 반환합니다.
+                        concat() 메서드는 매개변수로 전달된 문자열을 받어, 결합된 새로운 문자열을 반환합니다.
+
                     </p>
 
                     <hr>
@@ -103,7 +104,7 @@
                             <tbody>
                                 <tr>
                                     <th>유형(type)</th>
-                                    <td>String.prototype.charAt()</td>
+                                    <td>String.prototype.concat() / Array.prototype.concat()</td>
                                 </tr>
                                 <tr>
                                     <th>버전(version)</th>
@@ -111,11 +112,11 @@
                                 </tr>
                                 <tr>
                                     <th>결과값(return)</th>
-                                    <td>문자(string)</td>
+                                    <td>문자열(String)</td>
                                 </tr>
                                 <tr>
                                     <th>사용성</th>
-                                    <td>★★★☆☆</td>
+                                    <td>★★☆☆☆</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -123,41 +124,39 @@
 
                     <h3>문법(Syntax)</h3>
                     <p class="blue">
-                        "문자열".charAt(숫자)<br>
+                        "문자열".concat(문자열, 문자열,....)<br>
+                        "배열".concat(문자열, 문자열,....)
                     </p>
-<pre class="bluePre"><code class="language-javascript">"javascript reference".charAt() //j
-"javascript reference".charAt('0') //j
-"javascript reference".charAt('1') //a
-"javascript reference".charAt('2') //v
-"javascript reference".charAt('3') //a
-"javascript reference".charAt('4') //s
-"javascript reference".charAt('5') //c
+<pre class="bluePre"><code class="language-javascript">const str = "javascript";
+
+str.concat("reference");                //javascriptreference
+str.concat(" ","reference");            //javascript reference
+str.concat(", ","reference");           //javascript, reference
+str.concat(" + ","reference");          //javascript + reference
+str.concat(" ","refe"," ","rence");     //javascript refe rence
+str.concat(" ", ["refer","ence"]);      //javascript refer,ence
+
+const arr = ["java", "script"];
+
+arr.concat("reference")                 // ['java', 'script', 'reference']
+arr.concat(" ", "reference")            // ['java', 'script', ' ', 'reference']
+arr.concat("refer", "ence")             // ['java', 'script', 'refer', 'ence']
+arr.concat(["refer", "ence"])           // ['java', 'script', 'refer', 'ence']
+arr.concat("+", ["refer", "ence"])      // ['java', 'script', '+', 'refer', 'ence']
 </code></pre>
                     <ul>
                         <li>문자열(string) : 문자열을 설정합니다.</li>
-                        <li>숫자(index) : 0 ~ 문자열 길이보다 작은 정수를 설정합니다.</li>
+                        <li>배열(array) : 배열을 설정합니다.</li>
                     </ul>
 
                     <h3>정의(Definition)</h3>
                     <ul>
-                        <li>charAt() 메서드는 지정한 숫자(index)의 단일 문자 값을 반환합니다.</li>
-                        <li>인자 값을 생략하면 기본값 0으로 설정됩니다.</li>
-                        <li>만약 인덱스가 문자열 길이보다 큰 경우는 빈 문자열을 반환합니다.</li>
-                        <li>charAt()와 at() 메서드는 숫자를 입력하면 문자 값을 반환하는 건 동일하지만, charAt() 메서드는 -를 사용할 수 없습니다.</li>
+                        <li>concat() 메서드는 매개변수로 전달된 문자열을 받어, 결합된 새로운 문자열을 반환합니다.</li>
+                        <li>concat() 메서드는 기존의 문자열을 변경하지 않습니다.</li>
+                        <li>concat() 메서드 보다 (+, +=) 연산자를 사용하는 것이 속도 및 성능이 더 좋습니다.</li>
+                        <li>at(), concat(), includes(), indexOf(), lastIndexOf(), slice(), toString() 메서드는 배열(array) 또는 문자열(string)에서 둘다 사용 가능합니다.</li>
                     </ul>
 
-                    <h3>문자열 검색과 관련된 메서드</h3>
-                    <ul>
-                        <li>indexOf() 메서드는 문자열을 검색하고 위치값(숫자)을 반환합니다.</li>
-                        <li>lastIndexOf() 메서드는 문자열을 역순으로 검색하고 위치값(숫자)을 반환합니다.</li>
-                        <li>search() 메서드는 문자열(정규식)을 검색하고 위치값(숫자)을 반환합니다.</li>
-                        <li>match() 메서드는 문자열(정규식)을 검색하고 문자값(배열)을 반환합니다.</li>
-                        <li>charAt() 메서드는 지정한 숫자(index)의 단일 문자 값을 반환합니다.</li>
-                        <li>charCodeAt() 메서드는 지정한 숫자(index)의 유니코드 값을 반환합니다.</li>
-                        <li>includes() 메서드는 문자열 포함 여부를 검색하여 불린(true, false)을 반환합니다.</li>
-                        <li>startsWith() 메서드는 시작하는 문자열에서 검색하여 불린(true, false)을 반환합니다.</li>
-                        <li>endsWith() 메서드는 끝나는 문자열에서 검색하여 불린(true, false)을 반환합니다.</li>
-                    </ul>
 
                     <h3>문자열 변경과 관련된 메서드</h3>
                     <ul>
@@ -179,16 +178,27 @@
                         <li>toString() 메서드는 데이터를 문자열로 변환하고, 새로운 문자열을 반환합니다.</li>
                     </ul>
 
-
+                    <h3>문자열 검색과 관련된 메서드</h3>
+                    <ul>
+                        <li>indexOf() 메서드는 문자열을 검색하고 위치값(숫자)을 반환합니다.</li>
+                        <li>lastIndexOf() 메서드는 문자열을 역순으로 검색하고 위치값(숫자)을 반환합니다.</li>
+                        <li>search() 메서드는 문자열(정규식)을 검색하고 위치값(숫자)을 반환합니다.</li>
+                        <li>match() 메서드는 문자열(정규식)을 검색하고 문자값(배열)을 반환합니다.</li>
+                        <li>charAt() 메서드는 지정한 숫자(index)의 단일 문자 값을 반환합니다.</li>
+                        <li>charCodeAt() 메서드는 지정한 숫자(index)의 유니코드 값을 반환합니다.</li>
+                        <li>includes() 메서드는 문자열 포함 여부를 검색하여 불린(true, false)을 반환합니다.</li>
+                        <li>startsWith() 메서드는 시작하는 문자열에서 검색하여 불린(true, false)을 반환합니다.</li>
+                        <li>endsWith() 메서드는 끝나는 문자열에서 검색하여 불린(true, false)을 반환합니다.</li>
+                    </ul>
 
                     <style>
-                        #sample1 .charAt-box {
+                        #sample1 .indexof-box {
                             text-align: center;
                         }
-                        #sample1 .charAt-box .alert {
+                        #sample1 .indexof-box .alert {
                             padding-top: 10px;
                         }
-                        #sample1 .charAt-box span {
+                        #sample1 .indexof-box span {
                             border: 1px solid #e6e6e6;
                             padding: 10px 20px;
                             display: inline-block;
@@ -198,36 +208,31 @@
                             color: #fff;
                             border-radius: 40px;
                         }
-                        #sample1 .charAt-box em {
+                        #sample1 .indexof-box em {
                             background-color: #A2CBFA;
                             border: 1px solid #4390E1;
                             color: #fff;
-                            padding: 10px;
+                            padding: 2px 5px;
+                        }
+                        #sample1 .indexof-box strong {
+                            border-bottom: 1px solid #000;
                         }
                     </style>
                     <!-- Sample1 -->
                     <h3>예제1(Sample)</h3>
                     <div id="sample1" class="sample">
-                        <h4>문자열의 인덱스 값을 가져오는 예제입니다. </h4>
+                        <h4>버튼을 클릭하면, 문자열을 결합하는 예제입니다.</h4>
                         <div class="sampleView">
                             <!-- ex -->
-                            <div class="charAt-box">
-                                <span>javascript</span>
+                            <div class="indexof-box">
+                                <span class="text">javascript reference</span>
                                 <p class="alert">클릭하면 여기에 정보가 나옵니다.</p>
                             </div>
                             <!-- ex -->
                         </div>
-                        <div class="sampleBtn">
-                            <a href="#">클릭하면 1번째 글자를 가져옵니다.</a>
-                            <a href="#">클릭하면 2번째 글자를 가져옵니다.</a>
-                            <a href="#">클릭하면 3번째 글자를 가져옵니다.</a>
-                            <a href="#">클릭하면 4번째 글자를 가져옵니다.</a>
-                            <a href="#">클릭하면 5번째 글자를 가져옵니다.</a>
-                            <a href="#">클릭하면 6번째 글자를 가져옵니다.</a>
-                            <a href="#">클릭하면 7번째 글자를 가져옵니다.</a>
-                            <a href="#">클릭하면 8번째 글자를 가져옵니다.</a>
-                            <a href="#">클릭하면 9번째 글자를 가져옵니다.</a>
-                            <a href="#">클릭하면 10번째 글자를 가져옵니다.</a>
+                        <div class="sampleBtn center">
+                            <a href="#">study</a>
+                            <a href="#">book</a>
                         </div>
                         <div class="sampleCode">
                             <div class="scMenu">
@@ -244,13 +249,13 @@
 </code></pre>
                             </div>
                             <div>
-<pre class="language-css"><code>#sample1 .charAt-box {
+<pre class="language-css"><code>#sample1 .indexof-box {
     text-align: center;
 }
-#sample1 .charAt-box .alert {
+#sample1 .indexof-box .alert {
     padding-top: 10px;
 }
-#sample1 .charAt-box span {
+#sample1 .indexof-box span {
     border: 1px solid #e6e6e6;
     padding: 10px 20px;
     display: inline-block;
@@ -260,24 +265,29 @@
     color: #fff;
     border-radius: 40px;
 }
-#sample1 .charAt-box em {
+#sample1 .indexof-box em {
     background-color: #A2CBFA;
     border: 1px solid #4390E1;
     color: #fff;
-    padding: 10px;
+    padding: 2px 5px;
+}
+#sample1 .indexof-box strong {
+    border-bottom: 1px solid #000;
 }
 </code></pre>
                             </div>
                             <div class="active">
-<pre class="language-javascript"><code>const btnAll = document.querySelectorAll(".sampleBtn a");
-const btnAlert = document.querySelector(".charAt-box .alert");
+<pre class="language-javascript"><code>const text = document.querySelector(".indexof-box .text").innerText;    //javascript
+const btnAll = document.querySelectorAll(".sampleBtn a");
+const btnAlert = document.querySelector(".indexof-box .alert");
 
-btnAll.forEach((btn, index) => {
+btnAll.forEach(btn => {
     btn.addEventListener("click", (e) => {
         e.preventDefault();
-        const char = document.querySelector(".charAt-box").innerText.trim();
-        
-        btnAlert.innerHTML = `${index+1} 번째 글자는 <em>${char.charAt(index)}</em> 입니다.`;
+        const char = btn.innerText;     //클릭한 버튼의 글씨
+        const result = text.concat(" ", char);
+
+        btnAlert.innerHTML = `${char} 문자열을 추가하면 <em>${result}</em> 입니다.`;
     });
 });
 </code></pre>
@@ -287,19 +297,22 @@ btnAll.forEach((btn, index) => {
                     </div>
 
                     <script>
+                        const text = document.querySelector(".indexof-box .text").innerText;    //javascript
                         const btnAll = document.querySelectorAll(".sampleBtn a");
-                        const btnAlert = document.querySelector(".charAt-box .alert");
+                        const btnAlert = document.querySelector(".indexof-box .alert");
 
-                        btnAll.forEach((btn, index) => {
+                        btnAll.forEach(btn => {
                             btn.addEventListener("click", (e) => {
                                 e.preventDefault();
-                                const char = document.querySelector(".charAt-box").innerText.trim();
-                               
-                                btnAlert.innerHTML = `${index+1} 번째 글자는 <em>${char.charAt(index)}</em> 입니다.`;
+                                const char = btn.innerText;     //클릭한 버튼의 글씨
+                                const result = text.concat(" ", char);
+
+                                btnAlert.innerHTML = `${char} 문자열을 추가하면 <em>${result}</em> 입니다.`;
                             });
                         });
                     </script>
-                    
+
+
 
                     <h3>호환성(Compatibility)</h3>
                     <div class="table">
@@ -328,7 +341,7 @@ btnAll.forEach((btn, index) => {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="ce" scope="row" >charAt()</td>
+                                    <td class="ce" scope="row">concat()</td>
                                     <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
                                     <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
                                     <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
@@ -350,7 +363,7 @@ btnAll.forEach((btn, index) => {
 
                     <h3>참고(Reference)</h3>
                     <ul>
-                        <li><a href="https://tc39.es/ecma262/#sec-string.prototype.charat" target="_blank">https://tc39.es/ecma262/#sec-string.prototype.charat</a></li>
+                        <li><a href="https://tc39.es/ecma262/multipage/text-processing.html#sec-string.prototype.concat" target="_blank">https://tc39.es/ecma262/multipage/<wbr>text-processing.html#sec-string<wbr>.prototype.concat</a></li>
                     </ul>
 
                     <hr class="m100">
@@ -359,14 +372,6 @@ btnAll.forEach((btn, index) => {
                 <aside class="blog__aside">
                     <button class="blog__aside__btn"><span></span></button>
                     <div class="blog__aside__chapter">
-                        <h3>HTML</h3>
-                        <ul>
-                            <li class="active"><a href="#">&lt;a&gt;</a></li>
-                            <li><a href="#">&lt;abbr&gt;</a></li>
-                            <li><a href="#">&lt;acronym&gt;</a></li>
-                            <li><a href="#">&lt;address&gt;</a></li>
-                            <li><a href="#">&lt;applet&gt;</a></li>
-                        </ul>
                     </div>
                 </aside>
             </div>
@@ -385,4 +390,9 @@ btnAll.forEach((btn, index) => {
     <script src="../assets/js/webs.js"></script>
 </body>
 </html>
+<!-- 
+
+slice(),substring(),substr(),split(),replace(),replaceAll(),concat(),repeat(),padStart(),padEnd(),trim(),trimStart(),trimEnd(),toUpperCase(),toLowerCase(),toString()
+
+-->
 

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://webfontworld.github.io/NexonLv2Gothic/NexonLv2Gothic.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,800;0,900;1,700&display=swap" rel="stylesheet">
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+</head>
+<body>
+
+    <header id="header">
+        <h1>portfolio<em>frontend</em></h1>
+        <nav>
+            <ul>
+                <li><a href="#">about</a></li>
+                <li><a href="#">site</a></li>
+                <li><a href="#">script</a></li>
+                <li><a href="#">react</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    
+    <div id="contents">
+        <section id="section1">
+            <div class="sec1">
+                <div class="about__title">
+                    <h2 class="splitText">Park's Port</h2>
+                </div>
+                <div class="about__desc">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                    <div class="line4"></div>
+                    <div class="line5"></div>
+                    <div class="line6"></div>
+                    <div class="line7"></div>
+                    <div class="line8"><em>Simple deals for great companies</em></div>
+                </div>
+                <div class="about__intro">
+                    <div class="text">
+                        <div>We buy, invest in,</div>
+                        <div>and partner with exceptional</div>
+                        <div>companies</div>
+                    </div>
+                    
+                    <!-- <canvas id="webgl"></canvas> -->
+                </div>
+            </div>
+        </section>
+        <!-- //section1 -->
+        <section id="section2"></section><!-- //section2 -->
+        <section id="section3"></section><!-- //section3 -->
+        <section id="section4"></section><!-- //section4 -->
+        <section id="section5"></section><!-- //section5 -->
+        <section id="section6"></section><!-- //section6 -->
+    </div>
+
+    <!-- https://odins-crow.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script>
+
+        document.querySelectorAll(".splitText").forEach(desc => {
+            let splitText = desc.innerText;
+            let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");
+                splitWrap = "<span aria-hidden='true'>" + splitWrap + "</span>";
+                desc.innerHTML = splitWrap;
+                desc.setAttribute("aria-label", splitText);
+        })
+
+        gsap.to(".about__title h2 span" , {y:200})
+        gsap.set(".about__desc div" , {width: "0"})
+
+        setTimeout(() => {
+            gsap.to(".line1" , {duration: 3, width: "100%", ease: "expo.out"})
+            gsap.to(".line2" , {duration: 3, width: "100%", ease: "expo.out", delay: 1})
+            gsap.to(".line3" , {duration: 3, width: "100%", ease: "expo.out", delay: 1.5})
+            gsap.to(".line4" , {duration: 3, width: "100%", ease: "expo.out", delay: 2})
+            gsap.to(".line5" , {duration: 3, width: "100%", ease: "expo.out", delay: 2.5})
+            gsap.to(".line6" , {duration: 3, width: "100%", ease: "expo.out", delay: 3})
+            gsap.to(".line7" , {duration: 3, width: "100%", ease: "expo.out", delay: 3.5})
+            gsap.to(".line8" , {duration: 3, width: "100%", ease: "expo.out", delay: 4})
+            gsap.to(".about__title h2 span" , {duration: 0.8, y:0, ease: "expo.out", stagger: 0.015, delay: 4})
+        }, 2000)
+    </script>
+
+
+    <script type="module">
+        import * as $ from '//unpkg.com/three@0.118.3/build/three.module.js'
+        // import {OrbitControls} from '//unpkg.com/three@0.118.3/examples/jsm/controls/OrbitControls.js'
+
+        const renderer = new $.WebGLRenderer({
+            antialias: true,
+            alpha: true
+        });
+        document.querySelector(".about__intro").prepend(renderer.domElement);
+
+        window.addEventListener('resize', () => {
+            const {
+                clientWidth,
+                clientHeight
+            } = renderer.domElement;
+            renderer.setPixelRatio(3);
+            renderer.setSize(clientWidth, clientHeight, false);
+            camera.aspect = clientWidth / clientHeight;
+            camera.updateProjectionMatrix();
+        });
+
+        const radius0 = 8;
+        const radius1 = 4;
+        const nSeed = 20;
+
+        const radius = radius0 + radius1;
+        const scene = new $.Scene();
+        const camera = new $.PerspectiveCamera(32, 2, .1, 1000);
+        //const controls = new OrbitControls(camera, renderer.domElement);
+
+        camera.position.set(0, 0, 64);
+        scene.background = new $.Color('#CBC0B3');
+
+        const seeds = []; {
+            const geom = new $.SphereBufferGeometry(radius1, 16, 16);
+            for (let i = 0, I = nSeed; i < I; ++i) {
+                const mat = new $.MeshPhongMaterial({
+                    color: new $.Color().setHSL(0, 0.1, 0.1)
+                });
+                const mesh = new $.Mesh(geom, mat);
+                const alpha = i / I * Math.PI / 2; // rx from N
+                const beta = -Math.PI + Math.random() * Math.PI * 2; // ry from E
+                const radius = radius0;
+                const y = radius * Math.cos(alpha);
+                const r = radius * Math.sin(alpha);
+                const x = r * Math.cos(beta);
+                const z = -r * Math.sin(beta);
+                mesh.position.set(x, y, z);
+                const velocity = new $.Vector2(Math.random() * Math.PI / 4, Math.PI / 3);
+                mesh.castShadow = true;
+                mesh.receiveShadow = true;
+                scene.add(mesh);
+                seeds.push({
+                    mesh,
+                    velocity,
+                    alpha,
+                    beta
+                });
+            }
+        }
+
+        const core = new $.Mesh(); {
+            const geom = new $.SphereBufferGeometry(radius0, 32, 32);
+            const mat = new $.MeshLambertMaterial({
+                color: scene.background
+            });
+            core.geometry = geom;
+            core.material = mat;
+            scene.add(core);
+            core.receiveShadow = true;
+            core.castShadow = true;
+        }
+
+        const light0 = new $.PointLight('white', .5);
+        light0.position.set(radius0, 0, radius0 + radius1 * 3);
+        light0.castShadow = true;
+        light0.shadow.camera.far = radius * 2;
+        light0.shadow.mapSize.set(1024, 1024);
+        scene.add(light0);
+
+        const light1 = new $.AmbientLight('white', .5);
+        scene.add(light1);
+
+        window.dispatchEvent(new Event('resize'));
+        const clock = new $.Clock();
+        renderer.shadowMap.enabled = true;
+
+        renderer.setAnimationLoop(() => {
+            renderer.render(scene, camera);
+    
+            const dt = clock.getDelta();
+            for (const seed of seeds) {
+                updatePosition({
+                    seed,
+                    dt
+                });
+            }
+        });
+
+        function updatePosition({
+            seed,
+            dt
+        }) {
+            seed.alpha = (seed.alpha + seed.velocity.x * dt) % (Math.PI * 2);
+            seed.beta = (seed.beta + seed.velocity.y * dt) % (Math.PI * 2);
+            const y = radius * Math.cos(seed.alpha);
+            const r = radius * Math.sin(seed.alpha);
+            const x = r * Math.cos(seed.beta);
+            const z = r * Math.sin(seed.beta);
+            seed.mesh.position.set(x, y, z);
+        }
+    </script>
+</body>
+</html>

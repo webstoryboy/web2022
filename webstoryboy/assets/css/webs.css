@@ -315,6 +315,9 @@
   color: #666;
   line-height: 1.6;
 }
+.blog__contents .table {
+  margin-bottom: 10px;
+}
 .blog__contents .table table {
   border: 1px solid #ddd;
   width: 100%;

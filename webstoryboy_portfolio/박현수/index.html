@@ -127,6 +127,12 @@
             document.querySelectorAll(".scroll").forEach((sc) => {
                 sc.innerText = Math.round(scrollTop);
             })
+
+            if(document.querySelector("#section2").offsetTop <= scrollTop){
+                document.querySelector(".sec2 .title").classList.add("show");
+            } else {
+                document.querySelector(".sec2 .title").classList.remove("show");
+            }
         })
 
         gsap.set(".sec1 .desc > div", {opacity: 0, y: 50});

@@ -147,7 +147,11 @@
     font-weight: 100;
     position: sticky;
     top: 0;
-
+    transition: padding 1s ease-in, font-size 1s ease-in;
+}
+.sec2 .title.show {
+    font-size: 2vw;
+    padding: 20px 100px;
 }
 .sec2 .desc {
     text-align: center;

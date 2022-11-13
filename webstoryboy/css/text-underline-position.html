@@ -76,22 +76,19 @@
         <section id="blog">
             <div class="blog__title">
                 <span class="cate">Reference/CSS</span>
-                <h1 class="title">text-decoration 속성은 텍스트 라인 속성을 일괄적으로 설정합니다.</h1>
+                <h1 class="title">text-underline-position 속성은 언더 라인의 위치를 설정합니다.</h1>
                 <div class="meta">
                     <span class="author">by @webs</span>
-                    <span class="date">2022. 11. 11.</span>
+                    <span class="date">2022. 11. 13.</span>
                 </div>
             </div>
             <div class="blog__inner container">
                 <div class="blog__contents">
-                    <h2>text-decoration</h2>
+                    <h2>text-underline-position</h2>
                     <p>
-                        text-decoration 속성은 텍스트 라인 속성을 일괄적으로 설정합니다.
-                        라인의 굵기를 설정하고 싶다면, text-decoration-thickness 속성을 사용하고,
-                        라인의 색상을 설정하고 싶다면, text-decoration-color 속성을 사용하고,
-                        라인의 종류를 설정하고 싶다면, text-decoration-style 속성을 사용하고,
-                        라인의 위치를 설정하고 싶다면, text-decoration-line 속성을 사용합니다. 
-                        여러개의 효과를 동시에도 사용이 가능합니다.
+                        text-underline-position 속성은 언더 라인의 위치를 설정합니다.
+                        text-underline이 설정되어 있는 경우 라인의 위치를 under로 설정할 수 있으며,
+                        left와 right속성은 글씨가 세로 모드일 경우에 적용이 됩니다.
                     </p>
 
                     <hr>
@@ -112,9 +109,7 @@
                                 <tr>
                                     <th>기본값</th>
                                     <td>
-                                        text-decoration-color : currentcolor<br>
-                                        text-decoration-style : solid<br>
-                                        text-decoration-line : none<br>
+                                        text-underline-position : auto
                                     </td>
                                 </tr>
                                 <tr>
@@ -123,11 +118,11 @@
                                 </tr>
                                 <tr>
                                     <th>버전</th>
-                                    <td>CSS1, CSS3</td>
+                                    <td>CSS3</td>
                                 </tr>
                                 <tr>
                                     <th>사용성</th>
-                                    <td>★★★☆☆</td>
+                                    <td>★★☆☆☆</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -135,7 +130,8 @@
 
                     <h3>정의(Definition)</h3>
                     <ul>
-                        <li>text-decoration 속성은 글자 라인 속성을 일괄적으로 설정합니다.</li>
+                        <li>text-underline-position 속성은 언더 라인의 위치를 설정합니다.</li>
+                        <li>text-underline-position 요소의 left, right 속성은 글씨가 세로 모드에서 적용됩니다.</li>
                     </ul>
 
                     <h3>텍스트 라인과 관련된 속성</h3>
@@ -161,7 +157,7 @@
                         <li>text-shadow 속성은 텍스트 그림자를 설정합니다.</li>
                         <li>text-transform 속성은 텍스트 대/소문자를 설정합니다.</li>
                         <li>text-emphasis 속성은 텍스트에 강조 표시를 설정합니다.</li>
-                        <li>text-underline-offset 속성은 언더라인의 오프셋값을 설정합니다.</li>
+                        <li>text-underline-offset 속성은 언더라인의 오프셋 값을 설정합니다.</li>
                         <li>text-underline-position 속성은 언더라인의 위치를 설정합니다.</li>
                         <li>text-combine-upright 속성은 문자 조합을 설정합니다.</li>
                         <li>text-size-adjust 속성은 스마트폰에서 텍스트 비율을 설정합니다. </li>
@@ -189,25 +185,29 @@
                     </ul>
 
                     <h3>문법(Syntax)</h3>
-                    <p class="blue">text-decoration : text-decoratio-line | text-decoratio-style | text-decoratio-color</p>
+                    <p class="blue">text-underline-position : auto | under | left | right</p>
 <pre class="bluePre"><code class="language-css">/* 기본 속성 */
-text-decoration: underline;             /* text-decoratio-line */
-text-decoration: overline red;          /* text-decoratio-line | text-decoratio-color */
-text-decoration: overline double red;   /* text-decoratio-line | text-decoratio-style | text-decoratio-color */
-text-decoration: none;
+text-underline-position: auto;
+text-underline-position: under;
+text-underline-position: left;
+text-underline-position: right;
+
+/* 다중 속성 */
+text-underline-position: left under;
+text-underline-position: right under;
 
 /* 전역 속성 */
-text-decoration: inherit;   /* 상속 */
-text-decoration: initial;   /* 초기화 */
-text-decoration: revert;  /* 원래대로 돌리기 */
-text-decoration: unset;   /* 설정 해제 */
+text-underline-position: inherit;   /* 상속 */
+text-underline-position: initial;   /* 초기화 */
+text-underline-position: revert;    /* 원래대로 돌리기 */
+text-underline-position: unset;     /* 설정 해제 */
 </code></pre>
 
                     <h3>속성(Property)</h3>
                     <div class="table">
                         <table>
                             <colgroup>
-                                <col width="20%">
+                                <col width="15%">
                                 <col width="30%">
                                 <col>
                             </colgroup>
@@ -220,57 +220,62 @@ text-decoration: unset;   /* 설정 해제 */
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th>text-decoration-line</th>
-                                    <td>
-                                        text-decoration-line : none;<br>
-                                        text-decoration-line : underline;<br>
-                                        text-decoration-line : overline;<br>
-                                        text-decoration-line : line-through;<br>
-                                        text-decoration-line : blink;
-                                    </td>
-                                    <td>글자 라인의 위치 속성을 설정합니다.</td>
+                                    <th>auto</th>
+                                    <td>text-underline-position : auto;</td>
+                                    <td>라인의 위치를 자동(기본)값으로 설정합니다.</td>
                                 </tr>
                                 <tr>
-                                    <th>text-decoratio-style</th>
-                                    <td>
-                                        text-decoratio-style : solid<br>
-                                        text-decoratio-style : double<br>
-                                        text-decoratio-style : dotted<br>
-                                        text-decoratio-style : dashed<br>
-                                        text-decoratio-style : wavy
-                                    </td>
-                                    <td>글자 라인의 종류 속성을 설정합니다.</td>
+                                    <th>from-font</th>
+                                    <td>text-underline-position : from-font;</td>
+                                    <td>라인의 위치를 from-font로 설정합니다.</td>
                                 </tr>
                                 <tr>
-                                    <th>text-decoration-color</th>
-                                    <td>text-decoration-color : #fff</td>
-                                    <td> 글자 라인의 색상 속성을 설정합니다.</td>
+                                    <th>under</th>
+                                    <td>text-underline-position : under;</td>
+                                    <td>라인의 위치를 아래쪽 설정합니다.</td>
                                 </tr>
                                 <tr>
-                                    <th>text-decoration-thickness</th>
-                                    <td>
-                                        text-decoration-thickness : auto;<br>
-                                        text-decoration-thickness : from-font;<br>
-                                        text-decoration-thickness : 1px;<br>
-                                        text-decoration-thickness : 1%;
-                                    </td>
-                                    <td> 글자 라인의 굵기 속성을 설정합니다.</td>
+                                    <th>left</th>
+                                    <td>text-underline-position : left;</td>
+                                    <td>라인의 위치를 왼쪽 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <th>right</th>
+                                    <td>text-underline-position : right;</td>
+                                    <td>라인의 위치를 오른쪽 설정합니다.</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
-
-
+                    <!-- Sample1 -->
                     <style>
-                        .text-box i {
+                        .text-box {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                        }
+                        .text-box .box {
+                            width: 32%;
+                            line-height: 1.4;
+                        }
+                        .text-box li {
+                            text-decoration: underline;
+                        }
+                        .text-box li i {
                             font-style: normal;
                         }
+
+                        @media (max-width:800px){
+                            .text-box .box {
+                                width: 100%;
+                                margin-bottom: 2%;
+                            }
+                        }            
                     </style>
-                    <!-- Sample1 -->
                     <h3>예제1(Sample)</h3>
                     <div id="sample1" class="sample">
-                        <h4>라인의 여러가지 속성을 일괄적으로 설정한 예제입니다.</h4>
+                        <h4>text-underline-offset을 설정한 예제입니다.</h4>
                         <div class="sampleView">
                             <!-- ex -->
                             <div class="text-box">
@@ -286,12 +291,8 @@ text-decoration: unset;   /* 설정 해제 */
                             <!-- ex -->
                         </div>
                         <div class="sampleBtn">
-                            <a href="#">text-decoration: underline;</a>
-                            <a href="#">text-decoration: underline dotted;</a>
-                            <a href="#">text-decoration: overline dotted red;</a>
-                            <a href="#">text-decoration: green wavy underline;</a>
-                            <a href="#">text-decoration: underline overline #FF3028;</a>
-                            <a href="#">text-decoration: wavy overline line-through #ff4b4b;</a>
+                            <a href="#">text-underline-position: auto;</a>
+                            <a href="#">text-underline-position: under;</a>
                         </div>
                         <div class="sampleCode">
                             <div class="scMenu">
@@ -323,12 +324,19 @@ text-decoration: unset;   /* 설정 해제 */
     width: 32%;
     line-height: 1.4;
 }
+.text-box li {
+    text-decoration: underline;
+}
+.text-box li i {
+    font-style: normal;
+}
+
 @media (max-width:800px){
     .text-box .box {
         width: 100%;
         margin-bottom: 2%;
     }
-}     
+}  
 </code></pre>
                                 </div>
                                 <div>
@@ -337,7 +345,7 @@ text-decoration: unset;   /* 설정 해제 */
         e.preventDefault();
         const text = btn.innerText;
 
-        document.querySelectorAll("#sample1 .text-box ul li").forEach(li => {
+        document.querySelectorAll("#sample1 .text-box ul li i").forEach(li => {
             li.setAttribute("style", text);
         })
     })
@@ -361,37 +369,36 @@ text-decoration: unset;   /* 설정 해제 */
                     </script>           
                     <!-- //Sample1 -->
 
+
+                    <!-- Sample2 -->
                     <style>
-                        #sample2 .text-box li {
-                            font-style: normal;
-                            text-decoration: underline;
+                        #sample2 .text-box {
+                            writing-mode: vertical-rl;
+                            padding-top: 20px;
                         }
                     </style>
-                    <!-- Sample2 -->
                     <h3>예제2(Sample)</h3>
                     <div id="sample2" class="sample">
-                        <h4>text-decoration-color를 설정한 예제입니다.</h4>
+                        <h4>text-underline-position을 세로 모드에서 설정한 예제입니다.</h4>
                         <div class="sampleView">
                             <!-- ex -->
                             <div class="text-box">
                                 <ul>
                                     <li><i>text-align</i> 속성은 텍스트 정렬 방식을 설정합니다.</li>
-                                    <li><i>text-align-last</i> 속성은 문단의 마지막 텍스트 정렬 방식을 설정합니다.</li>
-                                    <li><i>text-decoration</i> 속성은 텍스트 라인 속성을 설정합니다.</li>
                                     <li><i>text-indent</i> 속성은 문단 들여쓰기 속성을 설정합니다.</li>
                                     <li><i>text-justify</i> 속성은 텍스트의 정렬 유형을 설정합니다.</li>
                                     <li><i>text-overflow</i> 속성은 텍스트 영역 속성을 설정합니다.</li>
+                                    <li><i>text-shadow</i> 속성은 텍스트 그림자를 설정합니다.</li>
                                 </ul>
                             </div>
                             <!-- ex -->
                         </div>
                         <div class="sampleBtn">
-                            <a href="#">text-decoration-color: red</a>
-                            <a href="#">text-decoration-color: #00ff00;</a>
-                            <a href="#">text-decoration-color: rgba(255, 128, 128, 0.5);</a>
-                            <a href="#">text-decoration-color: hsla(200, 100%, 50%, 0.8);</a>
-                            <a href="#">text-decoration-color: transparent;</a>
-                            <a href="#">text-decoration-color: currentcolor;</a>
+                            <a href="#">text-decoration: none;</a>
+                            <a href="#">text-underline-position: left;</a>
+                            <a href="#">text-underline-position: right;</a>
+                            <a href="#">text-underline-position: left under;</a>
+                            <a href="#">text-underline-position: right under;</a>
                         </div>
                         <div class="sampleCode">
                             <div class="scMenu">
@@ -404,39 +411,30 @@ text-decoration: unset;   /* 설정 해제 */
 <pre class="language-html"><code>&lt;div class="text-box"&gt;
     &lt;ul&gt;
         &lt;li&gt;&lt;i&gt;text-align&lt;/i&gt; 속성은 텍스트 정렬 방식을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-align-last&lt;/i&gt; 속성은 문단의 마지막 텍스트 정렬 방식을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-decoration&lt;/i&gt; 속성은 텍스트 라인 속성을 설정합니다.&lt;/li&gt;
         &lt;li&gt;&lt;i&gt;text-indent&lt;/i&gt; 속성은 문단 들여쓰기 속성을 설정합니다.&lt;/li&gt;
         &lt;li&gt;&lt;i&gt;text-justify&lt;/i&gt; 속성은 텍스트의 정렬 유형을 설정합니다.&lt;/li&gt;
         &lt;li&gt;&lt;i&gt;text-overflow&lt;/i&gt; 속성은 텍스트 영역 속성을 설정합니다.&lt;/li&gt;
+        &lt;li&gt;&lt;i&gt;text-shadow&lt;/i&gt; 속성은 텍스트 그림자를 설정합니다.&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/div&gt;
 </code></pre>
                                 </div>
                                 <div>
-<pre class="language-css"><code>.text-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+<pre class="language-css"><code>#sample2 .text-box {
+    writing-mode: vertical-rl;
+    padding-top: 20px;
 }
-.text-box .box {
-    width: 32%;
-    line-height: 1.4;
-}
-@media (max-width:800px){
-    .text-box .box {
-        width: 100%;
-        margin-bottom: 2%;
-    }
-}     
 </code></pre>
                                 </div>
                                 <div>
-<pre class="language-javascript"><code>document.querySelectorAll("#sample1 .sampleBtn a").forEach(btn => {
+<pre class="language-javascript"><code>document.querySelectorAll("#sample2 .sampleBtn a").forEach(btn => {
     btn.addEventListener("click", (e)=> {
         e.preventDefault();
         const text = btn.innerText;
-        document.querySelector("#sample1 .text-box").setAttribute("style", text);
+
+        document.querySelectorAll("#sample2 .text-box ul li").forEach(li => {
+            li.setAttribute("style", text);
+        })
     })
 });
 </code></pre>
@@ -457,329 +455,6 @@ text-decoration: unset;   /* 설정 해제 */
                         });
                     </script>           
                     <!-- //Sample2 -->
-
-                    <style>
-                        #sample3 .text-box li {
-                            text-decoration-color: #ff4b4b;
-                        }
-                        #sample3 .text-box li i {
-                            font-style: normal;
-                        }
-                    </style>
-                    <!-- Sample3 -->
-                    <h3>예제3(Sample)</h3>
-                    <div id="sample3" class="sample">
-                        <h4>text-decoration-line을 설정한 예제입니다.</h4>
-                        <div class="sampleView">
-                            <!-- ex -->
-                            <div class="text-box">
-                                <ul>
-                                    <li><i>text-align</i> 속성은 텍스트 정렬 방식을 설정합니다.</li>
-                                    <li><i>text-align-last</i> 속성은 문단의 마지막 텍스트 정렬 방식을 설정합니다.</li>
-                                    <li><i>text-decoration</i> 속성은 텍스트 라인 속성을 설정합니다.</li>
-                                    <li><i>text-indent</i> 속성은 문단 들여쓰기 속성을 설정합니다.</li>
-                                    <li><i>text-justify</i> 속성은 텍스트의 정렬 유형을 설정합니다.</li>
-                                    <li><i>text-overflow</i> 속성은 텍스트 영역 속성을 설정합니다.</li>
-                                </ul>
-                            </div>
-                            <!-- ex -->
-                        </div>
-                        <div class="sampleBtn">
-                            <a href="#">text-decoration-line: underline;</a>
-                            <a href="#">text-decoration-line: overline;</a>
-                            <a href="#">text-decoration-line: line-through;</a>
-                            <a href="#">text-decoration-line: underline overline;</a>
-                            <a href="#">text-decoration-line: underline line-through;</a>
-                        </div>
-                        <div class="sampleCode">
-                            <div class="scMenu">
-                                <div>HTML</div>
-                                <div>CSS</div>
-                                <div>SCRIPT</div>
-                            </div>
-                            <div class="scCont">
-                                <div>
-<pre class="language-html"><code>&lt;div class="text-box"&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;i&gt;text-align&lt;/i&gt; 속성은 텍스트 정렬 방식을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-align-last&lt;/i&gt; 속성은 문단의 마지막 텍스트 정렬 방식을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-decoration&lt;/i&gt; 속성은 텍스트 라인 속성을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-indent&lt;/i&gt; 속성은 문단 들여쓰기 속성을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-justify&lt;/i&gt; 속성은 텍스트의 정렬 유형을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-overflow&lt;/i&gt; 속성은 텍스트 영역 속성을 설정합니다.&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
-                                </div>
-                                <div>
-<pre class="language-css"><code>.text-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.text-box .box {
-    width: 32%;
-    line-height: 1.4;
-}
-@media (max-width:800px){
-    .text-box .box {
-        width: 100%;
-        margin-bottom: 2%;
-    }
-}     
-</code></pre>
-                                </div>
-                                <div>
-<pre class="language-javascript"><code>document.querySelectorAll("#sample1 .sampleBtn a").forEach(btn => {
-    btn.addEventListener("click", (e)=> {
-        e.preventDefault();
-        const text = btn.innerText;
-        document.querySelector("#sample1 .text-box").setAttribute("style", text);
-    })
-});
-</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <script>
-                        document.querySelectorAll("#sample3 .sampleBtn a").forEach(btn => {
-                            btn.addEventListener("click", (e)=> {
-                                e.preventDefault();
-                                const text = btn.innerText;
-
-                                document.querySelectorAll("#sample3 .text-box ul li").forEach(li => {
-                                    li.setAttribute("style", text);
-                                })
-                            })
-                        });
-                    </script>           
-                    <!-- //Sample3 -->
-
-
-
-
-                    <style>
-                        #sample4 .text-box li {
-                            text-decoration: underline #ff4b4b;
-                        }
-                        #sample4 .text-box li i {
-                            font-style: normal;
-                        }
-                    </style>
-                    <!-- Sample4 -->
-                    <h3>예제4(Sample)</h3>
-                    <div id="sample4" class="sample">
-                        <h4>text-decoration-style을 설정한 예제입니다.</h4>
-                        <div class="sampleView">
-                            <!-- ex -->
-                            <div class="text-box">
-                                <ul>
-                                    <li><i>text-align</i> 속성은 텍스트 정렬 방식을 설정합니다.</li>
-                                    <li><i>text-align-last</i> 속성은 문단의 마지막 텍스트 정렬 방식을 설정합니다.</li>
-                                    <li><i>text-decoration</i> 속성은 텍스트 라인 속성을 설정합니다.</li>
-                                    <li><i>text-indent</i> 속성은 문단 들여쓰기 속성을 설정합니다.</li>
-                                    <li><i>text-justify</i> 속성은 텍스트의 정렬 유형을 설정합니다.</li>
-                                    <li><i>text-overflow</i> 속성은 텍스트 영역 속성을 설정합니다.</li>
-                                </ul>
-                            </div>
-                            <!-- ex -->
-                        </div>
-                        <div class="sampleBtn">
-                            <a href="#">text-decoration-style: solid;</a>
-                            <a href="#">text-decoration-style: double;</a>
-                            <a href="#">text-decoration-style: dotted;</a>
-                            <a href="#">text-decoration-style: dashed;</a>
-                            <a href="#">text-decoration-style: wavy;</a>
-                        </div>
-                        <div class="sampleCode">
-                            <div class="scMenu">
-                                <div>HTML</div>
-                                <div>CSS</div>
-                                <div>SCRIPT</div>
-                            </div>
-                            <div class="scCont">
-                                <div>
-<pre class="language-html"><code>&lt;div class="text-box"&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;i&gt;text-align&lt;/i&gt; 속성은 텍스트 정렬 방식을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-align-last&lt;/i&gt; 속성은 문단의 마지막 텍스트 정렬 방식을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-decoration&lt;/i&gt; 속성은 텍스트 라인 속성을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-indent&lt;/i&gt; 속성은 문단 들여쓰기 속성을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-justify&lt;/i&gt; 속성은 텍스트의 정렬 유형을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-overflow&lt;/i&gt; 속성은 텍스트 영역 속성을 설정합니다.&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
-                                </div>
-                                <div>
-<pre class="language-css"><code>.text-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.text-box .box {
-    width: 32%;
-    line-height: 1.4;
-}
-@media (max-width:800px){
-    .text-box .box {
-        width: 100%;
-        margin-bottom: 2%;
-    }
-}     
-</code></pre>
-                                </div>
-                                <div>
-<pre class="language-javascript"><code>document.querySelectorAll("#sample1 .sampleBtn a").forEach(btn => {
-    btn.addEventListener("click", (e)=> {
-        e.preventDefault();
-        const text = btn.innerText;
-        document.querySelector("#sample1 .text-box").setAttribute("style", text);
-    })
-});
-</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <script>
-                        document.querySelectorAll("#sample4 .sampleBtn a").forEach(btn => {
-                            btn.addEventListener("click", (e)=> {
-                                e.preventDefault();
-                                const text = btn.innerText;
-
-                                document.querySelectorAll("#sample4 .text-box ul li").forEach(li => {
-                                    li.setAttribute("style", text);
-                                })
-                            })
-                        });
-                    </script>           
-                    <!-- //Sample4 -->
-
-
-                    <style>
-                        #sample5 .text-box li {
-                            text-decoration: underline #ff4b4b;
-                        }
-                        #sample5 .text-box li i {
-                            font-style: normal;
-                        }
-                        #sample5 .text-box ul.solid li {text-decoration-style: solid;}
-                        #sample5 .text-box ul.double li {text-decoration-style: double;}
-                        #sample5 .text-box ul.dotted li {text-decoration-style: dotted;}
-                        #sample5 .text-box ul.dashed li {text-decoration-style: dashed;}
-                        #sample5 .text-box ul.wavy li {text-decoration-style: wavy;}
-                    </style>
-                    <!-- Sample5 -->
-                    <h3>예제5(Sample)</h3>
-                    <div id="sample5" class="sample">
-                        <h4>text-decoration-thickness을 설정한 예제입니다.</h4>
-                        <div class="sampleView">
-                            <!-- ex -->
-                            <div class="text-box">
-                                <ul>
-                                    <li><i>text-align</i> 속성은 텍스트 정렬 방식을 설정합니다.</li>
-                                    <li><i>text-align-last</i> 속성은 문단의 마지막 텍스트 정렬 방식을 설정합니다.</li>
-                                    <li><i>text-decoration</i> 속성은 텍스트 라인 속성을 설정합니다.</li>
-                                    <li><i>text-indent</i> 속성은 문단 들여쓰기 속성을 설정합니다.</li>
-                                    <li><i>text-justify</i> 속성은 텍스트의 정렬 유형을 설정합니다.</li>
-                                    <li><i>text-overflow</i> 속성은 텍스트 영역 속성을 설정합니다.</li>
-                                </ul>
-                            </div>
-                            <!-- ex -->
-                        </div>
-                        <div class="sampleBtn sampleBtn1">
-                            <a href="#">solid</a>
-                            <a href="#">double</a>
-                            <a href="#">dotted</a>
-                            <a href="#">dashed</a>
-                            <a href="#">wavy</a>
-                        </div>
-                        <div class="sampleBtn sampleBtn2">
-                            <a href="#">text-decoration-thickness: 1px;</a>
-                            <a href="#">text-decoration-thickness: 2px;</a>
-                            <a href="#">text-decoration-thickness: 3px;</a>
-                            <a href="#">text-decoration-thickness: 4px;</a>
-                            <a href="#">text-decoration-thickness: 5px;</a>
-                        </div>
-                        <div class="sampleCode">
-                            <div class="scMenu">
-                                <div>HTML</div>
-                                <div>CSS</div>
-                                <div>SCRIPT</div>
-                            </div>
-                            <div class="scCont">
-                                <div>
-<pre class="language-html"><code>&lt;div class="text-box"&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;i&gt;text-align&lt;/i&gt; 속성은 텍스트 정렬 방식을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-align-last&lt;/i&gt; 속성은 문단의 마지막 텍스트 정렬 방식을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-decoration&lt;/i&gt; 속성은 텍스트 라인 속성을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-indent&lt;/i&gt; 속성은 문단 들여쓰기 속성을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-justify&lt;/i&gt; 속성은 텍스트의 정렬 유형을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-overflow&lt;/i&gt; 속성은 텍스트 영역 속성을 설정합니다.&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/div&gt;
-</code></pre>
-                                </div>
-                                <div>
-<pre class="language-css"><code>.text-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.text-box .box {
-    width: 32%;
-    line-height: 1.4;
-}
-@media (max-width:800px){
-    .text-box .box {
-        width: 100%;
-        margin-bottom: 2%;
-    }
-}     
-</code></pre>
-                                </div>
-                                <div>
-<pre class="language-javascript"><code>document.querySelectorAll("#sample1 .sampleBtn a").forEach(btn => {
-    btn.addEventListener("click", (e)=> {
-        e.preventDefault();
-        const text = btn.innerText;
-        document.querySelector("#sample1 .text-box").setAttribute("style", text);
-    })
-});
-</code></pre>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <script>
-                        document.querySelectorAll("#sample5 .sampleBtn1 a").forEach(btn => {
-                            btn.addEventListener("click", (e)=> {
-                                e.preventDefault();
-                                const text = btn.innerText;
-
-                                document.querySelectorAll("#sample5 .text-box ul").forEach(li => {
-                                    li.setAttribute("class", text);
-                                })
-                            })
-                        });
-
-                        document.querySelectorAll("#sample5 .sampleBtn2 a").forEach(btn => {
-                            btn.addEventListener("click", (e)=> {
-                                e.preventDefault();
-                                const text = btn.innerText;
-
-                                document.querySelectorAll("#sample5 .text-box ul li").forEach(li => {
-                                    li.setAttribute("style", text);
-                                })
-                            })
-                        });
-                    </script>           
-                    <!-- //Sample5 -->
-
-
 
 
 
@@ -810,7 +485,7 @@ text-decoration: unset;   /* 설정 해제 */
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="ce" scope="row">text-decoration</td>
+                                    <td class="ce" scope="row">text-underline-position</td>
                                     <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
                                     <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
                                     <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
@@ -832,7 +507,7 @@ text-decoration: unset;   /* 설정 해제 */
 
                     <h3>참고(Reference)</h3>
                     <ul>
-                        <li><a href="https://w3c.github.io/csswg-drafts/css-text-decor/#text-decoration-property" target="_blank">https://w3c.github.io/csswg-drafts/<wbr>css-text-decor/#text-decoration-property</a></li>
+                        <li><a href="https://w3c.github.io/csswg-drafts/css-text-decor/#text-underline-position-property" target="_blank">https://w3c.github.io/csswg-drafts/<wbr>css-text-decor/#text-underline-<wbr>position-property</a></li>
                     </ul>
 
                     <hr class="m100">
@@ -861,18 +536,6 @@ text-decoration: unset;   /* 설정 해제 */
     <script src="../assets/js/webs.js"></script>
 </body>
 </html>
+
+
 <!-- text-decoration,text-decoration-color,text-decoration-line,text-decoration-style,text-decoration-thickness,text-decoration-skip-ink,text-underline-offset,text-underline-position -->
-
-<!-- 
-    <li>white-space 속성은 텍스트의 공백과 줄바꿈을 설정합니다.</li>
-    <li>line-break 속성은 텍스트의 줄바꿈 규칙을 설정합니다.</li>
-    <li>word-break 속성은 단어의 줄바꿈 규칙을 설정합니다.</li>
-    <li>hyphens 속성은 단어 줄바꿈시 하이픈을 설정합니다.</li>
-    <li>overflow-wrap 속성은 단어 줄바꿈시 단어를 나눌지의 여부를 설정합니다.</li>
-    <li>word-wrap 속성은 단어 줄바꿈시 단어를 나눌지의 여부를 설정합니다.</li>
-    <li>letter-spacing 속성은 글자와 글자 사이의 간격을 설정합니다.</li>
-    <li>word-spacing 속성은 단어와 단어 사이의 간격을 설정합니다.</li>
-    <li>writing-mode 속성은 글자 모드의 방향을 설정합니다.</li>
-    <li>direction 속성은 글자의 방향을 설정합니다.</li>
- -->
-

@@ -8,7 +8,6 @@
 </head>
 <body>
     <script>
-         //j
         "javascript reference".at('0') //j
         "javascript reference".at('1') //a
         "javascript reference".at('2') //v
@@ -46,25 +45,83 @@
 
         "['java', 'script']".concat("study")  // ['java', 'script', 'study']
 
-        const str = "javascript";
+        // const str = "javascript";
 
-        str.concat("reference");                //javascriptreference
-        str.concat(" ","reference");            //javascript reference
-        str.concat(", ","reference");           //javascript, reference
-        str.concat(" + ","reference");          //javascript + reference
-        str.concat(" ","refe"," ","rence");     //javascript refe rence
-        str.concat(" ", ["refer","ence"]);      //javascript refer,ence
+        // str.concat("reference");                //javascriptreference
+        // str.concat(" ","reference");            //javascript reference
+        // str.concat(", ","reference");           //javascript, reference
+        // str.concat(" + ","reference");          //javascript + reference
+        // str.concat(" ","refe"," ","rence");     //javascript refe rence
+        // str.concat(" ", ["refer","ence"]);      //javascript refer,ence
 
-        const arr = ["java", "script"];
+        // const arr = ["java", "script"];
 
-        arr.concat("reference")                 // ['java', 'script', 'reference']
-        arr.concat(" ", "reference")            // ['java', 'script', ' ', 'reference']
-        arr.concat("refer", "ence")             // ['java', 'script', 'refer', 'ence']
-        arr.concat(["refer", "ence"])           // ['java', 'script', 'refer', 'ence']
-        arr.concat("+", ["refer", "ence"])      // ['java', 'script', '+', 'refer', 'ence']
+        // arr.concat("reference")                 // ['java', 'script', 'reference']
+        // arr.concat(" ", "reference")            // ['java', 'script', ' ', 'reference']
+        // arr.concat("refer", "ence")             // ['java', 'script', 'refer', 'ence']
+        // arr.concat(["refer", "ence"])           // ['java', 'script', 'refer', 'ence']
+        // arr.concat("+", ["refer", "ence"])      // ['java', 'script', '+', 'refer', 'ence']
 
- 
- 
+        
+        // const str = "javascript reference";
+
+        // str.slice(0)            //javascript reference
+        // str.slice(1)            //avascript reference
+        // str.slice(2)            //vascript reference
+        // str.slice(1, 2)         //a
+        // str.slice(1, 3)         //av
+        // str.slice(10, -1)       //referenc
+        // str.slice(10, -2)       //referen
+        // str.slice(-1)           //e
+        // str.slice(-2)           //ce
+        // str.slice(-3)           //nce
+        // str.slice(-3, -1)       //nc
+        // str.slice(-3, -2)       //n
+        // str.slice(-3, -2)       //""
+
+        // const arr = ["j", "a", "v", "a", "s", "c", "r", "i", "p", "t"];
+
+        // arr.slice(0)            //['j', 'a', 'v', 'a', 's', 'c', 'r', 'i', 'p', 't']
+        // arr.slice(1)            //['a', 'v', 'a', 's', 'c', 'r', 'i', 'p', 't']
+        // arr.slice(2)            //['v', 'a', 's', 'c', 'r', 'i', 'p', 't']
+        // arr.slice(1, 2)         //['a']
+        // arr.slice(1, 3)         //['a', 'v']
+        // arr.slice(5, -1)        //['c', 'r', 'i', 'p']
+        // arr.slice(5, -2)        //['c', 'r', 'i']
+        // arr.slice(-1)           //['t']
+        // arr.slice(-2)           //['p', 't']
+        // arr.slice(-3)           //['i', 'p', 't']
+        // arr.slice(-3, -1)       //['i', 'p']
+        // arr.slice(-3, -2)       //['i']
+
+
+        const str = "javascript reference";
+
+        str.substring(0)     //javascript reference
+        str.substring(1)     //avascript reference
+        str.substring(2)     //vascript reference
+        str.substring(3)     //ascript reference
+        str.substring(0, 1)  //j
+        str.substring(0, 2)  //ja
+        str.substring(0, 3)  //jav
+        str.substring(1, 0)  //j
+        str.substring(2, 0)  //ja
+        str.substring(3, 0)  //jav
+
+        // slice와 substring 비교
+        str.substring(1)    //avascript reference
+        str.slice(1)        //avascript reference
+
+        str.substring(0, 1)  //j
+        str.slice(0, 1)      //j
+        
+        // 시작 값이 끝나는 값보다 크면 인수가 교환되어 값을 추출
+        str.substring(1, 0)  //j
+        // 앞 숫자가 뒤 숫자보다 크면 출력하지 못함
+        str.slice(1, 0)      //
+
+        console.log(str.slice(1, 0))
+
        
 
     </script>

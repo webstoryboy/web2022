@@ -1,0 +1,401 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @font-face {
+            font-family: 'SF_IceLemon';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_IceLemon.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        body {
+            height: 100%;
+            overflow: hidden;
+            background-color: #000000;
+        }
+        .wrapper {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .game-start,
+        .game-text{
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            left: 0;
+            top: 0;
+            color: #fff;
+            font-size: 90px;
+            font-family: 'SF_IceLemon';
+        }
+        .game-start > button,
+        .game-text > button {
+            margin: 2rem;
+            padding: 0.5rem 1rem;
+            color: #fff;
+            background: #0028f0;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+        .game-text > button:hover {
+            background: #0099ff;
+        }
+        .scoreText {
+            width: 12vw;
+            text-align: center;
+            font-size: 60px;
+            color: #fff;
+            font-family: 'SF_IceLemon';
+            margin-bottom: 10px;
+        }
+        .score {
+            width: 12vw;
+            text-align: center;
+            font-size: 50px;
+            color: #fff;
+            font-family: 'SF_IceLemon';
+            margin-bottom: 20px;
+        }
+        .playground > ul {
+            border: 2px solid #fff;
+            border-radius: 10px;
+            width: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .playground > ul > li {
+            width: 100%;
+            height: 25px;
+        }
+        .playground > ul > li > ul {
+            display: flex;
+        } 
+        .playground > ul > li > ul > li {
+            width: 25px;
+            height: 25px;
+            outline: 0.25px solid #777;
+        }
+        .Tmino {
+            /* border: 6px outset #a042a2 !important; */
+            background-color: #952d98;
+        }
+
+        .Imino {
+            /* border: 6px outset #1aa9de !important; */
+            background-color: #009fda;
+        }
+        .Omino {
+            /* border: 6px outset #fed01a !important; */
+            background-color: #fecb00;
+        }
+        .Zmino {
+            /* border: 6px outset #ef3e4d !important; */
+            background-color: #ed2939;
+        }
+        .Smino {
+            /* border: 6px outset #78c53e !important; */
+            background-color: #69be28;
+        }
+        .Jmino {
+            /* border: 6px outset #1a74c4 !important; */
+            background-color: #0065bd;
+        }
+        .Lmino {
+            /* border: 6px outset #ff861a !important; */
+            background-color: #ff7900;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="game-start">
+            <button>START</button>
+        </div>
+        <div class="game-text">
+            <span>GAME OVER</span>
+            <button>RESTART</button>
+        </div>
+        <div class="scoreText">score</div>
+        <div class="score">0</div>
+        <div class="playground-style">
+            <div class="playground">
+                <ul></ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const gameStart = document.querySelector(".game-start");
+        const playground = document.querySelector(".playground > ul");
+        const gameText =  document.querySelector(".game-text");
+        const scoreTitle =  document.querySelector(".scoreText");
+        const scoreDisplay =  document.querySelector(".score");
+        const restartButton = document.querySelector(".game-text > button");
+
+        // Setting
+        const GAME_ROWS = 20;
+        const GAME_COLS = 12;
+
+        // variables
+        let score = 0;
+        let duration = 500;
+        let downInterval;
+        let tempMovingItem;     
+
+        const movingItem = {    //블록의 정보 변수
+            type: "",
+            direction: 0,   //화살표 방향
+            top: 0,         
+            left: 5,
+        }
+
+        const BLOCKS = {
+            Tmino : [
+                [[2,1],[0,1],[1,0],[1,1]],
+                [[1,2],[0,1],[1,0],[1,1]],
+                [[1,2],[0,1],[2,1],[1,1]],
+                [[2,1],[1,2],[1,0],[1,1]],
+            ],
+            Imino : [
+                [[0,0],[0,1],[0,2],[0,3]],
+                [[0,0],[1,0],[2,0],[3,0]],
+                [[0,0],[0,1],[0,2],[0,3]],
+                [[0,0],[1,0],[2,0],[3,0]],
+            ],
+            Omino : [
+                [[0,0],[0,1],[1,0],[1,1]],
+                [[0,0],[0,1],[1,0],[1,1]],
+                [[0,0],[0,1],[1,0],[1,1]],
+                [[0,0],[0,1],[1,0],[1,1]],
+            ],
+            Zmino : [
+                [[0,0],[1,0],[1,1],[2,1]],
+                [[1,0],[0,1],[1,1],[0,2]],
+                [[0,0],[1,0],[1,1],[2,1]],
+                [[1,0],[0,1],[1,1],[0,2]],
+            ],
+            Smino : [
+                [[1,0],[2,0],[0,1],[1,1]],
+                [[0,0],[0,1],[1,1],[1,2]],
+                [[1,0],[2,0],[0,1],[1,1]],
+                [[0,0],[0,1],[1,1],[1,2]],
+            ],
+            Jmino : [
+                [[0,2],[1,0],[1,1],[1,2]],
+                [[0,0],[0,1],[1,1],[2,1]],
+                [[0,0],[1,0],[0,1],[0,2]],
+                [[0,0],[1,0],[2,0],[2,1]],
+            ],
+            Lmino : [
+                [[0,0],[0,1],[0,2],[1,2]],
+                [[0,0],[1,0],[2,0],[0,1]],
+                [[0,0],[1,0],[1,1],[1,2]],
+                [[0,1],[1,1],[2,0],[2,1]],
+            ]
+        }
+
+        // 시작하기
+        function init(){
+            tempMovingItem = { ...movingItem} ;
+
+            // movingItem.left = 3;
+            // console.log(tempMovingItem)
+
+            for(let i = 0; i < GAME_ROWS; i++){
+                prependNewLine()
+            }
+            generateNewBlock();
+        }
+
+        //블록 만들기
+        function prependNewLine(){
+            const li = document.createElement("li");
+            const ul = document.createElement("ul");
+
+            for(let j=0; j<GAME_COLS; j++){
+                const matrix = document.createElement("li");
+                ul.prepend(matrix);
+            }
+            li.prepend(ul);
+            playground.prepend(li);
+        }
+
+        //블록 출력하기
+        function renderBlocks(moveType = ""){
+            // const ty = tempMovingItem.type
+            // const di = tempMovingItem.direction
+            // const to = tempMovingItem.top
+            // const le = tempMovingItem.left
+            const { type, direction, top, left } = tempMovingItem;
+            
+            // console.log(BLOCKS[type][direction])
+
+            const movingBlocks = document.querySelectorAll(".moving");
+            movingBlocks.forEach(moving => {
+                moving.classList.remove(type, "moving");
+            });
+
+            BLOCKS[type][direction].some( block => {
+                const x = block[0] + left; // 0 0 0 1
+                const y = block[1] + top; // 0 1 2 2
+                //console.log({playground})
+                const target = playground.childNodes[y] ? playground.childNodes[y].childNodes[0].childNodes[x] : null;
+                const isAvailable = checkEmpty(target);
+                
+                if(isAvailable){
+                    target.classList.add(type, "moving");
+
+                } else {
+                    tempMovingItem = {...movingItem};
+
+                    if(moveType === 'retry'){
+                        clearInterval(downInterval);
+                        showGameoverText()
+                    }
+
+                    setTimeout(() => {
+                        renderBlocks("retry");
+                        if(moveType === "top"){
+                            seizeBlock();
+                        }
+                    },0);
+                    
+                    return true;
+                }
+            })
+            movingItem.left = left;
+            movingItem.top = top;
+            movingItem.direction = direction;
+        }
+
+        function seizeBlock(){
+            const movingBlocks = document.querySelectorAll(".moving");
+            movingBlocks.forEach(moving => {
+                moving.classList.remove("moving");
+                moving.classList.add("seized");
+            });
+            checkMatch()
+        }
+        //블록 한줄 제거하기
+        function checkMatch() {
+            const childNodes = playground.childNodes;
+            childNodes.forEach(child =>{
+                let matched = true;
+                child.children[0].childNodes.forEach(li=>{
+                    if(!li.classList.contains("seized")){
+                        matched = false;
+                    }
+                });
+
+                if(matched){
+                    child.remove();
+                    prependNewLine();
+                    score++;
+                    scoreDisplay.innerText = score;
+                }
+            });
+            generateNewBlock()
+        }
+
+        //새로운 블록 만들기
+        function generateNewBlock() {
+            clearInterval(downInterval);
+            downInterval = setInterval(()=>{
+                moveBlock('top', 1)
+            }, duration);
+
+            const blockArray = Object.entries(BLOCKS);
+            const randomIndex = Math.floor(Math.random() * blockArray.length);
+            movingItem.type = blockArray[randomIndex][0];
+            movingItem.top = 0;
+            movingItem.left = 3;
+            movingItem.direction = 0;
+            tempMovingItem = {...movingItem};
+            renderBlocks();
+        }
+
+        function checkEmpty(target){
+            if(!target || target.classList.contains("seized")){
+                return false;
+            }
+            return true;
+        }
+
+        //블록움직이기
+        function moveBlock(moveType, amount) {
+            tempMovingItem[moveType] += amount
+            renderBlocks(moveType)
+        }
+
+        //모양 변경하기
+        function changeDirection(){
+            const direction = tempMovingItem.direction;
+            direction === 3 ? tempMovingItem.direction = 0 : tempMovingItem.direction +=1;
+            renderBlocks();
+        }
+
+        //스페이스바 누르기
+        function dropBlock(){
+            clearInterval(downInterval);
+            downInterval = setInterval(()=>{
+                moveBlock("top", 1);
+            }, 10);
+        }
+
+        function showGameoverText(){
+            gameText.style.display = "flex"
+        }
+
+        // Event handling
+        document.addEventListener("keydown", e => {
+            switch(e.keyCode){
+                case 39:
+                    moveBlock("left", 1);
+                    break;
+                case 37:
+                    moveBlock("left", -1);
+                    break;
+                case 40:
+                    moveBlock("top", 1);
+                    break;
+                case 38:
+                    changeDirection();
+                    break;
+                case 32: 
+                    dropBlock();
+                    break;
+                default:
+                    break;    
+            }
+        });
+
+
+
+        init();
+
+    </script>
+</body>
+</html>

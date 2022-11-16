@@ -76,19 +76,20 @@
         <section id="blog">
             <div class="blog__title">
                 <span class="cate">Reference/CSS</span>
-                <h1 class="title">text-decoration-line 속성은 글자 라인의 위치 속성을 설정합니다.</h1>
+                <h1 class="title">text-justify 속성은 양쪽 정렬을 했을 때 정렬 유형을 설정합니다.</h1>
                 <div class="meta">
                     <span class="author">by @webs</span>
-                    <span class="date">2022. 11. 9.</span>
+                    <span class="date">2022. 11. 16.</span>
                 </div>
             </div>
             <div class="blog__inner container">
                 <div class="blog__contents">
-                    <h2>text-decoration-line</h2>
+                    <h2>text-justify</h2>
                     <p>
-                        text-decoration-line 속성은 라인의 위치를 설정합니다. 
-                        언더라인을 아래, 위 또는 중간에 설정할 수 있으며, 여러가지 라인을 동시에도 설정할 수 있습니다.
-                        라인의 컬러, 종류, 굵기도 설정이 가능하며, 글씨와 라인의 겹칩 현상, 포지션 값 등을 디테일하게 수정할 수 있습니다.
+                        text-justify 속성은 양쪽 정렬을 했을 때 정렬 유형을 설정합니다.
+                        양쪽 정렬을 할 경우 간격 등에 문제가 생길 수 있기 때문에,
+                        이 부분을 단어 또는 글자 사이에 간격을 조정하여, 정렬을 깔끔하게 할 수 있습니다. 
+                        일반적인 영어 보다는 아랍어나 일본어 등에 미세한 조정이 필요할 때 사용합니다. 
                     </p>
 
                     <hr>
@@ -109,7 +110,7 @@
                                 <tr>
                                     <th>기본값</th>
                                     <td>
-                                        text-decoration-line : underline
+                                        text-justify : auto
                                     </td>
                                 </tr>
                                 <tr>
@@ -122,7 +123,7 @@
                                 </tr>
                                 <tr>
                                     <th>사용성</th>
-                                    <td>★★★☆☆</td>
+                                    <td>★☆☆☆☆</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -130,19 +131,9 @@
 
                     <h3>정의(Definition)</h3>
                     <ul>
-                        <li>text-decoration-line 속성은 글자 라인의 위치 속성을 설정합니다.</li>
-                    </ul>
-
-                    <h3>텍스트 라인과 관련된 속성</h3>
-                    <ul>
-                        <li>text-decoration 속성은 글자 라인 속성을 일괄적으로 설정합니다.</li>
-                        <li>text-decoration-color 속성은 글자 라인의 색상 속성을 설정합니다.</li>
-                        <li>text-decoration-line 속성은 글자 라인의 위치 속성을 설정합니다.</li>
-                        <li>text-decoration-style 속성은 글자 라인의 종류 속성을 설정합니다.</li>
-                        <li>text-decoration-thickness 속성은 글자 라인의 굵기 속성을 설정합니다.</li>
-                        <li>text-decoration-skip-ink 속성은 언더 라인의 글씨 겹침을 설정합니다.</li>
-                        <li>text-underline-offset 속성은 언더 라인의 오프셋 값을 설정합니다.</li>
-                        <li>text-underline-position 속성은 언더 라인의 위치를 설정합니다.</li>
+                        <li>text-justify 속성은 양쪽 정렬을 했을 때 정렬 유형을 설정합니다.</li>
+                        <li>text-justify 속성은 text-align: justify 속성이 설정 되었을 때 간격 등을 조절합니다.</li>
+                        <li>text-justify 속성은 아랍어나 일본어 등 미세한 조정이 필요할 때 사용합니다.</li>
                     </ul>
 
                     <h3>텍스트와 관련된 속성</h3>
@@ -151,7 +142,7 @@
                         <li>text-align-last 속성은 문단의 마지막 텍스트 정렬 방식을 설정합니다.</li>
                         <li>text-decoration 속성은 텍스트 라인 속성을 설정합니다.</li>
                         <li>text-indent 속성은 문단 들여쓰기 속성을 설정합니다.</li>
-                        <li>text-justify 속성은 텍스트의 정렬 유형을 설정합니다.</li>
+                        <li>text-justify 속성은 양쪽 정렬을 했을 때 정렬 유형을 설정합니다.</li>
                         <li>text-orientation 속성은 텍스트 문자의 방향을 설정합니다.</li>
                         <li>text-rendering 속성은 최적화 렌더링을 설정합니다.</li>
                         <li>text-overflow 속성은 텍스트 영역 속성을 설정합니다.</li>
@@ -186,26 +177,59 @@
                     </ul>
 
                     <h3>문법(Syntax)</h3>
-                    <p class="blue">text-decoration-line : none | underline | overline | line-through | blink</p>
+                    <p class="blue">text-justify : auto | none | inter-word | inter-character</p>
 <pre class="bluePre"><code class="language-css">/* 기본 속성 */
-text-decoration-line : none;
-text-decoration-line : underline;
-text-decoration-line : overline;
-text-decoration-line : line-through;
-text-decoration-line : blink;
-
-/* 다중 속성 */
-text-decoration-line : underline overline;
-text-decoration-line : underline overline line-through;
+text-justify: auto;
+text-justify: none;
+text-justify: inter-word;
+text-justify: inter-character;
 
 /* 전역 속성 */
-text-decoration-line: inherit;   /* 상속 */
-text-decoration-line: initial;   /* 초기화 */
-text-decoration-line: revert;  /* 원래대로 돌리기 */
-text-decoration-line: unset;   /* 설정 해제 */
+text-justify: inherit;   /* 상속 */
+text-justify: initial;   /* 초기화 */
+text-justify: revert;    /* 원래대로 돌리기 */
+text-justify: unset;     /* 설정 해제 */
 </code></pre>
 
-                   
+                    <h3>속성(Property)</h3>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col width="15%">
+                                <col width="30%">
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>속성값</th>
+                                    <th>값(예)</th>
+                                    <th>설명</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>auto</th>
+                                    <td>text-justify: auto;</td>
+                                    <td>양쪽 정렬를 했을 때 자동으로 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <th>none</th>
+                                    <td>text-justify: none;</td>
+                                    <td>양쪽 정렬를 설정하지 않습니다.</td>
+                                </tr>
+                                <tr>
+                                    <th>inter-word</th>
+                                    <td>text-justify: inter-word;</td>
+                                    <td>양쪽 정렬를 했을 때 단어 간격을 설정합니다.</td>
+                                </tr>
+                                <tr>
+                                    <th>inter-character</th>
+                                    <td>text-justify: inter-character;</td>
+                                    <td>양쪽 정렬를 했을 때 글자 간격을 설정합니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <!-- Sample1 -->
                     <style>
@@ -217,12 +241,7 @@ text-decoration-line: unset;   /* 설정 해제 */
                         .text-box .box {
                             width: 32%;
                             line-height: 1.4;
-                        }
-                        .text-box li {
-                            text-decoration: underline;
-                        }
-                        .text-box li i {
-                            font-style: normal;
+                            text-align: justify;
                         }
                         @media (max-width:800px){
                             .text-box .box {
@@ -233,29 +252,27 @@ text-decoration-line: unset;   /* 설정 해제 */
                     </style>
                     <h3>예제1(Sample)</h3>
                     <div id="sample1" class="sample">
-                        <h4>text-decoration-line를 설정한 예제입니다.</h4>
+                        <h4>텍스트 정렬 상태를 설정한 예제입니다.</h4>
                         <div class="sampleView">
                             <!-- ex -->
                             <div class="text-box">
-                                <ul>
-                                    <li><i>text-align</i> 속성은 텍스트 정렬 방식을 설정합니다.</li>
-                                    <li><i>text-align-last</i> 속성은 문단의 마지막 텍스트 정렬 방식을 설정합니다.</li>
-                                    <li><i>text-decoration</i> 속성은 텍스트 라인 속성을 설정합니다.</li>
-                                    <li><i>text-indent</i> 속성은 문단 들여쓰기 속성을 설정합니다.</li>
-                                    <li><i>text-justify</i> 속성은 텍스트의 정렬 유형을 설정합니다.</li>
-                                    <li><i>text-overflow</i> 속성은 텍스트 영역 속성을 설정합니다.</li>
-                                </ul>
+                                <div class="box">
+                                    어려을 때부터 나만의 공간을 만드는 것을 좋아했고 나만의 다락방을 좋아했다. 단 한 사람이라도 내가 만든 공간 속에서 영감을 받거나 마음이 움직였으면 좋겠다. 서울에는 집이 없지만, 이곳에서는 나만의 집이 많다. 그 집은 비용도 들지 않고 언제든지 만들 수 있다. 나만의 공간을 마음것 만들 수 있다는 건 코딩에 엄청난 매력인거 같다. 그 한구석에 나만의 꿈을 설계하고 디자인을 하며 앞으로도 살고 싶다.
+                                </div>
+                                <div class="box">
+                                    운이 좋은 사람은 없다. 단지 운을 만들 뿐이다. 운을 만들기 위해서는 내가 좋아하는 일이나 내가 하고 싶은 일에 몰두하면 된다. 몰두 하다보면 길이 보이고 방향이 보이게 된다. 운이란 고된 노동과 노력을 통해 스스로 만들어 내는 것이다. 복권에 당첨되는 사람들은 금방 돈을 허비하게 된다. 단지 행운만 좋았기 때문이다. 운을 만든 사람은 돈을 날려먹거나 헛되게 쓰지 않는다. 열심히 할수록 운은 나에게 온다.
+                                </div>
+                                <div class="box">
+                                    정직은 다른 사람보다 나에게 큰 의미를 부여해야 한다. 자신이 정직하지 않으면 진정으로 원하는 일을 열정적으로 밀고 나갈 수 없다. 마음에서 우러나오는 일을 해야 정직해지며 삶을 더 즐길 줄 알게 된다. 다름 사람에게도 정직해야 하지만 그 무엇보다 나 자신한테 정직해야 한다.
+                                </div>
                             </div>
                             <!-- ex -->
                         </div>
                         <div class="sampleBtn">
-                            <a href="#">text-decoration-line : none;</a>
-                            <a href="#">text-decoration-line : underline;</a>
-                            <a href="#">text-decoration-line : overline;</a>
-                            <a href="#">text-decoration-line : line-through;</a>
-                            <a href="#">text-decoration-line : blink;</a>
-                            <a href="#">text-decoration-line : underline overline;</a>
-                            <a href="#">text-decoration-line : overline underline line-through;</a>
+                            <a href="#">text-justify: auto;</a>
+                            <a href="#">text-justify: none;</a>
+                            <a href="#">text-justify: inter-word;</a>
+                            <a href="#">text-justify: inter-character;</a>
                         </div>
                         <div class="sampleCode">
                             <div class="scMenu">
@@ -264,16 +281,17 @@ text-decoration-line: unset;   /* 설정 해제 */
                                 <div>SCRIPT</div>
                             </div>
                             <div class="scCont">
-                                <div class="active">
+                                <div>
 <pre class="language-html"><code>&lt;div class="text-box"&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;i&gt;text-align&lt;/i&gt; 속성은 텍스트 정렬 방식을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-align-last&lt;/i&gt; 속성은 문단의 마지막 텍스트 정렬 방식을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-decoration&lt;/i&gt; 속성은 텍스트 라인 속성을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-indent&lt;/i&gt; 속성은 문단 들여쓰기 속성을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-justify&lt;/i&gt; 속성은 텍스트의 정렬 유형을 설정합니다.&lt;/li&gt;
-        &lt;li&gt;&lt;i&gt;text-overflow&lt;/i&gt; 속성은 텍스트 영역 속성을 설정합니다.&lt;/li&gt;
-    &lt;/ul&gt;
+    &lt;div class="box"&gt;
+        어려을 때부터 나만의 공간을 만드는 것을 좋아했고 나만의 다락방을 좋아했다. 단 한 사람이라도 내가 만든 공간 속에서 영감을 받거나 마음이 움직였으면 좋겠다. 서울에는 집이 없지만, 이곳에서는 나만의 집이 많다. 그 집은 비용도 들지 않고 언제든지 만들 수 있다. 나만의 공간을 마음것 만들 수 있다는 건 코딩에 엄청난 매력인거 같다. 그 한구석에 나만의 꿈을 설계하고 디자인을 하며 앞으로도 살고 싶다.
+    &lt;/div&gt;
+    &lt;div class="box"&gt;
+        운이 좋은 사람은 없다. 단지 운을 만들 뿐이다. 운을 만들기 위해서는 내가 좋아하는 일이나 내가 하고 싶은 일에 몰두하면 된다. 몰두 하다보면 길이 보이고 방향이 보이게 된다. 운이란 고된 노동과 노력을 통해 스스로 만들어 내는 것이다. 복권에 당첨되는 사람들은 금방 돈을 허비하게 된다. 단지 행운만 좋았기 때문이다. 운을 만든 사람은 돈을 날려먹거나 헛되게 쓰지 않는다. 열심히 할수록 운은 나에게 온다.
+    &lt;/div&gt;
+    &lt;div class="box"&gt;
+        정직은 다른 사람보다 나에게 큰 의미를 부여해야 한다. 자신이 정직하지 않으면 진정으로 원하는 일을 열정적으로 밀고 나갈 수 없다. 마음에서 우러나오는 일을 해야 정직해지며 삶을 더 즐길 줄 알게 된다. 다름 사람에게도 정직해야 하지만 그 무엇보다 나 자신한테 정직해야 한다.
+    &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
                                 </div>
@@ -286,17 +304,14 @@ text-decoration-line: unset;   /* 설정 해제 */
 .text-box .box {
     width: 32%;
     line-height: 1.4;
-}
-.text-box li i {
-    font-style: normal;
-    text-decoration: underline;
+    text-align: justify;
 }
 @media (max-width:800px){
     .text-box .box {
         width: 100%;
         margin-bottom: 2%;
     }
-}      
+}     
 </code></pre>
                                 </div>
                                 <div>
@@ -304,10 +319,7 @@ text-decoration-line: unset;   /* 설정 해제 */
     btn.addEventListener("click", (e)=> {
         e.preventDefault();
         const text = btn.innerText;
-
-        document.querySelectorAll("#sample1 .text-box ul li i").forEach(li => {
-            li.setAttribute("style", text);
-        })
+        document.querySelector("#sample1 .text-box .box").setAttribute("style", text);
     })
 });
 </code></pre>
@@ -315,15 +327,13 @@ text-decoration-line: unset;   /* 설정 해제 */
                             </div>
                         </div>
                     </div>
+     
                     <script>
                         document.querySelectorAll("#sample1 .sampleBtn a").forEach(btn => {
                             btn.addEventListener("click", (e)=> {
                                 e.preventDefault();
                                 const text = btn.innerText;
-
-                                document.querySelectorAll("#sample1 .text-box ul li").forEach(li => {
-                                    li.setAttribute("style", text);
-                                })
+                                document.querySelector("#sample1 .text-box .box").setAttribute("style", text);
                             })
                         });
                     </script>           
@@ -358,94 +368,77 @@ text-decoration-line: unset;   /* 설정 해제 */
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="ce" scope="row">text-decoration-line</td>
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
+                                    <td class="ce" scope="row">text-justify</td>
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 크롬 -->
+                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 사파리 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 오페라 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 네이버 -->
                                     <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
                                     <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
                                     <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
                                     <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러9 -->
                                     <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러10 -->
                                     <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러11 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 엣지 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 안드로이드 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- IOS -->
+                                </tr>
+                                <tr>
+                                    <td class="ce" scope="row">auto</td>
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 크롬 -->
+                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 사파리 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 오페라 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 네이버 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러9 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러10 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러11 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 엣지 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 안드로이드 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- IOS -->
                                 </tr>
                                 <tr>
                                     <td class="ce" scope="row">none</td>
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러9 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러10 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러11 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
-                                </tr>
-                                <tr>
-                                    <td class="ce" scope="row">underline</td>
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러9 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러10 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러11 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
-                                </tr>
-                                <tr>
-                                    <td class="ce" scope="row">overline</td>
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러9 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러10 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러11 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
-                                </tr>
-                                <tr>
-                                    <td class="ce" scope="row">line-through</td>
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 오페라 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 네이버 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러9 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러10 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러11 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 엣지 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 안드로이드 -->
-                                    <td class="ce"><span title="사용가능합니다.">○</span></td><!-- IOS -->
-                                </tr>
-                                <tr>
-                                    <td class="ce" scope="row">blink</td>
                                     <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 크롬 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 파이어폭스 -->
+                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 사파리 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 오페라 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 네이버 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러9 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러10 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러11 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 엣지 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 안드로이드 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- IOS -->
+                                </tr>
+                                <tr>
+                                    <td class="ce" scope="row">inter-word</td>
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 크롬 -->
+                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 파이어폭스 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 사파리 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 오페라 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 네이버 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러9 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러10 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러11 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 엣지 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 안드로이드 -->
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- IOS -->
+                                </tr>
+                                <tr>
+                                    <td class="ce" scope="row">inter-character</td>
+                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 크롬 -->
+                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 파이어폭스 -->
                                     <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 사파리 -->
                                     <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 오페라 -->
                                     <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 네이버 -->
@@ -465,7 +458,7 @@ text-decoration-line: unset;   /* 설정 해제 */
 
                     <h3>참고(Reference)</h3>
                     <ul>
-                        <li><a href="https://w3c.github.io/csswg-drafts/css-text-decor/#propdef-text-decoration-line" target="_blank">https://w3c.github.io/csswg-drafts/<wbr>css-text-decor/#propdef-text-<wbr>decoration-line</a></li>
+                        <li><a href="https://w3c.github.io/csswg-drafts/css-text/#text-justify-property" target="_blank">https://w3c.github.io/<wbr>csswg-drafts/css-text/<wbr>#text-justify-property</a></li>
                     </ul>
 
                     <hr class="m100">
@@ -495,5 +488,4 @@ text-decoration-line: unset;   /* 설정 해제 */
 </body>
 </html>
 
-
-<!-- text-decoration,text-decoration-color,text-decoration-line,text-decoration-style,text-decoration-thickness,text-decoration-skip-ink,text-underline-offset,text-underline-position -->
+<!-- text-align,text-align-last,text-decoration,text-indent,text-justify,text-overflow,text-shadow,text-transform,text-emphasis,text-underline-offset,text-underline-position,text-combine-upright,text-size-adjust,text-fill-color,text-stroke -->

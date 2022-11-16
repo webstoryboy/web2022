@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        overscroll-behavior: none;
+        min-height: 100%;
+      }
+
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
+      h1 {
+        font-size: 14rem;
+        font-family: "Bebas Neue";
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        margin: 0;
+        color: white;
+      }
+
+      section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: 100vh;
+        margin: 0 auto;
+      }
+
+      .gallery {
+        height: 200vh;
+      }
+
+      .img {
+        width: 100%;
+        height: 700px;
+        position: relative;
+        background-size: cover;
+        z-index: -1;
+      }
+      .img:nth-of-type(1) {
+        background-image: url("https://assets.codepen.io/2621168/img1.jpg");
+      }
+      .img:nth-of-type(2) {
+        background-image: url("https://assets.codepen.io/2621168/img1.jpg");
+      }
+      .img:nth-of-type(3) {
+        background-image: url("https://assets.codepen.io/2621168/img1.jpg");
+      }
+      .img:nth-of-type(4) {
+        background-image: url("https://assets.codepen.io/2621168/img1.jpg");
+      }
+      .img:nth-of-type(5) {
+        background-image: url("https://assets.codepen.io/2621168/img1.jpg");
+      }
+      .img:nth-of-type(6) {
+        background-image: url("https://assets.codepen.io/2621168/img1.jpg");
+      }
+      .img:nth-of-type(7) {
+        background-image: url("https://assets.codepen.io/2621168/img1.jpg");
+      }
+      .img:nth-of-type(8) {
+        background-image: url("https://assets.codepen.io/2621168/img1.jpg");
+      }
+      .img:nth-of-type(9) {
+        background-image: url("https://assets.codepen.io/2621168/img1.jpg");
+      }
+      .img:before {
+        content: "";
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        z-index: 4;
+        top: 0;
+        left: 0;
+        border-right: 1px solid black;
+      }
+
+      .line {
+        border-right: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>so sick</h1>
+
+    <section>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </section>
+
+    <section>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+      <div class="img"></div>
+    </section>
+
+    <section></section>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+
+      const tl = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".img",
+            scrub: true,
+          },
+        })
+        .to(".img", {
+          stagger: 0.2,
+          y: -700,
+          scrub: true,
+        });
+    </script>
+  </body>
+</html>

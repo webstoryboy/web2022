@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="scroll">0</div>
+
+    <header id="header">
+        <h1>[portfolio]</h1>
+        <nav>[menu]</nav>
+    </header>
+    <!-- //header -->
+
+    <section id="section1">
+        <div class="sec1"
+            data-0 = "background-color: rgba(242, 27, 17, 0)"
+            data-1000= "background-color: rgba(242, 27, 17, 1)"
+        >
+            <div class="sec1_ani1 fixed"
+                data-0="width: 0%; height: 0vh;"
+                data-1000="width: 98%; height: 96vh;"
+                data-3000="width: 98%; height: 96vh;"
+                data-4000="width: 98%; height: 96vh;"
+            ></div>
+            <div class="sec1_ani2 fixed"
+                data-500="opacity: 0;"
+                data-1500="opacity: 1;"
+                data-2500="opacity: 1;"
+            >
+                <div 
+                    data-1500="opacity: 1; background-color: rgba(255, 255, 255, 0)"
+                    data-2500="opacity: 1; background-color: rgba(0, 0, 0, 1)"
+                >The</div>
+                <div
+                    data-1600="opacity: 1; background-color: rgba(255, 255, 255, 0)"
+                    data-2600="opacity: 1; background-color: rgba(0, 0, 0, 1)"
+                >absolute</div>
+                <div
+                    data-1700="opacity: 1; background-color: rgba(255, 255, 255, 0)"
+                    data-2700="opacity: 1; background-color: rgba(0, 0, 0, 1)"
+                >Best</div>
+                <div
+                    data-1800="opacity: 1; background-color: rgba(255, 255, 255, 0)"
+                    data-2800="opacity: 1; background-color: rgba(0, 0, 0, 1)"
+                >Developer</div>
+            </div>
+        </div>
+    </section>
+    <!-- //section1 -->
+
+    <section id="section2"></section><!-- //section2 -->
+    <section id="section3"></section><!-- //section3 -->
+    <section id="section4"></section><!-- //section4 -->
+    <section id="section5"></section><!-- //section5 -->
+    <section id="section6"></section><!-- //section6 -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script>
+        var s = skrollr.init({
+            smoothScrolling: true
+        });
+
+        function scroll(){
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            document.querySelector(".scroll").innerHTML = scrollTop;
+            requestAnimationFrame(scroll);
+        }
+        scroll();
+
+    </script>
+</body> 
+</html>

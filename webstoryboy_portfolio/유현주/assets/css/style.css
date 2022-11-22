@@ -1,0 +1,79 @@
+#main {
+    background: #D9D9D9;
+    min-height: 100vh;
+}
+.contaienr {
+    width: 96%;
+    margin: 0 auto;
+}
+#header {
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2%;
+    font-size: 2vw;
+}
+nav a {
+    font-size: 2vw;
+    text-transform: uppercase;
+}
+
+
+.font1 {font-family: 'Raleway Dots';}
+
+.title {
+    padding-top: 30vh;
+    
+}
+.title li {
+    display: inline;
+}
+.title li a {
+    border: 1px solid #000;
+    padding: 10px 40px;
+    display: inline-block;
+    border-radius: 50px;;
+}
+
+.keyword {
+    margin-top: 10vh;
+}
+.keyword > div {
+    display: inline-block;
+    font-size: 3vw;
+    padding: 0 10px;
+    position: relative;
+}
+.keyword > div em {
+    opacity: 0;
+    visibility: hidden;
+}
+.keyword > div span {
+    position: absolute;
+    right: 0; top: -30px;
+    background-image: url(../img/webstandardspan.svg);
+    background-repeat: no-repeat;
+    background-size: 100px 24px;
+    background-position: center;
+    opacity: 0;
+    border: 1px solid #000;
+    border-radius: 30px;
+    transition: all 0.3s;
+}
+.keyword .webstandard {
+    width: 20%;
+    background-image: url(../img/webstandard.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.keyword .webstandard span {
+    width: 150px;
+    height: 20px;
+}
+.keyword .webstandard:hover span {
+    opacity: 1;
+}
+

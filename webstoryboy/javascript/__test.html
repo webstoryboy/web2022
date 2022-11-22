@@ -95,33 +95,47 @@
         // arr.slice(-3, -2)       //['i']
 
 
-        const str = "javascript reference";
+        //const str = "javascript reference";
 
-        str.substring(0)     //javascript reference
-        str.substring(1)     //avascript reference
-        str.substring(2)     //vascript reference
-        str.substring(3)     //ascript reference
-        str.substring(0, 1)  //j
-        str.substring(0, 2)  //ja
-        str.substring(0, 3)  //jav
-        str.substring(1, 0)  //j
-        str.substring(2, 0)  //ja
-        str.substring(3, 0)  //jav
+        // str.substring(0)     //javascript reference
+        // str.substring(1)     //avascript reference
+        // str.substring(2)     //vascript reference
+        // str.substring(3)     //ascript reference
+        // str.substring(0, 1)  //j
+        // str.substring(0, 2)  //ja
+        // str.substring(0, 3)  //jav
+        // str.substring(1, 0)  //j
+        // str.substring(2, 0)  //ja
+        // str.substring(3, 0)  //jav
 
-        // slice와 substring 비교
-        str.substring(1)    //avascript reference
-        str.slice(1)        //avascript reference
+        // // slice와 substring 비교
+        // str.substring(1)    //avascript reference
+        // str.slice(1)        //avascript reference
 
-        str.substring(0, 1)  //j
-        str.slice(0, 1)      //j
+        // str.substring(0, 1)  //j
+        // str.slice(0, 1)      //j
         
-        // 시작 값이 끝나는 값보다 크면 인수가 교환되어 값을 추출
-        str.substring(1, 0)  //j
-        // 앞 숫자가 뒤 숫자보다 크면 출력하지 못함
-        str.slice(1, 0)      //
+        // // 시작 값이 끝나는 값보다 크면 인수가 교환되어 값을 추출
+        // str.substring(1, 0)  //j
+        // // 앞 숫자가 뒤 숫자보다 크면 출력하지 못함
+        // str.slice(1, 0)      //
 
-        console.log(str.slice(1, 0))
+        // console.log(str.slice(1, 0))
 
+        "456".padEnd(1, '0');    //456
+        "456".padEnd(4, '0');    //4560
+        "456".padEnd(5, '0');    //45600
+        "456".padEnd(6, '1');    //456111
+        "456".padEnd(6, '12');    //456121
+        "456".padEnd(6, '123');    //456123
+        "456".padEnd(6);          //456___  //빈칸으로 표시
+        "456".padEnd(5);          //456__   //빈칸으로 표시
+        "456".padEnd(5, 'abc');    //456ab
+        "456".padEnd(6, 'abc');    //456abc
+        "456".padEnd(7, 'abc');    //456abca
+        "456".padEnd(8, 'abc');    //456abcab
+
+        console.log("456".padEnd(6))   
        
 
     </script>

@@ -7,11 +7,14 @@
     background: #f2ede8;
 }
 #section3 {
-    height: 3000px;
     background: #f2ede8;
 }
-#section4 {}
-#section5 {}
+#section4 {
+    background: #E4D5C3;
+}
+#section5 {
+    background: #E4D5C3;
+}
 #section6 {}
 
 /* header */
@@ -142,7 +145,7 @@
     position: sticky;
     top: 100px;
     left: 0;
-    width: 45%;
+    width: 50%;
     height: 70px;
     font-size: 3vw;
     line-height: 1;
@@ -153,9 +156,9 @@
     border-bottom: 1px solid #5f5953;
 }
 .intro__desc {
-    width: 50%;
+    width: 45%;
     font-family: 'GmarketSans';
-    border-bottom: 2px solid #5f5953;
+    border-bottom: 1px solid #5f5953;
     font-weight: 300;
 }
 .intro__desc h3 {
@@ -171,34 +174,145 @@
 
 }
 .intro__desc p {
-    padding: 10% 20% 30% 0;
+    padding: 5% 5% 30% 0;
+    font-size: 20px;
+    text-align: justify;
 }
 
+/* sec3 */
 .sec3 {
     padding: 20vw 20px 20px 20px;
-    background-color: #e4d5c3;
+    height: 2000px;
 }
 .sec3 h3 {
-    height: 70px;
+    font-weight: 900;
     font-size: 3vw;
     line-height: 1;
     font-family: 'GmarketSans';
     font-weight: 900;
     text-transform: uppercase;
     color: #2B2B2B;
-    border-bottom: 1px solid #5f5953;
+    border-bottom: 1px solid rgb(95, 89, 83);
+    width: 100%;
+    height: 70px;
+    position: sticky;
+    top: 100px;
+    left: 0;
+    z-index: 100;
+}
+.sec3 .youtube {
+    margin-top: 20px;
+    background: #C9C8C9;
+    height: 700px;
+    padding: 5%;
+    display: flex;
+    position: sticky;
+    left: 0;
+    top: 190px;
+}
+.sec3 .youtube .left {
+    width: 70%;
+}
+.sec3 .youtube .right {
+    width: 30%;
+}
+.sec3 .youtube2 {
+    margin-top: 20px;
+    background: #bababa;
+    height: 700px;
+    padding: 5%;
+    display: flex;
+    position: sticky;
+    left: 0;
+    top: 200px;
+}
+
+
+/* sec4 */
+.sec4 {
+    padding: 20vw 20px 20px 20px;
+}
+.sec4 h3 {
+    font-weight: 900;
+    font-size: 3vw;
+    line-height: 1;
+    font-family: 'GmarketSans';
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #2B2B2B;
+    border-bottom: 1px solid rgb(95, 89, 83);
+    width: 100%;
+    height: 70px;
+    position: sticky;
+    top: 100px;
+    left: 0;
+    z-index: 100;
 }
 .port-wrap {
+    
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    padding: 20px;
     gap: 20px;
-    padding: 40px 20px;
+    margin-top: 20px;
 }
 .port-wrap .port {
-    height: 700px;
-    border: 1px solid #000;
-    background-image:url(https://i0.wp.com/odins-crow.com/wp-content/uploads/2022/10/1.3_img_1.b5703086935f05e5319b72ca04733785.png?fit=886%2C960&ssl=1);
-    background-size: cover;
+    background: #7e572b;
+}
+.port-wrap .port img {
+    opacity: 0.5;
+    transition: all 0.3s;
+}
+.port-wrap .port:hover img {
+    opacity: 1;
+}
+.port-wrap .port .info {
+    background: #E4D5C3;
+}
+.port-wrap .port .info h4 {
+    line-height: 1;
+    font-family: 'GmarketSans';
+    font-weight: 500;
+    font-size: 40px;
+    color: #7e572b;
+    padding-top: 20px;
+    border-bottom: 1px solid #7e572b;
+    padding-bottom: 15px;
+}
+.port-wrap .port .info li {
+    padding: 10px 0;
+    border-bottom: 1px solid #7e572b;
+    font-family: 'GmarketSans';
 }
 
 
+/* sec5 */
+.sec5 {
+    padding: 20vw 20px 20px 20px;
+}
+.sec5 h3 {
+    font-weight: 900;
+    font-size: 3vw;
+    line-height: 1;
+    font-family: 'GmarketSans';
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #2B2B2B;
+    border-bottom: 1px solid rgb(95, 89, 83);
+    width: 100%;
+    height: 70px;
+    position: sticky;
+    top: 100px;
+    left: 0;
+    z-index: 100;
+}
+
+.list-wrap {
+    margin-top: 20px;
+}
+.list-wrap .list {
+    width: 100%;
+    height: 80vh;
+    background: #AFA7A2;
+    margin-bottom: 20px;
+}

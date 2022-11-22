@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+        body {
+            margin: 0;
+            height: 10000px;
+            background-color: #000;
+        }
+        #webgl-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        h1 {
+            position: fixed;
+            left: 30px; top: 10px;
+            color: #fff;
+            font-family: "Oswald";
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scroll</h1>
+    <canvas id="webgl-canvas"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        class Stage {
+            constructor() {
+                this.renderParam = {
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                }
+
+                this.cameraParam = {
+                    fov: 60,
+                    x: 0,
+                    y: 0,
+                    z: 100
+                }
+
+                this.scene = null;
+                this.camera = null;
+                this.renderer = null;
+                this.geometry = null;
+                this.material = null;
+                this.mesh = null;
+                this.isInitialized = false;
+            }
+
+            init() {
+                this._setScene();
+                this._setRender();
+                this._setCamera();
+                this._setLight();
+
+                this.isInitialized = true;
+            }
+
+            _setScene() {
+                this.scene = new THREE.Scene();
+            }
+
+            _setRender() {
+                this.renderer = new THREE.WebGLRenderer({
+                    canvas: document.getElementById("webgl-canvas"),
+                    alpha: true
+                });
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.renderer.setSize(this.renderParam.width, this.renderParam.height);
+            }
+
+            _setCamera() {
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+
+                if (!this.isInitialized) {
+                    this.camera = new THREE.PerspectiveCamera(
+                        this.cameraParam.fov,
+                        this.renderParam.width / this.renderParam.height,
+                        this.cameraParam.near,
+                        this.cameraParam.far
+                    );
+
+                    this.camera.position.set(
+                        this.cameraParam.x,
+                        this.cameraParam.y,
+                        this.cameraParam.z
+                    );
+                }
+
+                this.camera.aspect = windowWidth / windowHeight;
+                this.camera.updateProjectionMatrix();
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.renderer.setSize(windowWidth, windowHeight);
+            }
+
+            _setLight() {
+                this.ambientlight = new THREE.AmbientLight(0x663399, .8);
+                this.directionalLight = new THREE.DirectionalLight(0xffffff, .9);
+
+                this.directionalLight.position.set(1, 1, 1);
+                this.scene.add(this.ambientlight);
+                this.scene.add(this.directionalLight);
+            }
+
+            _render() {
+                this.renderer.render(this.scene, this.camera);
+            }
+
+            onResize() {
+                this._setCamera();
+            }
+
+            onRaf() {
+                this._render();
+            }
+        }
+
+        class Mesh {
+            constructor(stage) {
+                this.stage = stage;
+                this.mesh = null;
+                this.scrollY = 0;
+
+                this.geometryParam = {
+                    radius: 300,
+                    widthSegments: 30,
+                    heightSegments: 30
+                }
+            }
+
+            init() {
+                this._setMesh();
+            }
+
+            _setMesh() {
+                const geometry = new THREE.SphereGeometry(
+                    this.geometryParam.radius,
+                    this.geometryParam.widthSegments,
+                    this.geometryParam.heightSegments
+                );
+
+                const material = new THREE.MeshStandardMaterial({
+                    color: 0x6667AB,
+                    wireframe: true
+                });
+
+                this.mesh = new THREE.Mesh(geometry, material);
+                this.offsetY = this.mesh.position.y;
+                this.stage.scene.add(this.mesh);
+            }
+
+            _render() {
+                //this.mesh.position.y = this.offsetY + this.scrollY;
+                this.mesh.scale.x = this.scrollY * 0.001;
+                this.mesh.scale.y = this.scrollY * 0.001;
+                this.mesh.scale.z = this.scrollY * 0.001;
+                this.mesh.rotation.x = this.scrollY * 0.01;
+                this.mesh.rotation.y = this.scrollY * 0.01;
+                this.mesh.rotation.z = this.scrollY * 0.01;
+            }
+
+            onMouseMove(x, y) {
+                let mouseX = 0;
+                let mouseY = 0;
+
+                mouseX = (x / window.innerWidth) * 2.0 - 1.0;
+                mouseY = - (y / window.innerHeight) * 2.0 + 1.0;
+
+                this.stage.ambientlight.position.x = mouseX;
+                this.stage.ambientlight.position.y = mouseY;
+                this.stage.directionalLight.position.x = mouseX;
+                this.stage.directionalLight.position.y = mouseY;
+            }
+
+            onScroll(y) {
+                this.scrollY = y;
+            }
+
+            onRaf() {
+                this._render();
+            }
+        }
+
+        (() => {
+            const stage = new Stage();
+            const mesh = new Mesh(stage);
+
+            stage.init();
+            mesh.init();
+
+            window.addEventListener("resize", () => {
+                stage.onResize();
+            });
+
+            window.addEventListener("mousemove", (e) => {
+                mesh.onMouseMove(e.clientX, e.clientY);
+            });
+
+            window.addEventListener("scroll", (e) => {
+                mesh.onScroll(window.scrollY/50);
+            });
+
+            const _raf = () => {
+                window.requestAnimationFrame(() => {
+                    stage.onRaf();
+                    mesh.onRaf();
+
+                    _raf();
+                });
+            };
+
+            _raf();
+        })();
+    </script>
+</body>
+</html>

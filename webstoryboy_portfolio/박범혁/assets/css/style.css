@@ -10,8 +10,13 @@
     height: 3000px;
     background: #f2ede8;
 }
-#section4 {}
-#section5 {}
+#section4 {
+    background: #b66f27;
+}
+#section5 {
+    background: #301b06;
+    height: 3000px;
+}
 #section6 {}
 
 /* header */
@@ -201,4 +206,128 @@
     background-size: cover;
 }
 
+/* sec4 */
+.sec4 {
+    position: relative;
+    padding: 20vw 20px 20px 20px;
+    background-color: #e4d5c3;
+    height: 6500px;
+}
+.sec4 h3 {
+    height: 70px;
+    font-size: 3vw;
+    line-height: 1;
+    font-family: 'GmarketSans';
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #2B2B2B;
+    border-bottom: 1px solid #5f5953;
+}
+.java-wrap {
+    width: 100%;
+    position: sticky;
+    left: 0;
+    top: 100px;
+    background: #ccc;
+    height: 3500px;
+}
 
+.java-wrap > div.j1 {
+    background: rgb(88, 67, 67);
+    z-index: 100;
+    left: 0;
+    height: 700px;
+    width: 90%;
+}
+
+.java-wrap > div.j2 {
+    background: rgb(148, 81, 81);
+    z-index: 2000;
+    position: absolute;
+    left: 0%; top: 0;
+    transform: translateX(1000px);
+    width: 1000px;
+    height: 700px;
+}
+.java-wrap > div.j3 {
+    background: rgb(205, 145, 145);
+    z-index: 3000;
+    position: absolute;
+    left: 91%; top: 0;
+    width: 1000px;
+    height: 700px;
+}
+.java-wrap > div.j4 {
+    background: rgb(140, 51, 51);
+    z-index: 4000;
+    position: absolute;
+    left: 92%; top: 0;
+    width: 1000px;
+    height: 700px;
+}
+.java-wrap > div.j5 {
+    background: rgb(238, 141, 141);
+    z-index: 5000;
+    position: absolute;
+    left: 93%; top: 0;
+    width: 1000px;
+    height: 700px;
+}
+
+/* .java-wrap > div {
+    width: 1000px;
+    height: 800px;
+    background: #ccc;
+    position: absolute;
+    left: 0%;
+    top: 200px;
+}
+.java-wrap > div.j1 {
+    background: rgb(88, 67, 67);
+    z-index: 100;
+    left: 0;
+}
+
+.java-wrap > div.j3 {
+    background: rgb(205, 145, 145);
+    z-index: 2000;
+    left: 4%;
+}
+.java-wrap > div.j4 {
+    background: rgb(140, 51, 51);
+    z-index: 3000;
+    left: 6%;
+}
+.java-wrap > div.j5 {
+    background: rgb(238, 141, 141);
+    z-index: 4000;
+    left: 8%;
+} */
+
+.java-wrap2 {
+    width: 300%;
+    position: sticky;
+    left: 0;
+    top: 0;
+    height: 500px;
+    background: rgb(255, 203, 203);
+}
+
+
+
+/* sec5 */
+.sec5 {
+    padding: 20vw 20px 20px 20px;
+}
+.sec5 h3 {
+    
+    height: 70px;
+    font-size: 3vw;
+    line-height: 1;
+    font-family: 'GmarketSans';
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #2B2B2B;
+    border-bottom: 1px solid #5f5953;
+    color: #fff;
+}

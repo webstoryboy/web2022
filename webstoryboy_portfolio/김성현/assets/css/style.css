@@ -1,0 +1,36 @@
+/* layout */
+#section1 {
+    background-color: #2F29E9;
+}
+#section2 {
+    height: 2000px;
+    background-color: #F64C0E;
+}
+#section3 {}
+#section4 {}
+#section5 {}
+#section6 {}
+
+/* sec1 */
+.sec1 {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sec1 h1 {
+    font-size: 15vw;
+    font-family: 'Anton';
+    line-height: 1;
+    text-align: center;
+    color: #fff;
+}
+.sec1 .img1 {
+    position: absolute;
+    right: -10vw;
+    bottom: -5vw;
+    width: 50vw;
+    height: 40vw;
+    background: url(https://kim-0617.github.io/portfolio/assets/img/intro.png) no-repeat center center;
+    background-size: contain;
+}

@@ -110,8 +110,30 @@
             </div>
         </section>
         <!-- //section3 -->
-        <section id="section4"></section><!-- //section4 -->
-        <section id="section5"></section><!-- //section5 -->
+
+        <section id="section4">
+            <div class="sec4">
+                <h3>section4</h3>
+                <div class="java-wrap">
+                    <div class="j1">1</div>
+                    <div class="j2">2</div>
+                    <div class="j3">3</div>
+                    <div class="j4">4</div>
+                    <div class="j5">5</div>
+                </div>
+                <div class="java-wrap2">
+                    section4-2
+                </div>
+            </div>
+        </section>
+        <!-- //section4 -->
+
+        <section id="section5">
+            <div class="sec5">
+                <h3>section5</h3>
+
+            </div>
+        </section><!-- //section5 -->
         <section id="section6"></section><!-- //section6 -->
     </div>
 
@@ -126,7 +148,7 @@
         gsap.set(".port-wrap .port", { opacity: 0, y:300 })
 
         gsap.to(".port-wrap .port", {
-            duration: 3,
+            duration: 1,
             opacity: 1,
             y: 0,
             stagger: 0.3,
@@ -134,10 +156,57 @@
                 trigger: ".port-wrap .port",
                 start: "top 50%",
                 end: "bottom 10%",
-                markers: true,
-                toggleActions: "restart pause rssume reset"
+                markers: false,
+                toggleActions: "play none none none"
             }
         })
+
+        // gsap.to(".java-wrap > div.j2", {
+        //     duration: 1,
+        //     scrollTrigger: {
+        //         trigger
+        //     }
+        // })
+
+        // let projects = gsap.utils.toArray(".java-wrap > div");
+
+        // let tl = gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: ".java-wrap",
+        //         start: () => "top top",
+        //         end: () => "" + (projects.length - 1) * window.innerHeight,
+        //         scrub: 0.8,
+        //         pin: true,
+        //         invalidateOnRefresh: true,
+        //     },
+        // });
+
+        // projects.forEach((project, i) => {
+        //     if (i !== projects.length - 1) {
+        //         tl.to(project, {
+        //             xPercent: -92 + (projects.length - 1),
+        //             ease: "none",
+        //             stagger: 0.5,
+        //             scrub: 0.8,
+        //         });
+        //     }
+        // });
+
+        gsap.to(".java-wrap > div.j2", {
+            duration: 3,
+            x: 0,
+            scrollTrigger: {
+                trigger: ".java-wrap > div.j2",
+                start: "top 100px",
+                end: () => `+=${document.querySelector(".java-wrap").offsetHeight}`,
+                markers: true,
+                scrub: 1,
+                xPercent: 0
+            }
+        })
+
+
+
 
         // document.querySelectorAll(".splitText").forEach(desc => {
         //     let splitText = desc.innerText;

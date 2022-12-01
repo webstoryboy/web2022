@@ -103,6 +103,21 @@ nav a {
   width: 47%;
   font-size: 16px;
 }
+.keyword > div .modal .desc .right .btn {
+  margin-top: 20px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.keyword > div .modal .desc .right .btn a {
+  background: #000;
+  color: #fff;
+  padding: 10px 30px;
+  display: inline-block;
+  border-radius: 50px;
+}
+
 .keyword > div .modal .close {
   position: absolute;
   right: 30px;
@@ -124,7 +139,7 @@ nav a {
   opacity: 0;
   transition: all 0.3s ease-in-out;
 }
-.keyword > div:hover span {
+.keyword > div a:hover + span {
   transform: translateX(-50%) translateY(-15px);
   opacity: 1;
 }

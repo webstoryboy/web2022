@@ -76,17 +76,20 @@
         <section id="blog">
             <div class="blog__title">
                 <span class="cate">Reference/CSS</span>
-                <h1 class="title">text-transform 속성은 텍스트 대/소문자를 설정합니다.</h1>
+                <h1 class="title">text-shadow 속성은 텍스트 그림자를 설정합니다.</h1>
                 <div class="meta">
                     <span class="author">by @webs</span>
-                    <span class="date">2022. 11. 16.</span>
+                    <span class="date">2022. 11. 30.</span>
                 </div>
             </div>
             <div class="blog__inner container">
                 <div class="blog__contents">
-                    <h2>text-transform</h2>
+                    <h2>text-shadow</h2>
                     <p>
-                        text-transform 속성은 텍스트 대/소문자를 설정합니다.
+                        text-shadow 속성은 텍스트 그림자를 설정합니다.
+                        x축, y축 길이를 통해 그림자의 길이를 설정하고,
+                        blur를 통해 뿌연 정도를 컨트롤 할 수 있습니다. 
+                        다중 속성을 이용하여 실제 느낌의 그림자 연출도 가능합니다.
                     </p>
 
                     <hr>
@@ -107,7 +110,7 @@
                                 <tr>
                                     <th>기본값</th>
                                     <td>
-                                        text-transform : clip
+                                        text-shadow : none
                                     </td>
                                 </tr>
                                 <tr>
@@ -128,27 +131,36 @@
 
                     <h3>정의(Definition)</h3>
                     <ul>
-                        <li>text-transform 속성은 텍스트 대/소문자를 설정합니다.</li>
-                        <li>text-transform 속성은 영어에서 설정 가능합니다.</li>
+                        <li>text-shadow 속성은 텍스트 그림자를 설정합니다.</li>
+                        <li>text-shadow 속성의 blur는 뿌연 정도를 나타내는 속성입니다.</li>
+                        <li>text-shadow 속성의 color를 설정하지 않으면 기본 컬러색으로 설정됩니다.</li>
                     </ul>
 
-                    
-
+                    <h3>비교(Compare)</h3>
+                    <ul>
+                        <li>text-shadow 속성은 텍스트 그림자를 설정합니다.</li>
+                        <li>box-shadow 속성의 박스 요소에 그림자를 설정합니다.</li>
+                    </ul>
+    
                     <h3>문법(Syntax)</h3>
-                    <p class="blue">text-transform : none | capitalize | uppercase | lowercase | full-width | full-size-kana</p>
+                    <p class="blue">text-shadow : none | offset-x | offset-y | blur | color</p>
 <pre class="bluePre"><code class="language-css">/* 기본 속성 */
-text-transform: none;
-text-transform: capitalize;
-text-transform: uppercase;
-text-transform: lowercase;
-text-transform: full-width;
-text-transform: full-size-kana;
+text-shadow : none; /* 기본값 */
+
+/* 속성 규칙 */
+text-shadow: 1px 1px;          /* x축 | y축 */
+text-shadow: 1px 1px red;      /* x축 | y축 | 색 */
+text-shadow: 1px 1px 2px red;  /* x축 | y축 | 블러 | 색 */
+
+/* 다중 속성 */
+text-shadow: 1px 1px red, 2px 2px blue;
+text-shadow: 1px 1px 2px red, 2px 2px 2px blue, 3px 3px 3px yellow;
 
 /* 전역 속성 */
-text-transform: inherit;   /* 상속 */
-text-transform: initial;   /* 초기화 */
-text-transform: revert;    /* 원래대로 돌리기 */
-text-transform: unset;     /* 설정 해제 */
+text-shadow: inherit;   /* 상속 */
+text-shadow: initial;   /* 초기화 */
+text-shadow: revert;    /* 원래대로 돌리기 */
+text-shadow: unset;     /* 설정 해제 */
 </code></pre>
 
                     <h3>속성(Property)</h3>
@@ -169,33 +181,28 @@ text-transform: unset;     /* 설정 해제 */
                             <tbody>
                                 <tr>
                                     <th>none</th>
-                                    <td>text-transform: none;</td>
-                                    <td>텍스트를 대/소문자로 설정하지 않습니다.</td>
+                                    <td>text-shadow: none;</td>
+                                    <td>텍스트 그림자 효과를 설정하지 않습니다.(기본값)</td>
                                 </tr>
                                 <tr>
-                                    <th>capitalize</th>
-                                    <td>text-transform: capitalize;</td>
-                                    <td>첫글자만 대문자로 설정합니다.</td>
+                                    <th>offset-x</th>
+                                    <td>text-shadow: 1px 1px;</td>
+                                    <td>그림자의 크기를 x축을 기준으로 설정합니다.</td>
                                 </tr>
                                 <tr>
-                                    <th>uppercase</th>
-                                    <td>text-transform: uppercase;</td>
-                                    <td>텍스트를 소문자로 설정합니다.</td>
+                                    <th>offset-y</th>
+                                    <td>text-shadow: 1px 1px;</td>
+                                    <td>그림자의 크기를 y축을 기준으로 설정합니다.</td>
                                 </tr>
                                 <tr>
-                                    <th>lowercase</th>
-                                    <td>text-transform: lowercase;</td>
-                                    <td>텍스트를 대문자로 설정합니다.</td>
+                                    <th>blur</th>
+                                    <td>text-shadow: 1px 1px 1px;</td>
+                                    <td>그림자의 블러효과를 설정합니다.</td>
                                 </tr>
                                 <tr>
-                                    <th>full-width</th>
-                                    <td>text-transform: full-width;</td>
-                                    <td>모든 글자체를 문자 단위 전각 형식으로 설정합니다.</td>
-                                </tr>
-                                <tr>
-                                    <th>full-size-kana</th>
-                                    <td>text-transform: full-size-kana;</td>
-                                    <td>루비에서 사용되는 작은 글꼴를 큰 사이즈로 설정합니다.</td>
+                                    <th>color</th>
+                                    <td>text-shadow: 1px 1px 1px red;</td>
+                                    <td>그림자의 색을 설정합니다.</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -203,24 +210,15 @@ text-transform: unset;     /* 설정 해제 */
 
                     <!-- Sample1 -->
                     <style>
+                        .text-box {
+                            display: flex;
+                            justify-content: space-between;
+                        }
                         .text-box .box {
-                            width: 100%;
-                            line-height: 1.4;
+                            width: 32%;
+                            line-height: 1.5;
                             text-align: justify;
-                            border: 1px solid #333;
                             margin-bottom: 10px;
-                            white-space: nowrap;
-                            overflow: hidden;
-                        }
-                        .text-box.overflow .box {
-                            overflow: visible;
-                        }
-                        .text-box.white .box {
-                            white-space: normal;
-                        }
-                        .sampleBtn1.red, .sampleBtn2.red {
-                            border-color: #ff4b4b !important;
-                            color: #ff4b4b !important;
                         }
                         @media (max-width:800px){
                             .text-box .box {
@@ -231,7 +229,7 @@ text-transform: unset;     /* 설정 해제 */
                     </style>
                     <h3>예제1(Sample)</h3>
                     <div id="sample1" class="sample">
-                        <h4>한줄 효과를 설정한 예제입니다.</h4>
+                        <h4>텍스트 그림자 효과를 적용한 예제입니다.</h4>
                         <div class="sampleView">
                             <!-- ex -->
                             <div class="text-box">
@@ -248,12 +246,15 @@ text-transform: unset;     /* 설정 해제 */
                             <!-- ex -->
                         </div>
                         <div class="sampleBtn">
-                            <a href="#" class="sampleBtn1">white-space: nowrap</a>
-                            <a href="#" class="sampleBtn2">overflow: hidden</a>
+                            <a href="#">text-shadow: none</a>
+                            <a href="#">text-shadow: 1px 1px 2px red</a>
+                            <a href="#">text-shadow: 1px 1px red</a>
+                            <a href="#">text-shadow: 1px 1px</a>
                         </div>
-                        <div class="sampleBtn sampleBtn3">
-                            <a href="#">text-overflow: clip;</a>
-                            <a href="#">text-overflow: ellipsis;</a>
+                        <div class="sampleBtn">
+                            <a href="#">text-shadow: 1px 1px 2px red, 2px 2px 2px blue</a>
+                            <a href="#">text-shadow: 1px 1px red, 2px 2px blue</a>
+                            <a href="#">text-shadow: 1px 1px red, 2px 2px blue, 3px 3px black</a>
                         </div>
                         <div class="sampleCode">
                             <div class="scMenu">
@@ -348,34 +349,7 @@ document.querySelectorAll("#sample1 .sampleBtn3 a").forEach(btn => {
                     </div>
      
                     <script>
-                        const btn1 = document.querySelector("#sample1 .sampleBtn1");
-                        const btn2 = document.querySelector("#sample1 .sampleBtn2");
-                        const box1 = document.querySelector("#sample1 .text-box")
-                      
-                        btn1.addEventListener("click", (e)=> {
-                            e.preventDefault();
-                            box1.classList.toggle("overflow");
-                            btn1.classList.toggle("red");
-                            
-                            if(box1.classList.contains("overflow")){
-                                btn1.innerText = "white-space: normal";
-                            } else {
-                                btn1.innerText = "white-space: nowrap";
-                            }
-                        })
-                        btn2.addEventListener("click", (e)=> {
-                            e.preventDefault();
-                            box1.classList.toggle("white");
-                            btn2.classList.toggle("red");
-                            
-                            if(box1.classList.contains("white")){
-                                btn2.innerText = "overflow: visible";
-                            } else {
-                                btn2.innerText = "overflow: hidden";
-                            }
-                        })
-                     
-                        document.querySelectorAll("#sample1 .sampleBtn3 a").forEach(btn => {
+                        document.querySelectorAll("#sample1 a").forEach(btn => {
                             btn.addEventListener("click", (e)=> {
                                 e.preventDefault();
                                 const text = btn.innerText;
@@ -386,6 +360,117 @@ document.querySelectorAll("#sample1 .sampleBtn3 a").forEach(btn => {
                         });
                     </script>           
                     <!-- //Sample1 -->
+
+
+                    <!-- Sample1 -->
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
+
+                        #blog #sample2 .sampleView {
+                            padding: 0;
+                        }
+                        .shadow-box {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background: #ececec;
+                        }
+                        .shadow-box .text {
+                            font-family: 'Mr Dafoe' ;
+                            font-size: 14vw;
+                            padding: 3vw;
+                            color: #000;
+                            text-shadow: 
+                                0 -3px 0 #333,
+                                0 6px 8px rgba(0,0,0,.4),
+                                0 9px 10px rgba(0,0,0,.15),
+                                0 30px 10px rgba(0,0,0,.18),
+                                0 15px 10px rgba(0,0,0,.21);
+                        }        
+                    </style>
+                    <h3>예제2(Sample)</h3>
+                    <div id="sample2" class="sample">
+                        <h4>텍스트 그림자 효과를 적용한 예제입니다.</h4>
+                        <div class="sampleView">
+                            <!-- ex -->
+                            <div class="shadow-box">
+                                <span class="text">Shadow</span>
+                            </div>
+                            <!-- ex -->
+                        </div>
+                        <div class="sampleBtn">
+                            <a href="#" data-pro="text-shadow:none">none</a>
+                            <a href="#" data-pro="text-shadow: 
+                            0 -3px 0 #333,
+                            0 6px 8px rgba(0,0,0,.4),
+                            0 9px 10px rgba(0,0,0,.15),
+                            0 30px 10px rgba(0,0,0,.18),
+                            0 15px 10px rgba(0,0,0,.21);">active</a>
+                        </div>
+                        <div class="sampleCode">
+                            <div class="scMenu">
+                                <div>HTML</div>
+                                <div>CSS</div>
+                                <div>SCRIPT</div>
+                            </div>
+                            <div class="scCont">
+                                <div>
+<pre class="language-html"><code>&lt;div class="shadow-box"&gt;
+    &lt;span class="text"&gt;Shadow&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+                                </div>
+                                <div>
+<pre class="language-css"><code>@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
+
+.shadow-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ececec;
+}
+.shadow-box .text {
+    font-family: 'Mr Dafoe';
+    font-size: 14vw;
+    padding: 3vw;
+    color: #000;
+    text-shadow: 
+        0 -3px 0 #333,
+        0 6px 8px rgba(0, 0, 0, .4),
+        0 9px 10px rgba(0, 0, 0, .15),
+        0 30px 10px rgba(0, 0, 0, .18),
+        0 15px 10px rgba(0, 0, 0, .21);
+}
+</code></pre>
+                                </div>
+                                <div>
+<pre class="language-javascript"><code>document.querySelectorAll("#sample2 a").forEach(btn => {
+    btn.addEventListener("click", (e)=> {
+        e.preventDefault();
+        const text = btn.getAttribute("data-pro");
+        document.querySelectorAll("#sample2 .shadow-box .text").forEach(box => {
+            box.setAttribute("style", text);
+        })
+    })
+});
+</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+     
+                    <script>
+                        document.querySelectorAll("#sample2 a").forEach(btn => {
+                            btn.addEventListener("click", (e)=> {
+                                e.preventDefault();
+                                const text = btn.getAttribute("data-pro");
+                                document.querySelectorAll("#sample2 .shadow-box .text").forEach(box => {
+                                    box.setAttribute("style", text);
+                                })
+                            })
+                        });
+                    </script>           
+                    <!-- //Sample2 -->
 
 
 
@@ -417,125 +502,22 @@ document.querySelectorAll("#sample1 .sampleBtn3 a").forEach(btn => {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="ce" scope="row">text-transform</td>
+                                    <td class="ce" scope="row">text-shadow</td>
                                     <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 크롬 -->
                                     <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 파이어폭스 -->
                                     <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 사파리 -->
                                     <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 오페라 -->
                                     <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 네이버 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러6 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러7 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러8 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러9 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러10 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러11 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 엣지 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 안드로이드 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- IOS -->
-                                </tr>
-                                <tr>
-                                    <td class="ce" scope="row">none</td>
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 크롬 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 파이어폭스 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 사파리 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 오페라 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 네이버 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러6 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러7 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러8 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러9 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러10 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러11 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 엣지 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 안드로이드 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- IOS -->
-                                </tr>
-                                <tr>
-                                    <td class="ce" scope="row">capitalize</td>
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 크롬 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 파이어폭스 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 사파리 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 오페라 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 네이버 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러6 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러7 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러8 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러9 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러10 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러11 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 엣지 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 안드로이드 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- IOS -->
-                                </tr>
-                                <tr>
-                                    <td class="ce" scope="row">uppercase</td>
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 크롬 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 파이어폭스 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 사파리 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 오페라 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 네이버 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러6 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러7 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러8 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러9 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러10 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러11 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 엣지 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 안드로이드 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- IOS -->
-                                </tr>
-                                <tr>
-                                    <td class="ce" scope="row">lowercase</td>
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 크롬 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 파이어폭스 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 사파리 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 오페라 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 네이버 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러6 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러7 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러8 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러9 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러10 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러11 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 엣지 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 안드로이드 -->
-                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- IOS -->
-                                </tr>
-                                <tr>
-                                    <td class="ce" scope="row">full-width</td>
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 크롬 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 파이어폭스 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 사파리 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 오페라 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 네이버 -->
                                     <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
                                     <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
                                     <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
                                     <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러9 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러10 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러11 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 엣지 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 안드로이드 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- IOS -->
+                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러10 -->
+                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 익스플로러11 -->
+                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 엣지 -->
+                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- 안드로이드 -->
+                                    <td class="ce"><span title="사용 가능합니다.">○</span></td><!-- IOS -->
                                 </tr>
-                                <tr>
-                                    <td class="ce" scope="row">full-size-kana</td>
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 크롬 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 파이어폭스 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 사파리 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 오페라 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 네이버 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러6 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러7 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러8 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러9 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러10 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 익스플로러11 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 엣지 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- 안드로이드 -->
-                                    <td class="ce"><span title="사용 할 수 없습니다.">❌</span></td><!-- IOS -->
-                                </tr>
-
                                
                             </tbody>
                         </table>
@@ -583,7 +565,7 @@ document.querySelectorAll("#sample1 .sampleBtn3 a").forEach(btn => {
 
                     <h3>참고(Reference)</h3>
                     <ul>
-                        <li><a href="https://w3c.github.io/csswg-drafts/css-text/#text-transform" target="_blank">https://w3c.github.io/csswg-drafts/<wbr>css-text/#text-transform</a></li>
+                        <li><a href="https://w3c.github.io/csswg-drafts/css-text-decor/#text-shadow-property" target="_blank">https://w3c.github.io/csswg-drafts/<wbr>css-text-decor/#text-shadow-property</a></li>
                     </ul>
 
                     <hr class="m100">

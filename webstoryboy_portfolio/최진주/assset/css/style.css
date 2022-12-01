@@ -1,0 +1,62 @@
+#webgl {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0; top: 0;
+    z-index: 1000;
+}
+
+
+/* section1 */
+#section1 {
+    height: 100vh;
+}
+#section1 iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+}
+.sec1 {
+ 
+}
+.sec1 .ideas {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    padding-left: 10vw;
+}
+.sec1 .ideas h2 {
+    font-size: 14vw;
+    color: #9796b9;
+    font-family: 'PartizenoRegular';
+    line-height: 0.8;
+}
+.sec1 .ideas p {
+    font-size: 20px;
+    color: #fff;
+    width: 400px;
+    font-family: 'AritaBuri';
+    font-size: 16px;
+    color: #9796b9;
+}
+.sec1 .desc {
+    font-size: 3vw;
+    line-height: 1.2;
+    position: absolute;
+    left: 5vw;
+    bottom: 5vh;
+    color: #fff;
+    font-family: 'PartizenoRegular';
+}
+
+
+/* section2 */
+#section2 { 
+    background: blue;
+    height: 3000px;
+}

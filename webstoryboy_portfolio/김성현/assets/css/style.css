@@ -1,6 +1,12 @@
+body {
+    overscroll-behavior: none;
+}
+
 /* layout */
 #section1 {
     background-color: #2F29E9;
+    height: 100vh;
+    overflow: hidden;
 }
 #section2 {
     height: 2000px;
@@ -11,12 +17,27 @@
 #section5 {}
 #section6 {}
 
+/* header */
+#header {
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%;
+}
+#header h1 {
+    color: #fff;
+    padding: 20px;
+    text-transform: uppercase;
+    font-family: 'Anton';
+}
+
 /* sec1 */
 .sec1 {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    position: relative;
 }
 .sec1 h1 {
     font-size: 15vw;
@@ -25,12 +46,51 @@
     text-align: center;
     color: #fff;
 }
+.sec1 h1 em {
+    display: block;
+}
 .sec1 .img1 {
     position: absolute;
     right: -10vw;
     bottom: -5vw;
-    width: 50vw;
+    width: 70vw;
     height: 40vw;
-    background: url(https://kim-0617.github.io/portfolio/assets/img/intro.png) no-repeat center center;
+    background: url(https://portfolio-orcin-nine-11.vercel.app/image/intro.png) no-repeat center center;
     background-size: contain;
+    transform-origin: bottom right;
+}
+.sec1 .img2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-140%, -100%);
+    width: 16vw;
+    height: 20vw;
+    background: url(https://portfolio-orcin-nine-11.vercel.app/assets/paint.cdcddb8a.png) no-repeat center center;
+    background-size: contain;
+}
+.sec1 .img3 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(0%, 10%);
+    width: 13vw;
+    height: 20vw;
+    background: url(https://portfolio-orcin-nine-11.vercel.app/assets/pocket.d6154ad0.png) no-repeat center center;
+    background-size: contain;
+}
+
+
+@media (max-width: 800px) {
+    .sec1 {
+        height: 100vh;
+    }
+    .sec1 .img1 {
+        width: 100vw;
+        height: 100vh;
+        bottom: 0;
+        right: 0;
+        background-size: 80%;
+        background-position: right bottom -10vh;
+    }
 }

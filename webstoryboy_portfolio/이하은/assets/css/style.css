@@ -1,0 +1,50 @@
+/* section1 */
+#section1 {
+    height: 100vh;
+    background: #FAE2E5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+#section1::before {
+    text-align: center;
+    content: 'WELCOME 2022 PORTFOLIO WELCOME 2022';
+    position: absolute;
+    left: 50%; 
+    top: 50%;
+    width: 100%;
+    font-size: 16vw;
+    line-height: 1;
+    font-family: 'Anton';
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px #A13A5F;
+    -webkit-text-fill-color: transparent;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transform-origin: center center;
+    opacity: 0.3;
+}
+#section1 .text {
+    text-align: center;
+    color: #A13A5F;
+    font-size: 12vw;
+    line-height: 1;
+    font-family: 'Anton';
+    text-transform: uppercase;
+    position: relative;
+    z-index: 100;
+}
+#section1 .img1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 30%;
+}
+
+
+/* section2 */
+#section2 {
+    height: 2000px;
+    background: #67353B;
+}

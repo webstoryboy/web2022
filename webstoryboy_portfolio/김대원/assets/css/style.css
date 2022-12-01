@@ -1,0 +1,67 @@
+/* header */
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+}
+#header h1 {
+    color: #fff;
+    font-size: 14px;
+    line-height: 0.9;
+    font-family: 'Migra-Extrabold';
+    margin-top: 5px;
+    padding: 20px 20px 20px 70px;
+    background: url(../img/logo.png) no-repeat;
+    background-size: contain;
+}
+
+/* section1 */
+#section1 {
+    height: 100vh;
+    background-image: url(../img/main.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+.sec1 {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.sec1 .text {
+    color: #fff;
+    font-family: 'Migra-Extrabold';
+    font-size: 8vw;
+    line-height: 0.9;
+}
+.sec1 .img {}
+.sec1 .img .img1 {
+    position: absolute;
+    right: 0; bottom: 10%;
+    width: 50vw;
+}
+.sec1 .img .img2 {
+    position: absolute;
+    left: 0; bottom: 10%;
+    width: 50vw;
+}
+
+/* section2 */
+#section2 {
+    height: 3000px;
+    background: #000;
+    overflow: hidden;
+}
+.sec2 {}
+.sec2 .load {
+    margin-left: -10vw;
+}
+.sec2 .load span {
+    color: #fff;
+    font-size: 30vw;
+    font-family: 'Migra-Extrabold';
+    white-space: nowrap;
+}

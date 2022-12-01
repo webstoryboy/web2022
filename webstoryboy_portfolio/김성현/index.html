@@ -12,12 +12,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <header id="header">
+        <h1><a href="#">portfolio</a></h1>
+    </header>
+
     <div id="contents">
         <section id="section1">
             <div class="sec1">
-                <h1>PORT<br>FOLIO</h1>
-
+                <h1><em>PORT</em><em>FOLIO</em></h1>
                 <div class="img1" aria-hidden="true"></div>
+                <div class="img2" aria-hidden="true"></div>
+                <div class="img3" aria-hidden="true"></div>
             </div>
         </section>
         <!-- //section1 -->
@@ -28,5 +34,25 @@
         <section id="section5"></section><!-- //section5 -->
         <section id="section6"></section><!-- //section6 -->
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script>
+
+        gsap.set(".sec1 h1 em", {y: 100, opacity: 0})
+        gsap.set(".sec1 .img1", {opacity: 0, y: 300})
+        gsap.set(".sec1 .img2", {opacity: 0, top: "60%"})
+        gsap.set(".sec1 .img3", {opacity: 0, top: "40%"})
+        gsap.set("#header", {top: -100})
+        
+        setTimeout(() => {
+            let tl = gsap.timeline();
+            tl.to(".sec1 h1 em:nth-child(1)", {duration: 0.3, y: 0, opacity: 1, ease:"power2.out"})
+            tl.to(".sec1 h1 em:nth-child(2)", {duration: 0.3, y: 0, opacity: 1, ease:"power2.out"})
+            tl.to(".sec1 .img2", {duration: 0.6, top: "50%", opacity: 1})
+            tl.to(".sec1 .img3", {duration: 0.6, top: "50%", opacity: 1})
+            tl.to(".sec1 .img1", {duration: 0.6, opacity: 1, y: 0, ease:"power4.out"})
+            tl.to("#header", {duration: 0.3, top: 0})
+        }, 2000);
+    </script>
 </body>
 </html>

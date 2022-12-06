@@ -102,11 +102,23 @@ body {
     text-align: center;
     font-family: 'NanumSquareNeo-Variable';
 }
-/* .sec2_ani1 .img {
+.sec2_ani1 .img {
     width: 100%;
     height: 100%;
     background-image: url(https://kimyihyung.github.io/codingclass/portfolio/img/my_img.jpg);
     background-position: center center;
     background-size: contain;
     transform-style: preserve-3d;
-} */
+}
+
+.iima1 {
+    width: 500px;
+    height: 500px;
+    background: #000;
+}
+.iima2 {
+    margin-left: 100px;
+    width: 500px;
+    height: 500px;
+    background: #000;
+}

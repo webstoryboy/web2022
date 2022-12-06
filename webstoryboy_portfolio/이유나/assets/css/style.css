@@ -1,0 +1,89 @@
+/* header */
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    display: flex;
+    font-family: 'Abel';
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+#header h1 em {
+    font-size: 0.5em;
+    padding-left: 130px;
+}
+
+#header nav li {
+    display: inline-block;
+}
+#header nav li a {
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+/* section1 */
+#section1 {
+    height: 100vh;
+    background-color: #E5E4E3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+#section1 .text {
+    font-size: 18vw;
+    line-height: 0.79;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+}
+#section1 .text > div:first-child {
+    font-weight: 900;
+}
+#section1 .text > div:last-child {
+    font-weight: 100;
+}
+#section1 .ment {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 15px;
+    font-family: 'Cafe24SsurroundAir';
+}
+#section1 .img > img {
+    position: absolute;
+    z-index: 1000;
+}
+#section1 .img1 {
+    width: 10vw;
+    left: 10vw;
+    top: 6vw;
+    transform: rotate(-25deg);
+}
+#section1 .img2 {
+    width: 14vw;
+    right: 10vw;
+    top: 4vw;
+    transform: rotate(25deg);
+}
+#section1 .img3 {
+    width: 10vw;
+    left: 10vw;
+    bottom: 4vw;
+    transform: rotate(25deg);
+}
+#section1 .img4 {
+    width: 10vw;
+    right: 10vw;
+    bottom: 10vw;
+    transform: rotate(55deg);
+}
+
+/* section2 */
+#section2 {
+    height: 1000px;
+    background-color: #000;
+}

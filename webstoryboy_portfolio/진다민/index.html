@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <div class="scroll">0</div>
+    <!-- //scrolltop -->
+
+    <header id="header"
+        data-1000="top: -100px; bacgkround-color: rgba(211, 61, 0, 1)"
+        data-2000="top: 0px; bacgkround-color: rgba(211, 61, 0, 1);"
+        data-3000="top: 0px; background-color: rgba(211, 61, 0, 0.326);"
+        data-4000="top: 0px; background-color: rgba(0, 0, 0, 0.326);"
+    >
+        <nav>
+            <ul>
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Intro</a></li>
+                <li><a href="#">works</a></li>
+                <li><a href="#">script</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <section id="section1">
+            <div class="title">
+                <div 
+                    data-0="width: 53.5vw; transform: scale(1)"
+                    data-2000="width: 66.5vw; transform: scale(1)"
+                    data-2500="width: 66.5vw; transform: scale(1)"
+                    data-4000="width: 66.5vw; transform: scale(0.7)"
+                >
+                    <i>F<em
+                        data-0 = "opacity: 1;"
+                        data-1000 = "opacity: 0; width: 25.8vw"
+                        data-2000 = "opacity: 0; width: 0vw"
+                        >RONT</em>E<em
+                        data-0 = "opacity: 1;"
+                        data-1000 = "opacity: 0; width: 15vw"
+                        data-2000 = "opacity: 0; width: 0vw"
+                        >ND</em></i>
+                    <span
+                        data-0="width: 0; opacity:0;"
+                        data-1000="width: 0; opacity:0;"
+                        data-2000="width: 0; opacity:1;"
+                    >developer</span>
+                </div>
+            </div>
+            <div class="video">
+                <video id="vid" muted="muted" autoplay="autoplay" loop="loop">
+                    <source src="https://damin0842.github.io/portfolio01/assets/video/video3.mp4" />
+                </video>
+            </div>
+            <div class="cover" aria-hidden="true">
+                <div class="top"
+                    data-2000="height: 50%;"
+                    data-4000="height: 0%"
+                ></div>
+                <div class="bom"
+                    data-2000="height: 50%;"
+                    data-4000="height: 0%"
+                ></div>
+            </div>
+        </section>
+        <!-- //section1 -->
+
+        <section id="section2"></section><!-- //section2 -->
+        <section id="section3"></section><!-- //section3 -->
+        <section id="section4"></section><!-- //section4 -->
+        <section id="section5"></section><!-- //section5 -->
+        <section id="section6"></section><!-- //section6 -->
+    </main>
+    <!-- //main -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+    <script>
+        var s = skrollr.init({
+            smoothScrolling: true
+        });
+
+        function scroll(){
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            document.querySelector(".scroll").innerHTML = scrollTop;
+            requestAnimationFrame(scroll);
+        }
+        scroll();
+
+    </script>
+</body>
+</html>

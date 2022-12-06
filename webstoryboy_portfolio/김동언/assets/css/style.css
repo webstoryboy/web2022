@@ -1,0 +1,118 @@
+/* header */
+#header {
+    position: fixed;
+    left: 0; top: 0;
+    width: 100%;
+    height: 50px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    font-family: 'Abel';
+    z-index: 10000;
+}
+#header h1 {
+    color: #D2E3C0;
+    font-size: 28px;
+}
+nav li {
+    display: inline-block
+}
+nav li a {
+    color: #D2E3C0;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+}
+
+
+/* section1 */
+#section1 {
+    height: 100vh;
+    background: #0B130D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text-inner {
+    text-align: center;
+    font-size: 8vw;
+    line-height: 1.1;
+    color: #D2E3C0
+}
+.text-inner > div {
+    position: relative;
+    z-index: 100;
+}
+.text-inner > div:nth-child(1),
+.text-inner > div:nth-child(3) {
+    color: #fff;
+}
+.text-inner > div em {
+    font-weight: bold;
+}
+.font_writer {
+    font-family: 'pp_writerthin';
+}
+.font_wolrd {
+    font-family: 'pp_neue_worldsemiultra';
+}
+.font_neue {
+    font-family: 'pp_neue_worldsuperCnLt';
+}
+.img-inner > img {
+    position: absolute;
+    width: 10vw;
+}
+.img-inner .img1 {
+    left: 45%;
+    top: 10%;
+}
+.img-inner .img2 {
+    left: 10%;
+    top: 50%;
+    margin-top: -3vw;
+}
+.img-inner .img3 {
+    left: 80%;
+    top: 50%;
+}
+.scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 100px;
+    background-image: url(https://kde66034.github.io/codingclass/site/myPortfolio/assets/img/scroll_down.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50px;
+    height: 80px;
+    z-index: 10000;
+    /* transform: translateX(-50%); */
+}
+
+/* section2 */
+#section2 {
+    width: 100%;
+    height: 100vh;
+    background: #0B130D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+#section2 .title {
+    font-size: 8vw;
+    color: #D2E3C0;
+    position: relative;
+    z-index: 100;
+}
+#section2 #webgl1 {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0; top: 0;
+    z-index: 1;
+}

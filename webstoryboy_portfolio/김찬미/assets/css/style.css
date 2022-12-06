@@ -1,0 +1,137 @@
+/* header */
+#header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.437);
+    backdrop-filter: blur(10px);
+}
+#header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    padding-left: 10px;
+    position: relative;
+}
+#header nav {
+    padding-left: 10px;
+}
+
+/* vertex */
+.vertex {
+    position: relative;
+}
+.vertex span {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+.vertex span:nth-child(1) {
+    left: 0;
+}
+.vertex span:nth-child(1):before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 1px;
+    background: #fe451c;
+}
+.vertex span:nth-child(1)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 4px;
+    background: #fe451c;
+}
+
+#header nav {
+    color: #fff;
+}
+
+/* section1 */
+#section1 {
+    width: 100%;
+    overflow: hidden;
+    height: 130vh;
+    background: #000;
+    position: relative;
+    border-bottom: 1px dotted #fff;
+}
+#canvas {
+    position: absolute;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.title__inner {
+    padding-top: 20vh;
+}
+.title__inner > div {
+    font-size: 6vw;
+    color: #fff;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    line-height: 0.8;
+    font-weight: 800;
+    white-space: nowrap;
+    text-align: center;
+    position: relative;
+}
+.title__inner > div:nth-child(1){
+    margin-left: -20vw;
+    z-index: 200;
+}
+.title__inner > div:nth-child(2){
+    margin-left: 40vw;
+    z-index: 20;
+}
+.title__inner > div:nth-child(3){
+    color: #fe451c;
+    font-family: 'TheramyRegular';
+    text-transform: capitalize;
+    font-weight: normal;
+    padding-top: 2vw;
+    margin-bottom: 8vw;
+    z-index: 200;
+}
+.title__inner > div:nth-child(4){
+    margin-left: -20vw;
+    z-index: 20;
+}
+.title__inner > div:nth-child(5){
+    margin-left: 40vw;
+    z-index: 20;
+}
+.title__inner > div:nth-child(6){
+    color: #fe451c;
+    font-family: 'TheramyRegular';
+    text-transform: capitalize;
+    font-weight: normal;
+    padding-top: 2vw;
+    margin-bottom: 8vw;
+    z-index: 200;
+}
+
+/* section2 */
+#section2 {
+    height: 10000px;
+    background: #000;
+}

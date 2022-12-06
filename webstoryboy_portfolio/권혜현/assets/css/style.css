@@ -1,0 +1,105 @@
+/* section1 */
+#section1 {
+    height: 25000px;
+    background: #ccc;
+}
+
+/* sec1 */
+.sec1-1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+.sec1-1 .left {
+    width: 50%;
+    position: sticky;
+    top: 0px;
+    height: 100vh;
+    overflow: hidden;
+    background: #F4B5C6;
+}
+.sec1-1 .right {
+    width: 50%;
+    height: 5000px;
+    background: #58BEF1;
+}
+
+/* sec2 */
+.sec1-2 {
+    display: flex;
+    flex-wrap: wrap;
+}
+.sec1-2 .left {
+    width: 50%;
+    height: 5000px;
+    background: #58BEF1;
+}
+.sec1-2 .right {
+    position: sticky;
+    top: 0px;
+    width: 50%;
+    height: 100vh;
+    background: #FAE94B;
+    overflow: hidden;
+}
+
+/* sec3 */
+.sec1-3 {
+    display: flex;
+    flex-wrap: wrap;
+}
+.sec1-3 .left {
+    width: 50%;
+    height: 100vh;
+    position: sticky;
+    top: 0px;
+    background: #F4B5C6;
+    overflow: hidden;
+}
+.sec1-3 .right {
+    width: 50%;
+    height: 5000px;
+    background: #58BEF1;
+}
+
+
+.sec1-4 {
+    display: flex;
+    flex-wrap: wrap;
+}
+.sec1-4 .left {
+    width: 50%;
+    height: 5000px;
+    background: #58BEF1;
+   
+}
+.sec1-4 .right {
+    position: sticky;
+    top: 0px;
+    width: 50%;
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+}
+
+
+
+
+/* section2 */
+#section2 {
+    height: 4000px;
+    background: #ccc;
+}
+#section2 h3 {
+    border: 2px solid #000;
+    font-size: 16px;
+    line-height: 1.2;
+    font-family: 'Lexend';
+    font-weight: normal;
+    text-transform: capitalize;
+    padding: 5px;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 0px;
+    background: #fff;
+    z-index: 1000;
+}

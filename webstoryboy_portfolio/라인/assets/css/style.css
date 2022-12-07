@@ -19,6 +19,120 @@
     background: #f2e0c7;
 }
 
+#content {
+    background: #f2ede8;
+}
+
+/* main */
+#main {
+    display: flex;
+    height: 4000px;
+}
+#main #aside {
+    position: fixed;
+    left: -100%; top: 0;
+    width: 320px;
+    height: 100vh;
+}
+#main #content {
+    width: 100%;
+    /* margin-left: 320px; */
+}
+
+/* aside */
+#aside {
+    font-family: 'Montserrat';
+    border-right: 1px solid #CBC0B3;
+    background-color: #F2EDE8;
+}
+#aside h1 {
+    font-size: 26px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.2;
+    padding: 20px;
+}
+#aside h1 em { 
+    display: block;
+    font-size: 10px;
+    color: #8A8A8A
+}
+#aside nav li {
+    padding-left: 20px;
+}
+#aside nav li a {
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 3px 14px;
+    display: inline-block;
+}
+
+#contents {
+    background-color: #F2EDE8;
+}
+
+/*  */
+.main1-text {
+    background: #F2EDE8;
+    color: #584d42;
+    padding: 20px;
+    font-family: 'GmarketSans';
+    overflow: hidden;
+}
+.main1-text span {
+    white-space: nowrap;
+}
+.main1__desc div {
+    width: 100%;
+    background: #000;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.main1__desc .line1 {height: 1px;}
+.main1__desc .line2 {height: 3px;}
+.main1__desc .line3 {height: 6px}
+.main1__desc .line4 {height: 9px}
+.main1__desc .line5 {height: 12px}
+.main1__desc .line6 {height: 15px}
+.main1__desc .line7 {height: 18px}
+.main1__desc .line8 {
+    color: #fff; font-size: 20px; overflow: hidden; 
+    padding: 10px 0;
+    font-family: 'GmarketSans';
+    
+}
+.main1__desc .line8 span {
+    white-space: nowrap;
+}
+.main1__intro {
+    background: #CBC0B3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 16vw 0;
+    position: relative;
+}
+.main1__intro .text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+}
+.main1__intro .text > div {
+    font-size: 3vw;
+    line-height: 1;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #5f5953;
+}
+
+
 /* header */
 #header {
     position: fixed;
@@ -72,8 +186,12 @@
 .about__desc .line6 {height: 15px}
 .about__desc .line7 {height: 18px}
 .about__desc .line8 {
-    color: #fff; font-size: 30px; overflow: hidden; 
-    height: 50px;
+    color: #fff; font-size: 20px; overflow: hidden; 
+    font-family: 'GmarketSans';
+    padding: 4px 0;
+}
+.about__desc .line8 span {
+    white-space: nowrap;
 }
 .about__desc .line8 em {
     display: block;
@@ -441,6 +559,9 @@
 
 
 /* sec6 */
+#section6 {
+    height: 100vh;
+}
 .sec6 {
     padding: 20vw 20px 20px 20px;
 }
@@ -467,7 +588,10 @@
     vertical-align: -4px;
 }
 
-.roadmap {
+
+
+
+/* .roadmap {
     font-family: 'GmarketSans';
 }
 .roadmap-row {
@@ -502,7 +626,7 @@
     background-position: bottom;
     background-size: 8px 1px;
     background-repeat: repeat-x;
-    width: 300%;
+    width: 100%;
 }
 .troadmap tr {
     background-image: linear-gradient(to right, #222 0 10%, rgba(255, 255, 255, 0) 10%);
@@ -510,12 +634,13 @@
     background-size: 8px 1px;
     background-repeat: repeat-x;
 }
-.troadmap td {
+.troadmap td, .troadmap th {
     padding: 20px;
     background-image: linear-gradient(to bottom, #222 0 10%, rgba(255, 255, 255, 0) 10%);
     background-position: right top;
     background-repeat: repeat-y;
     background-size: 1px 8px;
+    white-space: nowrap;
 }
 .troadmap .ce {
     text-align: center;
@@ -525,6 +650,7 @@
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
+    margin-bottom: 10px;
     display: inline-block;
 }
 .time.green {
@@ -571,4 +697,5 @@
     background-image: url(../css/clock-white.svg);
     background-position: left center;
     background-repeat: no-repeat;
-}
+} */
+

@@ -6,9 +6,34 @@
     z-index: 1000;
 }
 
+/* header */
+#header {
+    position: fixed;
+    left: 0;
+    top: -100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    font-family: 'PartizenoRegular';
+    padding: 10px 20px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+}
+#header h1 {
+    font-family: 'PartizenoRegular';
+    color: #fff;
+    font-size: 30px;
+}
+#header nav {
+    font-size: 30px;
+}
 
 /* section1 */
 #section1 {
+    background: #000;
     height: 100vh;
 }
 #section1 iframe {
@@ -17,18 +42,17 @@
     top: 0;
     width: 100%;
     height: 100vh;
-    z-index: -1;
-}
-.sec1 {
- 
+    z-index: 1;
+    opacity: 0;
+    transform: scale(0);
 }
 .sec1 .ideas {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
     display: inline-block;
-    padding-left: 10vw;
+    z-index: 100;
 }
 .sec1 .ideas h2 {
     font-size: 14vw;
@@ -36,7 +60,12 @@
     font-family: 'PartizenoRegular';
     line-height: 0.8;
 }
-.sec1 .ideas p {
+.sec1 .ideas h2 span {
+    display: inline-block;
+    transform: translateX(100px);
+    opacity: 0;
+}
+.sec1 .ideas .ideas-desc {
     font-size: 20px;
     color: #fff;
     width: 400px;
@@ -44,19 +73,44 @@
     font-size: 16px;
     color: #9796b9;
 }
+.sec1 .ideas .ideas-desc > div span {
+    display: inline-block;
+    transform: translate(10px, 10px);
+    opacity: 0;
+    min-width: 0.2vw;
+}
+
 .sec1 .desc {
     font-size: 3vw;
     line-height: 1.2;
     position: absolute;
     left: 5vw;
     bottom: 5vh;
-    color: #fff;
     font-family: 'PartizenoRegular';
+    z-index: 100;
+}
+.sec1 .desc span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(50px);
+    color: #fff;
+    min-width: 0.6vw;
 }
 
 
 /* section2 */
 #section2 { 
-    background: blue;
+    background: #000;
     height: 3000px;
+    width: 100%;
+    overflow: hidden;
+}
+
+#section2 h2 {
+    padding-top: 40vh;
+    font-size: 15.5vw;
+    color: #9796b9;
+    white-space: nowrap;
+    font-family: 'PartizenoRegular';
+    margin-left: -calc();
 }

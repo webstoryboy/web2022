@@ -2,7 +2,7 @@
 #header {
     position: fixed;
     left: 0;
-    top: 0;
+    top: -100px;
     width: 100%;
     z-index: 10000;
     display: flex;
@@ -10,6 +10,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
 }
 #header h1 em {
     font-size: 0.5em;
@@ -40,11 +42,18 @@
     font-family: 'Poppins';
     text-transform: uppercase;
 }
-#section1 .text > div:first-child {
+#section1 .text > .txt1 {
     font-weight: 900;
 }
-#section1 .text > div:last-child {
+#section1 .text > .txt2 {
     font-weight: 100;
+}
+#section1 .text > div {
+    overflow: hidden;
+}
+#section1 .text > div > span {
+    display: inline-block;
+    transform: translateY(300px);
 }
 #section1 .ment {
     position: absolute;
@@ -52,6 +61,9 @@
     transform: translateX(-50%);
     bottom: 15px;
     font-family: 'Cafe24SsurroundAir';
+}
+#section1 .img {
+    opacity: 0;
 }
 #section1 .img > img {
     position: absolute;
@@ -70,20 +82,59 @@
     transform: rotate(25deg);
 }
 #section1 .img3 {
-    width: 10vw;
+    width: 15vw;
     left: 10vw;
     bottom: 4vw;
     transform: rotate(25deg);
 }
 #section1 .img4 {
-    width: 10vw;
+    width: 15vw;
     right: 10vw;
-    bottom: 10vw;
+    bottom: 5vw;
     transform: rotate(55deg);
 }
 
 /* section2 */
 #section2 {
-    height: 1000px;
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    height: 70vh;
     background-color: #000;
+    overflow: hidden;
+}
+
+#section2 h2 {
+    padding-top: 20vh;
+    text-align: center;
+    color: #b6b6b6;
+    font-size: 18vw;
+    line-height: 0.79;
+    font-family: 'Poppins';
+    text-transform: uppercase;
+    font-weight: 100;
+    position: relative;
+    z-index: 100;
+}
+#section2 .iframe {
+    position: absolute;
+    left: 0; bottom: 0;
+    height: 100vh;
+    width: 100%;
+}
+#section2 .iframe iframe {
+    width: 100%;
+    height: 100%;
+    
+}
+
+/* section3 */
+#section3 {
+    position: sticky;
+    left: 0;
+    top: 0;
+    height: 10000px;
+    background-color: #ccc;
+    z-index: 100;
 }

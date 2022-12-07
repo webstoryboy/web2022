@@ -85,6 +85,19 @@
                     <p>
                         &lt;th&gt; 태그는 행이나 열에 타이틀을 설정합니다.
                     </p>
+                    <p>
+                        테이블은 테이터를 포함하는 셀의 행과 열로 구성된 정보표입니다. 
+                        예전에는 테이블을 이용해서 레이아웃을 표현한 적도 있지만, 
+                        웹표준을 준수해야 하는 현재는 테이블을 이용해서 레이아웃을 만드는 것은 적절하지 않습니다. 
+                        테이블을 쓰기 위해서는 즉 표를 만들기 위해서는 제목, 설명, 셀, 셀합치기, 표 구조, 셀 그룹 등 여러가지를 신경써야 합니다.
+                    </p>
+                    <p>
+                        테이블은 제목을 표시하기 위해 &lt;caption&gt;을 사용하고,
+                        셀 요소를 그룹화하기 위해 &lt;colgroup&gt;과 &lt;col&gt;을 사용합니다. 
+                        테이블 전체 구조를 분리하기 위해 &lt;thead&gt;, &lt;tbody&gt;, &lt;tfoot&gt;를 사용하며, 
+                        행과 열을 나타내는 &lt;tr&gt;, &lt;td&gt;, &lt;th&gt; 등을 사용합니다. 
+                        여기에 접근성을 위해 scope 속성을 사용하고 셀의 병합을 위해 colspan과 rowspan을 사용하게 됩니다.
+                    </p>
 
                     <hr>
 
@@ -150,6 +163,7 @@
                     <style>
                         .table-box table {
                             width: 100%;
+                            text-align: center;
                         }
                         .table-box table th {
                             background: #eef6ff;
@@ -161,6 +175,12 @@
                             padding: 10px;
                             color: #666;
                         }
+                        .table-box table tfoot td {
+                            background: #ffeded;
+                        }
+                        .table-box table .blue {background: #eef6ff;}
+                        .table-box table .red {background: #ffeded;}
+                        .table-box table .center {text-align: center;}
                     </style>
     
                     <!-- Sample1 -->
@@ -218,6 +238,15 @@
                                             <td>표 내용5</td>
                                         </tr>
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td>푸터1</td>
+                                            <td>푸터1</td>
+                                            <td>푸터1</td>
+                                            <td>푸터1</td>
+                                            <td>푸터1</td>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
                             <!-- ex -->
@@ -229,7 +258,7 @@
                                 <div>SCRIPT</div>
                             </div>
                             <div class="scCont">
-                                <div class="active">
+                                <div class="">
 <pre><code class="language-html">&lt;div class="table-box"&gt;
     &lt;table&gt;
         &lt;caption&gt;표 제목 설정&lt;/caption&gt;
@@ -279,6 +308,15 @@
                 &lt;td&gt;표 내용5&lt;/td&gt;
             &lt;/tr&gt;
         &lt;/tbody&gt;
+        &lt;tfoot&gt;
+            &lt;tr&gt;
+                &lt;td&gt;푸터1&lt;/td&gt;
+                &lt;td&gt;푸터1&lt;/td&gt;
+                &lt;td&gt;푸터1&lt;/td&gt;
+                &lt;td&gt;푸터1&lt;/td&gt;
+                &lt;td&gt;푸터1&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tfoot&gt;
     &lt;/table&gt;
 &lt;/div&gt;
 </code></pre>
@@ -286,6 +324,7 @@
                                 <div>
 <pre><code class="language-css">.table-box table {
     width: 100%;
+    text-align: center;
 }
 .table-box table th {
     background: #deeeff;
@@ -296,6 +335,9 @@
     border: 1px solid #ccc;
     padding: 10px;
     color: #666;
+}
+.table-box table tfoot td {
+    background: #ffeded;
 }
 </code></pre>
                                 </div>
@@ -413,4 +455,4 @@
 </html>
 
 
-<!-- html, head, body, base, link, meta, style, title -->
+<!-- table, thead, tbody, tfoot, caption, colgroup, col, colgroup, tr, td, th, border-collapse, border-spacing -->

@@ -36,7 +36,20 @@
         </section>
         <!-- //section1 -->
 
-        <section id="section2"></section><!-- //section2 -->
+        <section id="section2">
+            <h2 class="split">자신 있다면 어떤 것도 두려울 게 없다</h2>
+            <div class="text1">
+                <div class="split tat1">새로운 꿈을 꾸고 앞을 향해 나아가는 </div>
+                <div class="split tat2">사람이 되고 싶어 개발자로 이직을 준비하고 있다.</div>
+            </div>
+            <div  class="text2">
+                <div class="split tat3">새로운 변화가 끊임없이 일어나는 웹 환경에서 </div>
+                <div class="split tat4">최신 트렌드에 뒤처지지 않기 위해 스터디 모임과 세미나에 </div>
+                <div class="split tat5">많이 참여하여 핵심 사이트를 벤치마킹하고 </div>
+                <div class="split tat6">업무 시간 외에도 꾸준히 부족한 부분과 유행하는 기술들을 공부합니다.</div>
+            </div>
+        </section>
+        <!-- //section2 -->
         <section id="section3"></section><!-- //section3 -->
         <section id="section4"></section><!-- //section4 -->
         <section id="section5"></section><!-- //section5 -->
@@ -70,6 +83,16 @@
         }
 
         requestAnimationFrame(raf)
+
+        let tl2 = gsap.timeline();
+
+        tl2.to("#section2 h2 span", {duration: 0.3, x: 0, y: 0, stagger: 0.05, opacity: 1})
+        tl2.to("#section2 .text1 .tat1 span", {duration: 0.4, x: 0, y: 0, stagger: 0.01, opacity: 1, ease: Power4.easeInOut}, "-=0.5")
+        tl2.to("#section2 .text1 .tat2 span", {duration: 0.4, x: 0, y: 0, stagger: 0.01, opacity: 1, ease: Power4.easeInOut}, "-=0.5")
+        tl2.to("#section2 .text2 .tat3 span", {duration: 0.4, x: 0, y: 0, stagger: 0.01, opacity: 1, ease: Power4.easeInOut}, "-=0.5")
+        tl2.to("#section2 .text2 .tat4 span", {duration: 0.4, x: 0, y: 0, stagger: 0.01, opacity: 1, ease: Power4.easeInOut}, "-=0.5")
+        tl2.to("#section2 .text2 .tat5 span", {duration: 0.4, x: 0, y: 0, stagger: 0.01, opacity: 1, ease: Power4.easeInOut}, "-=0.5")
+        tl2.to("#section2 .text2 .tat6 span", {duration: 0.4, x: 0, y: 0, stagger: 0.01, opacity: 1, ease: Power4.easeInOut}, "-=0.5")
 
         let tl = gsap.timeline();
 

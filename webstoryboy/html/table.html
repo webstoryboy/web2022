@@ -165,6 +165,7 @@
                     <style>
                         .table-box table {
                             width: 100%;
+                            text-align: center;
                         }
                         .table-box table th {
                             background: #eef6ff;
@@ -176,8 +177,12 @@
                             padding: 10px;
                             color: #666;
                         }
-                        .table-box table .blue {background: #deeeff;}
-                        .table-box table .red {background: #ffdddd;}
+                        .table-box table tfoot td {
+                            background: #ffeded;
+                        }
+                        .table-box table .blue {background: #eef6ff;}
+                        .table-box table .red {background: #ffeded;}
+                        .table-box table .center {text-align: center;}
                     </style>
     
                     <!-- Sample1 -->
@@ -235,6 +240,15 @@
                                             <td>표 내용5</td>
                                         </tr>
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td>푸터1</td>
+                                            <td>푸터1</td>
+                                            <td>푸터1</td>
+                                            <td>푸터1</td>
+                                            <td>푸터1</td>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
                             <!-- ex -->
@@ -246,7 +260,7 @@
                                 <div>SCRIPT</div>
                             </div>
                             <div class="scCont">
-                                <div class="active">
+                                <div class="">
 <pre><code class="language-html">&lt;div class="table-box"&gt;
     &lt;table&gt;
         &lt;caption&gt;표 제목 설정&lt;/caption&gt;
@@ -296,6 +310,141 @@
                 &lt;td&gt;표 내용5&lt;/td&gt;
             &lt;/tr&gt;
         &lt;/tbody&gt;
+        &lt;tfoot&gt;
+            &lt;tr&gt;
+                &lt;td&gt;푸터1&lt;/td&gt;
+                &lt;td&gt;푸터1&lt;/td&gt;
+                &lt;td&gt;푸터1&lt;/td&gt;
+                &lt;td&gt;푸터1&lt;/td&gt;
+                &lt;td&gt;푸터1&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tfoot&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+</code></pre>
+                                </div>
+                                <div>
+<pre><code class="language-css">.table-box table {
+    width: 100%;
+    text-align: center;
+}
+.table-box table th {
+    background: #deeeff;
+    font-weight: normal;
+}
+.table-box table th, 
+.table-box table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #666;
+}
+.table-box table tfoot td {
+    background: #ffeded;
+}
+</code></pre>
+                                </div>
+                                <div>
+<pre><code class="language-javascript">//Javascript none
+</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //Sample1 -->
+
+
+                    <!-- Sample2 -->
+                    <h3>예제2(Sample)</h3>
+                    <div id="sample2" class="sample">
+                        <h4>colgroup을 적용한 예제입니다.</h4>
+                        <div class="sampleView">
+                            <!-- ex -->
+                            <div class="table-box">
+                                <table>
+                                    <caption>표 제목 설정</caption>
+                                    <colgroup>
+                                        <col style="width: 50%;">
+                                        <col style="width: 25%;">
+                                        <col style="width: 25%;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>제목1</th>
+                                            <th>제목2</th>
+                                            <th>제목3</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>내용1</td>
+                                            <td>내용1</td>
+                                            <td>내용1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>내용2</td>
+                                            <td>내용2</td>
+                                            <td>내용2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>내용3</td>
+                                            <td>내용3</td>
+                                            <td>내용3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>내용4</td>
+                                            <td>내용4</td>
+                                            <td>내용4</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- ex -->
+                        </div>
+                        <div class="sampleCode">
+                            <div class="scMenu">
+                                <div>HTML</div>
+                                <div>CSS</div>
+                                <div>SCRIPT</div>
+                            </div>
+                            <div class="scCont">
+                                <div class="">
+<pre><code class="language-html">&lt;div class="table-box"&gt;
+    &lt;table&gt;
+        &lt;caption&gt;표 제목 설정&lt;/caption&gt;
+        &lt;colgroup&gt;
+            &lt;col style="width: 50%;"&gt;
+            &lt;col style="width: 25%;"&gt;
+            &lt;col style="width: 25%;"&gt;
+        &lt;/colgroup&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;표 제목1&lt;/th&gt;
+                &lt;th&gt;표 제목2&lt;/th&gt;
+                &lt;th&gt;표 제목3&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;표 내용1&lt;/td&gt;
+                &lt;td&gt;표 내용1&lt;/td&gt;
+                &lt;td&gt;표 내용1&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;표 내용2&lt;/td&gt;
+                &lt;td&gt;표 내용2&lt;/td&gt;
+                &lt;td&gt;표 내용2&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;표 내용3&lt;/td&gt;
+                &lt;td&gt;표 내용3&lt;/td&gt;
+                &lt;td&gt;표 내용3&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;표 내용4&lt;/td&gt;
+                &lt;td&gt;표 내용4&lt;/td&gt;
+                &lt;td&gt;표 내용4&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
     &lt;/table&gt;
 &lt;/div&gt;
 </code></pre>
@@ -323,12 +472,118 @@
                             </div>
                         </div>
                     </div>
-                    <!-- //Sample1 -->
+                    <!-- //Sample2 -->
 
 
-                    
-    
-                    
+                    <!-- Sample3 -->
+                    <h3>예제3(Sample)</h3>
+                    <div id="sample3" class="sample">
+                        <h4>colsapn과 rowspan을 적용한 예제입니다.</h4>
+                        <div class="sampleView">
+                            <!-- ex -->
+                            <div class="table-box">
+                                <table>
+                                    <caption>표 제목 설정</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>제목1</th>
+                                            <th>제목2</th>
+                                            <th>제목3</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2" class="red center">내용1</td>
+                                            <td>내용1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>내용2</td>
+                                            <td>내용2</td>
+                                            <td>내용2</td>
+                                        </tr>
+                                        <tr>
+                                            <td rowspan="2" class="red center">내용3</td>
+                                            <td>내용3</td>
+                                            <td>내용3</td>
+                                        </tr>
+                                        <tr>
+                                            <td>내용4</td>
+                                            <td>내용4</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- ex -->
+                        </div>
+                        <div class="sampleCode">
+                            <div class="scMenu">
+                                <div>HTML</div>
+                                <div>CSS</div>
+                                <div>SCRIPT</div>
+                            </div>
+                            <div class="scCont">
+                                <div class="">
+<pre><code class="language-html">&lt;div class="table-box"&gt;
+    &lt;table&gt;
+        &lt;caption&gt;표 제목 설정&lt;/caption&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;제목1&lt;/th&gt;
+                &lt;th&gt;제목2&lt;/th&gt;
+                &lt;th&gt;제목3&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td colspan="2" class="red center"&gt;내용1&lt;/td&gt;
+                &lt;td&gt;내용1&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;내용2&lt;/td&gt;
+                &lt;td&gt;내용2&lt;/td&gt;
+                &lt;td&gt;내용2&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td rowspan="2" class="red center"&gt;내용3&lt;/td&gt;
+                &lt;td&gt;내용3&lt;/td&gt;
+                &lt;td&gt;내용3&lt;/td&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;내용4&lt;/td&gt;
+                &lt;td&gt;내용4&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/div&gt;
+</code></pre>
+                                </div>
+                                <div>
+<pre><code class="language-css">.table-box table {
+    width: 100%;
+}
+.table-box table th {
+    background: #deeeff;
+    font-weight: normal;
+}
+.table-box table th, 
+.table-box table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #666;
+}
+.table-box table .blue {background: #eef6ff;}
+.table-box table .red {background: #ffeded;}
+.table-box table .center {text-align: center;}
+</code></pre>
+                                </div>
+                                <div>
+<pre><code class="language-javascript">//Javascript none
+</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //Sample3 -->
 
 
                     <h3>호환성(Compatibility)</h3>
@@ -435,4 +690,4 @@
 </html>
 
 
-<!-- html, head, body, base, link, meta, style, title -->
+<!-- table, thead, tbody, tfoot, caption, colgroup, col, colgroup, tr, td, th, border-collapse, border-spacing -->

@@ -169,3 +169,13 @@ nav a {
 .keyword > div a:after {
   transition: all 0.2s ease;
 }
+
+.study.up {
+  background: #000;
+}
+.site.up {
+  background: #000;
+}
+.photoshop.up {
+  background: #000;
+}

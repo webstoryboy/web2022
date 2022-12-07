@@ -4,17 +4,44 @@ body {
 
 /* layout */
 #section1 {
+    position: sticky;
+    left: 0;
+    top: 0;
     background-color: #2F29E9;
     height: 100vh;
     overflow: hidden;
+    z-index: 100;
 }
 #section2 {
-    height: 2000px;
+    height: 3000px;
     background-color: #F64C0E;
+    position: relative;
+    z-index: 200;
 }
-#section3 {}
-#section4 {}
-#section5 {}
+#section3 {
+    position: sticky;
+    left: 0;
+    top: 0;
+    height: 500px;
+    background-color: #2F29E9;
+    z-index: 20;
+}
+#section4 {
+    position: relative;
+
+    height: 4000px;
+    background-color: #F64C0E;
+    z-index: 400;
+}
+#section5 {
+    position: sticky;
+    left: 0;
+    top: 0;
+    height: 3000px;
+    background-color: #000;
+    position: relative;
+    z-index: 1200;
+}
 #section6 {}
 
 /* header */
@@ -81,16 +108,123 @@ body {
 }
 
 
-@media (max-width: 800px) {
-    .sec1 {
-        height: 100vh;
-    }
-    .sec1 .img1 {
-        width: 100vw;
-        height: 100vh;
-        bottom: 0;
-        right: 0;
-        background-size: 80%;
-        background-position: right bottom -10vh;
-    }
+/* sec2 */
+.sec2 h2 {
+    padding: 15vh 0;
+    font-size: 15vw;
+    font-family: 'Anton';
+    line-height: 1;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+}
+.sec2 h2 em {
+    display: block;
+}
+.sec2 .about1 {
+    height: 500px;
+    background-color: #ccc;
+}
+.sec2 .about2 {
+    height: 500px;
+    background-color: #000;
+    margin-top: 20px;
+}
+
+
+
+.sec4-title {
+    padding: 15vw 0;
+}
+.sec4-title > div {
+    font-size: 15vw;
+    font-family: 'Anton';
+    line-height: 1;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+}
+.sec4-title .line {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #fff;
+}
+.sec4 .work1 {
+    padding: 5vw;
+    height: 100vh;
+    background: #F1F2DD;
+}
+.sec4 .work1 .view {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+.sec4 .work1 .view .desc {
+    position: absolute;
+    left: 60%;
+    bottom: 5%;
+    width: 300px;
+    background: rgba(60, 17, 203, 0.3);
+    z-index: 100;
+    color: #fff;
+    padding: 20px;
+    font-family: 'BMJua';
+    text-align: left;
+}
+.sec4 .work1 .view .desc a {
+    background: #fff;
+    color: #A5A1CD;
+    padding: 5px 10px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.sec4 .work1 .view img {
+    width: 30vw;
+    margin: 0 auto;
+}
+.sec4 .work1 .control {
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 1.3vw;
+}
+.sec4 .work1 .control .tit {
+    margin-bottom: 1vw;
+}
+.sec4 .work1 .control .tit li {
+    display: inline-block
+}
+.sec4 .work1 .control .tit li a {
+    font-family: 'BMJua';
+    padding-right: 1vw;
+}
+.sec4 .work1 .control .tit li.color1 a {
+    color: #A5A1CD;
+}
+.sec4 .work1 .control .icon {}
+.sec4 .work1 .control .icon ul {}
+.sec4 .work1 .control .icon ul li {
+    display: inline-block;
+}
+.sec4 .work1 .control .icon ul li a {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin-right:1vw;
+    border: 4px solid #9e98df;
+}
+
+.sec4 .work1 .control .icon ul li a span {
+    display: none;
+}
+
+.sec4 .work1 .control .icon .icon1 a {
+    background: #d7d4fc url(../img/icon01.png) no-repeat center bottom -10px;
+    background-size: cover;
+    border-radius: 10px;
+    transition: all 0.6s;
+}
+.sec4 .work1 .control .icon .icon1 a:hover {
+    border-radius: 100px;
 }

@@ -1,27 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 @font-face {
-    font-family: "116watermelon";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.0/116watermelon.woff") format("woff");
+    font-family: 'PPEiko-BlackItalic';
     font-weight: normal;
     font-style: normal;
-}
-@font-face {
-    font-family: "IropkeBatang";
-    font-weight: normal;
-    font-style: normal;
-    src: url("https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.eot");
-    src: url("https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.eot?#iefix")
-        format("embedded-opentype"),
-      url("https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.woff2")
-        format("woff2"),
-      url("https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.woff")
-        format("woff"),
-      url("https://cdn.jsdelivr.net/gh/webfontworld/iropke/IropkeBatang.ttf")
-        format("truetype");
+    src: url('../fonts/PPEiko-BlackItalic.woff2') format('woff2');
     font-display: swap;
-  }
-  
+} 
+@font-face {
+    font-family: 'PPEiko-Heavy';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/PPEiko-Heavy.woff2') format('woff2');
+    font-display: swap;
+} 
+@font-face {
+    font-family: 'PPEiko-LightItalic';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/PPEiko-LightItalic.woff2') format('woff2');
+    font-display: swap;
+} 
+@font-face {
+    font-family: 'PPEiko-Medium';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/PPEiko-Medium.woff2') format('woff2');
+    font-display: swap;
+} 
+@font-face {
+    font-family: 'PPEiko-Thin';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/PPEiko-Thin.woff2') format('woff2');
+    font-display: swap;
+} 
+
 
 /* border-box 초기화 */
 *,

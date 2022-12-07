@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://webfontworld.github.io/ok/OKChan.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://kwonhyehyeon.github.io/portfolio/assets/css/fonts.css">
 
 </head>
 <body>
@@ -17,19 +19,48 @@
                 <div class="sec1-1">
                     <div class="left">
                         <div class="about">
+                            <div class="title">Portfolio</div>
                             <img src="https://kwonhyehyeon.github.io/Potfolio/assets/img/mainimg2.png" alt="ss">
                         </div>
                     </div>
-                    <div class="right">sec1-1-right</div>
+                    <div class="right">
+                        <div class="title-wrap">
+                            <div class="title1">프론트</div>
+                            <div class="title2">할거당</div>
+                            <div class="title3">다댐벼</div>
+                            <div class="title4">
+                                새로운 변화가 끊임없이 일어나는 웹 환경에서 
+                                최신 트렌드에 뒤처지지 않기 위해 스터디 모임과 세미나에 많이 참여하여 
+                                핵심 사이트를 벤치마킹하고 업무 시간 외에도 꾸준히 부족한 
+                                부분과 유행하는 기술들을 공부합니다.
+                            </div>
+                        </div>
+                        <div class="about-wrap">
+                            <div class="about1">저를잠<br>깐소개<br>깐소개</div>
+                           
+                            <div class="about4"></div>
+                        </div>
+                        <div class="pic1">
+                            <span class="icon1" aria-hidden="true"></span>
+                            <img src="https://kwonhyehyeon.github.io/portfolio/assets/img/myinfo1.jpg" alt="ss">
+                            <p>봄날의 햇살처럼, 다른 사람들과 따뜻함을 전하고 나눌 줄 아는 사람입니다.</p>
+                        </div>
+                    </div>
                 </div>
+                <!-- //sec1-1 -->
+
                 <div class="sec1-2">
-                    <div class="left">sec1-2-left</div>
+                    <div class="left">
+                        
+                    </div>
                     <div class="right">
                         <div class="about">
                             <img src="https://kwonhyehyeon.github.io/Potfolio/assets/img/mainimg2.png" alt="ss">
                         </div>
                     </div>
                 </div>
+                <!-- //sec1-1 -->
+
                 <div class="sec1-3">
                     <div class="left">
                         <div class="about">
@@ -72,6 +103,27 @@
             }
 
             requestAnimationFrame(raf)
+
+            gsap.to(".pic1 .icon1", {
+                duration: 0.1,
+                rotation: 3000,
+                scrollTrigger: {
+                    scrub: true
+                }
+            })
+
+            gsap.to(".about .title", {
+                duration: 0.1,
+                left: 0,
+                scrollTrigger: {
+                    trigger: ".pic1",
+                    scrub: true
+                }
+            
+                
+            }) 
+
+
         </script>
     </main> 
 </body>

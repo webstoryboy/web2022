@@ -27,24 +27,137 @@
     <main id="main">
         <section id="section1">
             <div class="text">
-                <div>front</div>
-                <div>developer</div>
+                <div class="moveImg txt1 split">front</div>
+                <div class="moveImg txt2 split">developer</div>
             </div>
             <div class="img" aria-hidden="true">
-                <img class="img1" src="assets/img/bg01.png" alt="bg01">
-                <img class="img2" src="assets/img/bg01.png" alt="bg01">
-                <img class="img3" src="assets/img/bg01.png" alt="bg01">
-                <img class="img4" src="assets/img/bg01.png" alt="bg01">
+                <img class="moveImg img1" src="assets/img/bg01.png" alt="bg01">
+                <img class="moveImg img2" src="https://fkdldhs8484.github.io/portfolio/assets/img/main_icon_02.png" alt="bg01">
+                <img class="moveImg img3" src="https://fkdldhs8484.github.io/portfolio/assets/img/main_icon_03.png" alt="bg01">
+                <img class="moveImg img4" src="https://fkdldhs8484.github.io/portfolio/assets/img/main_icon_04.png" alt="bg01">
             </div>
 
             <p class="ment">6개월 동안 열심히 공부하여 만들었습니다. 즐겁게 봐주세요.</p>
         </section>
         <!-- //section1 -->
-        <section id="section2"></section><!-- //section2 -->
+
+        <section id="section2">
+            <h2>work</h2>
+            <div class="iframe">
+                <iframe src="https://webstoryboy.github.io/web2022/webstoryboy_three/three.js/index78.html" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+        <!-- //section2 -->
         <section id="section3"></section><!-- //section3 -->
         <section id="section4"></section><!-- //section4 -->
         <section id="section5"></section><!-- //section5 -->
         <section id="section6"></section><!-- //section6 -->
     </main>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script>
+        document.querySelectorAll(".split").forEach(desc => {
+            let splitText = desc.innerText;
+            let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");
+                splitWrap = "<span aria-hidden='true'>" + splitWrap + "</span>";
+                desc.innerHTML = splitWrap;
+                desc.setAttribute("aria-label", splitText);
+        })
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        })
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+
+        setTimeout(() => {
+            let mainTl = gsap.timeline();
+           
+            mainTl.to(".txt1 span", {duration: 0.4, y: 0, opacity:1, stagger: 0.1, ease: Circ.easeOut})
+            mainTl.to(".txt2 span", {duration: 0.4, y: 0, opacity:1, stagger: 0.1, ease: Circ.easeOut})
+            mainTl.to("#section1 .img", {duration: 0.7, opacity:1, ease: Power1.easeOut})
+            mainTl.to("#header", {duration: 0.7, top:0, ease: Power1.easeOut})
+        }, 2000);
+
+
+        gsap.to(".txt2", {
+            yPercent: -40,
+            scrollTrigger: {
+                scrub: 1,
+            }
+        })
+        // gsap.to(".tit2, .tit5", {
+        //     x: 400,
+        //     scrollTrigger: {
+        //         scrub: 1,
+        //     }
+        // })
+    </script>
+
+    <script>
+        const images = [...document.querySelectorAll(".moveImg")];
+
+        const lerp = (a, b, n) => (1 - n) * a + n * b;
+        const map = (x, a, b, c, d) => ((x - a) * (d - c)) / (b - a) + c;
+
+        const getMousePosition = e => {
+        let posX = e.clientX;
+        let posY = e.clientY;
+
+        return {
+            x: posX,
+            y: posY
+        };
+        };
+
+        let mousePos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        window.addEventListener("mousemove", e => (mousePos = getMousePosition(e)));
+
+        gsap.fromTo('img', {
+            scale: 1.2,
+            autoAlpha: 0,
+            ease: 'power3.inOut',
+        }, {
+            scale: 1,
+            autoAlpha: 1,
+            stagger: 0.1,
+            duration: 2.5,
+        })
+
+        images.forEach(img => {
+        let values = { x: 0, y: 0 };
+        const xStart = gsap.utils.random(16, 64);
+        const yStart = gsap.utils.random(-16, 64);
+
+        const render = () => {
+            values.x = lerp(
+            values.x,
+            map(mousePos.x, 0, window.innerWidth, -xStart, xStart),
+            0.07
+            );
+
+            values.y = lerp(
+            values.y,
+            map(mousePos.y, 0, window.innerHeight, -yStart, yStart),
+            0.07
+            );
+            gsap.set(img, { x: values.x, y: values.y });
+
+            requestAnimationFrame(render);
+        };
+            render();
+        });
+    </script>
 </body>
 </html>

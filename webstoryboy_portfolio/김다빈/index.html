@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="https://webfontworld.github.io/score/SCoreDream.css" rel="stylesheet">
 </head>
 <body>
     <header id="header">
@@ -24,7 +26,7 @@
     <!-- //header -->
 
     <main id="main">
-        <section id="section1">
+        <section id="section1" data-color='#000'>
             <div class="text__inner">
                 <div class="t1">Simply text portfolio</div>
                 <div class="t2">of the frontend</div>
@@ -34,8 +36,27 @@
             <canvas id="webgl"></canvas>
         </section>
         <!-- //section1 -->
-        <section id="section2"></section><!-- //section2 -->
-        <section id="section3"></section><!-- //section3 -->
+
+        <section id="section2" data-color="#DAD4CA">
+            <div class="about__inner">
+                <div class="img1">
+                    <img src="https://kdb6.github.io/portfolio/assets/img/about.png" alt="about">
+                </div>
+                <div class="txt1">Passion</div>
+                <div class="txt2">Creative</div>
+                <div class="txt3">Shining</div>
+                <div class="desc">
+                    개발 언어와 글씨로 무언가를 창조를 하는 것에 흥미를 느끼고, 시작하게 되었습니다.<br>
+                    해당 포트폴리오는 제가 개발자가 되기 위한 첫 걸음을 나아가는 포트폴리오이며,<br>
+                    저의 배움의 집합체입니다. 미약하지만, <br>
+                    제가 점점 인생에 새기는 발자국을 재밌게 봐주셨으면 감사합니다.
+                </div>
+                
+            </div>
+        </section>
+        <!-- //section2 -->
+
+        <section id="section3" data-color="#dbc486"></section><!-- //section3 -->
         <section id="section4"></section><!-- //section4 -->
         <section id="section5"></section><!-- //section5 -->
         <section id="section6"></section><!-- //section6 -->
@@ -85,6 +106,51 @@
                 scrub: 1,
             }
         })
+
+        gsap.to(".about__inner .txt1", {
+            marginLeft: "-30vw",
+            scrollTrigger: {
+                scrub: 1,
+            }
+        })
+        gsap.to(".about__inner .img1", {
+            top: "-15vw",
+            scrollTrigger: {
+                scrub: 1,
+            }
+        })
+        gsap.to(".about__inner .txt3", {
+            marginLeft: "-50vw",
+            scrollTrigger: {
+                scrub: 1,
+            }
+        })
+
+        gsap.utils.toArray("#main > section").forEach((elem)=>{  
+            let color = elem.getAttribute('data-color');
+            ScrollTrigger.create({
+                trigger: elem,
+                start: 'top 5%',
+                end: 'bottom 5%',
+                markers: true,
+                onEnter: () => gsap.to('main', {
+                    backgroundColor: color,
+                    duration: 1.4
+                }),
+                onLeave: () => gsap.to('main', {
+                    backgroundColor: '#fef9ef',
+                    duration: 1.4
+                }),
+                onLeaveBack: () => gsap.to('main', {
+                    backgroundColor: '#fef9ef',
+                    duration: 1.4
+                }),
+                onEnterBack: () => gsap.to('main', {
+                    backgroundColor: color,
+                    duration: 1.4
+                }),
+            });
+        });
     </script>
 
 

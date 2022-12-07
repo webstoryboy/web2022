@@ -44,7 +44,6 @@
 #section1 {
     width: 100%;
     height: 100vh;
-    background: #000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,9 +69,6 @@
     line-height: 1.2;
     color: #E1D8CD;
 }
-.text__inner > div:nth-child(1){
-    
-}
 .text__inner > div:nth-child(2){
     font-family: 'PPEiko-LightItalic';
 }
@@ -85,6 +81,57 @@
 
 /* section2 */
 #section2 {
-    height: 1000px;
+    padding: 20vw 0;
+}
+.about__inner {
+    text-align: center;
+    font-size: 9vw;
+    color: #000;
+    font-family: 'PPEiko-Thin';
+    line-height: .71;
+    position: relative;
+}
+.about__inner .txt1 {
+    margin-left: -70vw;
+}
+.about__inner .txt2 {
+    margin-left: 5vw; 
+    margin-top: 2vw; 
+    position: relative; 
+    z-index: 100;
+}
+.about__inner .txt3 {
+    margin-left: -30vw;
+}
+.about__inner .desc {
+    margin-top: 8vw;
+    font-size: 16px;
+    font-family: "SCoreDream";
+    line-height: 1.4;
+    font-weight: 200;
+    margin-left: 25vw;
+    text-align: left;
+    position: relative;
+}
+.about__inner .desc::before {
+    content: '';
+    width: 10vw;
+    height: 1px;
+    background: #000;
+    position: absolute;
+    left: -5vw;
+    top: -3vw;
+}
+.about__inner .img1 {
+    width: 30vw;
+    position: absolute;
+    right: 10vw;
+    top: 15vw;
+}
+
+
+/* section3 */
+#section3 {
+    height: 4000px;
     background: #ccc;
 }

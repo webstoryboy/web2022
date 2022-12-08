@@ -2,7 +2,7 @@
 #header {
     position: fixed;
     left: 0;
-    top: 0;
+    top: -100px;
     width: 100%;
     height: 70px;
     padding: 20px;
@@ -68,21 +68,27 @@
 #section1 {
     width: 100%;
     overflow: hidden;
-    height: 130vh;
+    height: 100vh;
     background: #000;
     position: relative;
     border-bottom: 1px dotted #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #canvas {
-    position: absolute;
+    position: fixed;
     left: 0; 
     top: 0;
     width: 100%;
     height: 100%;
     z-index: 100;
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
 }
 .title__inner {
-    padding-top: 20vh;
+    
 }
 .title__inner > div {
     font-size: 6vw;
@@ -93,41 +99,61 @@
     font-weight: 800;
     white-space: nowrap;
     text-align: center;
-    position: relative;
 }
-.title__inner > div:nth-child(1){
-    margin-left: -20vw;
-    z-index: 200;
+.title__inner > div.tit1 {
+    margin-left: -40vw;
+    opacity: 0;
 }
-.title__inner > div:nth-child(2){
-    margin-left: 40vw;
-    z-index: 20;
+.title__inner > div.tit2 {
+    margin-left: 0vw;
+    opacity: 0;
 }
-.title__inner > div:nth-child(3){
+.title__inner > div.tit3 {
     color: #fe451c;
     font-family: 'TheramyRegular';
-    text-transform: capitalize;
+    text-transform: lowercase;
     font-weight: normal;
-    padding-top: 2vw;
-    margin-bottom: 8vw;
+    padding-top: 5vw; /* 1vw */
+    /* margin-bottom: 8vw; */
     z-index: 200;
+    padding-bottom: 3vw;
+    overflow: hidden;
 }
-.title__inner > div:nth-child(4){
-    margin-left: -20vw;
-    z-index: 20;
+.title__inner > div.tit3 span {
+    opacity: 0;
+    transform: translateY(50px) translateX(10px);
+    display: inline-block;
+    min-width: 1.3vw
 }
-.title__inner > div:nth-child(5){
-    margin-left: 40vw;
-    z-index: 20;
+.title__inner > div.tit3 span:first-child {
+    text-transform: uppercase;
+    min-width: 1.3vw
 }
-.title__inner > div:nth-child(6){
+.title__inner > div.tit4 {
+    margin-left: -40vw;
+    opacity: 0;
+}
+.title__inner > div.tit5 {
+    margin-left: 0vw;
+    opacity: 0;
+}
+.title__inner > div.tit6 {
     color: #fe451c;
     font-family: 'TheramyRegular';
-    text-transform: capitalize;
+    text-transform: lowercase;
     font-weight: normal;
-    padding-top: 2vw;
-    margin-bottom: 8vw;
+    padding-top: 1vw;
     z-index: 200;
+    transform: translateY(-12vw);
+}
+.title__inner > div.tit6 span {
+    opacity: 0;
+    transform: translateY(50px) translateX(10px);
+    display: inline-block;
+    min-width: 1.3vw
+}
+.title__inner > div.tit6 span:first-child {
+    text-transform: uppercase;
 }
 
 /* section2 */

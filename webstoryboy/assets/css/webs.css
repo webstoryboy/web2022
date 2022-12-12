@@ -290,6 +290,10 @@
   line-height: 1.6;
   color: #666;
 }
+.blog__contents p strong {
+  text-decoration: underline;
+  text-underline-position: under;
+}
 .blog__contents hr {
   margin: 50px 0;
   display: block;

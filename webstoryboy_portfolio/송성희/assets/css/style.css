@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: space-between;
     margin: 1vw 2vw;
+    transform: translateY(-150px);
 }
 #header h1 {
     display: inline-block;
@@ -29,12 +30,17 @@
     border-radius: 10vw;
     padding: 0.5vw 3vw;
     font-size: 2vw;
+    opacity: 0;
+    transform: translateX(400px);
 }
 #header .bom {
     border: 0.4vw solid #000;
     border-radius: 10vw;
     padding: 0.5vw 3vw;
     font-size: 2vw;
+    opacity: 0;
+    transform: translateX(-400px);
+
 }
 
 .noise {
@@ -82,6 +88,20 @@
     text-shadow: 0.2vw 0.2vw #fff;
     white-space: nowrap;
     overflow: hidden;
+    width: 0vw;
+    opacity: 0;
+    text-align: center;
+}
+.box1 em span {
+    display: inline-block;
+    min-width: 1.2vw;
+    transform: translateY(100px);
+}
+.box1 .ic {
+    opacity: 0;
+    display: inline-block;
+    min-width: 1.2vw;
+    transform: translateY(100px);
 }
 
 .box2 {
@@ -91,6 +111,12 @@
     border: 0.4vw solid #000;
     border-radius: 1vw;
     position: relative;
+    overflow: hidden;
+    width: 0vw;
+    opacity: 0;
+}
+.box2 .svg-bg {
+    opacity: 0;
 }
 
 .box2 .text {
@@ -105,4 +131,83 @@
     /* -webkit-text-stroke: 0.1vw #000; */
     text-shadow: 0.4vw 0.4vw #000000;
 }
+.box2 .text .txt1 {
+    opacity: 0;
+    transform: translatex(230px);
+}
+.box2 .text .txt2 {
+    opacity: 0;
+    transform: translateY(130px);
+}
+.box2 .img1 {
+    position: absolute;
+    right: 10%;
+    top: 4%;
+    width: 15vw;
+    border: 0.4vw solid #000;
+    background: #000;
+    border-radius: 500px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(100px);
+}
+.box2 .img2 {
+    position: absolute;
+    left: 5%;
+    top: 0%;
+    width: 15vw;
+    height: 15vw;
+    border: 0.4vw solid #000;
+    background: #000;
+    border-radius: 500px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(100px);
+}
+.box2 .img3 {
+    position: absolute;
+    left: 20%;
+    bottom: -24%;
+    width: 20vw;
+    height: 20vw;
+    border: 0.4vw solid #000;
+    background: #000;
+    border-radius: 500px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(100px);
+}
+.box3 {
+    margin: 1vw 2vw;
+    display: grid;
+    grid-template-areas: 
+        "box1 box2"
+        "box1 box3";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 250px);
+    gap: 1%
+}
+.box3 .box3-1 {
+    grid-area: box1;
+    border: 0.4vw solid #000;
+    border-radius: 1vw;
+}
+.box3 .box3-2 {
+    grid-area: box2;
+    border: 0.4vw solid #000;
+    border-radius: 1vw;
+}
+.box3 .box3-3 {
+    grid-area: box3;
+    border: 0.4vw solid #000;
+    border-radius: 1vw;
+    margin-top: 1%;
+}
 
+
+
+
+
+.box3 {
+    opacity: 0;
+}

@@ -6,74 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>포트폴리오 메인 만들기 - three.js 사용하여 메인 꾸며보기</title>
 
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        body {
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            overscroll-behavior: none;
-        }
-        #header {
-            position: fixed;
-            left: 0; top: 0;
-            width: 100%;
-            height: 50px;
-            background: rgba(0,0,0,0.4);
-            backdrop-filter: blur(10px);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px 20px;
-            font-family: 'Abel';
-            z-index: 10000;
-        }
-        #header h1 {
-            color: #D2E3C0;
-            font-size: 28px;
-        }
-        #header nav li {
-            display: inline-block
-        }
-        #header nav li a {
-            color: #D2E3C0;
-            text-transform: uppercase;
-            font-weight: bold;
-            padding: 10px;
-        }
-        #section {
-            width: 100%;
-            height: 100vh;
-            background: #0B130D;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        #section h2 {
-            font-size: 8vw;
-            color: #D2E3C0;
-            position: relative;
-            z-index: 100;
-        }
-        #webgl1 {
-            width: 100%;
-            height: 100vh;
-            position: absolute;
-            left: 0; top: 0;
-            z-index: 1;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
     <header id="header">
-        <h1>KDS PORTFOLIO</h1>
+        <h1>web's PORTFOLIO</h1>
         <nav>
             <ul>
                 <li><a href="#">work</a></li>
@@ -85,15 +23,27 @@
 
     <main id="main">
         <section id="section">
-            <h2>All site Works</h2>
+            <div class="text__inner">
+                <div class="text1">let’s <em>introduce</em></div>
+                <div class="text2">frontend developer’s</div>
+                <div class="text3"><em>all</em> works <em>of</em> portfolio</div>
+            </div>
+            <div class="img__inner">
+                <img class="img1" src="https://kde66034.github.io/codingclass/site/myPortfolio/assets/img/home_figure01.png" alt="dd">
+                <img class="img2" src="https://kde66034.github.io/codingclass/site/myPortfolio/assets/img/home_figure02.png" alt="dd">
+                <img class="img3" src="https://kde66034.github.io/codingclass/site/myPortfolio/assets/img/home_figure03.png" alt="dd">
+            </div>
             <canvas id="webgl1"></canvas>
         </section>
     </main>
     <!-- //main -->
 
     <footer id="footer">
-        webstoryboy@naver.com
+        <a href="https://webstoryboy.co.kr/" target="_blank">webstoryboy.co.kr</a>
     </footer>
+
+    <!-- https://pangrampangram.com/ -->
+    <!-- https://studyhall.design/ -->
 
     <script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/build/three-min.js'></script>
     <script src='https://jeromeetienne.github.io/threex.terrain/examples/vendor/three.js/examples/js/SimplexNoise.js'></script>

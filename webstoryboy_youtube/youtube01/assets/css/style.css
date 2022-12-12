@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+@font-face {
+    font-family: 'PPEiko-BlackItalic';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/PPEiko-BlackItalic.woff2') format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPEiko-LightItalic';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/PPEiko-LightItalic.woff2') format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPNeueWorld-CondensedRegular';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/PPNeueWorld-CondensedRegular.woff2') format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPNeueWorld-SemiExtendedBlack';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/PPNeueWorld-SemiExtendedBlack.woff2') format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPNeueWorld-SemiCondensedUltrabold.woff2';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/PPNeueWorld-SemiCondensedUltrabold.woff2') format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPNeueWorld-Thin';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/PPNeueWorld-Thin.woff2') format('woff2');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'PPNeueWorld-Regular';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/PPNeueWorld-Regular.woff2') format('woff2');
+    font-display: swap;
+}
+
+/* reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    overscroll-behavior: none;
+}
+em {
+    font-style: normal;
+}
+
+/* header */
+#header {
+    position: fixed;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    font-family: 'Abel';
+    z-index: 10000;
+}
+#header h1 {
+    color: #D2E3C0;
+    font-size: 28px;
+    font-family: 'Abel';
+}
+#header nav li {
+    display: inline-block
+}
+#header nav li a {
+    color: #D2E3C0;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* footer */
+#footer {
+    position: absolute;
+    left: 50%;
+    bottom: 1vw;
+    z-index: 1000;
+    transform: translateX(-50%);
+}
+#footer a {
+    color: #fff;
+    font-family: 'Abel';
+    text-decoration: none;
+}
+
+/* section */
+#section {
+    width: 100%;
+    height: 100vh;
+    background: #0B130D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+#section h2 {
+    font-size: 8vw;
+    color: #D2E3C0;
+    position: relative;
+    z-index: 100;
+    font-family: 'PPEiko-LightItalic';
+}
+#webgl1 {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0; top: 0;
+    z-index: 1;
+}
+
+/* text__inner */
+.text__inner {
+    position: relative;
+    z-index: 100;
+    text-align: center;
+}
+.text__inner > div {
+    font-size: 8vw;
+    line-height: 1;
+    color: #D2E3C0
+}
+.text__inner > div.text1 {
+    font-family: 'PPNeueWorld-Thin';
+}
+.text__inner > div.text1 em {
+    font-family: 'PPNeueWorld-Regular';
+}
+.text__inner > div.text2 {
+    color: #fff;
+    font-family: 'PPNeueWorld-SemiCondensedUltrabold.woff2';
+}
+.text__inner > div.text3 {
+    font-family: 'PPNeueWorld-Regular';
+}
+.text__inner > div.text3 em {
+    font-family: 'PPNeueWorld-Thin';
+}
+
+/* img__inner */
+.img__inner > img {
+    position: absolute;
+    width: 10vw;
+}
+.img__inner .img1 {
+    left: 45%;
+    top: 50%;
+    transform: translateY(-210%);
+}
+.img__inner .img2 {
+    left: 10%;
+    top: 50%;
+    transform: translateY(-100%);
+}
+.img__inner .img3 {
+    left: 80%;
+    top: 50%;
+}

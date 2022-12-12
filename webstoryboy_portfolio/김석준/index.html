@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="#">suck</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">site</a></li>
+                <li><a href="#">javascript</a></li>
+                <li><a href="#">study</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main>
+        <section id="section1">
+            <div class="text__inner">
+                <div>my</div>
+                <div>portfolio</div>
+            </div>
+            <!-- <div class="move__inner">
+                <h1 id="title">my portfolio</h1>
+            </div> -->
+            <canvas id="stars"></canvas>
+            <div class="rocket">
+                <svg width="290" height="781" viewBox="0 0 290 781" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M48.4294 486.419C48.3994 486.309 46.9094 486.819 41.6394 489.789C21.7794 500.999 -1.33059 527.339 1.18941 557.049L16.4994 737.419C17.9294 754.329 28.1294 768.939 42.8594 775.189L51.5094 778.859C58.3594 781.769 65.7494 776.229 65.5494 768.339L68.9094 639.919L62.8794 640.559C62.8794 640.559 50.5394 551.439 48.4294 486.419Z" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M48.4247 486.421C48.3965 486.313 46.9074 486.818 41.6422 489.788C21.7752 500.994 -1.32636 527.341 1.19423 557.052L16.4969 737.423C17.9313 754.332 28.1247 768.936 42.8554 775.188L51.509 778.86C58.355 781.766 65.7451 776.229 65.55 768.341L68.9049 639.922L62.883 640.563C62.883 640.563 50.5405 551.441 48.4247 486.421Z" fill="black"/>
+                    <path d="M232.965 639.494C257.965 482.827 275.365 148.694 144.965 65.494C14.5651 148.694 31.965 482.827 56.965 639.494H232.965Z" stroke="white" stroke-width="2"/>
+                    <path d="M232.965 639.494C257.965 482.827 275.365 148.694 144.965 65.494C14.5651 148.694 31.965 482.827 56.965 639.494H232.965Z" fill="black"/>
+                    <path d="M145.275 67.5V1" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path style="transform: translate(8px);" d="M138.928 271.494C172.042 271.494 198.928 298.38 198.928 331.494C198.928 364.608 172.042 391.495 138.928 391.495C105.813 391.495 78.9272 364.608 78.9272 331.494C78.9272 298.38 105.813 271.494 138.928 271.494Z" stroke="white" stroke-width="20"/>
+                    <path style="transform: translate(8px);" d="M138.928 271.494C172.042 271.494 198.928 298.38 198.928 331.494C198.928 364.608 172.042 391.495 138.928 391.495C105.813 391.495 78.9272 364.608 78.9272 331.494C78.9272 298.38 105.813 271.494 138.928 271.494Z" stroke="white" stroke-width="17"/>
+                    <path d="M144.965 66.088C112.637 86.833 89.4101 123.124 73.1581 168.419C56.8631 213.835 47.6001 268.249 43.1891 324.983C34.3841 438.247 44.9261 560.67 57.3921 638.994H232.538C245.004 560.67 255.546 438.247 246.741 324.983C242.331 268.249 233.067 213.835 216.772 168.419C200.52 123.124 177.293 86.833 144.965 66.088Z" stroke="white" stroke-linecap="round"/>
+                    <path d="M71.4651 638.994L83.4651 666.494H201.965L215.465 638.994H71.4651Z" fill="black"/>
+                    <path d="M71.4651 638.994L83.4651 666.494H201.965L215.465 638.994H71.4651Z" stroke="white" stroke-width="1" stroke-linecap="round"/>
+                    <path d="M228.209 205.994C212.139 143.353 185.823 92.307 144.966 66.088C104.108 92.307 77.794 143.353 61.723 205.994H228.209Z" stroke="white" stroke-width="2"/>
+                    <path d="M201.465 666.494H83.4651V692.494H201.465V666.494Z" fill="transparent"/>
+                    <path d="M201.465 666.494H83.4651V692.494H201.465V666.494Z" stroke="white"/>
+                    <path d="M241.96 486.489C242.09 486.489 242.39 486.819 247.66 489.789C267.56 500.999 290.69 527.339 288.17 557.049L272.84 737.419C271.41 754.329 261.2 768.939 246.45 775.189L237.78 778.859C230.92 781.769 223.52 776.229 223.72 768.339L220.36 639.919L228.13 640.449C228.13 640.449 238.75 556.799 241.96 486.489Z" stroke="white" stroke-width="2"/>
+                    <path d="M241.959 486.491C242.093 486.488 242.389 486.818 247.662 489.788C267.557 500.994 290.691 527.341 288.167 557.052L272.843 737.423C271.406 754.332 261.198 768.936 246.447 775.188L237.781 778.86C230.925 781.766 223.525 776.229 223.72 768.341L220.36 639.922L228.134 640.447C228.134 640.447 238.747 556.804 241.959 486.491Z" fill="black" stroke-width="2" />
+                </svg>
+    
+            </div>
+        </section>
+        <!-- //section1 -->
+
+        <section id="section2"></section><!-- //section2 -->
+        <section id="section3"></section><!-- //section3 -->
+        <section id="section4"></section><!-- //section4 -->
+        <section id="section5"></section><!-- //section5 -->
+        <section id="section6"></section><!-- //section6 -->
+    </main>
+
+    <script>
+        var maxDist;
+        var mouse = { x: 0, y: 0 };
+        var cursor = {
+            x: window.innerWidth,
+            y: window.innerHeight
+        };
+
+        Math.dist = function(a, b) {
+            var dx = b.x - a.x;
+            var dy = b.y - a.y;
+            return Math.sqrt(Math.pow(dx, 2), Math.pow(dy, 2));
+        }
+
+        window.addEventListener("mousemove", function(e) {
+            cursor.x = e.clientX;
+            cursor.y = e.clientY;
+        });
+
+        window.addEventListener("touchmove", function(e) {
+            var t = e.touches[0];
+            cursor.x = t.clientX;
+            cursor.y = t.clientY;
+        }, {
+            passive: false
+        });
+
+        var Char = function(container, char) {
+            var span = document.createElement("span");
+            span.setAttribute('data-char', char);
+            span.innerText = char;
+            container.appendChild(span);
+            this.getDist = function() {
+                this.pos = span.getBoundingClientRect();
+                return Math.dist(mouse, {
+                    x: this.pos.x + (this.pos.width / 1.75),
+                    y: this.pos.y
+                });
+            }
+            this.getAttr = function(dist, min, max) {
+                var wght = max - Math.abs((max * dist / maxDist));
+                return Math.max(min, wght + min);
+            }
+            this.update = function(args) {
+                var dist = this.getDist();
+                this.wdth = args.wdth ? ~~this.getAttr(dist, 5, 200) : 100;
+                this.wght = args.wght ? ~~this.getAttr(dist, 100, 800) : 400;
+                this.alpha = args.alpha ? this.getAttr(dist, 0, 1).toFixed(2) : 1;
+                this.ital = args.ital ? this.getAttr(dist, 0, 1).toFixed(2) : 0;
+                this.draw();
+            }
+            this.draw = function() {
+                var style = "";
+                style += "opacity: " + this.alpha + ";";
+                style += "font-variation-settings: 'wght' " + this.wght + ", 'wdth' " + this.wdth + ", 'ital' " + this.ital + ";";
+                span.style = style;
+            }
+            return this;
+        }
+
+        var VFont = function() {
+            this.scale = false;
+            this.flex = true;
+            this.alpha = false;
+            this.stroke = false;
+            this.width = true;
+            this.weight = true;
+            this.italic = true;
+            var title, str, chars = [];
+
+            this.init = function() {
+                title = document.querySelector("#title");
+                str = title.innerText;
+                title.innerHTML = "";
+                for (var i = 0; i < str.length; i++) {
+                    var _char = new Char(title, str[i]);
+                    chars.push(_char);
+                }
+                this.set();
+                window.addEventListener("resize", this.setSize.bind(this));
+            }
+
+            this.set = function() {
+                title.className = "";
+                title.className += this.flex ? " flex" : "";
+                title.className += this.stroke ? " stroke" : "";
+                this.setSize();
+            }
+
+            this.setSize = function() {
+                var fontSize = window.innerWidth / (str.length / 2);
+                title.style = "font-size: " + fontSize + "px;";
+                if (this.scale) {
+                    var scaleY = (window.innerHeight / title.getBoundingClientRect().height).toFixed(2);
+                    var lineHeight = scaleY * 0.8;
+                    title.style = "font-size: " + fontSize + "px; transform: scale(1," + scaleY + "); line-height: " + lineHeight + "em;"
+                }
+            }
+
+            this.animate = function() {
+                mouse.x += (cursor.x - mouse.x) / 20;
+                mouse.y += (cursor.y - mouse.y) / 20;
+                requestAnimationFrame(this.animate.bind(this));
+                this.render();
+            }
+
+            this.render = function() {
+                maxDist = title.getBoundingClientRect().width / 2;
+                for (var i = 0; i < chars.length; i++) {
+                    chars[i].update({
+                        wght: this.weight,
+                        wdth: this.width,
+                        ital: this.italic,
+                        alpha: this.alpha
+                    });
+                }
+            }
+            this.init();
+            this.animate();
+            return this;
+        }
+        var txt = new VFont();
+        
+    </script>
+    <script>
+        const stars = document.getElementById('stars');
+        const starsCtx = stars.getContext('2d');
+
+        let screen, starsElements, starsParams = { speed: 4, number: 300, extinction: 4 };
+
+        setupStars();
+        updateStars();
+
+        window.onresize = function () {
+            setupStars();
+        };
+
+        function Star() {
+            this.x = Math.random() * stars.width;
+            this.y = Math.random() * stars.height;
+            this.z = Math.random() * stars.width;
+
+            this.move = function () {
+                this.z -= starsParams.speed;
+                if (this.z <= 0) {
+                    this.z = stars.width;
+                }
+            };
+
+            this.show = function () {
+                let x, y, rad, opacity;
+                x = (this.x - screen.c[0]) * (stars.width / this.z);
+                x = x + screen.c[0];
+                y = (this.y - screen.c[1]) * (stars.width / this.z);
+                y = y + screen.c[1];
+                rad = stars.width / this.z;
+                opacity = (rad > starsParams.extinction) ? 1.5 * (2 - rad / starsParams.extinction) : 1;
+
+                starsCtx.beginPath();
+                starsCtx.fillStyle = "rgba(255, 255, 255, " + opacity + ")";
+                starsCtx.arc(x, y, rad, 0, Math.PI * 2);
+                starsCtx.fill();
+            }
+        }
+
+        function setupStars() {
+            screen = {
+                w: window.innerWidth,
+                h: window.innerHeight,
+                c: [window.innerWidth * 0.5, window.innerHeight * 0.5]
+            };
+            window.cancelAnimationFrame(updateStars);
+            stars.width = screen.w;
+            stars.height = screen.h;
+            starsElements = [];
+            for (let i = 0; i < starsParams.number; i++) {
+                starsElements[i] = new Star();
+            }
+        }
+
+        function updateStars() {
+            starsCtx.fillStyle = "black";
+            starsCtx.fillRect(0, 0, stars.width, stars.height);
+            starsElements.forEach(function (s) {
+                s.show();
+                s.move();
+            });
+            window.requestAnimationFrame(updateStars);
+        }
+    </script>
+</body>
+</html>

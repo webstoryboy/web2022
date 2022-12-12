@@ -1,3 +1,5 @@
+
+
 /* section1 */
 #section1 {
     height: 100vh;
@@ -8,6 +10,9 @@
     position: relative;
     overflow: hidden;
 }
+
+
+
 #section1::before {
     text-align: center;
     content: 'WELCOME 2022 PORTFOLIO WELCOME 2022';
@@ -29,22 +34,101 @@
     text-align: center;
     color: #A13A5F;
     font-size: 12vw;
-    line-height: 1;
+    line-height: 0.9;
     font-family: 'Anton';
     text-transform: uppercase;
     position: relative;
     z-index: 100;
+    overflow: hidden;
+    width: 100%;
 }
-#section1 .img1 {
+#section1 .text > div {
+    margin-bottom: 1vw;
+    overflow: hidden;
+}
+#section1 .text > div > span {
+    display: inline-block;
+    transform: translateY(400px);
+}
+
+#section1 .img {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 30%;
+    width: 100%;
+    height: 100vh;
 }
+#section1 .img > div {
+    position: absolute;
+}
+#section1 .img .img1 {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    top: 150%;
+    width: 50%;
+    margin: auto;
+    z-index: 100;
+}
+#section1 .img .img2 {
+    width: 13vw;
+    left: 15%;
+    top: 10%;
+    opacity: 0;
+    transform: rotate(100deg);
+}
+#section1 .img .img3 {
+    width: 13vw;
+    right: 15%;
+    top: 10%;
+    opacity: 0;
+    transform: rotate(200deg);
+}
+#section1 .img .img4 {
+    width: 13vw;
+    left: 11%;
+    bottom: 10%;
+    opacity: 0;
+    transform: rotate(300deg);
+}
+#section1 .img .img5 {
+    width: 16vw;
+    right: 10%;
+    bottom: 10%;
+    opacity: 0;
+    transform: rotate(400deg);
+}
+
+
 
 
 /* section2 */
 #section2 {
-    height: 2000px;
+    
+}
+.sec2-img {
+    width: 30vw;
+    margin: 0 auto;
+    margin-top: auto;
+}
+
+#section1 {
+    height: 100vh;
+    position: sticky;
+    left: 0; top: 0;
+}
+#section2 {
+    height: 100vh;
+    position: sticky;
+    left: 0; top: 0;
+    background: #67353B;
+}
+#section3 {
+    height: 100vh;
+    position: sticky;
+    left: 0; top: 0;
+    background: #fef5f585;
+}
+#section4 {
+    height: 3000px;
+    position: sticky;
+    left: 0; top: 0;
     background: #67353B;
 }

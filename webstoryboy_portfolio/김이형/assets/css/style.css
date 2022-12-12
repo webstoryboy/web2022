@@ -172,3 +172,24 @@ body {
     background: #000;
     /* border-radius: 30vw; */
 }
+
+.sec4-img1 {
+    background: url(https://images.unsplash.com/photo-1670700420923-ef68d8612f23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1096&q=80) no-repeat center center;
+    width: 10vw;
+    height: 10vh;
+    z-index: 10000;
+    background-size: cover;
+    bottom: 0; right: 0;
+    left: auto; top: auto;
+    transform: translate(0, 0);
+}
+.sec4-img2 {
+    background: url(https://images.unsplash.com/photo-1670700420923-ef68d8612f23?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1096&q=80) no-repeat center center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000000;
+    background-size: cover;
+    left: 0; top: 0; 
+    right: auto; bottom: auto;
+    transform: translate(0, 0);
+}

@@ -73,7 +73,7 @@
         <section id="blog">
             <div class="blog__title">
                 <span class="cate">Reference/Javascript</span>
-                <h1 class="title">join 메서드는 배열의 요소를 추가하여, 하나의 문자열로 반환합니다.</h1>
+                <h1 class="title">forEach() 메서드는 주어진 함수 조건을 배열 요소 각각에 대해 실행하고, 그 결과를 반환합니다.</h1>
                 <div class="meta">
                     <span class="author">by @webs</span>
                     <span class="date">2022. 12. 12.</span>
@@ -81,9 +81,9 @@
             </div>
             <div class="blog__inner container">
                 <div class="blog__contents">
-                    <h2>join()</h2>
+                    <h2>forEach()</h2>
                     <p>
-                        join() 메서드는 배열의 요소를 추가하여, 하나의 문자열로 반환합니다.
+                        forEach() 메서드는 주어진 함수 조건을 배열 요소 각각에 대해 실행하고, 그 결과를 반환합니다.
                     </p>
 
                     <hr>
@@ -103,7 +103,7 @@
                             <tbody>
                                 <tr>
                                     <th>유형(type)</th>
-                                    <td>array.prototype.join()</td>
+                                    <td>array.prototype.forEach()</td>
                                 </tr>
                                 <tr>
                                     <th>버전(version)</th>
@@ -111,7 +111,7 @@
                                 </tr>
                                 <tr>
                                     <th>결과값(return)</th>
-                                    <td>문자열(string)</td>
+                                    <td>길이값(length)</td>
                                 </tr>
                                 <tr>
                                     <th>사용성</th>
@@ -123,31 +123,55 @@
 
                     <h3>문법(Syntax)</h3>
                     <p class="blue">
-                        "배열".join(분리기호)
+                        "배열".forEach(콜백함수(element, index, array))
                     </p>
-<pre class="bluePre"><code class="language-javascript">const arr = [100, 200, 300, 400, 500];
+<pre class="bluePre"><code class="language-javascript">const num = [100, 200, 300, 400, 500];
 
-const text1 = arr.join("*");    //100*200*300*400*500
-const text2 = arr.join("-");    //100-200-300-400-500
-const text3 = arr.join();       //100,200,300,400,500
-const text3 = arr.join("");     //100200300400500
-const text4 = arr.join(" ");    //100 200 300 400 500
+//for문을 이용해서 출력
+for(let i = 0; i &lt; num.length; i++){
+    document.write(num[i]);
+}
+//100200300400500
+
+//forEach()를 이용해서 출력
+num.forEach(function(el){
+    document.write(el);
+});
+//100200300400500
+
+//forEach() 3가지 인자(파라미터)값
+num.forEach(function(element, index, array){
+    document.write(element);    
+    document.write(index);      
+    document.write(array);      
+});
+
+// 100 0 100,200,300,400,500
+// 200 1 100,200,300,400,500
+// 300 2 100,200,300,400,500
+// 400 3 100,200,300,400,500
+// 500 4 100,200,300,400,500
 </code></pre>
                     <ul>
                         <li>배열(array) : 배열을 설정합니다.</li>
-                        <li>분리기호(separator) : 배열의 요소를 구분할 문자열을 설정합니다. 기본 값은 쉼표(,)입니다.</li>
+                        <li>콜백함수(callback) : 배열 각 요소에 실행할 함수를 설정합니다.</li>
                     </ul>
 
                     <h3>정의(Definition)</h3>
                     <ul>
-                        <li>join() 메서드는 배열의 문자열을 하나로 문자열로 반환합니다.</li>
-                        <li>join() 메서드는 배열을 변경하지 않습니다.</li>
-                        <li>join() 메서드는 구분기호를 지정할 수 있습니다. 기본은 쉼표(,)입니다.</li>
-                        <li>join() 메서드는 요소가 undefined 또는 null이면 빈 문자열로 변환합니다.</li>
+                        <li>forEach() 메서드는 주어진 함수 조건을 배열 요소 각각에 대해 실행하고, 그 결과를 반환합니다.</li>
+                    </ul>
+
+                    <h3>비교(Compare)</h3>
+                    <ul>
+                        <li>forEach() 메서드는 주어진 함수 조건을 배열 요소 각각에 대해 실행하고, 그 결과를 반환합니다.</li>
+                        <li>filter()  메서드는 주어진 함수 조건에 맞는 모든 요소를 새로운 배열로 반환합니다.</li>
+                        <li>map()     메서드는 주어진 함수를 호출하고, 그 결과를 모아서 만든 새로운 배열을 반환합니다.</li>
+                        <li>some()    메서드는 주어진 판별 함수를 통과하는지 테스트하여, 그 그결과를 불린(true, false)로 반환합니다.</li>
+                        <li>every()   메서드는 주어진 함수를 모두 통과하는지 확인하고, 불린(true, false)로 반환합니다.</li>
                     </ul>
 
                     
-
                     <style>
                         #sample1 .indexof-box {
                             text-align: center;
@@ -175,7 +199,7 @@ const text4 = arr.join(" ");    //100 200 300 400 500
                     <!-- Sample1 -->
                     <h3>예제1(Sample)</h3>
                     <div id="sample1" class="sample">
-                        <h4>문자열을 추가하여 합치는 예제입니다.</h4>
+                        <h4>배열에 요소를 추가하는 예제입니다.</h4>
                         <div class="sampleView">
                             <!-- ex -->
                             <div class="indexof-box">
@@ -185,10 +209,10 @@ const text4 = arr.join(" ");    //100 200 300 400 500
                             <!-- ex -->
                         </div>
                         <div class="sampleBtn center">
-                            <a href="#">*</a>
-                            <a href="#">-</a>
-                            <a href="#">😂</a>
-                            <a href="#">+</a>
+                            <a href="#">100</a>
+                            <a href="#">500</a>
+                            <a href="#">600,700</a>
+                            <a href="#">🤑</a>
                         </div>
                         <div class="sampleCode">
                             <div class="scMenu">
@@ -230,20 +254,19 @@ const text4 = arr.join(" ");    //100 200 300 400 500
 </code></pre>
                             </div>
                             <div>
-<pre class="language-javascript"><code>const text = document.querySelector(".indexof-box .text").innerText;
-const btnAll = document.querySelectorAll(".sampleBtn a");
+<pre class="language-javascript"><code>const btnAll = document.querySelectorAll(".sampleBtn a");
 const btnAlert = document.querySelector(".indexof-box .alert");
 
 btnAll.forEach(btn => {
     btn.addEventListener("click", (e) => {
         e.preventDefault();
+        const arr = [100, 200, 300, 400, 500];
         const char = btn.innerText.trim();
-        const result = text.indexOf(char);
+
+        const result = arr.unshift(char);
         
-        if(result > 0){
-            btnAlert.innerHTML = `클릭한 ${char} 글자는 &lt;em&gt;${result}&lt;/em&gt; 번째 위치에 있습니다.`;
-        } else {
-            btnAlert.innerHTML = `클릭한 ${char} 글자는 존재하지 않습니다.`;
+        if(result){
+            btnAlert.innerHTML = `클릭한 ${char} 글자를 추가하면, <em>${result}</em> 개이고, 배열은 <em>${arr}</em> 입니다.`;
         }
     });
 });
@@ -263,12 +286,10 @@ btnAll.forEach(btn => {
                                 const arr = [100, 200, 300, 400, 500];
                                 const char = btn.innerText.trim();
 
-                                const result = arr.join(char);
+                                const result = arr.unshift(char);
                                 
                                 if(result){
-                                    btnAlert.innerHTML = `클릭한 ${char} 글자를 합치면, <em>${result}</em> 입니다.`;
-                                } else {
-                                    btnAlert.innerHTML = `클릭한 ${char} 글자는 존재하지 않습니다.`;
+                                    btnAlert.innerHTML = `클릭한 ${char} 글자를 추가하면, <em>${result}</em> 개이고, 배열은 <em>${arr}</em> 입니다.`;
                                 }
                             });
                         });
@@ -304,7 +325,7 @@ btnAll.forEach(btn => {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="ce" scope="row">join()</td>
+                                    <td class="ce" scope="row">forEach()</td>
                                     <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 크롬 -->
                                     <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 파이어폭스 -->
                                     <td class="ce"><span title="사용가능합니다.">○</span></td><!-- 사파리 -->
@@ -334,8 +355,8 @@ btnAll.forEach(btn => {
                         <li>array.prototype.fill()              메서드는 배열의 시작 인덱스부터 끝 인덱스까지 하나의 값으로 반환합니다.</li>
                         <li>array.prototype.find()              메서드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 반환합니다.</li>
                         <li>array.prototype.findIndex()         메서드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 인덱스로 반환합니다.</li>
-                        <li>array.prototype.findLast()          메서드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 역순으로 반환합니다</li>
-                        <li>array.prototype.findLastIndex()     메서드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 역순 인덱스로 반환합니다</li>
+                        <li>array.prototype.findLast()          메서드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 역순으로 반환합니다.</li>
+                        <li>array.prototype.findLastIndex()     메서드는 주어진 판별 함수를 만족하는 첫 번째 요소의 값을 역순 인덱스로 반환합니다.</li>
                         <li>array.prototype.flat()              메서드는 중첩된 배열을 하나의 배열로 반환합니다.</li>
                         <li>array.prototype.flatMap()           메서드는 먼저 매핑함수를 사용해 각 엘리먼트에 대해 map 수행 후, 결과를 새로운 배열로 평탄화합니다.</li>
                         <li>array.prototype.forEach()           메서드는 주어진 함수 조건을 배열 요소 각각에 대해 실행하고, 그 결과를 반환합니다.</li>
@@ -348,14 +369,14 @@ btnAll.forEach(btn => {
                         <li>array.prototype.lastIndexOf()       메서드는 역순으로 배열을 검색하고, 위치값(숫자)을 반환합니다.</li>
                         <li>array.prototype.join()              메서드는 배열의 요소를 추가하여, 하나의 문자열로 반환합니다.</li>
                         <li>array.prototype.pop()               메서드는 배열 마지막 요소를 제거하고, 제거한 요소를 반환합니다.</li>
-                        <li>array.prototype.push()              메서드는 배열 끝에 요소를 추가하고, 배열의 새로운 길이값을 반환합니다.</li>
+                        <li>array.prototype.push()              메서드는 배열 끝에 요소를 추가하고, 배열의 새로운 길이 값을 반환합니다.</li>
                         <li>array.prototype.reduce()            메서드는 배열의 각 요소를 실행하고, 하나의 결과값을 반환합니다.</li>
                         <li>array.prototype.reduceRight()       메서드는 배열의 각 요소를 마지막부터 실행하고, 하나의 결과값을 반환합니다.</li>
                         <li>array.prototype.reverse()           메서드는 배열 요소의 순서를 반대로 하고, 반대로 된 배열을 반환합니다.</li>
                         <li>array.prototype.shift()             메서드는 배열 처음 요소를 제거하고, 제거한 요소를 반환합니다.</li>
                         <li>array.prototype.unshift()           메서드는 배열 앞에 요소를 추가하고, 배열의 새로운 길이 값을 반환합니다.</li>
                         <li>array.prototype.slice()             메서드는 배열 시작 위치에서 종료 위치 값을 추출하여, 새로운 배열을 반환합니다.</li>
-                        <li>array.prototype.sort()              메서드는 배열의 요소를 적절한 위치에 정렬한 후, 그 배열을 반환합니다    </li>
+                        <li>array.prototype.sort()              메서드는 배열의 요소를 적절한 위치에 정렬한 후, 그 배열을 반환합니다.</li>
                         <li>array.prototype.toLocaleString()    메서드는 배열의 요소를 문자열로 반환합니다.</li>
                         <li>array.prototype.toString()          메서드는 데이터를 배열로 변환하고, 새로운 배열을 반환합니다.</li>
                         <li>array.prototype.values()            메서드는 배열 각 인덱스에 대한 값을 객체로 반환합니다.</li>
@@ -400,7 +421,7 @@ btnAll.forEach(btn => {
 
                     <h3>참고(Reference)</h3>
                     <ul>
-                        <li><a href="https://tc39.es/ecma262/multipage/indexed-collections.html#sec-array.prototype.join" target="_blank">https://tc39.es/ecma262/multipage/<wbr>indexed-collections.html<wbr>#sec-array.prototype.join</a></li>
+                        <li><a href="https://tc39.es/ecma262/multipage/indexed-collections.html#sec-array.prototype.foreach" target="_blank">https://tc39.es/ecma262/multipage/<wbr>indexed-collections.html<wbr>#sec-array.prototype.foreach</a></li>
                     </ul>
 
                     <hr class="m100">
@@ -427,6 +448,4 @@ btnAll.forEach(btn => {
 </body>
 </html>
 
-<!-- at,concat,copyWithin,entries,keys,fill,find,findIndex,findLast,findLastIndex,flat,flatMap,forEach,filter,every,map,some,includes,indexOf,lastIndexOf,join,pop,push,reduce,reduceRight,reverse,shift,unshift,slice,sort,toLocaleString,toString,values -->
-
-                               
+<!-- forEach,filter,map,some,every -->

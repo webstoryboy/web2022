@@ -59,9 +59,16 @@
                 </div>
             </div>
             <div class="box3">
-                <div class="box3-1"></div>
-                <div class="box3-2"></div>
-                <div class="box3-3"></div>
+                <div class="box3-1 boxStyle1 green noise">
+                    <div>
+                        <img src="https://raw.githubusercontent.com/thdtjdgml415/portpoliohtml/master/assets3/img/myphoto2-min.png" alt="">
+                    </div>
+                </div>
+                <div class="box3-2 boxStyle1 noise center">
+                    <div>저를 소개할께요! 😃</div>
+                </div>
+                <div class="box3-3 blue noise">
+                </div>
             </div>
         </section>
         <!-- //section1 -->
@@ -111,15 +118,55 @@
             tl.to(".box1 .ic", {duration: 0.4, y:0, opacity:1, stagger: 0.01, ease: Bounce.easeOut})
             tl.to(".box2 .text .txt1", {duration: 0.4, x:0, opacity:1, ease: Bounce.easeOut})
             tl.to(".box2 .text .txt2", {duration: 0.6, y:0, opacity:1, ease: Bounce.easeOut})
-            tl.to(".box2 .text .img1", {duration: 0.6, y:0, opacity:1, ease: Elastic.easeOut.config(1, 0.3)})
-            tl.to(".box2 .text .img2", {duration: 0.6, y:0, opacity:1, ease: Elastic.easeOut.config(1, 0.3)})
-            tl.to(".box2 .text .img3", {duration: 0.6, y:0, opacity:1, ease: Elastic.easeOut.config(1, 0.3)})
+            tl.to(".box2 .text .img1", {duration: 0.6, y:0, opacity:1, ease: Elastic.easeOut.config(1, 0.3)}, "b")
+            tl.to(".box2 .text .img2", {duration: 0.6, y:0, opacity:1, ease: Elastic.easeOut.config(1, 0.3)}, "b")
+            tl.to(".box2 .text .img3", {duration: 0.6, y:0, opacity:1, ease: Elastic.easeOut.config(1, 0.3)}, "b")
         }, 2000)
 
         gsap.to(".img1, .img2, .img3", {
             rotation: 360,
             scrollTrigger: {
                 scrub: 1,
+            }
+        })
+
+        gsap.to(".box3-1", {
+            duration: 0.6,
+            y: 0,
+            opacity: 1,
+            ease: Elastic.easeOut.config(1, 0.3),
+            scrollTrigger: {
+                trigger: '.box3-1',
+                start: "top 70%",
+                end: "top 5%",
+                markers: true,
+                toggleClass: "red"
+            }
+        })
+        gsap.to(".box3-2", {
+            duration: 0.6,
+            y: 0,
+            opacity: 1,
+            ease: Elastic.easeOut.config(1, 0.3),
+            delay: 0.5,
+            scrollTrigger: {
+                trigger: '.box3-2',
+                start: "top 65%",
+                end: "top 5%",
+                markers: false
+            }
+        })
+        gsap.to(".box3-3", {
+            duration: 0.6,
+            y: 0,
+            opacity: 1,
+            delay: 1,
+            ease: Elastic.easeOut.config(1, 0.3),
+            scrollTrigger: {
+                trigger: '.box3',
+                start: "top 60%",
+                end: "top 5%",
+                markers: false
             }
         })
     </script>

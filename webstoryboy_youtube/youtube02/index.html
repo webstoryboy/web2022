@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경색 변하는 스크롤 효과 만들기</title>
+
+    <link href="https://webfontworld.github.io/score/SCoreDream.css" rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #section1 {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .about__inner {
+            text-align: center;
+            font-size: 9vw;
+            color: #000;
+            font-family: 'PPEiko-Thin';
+            line-height: .71;
+            position: relative;
+        }
+        .about__inner .txt1 {
+            margin-left: -40vw;
+        }
+        .about__inner .txt2 {
+            margin: 2vw 0 1vw 5vw; 
+            position: relative; 
+            z-index: 100;
+        }
+        .about__inner .txt3 {
+            margin-left: -30vw;
+        }
+        .about__inner .desc {
+            margin-top: 4vw;
+            font-size: 16px;
+            font-family: "SCoreDream";
+            line-height: 1.5;
+            font-weight: 200;
+            margin-left: 40vw;
+            text-align: left;
+            position: relative;
+        }
+        .about__inner .desc::before {
+            content: '';
+            width: 10vw;
+            height: 1px;
+            background: #000;
+            position: absolute;
+            left: -5vw;
+            top: -3vw;
+        }
+        .about__inner .img1 {
+            width: 30vw;
+            position: absolute;
+            right: 10vw;
+            top: 15vw;
+            display: none;
+        }
+
+        /* section2 */
+        #section2 {
+            padding: 40vh 0;
+        }
+        .about2__inner {
+            text-align: center;
+            font-size: 9vw;
+            color: #000;
+            font-family: 'PPEiko-Thin';
+            line-height: .71;
+            position: relative;
+            color: #fff;
+        }
+        .about2__inner .img1 {
+            width: 30vw;
+            height: 30vw;
+            overflow: hidden;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+        .about2__inner .img1 img {
+            width: 100%;
+        }
+        .about2__inner .txt1 {
+            font-size: 9vw;
+            color: #E0D8CD;
+            font-family: 'PPEiko-Thin';
+            margin-top: -10vh;
+            mix-blend-mode:difference
+        }
+        .about2__inner .desc {
+            font-size: 16px;
+            font-family: "SCoreDream";
+            line-height: 1.5;
+            font-weight: 200;
+            margin-top: 5vh;
+            color: #E0D8CD;
+        }
+
+        /* section3 */
+        #section3 {
+            padding: 40vh 0;
+        }
+        .about3__inner {
+            text-align: center;
+            font-family: 'PPEiko-Thin';
+            line-height: .69;
+            color: #000;
+            position: relative;
+        }
+        .about3__inner .txt1 {
+            font-size: 30vw;
+            position: absolute;
+            left: 0;
+            top: -15vw;
+            left: -10vw;
+            font-weight: bold;
+            opacity: 0.02;
+        }
+        .about3__inner .txt2 {
+            font-size: 3vw;
+        }
+        .about3__inner .txt3 {
+            font-size: 10vw;
+            font-weight: bold;
+            margin-left: 35vw;
+        }
+        .about3__inner .desc {
+            font-size: 16px;
+            font-family: "SCoreDream";
+            line-height: 1.5;
+            font-weight: 200;
+            margin-top: 5vh;
+            color: #000;
+            text-align: left;
+            margin-left: 70%;
+        }
+
+
+        /* section4 */
+        #section4 {
+            padding: 40vh 0;
+        }
+
+        .about4__inner {
+            font-family: 'PPEiko-Thin';
+            line-height: 1;
+            color: #000;
+            font-size: 8vw;
+            white-space: nowrap;
+            color: #E0D8CD;
+        }
+        .about4__inner .txt1 {
+            
+        }
+        .about4__inner .txt2 {
+            margin-left: -10vw;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <main id="main">
+        <section id="section1" data-bgcolor="#DAD4CA">
+            <div class="about__inner">
+                <div class="txt1">Passion</div>
+                <div class="txt2">Creative</div>
+                <div class="txt3">Shining</div>
+                <div class="desc">
+                    어떤 일이라도 노력하고 즐기면 그 결과는 빛을 바란다고 생각합니다.<br>
+                    신입의 열정과 도전정신을 깊숙히 새기며<br>
+                    노력하는 개발자가 되겠습니다.
+                </div>
+            </div>
+        </section>
+        <!-- //section1 -->
+
+        <section id="section2" data-bgcolor="#262223">
+            <div class="about2__inner">
+                <div class="img1"><img src="https://kdb6.github.io/portfolio/assets/img/about.png" alt="about"></div>
+                <div class="txt1">Passion Creative Shining</div>
+                <div class="desc">
+                    어떤 일이라도 노력하고 즐기면 그 결과는 빛을 바란다고 생각합니다.<br>
+                    신입의 열정과 도전정신을 깊숙히 새기며<br>
+                    노력하는 개발자가 되겠습니다.
+                </div>
+            </div>
+        </section>
+        <!-- //section2 -->
+
+        <section id="section3" data-bgcolor="#DAD4CA">
+            <div class="about3__inner">
+                <div class="txt1">about</div>
+                <div class="txt2">Passion Shining</div>
+                <div class="txt3">website</div>
+                <div class="desc">
+                    어떤 일이라도 노력하고 즐기면 그 결과는 빛을 바란다고 생각합니다.<br>
+                    신입의 열정과 도전정신을 깊숙히 새기며<br>
+                    노력하는 개발자가 되겠습니다.
+                </div>
+            </div>
+        </section>
+        <!-- //section3 -->
+
+        <section id="section4" data-bgcolor="#262223">
+            <div class="about4__inner">
+                <div class="txt1">Passion Passion Passion Passion Passion Passion</div>
+                <div class="txt2">Shining Shining Shining Shining Shining Shining</div>
+                <div class="txt3">website website website website website website</div>
+                <div class="txt1">Passion Passion Passion Passion Passion Passion</div>
+            </div>
+        </section>
+        <!-- //section4 -->
+
+        <section id="section5" data-bgcolor="#c2e9fb">section5</section><!-- //section5 -->
+        <section id="section6" data-bgcolor="#96e6a1">section6</section><!-- //section6 -->
+    </main>
+
+    <!-- https://www.marsrouge.com/ -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        })
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+
+        const bgColorElems = document.querySelectorAll("[data-bgcolor]");
+
+        bgColorElems.forEach((colorSection, i) => {
+            const prevBg = i === 0 ? "" : bgColorElems[i - 1].dataset.bgcolor;
+
+            ScrollTrigger.create({
+                trigger: colorSection,
+                start: 'top 50%',
+                end: 'bottom 5%',
+                markers: true,
+                onEnter: () => gsap.to("#main", {
+                    backgroundColor: colorSection.dataset.bgcolor,
+                    // overwrite: "auto"
+                }),
+                onLeaveBack: () => gsap.to("#main", {
+                    backgroundColor: prevBg,
+                    // overwrite: "auto"
+                })
+            });
+        });
+    </script>
+</body>
+</html>

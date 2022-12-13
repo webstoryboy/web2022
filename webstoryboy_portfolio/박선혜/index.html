@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://packsunhye.github.io/portfolio/assets/css/font.css">
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="https://webfontworld.github.io/dgb/IMHyemin.css" rel="stylesheet">
 </head>
 <body>
 
@@ -27,7 +29,15 @@
             </div>
         </section>
         <!-- //section1 -->
-        <section id="section2"></section><!-- //section2 -->
+
+        <section id="section2">
+            <div class="sec2__title">
+                <div class="s2Txt1 split">WELCOMETO</div>
+                <div><em class="s2Txt2 split">PORTFOLIO</em> <i class="s2Txt3">성장속도가 남다른 개발자 박선혜입니다.</i></div> 
+            </div>
+        </section>
+        <!-- //section2 -->
+
         <section id="section3"></section><!-- //section3 -->
         <section id="section4"></section><!-- //section4 -->
         <section id="section5"></section><!-- //section5 -->
@@ -74,7 +84,44 @@
             width: "60%",
             scrollTrigger: {
                 scrub: 1,
-            
+            }
+        })
+
+        gsap.to(".sec2__title .s2Txt1 span", {
+            duration: 0.7, 
+            y: 0, 
+            opacity: 1, 
+            stagger: 0.01,
+            ease: Back.easeOut.config(1.7),
+            scrollTrigger: {
+                trigger: ".sec2__title",
+                start: "top 30%",
+                end: "top 70%",
+                markers: true
+            }
+        })
+        gsap.to(".sec2__title .s2Txt2 span", {
+            duration: 0.7, 
+            y: 0, 
+            opacity: 1, 
+            stagger: 0.01,
+            ease: Back.easeOut.config(1.7),
+            scrollTrigger: {
+                trigger: ".sec2__title",
+                start: "top 25%",
+                end: "top 70%",
+                markers: true
+            }
+        })
+        gsap.to(".sec2__title .s2Txt3", {
+            duration: 0.7, 
+            x: 0, 
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".sec2__title",
+                start: "top 20%",
+                end: "top 70%",
+                markers: true
             }
         })
         

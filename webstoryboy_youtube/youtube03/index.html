@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link href="https://webfontworld.github.io/dgb/IMHyemin.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&display=swap" rel="stylesheet">
+    
+
+    <style>
+        @font-face {
+            font-family: 'PPHatton-Bold';
+            font-weight: normal;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/PPHatton/PPHatton-Bold.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/PPHatton/PPHatton-Bold.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/PPHatton/PPHatton-Bold.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/PPHatton/PPHatton-Bold.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/PPHatton/PPHatton-Bold.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'PPHatton-Medium';
+            font-weight: normal;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/PPHatton/PPHatton-Medium.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/PPHatton/PPHatton-Medium.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/PPHatton/PPHatton-Medium.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/PPHatton/PPHatton-Medium.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/PPHatton/PPHatton-Medium.ttf') format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'PPHatton-Ultralight';
+            font-weight: normal;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/PPHatton/PPHatton-Ultralight.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/PPHatton/PPHatton-Ultralight.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/PPHatton/PPHatton-Ultralight.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/PPHatton/PPHatton-Ultralight.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/PPHatton/PPHatton-Ultralight.ttf') format("truetype");
+            font-display: swap;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* section1 */
+        #section1 {
+            background-color: #EFF1FF;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        #section1 .center {
+            text-align: center;
+            width: 100%;
+        }
+        #section1 .center h2 {
+            font-family: 'PPHatton-Ultralight';
+            font-weight: normal;
+            color: #3E227A;
+            font-size: 7vw;
+            line-height: 0.8;
+            margin-top: 11vw;
+        }
+        #section1 .center h2 span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(5vw);
+            min-width: 1.5vw;
+        }
+        #section1 .center p {
+            font-family: 'Corinthia', cursive;
+            font-weight: 400;
+            font-size: 4vw;
+            opacity: 0;
+            color: #3E227A;
+            transform: translateY(3vw);
+        }
+        #section1 .center .img {
+            width: 100%;
+            height: 0vw;
+            background: url(https://packsunhye.github.io/portfolio/assets/img/main.png) no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            margin: -3vw auto 0;
+        }
+
+
+        /* section2 */
+        #section2 {
+            background: #EFF1FF;
+            padding: 30vh 0 20vh;
+        }
+        .sec2__title {
+            font-family: 'PPHatton-Ultralight';
+            color: #3E227A;
+            font-size: 7vw;
+            line-height: 1.1;
+        }
+        .sec2__title em {
+            font-style: normal;
+        }
+        .sec2__title i {
+            font-family: "IMHyemin";
+            font-size: 18px;
+            font-style: normal;
+        }
+        .sec2__title .s2Txt1 {
+            margin-left: 3vw;
+            padding-top: 1.6vw;
+        }
+        .sec2__title .s2Txt1 span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        .sec2__title .s2Txt2 {
+            margin-left: 20vw;
+            padding-top: 1.6vw;
+        }
+        .sec2__title .s2Txt2 span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        .sec2__title .s2Txt3 {
+            opacity: 0;
+            transform: translateX(100px);
+            display: inline-block;
+        }
+
+        /* section3 */
+        #section3 {
+            background: #EFF1FF;
+            padding: 30vh 0 20vh;
+        }
+        .sec3__title {
+            font-family: 'PPHatton-Ultralight';
+            color: #3E227A;
+            font-size: 7vw;
+            line-height: 1.1;
+            text-align: center;
+        }
+        .sec3__title .s3Txt1 {
+         
+        }
+        .sec3__title .s3Txt2 {
+           
+        }
+        .sec3__title .s3Txt3 {
+            font-family: "IMHyemin";
+            font-size: 18px;
+            font-style: normal;
+        }
+
+
+        /* section4 */
+        #section4 {
+            height: 2000px;
+            background: #EFF1FF;
+            padding: 30vh 0 20vh;
+        }
+        .sec4__title {
+            font-family: 'PPHatton-Ultralight';
+            color: #3E227A;
+            font-size: 7vw;
+            line-height: 1.1;
+            text-align: center;
+        }
+        .sec4__title .s4Txt1 {
+            text-align: right;
+            margin-right: 20vw;
+        }
+        .sec4__title .s4Txt2 {
+            text-align: left;
+            margin-left: 20vw;
+        }
+        .sec4__title .s4Txt3 {
+            font-family: "IMHyemin";
+            font-size: 18px;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+
+
+    <main id="main">
+        <section id="section1">
+            <div class="center">
+                <h2 class="split">FRONTEND DEVELOPOER</h2>
+                <p>PackSunHye‘s Portfolio</p>
+                <div class="img"></div>
+            </div>
+        </section>
+        <!-- //section1 -->
+
+        <section id="section2">
+            <div class="sec2__title">
+                <div class="s2Txt1 split">WELCOMETO</div>
+                <div><em class="s2Txt2 split">PORTFOLIO</em> <i class="s2Txt3">성장속도가 남다른 개발자 박선혜입니다.</i></div> 
+            </div>
+        </section>
+        <!-- //section2 -->
+
+        <section id="section3">
+            <div class="sec3__title">
+                <div class="s3Txt1 split">WELCOME TO</div>
+                <div class="s3Txt2 split">PORTFOLIO</div> 
+                <div class="s3Txt3">성장속도가 남다른 개발자 박선혜입니다.</div>
+            </div>
+        </section>
+        <!-- //section3 -->
+
+        <section id="section4">
+            <div class="sec4__title">
+                <div class="s4Txt1 split">WELCOME TO</div>
+                <div class="s4Txt2 split">PORTFOLIO</div> 
+                <div class="s4Txt3">성장속도가 남다른 개발자 박선혜입니다.</div>
+            </div>
+        </section>
+        <!-- //section4 -->
+    </main>
+    <!-- //main -->
+
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script>
+        document.querySelectorAll(".split").forEach(desc => {
+            let splitText = desc.innerText;
+            let splitWrap = splitText.split('').join("</span><span aria-hidden='true'>");
+                splitWrap = "<span aria-hidden='true'>" + splitWrap + "</span>";
+                desc.innerHTML = splitWrap;
+                desc.setAttribute("aria-label", splitText);
+        })
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        })
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+
+        setTimeout(()=>{
+            let tl = gsap.timeline();
+            tl.to("#section1 .center .img", {duration: 0.8, height: "50vh", ease: "Circ.out"})
+            tl.to("#section1 .center h2 span", {duration: 0.5, y: 0, stagger: 0.04, opacity:1, ease: Back.easeOut.config(1.7)})
+            tl.to("#section1 .center p", {duration: 0.4, y: 0, opacity:1})
+            tl.to("#header", {duration: 1, top: 0})
+        },2000)
+
+        gsap.to("#section1 .center .img", {
+            width: "60%",
+            scrollTrigger: {
+                scrub: 1,
+            }
+        })
+
+        gsap.to(".sec2__title .s2Txt1 span", {
+            duration: 0.7, 
+            y: 0, 
+            opacity: 1, 
+            stagger: 0.01,
+            ease: Back.easeOut.config(1.7),
+            scrollTrigger: {
+                trigger: ".sec2__title",
+                start: "top 30%",
+                end: "top 70%",
+                markers: false
+            }
+        })
+        gsap.to(".sec2__title .s2Txt2 span", {
+            duration: 0.7, 
+            y: 0, 
+            opacity: 1, 
+            stagger: 0.01,
+            ease: Back.easeOut.config(1.7),
+            scrollTrigger: {
+                trigger: ".sec2__title",
+                start: "top 25%",
+                end: "top 70%",
+                markers: false
+            }
+        })
+        gsap.to(".sec2__title .s2Txt3", {
+            duration: 0.7, 
+            x: 0, 
+            opacity: 1,
+            scrollTrigger: {
+                trigger: ".sec2__title",
+                start: "top 20%",
+                end: "top 70%",
+                markers: false
+            }
+        })
+    </script>
+</body>
+</html>

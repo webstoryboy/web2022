@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Line Portfolio</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/resct.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
+
+    <header id="header">
+      <h1>line portfolio<em>developer</em></h1>
+      <nav>
+        <ul>
+          <li><a href="#">about</a></li>
+          <li><a href="#">interview</a></li>
+          <li><a href="#">us</a></li>
+          <li><a href="#">portfolio</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="contents">
+      <section id="section1" data-bgcolor="#F3EDE8">
+        <div class="about__title">
+          <h2 class="split">Port developer</h2>
+        </div>
+        <div class="about__lines">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+          <div class="line4"></div>
+          <div class="line5"></div>
+          <div class="line6"></div>
+          <div class="line7"></div>
+          <div class="line8"></div>
+        </div>
+        <div class="about__intro">
+          <div class="text">
+            <div>Talent is</div>
+            <div>found at the end of the</div>
+            <div>effort</div>
+          </div>
+          <canvas id="webgl"></canvas>
+        </div>
+      </section>
+      <!-- //section1 -->
+
+      <section id="section2" data-bgcolor="#F3EDE8">
+        <div class="intro__wrap">
+          <h3 class="intro__title">challenge coding</h3>
+          <div class="intro__desc">
+              <h3>1.</h3>
+              <p>
+                꿈을 설계하고 디자인하다.<br>
+                나는 공간을 만드는 것을 좋아한다. 
+                어려을 때부터 나만의 공간을 만드는 것을 좋아했고 나만의 다락방을 좋아했다. 
+                단 한 사람이라도 내가 만든 공간 속에서 영감을 받거나 마음이 움직였으면 좋겠다. 
+                나만의 공간을 마음것 만들 수 있다는 건 코딩에 엄청난 매력인거 같다. 
+                그 한구석에 나만의 꿈을 설계하고, 개발을 하며 앞으로도 살고 싶다.
+              </p>
+              <h3>2.</h3>
+              <p>
+                열심히 할수록 기회는 따른다.<br>
+                운이 좋은 사람은 없다. 단지 운을 만들 뿐이다. 
+                운을 만들기 위해서는 내가 좋아하는 일이나 내가 하고 싶은 일에 몰두하면 된다. 
+                몰두 하다보면 길이 보이고 방향이 보이게 된다. 
+                운이란 고된 노동과 노력을 통해 스스로 만들어 내는 것이다. 
+               
+              </p>
+              <h3>3.</h3>
+              <p>
+                나에게 정직하다.<br>
+                정직은 다른 사람보다 나에게 큰 의미를 부여해야 한다. 
+                자신이 정직하지 않으면 진정으로 원하는 일을 열정적으로 밀고 나갈 수 없다. 
+                마음에서 우러나오는 일을 해야 정직해지며 삶을 더 즐길 줄 알게 된다.
+              </p>
+          </div>
+        </div>
+      </section>
+      <!-- //section2 -->
+
+      <section id="section3" data-bgcolor="#F3EDE8">
+        <div class="interview__wrap">
+          <h3 class="interview__title">portfolio interview <a href="https://www.youtube.com/playlist?list=PL4UVBBIc6giLLag20uIwHlHsG83q3PYa5" target="_blank">전체보기</a></h3>
+          <div class="interview__desc id1">
+            <div class="left">
+              <iframe src="https://www.youtube.com/embed/CRdQx4UZ7OA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="right">
+              <h4>포트폴리오 어떻게 만들어야 할까?</h4>
+              <p>김민소, 임희재 프론트앤드 개발자 취업 인터뷰 영상입니다.</p>
+              <p class="q">간단하게 자기 소개 부탁드려요?</p>
+              <p class="a">네, 안녕하세요! 이번에 프론트앤드 개발자로 취업하게 된 김양우입니다.</p>
+              <p class="q">포트폴리오 만들면서 가장 힘들었던 점은 무엇입니까?</p>
+              <p class="a">폰트가 이상하다. 디자인이 별로다. 이상한 부분을 알지 못하니까 수정하는게 너무 힘들었습니다.</p>
+              <p class="q">프론트앤드를 지원하게 된 이유는 무엇인가요?</p>
+              <p class="a">자바스크립트를 잘 알아야 하고, 리액트도 알아야 하고, 뷰도 알아야 하고, 공부도 많이 해야 하고, 적성에 맞는거 같습니다. 막히는 부분을 풀려고 하는 부분들이 재미있습니다. </p>
+              <p class="q">프론트 작업을 하면서 많이 힘들었던 점은 무엇입니까?</p>
+              <p class="a">사회생활은 눈치것 해야합니다. 다 기술입니다.</p>
+            </div>
+          </div>
+          <div class="interview__desc id2">
+            <div class="left">
+              <iframe src="https://www.youtube.com/embed/CRdQx4UZ7OA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="right">
+              <h4>포트폴리오 어떻게 만들어야 할까?</h4>
+              <p>김민소, 임희재 프론트앤드 개발자 취업 인터뷰 영상입니다.</p>
+              <p class="q">간단하게 자기 소개 부탁드려요?</p>
+              <p class="a">네, 안녕하세요! 이번에 프론트앤드 개발자로 취업하게 된 김양우입니다.</p>
+              <p class="q">포트폴리오 만들면서 가장 힘들었던 점은 무엇입니까?</p>
+              <p class="a">폰트가 이상하다. 디자인이 별로다. 이상한 부분을 알지 못하니까 수정하는게 너무 힘들었습니다.</p>
+              <p class="q">프론트앤드를 지원하게 된 이유는 무엇인가요?</p>
+              <p class="a">자바스크립트를 잘 알아야 하고, 리액트도 알아야 하고, 뷰도 알아야 하고, 공부도 많이 해야 하고, 적성에 맞는거 같습니다. 막히는 부분을 풀려고 하는 부분들이 재미있습니다. </p>
+              <p class="q">프론트 작업을 하면서 많이 힘들었던 점은 무엇입니까?</p>
+              <p class="a">사회생활은 눈치것 해야합니다. 다 기술입니다.</p>
+            </div>
+          </div>
+          <div class="interview__desc id3">
+            <div class="left">
+              <iframe src="https://www.youtube.com/embed/CRdQx4UZ7OA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="right">
+              <h4>포트폴리오 어떻게 만들어야 할까?</h4>
+              <p>김민소, 임희재 프론트앤드 개발자 취업 인터뷰 영상입니다.</p>
+              <p class="q">간단하게 자기 소개 부탁드려요?</p>
+              <p class="a">네, 안녕하세요! 이번에 프론트앤드 개발자로 취업하게 된 김양우입니다.</p>
+              <p class="q">포트폴리오 만들면서 가장 힘들었던 점은 무엇입니까?</p>
+              <p class="a">폰트가 이상하다. 디자인이 별로다. 이상한 부분을 알지 못하니까 수정하는게 너무 힘들었습니다.</p>
+              <p class="q">프론트앤드를 지원하게 된 이유는 무엇인가요?</p>
+              <p class="a">자바스크립트를 잘 알아야 하고, 리액트도 알아야 하고, 뷰도 알아야 하고, 공부도 많이 해야 하고, 적성에 맞는거 같습니다. 막히는 부분을 풀려고 하는 부분들이 재미있습니다. </p>
+              <p class="q">프론트 작업을 하면서 많이 힘들었던 점은 무엇입니까?</p>
+              <p class="a">사회생활은 눈치것 해야합니다. 다 기술입니다.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- //section3 -->
+
+      <section id="section4" data-bgcolor="#F3EDE8">
+        <div class="pic__wrap">
+          <h3 class="pic__title">completed course <a href="http://richclub9.dothome.co.kr/index5.html" target="_blank">전체 보기</a></h3>
+          <div class="pic__desc pd1"> 
+            <div class="pic p1">
+              <img src="assets/img/stu03-min.jpg" alt="김현로 포트폴리오">
+              <div class="info white green">
+                <h4>스터디 과정 26기 수료 | 김현* 프론트 취업 완료</h4>
+                <p class="comment">5개월 동안 감사했어요!! 짧은 시간에 많은걸 배웠습니다. 그 동안 감사했습니다. 실무에 가서도 열심히 하겠습니다.</p>
+                <a class="link" href="https://kimport.vercel.app/" target="_blank">포폴 보기</a>
+                <a class="link" href="https://kimport.vercel.app/" target="_blank">블로그 보기</a>
+              </div>
+            </div>
+            <div class="pic p2">
+              <img src="assets/img/stu04-min.jpg" alt="김가람 포트폴리오">
+              <div class="info white">
+                <h4>스터디 과정 26기 수료 | 김가* 프론트 취업 완료</h4>
+                <p class="comment">5개월 동안 감사했어요!! 짧은 시간에 많은걸 배웠습니다. 그 동안 감사했습니다. 실무에 가서도 열심히 하겠습니다. 한달 뒤에 월급타고 연락드릴께요~</p>
+                <a class="link" href="https://kimport.vercel.app/" target="_blank">포폴 보기</a>
+              </div>
+            </div>
+            <div class="pic p3">
+              <img src="assets/img/stu04-min.jpg" alt="김아람 포트폴리오">
+              <div class="info">
+                <h4>스터디 과정 26기 수료 | 김가* 프론트 취업 완료</h4>
+                <p class="comment">5개월 동안 감사했어요!! 짧은 시간에 많은걸 배웠습니다. 그 동안 감사했습니다. 실무에 가서도 열심히 하겠습니다. 한달 뒤에 월급타고 연락드릴께요~</p>
+                <a class="link" href="https://kimport.vercel.app/" target="_blank">포폴 보기</a>
+              </div>
+            </div>
+            <div class="pic p4">
+              <img src="assets/img/stu04-min.jpg" alt="김가람 포트폴리오">
+              <div class="info">
+                <h4>스터디 과정 26기 수료 | 김가* 프론트 취업 완료</h4>
+                <p class="comment">5개월 동안 감사했어요!! 짧은 시간에 많은걸 배웠습니다. 그 동안 감사했습니다. 실무에 가서도 열심히 하겠습니다. 한달 뒤에 월급타고 연락드릴께요~</p>
+                <a class="link" href="https://kimport.vercel.app/" target="_blank">포폴 보기</a>
+              </div>
+            </div>
+          </div>
+          <div class="pic__desc pd2">
+            <div class="pic p1">
+              <img src="assets/img/stu01-min.jpg" alt="dd">
+              <p class="info">
+                웹스토리보이 개발자 과정 20기 수료 | 취업 완료
+              </p>
+            </div>
+            <div class="pic p2">
+              <img src="assets/img/stu01-min.jpg" alt="dd">
+              <p class="info">
+                웹스토리보이 개발자 과정 20기 수료 | 취업 완료
+              </p>
+            </div>
+            <div class="pic p3">
+              <img src="assets/img/stu01-min.jpg" alt="dd">
+              <p class="info">
+                웹스토리보이 개발자 과정 20기 수료 | 취업 완료
+              </p>
+            </div>
+            <div class="pic p4">
+              <img src="assets/img/stu01-min.jpg" alt="dd">
+              <p class="info">
+                웹스토리보이 개발자 과정 20기 수료 | 취업 완료
+              </p>
+            </div>
+          </div>
+          <div class="pic__desc pd3">
+            <div class="pic p1">
+              <img src="assets/img/stu01-min.jpg" alt="dd">
+              <p class="info">
+                웹스토리보이 개발자 과정 20기 수료 | 취업 완료
+              </p>
+            </div>
+            <div class="pic p2">
+              <img src="assets/img/stu01-min.jpg" alt="dd">
+              <p class="info">
+                웹스토리보이 개발자 과정 20기 수료 | 취업 완료
+              </p>
+            </div>
+            <div class="pic p3">
+              <img src="assets/img/stu01-min.jpg" alt="dd">
+              <p class="info">
+                웹스토리보이 개발자 과정 20기 수료 | 취업 완료
+              </p>
+            </div>
+            <div class="pic p4">
+              <img src="assets/img/stu01-min.jpg" alt="dd">
+              <p class="info">
+                웹스토리보이 개발자 과정 20기 수료 | 취업 완료
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- //section4 -->
+
+      <section id="section5" data-bgcolor="#F3EDE8">
+        <div class="port__wrap">
+          <h3 class="port__title">portfolio</h3>
+          <div class="port__desc">
+            <div class="port">
+              <span>01</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>02</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>03</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>04</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>05</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>06</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>07</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>08</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>09</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>10</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>11</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>12</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>13</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>14</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>15</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>16</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>17</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>18</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>19</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+            <div class="port">
+              <span>20</span>
+              <a href="https://webstoryboy.github.io/studyPORT/portfolio49/index.html" target="_blank" class="img"></a>
+              <h3>프론트앤드 개발자</h3>
+              <p>발랄한 느낌의 프론트앤드 개발자 포트폴리오입니다. 발랄함과 상큼함이 묻어나는 사이트입니다. 스크롤링 이벤트가 멋지게 구현된 사이트입니다.</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- //section5 -->
+
+      <section id="section6" data-bgcolor="#F3EDE8">
+        <div class="review__wrap">
+          <div class="review__title">review</div>
+          <div class="review__desc">
+            <div class="rd1">
+              <h4><span></span> 스터디 후기 이다*</h4>
+              <p>이력서도 봐주시고, 회사정보, 면접질문 외워라!!!! 많이 말씀해주심. 
+                기술 질문과 인성질문 잘 기록해놓고 외우세요,,,, 공부한 프로그램, 개발환경, 어디까지 배운건지, 
+                그런 전체적인 틀? 이해를 하고 면접때 잘 설명 하셔야 합니다! 그리고 계속 배우고 있다는 열정열정열쩡을 어필하세요!!!!
+                쌤이 알려주는것말고도 따로 계속 공부하셔야 되요. 자바스크립트도, 강의들은것도...
+              </p>
+            </div>
+            <div class="rd2">
+              <h4>스터디 후기 이다*</h4>
+            </div>
+            <div class="rd3">ddd</div>
+            <div class="rd4">ddd</div>
+            <div class="rd5">ddd</div>
+            <div class="rd6">ddd</div>
+            <div class="rd7">ddd</div>
+            <div class="rd8">ddd</div>
+            <div class="rd9">ddd</div>
+            <div class="rd10">ddd</div>
+            <div class="rd11">ddd</div>
+            <div class="rd12">ddd</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      const lenis = new Lenis({
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      })
+
+      function raf(time) {
+          lenis.raf(time)
+          requestAnimationFrame(raf)
+      }
+      requestAnimationFrame(raf)
+
+      const backColor = document.querySelectorAll("[data-bgcolor]");
+
+      backColor.forEach((colorSection, i) => {
+          const prevBg = i === 0 ? "" : backColor[i - 1].dataset.bgcolor;
+
+          ScrollTrigger.create({
+              trigger: colorSection,
+              start: 'top 50%',
+              end: 'bottom 5%',
+              markers: false,
+              onEnter: () => gsap.to("#contents", {
+                  backgroundColor: colorSection.dataset.bgcolor,
+              }),
+              onLeaveBack: () => gsap.to("#contents", {
+                  backgroundColor: prevBg,
+              })
+          });
+      });
+
+      const horSection = gsap.utils.toArray('.port__desc .port');
+
+      const horiz = gsap.to(horSection, {
+          xPercent: -150 * (horSection.length - 1),
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.port__desc',
+            start: 'top 20%',
+            pin: true,
+            scrub: 1,
+            end: '+=5000',
+            markers: false,
+          },
+      });
+  </script>
+  </body>
+</html>

@@ -77,6 +77,13 @@
     padding: 15vw 0;
     position: relative;
 }
+.about__intro.footer {
+    background-color: #000;
+    color: #fff;
+}
+.about__intro.footer .text > div {
+    color: #E5D5C3;
+}
 .about__intro .text {
     position: absolute;
     left: 50%;
@@ -180,8 +187,8 @@
     display: flex;
     position: sticky;
     left: 0;
-    display: flex;
     justify-content: space-between;
+		background: #b7b7b7;
 }
 .interview__desc .left {
     width: 67%;
@@ -211,7 +218,7 @@
     opacity: 1;
     transition: all 0.6s;
 }
-.interview__desc .left:hover::after {
+/* .interview__desc .left:hover::after {
     width: 0;
     height: 0;
     opacity: 0;
@@ -219,7 +226,7 @@
 .interview__desc .left:hover::before {
     transform: scale(0);
     opacity: 0;
-}
+} */
 .interview__desc .left iframe {
     width: 100%;
     height: 100%;
@@ -248,6 +255,7 @@
     background: #cdcdce;
     margin-top: 100px;
 }
+
 
 /* section4 */
 #section4 {
@@ -287,13 +295,20 @@
 }
 .pic__desc.pd2 {
     margin-top: 200px;
-    top: 210px;
+    top: 200px;
 }
 .pic__desc.pd3 {
     margin-top: 200px;
+    top: 210px;
+}
+.pic__desc.pd4 {
+    margin-top: 200px;
+    top: 220px;
+}
+.pic__desc.pd5 {
+    margin-top: 200px;
     top: 230px;
 }
-
 .pic__desc .pic {
     background: #7e572b;
     position: relative;
@@ -302,47 +317,28 @@
 .pic__desc .pic img {
     opacity: 0.5;
     transition: all 0.3s;
+		width: 100%;
 }
 .pic__desc .pic:hover img {
     opacity: 1;
 }
 .pic__desc .pic:hover .info {
-    top: 65%;
+    bottom: 0px;
 }
 .pic__desc .pic .info {
     position: absolute;
-    left: 0; top: 91%;
+    left: 0; bottom: -50px;
     background: #e4d5c358;
     backdrop-filter: blur(10px);
     width: 100%;
-    height: 50%;
     padding: 15px;
     font-family: 'GmarketSans';
-    transition: top 0.6s ease;
+    transition: bottom 0.6s ease;
 }
-.pic__desc .pic .info.white {
-    color: #fff;
-}
-.pic__desc .pic .info.white h4 {
-    color: #fff;
-}
-.pic__desc .pic .info.green .link {
-    background: #2F412E;
-}
-.pic__desc .pic .info.green .comment {
-    border-top-color: #2F412E;
-}
-
-
 .pic__desc .pic .info h4 {
     font-size: 16px;
-    color: #000;
-}
-.pic__desc .pic .info .comment {
-    border-top: 1px solid #7e572b;
-    display: block;
-    padding-top: 15px;
-    margin-top: 15px;
+    color: #fff;
+		margin-bottom: 10px;
 }
 .pic__desc .pic .info .link {
     display: inline-block;
@@ -357,12 +353,23 @@
     border-bottom: 1px solid #7e572b;
     font-family: 'GmarketSans';
 }
+.pic__desc .pic .info.green .link {
+	background-color: #2F3E2D
+}
+.pic__desc .pic .info.blue .link {
+	background-color: #515985
+}
+.pic__desc .pic .info.yellow .link {
+	background-color: #B18B5A
+}
+.pic__desc .pic .info.pupple .link {
+	background-color: #BB7FC3
+}
 
 /* section5 */
 #section5 {
     margin-top: 15vw;
 }
-
 .port__title {
     position: sticky;
     top: 100px;
@@ -376,6 +383,12 @@
     text-transform: uppercase;
     color: #2B2B2B;
     border-bottom: 1px solid #5f5953;
+}
+.port__title a {
+    float: right;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 40px;
 }
 .port__desc {
     margin-top: 20px;
@@ -409,6 +422,8 @@
 .port__desc .port p {
     padding-top: 20px;
     font-family: 'GmarketSans';
+		color: #000;
+		line-height: 1.4;
 }
 .port__desc .port .img {
     width: 100%;
@@ -427,27 +442,93 @@
 .port__desc .port .img:hover {
     filter: saturate(80%);
 }
-.port__desc .port.l2 {background-color: #82887C;}
-.port__desc .port.l3 {background-color: #AFA7A2;}
-.port__desc .port.l4 {background-color: #ac9983;}
-
-.port__desc .port.l1 .img {
-    background-image: url(../img/p1.jpg);;
+.port__desc .port.port1 .img {
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port01-min.jpg);
     background-color: #AFA7A2;
-
 }
-.port__desc .port.l2 .img { 
-    background-image: url(../img/p2.jpg);;
+.port__desc .port.port2 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port02-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port3 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port03-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port4 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port04-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port5 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port05-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port6 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port06-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port7 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port07-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port8 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port08-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port9 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port09-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port10 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port10-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port11 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port11-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port12 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port12-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port13 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port13-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port14 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port14-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port15 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port15-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port16 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port16-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port17 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port17-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port18 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port18-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port19 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port19-min.jpg);;
+    background-color: #AFA7A2;
+}
+.port__desc .port.port20 .img { 
+    background-image: url(https://tistory1.daumcdn.net/tistory/2818477/skin/images/port20-min.jpg);;
     background-color: #AFA7A2;
 }
 
 
 /* section6 */
 #section6 {
-    height: 4000px;
+
     margin-top: 15vw;
 }
-
 .review__title {
     position: sticky;
     top: 100px;
@@ -492,3 +573,10 @@
 .review__desc > div.rd7 {top:280px; margin-top: 700px;}
 .review__desc > div.rd8 {top:280px; margin-top: 800px;}
 .review__desc > div.rd9 {top:280px; margin-top: 900px;}
+
+
+/* section7 */
+#section7 {
+
+    margin-top: 15vw;
+}

@@ -1,0 +1,107 @@
+[
+    {
+        "subject": "전자 계산기 일반",
+        "question": "CPU를 경유하지 않고 고속의 입출력장치와 기억장치가 직접 데이터를 주고받는 방식은?",
+        "correct_answer": "DMA(Direct Memory Access)",
+        "incorrect_answers": ["프로그램에 의한 입출력(Programmed I/O)","인터럽트에 의한 입출력(interrupt driven I/O)","채널 제어기에 의한 입출력"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "순차처리(Sequential access)만 가능한 장치는?",
+        "correct_answer": "magnetic tape",
+        "incorrect_answers": ["magnetic core","magnetic drum","magnetic disk"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "16진수 2C를 10진수로 변환한 것으로 옳은 것은?",
+        "correct_answer": "44",
+        "incorrect_answers": ["41","42","43"],
+        "desc": "2*16(1) + 12*16(0) = 44"
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "레지스터 중 Program counter의 기능을 바르게 설명한 것은?",
+        "correct_answer": "다음에 수행할 명령어의 번지를 기억한다.",
+        "incorrect_answers": ["현재 실행중인 명령어의 내용을 기억한다.","주기억장치의 번지를 기억한다.","연산의 결과를 일시적으로 보관한다."]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "캐시메모리(Cache memory)의 설명으로 옳은 것은?",
+        "correct_answer": "CPU와 주기억장치 사이의 속도차이를 해결하기 위한 고속 메모리로 이용된다.",
+        "incorrect_answers": ["대용량 기억장치용으로 주로 사용된다.","전원이 꺼져도 내용은 그대로 유지된다","컴퓨터의 주기억장치로 주로 이용된다."]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "다음 중 캐시메모리에 대한 설명으로 가장 올바른 것은",
+        "correct_answer": "CPU와 주기억장치 사이의 속도차이를 해결하기 위한 고속 메모리로 이용된다.",
+        "incorrect_answers": ["하드웨어나 마이크로 코드 방식으로 구현한다.","전원이 꺼져도 내용은 그대로 유지된다.","컴퓨터의 주기억장치로 주로 이용된다"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "2진수로 부여된 주소 값이 직접 기억장치의 피연산자가 위치한 곳을 지정하는 주소 지정 방식은?",
+        "correct_answer": "직접주소지정(Direct Addressing)",
+        "incorrect_answers": ["즉시주소지정(Immediate Addressing)","간접주소지정(Indirect Addressing)","인덱스주소지정(Index Addressing)"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "다음과 같이 현재 번지부에 표현된 값이 실제 데이터가 기억된 번지가 아니고, 그 곳에 기억된 내용이 실제의 데이터 번지가 되도록 표시하는 주소지정 방식은?",
+        "correct_answer": "간접 주소(indirect address)",
+        "incorrect_answers": ["직접 주소(direct address)","상대 주소(relative address)","묵시 주소(implied address)"],
+        "desc": "묵(0) - 즉(0) - 직(1) - 간(2) 괄호는 참조 횟수를 의미",
+        "img": "gineungsa2011_01_01"
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "다음을 논리식으로 바르게 표현한 것은?",
+        "correct_answer": "2",
+        "incorrect_answers": ["1","3","4"],
+        "img": "gineungsa2011_01_02"
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "주기억장치에서 기억장치의 지정은 무엇에 따라 행하여지는가?",
+        "correct_answer": "어드레스(Address)",
+        "incorrect_answers": ["레코드(Record) ","필드(Field)","블록(Block)"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "",
+        "correct_answer": "",
+        "incorrect_answers": ["","",""]
+    }
+]

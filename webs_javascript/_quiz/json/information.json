@@ -1,0 +1,348 @@
+{
+    "items": [
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "01",
+            "question_type" : "multiple",
+            "question" : "GoF(Gang of Four)의 디자인 패턴에서 행위 패턴에 속하는 것은?",
+            "question_answer" : {
+                "1": "Builder",
+                "2": "Visitor",
+                "3": "Prototype",
+                "4": "Bridge"
+            },
+            "question_result" : "2",
+            "question_explanation" : "행위 패턴의 종류에는 Chain of Responsibility, Command, Interpreter, Iterator, Mediator, Memento, Observer, State, Strategy, Template Method, Visitor 있습니다.",
+            "question_link" : ""
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "02",
+            "question_type" : "multiple",
+            "question" : "객체지향 프로그램에서 데이터를 추상화하는 단위는?",
+            "question_answer" : {
+                "1": "메소드",
+                "2": "클래스",
+                "3": "상속성",
+                "4": "메시지"
+            },
+            "question_result" : "2",
+            "question_explanation" : "메소드는 클래스 혹은 소속된 루틴, 상송속은 상위 클래스 상속, 메시지는 메소드 실행 요청을 말합니다.",
+            "question_link" : {
+                "종류" : "https://www.naver.com/"
+            }
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "03",
+            "question_type" : "multiple",
+            "question" : "객체지향 기법에서 클래스들 사이의 '부분-전체(part-shole)' 관계 또는 '부분(is-a-part-of)'의 관계로 설명되는 연관성을 나태나는 용어는?",
+            "question_answer" : {
+                "1": "일반화",
+                "2": "추상화",
+                "3": "캡슐화",
+                "4": "집단화"
+            },
+            "question_result" : "4",
+            "question_explanation" : "일반화 : is-a, 상세화 : has-a",
+            "question_link" : {
+                "종류" : "https://www.naver.com/"
+            }
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "04",
+            "question_type" : "multiple",
+            "question" : "객체지향 분석 방법론 중 E-R 다이어그램을 사용하여 객체의 행위를 모델링하여, 객체 식별, 구조 식별, 주체 정의, 속성 및 관계 정의, 서비스 정의 등의 과정으로 구성되는 것은?",
+            "question_answer" : {
+                "1": "Coad와 Yourdon 방법",
+                "2": "Booch 방법",
+                "3": "Jacobson 방법",
+                "4": "Wirfs-Brocks 방법"
+            },
+            "question_result" : "1",
+            "question_explanation" : "Booch: 미시적, 거시적 개발 / Jacobson: UseCase 사용 / Wirfs-Brocks : 분석 설계 구분없음",
+            "question_link" : ""
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "05",
+            "question_type" : "multiple",
+            "question" : "코드 설계에서 일정한 일련번호를 부여하는 방식의 코드는?",
+            "question_answer" : {
+                "1": "연상 코드",
+                "2": "블록 코드",
+                "3": "순차 코드",
+                "4": "표의 숫자 코드"
+            },
+            "question_result" : "3",
+            "question_explanation" : "연상 : 특정 의미가 연상되도록 표기, 블록 : 블록으로 내용을 구분하여 표기, 표의 숫자 : 제품의 수치를 코드로 표기",
+            "question_link" : ""
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "06",
+            "question_type" : "multiple",
+            "question" : "소프트웨어 설계 시 구축된 플랫폼의 성능 특성 분석에 사용되는 측정 항목이 아닌 것은?",
+            "question_answer" : {
+                "1": "응답시간(Response Time)",
+                "2": "가용성(Availability)",
+                "3": "사용률(Utilization)",
+                "4": "서버 튜닝(Server Tunning)"
+            },
+            "question_result" : "4",
+            "question_explanation" : "개조, 비용, 인력, 시간 등은 측정에 포함되지 않는다.",
+            "question_link" : ""
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "07",
+            "question_type" : "multiple",
+            "question" : "자료 사전에서 자료의 생략을 의미하는 기호는?",
+            "question_answer" : {
+                "1": "{}",
+                "2": "**",
+                "3": "=",
+                "4": "()"
+            },
+            "question_result" : "4",
+            "question_explanation" : "{} : 반복 / ** : 주석 / = : 정의",
+            "question_link" : ""
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "08",
+            "question_type" : "multiple",
+            "question" : "검토회의 전에 요구사항 명세서를 미리 배포하여 사전 검토한 후 짧은 검토 회의를 통해 오류를 조기에 검출하는 데 목적을 두는 요규사항 검토 방법은?",
+            "question_answer" : {
+                "1": "빌드 검증",
+                "2": "동료 검토",
+                "3": "워크 스루",
+                "4": "개발자 검토"
+            },
+            "question_result" : "3",
+            "question_explanation" : "",
+            "question_link" : ""
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "09",
+            "question_type" : "multiple",
+            "question" : "CASE가 갖고 있는 주요 기능이 아닌 것은?",
+            "question_answer" : {
+                "1": "그래픽 지원",
+                "2": "소프트웨어 생명주기 전 단계의 연결",
+                "3": "언어 번역",
+                "4": "다양한 소프트웨어 개발 모형 지원"
+            },
+            "question_result" : "3",
+            "question_explanation" : "구조적 활용, 요구 정보 추출 분석, 프로그램의 개발 및 유지 용이, 점진적 개발, 재활용성 재고 등이 기능이 있습니다.",
+            "question_link" : ""
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "10",
+            "question_type" : "multiple",
+            "question" : "XP(eXtreme Programming)의 5가지 가치로 거리가 먼 것은?",
+            "question_answer" : {
+                "1": "용기",
+                "2": "의사소틍",
+                "3": "정형 분석",
+                "4": "피드백"
+            },
+            "question_result" : "3",
+            "question_explanation" : "용기(Courage), 단순성(Simplicity), 커뮤니케이션(Communication), 피드백(Feedback), 존중(Respect)",
+            "question_link" : ""
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "11",
+            "question_type" : "multiple",
+            "question" : "DBMS 분석 시 고려사항으로 거리가 먼 것은?",
+            "question_answer" : {
+                "1": "가용성",
+                "2": "성능",
+                "3": "네트워크 구성도",
+                "4": "상호 호환성"
+            },
+            "question_result" : "3",
+            "question_explanation" : "무결성, 일관성, 회복, 보안, 효율성, 데이터베이스 확장을 고려해야 합니다.",
+            "question_link" : ""
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "12",
+            "question_type" : "multiple",
+            "question" : "HIPO(Hierachy Input Process Output)에 대해서 설명으로 거리가 먼 것은?",
+            "question_answer" : {
+                "1": "상향식 소프트웨어 개발을 위한 문서화 도구이다.",
+                "2": "HIPO 차트 종류에는 가시적 도표, 총체적 도표, 세부적 도표가 있다.",
+                "3": "기능과 자료의 의존 관계를 동시에 표현할 수 있다.",
+                "4": "보기 쉽고 이해하기 쉽다."
+            },
+            "question_result" : "1",
+            "question_explanation" : "하향식 개발을 위한 시스템 설계 및 문서화 도구이다. 가시적 도표, 총체적 도표, 세부적 도표으로 구성되며 분석 및 설계 도구로 사용됩니다.",
+            "question_link" : ""
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "13",
+            "question_type" : "multiple",
+            "question" : "UI 설계 원칙에서 누구나 쉽게 이해하고 사용할 수 있어야 한다는 것은?",
+            "question_answer" : {
+                "1": "유효성",
+                "2": "직관성",
+                "3": "무결성",
+                "4": "유연성"
+            },
+            "question_result" : "2",
+            "question_explanation" : "대표적인 설계 원칙으로 직관성(intuitiveness), 일간성(Consistency), 효율성(Effectiveness)이 있습니다.",
+            "question_link" : ""
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "14",
+            "question_type" : "multiple",
+            "question" : "럼바우(Rumbaugh)의 객체 지향 분석 절차를 가장 바르게 나열한 것은?",
+            "question_answer" : {
+                "1": "객체 모형 -> 동적 모형 -> 기능 모형",
+                "2": "객체 모형 -> 기능 모형 -> 동적 모형",
+                "3": "기능 모형 -> 동적 모형 -> 객체 모형",
+                "4": "기능 모형 -> 객체 모형 -> 동적 모형"
+            },
+            "question_result" : "1",
+            "question_explanation" : "소프트웨어 구성 요소를 그래픽 표기법을 이용하여 모델링하는 객체지향 분석(Object-oriented Analysis) 기법이다.",
+            "question_link" : ""
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "15",
+            "question_type" : "multiple",
+            "question" : "데이터 흐름도(DFD)의 구성 요소에 포함되지 않는 것은?",
+            "question_answer" : {
+                "1": "process",
+                "2": "data flow",
+                "3": "data store",
+                "4": "data dictionary"
+            },
+            "question_result" : "4",
+            "question_explanation" : "자료흐름도의 구성 요소에는 처리, 자료흐름, 자료저장소, 단말 등이 있습니다.",
+            "question_link" : ""
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "16",
+            "question_type" : "multiple",
+            "question" : "UML 확장 모델에서 스테레오 타입 객체를 표현할 때 사용하는 기호로 맞는 것은?",
+            "question_answer" : {
+                "1": "<< >>",
+                "2": "(( ))",
+                "3": "{{ }}",
+                "4": "[[ ]]"
+            },
+            "question_result" : "1",
+            "question_explanation" : "",
+            "question_link" : ""
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "17",
+            "question_type" : "multiple",
+            "question" : "트랜잭션이 올바르게 처리되고 있는지 데이터를 감시하고 제어하는 미들웨어는?",
+            "question_answer" : {
+                "1": "RPC",
+                "2": "ORB",
+                "3": "TP monitor",
+                "4": "HUB"
+            },
+            "question_result" : "3",
+            "question_explanation" : "RPC : 원격 프로시저 호출 / ORB : 브로커를 통해 다른 컴퓨터의 프로그램 호출",
+            "question_link" : ""
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "18",
+            "question_type" : "multiple",
+            "question" : "소프트웨어 개발 방법 중 요구사항 분석(requirements analysis)과 거리가 먼 것은?",
+            "question_answer" : {
+                "1": "비용과 일정에 대한 제약 설정",
+                "2": "타당성 조사",
+                "3": "요구사항 정의 문서화",
+                "4": "설계 명세서 작성"
+            },
+            "question_result" : "4",
+            "question_explanation" : "요구사항 분석이 마무리되면 설계 단계가 시작되며, 설계가 마무리되면 명세서를 작성한다.",
+            "question_link" : ""
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "19",
+            "question_type" : "multiple",
+            "question" : "공동 모듈에 대한 명세 기법 중 해당 기능에 대해 일관되게 이해되고 한 가지로 해석될 수 있도록 작성하는 원칙은?",
+            "question_answer" : {
+                "1": "상호작용성",
+                "2": "명확성",
+                "3": "독립성",
+                "4": "내용성"
+            },
+            "question_result" : "2",
+            "question_explanation" : "",
+            "question_link" : ""
+        },
+        {
+            "type_id" : "2020-1",
+            "type_subject" : "정보처리기사",
+            "type" : "2020년 제1/2회",
+            "total_number" : "20",
+            "question_type" : "multiple",
+            "question" : "UML 모델에서 사용되는 Structural Diagram에 속하지 않는 것은?",
+            "question_answer" : {
+                "1": "Class Diagram",
+                "2": "Object Diagram",
+                "3": "Component Diagram",
+                "4": "Activity Diagram"
+            },
+            "question_result" : "4",
+            "question_explanation" : "구조적 다이어그램에는 클래스, 객체, 복합체, 배치, 컴포넌트, 패키지가 있습니다.",
+            "question_link" : ""
+        }
+    ]
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보처리 시험 준비하기</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .question__explanation {display: none;}
+    </style>
+</head>
+<body>
+    <!-- 객관식 -->
+    <header id="header">
+        <h1><a href="#">정&middot;처&middot;기 <em>정복하기</em></a></h1>
+        <nav>
+            <ul>
+                <li><a href="quiz1.html">주관식 정답확인하기 유형</a></li>
+                <li class="check"><a href="quiz2.html">객관식 정답확인하기 유형</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            
+        </div>
+        <div class="quiz__confirm">
+            <a href="#">정답 확인</a>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        fetch("./json/information.json")
+            .then(response => response.json())
+            .then(result => {
+                displayItem(result.items);
+                answerCheck(result.items);
+            })
+            .catch(error => console.log('error', error));
+
+        const displayItem = (items) => {
+            const quizWrap = document.querySelector(".quiz__wrap");
+
+            let output = "";
+
+            items.map((item, index) => {
+                output += `
+                    <div class="quiz">
+                        <span class="quiz__number">${index+1}</span>
+                        <div class="quiz__question">${item.question}</div>
+                        <div class="quiz__answer">
+                            <label for="select${index}-1">
+                                <input type="radio" id="select${index}-1" class="select" name="select${index}" value="1">
+                                <span class="choice">${item.question_answer[1]}</span>
+                            </label>
+                            <label for="select${index}-2">
+                                <input type="radio" id="select${index}-2" class="select" name="select${index}" value="2">
+                                <span class="choice">${item.question_answer[2]}</span>
+                            </label>
+                            <label for="select${index}-3">
+                                <input type="radio" id="select${index}-3" class="select" name="select${index}" value="3">
+                                <span class="choice">${item.question_answer[3]}</span>
+                            </label>
+                            <label for="select${index}-4">
+                                <input type="radio" id="select${index}-4" class="select" name="select${index}" value="4">
+                                <span class="choice">${item.question_answer[4]}</span>
+                            </label>
+                        </div>
+                        <div class="question__explanation">${item.question_explanation}</div>
+                    </div>
+                `
+            });
+
+            quizWrap.innerHTML = output;
+        }
+
+        const answerCheck = (items) => {
+            console.log(items)
+            const quizSelects = document.querySelectorAll(".quiz__answer"); 
+            
+            items.map((item, index) => {
+                const quizSelectsWrap = quizSelects[index];    
+                const userSelector = `input[name=select${index}]:checked`;  
+                const userAnswer = quizSelectsWrap.querySelector(userSelector).value;
+
+                console.log(userAnswer)
+
+                // if(userAnswer == item.question_result){
+                //     console.log("정답")
+                // } else {
+                //     console.log("오답")
+                // }
+            })
+        }
+        document.querySelector(".quiz__confirm").addEventListener("click", answerCheck);
+
+
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        })
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+    </script>
+</body>
+</html>

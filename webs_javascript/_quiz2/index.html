@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보처리 시험 준비하기</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 객관식 -->
+    <header id="header">
+        <h1><a href="#">정&middot;처&middot;기 <em>정복하기</em></a></h1>
+        <nav>
+            <ul>
+                <li><a href="quiz1.html">주관식 정답확인하기 유형</a></li>
+                <li class="check"><a href="quiz2.html">객관식 정답확인하기 유형</a></li>
+            </ul>
+        </nav>
+        <div class="quiz__progress"></div>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__main">
+            <div>
+                <h2>정보처리 합격하기</h2>
+                <a href="#" class="btn">시작하기</a>
+                <a href="#" class="btn">점수보기</a>
+            </div>
+        </div>
+        <!-- //quiz__main -->
+
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <span class="quiz__number">1</span>
+                <div class="quiz__question">GoF(Gang of Four)의 디자인 패턴에서 행위 패턴에 속하는 것은?</div>
+                <div class="quiz__answer">
+                    <label for="select-1">
+                        <input type="radio" id="select-1" class="choice-prefix" name="select" value="1">
+                        <span class="choice-text" data-number="1">builder</span>
+                    </label>
+                </div>
+                <div class="quiz__answer">
+                    <label for="select-2">
+                        <input type="radio" id="select-2" class="choice-prefix" name="select" value="2">
+                        <span class="choice-text" data-number="2">builder</span>
+                    </label>
+                </div>
+                <div class="quiz__answer">
+                    <label for="select-3">
+                        <input type="radio" id="select-3" class="choice-prefix" name="select" value="3">
+                        <span class="choice-text" data-number="3">builder</span>
+                    </label>
+                </div>
+                <div class="quiz__answer">
+                    <label for="select-4">
+                        <input type="radio" id="select-4" class="choice-prefix" name="select" value="4">
+                        <span class="choice-text" data-number="4">builder</span>
+                    </label>
+                </div>
+            </div>
+            <div class="quiz__info">
+                <div class="quiz__info__count"></div>
+            </div>
+        </div>
+        <!-- //quiz__wrap -->
+
+        <div class="quiz__result">
+            <div>
+                <h2 class="quiz__result__score"></h2>
+                <form>
+                    <input type="text" name="username" id="username" placeholder="기록할 이름을 적어주세요!">
+                    <button type="submit" class="btn" id="saveScoreBtn" onclick="savehighScore(event)">저장하기</button>
+                </form>
+                <a href="#" class="btn">다시하기</a>
+                <a href="#" class="btn">처음으로</a>
+            </div>
+            
+        </div>
+        <!-- //quiz__result -->
+
+        <div class="quiz__high">
+            <h2>점수 순위</h2>
+            <div>
+                <ul class="quiz__high__list"></ul>
+            </div>
+            <a href="#" class="btn">시작하기</a>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        let question = document.querySelector(".quiz__question");
+        const choices = Array.from(document.getElementsByClassName("choice-text"));
+        const questionCounterText = document.querySelector(".quiz__info__count");
+        const progressBar = document.querySelector(".quiz__progress");
+        const quizNumber = document.querySelector(".quiz__number");
+        const scoreText = document.querySelector(".quiz__result__score");
+
+        let currentQuestion = {};
+        let acceptingAnswers = false;
+        let score = 0;
+        let questionCounter = 0;
+        let availableQuesions = [];
+
+        let questions = []; 
+
+        fetch("./json/exam.json")
+            .then(res => res.json())
+            .then(result => {
+                question = result;
+                startGame();
+            })
+
+        const corrent_bonus = 10;
+        const max_questions = questions.length;
+
+        const startGame = () => {   
+            questionCounter = 0;
+            score = 0;
+            availableQuesions = [...questions];
+            getNewQuestioin()
+        } 
+       
+        const getNewQuestioin = () => {
+            if(availableQuesions.length === 0 | questionCounter >= max_questions){
+                console.log("end")
+                localStorage.setItem("mostRecentScore", score);
+            }
+
+            questionCounter++;
+            quizNumber.innerText = questionCounter;
+            questionCounterText.innerText = `${questionCounter}/${max_questions}`;
+            progressBar.style.width = `${(questionCounter / max_questions) * 100}%`;
+
+            const questionIndex = Math.floor(Math.random() * availableQuesions.length);
+            currentQuestion = availableQuesions[questionIndex];
+            question.innerText = currentQuestion.question;
+
+            choices.forEach((choice, idx) => {
+                const number = choice.dataset["number"];
+                choice.innerText = currentQuestion["choice" + number];
+            })
+
+            availableQuesions.splice(questionIndex, 1);
+            acceptingAnswers = true;
+        }
+
+        choices.forEach(choice => {
+            choice.addEventListener("click", e => {
+                if(!acceptingAnswers) return;
+
+                acceptingAnswers = false;
+                const selectedChoice = e.target;
+                const selectedAnswer = selectedChoice.dataset["number"]; 
+                const classToApply = selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+                
+                if (classToApply === "correct") {
+                    incrementScore(corrent_bonus);
+                }
+
+                selectedChoice.parentElement.parentElement.classList.add(classToApply);
+
+                setTimeout(() => {
+                    selectedChoice.parentElement.parentElement.classList.remove(classToApply);
+
+                    getNewQuestioin();
+                }, 2000)
+
+            })
+        });
+
+        incrementScore = (num) => {
+            score += num;
+            scoreText.innerText = score;
+        };
+
+       
+        const username = document.getElementById("username");
+        const saveScoreBtn = document.getElementById("saveScoreBtn");
+        const finalScore = document.querySelector(".quiz__result__score");
+        const mostRecentScore = localStorage.getItem("mostRecentScore");
+
+        const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+        const max_high_scores = 5;
+        finalScore.innerText = mostRecentScore;
+        
+        username.addEventListener("keyup", () => {
+            saveScoreBtn.disabled = !username.value;
+        })
+
+        const savehighScore = e => {
+            e.preventDefault();
+
+            const score = {
+                score: Math.floor(Math.random()*100),
+                name: username.value
+            };
+            highScores.push(score);
+            highScores.sort((a,b) => b.score - a.score);
+            highScores.splice(5);
+
+            localStorage.setItem("highScores", JSON.stringify(highScores));
+        }
+
+        const highScoresList = document.querySelector(".quiz__high__list");
+        const highScores2 = JSON.parse(localStorage.getItem("highScores")) || [];
+
+        highScoresList.innerHTML = highScores
+            .map(score => {
+                return `<li class="high-score">${score.name} - ${score.score}</li>`;
+            })
+            .join("");
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,490 @@
+@font-face {
+    font-family: 'NanumSquareNeo';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-aLt.eot');
+    src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-aLt.eot?#iefix') format('embedded-opentype'),
+         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-aLt.woff2') format('woff2'),
+         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-aLt.woff') format('woff'),
+         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-aLt.ttf') format("truetype");
+    font-display: swap;
+} 
+@font-face {
+    font-family: 'NanumSquareNeo';
+    font-weight: 400;
+    font-style: normal;
+    src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-bRg.eot');
+    src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-bRg.eot?#iefix') format('embedded-opentype'),
+         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-bRg.woff2') format('woff2'),
+         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-bRg.woff') format('woff'),
+         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-bRg.ttf') format("truetype");
+    font-display: swap;
+} 
+@font-face {
+    font-family: 'NanumSquareNeo';
+    font-weight: 700;
+    font-style: normal;
+    src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-cBd.eot');
+    src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-cBd.eot?#iefix') format('embedded-opentype'),
+         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-cBd.woff2') format('woff2'),
+         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-cBd.woff') format('woff'),
+         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-cBd.ttf') format("truetype");
+    font-display: swap;
+} 
+@font-face {
+    font-family: 'NanumSquareNeo';
+    font-weight: 800;
+    font-style: normal;
+    src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.eot');
+    src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.eot?#iefix') format('embedded-opentype'),
+         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.woff2') format('woff2'),
+         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.woff') format('woff'),
+         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-dEb.ttf') format("truetype");
+    font-display: swap;
+} 
+@font-face {
+    font-family: 'NanumSquareNeo';
+    font-weight: 900;
+    font-style: normal;
+    src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-eHv.eot');
+    src: url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-eHv.eot?#iefix') format('embedded-opentype'),
+         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-eHv.woff2') format('woff2'),
+         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-eHv.woff') format('woff'),
+         url('https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo-eHv.ttf') format("truetype");
+    font-display: swap;
+} 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'NanumSquareNeo';
+}
+*, *:before, *:after {
+    box-sizing:border-box;
+}
+body {
+    width: 100%;
+    overscroll-behavior: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* header */
+#header {
+    position: fixed;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    background-color: rgba(255,255,255,0.4);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgb(223, 223, 223);
+}
+#header h1 {
+    width: 30%;
+    font-weight: 700;
+}
+#header h1 em {
+    font-size: 0.6em;
+    font-style: normal;
+    vertical-align: -2px;
+}
+#header nav {
+    width: 70%;
+    text-align: right;
+}
+#header nav li {
+    display: inline;
+    padding: 2px 0 2px;
+    margin-left: 20px;
+}
+#header nav li a {
+    padding: 2px 0 2px 34px;
+    display: inline-block;
+    position: relative;
+}
+#header nav li a::before {
+    content: '';
+    background-image: url(../img/quiz_icon.png);
+    background-size: 200px;
+    background-position: 0 -25px;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#header nav li.check a::before {
+    background-position: 0 -50px;
+}
+
+
+/* footer */
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgb(223, 223, 223);
+    background-color: rgba(255,255,255,0.4);
+    backdrop-filter: blur(10px);
+}
+#footer a {
+    display: block;
+    padding: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* quiz__wrap */
+.quiz__wrap {
+    height: 100vh;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center
+}
+
+/* .quiz__main */
+.quiz__main {
+    /* display: none; */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 400px;
+    height: 400px;
+    background: #422e9115;
+    backdrop-filter: blur(10px);
+    border: 1px solid #412E91;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+.quiz__main h2 {
+    font-size: 3vw;
+    color: #412E91;
+    margin-bottom: 1vw;
+}
+.quiz__main .btn {
+    display: block;
+    border: 1px solid #422e9123;
+    padding: 10px 20px;
+    display: block;
+    text-align: center;
+    margin-bottom: 0.7vw;
+    background-color: #422e910b;
+    transition: all 0.3s;
+}
+.quiz__main .btn:hover {
+    border-color: #412E91;
+    box-shadow: 0.2vw 0.2vw 0.2vw #422e9123
+}
+
+/* quiz */
+.quiz {
+    width: 80%;
+    border-radius: 2vw;
+    padding: 2vw;
+    /* display: none */
+}
+.quiz__number {
+    font-size: 30px;
+    margin-bottom: 1vw;
+    display: inline-block;
+    color: rgb(187, 168, 255);
+    font-weight: 900;
+}
+.quiz__question {
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.quiz__question .desc {
+    font-size: 0.9em;
+    padding: 20px;
+    background: rgba(187, 168, 255, 0.147);
+    margin-top: 5px;
+}
+.quiz__answer {
+    font-size: 16px;
+}
+.quiz__answer label {
+    display: block;
+    border: 1px solid #422e9123;
+    margin-bottom: 0.5vw;
+    transition: border 0.3s;
+    cursor: pointer;
+    display: flex;
+}
+.quiz__answer label:hover {
+    border-color: #412E91;
+    box-shadow: 0.2vw 0.2vw 0.2vw #422e9123
+}
+.quiz__answer label input {
+    position: absolute;
+    left: -9999px;
+}
+.quiz__answer label span {
+    line-height: 1.5;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+.quiz__answer label span::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #fff;
+    margin-right: 15px;
+    display: flex;
+    flex-shrink: 0;
+    box-shadow: inset 0px 0px 0px 4px #412E91;
+    transition: all 0.25s;
+}
+/* .quiz__answer label input:checked + span {
+    background-color: #422e9124;
+    box-shadow: inset 0px 0px 0px 1px #412E91;
+} 
+.quiz__answer label input:checked + span::before {
+    box-shadow: inset 0px 0px 0px 10px #412E91;
+}*/
+.quiz__answer.correct label input:checked + span {
+    background-color: #422e9124;
+    box-shadow: inset 0px 0px 0px 1px #412E91;
+}
+.quiz__answer.correct label input:checked + span::before {
+    box-shadow: inset 0px 0px 0px 10px #412E91;
+}
+.quiz__answer.incorrect label input:checked + span {
+    background-color: #fc747424;
+    box-shadow: inset 0px 0px 0px 1px #ff4343;
+}
+.quiz__answer.incorrect label input:checked + span::before {
+    box-shadow: inset 0px 0px 0px 10px #ff4343;
+}
+.quiz__answer.incorrect label:hover {
+    border-color: #ff4343;
+    box-shadow: 0.2vw 0.2vw 0.2vw #fc747424
+}
+
+.question__explanation {
+    background-color: #422e910f;
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* quiz__confirm */
+.quiz__confirm {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #502bf38a;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    text-align: center;
+    transition: background 0.3s;
+}
+.quiz__confirm:hover {
+    background: #502bf3b9;
+}
+.quiz__confirm a {
+    display: block;
+    padding: 18px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.quiz__progress {
+    width: 0%;
+    height: 3px;
+    background: #412E91;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: width 3s linear;
+}
+
+/* quiz__result */
+.quiz__result {
+    position: fixed;
+    left: 450px;
+    top: 0;
+    /* transform: translate(-50%, -50%); */
+    width: 400px;
+    height: 400px;
+    background: #422e9115;
+    backdrop-filter: blur(10px);
+    border: 1px solid #412E91;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.quiz__result__score {
+    font-size: 34px;
+    color: #412E91;
+    padding: 20px 10px;
+}
+.quiz__result input {
+    border: 1px solid #422e9123;
+    width: 300px;
+    padding: 15px;
+    margin-bottom: 1vw;
+    display: inline-block;
+}
+.quiz__result .btn {
+    border: 1px solid #422e9123;
+    padding: 10px 20px;
+    display: block;
+    text-align: center;
+    margin-bottom: 0.7vw;
+    background-color: #422e910b;
+    transition: all 0.3s;
+    width: 100%;
+    font-size: 16px;
+}
+.quiz__result .btn[disabled]:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+.quiz__result .btn:hover {
+    border-color: #412E91;
+    box-shadow: 0.2vw 0.2vw 0.2vw #422e9123
+}
+
+/* quiz__high */
+.quiz__high {
+    position: fixed;
+    right: 0px;
+    bottom: 0;
+    /* transform: translate(-50%, -50%); */
+    width: 400px;
+    height: 400px;
+    background: #422e9115;
+    backdrop-filter: blur(10px);
+    border: 1px solid #412E91;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+.quiz__high h2 {
+    font-size: 3vw;
+    color: #412E91;
+    margin-bottom: 1vw;
+}
+.quiz__high__list li {
+    list-style: none;
+    text-align: left;
+    padding: 5px;
+}
+.quiz__high .btn {
+    display: block;
+    border: 1px solid #422e9123;
+    padding: 10px 20px;
+    display: block;
+    text-align: center;
+    margin-bottom: 0.7vw;
+    background-color: #422e910b;
+    transition: all 0.3s;
+    margin-top: 1vw;
+    width: 70%;
+}
+.quiz__high .btn:hover {
+    border-color: #412E91;
+    box-shadow: 0.2vw 0.2vw 0.2vw #422e9123
+}
+
+
+/* quiz__info */
+.quiz__info {
+    width: 80%;
+    font-size: 14px;
+    text-align: center;
+}
+.quiz__info__count {
+    text-align: center;
+}
+
+/* media */
+@media (max-width: 1200px){
+    .quiz__wrap {
+        padding: 10% 5%;
+    }
+}
+@media (max-width: 1000px){
+    .quiz__wrap {
+        padding: 10% 2%;
+    }
+}
+@media (max-width: 800px){
+    #header {
+        padding: 12px 15px;
+        background: #fff;
+    }
+    #header nav {
+        display: none;
+    }
+    #header h1 {
+        width: 100%;
+        font-size: 24px;
+    }
+    #footer {
+        background: #fff;
+    }
+    .quiz__wrap {
+        padding: 80px 16px 20% 16px;
+    }
+    .quiz {
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 0;
+    }
+    .quiz__number {
+        font-size: 34px;
+        color: rgb(187 168 255 / 45%);
+        font-weight: 100;
+        margin-bottom: 10px;
+    }
+    .quiz__question {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .quiz__question .desc {
+        padding: 10px;
+    }
+    .quiz__answer label span {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .quiz__answer label span::before {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        display: none;
+    }
+    .quiz__confirm a { 
+        font-size: 16px;
+    }
+}

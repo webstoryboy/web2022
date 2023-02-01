@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+
+    <link rel="stylesheet" href="css/quiz.css">
+
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/Cafe24Dangdanghae/Cafe24Dangdanghae.css" rel="stylesheet">
+
+    <style>
+        .quiz__select {
+            text-align: right;
+            padding: 20px;
+        }
+        .quiz__select li {
+            display: inline;
+        }
+        .quiz__select li + li {
+            margin-left: 38px;
+        }
+        .quiz__select li a {
+            display: inline-block;
+        }
+        .quiz__select li a .text {
+            display: inline-block;
+            font-size: 16px;
+            color: #000;
+            position: relative;
+            padding: 4px 0 5px 30px;
+            font-family: "DungGeunMo";
+        }
+        .quiz__select li a .text::before {
+            content: '';
+            background-image: url(img/quiz_icon.png);
+            background-position: 0 -25px;
+            background-size: 200px;
+            background-repeat: no-repeat;
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            left: 0; 
+            top: 1px;
+        }
+        .quiz__select li a .text:hover::before {
+            background-position: 0 -50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        01. 퀴즈 이펙트 - 정답 확인하기
+        02. 퀴즈 이펙트 - 주관식 확인하기
+        03. 퀴즈 이펙트 - 주관식(여러문제) 확인하기
+        04. 퀴즈 이펙트 - 객관식 확인하기
+        05. 퀴즈 이펙트 - 객관식(여러문제) 확인하기
+        06. 퀴즈 이펙트 - 객관식(여러문제) 확인하기 : 슬라이드 유형
+        07. 퀴즈 이펙트 - 객관식(여러문제) 확인하기 : 시험 유형
+        08. 퀴즈 이펙트 - 종합 문제
+    -->
+    <header id="header">
+        <h1><a href="#">Quiz</a> <em>객관식(여러문제) 확인하기 : 시험 유형</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+                <li class="active"><a href="quizEffect07.html">7</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__select">
+            <ul>
+                <li><a href="#"><span class="text">한문제씩 문제</span></a></li>
+                <li><a href="#"><span class="text">기출 문제</span></a></li>
+                <li><a href="#"><span class="text">랜덤 문제</span></a></li>
+            </ul>
+        </div>
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <div class="quiz__type">정보처리기사 필기</div>
+                <h2 class="quiz__question">
+                    <span class="number">01.</span>
+                    <div class="ask">요구사항 분석 시에 필요한 기술로 가장 거리가 먼 것은?</div>
+                </h2>
+                <div class="quiz__answer">
+                    <div class="quiz__selects">
+                        <label for="select1">
+                            <input type="radio" id="select1" class="select" name="select" value="1">
+                            <span class="choice">청취과 인터뷰 질문 기술</span>
+                        </label>
+                        <label for="select2">
+                            <input type="radio" id="select2" class="select" name="select" value="2">
+                            <span class="choice">분석과 중재기술</span>
+                        </label>
+                        <label for="select3">
+                            <input type="radio" id="select3" class="select" name="select" value="3">
+                            <span class="choice">설계 및 코딩 기술</span>
+                        </label>
+                        <label for="select4">
+                            <input type="radio" id="select4" class="select" name="select" value="4">
+                            <span class="choice">관찰 및 모델 작성 기술</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+    
+    </script>
+</body>
+
+</html>

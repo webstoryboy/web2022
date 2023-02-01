@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보처리 씹어먹자!</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .quiz__choice .option.correct {
+            background: red;
+        }
+        .quiz__choice .option.incorrect {
+            background: #000;
+        }
+        .quiz__choice .option.clicked {
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 객관식 -->
+    <header id="header">
+        <h1><a href="#">정&middot;처&middot;기 <em>정복하기</em></a></h1>
+        <nav>
+            <ul>
+                <li><a href="quiz1.html">주관식 정답확인하기 유형</a></li>
+                <li class="check"><a href="quiz2.html">객관식 정답확인하기 유형</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__main hide">
+            <div>
+                <h2><em>정보처리</em> 합격하기</h2>
+                <div class="check">
+                    <ul>
+                        <li>문제 수 : 10문항</li>
+                        <li>문제 유형 : 기출문제</li>
+                        <li>문제 난이도 : 중간</li>
+                        <li>문제 유형 : 주관식</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn">시작하기</a>
+                <a href="#" class="btn">점수보기</a>
+            </div>
+        </div>
+        <!-- //quiz__main -->
+
+        <div class="quiz__result hide">
+            <div>
+                <h2><em>정보처리</em> 시험 결과</h2>
+                <p class="result"><span class="i0">0</span>점</p>
+                <div class="info">
+                    총 문제수 : <span class="i1">0</span> / 푼 문제 : <span class="i2">0</span> / 맞은 문제 : <span class="i3">0</span> / 틀린 문제 : <span class="i4">0</span>
+                </div>
+                <form>
+                    <input type="text" name="username" id="username" placeholder="기록을 원하시면 이름을 적어주세요!">
+                    <button type="submit" class="btn" id="saveScoreBtn" onclick="savehighScore(event)">저장하기</button>
+                </form>
+                <a href="#" class="btn" onclick="tryAgainQuiz()">다시하기</a>
+                <a href="#" class="btn" onclick="goToHome()">처음으로</a>
+            </div>
+            
+        </div>
+        <!-- //quiz__result -->
+
+
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <span class="quiz__number"></span>
+                <div class="quiz__question"></div>
+                <div class="quiz__choice"></div>
+                <div class="quiz__next">
+                    <a href="#" class="btn" onclick="nextQuestion()">다음문제</a>
+                </div>
+                <div class="quiz__indicator">
+                    <!-- <span class="correct"></span>
+                    <span class="incorrect"></span>
+                    <div class="num">4/5</div> -->
+                </div>
+            </div>
+        </div>
+        <!-- //quiz__wrap -->
+
+        <div class="quiz__confirm">
+            
+        </div>
+        <!-- //quiz__confirm -->
+
+
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        const quiz = [
+            {
+                question: "GoF(Gang of Four)의 디자인 패턴에서 행위 패턴에 속하는 것은?",
+                options : ["Builder", "Visitor", "Prototype", "Bridge"],
+                answer : 1
+            },
+            {
+                question: "객체지향 프로그램에서 데이터를 추상화하는 단위는?",
+                options : ["메소드", "클래스", "상속성", "메시지"],
+                answer : 1
+            },
+            {
+                question: "객체지향 기법에서 클래스들 사이의 '부분-전체(part-shole)' 관계 또는 '부분(is-a-part-of)'의 관계로 설명되는 연관성을 나태나는 용어는?",
+                options : ["일반화", "추상화", "캡슐화", "집단화"],
+                answer : 3
+            },
+            {
+                question: "객체지향 분석 방법론 중 E-R 다이어그램을 사용하여 객체의 행위를 모델링하여, 객체 식별, 구조 식별, 주체 정의, 속성 및 관계 정의, 서비스 정의 등의 과정으로 구성되는 것은?",
+                options : ["Coad와 Yourdon 방법", "Booch 방법", "Jacobson 방법", "Wirfs-Brocks 방법"],
+                answer : 0,
+                img : "ddd"
+            }
+        ]
+
+        const quizNumber = document.querySelector(".quiz__number");
+        const quizQuestion = document.querySelector(".quiz__question");
+        const quizChoice = document.querySelector(".quiz__choice");
+        const quizIndicator = document.querySelector(".quiz__indicator");
+        const quizResult = document.querySelector(".quiz__result");
+
+        let questionCounter = 0;
+        let currentQuestion;
+        let availableQuestioin = [];
+        let availableOptions = [];
+        let correctAnswers = 0;
+        let attempt = 0;
+
+        function setAvailableQuestion(){
+            const totalQuestion = quiz.length;
+            for( let i=0; i < totalQuestion; i++ ){
+                availableQuestioin.push(quiz[i])
+            }
+        }
+
+        function getNewQuestion(){
+            quizNumber.innerHTML = questionCounter + 1;
+
+            const questionIndex = availableQuestioin[Math.floor(Math.random() * availableQuestioin.length)];
+            currentQuestion = questionIndex;
+            quizQuestion.innerHTML = currentQuestion.question;
+
+            const index1 = availableQuestioin.indexOf(questionIndex);   
+            availableQuestioin.splice(index1, 1);
+
+            if(currentQuestion.hasOwnProperty("img")){
+                const imgDiv = document.createElement("img");
+                img.src = currentQuestion.img;
+            } 
+
+            const optionLen = currentQuestion.options.length;
+            for(let i=0; i<optionLen; i++){
+                availableOptions.push(i)
+            }
+
+            quizChoice.innerHTML = "";
+
+            for(let i=0; i<optionLen; i++){
+                const optionIndex = availableOptions[Math.floor(Math.random() * availableOptions.length)];
+                const index2 = availableOptions.indexOf(optionIndex);
+                availableOptions.splice(index2, 1);
+
+                const option = document.createElement("div");
+                option.innerHTML = currentQuestion.options[i];
+                option.id = i;
+                option.className = "option";
+                quizChoice.appendChild(option);
+                option.setAttribute("onclick", "getResult(this)");
+            }
+
+            questionCounter++;
+        }
+
+        function getResult(element){
+            const id = parseInt(element.id);
+            if(id === currentQuestion.answer){
+                element.classList.add("correct");
+
+                updateAnswerIndicatgor("correct");
+                correctAnswers++;
+            } else {
+                element.classList.add("incorrect");
+
+                updateAnswerIndicatgor("incorrect");
+
+                const optionLen = quizChoice.children.length;
+                for(let i=0; i<optionLen; i++){
+                    if(parseInt(quizChoice.children[i].id) === currentQuestion.answer){
+                        quizChoice.children[i].classList.add("correct")
+                    }
+                }
+            }
+            attempt++;
+            unclickableOption();
+        }
+
+        function unclickableOption(){
+            const optionLen = quizChoice.children.length;
+            for(let i=0; i<optionLen; i++){
+                quizChoice.children[i].classList.add("clicked")
+            }
+        }
+
+        function answerIndicator(){
+            quizIndicator.innerHTML = "";
+            const totalQuestion = quiz.length;
+            for(let i=0; i<totalQuestion; i++){
+                const indicator = document.createElement("span");
+
+                quizIndicator.appendChild(indicator);
+            }
+        }
+
+        function updateAnswerIndicatgor(markType){
+            quizIndicator.children[questionCounter-1].classList.add(markType)
+        }
+
+        function nextQuestion(){
+            if(questionCounter === quiz.length){
+                quizOver();
+                
+            } else {
+                getNewQuestion();
+            }
+        }
+
+        function quizOver(){
+            quizResult.classList.remove("hide");
+            quizResults();
+        }
+
+        function quizResults(){
+            const quizResultI0 = document.querySelector(".quiz__result .i0"); // 총 점수
+            const quizResultI1 = document.querySelector(".quiz__result .i1"); // 총 문제수
+            const quizResultI2 = document.querySelector(".quiz__result .i2"); // 푼 문제수
+            const quizResultI3 = document.querySelector(".quiz__result .i3"); // 맞은 문제수
+            const quizResultI4 = document.querySelector(".quiz__result .i4"); // 틀린 문제수
+
+            const percentage = (correctAnswers/quiz.length) * 100;
+            quizResultI0.innerHTML = percentage.toFixed();
+            quizResultI1.innerHTML = quiz.length;
+            quizResultI2.innerHTML = attempt;
+            quizResultI3.innerHTML = correctAnswers;
+            quizResultI4.innerHTML = attempt - correctAnswers;
+        }
+
+        function resetQuiz(){
+            questionCounter = 0;
+            correctAnswers = 0;
+            attempt = 0;
+        }
+
+        function tryAgainQuiz(){
+            quizResult.classList.add("hide");
+
+            resetQuiz();
+        }
+
+        function goToHome(){
+
+        }
+
+        
+
+        window.onload = function(){
+            setAvailableQuestion();
+            getNewQuestion();
+
+            answerIndicator();
+        }
+    </script>
+  
+</body>
+</html>

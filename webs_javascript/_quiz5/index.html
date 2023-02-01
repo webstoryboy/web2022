@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보처리기사 * 산업기사 * 기능사</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- 문제유형 : 객관식 선택형(정답 바로 확인하기) -->
+    <header id="header" class="hide">
+        <h1><a href="#">정&middot;처&middot;기 <em>정복하기</em></a></h1>
+        <nav>
+            <ul>
+                <li><a href="#">주관식 정답확인하기 유형</a></li>
+                <li class="check"><a href="#">객관식 정답확인하기 유형</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__close">
+            <span>닫기</span>
+        </div>
+        <div class="quiz__loader hide">
+            <div class="loader"><span></span></div>
+        </div>
+        <!-- //quiz__loader -->
+
+        <div class="quiz__main">
+            <h2>정보처리 <em>기출문제</em></h2>
+            <p class="sub">정보처리기사 &middot; 정보처리산업기사 &middot; 정보처리기능사</p>
+            <!-- <ul class="select">
+                <li class="selcct-option" data-time="S2020_01"><a href="#">주관식</a></li>
+                <li class="selcct-option" data-time="1"><a href="#">객관식</a></li>
+                <li class="selcct-option" data-time="2"><a href="#">기출문제</a></li>
+                <li class="selcct-option" data-time="3"><a href="#">랜덤문제</a></li>
+            </ul> -->
+            <hr>
+            <ul class="select s2">
+                <li class="selcct-option" data-time="gineungsa2011_05"><a href="#">2011년 5회 정보처리기능사 기출문제</a></li>
+                <li class="selcct-option" data-time="gineungsa2011_04"><a href="#">2011년 4회 정보처리기능사 기출문제</a></li>
+                <li class="selcct-option" data-time="gineungsa2011_03"><a href="#">2011년 3회 정보처리기능사 기출문제</a></li>
+                <li class="selcct-option" data-time="gineungsa2011_01"><a href="#">2011년 1회 정보처리기능사 기출문제</a></li>
+            </ul>
+            <hr>
+            <ul class="select s2">
+                <li class="selcct-option" data-time="gisa2020_01"><a href="#">2020년 1회/2회 정보처리기사 기출문제</a></li>
+                <li class="selcct-option" data-time="gisa2020_03"><a href="#">2020년 3회 정보처리기사 기출문제</a></li>
+                <li class="selcct-option" data-time="gisa2020_04"><a href="#">2020년 4회 정보처리기사 기출문제</a></li>
+                <li class="selcct-option" data-time="gisa2021_01"><a href="#">2021년 1회 정보처리기사 기출문제</a></li>
+                <li class="selcct-option" data-time="gisa2021_02"><a href="#">2021년 2회 정보처리기사 기출문제</a></li>
+                <li class="selcct-option" data-time="gisa2021_03"><a href="#">2021년 3회 정보처리기사 기출문제</a></li>
+            </ul>
+            <div class="select start">
+                <a href="#">시작하기</a>
+            </div>
+        </div>
+        <!-- //quiz__main -->
+
+        <div class="quiz__wrap hide">
+            <div class="quiz__title"></div>
+            <div class="quiz">
+                <div class="quiz__number"></div>
+                <div class="quiz__question"></div>
+                <div class="quiz__img"></div>
+                <div class="quiz__choice"></div>
+                <div class="quiz__next"></div>
+                <div class="quiz__indicator"></div>
+                <div class="quiz__hint hide"></div>
+                <div class="quiz__detail hide"></div>
+            </div>
+        </div>
+        <!-- //quiz__wrap -->
+    </main>
+    <!-- //main -->
+
+    <footer id="footer" class="hide">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+
+    <script>
+        const quizLoader = document.querySelector(".quiz__loader");           //로더
+        const quizMain = document.querySelector(".quiz__main");               //시작하기 모달창
+        const quizMainSelect = document.querySelectorAll(".selcct-option");   //시작하기 모달창 선택 메뉴
+        const quizMainStart = document.querySelector(".quiz__main .start");   //시작하기 모달창 선택 메뉴
+        const quizTitle = document.querySelector(".quiz__title");             //쿠즈 타이틀
+        const quizResult = document.querySelector(".quiz__result");           //결과 모달창
+        const quizWrap = document.querySelector(".quiz__wrap");               //퀴즈
+
+        const quizNumber = document.querySelector(".quiz__number");         //퀴즈 번호
+        const quizQuestion = document.querySelector(".quiz__question");     //퀴즈 문제
+        const quizImg = document.querySelector(".quiz__img");               //퀴즈 이미지
+        const quizChoice = document.querySelector(".quiz__choice");         //퀴즈 보기
+        const quizNext = document.querySelector(".quiz__next");             //다음 문제 보기
+        const quizIndicator = document.querySelector(".quiz__indicator");   //퀴즈 정답 표시
+        const quizHint = document.querySelector(".quiz__hint");             //퀴즈 힌트 보기
+        const quizDetail = document.querySelector(".quiz__detail");         //퀴즈 자세히 보기
+
+        let quesitonCounter = 0;    //퀴즈 카운트
+        let quesitonScore = 0;      //퀴즈 점수
+        let quesitonAttempt = 0;    //퀴즈 시도 
+        let questionCorrect = 0;    //맞은 갯수
+
+        let questionAll = [];           //모든 퀴즈 문제
+        let quesionsAvailable = [];     //이용가능한 퀴즈 문제
+        let questionCurrent = {}        //현재 문제
+
+        let questionTime = 0;
+        let questionTitle = "";
+        let jsonData = "";
+
+        quizMainSelect.forEach(select => {
+            select.addEventListener("click", (e) => {
+                e.preventDefault();
+                
+                //기출 문제 년도 가져오기
+                questionTime = select.dataset.time;
+                dataQuestion(questionTime);
+
+                questionTitle = select.innerText;
+                quizTitle.innerHTML = questionTitle;
+
+                select.classList.add("selected");
+            })
+        });
+
+        quizMainStart.addEventListener("click", () => {
+            quizMain.classList.add("hide");
+            quizWrap.classList.remove("hide");
+        });
+
+        // 데이터 가져오기
+        const dataQuestion = (time) => {   
+            fetch(`json/${time}.json`)
+            .then(res => res.json())
+            .then(items => {
+
+                questionAll = items.map((item, index) => {
+                    const formattedQuestion = {
+                        question: item.question,
+                    };
+                    formattedQuestion.number = index + 1;
+                    const answerChoices = [...item.incorrect_answers];       //틀린답 불러오기
+                    formattedQuestion.answer = Math.floor(Math.random() * answerChoices.length) + 1;  //정답 랜덤으로 불러오기
+                    answerChoices.splice(formattedQuestion.answer - 1, 0, item.correct_answer); //정답이랑 오답이랑 합치기
+                    answerChoices.forEach((choice, index) => {
+                        formattedQuestion["choice" + (index + 1)] = choice;
+                    });
+                    formattedQuestion.choiceLength = answerChoices.length;      //정답 갯수 확인하기 
+                    
+                    if(item.hasOwnProperty("desc")){        //desc가 있으면 출력
+                        formattedQuestion.desc = item.desc;
+                    }
+                    if(item.hasOwnProperty("detail_desc")){        //detail_desc 있으면 출력
+                        formattedQuestion.detail = item.detail_desc;
+                    }
+                    if(item.hasOwnProperty("img")){        //img가 있으면 출력
+                        formattedQuestion.img = item.img;
+                    }
+
+                    console.log(formattedQuestion)
+                    return formattedQuestion;
+                });
+
+                startGame();
+            })
+            .catch((err) => console.error(err));
+        }
+
+        // 시작하기
+        const startGame = () => {   
+            quesitonCounter = 0;
+            quesitonScore = 0;
+            quesitonAttempt = 0;
+            quesionsAvailable = [...questionAll];
+            // console.log(quesionsAvailable)
+
+            newQuestion();      //문제 만들기
+            nextSection();      //다음 버튼 만들기
+            answerIndicator();  //정답 인디게이터 만들기
+        }
+
+        // 문제 만들기
+        const newQuestion = () => {
+            quesitonCounter++;
+
+            //번호 만들기
+            quizNumber.innerHTML = quesitonCounter;
+
+            //문제 만들기
+            const questionRamdomIndex = Math.floor(Math.random() * quesionsAvailable.length);
+            questionCurrent = quesionsAvailable[questionRamdomIndex];
+            quizQuestion.innerHTML = questionCurrent.question;
+            quesionsAvailable.splice(questionRamdomIndex, 1);   //풀었던 문제 제거
+
+            //문제 해설
+            quizImg.innerHTML = "";         //이미지 초기화
+            if(questionCurrent.hasOwnProperty("img")){
+                const imgDiv = document.createElement("img");
+                quizImg.appendChild(imgDiv);
+                imgDiv.src = questionCurrent.img;
+            } 
+
+            //보기 나오기
+            quizChoice.innerHTML = "";      //보기 초기화
+            const choiceIndex = questionCurrent.choiceLength;   //보기 갯수
+            
+            for(let i=0; i<choiceIndex; i++){
+                const choice = document.createElement("div");
+                quizChoice.appendChild(choice);
+                choice.innerHTML = questionCurrent["choice" + (i + 1)];
+                choice.id = (i + 1);
+                choice.className = "chocie";
+                choice.setAttribute("onclick", "getResult(this)");
+            }
+        }
+
+        // 결과 확인하기
+        const getResult = (elem) => {
+            const answer = parseInt(elem.id);
+
+            if(answer === questionCurrent.answer){
+                console.log("정답");
+                elem.classList.add("correct");
+                updateAnswerIndicatgor("correct");
+
+                questionCorrect++;
+            } else {
+                console.log("오답");
+                elem.classList.add("incorrect");
+                updateAnswerIndicatgor("incorrect");
+
+                //오답일 경우 정답 표시
+                const choiceIndex = questionCurrent.choiceLength;
+                for(let i=0; i<choiceIndex; i++){
+                    if(parseInt(quizChoice.children[i].id) === questionCurrent.answer){
+                        quizChoice.children[i].classList.add("correct");
+                    }
+                }
+            }
+
+            //힌트 표시하기
+            quizHint.innerHTML = "";    //해설 초기화
+            
+            if(questionCurrent.hasOwnProperty("desc")){
+                quizHint.innerHTML = questionCurrent.desc;
+                quizHint.classList.remove("hide");
+            }
+
+            //자세히 보기 표시하기
+            quizDetail.innerHTML = "";    //자세히 보기 초기화
+            
+            if(questionCurrent.hasOwnProperty("detail")){
+                quizDetail.innerHTML = `<a href="${questionCurrent.detail}" target="_blank">${questionCurrent.detail}</a>`;
+                quizDetail.classList.remove("hide");
+            }
+
+            // 두번 클릭 방지
+            const choiceIndex = questionCurrent.choiceLength;
+            for(let i=0; i<choiceIndex; i++){
+                quizChoice.children[i].classList.add("clicked");
+            }
+        }
+
+        // 다음 섹션(다음버튼/해설보기)
+        const nextSection = () => {
+            quizNext.innerHTML = `<a href="#" class="btn" onclick="nextQuestion()">다음문제</a>`;
+        }
+
+        // 다음 문제
+        const nextQuestion = () => {
+            quizHint.classList.add("hide");
+            quizDetail.classList.add("hide");
+            //마지막 문제
+            if(quesitonCounter === questionAll.length){
+                gameOver();
+            } else {
+                newQuestion();
+            }
+        }
+
+        // 정답 인디게이터 표시
+        const answerIndicator = () => {
+            const questionLength = questionAll.length;
+
+            for(let i=0; i<questionLength; i++){
+                const indicator = document.createElement("span");
+
+                quizIndicator.appendChild(indicator);
+            }
+        }
+
+        // 정답 인디게이터 업데이트
+        const updateAnswerIndicatgor = (type) => {
+            quizIndicator.children[quesitonCounter-1].classList.add(type);
+        }
+
+        // 게임 끝났을 때 
+        const gameOver = () => {
+            alert("게임 오버")
+        }
+
+        // window.onload = () => {
+        //     dataQuestion(); //데이터 가져오기
+        // }
+    </script>
+</body>
+</html>

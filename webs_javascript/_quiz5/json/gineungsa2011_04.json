@@ -1,0 +1,315 @@
+[
+    {
+        "subject": "전자 계산기 일반",
+        "question": "일반적으로 명령어의 패치 사이클 중에는 현재 수행하고 있는 명령어의 위치를 가리키고, 실행 사이클 중에는 바로 다음에 실행할 명령어의 위치를 가리키는 Register는?",
+        "correct_answer": "프로그램 카운터(program counter)",
+        "incorrect_answers": ["누산기(accumulator)","명령어 레지스터(instruction register)","범용 레지스터(general purpose register)"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "스택 연산에서 데이터를 삽입하거나 삭제하는 동작을 나타내는 것은?",
+        "correct_answer": "PUSH, POP",
+        "incorrect_answers": ["ADD, SUB","LOAD, STORE","MOV, MUL"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "다음 중 제어장치에서 명령어의 실행 사이클에 해당하지 않는 것은?",
+        "correct_answer": "직접 주기(direct cycle)",
+        "incorrect_answers": ["인출 주기(fetch cycle)","간접 주기(indirect cycle)","실행 주기(execute cycle)"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "전가산기(Full Adder)는 어떤 회로로 구성되는가?",
+        "correct_answer": "반가산기 2개와 OR 게이트로 구성된다.",
+        "incorrect_answers": ["반가산기 1개와 OR 게이트로 구성된다.","반가산기 1개와 AND 게이트로 구성된다.","반가산기 2개와 AND 게이트로 구성된다."]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "CISC(Complex Instruction Set Computer)의 특징으로 틀린 것은?",
+        "correct_answer": "단일 사이클의 명령어 실행",
+        "incorrect_answers": ["많은 수의 명령어","다양한 주소지정 방식","가변 길이 명령어 형식"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "EBCDIC 코드는 몇개의 Zone bit를 갖는가?",
+        "correct_answer": "4",
+        "incorrect_answers": ["1","2","3"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "가상 메모리를 사용하는 목적으로 가장 옳은 것은?",
+        "correct_answer": "주기억 장치의 용량 제한으로 발생하는 문제 해결",
+        "incorrect_answers": ["CPU와 주기억 장치 사이의 속도 차이 개선","대용량 멀티미디어 데이터 보존을 위한 백업","컴퓨터 부팅에 사용되는 초기화 프로그램 보관"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "감산기, 보수기, 누산기, 가산기 등 다음 회로와 관련 있는 장치는?",
+        "correct_answer": "연산장치",
+        "incorrect_answers": ["제어장치","기억장치","입력장치"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "다음 진리표에 해당하는 논리식은?",
+        "correct_answer": "4",
+        "incorrect_answers": ["1","2","3"],
+        "img": "gineungsa2011_04_01.jpg"
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "8bit를 1word로 이용하는 컴퓨터에서 op code를 3bit 사용하면 인스트럭션을 몇개 사용할 수 있는가?",
+        "correct_answer": "8",
+        "incorrect_answers": ["4","16","6"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "(A+1)·(B+1)+C의 논리식을 간단히 한 결과는?",
+        "correct_answer": "1",
+        "incorrect_answers": ["0","A","C"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "다음과 같은 논리식으로 구성되는 회로는?(단, S는 합(Sum), C는 자리올림(Carry)을 나타낸다.)",
+        "correct_answer": "반가산기(Half adder)",
+        "incorrect_answers": ["전가산기(Full adder)","전감산기(Full Subtracter)","부호기(Encoder)"],
+        "img": "gineungsa2011_04_02.jpg"
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "다음 중 주소 일부를 접속하거나 계산하여 기억 장치에 접근 시킬 수 있는 주소의 일부분을 생략한 주소 표현 방식은?",
+        "correct_answer": "약식 주소",
+        "incorrect_answers": ["절대 주소","생략 주소","자료 자신"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "묵시적 주소지정 방식을 사용하는 산술 명령어는 주로 어떤 레지스터의 내용을 사용하여 연산을 수행하는가?",
+        "correct_answer": "AC",
+        "incorrect_answers": ["PC","SP","MBR"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "다음과 같은 논리회로에서 A의 값이 1010, B의 값이 1110일 때 출력 Y의 값은?",
+        "correct_answer": "0100",
+        "incorrect_answers": ["1111","1001","1010"],
+        "img": "gineungsa2011_04_03.jpg"
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "제어 논리 장치(CLU)와 산술논리연산장치(ALU)의 실행 순서를 제어하기 위해 사용하는 레지스터는?",
+        "correct_answer": "Flag Register",
+        "incorrect_answers": ["Accumulator","Data Register","Status Register"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "CPU의 정보처리 속도 단위 중 초당 100만개의 명령어를 수행하는 것을 나타내는 단위는?",
+        "correct_answer": "MIPS",
+        "incorrect_answers": ["MHZ","KIPS","LIPS"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "순차적인 주소지정 등에 유리하며, 주소지정에 2개의 레지스터가 사용되는 방식은?",
+        "correct_answer": "색인 Addressing",
+        "incorrect_answers": ["직접 Addressing","간접 Addressing","상대 Addressing"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "개인용 컴퓨터에 주로 사용되고 있는 중앙처리장치는 무엇으로 구성되는가?",
+        "correct_answer": "마이크로프로세서",
+        "incorrect_answers": ["코프로세서","핸드쉐이킹","초고밀도 집적회로"]
+    },{
+        "subject": "전자 계산기 일반",
+        "question": "JK 플립플롭에서 J=K=1일 때 출력 동작은?",
+        "correct_answer": "Complement",
+        "incorrect_answers": ["Set","Clear","No Change"]
+    },
+    {
+        "subject": "패키지 활용",
+        "question": "다음의 SQL 명령에서 DISTINCT의 의미를 가장 잘 설명한 것은?<div class='qd'>SELECT DISTINCT의 학과명 FROM 학생 WHERE 총점 > 80</div>",
+        "correct_answer": "학과명이 중복되지 않게 검색한다.",
+        "incorrect_answers": ["중복된 학과명만 검색한다","동일한 총점을 가진 학생만 검사한다.","학과명만 제외하고 검색한다."]
+    },{
+        "subject": "패키지 활용",
+        "question": "스프레드시트에서 조건을 부여하여 이에 맞는 자료들만 추출하여 표시하는 것을 무엇이라고 하는가?",
+        "correct_answer": "필터",
+        "incorrect_answers": ["정렬","매크로","프리젠테이션"]
+    },{
+        "subject": "패키지 활용",
+        "question": "관계 데이터베이스에서 하나의 애트리뷰트가 취할수 있는 같은 타입의 모든 원자값의 집합을 무엇이라고 하는가?",
+        "correct_answer": "도메인(domain)",
+        "incorrect_answers": ["튜플(tuple)","스키마(schema)","인스턴스(instance)"]
+    },{
+        "subject": "패키지 활용",
+        "question": "데이터베이스 제어어(DCL)중 사용자에게 조작에 대한 권한을 부여하는 명령어는?",
+        "correct_answer": "GRANT",
+        "incorrect_answers": ["IPTION","REVOKE","VALUES"]
+    },{
+        "subject": "패키지 활용",
+        "question": "프리젠테이션에서 화면 전체를 전환하는 단위를 의미하는 것은?",
+        "correct_answer": "슬라이드",
+        "incorrect_answers": ["개체","개요","스크린 팁"]
+    },{
+        "subject": "패키지 활용",
+        "question": "데이터베이스 설계 단계를 순서대로 기술한 것은?",
+        "correct_answer": "개념적 설계 → 논리적 설계 → 물리적 설계",
+        "incorrect_answers": ["논리적 설계 → 개념적 설계 → 물리적 설계","논리적 설계 → 물리적 설계 → 개념적 설계","개념적 설계 → 물리적 설계 → 논리적 설계"]
+    },{
+        "subject": "패키지 활용",
+        "question": "데이터베이스에서 정보 부재를 명시적으로 표현하기 위해 사용하는 특수한 데이터 값은?",
+        "correct_answer": "널(null)",
+        "incorrect_answers": ["공백(blank)","샵(#)","영(zero)"]
+    },{
+        "subject": "패키지 활용",
+        "question": "스프레드시트에 행과 열이 교차되면서 만들어지는 각각의 사각형을 무엇이라고 하는가?",
+        "correct_answer": "셀",
+        "incorrect_answers": ["차수","카디널리티","슬라이드"]
+    },{
+        "subject": "패키지 활용",
+        "question": "하나 이상의 기본 테이블로 부터 유도되어 만들어 지는 가상 테이블은?",
+        "correct_answer": "VIEW",
+        "incorrect_answers": ["WINDOW","SCHEMA","DOMAIN"]
+    },{
+        "subject": "패키지 활용",
+        "question": "테이블을 제거할 때 사용하는 SQL 명령어는?",
+        "correct_answer": "DROP",
+        "incorrect_answers": ["DELETE","VIEW","ALTER"]
+    },{
+        "subject": "PC 운영 체제",
+        "question": "UNIX 에서 파일을 삭제할 때 사용되는 명령어는?",
+        "correct_answer": "rm",
+        "incorrect_answers": ["ls","cp","pwd"],
+        "keyword": "UNIX"
+    },{
+        "subject": "PC 운영 체제",
+        "question": "다음( ) 안에 알맞은 것은?<div class='qd'>Most of the practical deadlock-handling techniques fail into one of these three categories, which are customarily called ( &nbsp;&nbsp;&nbsp;&nbsp; ), deadlock avoidance, and deadlock detection and recovery, respectively</div>",
+        "correct_answer": "deadlock prevention",
+        "incorrect_answers": ["deadlock waiting","deadlock preemption","deadlock exclusion"]
+    },{
+        "subject": "PC 운영 체제",
+        "question": "도스(MS-DOS)의 명령어 중 비교적 자주 사용되며 실행과정이 간단하고 별도의 파일 형태를 갖지 않아 언제든지 실행이 가능한 것은?",
+        "correct_answer": "CLS",
+        "incorrect_answers": ["SORT","SYS","FDISK"],
+        "desc": "내부 명령어 : CLS, DIR, VER, COPY, DATE, TIME, ME, CD, RD, PROMPT, VOL, TYPE<br>외부 명령어: ATTRIB, FROMAT, CHKDSK, FDISK, LAVEL, SCANDISK, DISKCOPY, XCOPY, DELTREE, SORT, SYS"
+    },{
+        "subject": "PC 운영 체제",
+        "question": "시작버튼 위에서 마우스의 오른쪽 버튼을 눌렀을때 나타나는 메뉴가 아닌 것은?(오래된 문제 무시)",
+        "correct_answer": "설정",
+        "incorrect_answers": ["열기","탐색","찾기"]
+    },{
+        "subject": "PC 운영 체제",
+        "question": "UNIX 시스템의 구성을 크게 세 부분으로 나눌때 해당하지 않는 것은?",
+        "correct_answer": "Block",
+        "incorrect_answers": ["Shell","Kernel","Utility"]
+    },{
+        "subject": "PC 운영 체제",
+        "question": "다음중 프로그래밍 시스템 내에서 서로 다른 프로세스가 일어날수 없는 사건을 무한정 기다리고 있는 것은?",
+        "correct_answer": "교착상태",
+        "incorrect_answers": ["세마포어","가비지 수집","코루틴"]
+    },{
+        "subject": "PC 운영 체제",
+        "question": "운영체제(Operating System)의 목적이 아닌 것은",
+        "correct_answer": "반환 시간 증가",
+        "incorrect_answers": ["사용 가능도 향상","처리 능력 향상","신뢰도 향상"]
+    },{
+        "subject": "PC 운영 체제",
+        "question": "다음의 설명이 의미하는 것은?<div class='qd'>This is proteted variable (or abstract data type) which constitutes the classic method for restricting access to shared resources, such as shared memory, in a mutiprogramming environment. This is a counter for a set of available resource, rather than a locked/unlocked flag of single resource</div>",
+        "correct_answer": "Mutex",
+        "incorrect_answers": ["Event","Thread","Critical Section"]
+    },{
+        "subject": "PC 운영 체제",
+        "question": "한 번의 마우스 조작만으로 현재 실행중인 응용프로그램 사이를 오가며 작업할 수 있는 환경을 제공하는 것은?",
+        "correct_answer": "작업 표시줄",
+        "incorrect_answers": ["바탕화면","내 컴퓨터","시작 버튼"]
+    },{
+        "subject": "PC 운영 체제",
+        "question": "도스(MS-DOS)에서 attrib 명령어의 옵션에 대한 설명으로 옳지 않은 것은?",
+        "correct_answer": "읽기 전용 파일 속성 : P",
+        "incorrect_answers": ["백업 파일 속성 : A","시스템 파일 속성 : S","숨김 파일 속성 : H"],
+        "desc": "읽기 전용 파일 속성 : R"
+    },{
+        "subject": "PC 운영 체제",
+        "question": "도스(MS_DOS)의 필터(Filter)명령어 중 하나 또는 여러개의 파일에서 특정한 문자열을 검색하는 명령어는?",
+        "correct_answer": "FIND",
+        "incorrect_answers": ["MORE","SORT","SEARCH"]
+    },{
+        "subject": "PC 운영 체제",
+        "question": "제어판에서 MIDI(Musical Instrument Digital Interface)형식의 음악 파일을 재생하는데 필요한 드라이브 파일을 설정하는 것은?",
+        "correct_answer": "멀티미디어",
+        "incorrect_answers": ["시스템","사운드","디스플레이"]
+    },{
+        "subject": "PC 운영 체제",
+        "question": "폴더명에 대한 설명으로 틀린 것은?",
+        "correct_answer": "폴더명은 공백을 포함할 수 없다",
+        "incorrect_answers": ["하나의 폴더 내에 동일한 이름의 폴더가 존재할 수 없다"," 폴더의 이름은 255자 이내로 작성한다.","'?', '/'는 폴더이름으로 사용할 수 없다"]
+    },{
+        "subject": "PC 운영 체제",
+        "question": " 디스크 조각 모음에 관한 설명으로 틀린 것은?",
+        "correct_answer": "CD-ROM 드라이브 및 네트워크 드라이브에서도 디스크 조각모음을 수행할 수 있다",
+        "incorrect_answers": ["조각 모음을 하는데 걸리는 시간은 볼륨에 있는 파일의 수와 크기, 조각난 양 등에 따라 달라진다","컴퓨터 시스템의 속도를 향상시키는 방법 중 하나이다.","디스크를 효율적으로 사용하기 위해 파일을 정리하는 것이다."]
+    },{
+        "subject": "PC 운영 체제",
+        "question": "UNIX에서 사용할 수 있는 편집기가 아닌 것은?",
+        "correct_answer": "et",
+        "incorrect_answers": ["ed","ex","vi"],
+        "desc": "UNIX 편집기에는 vi, ed, ex, emacs, pico, pe 등이 있습니다."
+    },{
+        "subject": "PC 운영 체제",
+        "question": "UNIX 명령과 MS-DOS 명령의 기능이 서로 다르게 연결된 것은?",
+        "correct_answer": "rd - rm",
+        "incorrect_answers": ["ls - dir","cp - copy","cd - cd"],
+        "desc": "MS-DOS(RD) : 디렉토리 삭제, UNIX(RM) : 파일 삭제"
+    },{
+        "subject": "PC 운영 체제",
+        "question": "실행 상태의 프로세스가 종료되기 전에 입출력이나 기타 다른 작업을 필요로 할 경우 CPU를 반납하고 작업의 완료를 기다리기 위해 대기 상태로 전화하는 프로세스의 상태 변화는 무엇인가?",
+        "correct_answer": " 디스패치(Dispatch)",
+        "incorrect_answers": ["디스패치(Dispatch)","타이머 종료(Timer Runout)","웨이크 업(Wake Up)"]
+    },{
+        "subject": "PC 운영 체제",
+        "question": "UNIX에 대한 설명으로 옳지 않은 것은?",
+        "correct_answer": "파일 시스템이 배열 형태가 선형적 구조로 되어 있다",
+        "incorrect_answers": ["사용자의 명령으로 시스템이 수행되고 그에 따른 결과를 나타내 주는 대화식 운영체제 이다.","여러 프로그램을 동시에 여러 개를 실행시킬 수 있다","표준 입출력을 통해 명령어와 명령어가 파이프라인으로 연결된다."],
+        "desc": "파일 시스템이 트리(Tree) 형태의 계층적 구조로 되어있다."
+    },{
+        "subject": "PC 운영 체제",
+        "question": "다음 도스(MS-DOS) 명령어에 대한 설명으로 옳은 것은?",
+        "correct_answer": "cd : 특정 디렉터리로 이동한다.",
+        "incorrect_answers": ["ren : 디렉터리를 지운다.","find : 파일의 목록을 보여준다","more : 화면을 깨끗이 지운다."]
+    },{
+        "subject": "PC 운영 체제",
+        "question": "다음 도스(MS-DOS) XCOPY 명령어에 대한 설명으로 옳지 않는 것은?",
+        "correct_answer": "XCOPY는 + 기호를 사용하는 파일 합치기 기능이 있다.",
+        "incorrect_answers": ["XCOPY는 파일과 하위 디렉토리를 한꺼번에 복사해 준다","XCOPY 명령에서 HIDDEN FILE은 복사되지 않는다.","XCOPY는 외부 명령어이다."]
+    },
+    {
+        "subject": "정보 통신 일반",
+        "question": "HDLC(High-level Data Link Control) 프레임(Frame)을 구성하는 순서로 바르게 열거한 것은?",
+        "correct_answer": "플래그, 주소부, 제어부, 정보부, 검색부, 플래그",
+        "incorrect_answers": ["플래그, 주소부, 정보부, 제어부, 검색부, 플래그","플래그, 검색부, 주소부, 정보부, 제어부, 플래그","플래그, 제어부, 주소부, 정보부, 검색부, 플래그"],
+        "desc": "주-제-정-검"
+    },{
+        "subject": "정보 통신 일반",
+        "question": "다음중 PCM 전송에서 송신측 과정은?",
+        "correct_answer": "음성 → 표본화 → 양자화 → 부호화",
+        "incorrect_answers": ["음성 → 양자화 → 표본화 → 부호화","음성 → 복호화 → 변조화 → 부호화","음성 → 2진화 → 압축화 → 부호화"]
+    },{
+        "subject": "정보 통신 일반",
+        "question": "주파수분할 다중화 방식에서 각 채널간 간섭을 막기 위해서 일종의 완충지역 역할을 하는 것은?",
+        "correct_answer": "가드 밴드(Guard Band)",
+        "incorrect_answers": ["서브 채널(Sub-CH)","채널 밴드(CH Band)","채널 세트(CH Set)"]
+    },{
+        "subject": "정보 통신 일반",
+        "question": "IP 주소 198.0.46.201 의 기본 마스크는?",
+        "correct_answer": "255.255.255.0",
+        "incorrect_answers": ["255.0.0.0","255.255.0.0","255.255.255.255"]
+    },{
+        "subject": "정보 통신 일반",
+        "question": "PCM 방식에서 표본화 주파수가 8[khz]라 하면 이때 표본화 주기는?",
+        "correct_answer": "125[㎲]",
+        "incorrect_answers": ["100[㎲]","85[㎲]","8[㎲]"]
+    },{
+        "subject": "정보 통신 일반",
+        "question": "다음 중 트래픽 제어에 해당되지 않는 것은?",
+        "correct_answer": "오류제어",
+        "incorrect_answers": ["흐름제어","교착회피 제어","폭주 제어"]
+    },{
+        "subject": "정보 통신 일반",
+        "question": "패리티 검사에 대한 설명으로 틀린 것은?",
+        "correct_answer": "전송 중 짝수개의 에러 비트가 발생해도 에러 검출이 가능하다.",
+        "incorrect_answers": ["패리티 검사는 주로 저속 비동기방식에서 이용된다.","패리티 비트는 짝수(Even) 혹은 홀수 (Odd) 패리티로 사용된다.","패리티 검사를 통하여 전송 신뢰를 높일 수 있다."]
+    },{
+        "subject": "정보 통신 일반",
+        "question": "ARQ 방식이란?",
+        "correct_answer": "에러를 검출하여 재전송을 요구하는 방식",
+        "incorrect_answers": ["에러를 정정하는 방식","부호를 정정하는 방식","에러를 검출하는 방식"]
+    },{
+        "subject": "정보 통신 일반",
+        "question": "반송파 신호(Carrier Signal)의 피크-투-피크(Peak-to-Peak) 전압이 변하는 형태의 아날로그 변조방식은?",
+        "correct_answer": "AM(Amplitude Modulation)",
+        "incorrect_answers": ["FM(Frequency Modulation)","PM(Phase Modulation)","DM(Delta Modulation)"]
+    },{
+        "subject": "정보 통신 일반",
+        "question": "2 out of 5 부호를 이용하여 에러를 검출하는 방식은?",
+        "correct_answer": "정마크(정스페이스) 방식",
+        "incorrect_answers": ["군계수 check 방식","SQD 방식","Parity check 방식"]
+    }
+]

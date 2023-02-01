@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보처리 시험 준비하기</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 객관식 -->
+    <header id="header">
+        <h1><a href="#">정&middot;처&middot;기 <em>정복하기</em></a></h1>
+        <nav>
+            <ul>
+                <li class="check"><a href="quiz1.html">주관식 정답확인하기 유형</a></li>
+                <li><a href="quiz2.html">객관식 정답확인하기 유형</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <span class="quiz__number">01</span>
+                <div class="quiz__question">${item.question}</div>
+                <div class="quiz__answer">
+                    <label for="select0${index+1}-1">
+                        <input type="radio" id="select0${index+1}-1" class="select" name="selectt0${index+1}-1" value="1">
+                        <span class="choice">${item.question_answer[1]}</span>
+                    </label>
+                    <label for="select0${index+1}-2">
+                        <input type="radio" id="select0${index+1}-2" class="select" name="selectt0${index+1}-2" value="2">
+                        <span class="choice">${item.question_answer[2]}</span>
+                    </label>
+                    <label for="select0${index+1}-3">
+                        <input type="radio" id="select0${index+1}-3" class="select" name="selectt0${index+1}-3" value="3">
+                        <span class="choice">${item.question_answer[3]}</span>
+                    </label>
+                    <label for="select0${index+1}-4">
+                        <input type="radio" id="select0${index+1}-4" class="select" name="selectt0${index+1}-4" value="4">
+                        <span class="choice">${item.question_answer[4]}</span>
+                    </label>
+                </div>
+                <div class="question__explanation">${item.question_explanation}</div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:webstoryboy@naver.com">webstoryboy@naver.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        
+
+
+    </script>
+</body>
+</html>

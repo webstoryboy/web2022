@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .joke {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p id="joke">ddd</p>
+        <button id="btn">click</button>
+    </div>
+
+    <script>
+        const jokeContainer = document.getElementById("joke");
+        const btn = document.getElementById("btn")
+
+        let getJoke = () => {
+            fetch("./json/book.json")
+                .then(data => data.json())
+                .then(item => {
+                    // jokeContainer.textContent = `${item.items.desc}`
+                    console.log(item.items[0].desc)
+                });
+        }
+        btn.addEventListener("click", getJoke);
+    </script>
+</body>
+</html>

@@ -53,7 +53,7 @@
             <hr>
             <p class="sub">CBT 유형으로 연습하기</p>
             <ul class="select s2">
-                <li class="selcct-option" data-time="gisa2020_01"><a href="#">2020년 1회/2회 정보처리기사 기출문제</a></li>
+                <li class="selcct-option" data-time="gisa2022_01"><a href="#">2022년 1회 정보처리기사 기출문제</a></li>
             </ul>
             <div class="select start">
                 <a href="#">시작하기</a>
@@ -71,22 +71,15 @@
             </div>
             <div class="cbt__conts">
                 <div class="cbt__quiz">
-                    <div class="cbt">
+                    <!-- <div class="cbt">
                         <div class="cbt__question">
-                            <span class="num">1</span>
-                            <span class="question">UML 다이어그램 중 순차 다이어그램에 대한 설명으로 틀린 것은?</span>
-                            <p class="desc">여기는 부가 설명이 들어갑니다.</p>
+                            <span class="num"></span>
+                            <span class="question"></span>
+                            <p class="desc hide"></p>
                         </div>
-                        <div class="cbt__answer">
-                            <div class="selected">객체 간의 동적 상호작용을 시간 개념을 중심으로 모델링하는 것이다.</div>
-                            <div>주로 시스템의 정적 측면을 모델링하기 위해 사용한다.</div>
-                            <div>일반적으로 다이어그램의 수직 방향이 시간의 흐름을 나타낸다.</div>
-                            <div>회귀 메시지(Self-Message), 제어블록(Statement block) 등으로 구성된다.</div>
-                        </div>
-                        <div class="cbt__desc">
-                            회귀 메시지(Self-Message), 제어블록(Statement block) 등으로 구성된다.
-                        </div>
-                    </div> 
+                        <div class="cbt__answer"></div>
+                        <div class="cbt__desc hide"></div>
+                    </div>  -->
                 </div>
             </div>
             <div class="cbt__aside">
@@ -106,7 +99,7 @@
                     </div>
                 </div>
                 <div class="cbt__omr">
-                    <div class="omr">
+                    <!-- <div class="omr">
                         <strong>1</strong>
                         <label for="1_1"><span class="label-inner">1</span></label>
                         <input type="radio" name="1_1" id="1_1">
@@ -116,7 +109,7 @@
                         <input type="radio" name="1_3" id="1_3">
                         <label for="1_4"><span class="label-inner">4</span></label>
                         <input type="radio" name="1_4" id="1_4">
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -135,6 +128,19 @@
 
         const quizWrapCbt = document.querySelector(".quiz__wrap__cbt");
         const cbtHeaderTitle = quizWrapCbt.querySelector(".cbt__header .title");
+        const cbtQuiz = quizWrapCbt.querySelector(".cbt__quiz");
+        const cbtQuestionNum = quizWrapCbt.querySelector(".cbt__question .num");
+        const cbtQuestionQuestion = quizWrapCbt.querySelector(".cbt__question .question");
+        const cbtOmr = quizWrapCbt.querySelector(".cbt__omr");
+
+        let quesitonCounter = 0;    //퀴즈 카운트
+        let quesitonScore = 0;      //퀴즈 점수
+        let quesitonAttempt = 0;    //퀴즈 시도 
+        let questionCorrect = 0;    //맞은 갯수
+
+        let questionAll = [];           //모든 퀴즈 문제
+        let quesionsAvailable = [];     //이용가능한 퀴즈 문제
+        let questionCurrent = {}        //현재 문제
 
         let questionTitle = "";
 
@@ -166,9 +172,90 @@
             fetch(`json/${time}.json`)
             .then(res => res.json())
             .then(items => {
-                console.log(items)
+                questionAll = items.map((item, index) => {
+                    const formattedQuestion = {
+                        question: item.question,
+                    };
+                    formattedQuestion.number = index + 1;
+                    const answerChoices = [...item.incorrect_answers];       //틀린답 불러오기
+                    formattedQuestion.answer = Math.floor(Math.random() * answerChoices.length) + 1;  //정답 랜덤으로 불러오기
+                    answerChoices.splice(formattedQuestion.answer - 1, 0, item.correct_answer); //정답이랑 오답이랑 합치기
+                    answerChoices.forEach((choice, index) => {
+                        formattedQuestion["choice" + (index + 1)] = choice;
+                    });
+                    formattedQuestion.choiceLength = answerChoices.length;      //정답 갯수 확인하기 
+
+                    console.log(formattedQuestion)
+                    return formattedQuestion;
+                });
+
+                startGame();
             })
             .catch((err) => console.error(err));
+        }
+
+        // 시작하기
+        const startGame = () => {   
+            newQuestion();      //문제 만들기
+        }
+
+        // 문제 만들기
+        const newQuestion = () => {
+            const exam = [];
+            const omr = [];
+
+            questionAll.forEach((question, number) => {
+                exam.push(`
+                    <div class="cbt">
+                        <div class="cbt__question">
+                            <span class="num">${question.number}</span>
+                            <span class="question">${question.question}</span>
+                            <p class="desc hide"></p>
+                        </div>
+                        
+                        <div class="cbt__selects">
+                            <label for="select${number}_1">
+                                <input type="radio" id="select${number}_1" class="select" name="select${number}" value="1">
+                                <span class="choice">${question.choice1}</span>
+                            </label>
+                            <label for="select${number}_2">
+                                <input type="radio" id="select${number}_2" class="select" name="select${number}" value="2">
+                                <span class="choice">${question.choice2}</span>
+                            </label>
+                            <label for="select${number}_3">
+                                <input type="radio" id="select${number}_3" class="select" name="select${number}" value="3">
+                                <span class="choice">${question.choice3}</span>
+                            </label>
+                            <label for="select${number}_4">
+                                <input type="radio" id="select${number}_4" class="select" name="select${number}" value="4">
+                                <span class="choice">${question.choice4}</span>
+                            </label>
+                        </div>
+                       
+                        <div class="cbt__desc hide"></div>
+                    </div> 
+                `);
+
+                omr.push(`
+                    <div class="omr">
+                        <strong>${question.number}</strong>
+                        <input type="radio" name="omr${number}" id="omr${number}_1">
+                        <label for="omr${number}_1"><span class="label-inner">1</span></label>
+                        <input type="radio" name="omr${number}" id="omr${number}_2">
+                        <label for="omr${number}_2"><span class="label-inner">2</span></label>
+                        <input type="radio" name="omr${number}" id="omr${number}_3">
+                        <label for="omr${number}_3"><span class="label-inner">3</span></label>
+                        <input type="radio" name="omr${number}" id="omr${number}_4">
+                        <label for="omr${number}_4"><span class="label-inner">4</span></label>
+                    </div>
+                `);
+            })
+            
+            cbtQuiz.innerHTML = exam.join('');
+            cbtOmr.innerHTML = omr.join('');
+
+            
+  
         }
     </script>
 </body>

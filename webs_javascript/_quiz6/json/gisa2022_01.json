@@ -1,0 +1,246 @@
+[
+    {
+        "subject": "소프트웨어 설계",
+        "question": "User Interface 설계 시 오류 메시지나 경고에 관한 지침으로 가장 거리가 먼 것은?",
+        "correct_answer": "소리나 색의 사용을 줄이고 텍스트로만 전달하도록 한다.",
+        "incorrect_answers": ["메시지는 이해하기 쉬워야 한다.","오류로부터 회복을 위한 구체적인 설명이 제공되어야 한다","오류로 인해 발생 될 수 있는 부정적인 내용을 적극적으로 사용자들에게 알려야 한다."]
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "다음 중 애자일(Agile) 소프트웨어 개발에 대한 설명으로 틀린 것은?",
+        "correct_answer": "동작하는 소프트웨어보다는 포괄적인 문서를 가치 있게 여긴다",
+        "incorrect_answers": ["공정과 도구보다 개인과의 상호작용을 더 가치 있게 여긴다.","계약 협상보다는 고객과의 협력을 가치 있게 여긴다","계획을 따르기보다 변화에 대응하기를 가치 있게 여긴다"],
+        "keyword": "애자일 방법론"
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "소프트웨어 설계에서 요구사항 분석에 대한 설명으로 틀린 것은?",
+        "correct_answer": "소프트웨어 시스템이 사용되는 동안 발견되는 오류를 정리하는 단계이다",
+        "incorrect_answers": ["소프트웨어가 무엇을 해야하는가를 추적하여 요구사항 명세를 작성하는 작업이다.","사용자의 요구를 추출하여 목표를 정하고 어떤 방식으로 해결할 것인지 결정하는 단계이다.","소프트웨어 개발의 출발점이면서 실질적인 첫 번째 단계이다."],
+        "desc": "요구 사항 개발 프로세스 : 도출 - 분석 - 명세 - 확인",
+        "keyword": "요구사항 분석"
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "객체지향 기법에서 상위 클래스의 메소드와 속성을 하위 클래스가 물려받는 것을 의미하는 것은?",
+        "correct_answer": "Inheritance",
+        "incorrect_answers": ["Abstraction","Polymorphism","Encapsulation"],
+        "keyword": "객체지향",
+        "desc": "객체지향의 주요 원칙에는 캡슐화(Encapsulation), 정보은닉(Information Hiding), 추상화(Abstract), 상속(Inheritance), 다형성(Polymorphism) 등이 있다."
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "설계 기법 중 하향식 설계 방법과 상향식 설계 방법에 대한 비교 설명으로 가장 옳지 않은 것은?",
+        "correct_answer": "상향식 설계에서는 인터페이스가 이미 성립되어 있지 않더라도 기능 추가가 쉽다.",
+        "incorrect_answers": ["하향식 설계에서는 통합 검사 시 인터페이스가 이미 정의되어 있어 통합이 간단하다","하향식 설계에서 레벨이 낮은 데이터 구조의 세부 사항은 설계초기 단계에서 필요하다.","상향식 설계는 최하위 수준에서 각각의 모듈들을 설계하고 이러한 모듈이 완성되면 이들을 결합하여 검사한다."],
+        "keyword": "상향식/하향식 설계 방법"
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "자료흐름도(DFD)의 각 요소별 표기 형태의 연결이 옳지 않은 것은?",
+        "correct_answer": "Data Store: 삼각형",
+        "incorrect_answers": ["Process: 원","Data Flow: 화살표","Terminator: 사각형"],
+        "keyword": "자료흐름도",
+        "desc": "프로세스(Process): 원, 데이터 흐름도(Data Flow): 화살표, 자료 저장소(Data Store): 평행선, 단말(Terminator): 사각형"
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "소프트웨어 개발에 이용되는 모델(Model)에 대한 설명 중 거리가 먼 것은?",
+        "correct_answer": "모델을 통해 향후 개발될 시스템의 유추는 불가능하다",
+        "incorrect_answers": ["모델은 개발 대상을 추상화하고 기호나 그림 등으로 시각적으로 표현한다.","모델을 통해 소프트웨어에 대한 이해도를 향상시킬 수 있다","모델을 통해 이해 당사자 간의 의사소통이 향상된다."]
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "객체 지향 시스템을 개발할 때 산출물을 명세화, 시각화, 문서화하는데 사용된다. 즉 개발하는 시스템을 이해하기 쉬운 형태로 표현하며 분석가, 의뢰인, 설계자가 효율적인 의사소통을 할 수 있게 해준다. 따라서 개발 방법론이나 개발 프로세스가 아니라 표준화된 모델링 언어는 무엇인가?",
+        "correct_answer": "UML",
+        "incorrect_answers": ["JAVA","C","Python"],
+        "desc": "UML(Unified Modeling Language)은 객체지향 소프트웨어 개발 과정에서 산출물을 명세화, 시각화, 문서화할 때 사용되는 모델링 기술과 방법론을 통합해서 만든 표준화된 범용 모델링 언어이다.",
+        "keyword": "UML"
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "디자인, 사용 방법 설명, 평가 등을 위해 실제 화면과 유사하게 만든 정적인 형태의 모형이며, 시각적으로만 구성 요소를 배치하는 것으로 일반적으로 실제로 구현되지 않는 UI설계 도구는?",
+        "correct_answer": "목업(Mockup)",
+        "incorrect_answers": ["스토리보드(Storyboard)","프로토타입(Prototype)","유스케이스(Usecase)"]
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "애자일(Agile) 기법 중 스크럼(Scrum)과 관련된 용어에 대한 설명이 틀린 것은?",
+        "correct_answer": "스프린트(Sprint)는 하나의 완성된 최종 결과물을 만들기 위한 주기로 3달 이상의 장기간으로 결정된다.",
+        "incorrect_answers": ["스크럼 마스터(Scrum Master)는 스크럼 프로세스를 따르고, 팀이 스크럼을 효과적으로 활용할 수 있도록 보장하는 역할 등을 맡는다.","제품 백로그(Product Backlog)는 스크럼 팀이 해결해야 하는 목록으로 소프트웨어 요구사항, 아키텍처 정의 등이 포함될 수 있다.","속도(Velocity)는 한 번의 스프린트에서 한 팀이 어느 정도의 제품 백로그를 감당할 수 있는지에 대한 추정치로 볼 수 있다."],
+        "keyword": "애자일 방법론"
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "UML 다이어그램 중 정적 다이어그램이 아닌 것은?",
+        "correct_answer": "순차 다이어그램",
+        "incorrect_answers": ["컴포넌트 다이어그램","배치 다이어그램","패키지 다이어그램"],
+        "keyword": "UML",
+        "desc": "정적(구조적) 다이어그램 : 클래스, 객체, 컴포넌트, 배치, 복합체 구조, 패키지<br> 동적(행위) 다이어그램 : 유스케이스, 시퀀스, 통신, 상태, 활동, 상호작용, 타이밍"
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "LOC기법에 의하여 예측된 총 라인수가 36000라인, 개발에 참여할 프로그래머가 6명, 프로그래머들의 평균 생산성이 월간 300라인일 때 개발에 소요되는 기간을 계산한 결과로 가장 옳은 것은?",
+        "correct_answer": "20개월",
+        "incorrect_answers": ["5개월","10개월","15개월"]
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "클래스 설계 원칙에 대한 바른 설명은?",
+        "correct_answer": "개방-폐쇄의 원칙 : 클래스는 확장에 대해 열려 있어야 하며 변경에 대해 닫혀 있어야 한다.",
+        "incorrect_answers": ["단일 책임원칙 : 하나의 클래스만 변경 가능 해야한다.","리스코프 교체의 원칙 : 여러 개의 책임을 가진 클래스는 하나의 책임을 가진 클래스로 대체되어야 한다.","의존관계 역전의 원칙 : 클라이언트는 자신이 사용하는 메소드와 의존관계를 갖지 않도록 해야 한다"],
+        "keyword": "객체지향",
+        "desc": "객체지향 설계 원칙에는 단일 책임(Single Responsibility), 개방 폐쇄(Open-Closed), 리스코프 치환(Liskov Substitution), 인터페이스 분리(Interface Segregation), 의존성 뒤집기(Dependency Inversion) 등이 있다."
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "GoF(Gangs of Four) 디자인 패턴에서 생성(Creational) 패턴에 해당하는 것은?",
+        "correct_answer": "추상 팩토리(Abstract Factory)",
+        "incorrect_answers": ["컴퍼지트(Composite)","어댑터(Adapter)","옵서버(Observer)"],
+        "keyword": "디자인 패턴",
+        "desc": "생성(Creational) 패턴에는 추상팩토리(Abstract Factory), 빌더(Builder), 팩토리메서드(FactoryMethod), 프로토타입(Prototype), 싱글톤(Sington) 등이 있다."
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "아키텍처 설계과정이 올바른 순서로 나열된 것은?",
+        "question_desc": "㉮ 설계 목표 설정<br>㉯ 시스템 타입 결정<br>㉰ 스타일 적용 및 커스터마이즈<br>㉱ 서브시스템의 기능, 인터페이스 동작 작성<br> ㉲ 아키텍처 설계 검토",
+        "correct_answer": "㉮ → ㉯ → ㉰ → ㉱ → ㉲",
+        "incorrect_answers": ["㉲ → ㉮ → ㉯ → ㉱ → ㉰","㉮ → ㉲ → ㉯ → ㉱ → ㉰","㉮ → ㉯ → ㉰ → ㉲ → ㉱"]
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "사용자 인터페이스를 설계할 경우 고려해야 할 가이드라인과 가장 거리가 먼 것은?",
+        "correct_answer": "심미성을 사용성보다 우선하여 설계해야 한다.",
+        "incorrect_answers": ["효율성을 높이게 설계해야 한다.","발생하는 오류를 쉽게 수정할 수 있어야 한다.","사용자에게 피드백을 제공해야 한다."]
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "소프트웨어 설계에서 자주 발생하는 문제에 대한 일반적이고 반복적인 해결 방법을 무엇이라고 하는가?",
+        "correct_answer": "디자인 패턴",
+        "incorrect_answers": ["모듈 분해","연관 관계","클래스 도출"],
+        "keyword": "디자인 패턴",
+        "desc": "디자인 패턴이란 반복적인 문제들을 해결하기 위한 설계 패턴을 일반화한 것으로 GoF(Gang of Four) 디자인 패턴이라고도 한다."
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "객체지향 분석기법의 하나로 객체 모형, 동적 모형, 기능모형의 3개 모형을 생성하는 방법은?",
+        "correct_answer": "Rumbaugh Method",
+        "incorrect_answers": ["Wirfs-Block Method","Booch Method","Jacobson Method"],
+        "keyword": "객체지향",
+        "desc": "객체지향 분석 방법에는 Rumbaugh, Booch, Jacobson, Coad와 Yourdon, Wirfs-Brock 방법이 있다."
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "입력되는 데이터를 컴퓨터의 프로세서가 처리하기 전에 미리 처리하여 프로세서가 처리하는 시간을 줄여주는 프로그램이나 하드웨어를 말하는 것은?",
+        "correct_answer": "FEP",
+        "incorrect_answers": ["EAI","GPL","Duplexing"],
+        "desc": "EAI(Enterprise Application Integration): 기업 응용 통합 프로그램<br>GPL(General Public License): 자유 소프트웨어 라이선스"
+    },{
+        "subject": "소프트웨어 설계",
+        "question": "객체 지향 개념 중 하나 이상의 유사한 객체들을 묶어 공통된 특성을 표현한 데이터 추상화를 의미하는 것은?",
+        "correct_answer": "Class",
+        "incorrect_answers": ["Method","Field","Message"],
+        "keyword": "객체지향",
+        "desc": "객체지향 기술 구성 요소에는 클래스(Class), 객체(Object), 인스턴스(Instance), 메시지(Message), 메서드(Method)가 있다."
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "클린 코드(Clean Code)를 작성하기 위한 원칙으로 틀린 것은?",
+        "correct_answer": "추상화 : 하위 클래스/메소드/함수를 통해 애플리케이션의 특성을 간략하게 나타내고, 상세 내용은 상위 클래스/메소드/함수에서 구현한다",
+        "incorrect_answers": ["의존성 : 다른 모듈에 미치는 영향을 최소화하도록 작성한다","가독성 : 누구든지 읽기 쉽게 코드를 작성한다","중복성 : 중복을 최소화 할 수 있는 코드를 작성한다."],
+        "desc": "상위 클래스는 프로그램 특성만 간략하게, 하위 클래스는 세부적 내용을 구현한다. 클린 코드를 작성하기 위한 원칙에는 가독성, 단순성, 의존성 최소화, 중복성 최소화, 추상화 등이 있다.",
+        "keyword": "클린 코드"
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "단위 테스트에서 테스트의 대상이 되는 하위 모듈을 호출하고, 파라미터를 전달하는 가상의 모듈로 상향식 테스트에 필요한 것은?",
+        "correct_answer": "테스트 드라이버(Test Driver)",
+        "incorrect_answers": ["테스트 스텁(Test Stub)","테스트 슈트(Test Suites)","테스트 케이스(Test Case)"]
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "스택(Stack)에 대한 옳은 내용으로만 나열된 것은?",
+        "question_desc": "㉠ FIFO 방식으로 처리된다.<br>㉡ 순서 리스트의 뒤(Rear)에서 노드가 삽입되며, 앞(Front)에서 노드가 제거된다.<br>㉢ 선형 리스트의 양쪽 끝에서 삽입과 삭제가 모두 가능한 자료 구조이다.<br> ㉣ 인터럽트 처리, 서브루틴 호출 작업 등에 응용된다.",
+        "correct_answer": "㉣",
+        "incorrect_answers": ["㉠, ㉡","㉡, ㉢","㉠, ㉡, ㉢, ㉣"],
+        "desc": "㉠, ㉡은 큐 방식, ㉢은 데크 방식<br> 선형 구조에는 스택, 큐, 데크, 선형 리스트, 연결 리스트, 비선형 구조에는 트리와 그래프, 파일 구조에는 순차파일, 색인파일, 직접 파일 등이 있다.",
+        "keyword": "자료 구조"
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "소프트웨어 모듈화의 장점이 아닌 것은?",
+        "correct_answer": "기능의 분리가 가능하여 인터페이스가 복잡하다.",
+        "incorrect_answers": ["오류의 파급 효과를 최소화한다.","모듈의 재사용 가능으로 개발과 유지보수가 용이하다.","프로그램의 효율적인 관리가 가능하다."],
+        "keyword": "모듈화"
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "소프트웨어 프로젝트 관리에 대한 설명으로 가장 옳은 것은?",
+        "correct_answer": "주어진 기간 내에 최소의 비용으로 사용자를 만족시키는 시스템을 개발",
+        "incorrect_answers": ["개발에 따른 산출물 관리","소요인력은 최대화하되 정책 결정은 신속하게 처리","주어진 기간은 연장하되 최소의 비용으로 시스템을 개발"]
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "정형 기술 검토(FTR)의 지침으로 틀린 것은?",
+        "correct_answer": "참가자의 수를 제한하지 않는다.",
+        "incorrect_answers": ["의제를 제한한다","논쟁과 반박을 제한한다","문제 영역을 명확히 표현한다."]
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "소프트웨어 재공학의 주요 활동 중 기존 소프트웨어 시스템을 새로운 기술 또는 하드웨어 환경에서 사용할 수 있도록 변환하는 작업을 의미하는 것은?",
+        "correct_answer": "Migration",
+        "incorrect_answers": ["Analysis","Restructuring","Reverse Engineering"],
+        "desc": "재공학에는 분석(Analysis), 이식(Migration), 재구성(Restructuring), 역공학(Reverse Engineering) 등이 있다.",
+        "keyword": "재공학"
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "정보시스템 개발 단계에서 프로그래밍 언어 선택 시 고려할 사항으로 가장 거리가 먼 것은?",
+        "correct_answer": "컴파일러의 독창성",
+        "incorrect_answers": ["개발 정보시스템의 특성","사용자의 요구사항","컴파일러의 가용성"]
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "소프트웨어 패키징에 대한 설명으로 틀린 것은?",
+        "correct_answer": "패키징은 개발자 중심으로 진행한다",
+        "incorrect_answers": ["신규 및 변경 개발소스를 식별하고, 이를 모듈화하여 상용제품으로 패키징한다.","고객의 편의성을 위해 매뉴얼 및 버전관리를 지속적으로 한다","범용 환경에서 사용이 가능하도록 일반적인 배포 형태로 패키징이 진행된다"],
+        "desc": "패키징은 소비자 중심으로 진행한다"
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "자료 구조의 분류 중 선형 구조가 아닌 것은?",
+        "correct_answer": "트리",
+        "incorrect_answers": ["리스트","스택","데크"],
+        "desc": "선형 구조에는 스택, 큐, 데크, 선형 리스트, 연결 리스트, 비선형 구조에는 트리와 그래프, 파일 구조에는 순차파일, 색인파일, 직접파일 등이 있다.",
+        "keyword": "자료 구조"
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "아주 오래되거나 참고문서 또는 개발자가 없어 유지보수 작업이 아주 어려운 프로그램을 의미하는 것은?",
+        "correct_answer": "Alien Code",
+        "incorrect_answers": ["Title Code","Source Code","Object Code"]
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "소프트웨어를 재사용함으로써 얻을 수 있는 이점으로 가장 거리가 먼 것은?",
+        "correct_answer": "새로운 개발 방법론 도입 용이",
+        "incorrect_answers": ["생산성 증가","프로젝트 문서 공유","소프트웨어 품질 향상"]
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "인터페이스 간의 통신을 위해 이용되는 데이터 포맷이 아닌 것은?",
+        "correct_answer": "AJTML",
+        "incorrect_answers": ["JSON","XML","YAML"]
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "프로그램 설계도의 하나인 NS Chart에 대한 설명으로 가장 거리가 먼 것은?",
+        "correct_answer": "화살표나 GOTO를 사용하여 이해하기 쉽다.",
+        "incorrect_answers": ["논리의 기술에 중점을 두고 도형을 이용한 표현 방법이다","이해하기 쉽고 코드 변환이 용이하다.","연속, 선택, 반복 등의 제어 논리 구조를 표현한다."]
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "순서가 A, B, C, D로 정해진 입력자료를 push, push, pop, push, push, pop, pop, pop 순서로 스택연산을 수행하는 경우 출력 결과는?",
+        "correct_answer": "B D C A",
+        "incorrect_answers": ["A B C D"," B A C D","A B D C"]
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "분할 정복(Divide and Conquer)에 기반한 알고리즘으로 피벗(pivot)을 사용하며 최악의 경우 n(n-1)/2 회의비교를 수행해야 하는 정렬(Sort)은?",
+        "correct_answer": "Quick Sort",
+        "incorrect_answers": ["Selection Sort","Bubble Sort","Insert Sort"],
+        "keyword": "정렬",
+        "desc": "정렬에는 선택(Selection) 정렬, 버블(Bubble) 정렬, 삽입(Insertion) 정렬, 쉘(Shell) 정렬, 힙(Heap) 정렬, 이진 병합(Merge) 정렬, 버킷(Bucket) 정렬, 퀵(Quick) 정렬 등이 있다."
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "화이트 박스 검사 기법에 해당하는 것으로만 짝지어진 것은?",
+        "question_desc": "㉠ 데이터 흐름 검사<br>㉡ 루프 검사<br>㉢ 동등 분할 검사<br>㉣ 경계값 분석<br>㉤ 원인 결과 그래프 기법<br>㉥ 오류예측 기법",
+        "correct_answer": "㉠, ㉡",
+        "incorrect_answers": ["㉠, ㉣","㉡, ㉤","㉢, ㉥"],
+        "keyword": "화이트박스 테스트 블랙박스 테스트",
+        "desc": "화이트 박스 테스트는 기초 경로 검사(Basic Path Testing), 제어 구조 검사(조건(Condition Testing) 검사, 루프(Loop Testing) 검사, 데이터 흐름(Data Flow Testing) 검사)가 있으며, 블랙 박스 테스트는 동치 분할 검사, 경계값 분석, 원인 효과 그래프 검사, 오류 예측 검사, 비교 검사가 있다."
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "소프트웨어 품질 관련 국제 표준인 ISO/IEC 25000에 관한 설명으로 옳지 않은 것은?",
+        "correct_answer": "ISO/IEC 2501n에서는 소프트웨어의 내부 측정, 외부측정, 사용품질 측정, 품질 측정 요소 등을 다룬다.",
+        "incorrect_answers": ["소프트웨어 품질 평가를 위한 소프트웨어 품질평가 통합모델 표준이다.","System and Software Quality Requirements and Evaluation으로 줄여서 SQuaRE라고도 한다.","기존 소프트웨어 품질 평가 모델과 소프트웨어 평가절차 모델인 ISO/IEC 9126과 ISO/IEC 14598을 통합하였다."],
+        "desc": "ISO/IEC 25000(SQuaRE): SW 품질 평가 통합 모델<br>2500n : 품질관리<br>2501n : 품질모델<br>2502n : 품질 측정<br>2503n : 품질요구<br>2504n: 품질평가<br>2505n : 확장분야"
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "코드 인스펙션과 관련한 설명으로 틀린 것은?",
+        "correct_answer": "동적 테스트 시에만 활용하는 기법이다",
+        "incorrect_answers": ["프로그램을 수행시켜보는 것 대신에 읽어보고 눈으로 확인하는 방법으로 볼 수 있다.","코드 품질 향상 기법 중 하나이다.","결함과 함께 코딩 표준 준수 여부, 효율성 등의 다른 품질 이슈를 검사하기도 한다."]
+    },{
+        "subject": "소프트웨어 개발",
+        "question": "프로젝트에 내재된 위험 요소를 인식하고 그 영향을 분석하여 이를 관리하는 활동으로서, 프로젝트를 성공시키기 위하여 위험 요소를 사전에 예측, 대비하는 모든 기술과 활동을 포함하는 것은?",
+        "correct_answer": "Risk Analysis",
+        "incorrect_answers": ["Critical Path Method","Work Breakdown Structure","Waterfall Model"],
+        "desc": "임계 경로법(Critical Path Method, CPM) 네트워크를 중심의 논리적 구성. 시간과 비용 문제를 취급. 프로젝트를 일정 기일 내에 완성시키고 해당 계획이 원가의 최소값에 의해 보증되는 등의 최적 스케줄을 구하는 관리 방법."
+    }
+]

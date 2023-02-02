@@ -129,9 +129,13 @@
         const quizWrapCbt = document.querySelector(".quiz__wrap__cbt");
         const cbtHeaderTitle = quizWrapCbt.querySelector(".cbt__header .title");
         const cbtQuiz = quizWrapCbt.querySelector(".cbt__quiz");
+        const cbtQuizCbt = quizWrapCbt.querySelectorAll(".cbt__quiz .cbt");
         const cbtQuestionNum = quizWrapCbt.querySelector(".cbt__question .num");
+        const cbtDesc = quizWrapCbt.querySelectorAll(".cbt__desc");
+        
         const cbtQuestionQuestion = quizWrapCbt.querySelector(".cbt__question .question");
         const cbtOmr = quizWrapCbt.querySelector(".cbt__omr");
+        const cbtSubmit = quizWrapCbt.querySelector(".cbt__header .submit")
 
         let quesitonCounter = 0;    //퀴즈 카운트
         let quesitonScore = 0;      //퀴즈 점수
@@ -185,7 +189,19 @@
                     });
                     formattedQuestion.choiceLength = answerChoices.length;      //정답 갯수 확인하기 
 
-                    console.log(formattedQuestion)
+                    
+                    if(item.hasOwnProperty("question_desc")){        //question_desc 있으면 출력
+                        formattedQuestion.question_desc = item.question_desc;
+                    }
+
+                    if(item.hasOwnProperty("desc")){        //desc가 있으면 출력
+                        formattedQuestion.desc = item.desc;
+                    }
+                    if(item.hasOwnProperty("keyword")){        //keyword가 있으면 출력
+                        formattedQuestion.keyword = item.keyword;
+                    }
+
+                    // console.log(formattedQuestion)
                     return formattedQuestion;
                 });
 
@@ -197,6 +213,7 @@
         // 시작하기
         const startGame = () => {   
             newQuestion();      //문제 만들기
+            questionDesc();     //옵션
         }
 
         // 문제 만들기
@@ -210,42 +227,38 @@
                         <div class="cbt__question">
                             <span class="num">${question.number}</span>
                             <span class="question">${question.question}</span>
-                            <p class="desc hide"></p>
+                            <p class="desc hide">${question.question_desc}</p>
                         </div>
                         
                         <div class="cbt__selects">
-                            <label for="select${number}_1">
-                                <input type="radio" id="select${number}_1" class="select" name="select${number}" value="1">
-                                <span class="choice">${question.choice1}</span>
-                            </label>
-                            <label for="select${number}_2">
-                                <input type="radio" id="select${number}_2" class="select" name="select${number}" value="2">
-                                <span class="choice">${question.choice2}</span>
-                            </label>
-                            <label for="select${number}_3">
-                                <input type="radio" id="select${number}_3" class="select" name="select${number}" value="3">
-                                <span class="choice">${question.choice3}</span>
-                            </label>
-                            <label for="select${number}_4">
-                                <input type="radio" id="select${number}_4" class="select" name="select${number}" value="4">
-                                <span class="choice">${question.choice4}</span>
-                            </label>
+                            <input type="radio" id="select${number}_1" class="select" name="select${number}" value="${number}_0" onclick="answerSelect2(this)">
+                            <label for="select${number}_1"><span class="choice">${question.choice1}</span></label>
+
+                            <input type="radio" id="select${number}_2" class="select" name="select${number}" value="${number}_1" onclick="answerSelect2(this)">
+                            <label for="select${number}_2"><span class="choice">${question.choice2}</span></label>
+                            
+                            <input type="radio" id="select${number}_3" class="select" name="select${number}" value="${number}_2" onclick="answerSelect2(this)">
+                            <label for="select${number}_3"><span class="choice">${question.choice3}</span></label>
+                            
+                            <input type="radio" id="select${number}_4" class="select" name="select${number}" value="${number}_3" onclick="answerSelect2(this)">
+                            <label for="select${number}_4"><span class="choice">${question.choice4}</span></label>
                         </div>
                        
-                        <div class="cbt__desc hide"></div>
+                        <div class="cbt__desc hide">${question.desc}</div>
+                        <div class="cbt__keyword hide"><a href="#">${question.keyword}</a></div>
                     </div> 
                 `);
 
                 omr.push(`
                     <div class="omr">
                         <strong>${question.number}</strong>
-                        <input type="radio" name="omr${number}" id="omr${number}_1">
+                        <input type="radio" name="omr${number}" id="omr${number}_1" value="${number}_0" onclick="answerSelect(this)">
                         <label for="omr${number}_1"><span class="label-inner">1</span></label>
-                        <input type="radio" name="omr${number}" id="omr${number}_2">
+                        <input type="radio" name="omr${number}" id="omr${number}_2" value="${number}_1" onclick="answerSelect(this)">
                         <label for="omr${number}_2"><span class="label-inner">2</span></label>
-                        <input type="radio" name="omr${number}" id="omr${number}_3">
+                        <input type="radio" name="omr${number}" id="omr${number}_3" value="${number}_2" onclick="answerSelect(this)">
                         <label for="omr${number}_3"><span class="label-inner">3</span></label>
-                        <input type="radio" name="omr${number}" id="omr${number}_4">
+                        <input type="radio" name="omr${number}" id="omr${number}_4" value="${number}_3" onclick="answerSelect(this)">
                         <label for="omr${number}_4"><span class="label-inner">4</span></label>
                     </div>
                 `);
@@ -253,10 +266,95 @@
             
             cbtQuiz.innerHTML = exam.join('');
             cbtOmr.innerHTML = omr.join('');
-
-            
-  
         }
+
+        //보기 옵션 
+        function questionDesc(){
+            const all = document.querySelectorAll(".cbt");
+            
+            all.forEach(data => {
+                if(data.querySelector(".desc").innerText == "undefined"){
+                    data.querySelector(".desc").classList.add("hide");
+                }
+                if(data.querySelector(".cbt__desc").innerText == "undefined"){
+                    data.querySelector(".cbt__desc").classList.add("hide");
+                }
+                if(data.querySelector(".cbt__keyword").innerText == "undefined"){
+                    data.querySelector(".cbt__keyword").classList.add("hide");
+                }
+            })
+        }
+
+        //정답 확인
+        function answerQuiz(){
+            const quizSelects = document.querySelectorAll(".cbt__selects");   
+            // alert("정답을 확인하겠습니까?")
+
+            questionAll.forEach((question, number) => {
+                const quizSelectsWrap = quizSelects[number];  
+                const userSelector = `input[name=select${number}]:checked`; 
+                const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value;
+
+                if(userAnswer == question.answer){
+                    console.log("정답");
+                } else {
+                    console.log("오답");
+                    const label = quizSelects[number].querySelectorAll("label");
+                    label[question.answer-1].classList.add("good")
+                }
+
+
+
+                //보기 옵션
+                const quizQuestionDese = document.querySelectorAll(".desc");
+                const quizKeyword = document.querySelectorAll(".cbt__keyword");
+                const quizDesc = document.querySelectorAll(".cbt__desc");
+
+                if(quizQuestionDese[number].innerText == "undefined"){
+                    quizQuestionDese[number].classList.add("hide");
+                } else {
+                    quizQuestionDese[number].classList.remove("hide");
+                }
+
+                if(quizDesc[number].innerText == "undefined"){
+                    quizDesc[number].classList.add("hide");
+                } else {
+                    quizDesc[number].classList.remove("hide");
+                }
+
+                if(quizKeyword[number].innerText == "undefined"){
+                    quizKeyword[number].classList.add("hide");
+                } else {
+                    quizKeyword[number].classList.remove("hide");
+                }
+            });
+            
+
+        }
+        cbtSubmit.addEventListener("click", answerQuiz);
+
+        //보기 체크
+        function answerSelect(elem){
+            const answer = elem.value;
+            const answerNum = answer.split("_");
+
+            const cbt = document.querySelectorAll(".cbt__quiz .cbt");
+            const label = cbt[answerNum[0]].querySelectorAll(".cbt__selects input");
+            label[answerNum[1]].checked = true;
+        }
+
+        //보기 체크2
+        function answerSelect2(elem){
+            const answer = elem.value;
+            const answerNum = answer.split("_");
+
+            const select = document.querySelectorAll(".cbt__omr .omr");
+            const label = select[answerNum[0]].querySelectorAll(".cbt__omr .omr input");
+            label[answerNum[1]].checked = true;
+        }
+
+        
+
     </script>
 </body>
 </html>

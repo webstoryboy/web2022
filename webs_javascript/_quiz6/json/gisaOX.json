@@ -45,20 +45,23 @@
         "question": "프로젝트에 내재된 위험 요소를 인식하고 그 영향을 분석하여 이를 관리하는 활동으로서, 프로젝트를 성공시키기 위하여 위험 요소를 사전에 예측, 대비하는 모든 기술과 활동을 포함하는 것을 Risk Analysis라고 한다.",
         "answer": "정답"
     },{
-        "question": "",
-        "answer": ""
+        "question": "TCP/IP 계층 구조에서 IP의 동작 과정에서의 전송 오류가 발생하는 경우에 대비해 오류 정보를 전송하는 목적으로 사용하는 프로토콜은 ECP(Error Checking Protocol)이다.",
+        "answer": "오답",
+        "desc": "ICMP(Internet Control Message Protocol)"
     },{
-        "question": "",
-        "answer": ""
+        "question": "모바일 기기에서 구동되는 안드로이드 운영체제상에서 최상위 권한(루트 권한)을 얻음으로 해당 기기의 생산자 또는 판매자 측에서 걸어 놓은 제약을 해제하는 행위를 루팅(Rooting)이라고 한다.",
+        "answer": "정답"
     },{
-        "question": "",
-        "answer": ""
+        "question": "위조된 매체 접근 제어(MAC) 주소를 지속적으로 네트워크로 흘려보내, 스위치 MAC 주소 테이블의 저장 기능을 혼란시켜 더미 허브(Dummy Hub)처럼 작동하게 하는 공격을 Switch Jamming이라고 한다.",
+        "answer": "정답"
     },{
-        "question": "",
-        "answer": ""
+        "question": "블루스나프(BlueSnarf)은 블루투스를 이용해 스팸처럼 명함을 익명으로 퍼뜨리는 것을 말한다.",
+        "answer": "오답",
+        "desc": "블루재킹(BlueJacking)"
     },{
-        "question": "",
-        "answer": ""
+        "question": "Smurf 공격은 멀티캐스트(Multicast)를 활용하여 공격 대상이 네트워크의 임의의 시스템에 패킷을 보내게 만드는 공격이다",
+        "answer": "오답",
+        "desc": "브로드캐스트"
     },{
         "question": "",
         "answer": ""

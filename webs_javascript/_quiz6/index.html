@@ -274,13 +274,7 @@
             
             all.forEach(data => {
                 if(data.querySelector(".desc").innerText == "undefined"){
-                    data.querySelector(".desc").classList.add("hide");
-                }
-                if(data.querySelector(".cbt__desc").innerText == "undefined"){
-                    data.querySelector(".cbt__desc").classList.add("hide");
-                }
-                if(data.querySelector(".cbt__keyword").innerText == "undefined"){
-                    data.querySelector(".cbt__keyword").classList.add("hide");
+                    data.querySelector(".desc").classList.add("hidddde");
                 }
             })
         }
@@ -303,18 +297,9 @@
                     label[question.answer-1].classList.add("good")
                 }
 
-
-
                 //보기 옵션
-                const quizQuestionDese = document.querySelectorAll(".desc");
                 const quizKeyword = document.querySelectorAll(".cbt__keyword");
                 const quizDesc = document.querySelectorAll(".cbt__desc");
-
-                if(quizQuestionDese[number].innerText == "undefined"){
-                    quizQuestionDese[number].classList.add("hide");
-                } else {
-                    quizQuestionDese[number].classList.remove("hide");
-                }
 
                 if(quizDesc[number].innerText == "undefined"){
                     quizDesc[number].classList.add("hide");

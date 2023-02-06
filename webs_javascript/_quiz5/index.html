@@ -140,7 +140,7 @@
         const dataQuestion = (time) => {   
             fetch(`json/${time}.json`)
             .then(res => res.json())
-            .then(items => {
+            .then(items => { 
 
                 questionAll = items.map((item, index) => {
                     const formattedQuestion = {

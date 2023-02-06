@@ -851,7 +851,6 @@ a {
     content: '.';
 }
 .cbt__question .question {
-    padding-left: 30px;
     display: inline-block;
     line-height: 1.5;
 }

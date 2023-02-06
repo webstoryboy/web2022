@@ -54,6 +54,7 @@
             <p class="sub">CBT 유형으로 연습하기</p>
             <ul class="select s2">
                 <li class="selcct-option" data-time="gisa2022_01"><a href="#">2022년 1회 정보처리기사 기출문제</a></li>
+                <li class="selcct-option" data-time="gisa2022_02"><a href="#">2022년 2회 정보처리기사 기출문제</a></li>
             </ul>
             <div class="select start">
                 <a href="#">시작하기</a>
@@ -225,8 +226,8 @@
                 exam.push(`
                     <div class="cbt">
                         <div class="cbt__question">
-                            <span class="num">${question.number}</span>
-                            <span class="question">${question.question}</span>
+                            
+                            <span class="question">${question.number}. ${question.question}</span>
                             <p class="desc hide">${question.question_desc}</p>
                         </div>
                         
@@ -272,11 +273,11 @@
         function questionDesc(){
             const all = document.querySelectorAll(".cbt");
             
-            all.forEach(data => {
-                if(data.querySelector(".desc").innerText == "undefined"){
-                    data.querySelector(".desc").classList.add("hidddde");
-                }
-            })
+            // all.forEach(data => {
+            //     if(data.querySelector(".desc").innerText == "undefined"){
+            //         data.querySelector(".desc").classList.add("hidddde");
+            //     }
+            // })
         }
 
         //정답 확인

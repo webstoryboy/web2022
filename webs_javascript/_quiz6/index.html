@@ -35,18 +35,15 @@
             <h2>정보처리 <em>기출문제</em></h2>
             <p class="sub">정보처리기능사 &middot; 정보처리산업기사 &middot; 정보처리기사</p>
             <hr>
-            <ul class="select s2">
-                <li class="selcct-option" data-time="gineungsa2011_05"><a href="#">2011년 5회 정보처리기능사 기출문제</a></li>
-                <li class="selcct-option" data-time="gineungsa2011_04"><a href="#">2011년 4회 정보처리기능사 기출문제</a></li>
-                <li class="selcct-option" data-time="gineungsa2011_03"><a href="#">2011년 3회 정보처리기능사 기출문제</a></li>
-                <li class="selcct-option" data-time="gineungsa2011_01"><a href="#">2011년 1회 정보처리기능사 기출문제</a></li>
-            </ul>
-            <hr>
             <p class="sub">한문제씩 연습하기</p>
             <ul class="select s2">
                 <li class="selcct-option1" data-time="gisa2020_01"><a href="#">2020년 1회 정보처리기사 기출문제</a></li>
                 <li class="selcct-option1" data-time="gisa2020_03"><a href="#">2020년 3회 정보처리기사 기출문제</a></li>
                 <li class="selcct-option1" data-time="gisa2020_04"><a href="#">2020년 4회 정보처리기사 기출문제</a></li>
+
+                <li class="selcct-option1" data-time="gisa2021_01"><a href="#">2021년 1회 정보처리기사 기출문제</a></li>
+                <li class="selcct-option1" data-time="gisa2021_02"><a href="#">2021년 2회 정보처리기사 기출문제</a></li>
+                <li class="selcct-option1" data-time="gisa2021_03"><a href="#">2021년 3회 정보처리기사 기출문제</a></li>
 
                 <li class="selcct-option1" data-time="gisa2022_01"><a href="#">2022년 1회 정보처리기사 기출문제</a></li>
                 <li class="selcct-option1" data-time="gisa2022_02"><a href="#">2022년 2회 정보처리기사 기출문제</a></li>
@@ -54,6 +51,14 @@
             <hr>
             <p class="sub">CBT 유형으로 연습하기</p>
             <ul class="select s2">
+                <li class="selcct-option2" data-time="gisa2020_01"><a href="#">2020년 1회 정보처리기사 기출문제</a></li>
+                <li class="selcct-option2" data-time="gisa2020_03"><a href="#">2020년 3회 정보처리기사 기출문제</a></li>
+                <li class="selcct-option2" data-time="gisa2020_04"><a href="#">2020년 4회 정보처리기사 기출문제</a></li>
+
+                <li class="selcct-option2" data-time="gisa2021_01"><a href="#">2021년 1회 정보처리기사 기출문제</a></li>
+                <li class="selcct-option2" data-time="gisa2021_02"><a href="#">2021년 2회 정보처리기사 기출문제</a></li>
+                <li class="selcct-option2" data-time="gisa2021_03"><a href="#">2021년 3회 정보처리기사 기출문제</a></li>
+
                 <li class="selcct-option2" data-time="gisa2022_01"><a href="#">2022년 1회 정보처리기사 기출문제</a></li>
                 <li class="selcct-option2" data-time="gisa2022_02"><a href="#">2022년 2회 정보처리기사 기출문제</a></li>
             </ul>
@@ -160,10 +165,6 @@
         const quizDesc = quizWrapOption1.querySelector(".quiz__desc");
         const quizKeyword = quizWrapOption1.querySelector(".quiz__keyword");
 
-
-        
-
-
         const quizWrapCbt = document.querySelector(".quiz__wrap__cbt");
         const cbtHeaderTitle = quizWrapCbt.querySelector(".cbt__header .title");
         const cbtQuiz = quizWrapCbt.querySelector(".cbt__quiz");
@@ -186,10 +187,178 @@
 
         let questionTitle = "";
     </script>
-
-    <script src="js/option2.js"></script>
         
     <script>
+        // CBT 연습하기
+        quizMainSelect2.forEach(select => {
+            select.addEventListener("click", (e) => {
+                e.preventDefault();
+                
+                //cbt
+                questionTime = select.dataset.time;
+                dataQuestion2(questionTime);
+
+                questionTitle = select.innerText;
+
+                select.classList.add("selected");
+                quizMainStart.classList.add("option2");
+            })
+        });
+
+        // 데이터 가져오기
+        const dataQuestion2 = (time) => {   
+            fetch(`json/${time}.json`)
+            .then(res => res.json())
+            .then(items => {
+                questionAll = items.map((item, index) => {
+                    const formattedQuestion = {
+                        question: item.question,
+                    };
+                    formattedQuestion.number = index + 1;
+                    const answerChoices = [...item.incorrect_answers];       //틀린답 불러오기
+                    formattedQuestion.answer = Math.floor(Math.random() * answerChoices.length) + 1;  //정답 랜덤으로 불러오기
+                    answerChoices.splice(formattedQuestion.answer - 1, 0, item.correct_answer); //정답이랑 오답이랑 합치기
+                    answerChoices.forEach((choice, index) => {
+                        formattedQuestion["choice" + (index + 1)] = choice;
+                    });
+                    formattedQuestion.choiceLength = answerChoices.length;      //정답 갯수 확인하기 
+
+                    if(item.hasOwnProperty("question_desc")){        //question_desc 있으면 출력
+                        formattedQuestion.question_desc = item.question_desc;
+                    }
+
+                    if(item.hasOwnProperty("desc")){        //desc가 있으면 출력
+                        formattedQuestion.desc = item.desc;
+                    }
+                    if(item.hasOwnProperty("keyword")){        //keyword가 있으면 출력
+                        formattedQuestion.keyword = item.keyword;
+                    }
+
+                    // console.log(formattedQuestion)
+                    return formattedQuestion;
+                });
+
+                // startGame();
+                newQuestion2();      //문제 만들기
+            })
+            .catch((err) => console.error(err));
+        }
+
+        // 문제 만들기
+        const newQuestion2 = () => {
+            const exam = [];
+            const omr = [];
+
+            questionAll.forEach((question, number) => {
+                exam.push(`
+                    <div class="cbt">
+                        <div class="cbt__question">
+                            
+                            <span class="question">${question.number}. ${question.question}</span>
+                            <p class="desc hide">${question.question_desc}</p>
+                        </div>
+                        
+                        <div class="cbt__selects">
+                            <input type="radio" id="select${number}_1" class="select" name="select${number}" value="${number}_0" onclick="answerSelect2(this)">
+                            <label for="select${number}_1"><span class="choice">${question.choice1}</span></label>
+
+                            <input type="radio" id="select${number}_2" class="select" name="select${number}" value="${number}_1" onclick="answerSelect2(this)">
+                            <label for="select${number}_2"><span class="choice">${question.choice2}</span></label>
+                            
+                            <input type="radio" id="select${number}_3" class="select" name="select${number}" value="${number}_2" onclick="answerSelect2(this)">
+                            <label for="select${number}_3"><span class="choice">${question.choice3}</span></label>
+                            
+                            <input type="radio" id="select${number}_4" class="select" name="select${number}" value="${number}_3" onclick="answerSelect2(this)">
+                            <label for="select${number}_4"><span class="choice">${question.choice4}</span></label>
+                        </div>
+                        
+                        <div class="cbt__desc hide">${question.desc}</div>
+                        <div class="cbt__keyword hide"><a href="#">${question.keyword}</a></div>
+                    </div> 
+                `);
+
+                omr.push(`
+                    <div class="omr">
+                        <strong>${question.number}</strong>
+                        <input type="radio" name="omr${number}" id="omr${number}_1" value="${number}_0" onclick="answerSelect(this)">
+                        <label for="omr${number}_1"><span class="label-inner">1</span></label>
+                        <input type="radio" name="omr${number}" id="omr${number}_2" value="${number}_1" onclick="answerSelect(this)">
+                        <label for="omr${number}_2"><span class="label-inner">2</span></label>
+                        <input type="radio" name="omr${number}" id="omr${number}_3" value="${number}_2" onclick="answerSelect(this)">
+                        <label for="omr${number}_3"><span class="label-inner">3</span></label>
+                        <input type="radio" name="omr${number}" id="omr${number}_4" value="${number}_3" onclick="answerSelect(this)">
+                        <label for="omr${number}_4"><span class="label-inner">4</span></label>
+                    </div>
+                `);
+            })
+            
+            cbtQuiz.innerHTML = exam.join('');
+            cbtOmr.innerHTML = omr.join('');
+        }
+
+        //정답 확인
+        function answerQuiz(){
+            const quizSelects = document.querySelectorAll(".cbt__selects");   
+            // alert("정답을 확인하겠습니까?")
+
+            questionAll.forEach((question, number) => {
+                const quizSelectsWrap = quizSelects[number];  
+                const userSelector = `input[name=select${number}]:checked`; 
+                const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value;
+
+                if(userAnswer == question.answer){
+                    console.log("정답");
+                } else {
+                    console.log("오답");
+                    const label = quizSelects[number].querySelectorAll("label");
+                    label[question.answer-1].classList.add("good")
+                }
+
+                //보기 옵션
+                const quizKeyword = document.querySelectorAll(".cbt__keyword");
+                const quizDesc = document.querySelectorAll(".cbt__desc");
+
+                if(quizDesc[number].innerText == "undefined"){
+                    quizDesc[number].classList.add("hide");
+                } else {
+                    quizDesc[number].classList.remove("hide");
+                }
+
+                if(quizKeyword[number].innerText == "undefined"){
+                    quizKeyword[number].classList.add("hide");
+                } else {
+                    quizKeyword[number].classList.remove("hide");
+                }
+            });
+            
+
+        }
+        cbtSubmit.addEventListener("click", answerQuiz);
+
+        //보기 체크
+        function answerSelect(elem){
+            const answer = elem.value;
+            const answerNum = answer.split("_");
+
+            const cbt = document.querySelectorAll(".cbt__quiz .cbt");
+            const label = cbt[answerNum[0]].querySelectorAll(".cbt__selects input");
+            label[answerNum[1]].checked = true;
+        }
+
+        //보기 체크2
+        function answerSelect2(elem){
+            const answer = elem.value;
+            const answerNum = answer.split("_");
+
+            const select = document.querySelectorAll(".cbt__omr .omr");
+            const label = select[answerNum[0]].querySelectorAll(".cbt__omr .omr input");
+            label[answerNum[1]].checked = true;
+        }
+
+
+
+
+        // 한문제씩 연습하기
         quizMainSelect1.forEach(select => {
             select.addEventListener("click", (e) => {
                 e.preventDefault();
@@ -206,19 +375,6 @@
             })
         });
 
-        quizMainSelect2.forEach(select => {
-            select.addEventListener("click", (e) => {
-                e.preventDefault();
-                
-                //cbt
-                questionTime = select.dataset.time;
-                dataQuestion2(questionTime);
-
-                select.classList.add("selected");
-                quizMainStart.classList.add("option2");
-            })
-        });
-
         quizMainStart.addEventListener("click", () => {
             if(quizMainStart.classList.contains("option1")){
                 quizMain.classList.add("hide");
@@ -227,7 +383,9 @@
 
             if(quizMainStart.classList.contains("option2")){
                 quizMain.classList.add("hide");
-                quizWrapOption2.classList.remove("hide")
+                quizWrapOption2.classList.remove("hide");
+                document.querySelector("body").classList.add("fixed");
+                cbtHeaderTitle.innerHTML = questionTitle;
             }
         });
 

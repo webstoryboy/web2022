@@ -406,7 +406,7 @@
             quizQuestionImg2.innerHTML = "";
             if(questionCurrent.hasOwnProperty("question_img")){
                 const imgDiv = document.createElement("img");
-                const imgSrc = "https://raw.githubusercontent.com/webstoryboy/web2022/main/webs_javascript/_quiz6/img/"
+                const imgSrc = "https://webstoryboy.github.io/web2022/webs_img/"
                 quizQuestionImg2.appendChild(imgDiv);
                 imgDiv.src = imgSrc + questionCurrent.question_img + ".jpg";
             } 
@@ -513,8 +513,9 @@
                     if(item.hasOwnProperty("question_desc")){       
                         formattedQuestion.question_desc = item.question_desc;
                     }
-                    if(item.hasOwnProperty("question_img")){       
-                        formattedQuestion.question_img = item.question_img;
+                    if(item.hasOwnProperty("question_img")){     
+                        const src = "<img src='https://webstoryboy.github.io/web2022/webs_img/";
+                        formattedQuestion.question_img = src + item.question_img + ".jpg' alt='정보처리기사' />";
                     }
                     if(item.hasOwnProperty("keyword")){       
                         formattedQuestion.keyword = item.keyword;

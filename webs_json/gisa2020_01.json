@@ -10,7 +10,8 @@
         "question": "객체지향 프로그램에서 데이터를 추상화하는 단위는?",
         "correct_answer": "클래스",
         "incorrect_answers": ["메소드","상속성","메시지"],
-        "keyword": "객체지향"
+        "keyword": "객체지향",
+        "desc": "객체지향 구성 요소에는 클래스(Class), 객체(Object), 인스턴스(Instance), 메시지(Message), 메소드(Method) 등이 있다."
     },{
         "subject": "소프트웨어 설계",
         "question": "객체지향 기법에서 클래스들 사이의 '부분-전체(part-shole)' 관계 또는 '부분(is-a-part-of)'의 관계로 설명되는 연관성을 나태나는 용어는?",
@@ -22,7 +23,8 @@
         "question": "객체지향 분석 방법론 중 E-R 다이어그램을 사용하여 객체의 행위를 모델링하여, 객체 식별, 구조 식별, 주체 정의, 속성 및 관계 정의, 서비스 정의 등의 과정으로 구성되는 것은?",
         "correct_answer": "Coad와 Yourdon 방법",
         "incorrect_answers": ["Booch 방법","Jacobson 방법","Wirfs-Brocks 방법"],
-        "keyword": "객체지향"
+        "keyword": "객체지향 분석 방법론",
+        "desc": "객체지향 분석 방법론에는 Rumbaugh(럼바우), Booch, Jacobson, Coad와 Yourdon, Wirfs-brock 등이 있다."
     },{
         "subject": "소프트웨어 설계",
         "question": "코드 설계에서 일정한 일련번호를 부여하는 방식의 코드는?",
@@ -154,7 +156,9 @@
         "subject": "소프트웨어 개발",
         "question": "디지털 저작권 관리(DRM)의 기술 요소가 아닌 것은?",
         "correct_answer": "방화벽 기술",
-        "incorrect_answers": ["크랙 방지 기술", "정책 관리 기술", "암호화 기술"]
+        "incorrect_answers": ["크랙 방지 기술", "정책 관리 기술", "암호화 기술"],
+        "desc": "디지털 저작권 관리(DRM)의 기술 요소에는 암호화(Encryption), 키관리(Key Management), 암호와 파일 생성(Packager), 식별 기술(Identification), 저작권 표현(Right Expression), 정책 관리(Policy Management), 크랙방지(Tamper Resistance), 인증(Authentication) 등이 있다.",
+        "keyword": "DRM"
     },{
         "subject": "소프트웨어 개발",
         "question": "인터페이스 보안을 위해 네트워크 영역에 적용 될 수 있는 솔루션과 거리가 먼 것은?",
@@ -186,7 +190,7 @@
         "question": "White Box Testing에 대한 설명으로 옳지 않은 것은?",
         "correct_answer": "Source Code의 모든 문장을 한 번 이상 수행함으로써 진행된다.",
         "incorrect_answers": ["Boundary Value Analysis가 대표적인 기법이다.", "모듈 안의 작동을 직접 관찰할 수 있다.", "산출물의 각 기능별로 적절한 프로그램의 제어 구조에 따라 선택, 반복 등의 부분들을 수행함으로써 논리적 경로를 점검한다."],
-        "desc": "화이트 박스는 논리적인 경로, 제어구조(조건, 루프, 흐름)를 테스트합니다.",
+        "desc": "화이트 박스에는 기초 경로(Basic Path), 조건 검사(Condition Testing), 루프 검사(Loop Testing), 데이터 흐름 검사(Data Flow Testing) 테스트가 있으며, 블랙 박스 테스트에는 동등 분할(Equivalence Partitioning), 경계선 분석(Boundary Value Analysis), 원인-효과 그래프(Cause-Effect Graphing), 오류 예측(Error Guessing), 비교(Comparison) 테스트가 있습니다.</li>",
         "keyword": "화이트 박스"
     },{
         "subject": "소프트웨어 개발",
@@ -208,7 +212,9 @@
         "subject": "소프트웨어 개발",
         "question": "정렬된 N개의 데이터를 처리하는데 O(Nlog2N)의 시간이 소요되는 정렬 알고리즘은?",
         "correct_answer": "합병정렬",
-        "incorrect_answers": ["선택정렬","삽입정렬","버블정렬"]
+        "incorrect_answers": ["선택정렬","삽입정렬","버블정렬"],
+        "keyword": "정렬",
+        "url": "https://license.tistory.com/14"
     },{
         "subject": "소프트웨어 개발",
         "question": "ISO/IEC 9126의 소프트웨어 품질 특성 중 기능성(Functionlity)의 하위 특성으로 옳지 않은 것은?",
@@ -219,7 +225,8 @@
         "subject": "소프트웨어 개발",
         "question": "EAI(Enterprise Application Integration)의 구축 유형으로 옳지 않은 것은?",
         "correct_answer": "Tree",
-        "incorrect_answers": ["Point-to-Point","Hub & Spoke","Message Bus"]
+        "incorrect_answers": ["Point-to-Point","Hub & Spoke","Message Bus"],
+        "keyword": "EAI"
     },{
         "subject": "소프트웨어 개발",
         "question": "소스코드 품질 분석 도구 중 정적 분석 도구가 아닌 것은?",
@@ -237,7 +244,8 @@
         "question": "SQL의 분류 중 DDL에 해당하지 않는 것은?",
         "correct_answer": "UPDATE",
         "incorrect_answers": ["ALTER","DROP","CREATE"],
-        "desc": "DDL(데이터 정의어): CREATE, ALTER, DROP<br>DML(데이터 조작어): SELECT, INSERT, UPDATE, DELETE<br>DCL(데이터 제어어): GRANT, REVOKE"
+        "desc": "DDL(데이터 정의어): CREATE, ALTER, DROP<br>DML(데이터 조작어): SELECT, INSERT, UPDATE, DELETE<br>DCL(데이터 제어어): GRANT, REVOKE, COMMIT, ROLLBACK",
+        "keyword": "SQL 명령어"
     },{
         "subject": "데이터베이스 구축",
         "question": "STUDENT 테이블에 독일어과 학생 50명, 중국어과 학생 30명, 영어영문학과 학생 50명의 정보가 저장되어 있을 때, 다음 두 SQL문의 실행결과 튜플 수는?(단, DEFT 컬럼은 학과명)",
@@ -273,7 +281,8 @@
         "question": "DML에 해당하는 SQL 명령으로만 나열된 것은?",
         "correct_answer": "SELECT, INSERT, DELETE, UPDATE",
         "incorrect_answers": ["DELETE, UPDATE, CREATE, ALTER"," INSERT, DELETE, UPDATE, DROP","SELECT, INSERT, DELETE, ALTER"],
-        "desc": "DDL : CREATE, ALTER, DROP<br> DML : SELECT, INSERT, DELETE, UPDATE<br> DCL : COMMOT, ROLLBACL, GRANT, REVOKE"
+        "desc": "DDL(데이터 정의어): CREATE, ALTER, DROP<br>DML(데이터 조작어): SELECT, INSERT, UPDATE, DELETE<br>DCL(데이터 제어어): GRANT, REVOKE, COMMIT, ROLLBACK",
+        "keyword": "SQL 명령어"
     },{
         "subject": "데이터베이스 구축",
         "question": "데이터베이스 시스템에서 삽입, 갱신, 삭제 등의 이벤트가 발생할 때마다 관련 작업이 자동으로 수행되는 절차형 SQL은?",
@@ -322,7 +331,8 @@
         "question_desc": "후보키는 릴레이션에 있는 모든 튜플에 대해 유일성과 (  )을 만족시켜야 한다.",
         "correct_answer": "최소성",
         "incorrect_answers": ["중복성","참조성","동일성"],
-        "desc": "기본키는 유일성과 최소성을 만족시켜야 한다. "
+        "desc": "키(Key)에는 후보키(Candidate Key), 기본키(Primary Key), 대체키(Alternate Key), 슈퍼키(Super Key), 외래키(Foreign Key)가 있다.",
+        "keyword": "키(Key)"
     },{
         "subject": "데이터베이스 구축",
         "question": "다음 SQL문의 실행 결과는?",
@@ -334,7 +344,8 @@
         "question": "데이터 제어 언어(DCL)의 기능으로 옳지 않은 것은?",
         "correct_answer": "논리적, 물리적 데이터 구조 정의",
         "incorrect_answers": ["데이터 보안","무결성 유지","병행수행 제어"],
-        "desc": "DDL : 데이터 구조 정의<br>DML : 데이터 조회, 삭제, 갱신, 삽입"
+        "desc": "DDL(데이터 정의어): CREATE, ALTER, DROP<br>DML(데이터 조작어): SELECT, INSERT, UPDATE, DELETE<br>DCL(데이터 제어어): GRANT, REVOKE, COMMIT, ROLLBACK",
+        "keyword": "SQL 명령어"
     },{
         "subject": "데이터베이스 구축",
         "question": "참조 무결성을 유지하기 위하여 DROP문에서 부모 테이블의 항목 값을 삭제할 경우 자동적으로 자식 테이블의 해당 레코드를 삭제하기 위한 옵션은?",

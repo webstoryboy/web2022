@@ -52,7 +52,7 @@
         "subject": "소프트웨어 설계",
         "question": "객체지향 개념에서 다형성(Polymorphism)과 관련한 설명으로 틀린 것은?",
         "correct_answer": "메소드 오버로딩(Overloading)의 경우 매개 변수 타입은 동일하지만 메소드명을 다르게 함으로써 구현, 구분 할 수 있다.",
-        "incorrect_answers": ["다형성은 현재 코드를 변경하지 않고 새로운 클래스를 쉽게 추가할 수 있게 한다.","다형성이란 여러 가지 형태를 가지고 있다는 의미로, 여러 형태를 받아들일 수 있는 특징을 말한다","메소드 오버라이딩(Overriding)은 상위 클래스에서 정의한 일반 메소드의 구현을 하위 클래스에서 무시하고 재정의할 수 있다."],
+        "incorrect_answers": ["다형성은 현재 코드를 변경하지 않고 새로운 클래스를 쉽게 추가할 수 있게 한다.","다형성이란 여러 가지 형태를 가지고 있다는 의미로, 여러 형태를 받아들일 수 있는 특징을 말한다.","메소드 오버라이딩(Overriding)은 상위 클래스에서 정의한 일반 메소드의 구현을 하위 클래스에서 무시하고 재정의할 수 있다."],
         "keyword": "객체지향",
         "desc": "메소드 오버로딩(Overloading)은 메소드명은 같지만, 매개 변수의 개수와 타입을 달리하여 구현하는 개념이다."
     },{
@@ -65,7 +65,7 @@
         "subject": "소프트웨어 설계",
         "question": "객체에 대한 설명으로 틀린 것은?",
         "correct_answer": "객체는 공통 속성을 공유하는 클래스들의 집합이다.",
-        "incorrect_answers": ["객체는 상태, 동작, 고유 식별자를 가진 모든 것이라 할 수 있다","객체의 상태는 속성값에 의해 정의된다","객체는 필요한 자료 구조와 이에 수행되는 함수들을 가진 하나의 독립된 존재이다"],
+        "incorrect_answers": ["객체는 상태, 동작, 고유 식별자를 가진 모든 것이라 할 수 있다.","객체의 상태는 속성값에 의해 정의된다.","객체는 필요한 자료 구조와 이에 수행되는 함수들을 가진 하나의 독립된 존재이다."],
         "desc": "클래스는 공통 속성을 공유하는 객체의 집합이다. 객체는 객체지향 기술에서의 객체를 의미하며, 객체는 인스턴스의 집합으로 볼 수 있다.",
         "keyword": "객체지향"
     },{
@@ -73,7 +73,8 @@
         "question": "속성과 관련된 연산(Operation)을 클래스 안에 묶어서 하나로 취급하는 것을 의미하는 객체지향 개념은?",
         "correct_answer": "Encapsulation",
         "incorrect_answers": ["Inheritance","Class","Association"],
-        "keyword": "객체지향"
+        "keyword": "객체지향",
+        "desc": "객체지향의 주요 원칙에는 캡슐화(Encapsulation), 정보은닉(Information Hiding), 추상화(Abstract), 상속(Inheritance), 다형성(Polymorphism) 등이 있다."
     },{
         "subject": "소프트웨어 설계",
         "question": "애자일(Agile) 프로세스 모델에 대한 설명으로 틀린 것은?",
@@ -90,7 +91,7 @@
         "subject": "소프트웨어 설계",
         "question": "GoF(Gang of Four) 디자인 패턴을 생성, 구조, 행동 패턴의 세 그룹으로 분류할 때, 구조 패턴이 아닌 것은?",
         "correct_answer": "Builder 패턴",
-        "incorrect_answers": ["Adapter 패턴","Bridge 패턴"," Proxy 패턴"],
+        "incorrect_answers": ["Adapter 패턴","Bridge 패턴","Proxy 패턴"],
         "keyword": "디자인 패턴",
         "desc": "생성 패턴에는 추상팩토리(Abstract Factory), 빌더(Builder), 팩토리 메서드(Factory Method), 프로토타입(Prototype), 싱글톤(Sington) 등이 있다. 구조 패턴에는 어댑터(Adapter), 브릿지(Bridge), 컴포지트(Composite), 데코레이터(Decorator), 퍼사드(Facade), 플라이웨잇(Flyseight), 프록시(Proxy) 등이 있다."
     },{
@@ -169,7 +170,7 @@
         "subject": "소프트웨어 개발",
         "question": "DRM(Digital Rights Management)과 관련한 설명으로 틀린 것은?",
         "correct_answer": "원본을 안전하게 유통하기 위한 전자적 보안은 고려하지 않기 때문에 불법 유통과 복제의 방지는 불가능하다.",
-        "incorrect_answers": ["디지털 콘텐츠와 디바이스의 사용을 제한하기 위해 하드웨어 제조업자, 저작권자, 출판업자 등이 사용할 수 있는 접근 제어 기술을 의미한다."," 디지털 미디어의 생명 주기 동안 발생하는 사용 권한관리, 과금, 유통 단계를 관리하는 기술로도 볼 수 있다.","클리어링 하우스(Clearing House)는 사용자에게 콘텐츠 라이센스를 발급하고 권한을 부여해주는 시스템을 말한다."],
+        "incorrect_answers": ["디지털 콘텐츠와 디바이스의 사용을 제한하기 위해 하드웨어 제조업자, 저작권자, 출판업자 등이 사용할 수 있는 접근 제어 기술을 의미한다.","디지털 미디어의 생명 주기 동안 발생하는 사용 권한관리, 과금, 유통 단계를 관리하는 기술로도 볼 수 있다.","클리어링 하우스(Clearing House)는 사용자에게 콘텐츠 라이센스를 발급하고 권한을 부여해주는 시스템을 말한다."],
         "keyword": "DRM"
     },{
         "subject": "소프트웨어 개발",
@@ -186,7 +187,8 @@
         "question": "화이트박스 테스트와 관련한 설명으로 틀린 것은?",
         "correct_answer": "프로그램의 구조를 고려하지 않기 때문에 테스트 케이스는 프로그램 또는 모듈의 요구나 명세를 기초로 결정한다. ",
         "incorrect_answers": ["화이트박스 테스트의 이해를 위해 논리흐름도(Logic-Flow Diagram)를 이용할 수 있다.","테스트 데이터를 이용해 실제 프로그램을 실행함으로써 오류를 찾는 동적 테스트(Dynamic Test)에 해당한다","테스트 데이터를 선택하기 위하여 검증기준(Test Coverage)을 정한다"],
-        "keyword": "화이트박스 테스트 블랙박스 테스트"
+        "desc": "화이트 박스에는 기초 경로(Basic Path), 조건 검사(Condition Testing), 루프 검사(Loop Testing), 데이터 흐름 검사(Data Flow Testing) 테스트가 있으며, 블랙 박스 테스트에는 동등 분할(Equivalence Partitioning), 경계선 분석(Boundary Value Analysis), 원인-효과 그래프(Cause-Effect Graphing), 오류 예측(Error Guessing), 비교(Comparison) 테스트가 있습니다.</li>",
+        "keyword": "화이트 박스"
     },{
         "subject": "소프트웨어 개발",
         "question": "알고리즘과 관련한 설명으로 틀린 것은?",
@@ -326,8 +328,8 @@
         "question": "SQL의 명령을 사용 용도에 따라 DDL, DML, DCL로 구분 할 경우, 그 성격이 나머지 셋과 다른 것은?",
         "correct_answer": "GRANT",
         "incorrect_answers": ["SELECT","UPDATE","INSERT"],
-        "keyword": "데이터베이스",
-        "desc": "DDL: CREATE, ALTER, DROP<br> DML: SELECT, INSERT, UPDATE, DELETE<br>DCL: COMMIT, ROLLBACK, GRANT, REVOKE"
+        "desc": "DDL(데이터 정의어): CREATE, ALTER, DROP<br>DML(데이터 조작어): SELECT, INSERT, UPDATE, DELETE<br>DCL(데이터 제어어): GRANT, REVOKE, COMMIT, ROLLBACK",
+        "keyword": "SQL 명령어"
     },{
         "subject": "데이터베이스 구축",
         "question": "키의 종류 중 유일성과 최소성을 만족하는 속성 또는 속성들의 집합은?",

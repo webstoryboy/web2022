@@ -9,7 +9,8 @@
         "question": "다음 내용이 설명하는 디자인 패턴은?",
         "question_desc": "- 객체를 생성하기 위한 인터페이스를 정의하여 어떤 클래스가 인스턴스화될 것인지는 서브 클래스가 결정하도록 하는 것<br>- Virtual-Constructor패턴이라고도 한다.",
         "correct_answer": "Factory Method 패턴",
-        "incorrect_answers": ["Visitor패턴","Observer패턴","Bridge 패턴"]
+        "incorrect_answers": ["Visitor 패턴","Observer 패턴","Bridge 패턴"],
+        "keyword" : "디자인 패턴"
     },{
         "subject": "소프트웨어 설계",
         "question": "럼바우 객체 지향 분석과 거리가 먼 것은?",
@@ -45,8 +46,8 @@
     },{
         "subject": "소프트웨어 설계",
         "question": "디자인 패턴 중에서 행위적 패턴에 속하지 않는 것은?",
-        "correct_answer": "프로토타입 (Prototype) 패턴",
-        "incorrect_answers": ["커맨드 (Command) 패턴","옵저버 (Obseerver) 패턴","상태 (State) 패턴"],
+        "correct_answer": "프로토타입(Prototype) 패턴",
+        "incorrect_answers": ["커맨드(Command) 패턴","옵저버(Obseerver) 패턴","상태(State) 패턴"],
         "desc": "행위적 패턴(Behavioral Pattern)에는 책임 연쇄(Chain of Responsibility), 커맨드(Command), 인터프리터(Interpreter), 반복자(Iterator), 중재자(Mediator), 메멘토(Memento), 옵서버(Observer), 상태(State), 전략(Strategy), 템플릿 메소드(template Method), 방문자(Visitor)가 있습니다.",
         "keyword": "디자인 패턴"
     },{
@@ -89,8 +90,8 @@
         "incorrect_answers": ["추상화 관계","의존 관계","그룹 관계"]
     },{
         "subject": "소프트웨어 설계",
-        "question": " 객체지향 소프트웨어 설계시 디자인 패턴을 구성하는 요소로서 가장 거리가 먼 것은?",
-        "correct_answer": "개발자이름",
+        "question": "객체지향 소프트웨어 설계시 디자인 패턴을 구성하는 요소로서 가장 거리가 먼 것은?",
+        "correct_answer": "개발자 이름",
         "incorrect_answers": ["문제 및 배경","사례","샘플코드"]
     },{
         "subject": "소프트웨어 설계",
@@ -160,10 +161,11 @@
     },{
         "subject": "소프트웨어 개발",
         "question": "다음 자료에 대하여 선택(Selection) 정렬을 이용하여 오름차순으로 정렬하고자 한다. 3회전 후의 결과로 옳은 것은?",
-        "question_desc": "37, 14, 17. 40. 35",
+        "question_desc": "37, 14, 17, 40, 35",
         "correct_answer": "14, 17, 35, 40, 37",
         "incorrect_answers": ["14, 17, 37, 40, 35","14, 37, 17, 40, 35","17, 14, 37, 35, 40"],
-        "desc": "선택정렬은 가장 작은 값을 찾아 첫번째 값과 교환합니다.<br>1회전 14 37 17 40 35<br>2회전 14 17 37 40 35<br>3회전 14 17 35 40 37"
+        "desc": "선택정렬은 가장 작은 값을 찾아 첫번째 값과 교환합니다.<br>1회전 14 37 17 40 35<br>2회전 14 17 37 40 35<br>3회전 14 17 35 40 37",
+        "keyword": "정렬"
     },{
         "subject": "소프트웨어 개발",
         "question": "형상 관리 도구의 주요 기능으로 거리가 먼 것은?",
@@ -207,7 +209,8 @@
         "question": "디지털 저작권 관리(DRM) 기술과 거리가 먼 것은?",
         "correct_answer": "콘텐츠 오류 감지 및 복구",
         "incorrect_answers": ["콘텐츠 암호화 및 키 관리","콘텐츠 식별체계 표현","라이센스 발급 및 관리"],
-        "desc": "지털 저작권 관리(DRM) 기술은 암호화(Encryption), 키 관리(Key Management), 암호화 파일 생성(Packager), 식별 기술(Identification), 저작권 표현(Right Expression), 정책 관리(Policy Management), 크랙 방지(Tamper Resistance), 인증(Authentication) 등을 말합니다."
+        "desc": "디지털 저작권 관리(DRM)의 기술 요소에는 암호화(Encryption), 키관리(Key Management), 암호와 파일 생성(Packager), 식별 기술(Identification), 저작권 표현(Right Expression), 정책 관리(Policy Management), 크랙방지(Tamper Resistance), 인증(Authentication) 등이 있다.",
+        "keyword": "DRM"
     },{
         "subject": "소프트웨어 개발",
         "question": "물리데이터 저장소의 파티션 설계에서 파티션 유형으로 옳지 않은 것은?",
@@ -278,7 +281,8 @@
         "question": "DCL(Data Control Language) 명령어가 아닌 것은?",
         "correct_answer": "SELECT",
         "incorrect_answers": ["COMMIT","ROLLBACK","GRANT"],
-        "desc": "DDL(데이터 정의어): CREATE, ALTER, DROP<br>DML(데이터 조작어): SELECT, INSERT, UPDATE, DELETE<br>DCL(데이터 제어어): GRANT, REVOKE, COMMIT, ROLLBACK"
+        "desc": "DDL(데이터 정의어): CREATE, ALTER, DROP<br>DML(데이터 조작어): SELECT, INSERT, UPDATE, DELETE<br>DCL(데이터 제어어): GRANT, REVOKE, COMMIT, ROLLBACK",
+        "keyword": "SQL 명령어"
     },{
         "subject": "데이터베이스 구축",
         "question": "병행제어 기법 중 로킹에 대한 설명으로 옳지 않은 것은?",
@@ -308,7 +312,8 @@
         "question": "정규화의 목적으로 옳지 않은 것은?",
         "correct_answer": "중복을 배제하여 삽입, 삭제, 갱신 이상의 발생을 야기한다.",
         "incorrect_answers": ["어떠한 릴레이션이라도 데이터베이스 내에서 표현 가능하게 만든다.","데이터 삽입시 릴레이션을 재구성할 필요성을 줄인다.","효과적인 검색 알고리즘을 생성할 수 있다."],
-        "desc": "정규화의 목적은 삽입 이상(Insertion Anomaly), 갱신 이상(Modification Anomaly), 삭제 이상(Deletion Anomaly) 등의 이상들을 제거하기 위함입니다."
+        "desc": "정규화의 목적은 삽입 이상(Insertion Anomaly), 갱신 이상(Modification Anomaly), 삭제 이상(Deletion Anomaly) 등의 이상들을 제거하기 위함입니다.",
+        "keyword": "정규화"
     },{
         "subject": "데이터베이스 구축",
         "question": "다음에 해당하는 함수 종속의 추론 규칙은?",
@@ -340,7 +345,8 @@
         "question": "DML(Data Manipulation Language) 명령어가 아닌 것은?",
         "correct_answer": "ALTER",
         "incorrect_answers": ["INSERT","UPDATE","DELETE"],
-        "desc": "DDL(데이터 정의어): CREATE, ALTER, DROP<br>DML(데이터 조작어): SELECT, INSERT, UPDATE, DELETE<br>DCL(데이터 제어어): GRANT, REVOKE, COMMIT, ROLLBACK"
+        "desc": "DDL(데이터 정의어): CREATE, ALTER, DROP<br>DML(데이터 조작어): SELECT, INSERT, UPDATE, DELETE<br>DCL(데이터 제어어): GRANT, REVOKE, COMMIT, ROLLBACK",
+        "keyword": "SQL 명령어"
     },{
         "subject": "데이터베이스 구축",
         "question": " 다음과 같이 위쪽 릴레이션을 아래쪽 릴레이션으로 정규화를 하였을 때 어떤 정규화 작업을 한 것인가?",

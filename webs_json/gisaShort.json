@@ -3,7 +3,7 @@
         "time": "2020_01",
         "question": "비정규화의 개념에 대해서 간략히 설명하시오.",
         "correct_answer": "완벽한 수준의 정규화를 진행하면 일관성, 안정성이 증가하지만 성능은 오히려 느려질 수 있기 때문에 성능 향상을 위해 릴레이션을 통합, 추가, 분할하는 과정이다.",
-        "keyword": "비정규화"
+        "keyword": "정규화"
     },{
         "time": "2020_01",
         "question": "다음 설명에 부합하는 마크업 언어는 무엇인지 영문 약어로 쓰시오",
@@ -156,8 +156,9 @@
     },{  
         "time": "2020_03",
         "question": "다음 EAI 구축 유형에 대한 설명을 참고하여 빈칸을 작성하시오.",
-        "question_desc": "( ① ) : 미들웨어 없이 애플리케이션을 연결하는 방식, 솔루션의 구매 없이 단순하게 통합이 가능하지만 변경이나 재사용이 어렵다<br> ( ② ) : 단일 접점인 허브 시스템을 통해 데이터를 전송하는 중앙 집중형 방식, 확장 및 유지 보수가 용이하고, 모든 데이터의 전송을 보장하지만, 허브에 장애가 발생하면 전체 시스템에 영향을 받음",
-        "correct_answer": "1. Point to Point, 2. Hub & Spoke"
+        "question_desc": "( ① ) : 미들웨어 없이 애플리케이션을 연결하는 방식, 솔루션의 구매 없이 단순하게 통합이 가능하지만 변경이나 재사용이 어렵다.<br> ( ② ) : 단일 접점인 허브 시스템을 통해 데이터를 전송하는 중앙 집중형 방식, 확장 및 유지 보수가 용이하고, 모든 데이터의 전송을 보장하지만, 허브에 장애가 발생하면 전체 시스템에 영향을 받음",
+        "correct_answer": "①: Point to Point, ②: Hub & Spoke",
+        "keyword": "EAI"
     },{  
         "time": "2020_03",
         "question": "UI(User Interface)의 설계 원칙 중 직관성에 대해 설명하시오.",
@@ -286,7 +287,8 @@
         "time": "2021_01",
         "question": "다음 설명하는 모델링 기법에 가장 부합되는 용어를 작성하시오.",
         "question_desc": "정규화된 엔티티, 속성, 관계를 시스템의 성능 향상과 개발 운영의 단순화를 위해 중복, 통합, 분리 등을 수행하는 데이터 모델링 기법이다.<br>완벽한 수준의 정규화를 진행하면 일관성과 안정성은 증가하지만 성능이 느려질 수 있기 때문에 성능 향상을 위해 릴레이션을 통합하는 과정이다.",
-        "correct_answer": "반정규화(De-Normalization)"
+        "correct_answer": "반정규화(De-Normalization)",
+        "keyword": "정규화"
     },{  
         "time": "2021_01",
         "question": "다음 검증 기법에 관련된 설명에 가장 부합하는 용어를 작성하시오.",
@@ -487,7 +489,9 @@
         "time": "2022_01",
         "question": "아래에서 화이트 박스 테스트 기법을 3가지 찾아 쓰시오.",
         "question_desc": "Equivalence Partitioning Testing, Condition Testing, Boundary Value Analysis, Cause-Effect Graphing Testing, Loop Testing, Comparison Testing, Data Flow Testing, Error Guessing",
-        "correct_answer": "Condition Testing, Loop Testing, Data Flow Testing"
+        "correct_answer": "Condition Testing, Loop Testing, Data Flow Testing",
+        "desc": "화이트 박스에는 기초 경로(Basic Path), 조건 검사(Condition Testing), 루프 검사(Loop Testing), 데이터 흐름 검사(Data Flow Testing) 테스트가 있으며, 블랙 박스 테스트에는 동등 분할(Equivalence Partitioning), 경계선 분석(Boundary Value Analysis), 원인-효과 그래프(Cause-Effect Graphing), 오류 예측(Error Guessing), 비교(Comparison) 테스트가 있습니다.</li>",
+        "keyword": "화이트 박스"
     },{  
         "time": "2022_01",
         "question": "아래 기술된 용어를 영문 약어로 작성하시오.",

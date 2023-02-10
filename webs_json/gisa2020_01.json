@@ -422,7 +422,8 @@
         "question": "다음의 페이지 참조 열(Page reference string)에 대해 페이지 교체 기법으로 선입선출 알고리즘을 사용할 경우 페이지 부재(Page Fault) 횟수는? (단, 할당된 페이지 프레임 수는 3이고, 처음에는 모든 프레임이 비어 있다.)",
         "question_desc": "페이지 참조 열 : 7,0,1,2,0,3,0,4,2,3,0,3,2,1,2,0,1,7,0",
         "correct_answer": "14",
-        "incorrect_answers": ["13","15","20"]
+        "incorrect_answers": ["13","15","20"],
+        "keyword": "페이지 교체 알고리즘"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "C언어에서 사용할 수 없는 변수명은?",
@@ -433,7 +434,8 @@
         "subject": "프로그래밍 언어 활용",
         "question": "IPv6에 대한 설명으로 틀린 것은?",
         "correct_answer": "패킷 크기가 64Kbyte로 고정되어 있다.",
-        "incorrect_answers": ["128비트의 주소 공간을 제공한다.","인증 및 보안 기능을 포함하고 있다.","IPv6 확장 헤더를 통해 네트워크 기능 확장이 용이하다."]
+        "incorrect_answers": ["128비트의 주소 공간을 제공한다.","인증 및 보안 기능을 포함하고 있다.","IPv6 확장 헤더를 통해 네트워크 기능 확장이 용이하다."],
+        "keyword": "IP주소"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "프로세스 상태의 종류가 아닌 것은?",
@@ -445,7 +447,8 @@
         "question": "IPv6의 주소체계로 거리가 먼 것은?",
         "correct_answer": "Broadcast",
         "incorrect_answers": ["Unicast","Anycast","Multicast"],
-        "desc": "IPv6 주소체계는 유니캐스트(unicast), 멀티캐스트(multicast), 애니캐스트(anycast) 세 가지 주소 체계를 가지고 있습니다."
+        "desc": "IPv6 주소체계는 유니캐스트(unicast), 멀티캐스트(multicast), 애니캐스트(anycast) 세 가지 주소 체계를 가지고 있습니다.",
+        "keyword": "IP주소"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "응집도가 가장 낮은 것은?",
@@ -467,7 +470,9 @@
         "subject": "프로그래밍 언어 활용",
         "question": "OSI-7계층에서 종단간 신뢰성 있고 효율적인 데이터를 전송하기 위해 오류검출과 복구, 흐름 제어를 수행하는 계층은?",
         "correct_answer": "전송계층",
-        "incorrect_answers": ["세션 계층","표현 계층","응용 계층"]
+        "incorrect_answers": ["세션 계층","표현 계층","응용 계층"],
+        "keyword": "OSI 7계층",
+        "desc": "OSI 7계층은 물리 계층, 데이터 링크 계층, 네트워크 계층, 전송 계층, 세션 계층, 표현 계층, 응용 계층이 있다. 물데네,전세,표응"
     },{
         "subject": "정보시스템 구축관리",
         "question": "웹과 컴퓨터 프로그램에서 용량이 적은 데이터를 교환하기 위해 데이터 객체를 속성·값의 쌍 형태로 표현하는 형식으로 자바스크립트(JavaScript)를 토대로 개발되어진 형식은?",

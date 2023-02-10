@@ -39,31 +39,31 @@
             <hr>
             <p class="sub">주관식 연습하기</p>
             <ul class="select" id="option1">
-                <li data-time="gisaShort"><a href="#">정보처리기사 주관식 랜덤 기출문제</a></li>
+                <li data-time="https://webstoryboy.github.io/web2022/webs_json/gisaShort.json"><a href="#">정보처리기사 주관식 랜덤 기출문제</a></li>
             </ul>
             <hr>
             <p class="sub">한문제씩 연습하기</p>
             <ul class="select" id="option2">
-                <li data-time="gisa2020_01"><a href="#">2020년 1회 정보처리기사 기출문제</a></li>
-                <li data-time="gisa2020_03"><a href="#">2020년 3회 정보처리기사 기출문제</a></li>
-                <li data-time="gisa2020_04"><a href="#">2020년 4회 정보처리기사 기출문제</a></li>
-                <li data-time="gisa2021_01"><a href="#">2021년 1회 정보처리기사 기출문제</a></li>
-                <li data-time="gisa2021_02"><a href="#">2021년 2회 정보처리기사 기출문제</a></li>
-                <li data-time="gisa2021_03"><a href="#">2021년 3회 정보처리기사 기출문제</a></li>
-                <li data-time="gisa2022_01"><a href="#">2022년 1회 정보처리기사 기출문제</a></li>
-                <li data-time="gisa2022_02"><a href="#">2022년 2회 정보처리기사 기출문제</a></li>
+                <li data-time="../../webs_json/gisa2020_01.json"><a href="#">2020년 1회 정보처리기사 기출문제</a></li>
+                <li data-time="https://webstoryboy.github.io/web2022/webs_json/gisa2020_03.json"><a href="#">2020년 3회 정보처리기사 기출문제</a></li>
+                <li data-time="https://webstoryboy.github.io/web2022/webs_json/gisa2020_04.json"><a href="#">2020년 4회 정보처리기사 기출문제</a></li>
+                <li data-time="https://webstoryboy.github.io/web2022/webs_json/gisa2021_01.json"><a href="#">2021년 1회 정보처리기사 기출문제</a></li>
+                <li data-time="https://webstoryboy.github.io/web2022/webs_json/gisa2021_02.json"><a href="#">2021년 2회 정보처리기사 기출문제</a></li>
+                <li data-time="https://webstoryboy.github.io/web2022/webs_json/gisa2021_03.json"><a href="#">2021년 3회 정보처리기사 기출문제</a></li>
+                <li data-time="https://webstoryboy.github.io/web2022/webs_json/gisa2022_01.json"><a href="#">2022년 1회 정보처리기사 기출문제</a></li>
+                <li data-time="https://webstoryboy.github.io/web2022/webs_json/gisa2022_02.json"><a href="#">2022년 2회 정보처리기사 기출문제</a></li>
             </ul>
             <hr>
             <p class="sub">CBT 유형으로 연습하기</p>
             <ul class="select" id="option3">
-                <li data-time="gisa2020_01"><a href="#">2020년 1회 정보처리기사 기출문제</a></li>
-                <li data-time="gisa2020_03"><a href="#">2020년 3회 정보처리기사 기출문제</a></li>
-                <li data-time="gisa2020_04"><a href="#">2020년 4회 정보처리기사 기출문제</a></li>
-                <li data-time="gisa2021_01"><a href="#">2021년 1회 정보처리기사 기출문제</a></li>
-                <li data-time="gisa2021_02"><a href="#">2021년 2회 정보처리기사 기출문제</a></li>
-                <li data-time="gisa2021_03"><a href="#">2021년 3회 정보처리기사 기출문제</a></li>
-                <li data-time="gisa2022_01"><a href="#">2022년 1회 정보처리기사 기출문제</a></li>
-                <li data-time="gisa2022_02"><a href="#">2022년 2회 정보처리기사 기출문제</a></li>
+                <li data-time="https://webstoryboy.github.io/web2022/webs_json/gisa2020_01.json"><a href="#">2020년 1회 정보처리기사 기출문제</a></li>
+                <li data-time="https://webstoryboy.github.io/web2022/webs_json/gisa2020_03.json"><a href="#">2020년 3회 정보처리기사 기출문제</a></li>
+                <li data-time="https://webstoryboy.github.io/web2022/webs_json/gisa2020_04.json"><a href="#">2020년 4회 정보처리기사 기출문제</a></li>
+                <li data-time="https://webstoryboy.github.io/web2022/webs_json/gisa2021_01.json"><a href="#">2021년 1회 정보처리기사 기출문제</a></li>
+                <li data-time="https://webstoryboy.github.io/web2022/webs_json/gisa2021_02.json"><a href="#">2021년 2회 정보처리기사 기출문제</a></li>
+                <li data-time="https://webstoryboy.github.io/web2022/webs_json/gisa2021_03.json"><a href="#">2021년 3회 정보처리기사 기출문제</a></li>
+                <li data-time="https://webstoryboy.github.io/web2022/webs_json/gisa2022_01.json"><a href="#">2022년 1회 정보처리기사 기출문제</a></li>
+                <li data-time="https://webstoryboy.github.io/web2022/webs_json/gisa2022_02.json"><a href="#">2022년 2회 정보처리기사 기출문제</a></li>
             </ul>
             <div class="select start">
                 <a href="#">시작하기</a>
@@ -142,11 +142,19 @@
     </footer>
     <!-- //footer -->
 
+    <div class="quiz__popup hide">
+        <span class="quiz__popup__close">닫기</span>
+        
+    </div>
+
     <script>
         const quizSelect = document.querySelectorAll(".select li");  
         const quizStart = document.querySelector(".select.start");  
         const quizMain = document.querySelector(".quiz__main");
         const quizClose = document.querySelector(".quiz__close");
+        const quizPopup = document.querySelector(".quiz__popup");
+        const quizPopupClose = document.querySelector(".quiz__popup__close");
+
         const quizWrapOption1 = document.querySelector(".quiz__wrap.option1");  
         const quizWrapOption2 = document.querySelector(".quiz__wrap.option2");  
         const quizWrapOption3 = document.querySelector(".quiz__wrap.option3");  
@@ -255,7 +263,7 @@
 
         // 데이터 가져오기1
         const dataQuestion1 = (time) => {
-            fetch(`json/${time}.json`)
+            fetch(time)
             .then(res => res.json())
             .then(items => {
                 questionAll = items.map((item, index) => {
@@ -331,7 +339,7 @@
         
         // 데이터 가져오기2
         const dataQuestion2 = (time) => {
-            fetch(`json/${time}.json`)
+            fetch(time)
             .then(res => res.json())
             .then(items => {
                 questionAll = items.map((item, index) => {
@@ -358,6 +366,9 @@
                     }
                     if(item.hasOwnProperty("keyword")){       
                         formattedQuestion.keyword = item.keyword;
+                    }
+                    if(item.hasOwnProperty("keyword_num")){       
+                        formattedQuestion.keyword_num = item.keyword_num;
                     }
 
                     console.log(formattedQuestion)
@@ -401,6 +412,10 @@
             quizKeyword2.innerHTML = "";
             if(questionCurrent.hasOwnProperty("keyword")){
                 quizKeyword2.innerHTML = "<div>" + questionCurrent.keyword + "</div>";
+            } 
+
+            if(questionCurrent.hasOwnProperty("keyword_num")){
+                quizKeyword2.setAttribute("data-num", questionCurrent.keyword_num); 
             } 
 
             quizQuestionImg2.innerHTML = "";
@@ -486,11 +501,23 @@
                 newQuestion2();
             }
         });
-        
 
+        quizKeyword2.addEventListener("click", () => {
+            const keywordNum = quizKeyword2.getAttribute("data-num");
+
+            quizPopup.classList.remove("hide");
+            const iframeDiv = document.createElement("iframe");
+            iframeDiv.src = "https://license.tistory.com/" + keywordNum
+            quizPopup.appendChild(iframeDiv);
+        });
+        quizPopupClose.addEventListener("click", () => {
+            quizPopup.classList.add("hide");
+        })
+
+        
         // 데이터 가져오기3
         const dataQuestion3 = (time) => {
-            fetch(`json/${time}.json`)
+            fetch(time)
             .then(res => res.json())
             .then(items => {
                 questionAll = items.map((item, index) => {
@@ -657,7 +684,7 @@
             });
         }
         cbtSubmit.addEventListener("click", answerQuiz);
-        
+
 
     </script>
 </body>

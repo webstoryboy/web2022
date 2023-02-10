@@ -438,9 +438,10 @@
         "incorrect_answers": ["소프트웨어의 모듈은 프로그래밍 언어에서 Subroutine, Function 등으로 표현될 수 있다.","모듈화는 시스템을 지능적으로 관리할 수 있도록 해주며, 복잡도 문제를 해결하는 데 도움을 준다","모듈화는 시스템의 유지보수와 수정을 용이하게 한다."]
     },{
         "subject": "프로그래밍 언어 활용",
-        "question": "다음 중 페이지 교체(Page Replacement)알고리즘이 아닌 것은?",
+        "question": "다음 중 페이지 교체(Page Replacement) 알고리즘이 아닌 것은?",
         "correct_answer": "LUF(Least Used First)",
-        "incorrect_answers": ["FIFO(First-In-First-Out)","Optimal","LRU(Least Recently Used)"]
+        "incorrect_answers": ["FIFO(First-In-First-Out)","Optimal","LRU(Least Recently Used)"],
+        "keyword": "페이지 교체 알고리즘"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "C언어에서의 변수 선언으로 틀린 것은?",

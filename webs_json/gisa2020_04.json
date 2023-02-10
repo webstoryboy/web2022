@@ -365,7 +365,9 @@
         "subject": "프로그래밍 언어 활용",
         "question": "OSI 7계층에서 단말기 사이에 오류 수정과 흐름제어를 수행하여 신뢰성 있고 명확한 데이터를 전달하는 계층은?",
         "correct_answer": "전송 계층",
-        "incorrect_answers": ["응용 계층","세션 계층","표현 계층"]
+        "incorrect_answers": ["응용 계층","세션 계층","표현 계층"],
+        "keyword": "OSI 7계층",
+        "desc": "OSI 7계층은 물리 계층, 데이터 링크 계층, 네트워크 계층, 전송 계층, 세션 계층, 표현 계층, 응용 계층이 있다. [물데네,전세,표응]"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "다음 쉘 스크립트의 의미로 옳은 것은?",
@@ -395,13 +397,15 @@
         "question_img": "gisa2020_04_04",
         "correct_answer": "P4",
         "incorrect_answers": ["P1","P2","P3"],
-        "desc": "SJF(Shortest Job First)는 실행시간이 가장 짧은 작업부터 수행한다."
+        "desc": "SJF(Shortest Job First)는 실행시간이 가장 짧은 작업부터 수행한다.",
+        "keyword": "스케줄링"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "4개의 페이지를 수용할 수 있는 주기억장치가 있으며, 초기에는 모두 비어 있다고 가정한다. 다음의 순서로 페이지 참조가 발생할 때, FIFO 페이지 교체 알고리즘을 사용 할 경우 페이지 결함의 발생 횟수는?",
         "question_desc": "페이지 참조 순서 : 1, 2, 3, 1, 2, 4, 5, 1",
         "correct_answer": "6회",
-        "incorrect_answers": ["7회","8회","9회"]
+        "incorrect_answers": ["7회","8회","9회"],
+        "keyword": "페이지 교체 알고리즘"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "TCP 흐름제어기법 중 프레임이 손실되었을 때, 손실된 프레임 1개를 전송하고 수신자의 응답을 기다리는 방식으로 한 번에 프레임 1개만 전송할 수 있는 기법은?",

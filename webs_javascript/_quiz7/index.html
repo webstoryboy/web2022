@@ -144,7 +144,7 @@
 
     <div class="quiz__popup hide">
         <span class="quiz__popup__close">닫기</span>
-        
+        <iframe src="https://license.tistory.com/"></iframe>
     </div>
 
     <script>
@@ -504,11 +504,8 @@
 
         quizKeyword2.addEventListener("click", () => {
             const keywordNum = quizKeyword2.getAttribute("data-num");
-
             quizPopup.classList.remove("hide");
-            const iframeDiv = document.createElement("iframe");
-            iframeDiv.src = "https://license.tistory.com/" + keywordNum
-            quizPopup.appendChild(iframeDiv);
+            quizPopup.querySelector("iframe").setAttribute("src", "https://license.tistory.com/"+keywordNum);
         });
         quizPopupClose.addEventListener("click", () => {
             quizPopup.classList.add("hide");
@@ -625,8 +622,6 @@
                 }
             })
         }
-
-
 
         //보기 체크
         function answerSelect(elem){

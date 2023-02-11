@@ -142,19 +142,18 @@
     </footer>
     <!-- //footer -->
 
-    <div class="quiz__popup hide">
-        <span class="quiz__popup__close">닫기</span>
-        <iframe src="https://license.tistory.com/"></iframe>
-    </div>
+    <!-- 키워드 팝업 -->
+    <div class="quiz__popup"></div>
 
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script>
         const quizSelect = document.querySelectorAll(".select li");  
         const quizStart = document.querySelector(".select.start");  
         const quizMain = document.querySelector(".quiz__main");
         const quizClose = document.querySelector(".quiz__close");
         const quizPopup = document.querySelector(".quiz__popup");
-        const quizPopupClose = document.querySelector(".quiz__popup__close");
-
+        
         const quizWrapOption1 = document.querySelector(".quiz__wrap.option1");  
         const quizWrapOption2 = document.querySelector(".quiz__wrap.option2");  
         const quizWrapOption3 = document.querySelector(".quiz__wrap.option3");  
@@ -234,7 +233,6 @@
                 quizMain.classList.add("hide");
                 quizClose.classList.remove("hide");
                 dataQuestion3(quiztime);
-
                 document.querySelector("body").classList.add("fixed")
             }
         });
@@ -385,6 +383,7 @@
 
             newQuestion2();      //문제 만들기
             answerIndicator();
+            viewPopup();    
         }
 
         //문제 만들기
@@ -437,7 +436,11 @@
                 choice.id = (i + 1);
                 choice.className = "chocie";
                 choice.setAttribute("onclick", "getResult(this)");
-            }
+            }  
+
+            //키워드 팝업 
+            quizPopup.innerHTML = "<span class='quiz__popup__close'>닫기</span><iframe src='https://license.tistory.com/'></iframe>";
+
         }
 
         // 결과 확인하기
@@ -502,16 +505,21 @@
             }
         });
 
-        quizKeyword2.addEventListener("click", () => {
+        // 키워드 팝업
+        const viewPopup = () => {
             const keywordNum = quizKeyword2.getAttribute("data-num");
-            quizPopup.classList.remove("hide");
-            quizPopup.querySelector("iframe").setAttribute("src", "https://license.tistory.com/"+keywordNum);
-        });
-        quizPopupClose.addEventListener("click", () => {
-            quizPopup.classList.add("hide");
-        })
-
+            
+            quizKeyword2.addEventListener("click", () => {
+                gsap.to(quizPopup, {top: 0, duration: 0.3, ease: Power0.easeNone});
+                quizPopup.querySelector("iframe").setAttribute("src", "https://license.tistory.com/"+keywordNum);
+            });
+            document.querySelector(".quiz__popup__close").addEventListener("click", () => {
+                gsap.to(quizPopup, {top: "100%", duration: 0.3, ease: Power0.easeNone})
+                quizPopup.querySelector("iframe").setAttribute("src", "https://license.tistory.com/");
+            });
+        }
         
+
         // 데이터 가져오기3
         const dataQuestion3 = (time) => {
             fetch(time)

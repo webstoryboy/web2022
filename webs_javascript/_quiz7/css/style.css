@@ -1090,11 +1090,12 @@ a {
     bottom: 0px;
     width: 100%;
     background: #000;
-    z-index: 100;
+    z-index: 10000;
     color: #fff;
     text-align: center;
     padding: 20px;
     cursor: pointer;
+    display: block;
 }
 
 @media (max-width: 1000px){

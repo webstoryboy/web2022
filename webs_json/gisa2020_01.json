@@ -43,7 +43,9 @@
         "subject": "소프트웨어 설계",
         "question": "자료 사전에서 자료의 생략을 의미하는 기호는?",
         "correct_answer": "()",
-        "incorrect_answers": ["{}","**","="]
+        "incorrect_answers": ["{}","**","="],
+        "keyword": "구조적 분석",
+        "keyword_num": "2"
     },{
         "subject": "소프트웨어 설계",
         "question": "검토회의 전에 요구사항 명세서를 미리 배포하여 사전 검토한 후 짧은 검토 회의를 통해 오류를 조기에 검출하는 데 목적을 두는 요구사항 검토 방법은?",
@@ -72,7 +74,9 @@
         "question": "HIPO(Hierachy Input Process Output)에 대해서 설명으로 거리가 먼 것은?",
         "correct_answer": "상향식 소프트웨어 개발을 위한 문서화 도구이다.",
         "incorrect_answers": ["HIPO 차트 종류에는 가시적 도표, 총체적 도표, 세부적 도표가 있다.","기능과 자료의 의존 관계를 동시에 표현할 수 있다.","보기 쉽고 이해하기 쉽다."],
-        "desc": "하향식 개발을 위한 시스템 설계 및 문서화 도구이다. 가시적 도표, 총체적 도표, 세부적 도표으로 구성되며 분석 및 설계 도구로 사용된다."
+        "desc": "하향식 개발을 위한 시스템 설계 및 문서화 도구이다. 가시적 도표, 총체적 도표, 세부적 도표으로 구성되며 분석 및 설계 도구로 사용된다.",
+        "keyword": "구조적 분석",
+        "keyword_num": "2"
     },{
         "subject": "소프트웨어 설계",
         "question": "UI 설계 원칙에서 누구나 쉽게 이해하고 사용할 수 있어야 한다는 것은?",
@@ -94,12 +98,16 @@
         "question": "데이터 흐름도(DFD)의 구성 요소에 포함되지 않는 것은?",
         "correct_answer": "data dictionary",
         "incorrect_answers": ["process","data flow","data store"],
-        "desc": "자료흐름도(DFD)의 구성 요소에는 처리(Process), 자료흐름(Data Flow), 자료저장소(Data Store), 단말(Terminator) 등이 있다."
+        "desc": "자료흐름도(DFD)의 구성 요소에는 처리(Process), 자료흐름(Data Flow), 자료저장소(Data Store), 단말(Terminator) 등이 있다.",
+        "keyword": "구조적 분석",
+        "keyword_num": "2"
     },{
         "subject": "소프트웨어 설계",
         "question": "데이터 흐름도(DFD)의 구성 요소에 포함되지 않는 것은?",
         "correct_answer": "<< >>",
-        "incorrect_answers": ["(( ))","{{ }}","[[ ]]"]
+        "incorrect_answers": ["(( ))","{{ }}","[[ ]]"],
+        "keyword": "구조적 분석",
+        "keyword_num": "2"
     },{
         "subject": "소프트웨어 설계",
         "question": "트랜잭션이 올바르게 처리되고 있는지 데이터를 감시하고 제어하는 미들웨어는?",
@@ -193,8 +201,7 @@
         "question": "소프트웨어 형상 관리의 의미로 적절한 것은?",
         "correct_answer": "개발 과정의 변경 사항을 관리하는 것",
         "incorrect_answers": ["비용에 관한 사항을 효율적으로 관리하는 것", "테스트 과정에서 소프트웨어를 통합하는 것", "개발 인력을 관리하는 것"],
-        "desc": "형상관리란 소프트웨어 변경사항을 체계적으로 추적하고 통제하는 것을 말합니다.",
-        "keyword": "형상관리"
+        "desc": "형상관리란 소프트웨어 변경사항을 체계적으로 추적하고 통제하는 것을 말합니다."
     },{
         "subject": "소프트웨어 개발",
         "question": "White Box Testing에 대한 설명으로 옳지 않은 것은?",
@@ -248,7 +255,9 @@
         "question": "반정규화(Denormalization) 유형중 중복 테이블을 추가하는 방법에 해당하지 않는 것은?",
         "correct_answer": "빌드 테이블의 추가",
         "incorrect_answers": ["집계 테이블의 추가","진행 테이블의 추가","특정 부분만을 포함하는 테이블의 추가"],
-        "desc": "중복 테이블을 추가에는 집계 테이블이 추가되지 않음"
+        "desc": "중복 테이블을 추가에는 집계 테이블이 추가되지 않음",
+        "keyword": "정규화",
+        "keyword_num": "19"
     },
     {
         "subject": "데이터베이스 구축",

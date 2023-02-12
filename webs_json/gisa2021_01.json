@@ -14,15 +14,18 @@
         "subject": "소프트웨어 설계",
         "question": "객체지향 개념에서 연관된 데이터와 함수를 함께 묶어 외부와 경계를 만들고 필요한 인터페이스만을 밖으로 드러내는 과정은?",
         "correct_answer": "캡슐화(Encapsulation)",
-        "incorrect_answers": ["메시지(Message)","상속(Inheritance)"," 다형성(Polymorphism)"],
-        "desc": "메시지(Message) : 객체의 행위를 표현<br>캡슐화(Encapsulation) : 추상화된 객체의 구현을 은닉<br>다형성(Polymorphism) : 파생된 클래스와 관련되면서 또 다른행위를 요구하는것<br> 상속(Inheritance) : 하나의 클래스가 다른 클래스로부터 애트리뷰트나 메소드를 물려받는것"
+        "incorrect_answers": ["메시지(Message)","상속(Inheritance)","다형성(Polymorphism)"],
+        "desc": "메시지(Message) : 객체의 행위를 표현<br>캡슐화(Encapsulation) : 추상화된 객체의 구현을 은닉<br>다형성(Polymorphism) : 파생된 클래스와 관련되면서 또 다른행위를 요구하는것<br> 상속(Inheritance) : 하나의 클래스가 다른 클래스로부터 애트리뷰트나 메소드를 물려받는것",
+        "keyword": "객체지향",
+        "keyword_num": "22"
     },{
         "subject": "소프트웨어 설계",
         "question": "GoF(Gangs of Four) 디자인 패턴의 생성 패턴에 속하지않는 것은?",
         "correct_answer": "어댑터(Adapter)",
         "incorrect_answers": ["추상 팩토리(Abstract Factory)","빌더(Builder)","싱글턴(Singleton)"],
         "desc": "생성 패턴에는 추상 팩토리(Abstract Factory), 빌더(Builder), 팩토리메서드(Factory Method), 프로토타입(Prototype), 싱글톤(Singleton)가 있습니다.",
-        "keyword": "디자인 패턴"
+        "keyword": "디자인 패턴",
+        "keyword_num": "24"
     },{
         "subject": "소프트웨어 설계",
         "question": "응용프로그램의 프로시저를 사용하여 원격 프로시저를 로컬 프로시저처럼 호출하는 방식의 미들웨어는?",
@@ -38,8 +41,10 @@
         "subject": "소프트웨어 설계",
         "question": "객체지향 분석 방법론 중 Coad-Yourdon 방법에 해당하는 것은?",
         "correct_answer": "E-R 다이어그램을 사용하여 객체의 행위를 데이터 모델링하는데 초점을 둔 방법이다.",
-        "incorrect_answers": ["객체, 동적, 기능 모델로 나누어 수행하는 방법이다.","미시적 개발 프로세스와 거시적 개발 프로세스를 모두 사용하는 방법이다. "," Use-Case를 강조하여 사용하는 방법이다."],
-        "desc": "객체지향 분석 방법론에는 Rumbaugh(객체, 동적, 기능), Booch(미시적, 거시적), Jacobson(사용자, 시스템 간 상호작용), Coad-Yourdon(E-R 다이어그램), Wirfs-Brock(프로세스 간 구분 없이 연속적) 등이 있습니다."
+        "incorrect_answers": ["객체, 동적, 기능 모델로 나누어 수행하는 방법이다.","미시적 개발 프로세스와 거시적 개발 프로세스를 모두 사용하는 방법이다.","Use-Case를 강조하여 사용하는 방법이다."],
+        "desc": "객체지향 분석 방법론에는 Rumbaugh(객체, 동적, 기능), Booch(미시적, 거시적), Jacobson(사용자, 시스템 간 상호작용), Coad-Yourdon(E-R 다이어그램), Wirfs-Brock(프로세스 간 구분 없이 연속적) 등이 있습니다.",
+        "keyword": "객체지향 분석 방법론",
+        "keyword_num": "23"
     },{
         "subject": "소프트웨어 설계",
         "question": " 다음은 어떤 프로그램 구조를 나타낸다. 모듈 F에서의 fan-in과 fan-out의 수는 얼마인가?",

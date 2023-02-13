@@ -31,7 +31,9 @@
         "question": "응용프로그램의 프로시저를 사용하여 원격 프로시저를 로컬 프로시저처럼 호출하는 방식의 미들웨어는?",
         "correct_answer": "RPC(Remote Procedure Call)",
         "incorrect_answers": ["WAS(Web Application Server)","MOM(Message Oriented Middleware)","ORB(Object Request Broker)"],
-        "desc": "WAS : 애플리케이션 수행 미들웨어, MOM : 메세지 지향 미들웨어, ORB : 네트워크 호출 미들웨어"
+        "desc": "WAS : 애플리케이션 수행 미들웨어, MOM : 메세지 지향 미들웨어, ORB : 네트워크 호출 미들웨어",
+        "keyword": "미들웨어",
+        "keyword_num": "34"
     },{
         "subject": "소프트웨어 설계",
         "question": "바람직한 소프트웨어 설계 지침이 아닌 것은?",
@@ -63,7 +65,9 @@
         "question": "분산 컴퓨팅 환경에서 서로 다른 기종 간의 하드웨어나 프로토콜, 통신환경 등을 연결하여 응용프로그램과 운영환경 간에 원만한 통신이 이루어질 수 있게 서비스를 제공하는 소프트웨어는?",
         "correct_answer": "미들웨어",
         "incorrect_answers": ["하드웨어","오픈허브웨어","그레이웨어"],
-        "desc": "미들웨어는 운영체제에서 실행되는 응용 프로그램 사이에서 운영체제가 제공하는 서비스 이외에 추가적인 서비스를 제공하는 소프트웨어입니다."
+        "desc": "미들웨어는 운영체제에서 실행되는 응용 프로그램 사이에서 운영체제가 제공하는 서비스 이외에 추가적인 서비스를 제공하는 소프트웨어입니다.",
+        "keyword": "미들웨어",
+        "keyword_num": "34"
     },{
         "subject": "소프트웨어 설계",
         "question": "CASE(Computer Aided Software Engineering)에 대한 설명으로 틀린 것은?",

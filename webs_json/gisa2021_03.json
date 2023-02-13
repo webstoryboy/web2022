@@ -104,9 +104,11 @@
         "incorrect_answers": ["GUI(Graphical User Interface)","CUI(Cell User Interface)","MUI(Mobile User Interface)"]
     },{
         "subject": "소프트웨어 설계",
-        "question": "분산 시스템에서의 미들웨어 (Middleware)와 관련한 설명으로 틀린 것은?",
+        "question": "분산 시스템에서의 미들웨어(Middleware)와 관련한 설명으로 틀린 것은?",
         "correct_answer": "애플리케이션과 사용자 사이에서만 분산서비스를 제공한다.",
-        "incorrect_answers": ["분산 시스템에서 다양한 부분을 관리하고 통신하며 데이터를 교환하게 해주는 소프트웨어로 볼 수 있다","위치 투명성(Location Transparency)을 제공한다"," 분산 시스템의 여러 컴포넌트가 요구하는 재사용가능한 서비스의 구현을 제공한다."]
+        "incorrect_answers": ["분산 시스템에서 다양한 부분을 관리하고 통신하며 데이터를 교환하게 해주는 소프트웨어로 볼 수 있다.","위치 투명성(Location Transparency)을 제공한다.","분산 시스템의 여러 컴포넌트가 요구하는 재사용가능한 서비스의 구현을 제공한다."],
+        "keyword": "미들웨어",
+        "keyword_num": "34"
     },{
         "subject": "소프트웨어 설계",
         "question": "소프트웨어 아키텍처와 관련한 설명으로 틀린것은?",

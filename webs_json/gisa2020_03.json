@@ -268,7 +268,9 @@
         "question": "Commit과 Rollback 명령어에 의해 보장 받는 트랜잭션의 특성은?",
         "correct_answer": "원자성",
         "incorrect_answers": ["병행성","보안성","로그"],
-        "desc": "원자성(Atomicity)은 트랜잭션을 구성하는 연산은 모두 반영(Commit:실행)하거나 또는 모두 반영(Rollback:복구)되지 않아야 한다. "
+        "desc": "원자성(Atomicity)은 트랜잭션을 구성하는 연산은 모두 반영(Commit:실행)하거나 또는 모두 반영(Rollback:복구)되지 않아야 한다.",
+        "keyword": "트랜잭션",
+        "keyword_num": "29"
     },{
         "subject": "데이터베이스 구축",
         "question": "관계 데이터베이스인 테이블 R1에 대한 아래 SQL 문의 실행결과로 옳은 것은?",
@@ -282,7 +284,8 @@
         "correct_answer": "SELECT",
         "incorrect_answers": ["COMMIT","ROLLBACK","GRANT"],
         "desc": "DDL(데이터 정의어): CREATE, ALTER, DROP<br>DML(데이터 조작어): SELECT, INSERT, UPDATE, DELETE<br>DCL(데이터 제어어): GRANT, REVOKE, COMMIT, ROLLBACK",
-        "keyword": "SQL 명령어"
+        "keyword": "SQL 명령어",
+        "keyword_num": "20"
     },{
         "subject": "데이터베이스 구축",
         "question": "병행제어 기법 중 로킹에 대한 설명으로 옳지 않은 것은?",
@@ -313,7 +316,8 @@
         "correct_answer": "중복을 배제하여 삽입, 삭제, 갱신 이상의 발생을 야기한다.",
         "incorrect_answers": ["어떠한 릴레이션이라도 데이터베이스 내에서 표현 가능하게 만든다.","데이터 삽입시 릴레이션을 재구성할 필요성을 줄인다.","효과적인 검색 알고리즘을 생성할 수 있다."],
         "desc": "정규화의 목적은 삽입 이상(Insertion Anomaly), 갱신 이상(Modification Anomaly), 삭제 이상(Deletion Anomaly) 등의 이상들을 제거하기 위함입니다.",
-        "keyword": "정규화"
+        "keyword": "정규화",
+        "keyword_num": "19"
     },{
         "subject": "데이터베이스 구축",
         "question": "다음에 해당하는 함수 종속의 추론 규칙은?",
@@ -346,14 +350,17 @@
         "correct_answer": "ALTER",
         "incorrect_answers": ["INSERT","UPDATE","DELETE"],
         "desc": "DDL(데이터 정의어): CREATE, ALTER, DROP<br>DML(데이터 조작어): SELECT, INSERT, UPDATE, DELETE<br>DCL(데이터 제어어): GRANT, REVOKE, COMMIT, ROLLBACK",
-        "keyword": "SQL 명령어"
+        "keyword": "SQL 명령어",
+        "keyword_num": "20"
     },{
         "subject": "데이터베이스 구축",
         "question": " 다음과 같이 위쪽 릴레이션을 아래쪽 릴레이션으로 정규화를 하였을 때 어떤 정규화 작업을 한 것인가?",
         "question_img": "gisa2020_03_08",
         "correct_answer": "제1정규형",
         "incorrect_answers": ["제2정규형","제3정규형","제4정규형"],
-        "desc": "제1 정규형: 반복그룹을 제거<br>제2 정규형: 부분 함수적 종속 제거<br>제3 정규형: 이행적 함수 종속 제거<br>보이스/코드 정규형: 모든 결정자가 후보키<br>제4 정규형: 다치 종속 제거"
+        "desc": "제1 정규형: 반복그룹을 제거<br>제2 정규형: 부분 함수적 종속 제거<br>제3 정규형: 이행적 함수 종속 제거<br>보이스/코드 정규형: 모든 결정자가 후보키<br>제4 정규형: 다치 종속 제거",
+        "keyword": "정규화",
+        "keyword_num": "19"
     },{
         "subject": "데이터베이스 구축",
         "question": " 관계대수의 순수관계 연산자가 아닌 것은?",
@@ -371,7 +378,9 @@
         "question": "릴레이션 조작 시 데이터들이 불필요하게 중복되어 예기치 않게 발생하는 곤란한 현상을 의미하는 것은?",
         "correct_answer": "anomaly",
         "incorrect_answers": ["normalization","rollback","cardinality"],
-        "desc": "normalization: 정규화, rollback: 트랜잭션 취소, cardinality: 튜플의 개수"
+        "desc": "normalization: 정규화, rollback: 트랜잭션 취소, cardinality: 튜플의 개수",
+        "keyword": "정규화",
+        "keyword_num": "19"
     },{
         "subject": "데이터베이스 구축",
         "question": "릴레이션에 대한 설명으로 거리가 먼 것은?",

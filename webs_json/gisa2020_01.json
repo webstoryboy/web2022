@@ -113,7 +113,9 @@
         "question": "트랜잭션이 올바르게 처리되고 있는지 데이터를 감시하고 제어하는 미들웨어는?",
         "correct_answer": "TP monitor",
         "incorrect_answers": ["RPC","ORB","HUB"],
-        "desc": "트랜잭션은 데이터베이스(DB)에서의 상호작용의 단위(논리적 단위)이다. RPC : 원격 프로시저 호출 / ORB : 브로커를 통해 다른 컴퓨터의 프로그램 호출"
+        "desc": "트랜잭션은 데이터베이스(DB)에서의 상호작용의 단위(논리적 단위)이다. RPC : 원격 프로시저 호출 / ORB : 브로커를 통해 다른 컴퓨터의 프로그램 호출",
+        "keyword": "트랜잭션",
+        "keyword_num": "29"
     },{
         "subject": "소프트웨어 설계",
         "question": "소프트웨어 개발 방법 중 요구사항 분석(requirements analysis)과 거리가 먼 것은?",

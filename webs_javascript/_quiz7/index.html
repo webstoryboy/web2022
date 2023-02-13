@@ -509,10 +509,12 @@
             const quiz__popup__close = document.querySelector(".quiz__popup__close");
 
             quizKeyword2.addEventListener("click", () => {
+                document.querySelector("body").classList.add("fixed");
                 gsap.to(quizPopup, {top:0, duration: 0});
             });
 
             quiz__popup__close.addEventListener("click", () => {
+                document.querySelector("body").classList.remove("fixed");
                 gsap.to(quizPopup, {top: "100%", duration: 0});
             });
         }

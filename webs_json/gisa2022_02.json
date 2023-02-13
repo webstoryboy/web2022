@@ -265,8 +265,9 @@
         "question_desc": "트랜잭션의 모든 연산들이 정상적으로 수행 완료되거나 아니면 전혀 어떠한 연산도 수행되지 않은 원래 상태가 되도록 해야 한다.",
         "correct_answer": "Atomicity",
         "incorrect_answers": ["Consistency","Isolation","Durability"],
+        "desc" : "원자성(Atomicity) : 완전하게 수행 완료되지 않으면 전혀 수행되지 않아야 한다.<br>일관성(Consistency) : 시스템의 고정 요소는 트랜잭션 수행 전후에 같아야 한다.<br>고립성(Isolation) : 트랜잭션 실행 시 다른 트랜잭션의 간섭을 받지 않는다.<br>영속성(Durability) : 트랜잭션의 완료 결과가 데이터베이스에 영구히 기억된다.",
         "keyword": "트랜잭션",
-        "desc" : "원자성(Atomicity) : 완전하게 수행 완료되지 않으면 전혀 수행되지 않아야 한다.<br>일관성(Consistency) : 시스템의 고정 요소는 트랜잭션 수행 전후에 같아야 한다.<br>고립성(Isolation) : 트랜잭션 실행 시 다른 트랜잭션의 간섭을 받지 않는다.<br>영속성(Durability) : 트랜잭션의 완료 결과가 데이터베이스에 영구히 기억된다."
+        "keyword_num": "30"
     },{
         "subject": "데이터베이스 구축",
         "question": "분산 데이터베이스 시스템과 관련한 설명으로 틀린 것은?",
@@ -324,8 +325,9 @@
         "question": "트랜잭션의 상태 중 트랜잭션의 마지막 연산이 실행된 직후의 상태로, 모든 연산의 처리는 끝났지만 트랜잭션이 수행한 최종 결과를 데이터베이스에 반영하지 않은 상태는?",
         "correct_answer": "Partially Committed",
         "incorrect_answers": ["Active","Committed","Aborted"],
+        "desc" : "트랜잭션의 상태는 활동(Active) - 실패(Failed) - 철회(Aborted) - 부분 완료(Partially Committed) - 완료(Committed)로 나눌 수 있다.",
         "keyword": "트랜잭션",
-        "desc" : "트랜잭션의 상태는 활동(Active) - 실패(Failed) - 철회(Aborted) - 부분 완료(Partially Committed) - 완료(Committed)로 나눌 수 있다."
+        "keyword_num": "30"
     },{
         "subject": "데이터베이스 구축",
         "question": "SQL의 명령을 사용 용도에 따라 DDL, DML, DCL로 구분 할 경우, 그 성격이 나머지 셋과 다른 것은?",

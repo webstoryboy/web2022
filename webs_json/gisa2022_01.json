@@ -283,15 +283,19 @@
     },{
         "subject": "데이터베이스 구축",
         "question": "다음 릴레이션의 Degree와 Cardinality는?",
-        "question_img": "gisa2020_01_02",
+        "question_img": "gisa2022_01_02",
         "correct_answer": "Degree : 4, Cardinality : 3",
         "incorrect_answers": ["Degree : 3, Cardinality : 4","Degree : 3, Cardinality : 12","Degree : 12, Cardinality : 3"],
-        "desc": "카디널리티(행) = 기수 = 튜플의 개수 / 디그리(열) = 차수 = 속성의 개수"
+        "desc": "카디널리티(행) = 기수 = 튜플의 개수 / 디그리(열) = 차수 = 속성의 개수",
+        "keyword": "릴레이션",
+        "keyword_num": "30"
     },{
         "subject": "데이터베이스 구축",
         "question": "뷰(View)에 대한 설명으로 틀린 것은?",
         "correct_answer": "SQL을 사용하면 뷰에 대한 삽입, 갱신, 삭제 연산 시 제약 사항이 없다.",
-        "incorrect_answers": ["뷰 위에 또 다른 뷰를 정의할 수 있다","DBA는 보안성 측면에서 뷰를 활용할 수 있다.","사용자가 필요한 정보를 요구에 맞게 가공하여 뷰로 만들 수 있다."]
+        "incorrect_answers": ["뷰 위에 또 다른 뷰를 정의할 수 있다.","DBA는 보안성 측면에서 뷰를 활용할 수 있다.","사용자가 필요한 정보를 요구에 맞게 가공하여 뷰로 만들 수 있다."],
+        "keyword": "뷰(View)",
+        "keyword_num": "32"
     },{
         "subject": "데이터베이스 구축",
         "question": "관계 대수식을 SQL 질의로 옳게 표현한 것은?",
@@ -331,7 +335,9 @@
         "subject": "데이터베이스 구축",
         "question": "트랜잭션의 상태 중 트랜잭션의 수행이 실패하여 Rollback 연산을 실행한 상태는?",
         "correct_answer": "철회(Aborted)",
-        "incorrect_answers": ["부분 완료(Partially Committed)","완료(Commit)","실패(Fail)"]
+        "incorrect_answers": ["부분 완료(Partially Committed)","완료(Commit)","실패(Fail)"],
+        "keyword": "트랜잭션",
+        "keyword_num": "29"
     },{
         "subject": "데이터베이스 구축",
         "question": "데이터 제어어(DCL)에 대한 설명으로 옳은 것은?",
@@ -355,7 +361,9 @@
         "question": "테이블 두 개를 조인하여 뷰 V_1을 정의하고, V_1을 이용하여 뷰 V_2를 정의하였다. 다음 명령 수행 후 결과로 옳은 것은?",
         "question_desc": "DROP VIEW V_1 CASCADE",
         "correct_answer": "V_1과 V_2 모두 삭제된다.",
-        "incorrect_answers": ["V_1만 삭제된다","V_2만 삭제된다.","V_1과 V_2 모두 삭제되지 않는다."]
+        "incorrect_answers": ["V_1만 삭제된다.","V_2만 삭제된다.","V_1과 V_2 모두 삭제되지 않는다."],
+        "keyword": "뷰(View)",
+        "keyword_num": "32"
     },{
         "subject": "데이터베이스 구축",
         "question": "데이터베이스에서 병행제어의 목적으로 틀린 것은?",

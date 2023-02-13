@@ -234,20 +234,25 @@
     },{
         "subject": "데이터베이스 구축",
         "question": "데이터베이스의 무결성 규정(Integrity Rule)과 관련한 설명으로 틀린 것은?",
-        "correct_answer": " 정식으로 허가 받은 사용자가 아닌 불법적인 사용자에 의한 갱신으로부터 데이터베이스를 보호하기 위한 규정이다.",
-        "incorrect_answers": ["무결성 규정에는 데이터가 만족해야 될 제약 조건, 규정을 참조할 때 사용하는 식별자 등의 요소가 포함될 수 있다.","무결성 규정의 대상으로는 도메인, 키, 종속성 등이 있다.","릴레이션 무결성 규정(Relation Integrity Rules)은 릴레이 션을 조작하는 과정에서의 의미적 관계(Semantic Relationship)을 명세한 것이다."]
+        "correct_answer": "정식으로 허가 받은 사용자가 아닌 불법적인 사용자에 의한 갱신으로부터 데이터베이스를 보호하기 위한 규정이다.",
+        "incorrect_answers": ["무결성 규정에는 데이터가 만족해야 될 제약 조건, 규정을 참조할 때 사용하는 식별자 등의 요소가 포함될 수 있다.","무결성 규정의 대상으로는 도메인, 키, 종속성 등이 있다.","릴레이션 무결성 규정(Relation Integrity Rules)은 릴레이 션을 조작하는 과정에서의 의미적 관계(Semantic Relationship)을 명세한 것이다."],
+        "keyword": "무결성",
+        "keyword_num": "33"
     },{
         "subject": "데이터베이스 구축",
         "question": "데이터베이스에서 하나의 논리적 기능을 수행하기 위한 작업의 단위 또는 한꺼번에 모두 수행되어야 할 일련의 연산들을 의미하는 것은?",
         "correct_answer": "트랜잭션",
         "incorrect_answers": ["뷰","튜플","카디널리티"],
-        "keyword": "트랜잭션"
+        "keyword": "트랜잭션",
+        "keyword_num": "29"
     },{
         "subject": "데이터베이스 구축",
         "question": "다음 두 릴레이션 Rl과 R2의 카티션 프로덕트(cartesianproduct) 수행 결과는?",
         "question_img": "gisa2021_03_05",
         "correct_answer": "4",
-        "incorrect_answers": ["1","2","3"]
+        "incorrect_answers": ["1","2","3"],
+        "keyword": "릴레이션",
+        "keyword_num": "30"
     },{
         "subject": "데이터베이스 구축",
         "question": "물리적 데이터베이스 설계에 대한 설명으로 거리가 먼 것은?",
@@ -258,7 +263,9 @@
         "subject": "데이터베이스 구축",
         "question": "다음 중 기본키는 NULL 값을 가져서는 안되며, 릴레이션 내에 오직 하나의 값만 존재해야 한다는 조건을 무엇이라 하는가?",
         "correct_answer": "개체 무결성 제약조건",
-        "incorrect_answers": ["참조 무결성 제약조건","도메인 무결성 제약조건","속성 무결성 제약조건"]
+        "incorrect_answers": ["참조 무결성 제약조건","도메인 무결성 제약조건","속성 무결성 제약조건"],
+        "keyword": "무결성",
+        "keyword_num": "33"
     },{
         "subject": "데이터베이스 구축",
         "question": "SQL문에서 HAVING을 사용할 수 있는 절은?",
@@ -322,7 +329,8 @@
         "question": "트랜잭션의 주요 특성 중 하나로 둘 이상의 트랜잭션이 동시에 병행 실행되는 경우 어느 하나의 트랜잭션 실행 중에 다른 트랜잭션의 연산이 끼어들 수 없음을 의미하는 것은?",
         "correct_answer": "Isolation",
         "incorrect_answers": ["Log","Consistency","Durability"],
-        "keyword": "트랜잭션"
+        "keyword": "트랜잭션",
+        "keyword_num": "29"
     },{
         "subject": "데이터베이스 구축",
         "question": "SQL의 논리 연산자가 아닌 것은?",

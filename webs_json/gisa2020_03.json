@@ -35,27 +35,31 @@
         "correct_answer": "확장",
         "incorrect_answers": ["생명선","실행","메시지"],
         "desc": "시퀀스 다이어그램 구성 항목에는 생명선(life line), 메시지, 활성(실행) 객체가 있습니다.",
-        "keyword": "UML"
+        "keyword": "UML",
+        "keyword_num": "31"
     },{
         "subject": "소프트웨어 설계",
         "question": "객체지향에서 정보 은닉과 가장 밀접한 관계가 있는 것은?",
         "correct_answer": "Encapsulation",
         "incorrect_answers": ["Class","Method","Instance"],
         "desc": "캡슐화(Encapsulation)는 공개된 정보만 접근 조작이 가능하고 객체가 실제 데이터를 처리하는 과정을 알 수가 없습니다.",
-        "keyword": "객체지향"
+        "keyword": "객체지향",
+        "keyword_num": "22"
     },{
         "subject": "소프트웨어 설계",
         "question": "디자인 패턴 중에서 행위적 패턴에 속하지 않는 것은?",
         "correct_answer": "프로토타입(Prototype) 패턴",
         "incorrect_answers": ["커맨드(Command) 패턴","옵저버(Obseerver) 패턴","상태(State) 패턴"],
         "desc": "행위적 패턴(Behavioral Pattern)에는 책임 연쇄(Chain of Responsibility), 커맨드(Command), 인터프리터(Interpreter), 반복자(Iterator), 중재자(Mediator), 메멘토(Memento), 옵서버(Observer), 상태(State), 전략(Strategy), 템플릿 메소드(template Method), 방문자(Visitor)가 있습니다.",
-        "keyword": "디자인 패턴"
+        "keyword": "디자인 패턴",
+        "keyword_num": "24"
     },{
         "subject": "소프트웨어 설계",
         "question": "UI 설계 원칙 중 누구나 쉽게 이해하고 사용할 수 있어야 한다는 원칙은?",
         "correct_answer": "직관성",
         "incorrect_answers": ["희소성","유연성","멀티운용성"],
-        "keyword": "UI"
+        "keyword": "UI",
+        "keyword_num": "5"
     },{
         "subject": "소프트웨어 설계",
         "question": "코드의 기본 기능으로 거리가 먼 것은?",
@@ -73,9 +77,10 @@
         "subject": "소프트웨어 설계",
         "question": "UML에서 활용되는 다이어그램 중, 시스템의 동작을 표현하는 행위(Behavioral) 다이어그램에 해당하지 않는 것은?",
         "correct_answer": "배치 다이어그램(Deployment Diagram)",
-        "incorrect_answers": ["유스케이스 다이어그램(Use Case Diagram) ","시퀀스 다이어그램(Sequence Diagram)","활동 다이어그램(Activity Diagram)"],
+        "incorrect_answers": ["유스케이스 다이어그램(Use Case Diagram)","시퀀스 다이어그램(Sequence Diagram)","활동 다이어그램(Activity Diagram)"],
         "desc": "행위(Behavioral) 다이어그램에는 유스케이스(UseCase), 시퀀스(Sequence), 커뮤니케이션(Communication), 상태(State), 활동(Activity), 상호작용 개요(Interaction Overview), 타이밍(Timing) 다이어그램이 있습니다.",
-        "keyword": "UML"
+        "keyword": "UML",
+        "keyword_num": "31"
     },{
         "subject": "소프트웨어 설계",
         "question": "객체 지향 소프트웨어 공학에서 하나 이상의 유사한 객체들을 묶어서 하나의 공통된 특성을 표현한 것은?",
@@ -84,10 +89,12 @@
         "desc": "클래스는 공통된 속성과 연산(행위)을 갖는 객체의 집합을 의미합니다."
     },{
         "subject": "소프트웨어 설계",
-        "question": " 아래의 UML 모델에서 '차' 클래스와 각 클래스의 관계로 옳은 것은?",
+        "question": "아래의 UML 모델에서 '차' 클래스와 각 클래스의 관계로 옳은 것은?",
         "question_img": "gisa2020_03_01",
         "correct_answer": "일반화 관계",
-        "incorrect_answers": ["추상화 관계","의존 관계","그룹 관계"]
+        "incorrect_answers": ["추상화 관계","의존 관계","그룹 관계"],
+        "keyword": "UML",
+        "keyword_num": "31"
     },{
         "subject": "소프트웨어 설계",
         "question": "객체지향 소프트웨어 설계시 디자인 패턴을 구성하는 요소로서 가장 거리가 먼 것은?",

@@ -9,7 +9,9 @@
         "question": "UML 모델에서 한 사물의 명세가 바뀌면 다른사물에 영향을 주며, 일반적으로 한 클래스가다른 클래스를 오퍼레이션의 매개변수로 사용하는 경우에 나타나는 관계는?",
         "correct_answer": "Dependency",
         "incorrect_answers": ["Association","Realization","Generalization"],
-        "desc": "연관 관계(Association Relationship), 의존 관계(Dependency Relationship), 실체화 관계(Realization Relationship), 일반화 관계(Generalization Relationship)"
+        "desc": "연관 관계(Association Relationship), 의존 관계(Dependency Relationship), 실체화 관계(Realization Relationship), 일반화 관계(Generalization Relationship)",
+        "keyword": "UML",
+        "keyword_num": "31"
     },{
         "subject": "소프트웨어 설계",
         "question": "익스트림 프로그래밍(XP)에 대한 설명으로 틀린 것은?",

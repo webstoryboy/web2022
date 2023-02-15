@@ -569,13 +569,17 @@
         "question": "큰 숫자를 소인수 분해하기 어렵다는 기반 하에 1978년 MIT에 의해 제안된 공개키 암호화 알고리즘은?",
         "correct_answer": "RSA",
         "incorrect_answers": ["ARIA","DES","SEED"],
-        "desc": "DES는 블록 암호의 일종으로 미국 NBS에서 국가 표준으로 정한 암호<br>ARIA는 경량 및 하드웨어 구현을 위해 최적화된 국가 암호화 알고리즘<br>SEED는 시드 블록 암호 알고리즘으로 국내 기술로 개발된 128비트 및 256비트 대칭키 블록의 암호 알고리즘"
+        "desc": "DES는 블록 암호의 일종으로 미국 NBS에서 국가 표준으로 정한 암호<br>ARIA는 경량 및 하드웨어 구현을 위해 최적화된 국가 암호화 알고리즘<br>SEED는 시드 블록 암호 알고리즘으로 국내 기술로 개발된 128비트 및 256비트 대칭키 블록의 암호 알고리즘",
+        "keyword": "암호 알고리즘",
+        "keyword_num": "38"
     },{
         "subject": "정보시스템 구축관리",
         "question": "COCOMO 모델의 프로젝트 유형으로 거리가 먼 것은?",
         "correct_answer": "Sequentail",
         "incorrect_answers": ["Organic","Semi-detached","Embedded"],
-        "desc": "복잡도에 따라 조직형(Organic(5만 라인)), 반분리형(Semi-detached(30만 라인이하)), 내장형(Embedded(30만 라인이상))으로 분류합니다."
+        "desc": "복잡도에 따라 조직형(Organic(5만 라인)), 반분리형(Semi-detached(30만 라인이하)), 내장형(Embedded(30만 라인이상))으로 분류합니다.",
+        "keyword": "COCOMO",
+        "keyword_num": "10"
     },{
         "subject": "정보시스템 구축관리",
         "question": "빅데이터 분석 기술 중 대량의 데이터를 분석하여 데이터 속에 내재되어 있는 변수 사이의 상호관례를 규명하여 일정한 패턴을 찾아내는 기법은?",
@@ -610,7 +614,9 @@
         "subject": "정보시스템 구축관리",
         "question": "소프트웨어 생명주기 모형 중 고전적 생명주기 모형으로 선형 순차적 모델이라고도 하며, 타당성 검토, 계획, 요구사항 분석, 구현, 테스트, 유지보수의 단계를 통해 소프트웨어를 개발하는 모형은?",
         "correct_answer": "폭포수 모형",
-        "incorrect_answers": ["애자일 모형","컴포넌트 기반 방법론","6GT 모형"]
+        "incorrect_answers": ["애자일 모형","컴포넌트 기반 방법론","6GT 모형"],
+        "keyword": "소프트웨어 생명주기",
+        "keyword_num": "37"
     },{
         "subject": "정보시스템 구축관리",
         "question": "소프트웨어 개발 모델 중 나선형 모델의 4가지 주요 활동이 순서대로 나열된 것은?",
@@ -641,7 +647,9 @@
         "question": "실무적으로 검증된 개발보안 방법론 중 하나로써 SW보안의 모범 사례를 SDLC(Software Development LifeCycle)에 통합한 소프트웨어 개발 보안 생명주기 방법론은?",
         "correct_answer": "Seven Touchpoints",
         "incorrect_answers": ["CLASP","CWE","PIMS"],
-        "desc": "CLASP(Comprehensive, Lightweight Application Security Process): 소프트웨어 개발 생명주기(SDLC) 초기단계에 보안강화를 목적으로 하는 정형화된 프로세스<br>CWE(Common Weakness Enumeration): 주요 보안 취약점, 보안 약점 리스트<br>PIMS(Personal Information Management System): 개인정보 보호관리체계.<br>Seven Touchpoints - 소프트웨어 개발 생명주기 (SDLC)의 각 단계에 관련된 7가지의 보안 강화 활동을 개발자에게 집중적으로 관리하도록 요구하여 실무적으로 검증된 개발보안 방법론입니다."
+        "desc": "CLASP(Comprehensive, Lightweight Application Security Process): 소프트웨어 개발 생명주기(SDLC) 초기단계에 보안강화를 목적으로 하는 정형화된 프로세스<br>CWE(Common Weakness Enumeration): 주요 보안 취약점, 보안 약점 리스트<br>PIMS(Personal Information Management System): 개인정보 보호관리체계.<br>Seven Touchpoints - 소프트웨어 개발 생명주기 (SDLC)의 각 단계에 관련된 7가지의 보안 강화 활동을 개발자에게 집중적으로 관리하도록 요구하여 실무적으로 검증된 개발보안 방법론입니다.",
+        "keyword": "소프트웨어 생명주기",
+        "keyword_num": "37"
     },{
         "subject": "정보시스템 구축관리",
         "question": "다음 LAN의 네트워크 토폴로지는?",

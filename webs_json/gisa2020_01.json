@@ -50,12 +50,16 @@
         "subject": "소프트웨어 설계",
         "question": "검토회의 전에 요구사항 명세서를 미리 배포하여 사전 검토한 후 짧은 검토 회의를 통해 오류를 조기에 검출하는 데 목적을 두는 요구사항 검토 방법은?",
         "correct_answer": "워크 스루",
-        "incorrect_answers": ["빌드 검증","동료 검토","개발자 검토"]
+        "incorrect_answers": ["빌드 검증","동료 검토","개발자 검토"],
+        "keyword": "요구사항분석",
+        "keyword_num": "35"
     },{
         "subject": "소프트웨어 설계",
         "question": "CASE가 갖고 있는 주요 기능이 아닌 것은?",
         "correct_answer": "언어 번역",
-        "incorrect_answers": ["그래픽 지원","소프트웨어 생명주기 전 단계의 연결","다양한 소프트웨어 개발 모형 지원"]
+        "incorrect_answers": ["그래픽 지원","소프트웨어 생명주기 전 단계의 연결","다양한 소프트웨어 개발 모형 지원"],
+        "keyword": "CASE",
+        "keyword_num": "36"
     },{
         "subject": "소프트웨어 설계",
         "question": "XP(eXtreme Programming)의 5가지 가치로 거리가 먼 것은?",
@@ -157,7 +161,9 @@
         "question": "다음 트리의 차수(degree)와 단말 노드(terminal node)의 수는?",
         "question_img": "gisa2020_01_02",
         "correct_answer": "차수: 2, 단말 노드: 4",
-        "incorrect_answers": ["차수: 4, 단말 노드: 4", "차수: 4, 단말 노드: 8", "차수: 2, 단말 노드: 8"]
+        "incorrect_answers": ["차수: 4, 단말 노드: 4", "차수: 4, 단말 노드: 8", "차수: 2, 단말 노드: 8"],
+        "keyword": "릴레이션",
+        "keyword_num": "30"
     },{
         "subject": "소프트웨어 개발",
         "question": "검증 검사 기법 중 개발자의 장소에서 사용자가 개발자 앞에서 행하는 기법이며, 일반적으로 통제된 환경에서 사용자와 개발자가 함계 확인하면서 수행되는 검사는?",
@@ -577,12 +583,16 @@
         "subject": "정보시스템 구축관리",
         "question": "소인수 분해 문제를 이용한 공개키 암호화 기법에 널리 사용되는 암호 알고리즘 기법은?",
         "correct_answer": "RSA",
-        "incorrect_answers": ["ECC","PKI","PEM"]
+        "incorrect_answers": ["ECC","PKI","PEM"],
+        "keyword": "암호 알고리즘",
+        "keyword_num": "38"
     },{
         "subject": "정보시스템 구축관리",
         "question": "프로토타입을 지속적으로 발전시켜 최종 소프트웨어 개발까지 이르는 개발방법으로 위험관리가 중심인 소프트웨어 생명주기 모형은?",
         "correct_answer": "나선형 모형",
-        "incorrect_answers": ["델파이 모형","폭포수 모형","기능점수 모형"]
+        "incorrect_answers": ["델파이 모형","폭포수 모형","기능점수 모형"],
+        "keyword": "소프트웨어 생명주기",
+        "keyword_num": "37"
     },{
         "subject": "정보시스템 구축관리",
         "question": "다음 설명의 정보보안 침해 공격 관련 용어는?",
@@ -622,9 +632,11 @@
         "incorrect_answers": ["trace","udpdump","cron"]
     },{
         "subject": "정보시스템 구축관리",
-        "question": "폭포수 모형의 특징으로 거리가 먼 것은",
+        "question": "폭포수 모형의 특징으로 거리가 먼 것은?",
         "correct_answer": "개발 중 발생한 요구사항을 쉽게 반영할 수 있다.",
-        "incorrect_answers": ["순차적인 접근방법을 이용한다.","단계적 정의와 산출물이 명확하다.","모형의 적용 경험과 성공사례가 많다."]
+        "incorrect_answers": ["순차적인 접근방법을 이용한다.","단계적 정의와 산출물이 명확하다.","모형의 적용 경험과 성공사례가 많다."],
+        "keyword": "소프트웨어 생명주기",
+        "keyword_num": "37"
     },{
         "subject": "정보시스템 구축관리",
         "question": "테일러링(Tailoring) 개발 방법론의 내부 기준에 해당하지 않는 것은?",

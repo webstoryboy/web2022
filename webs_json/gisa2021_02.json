@@ -63,7 +63,9 @@
         "question": "CASE(Computer-Aided Software Engineering)의 원천기술이 아닌 것은?",
         "correct_answer": "일괄처리 기술",
         "incorrect_answers": ["구조적 기법","프로토타이핑 기술","정보 저장소 기술"],
-        "desc": "CASE의 원천 기술은 구조적 기법, 프로토타이핑 기술, 자동프로그래밍 기술, 정보 저장소 기술, 분산 처리 기술이 있다."
+        "desc": "CASE의 원천 기술은 구조적 기법, 프로토타이핑 기술, 자동프로그래밍 기술, 정보 저장소 기술, 분산 처리 기술이 있다.",
+        "keyword": "CASE",
+        "keyword_num": "36"
     },{
         "subject": "소프트웨어 설계",
         "question": "객체에게 어떤 행위를 하도록 지시하는 명령은?",
@@ -104,7 +106,9 @@
         "question": "다음 중 상위 CASE 도구가 지원하는 주요기능으로 볼 수 없는 것은?",
         "correct_answer": "전체 소스코드 생성 기능",
         "incorrect_answers": ["모델들 사이의 모순검사 기능","모델의 오류검증 기능","자료흐름도 작성 기능"],
-        "desc": "CASE는 자동 개발 시스템이 아니라 자동화 지원 도구이다."
+        "desc": "CASE는 자동 개발 시스템이 아니라 자동화 지원 도구이다.",
+        "keyword": "CASE",
+        "keyword_num": "36"
     },{
         "subject": "소프트웨어 설계",
         "question": "요구사항 관리 도구의 필요성으로 틀린 것은?",
@@ -115,7 +119,9 @@
         "subject": "소프트웨어 설계",
         "question": "애자일 개발 방법론이 아닌 것은?",
         "correct_answer": "하둡(Hadoop)",
-        "incorrect_answers": ["스크럼(Scrum)","익스트림 프로그래밍(XP, eXtreme Programming)","기능 주도 개발(FDD, Feature Driven Development)"]
+        "incorrect_answers": ["스크럼(Scrum)","익스트림 프로그래밍(XP, eXtreme Programming)","기능 주도 개발(FDD, Feature Driven Development)"],
+        "keyword": "소프트웨어 생명주기",
+        "keyword_num": "37"
     },{
         "subject": "소프트웨어 설계",
         "question": "GoF(Gangs of Four) 디자인 패턴 중 생성패턴으로 옳은 것은?",

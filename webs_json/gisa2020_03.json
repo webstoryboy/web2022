@@ -303,7 +303,9 @@
         "question": "병행제어 기법 중 로킹에 대한 설명으로 옳지 않은 것은?",
         "correct_answer": "로킹의 단위가 커지면 데이터베이스 공유도가 증가한다.",
         "incorrect_answers": ["로킹의 대상이 되는 객체의 크기를 로킹 단위라고 한다.","데이터베이스, 파일, 레코드 등은 로킹 단위가 될 수 있다.","로킹의 단위가 작아지면 로킹 오버헤드가 증가한다."],
-        "desc": "로킹(Locking)은 하나의 트랜잭션이 실행하는 동안 특정 데이터 항목에 대해서 다른 트랜잭션이 동시에 접근하지 못하도록 상호배재 기능을 제공하는 기법이다. 단위가 크면 단위 수 감소, 제어 간편, 병행성(공유도)이 감소하고, 단위가 작으면 단위 수 증가, 제어 불편, 병행성(공유도)이 증가한다."
+        "desc": "로킹(Locking)은 하나의 트랜잭션이 실행하는 동안 특정 데이터 항목에 대해서 다른 트랜잭션이 동시에 접근하지 못하도록 상호배재 기능을 제공하는 기법이다. 단위가 크면 단위 수 감소, 제어 간편, 병행성(공유도)이 감소하고, 단위가 작으면 단위 수 증가, 제어 불편, 병행성(공유도)이 증가한다.",
+        "keyword": "로킹",
+        "keyword_num": "40"
     },{
         "subject": "데이터베이스 구축",
         "question": "관계 데이터모델의 무결성 제약 중 기본키 값의 속성 값이 널(Null)값이 아닌 원자 값을 갖는 성질은?",
@@ -476,7 +478,8 @@
         "correct_answer": "common coupling",
         "incorrect_answers": ["data coupling","stamp coupling","control coupling"],
         "desc": "(약)자료(data) - 스탬프(stamp) - 제어(Control) - 외부(External) - 공통(Common) - 내용(Content)(강)",
-        "keyword": "결합도"
+        "keyword": "결합도",
+        "keyword_num": "12"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": " 메모리 관리 기법 중 Worst fit 방법을 사용할 경우 10K 크기의 프로그램 실행을 위해서는 어느 부분에 할당되는가?",
@@ -509,7 +512,8 @@
         "correct_answer": "control coupling",
         "incorrect_answers": ["data coupling","stamp coupling","common coupling"],
         "desc": "자료 결합도(Data Coupling): 매개변수 데이터 공유<br>스탬프 결합도(Stamp Coupling): 데이터 구조 공유<br>제어 결합도(Control Coupling): 데이터 제어 공유<br>공통(Common Coupling): 전역 테이터 공유",
-        "keyword": "결합도"
+        "keyword": "결합도",
+        "keyword_num": "12"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "다음 C 프로그램의 결과 값은?",

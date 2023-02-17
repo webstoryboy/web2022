@@ -51,9 +51,10 @@
     },{
         "subject": "소프트웨어 설계",
         "question": "UI의 설계 지침으로 틀린 것은?",
-        "correct_answer": "치명적인 오류에 대한 부정적인 사항은 사용자가 인지 할 수 없도록 한다",
+        "correct_answer": "치명적인 오류에 대한 부정적인 사항은 사용자가 인지 할 수 없도록 한다.",
         "incorrect_answers": ["이해하기 편하고 쉽게 사용할 수 있는 환경을 제공해야 한다.","주요 기능을 메인 화면에 노출하여 조작이 쉽도록 하여야 한다.","사용자의 직무, 연령, 성별 등 다양한 계층을 수용하여야 한다."],
-        "keyword": "UI"
+        "keyword": "UI",
+        "keyword_num": "5"
     },{
         "subject": "소프트웨어 설계",
         "question": "객체지향 개념에서 다형성(Polymorphism)과 관련한 설명으로 틀린 것은?",
@@ -106,14 +107,16 @@
         "question": "UI와 관련된 기본 개념 중 하나로, 시스템의 상태와 사용자의 지시에 대한 효과를 보여주어 사용자가 명령에 대한 진행 상황과 표시된 내용을 해석할 수 있도록 도와주는 것은?",
         "correct_answer": "Feedback",
         "incorrect_answers": ["Posture","Module","Hash"],
-        "keyword": "UI"
+        "keyword": "UI",
+        "keyword_num": "5"
     },{
         "subject": "소프트웨어 설계",
         "question": "UI와 관련된 기본 개념 중 하나로, 시스템의 상태와 사용자의 지시에 대한 효과를 보여주어 사용자가 명령에 대한 진행 상황과 표시된 내용을 해석할 수 있도록 도와주는 것은?",
         "correct_answer": "NUI(Natural User Interface)",
         "incorrect_answers": ["GUI(Graphical User Interface)","OUI(Organic User Interface)","CLI(Command Line Interface)"],
+        "desc": "OUI(Organic User Interface) : 모든 사물과 사용자 간의 상호작용을 위한 인터페이스<br>GUI(Graphical User Interface) : 마우스로 선택하여 작업하는 그래픽 환경 인터페이스<br>CLI(Command Line Interface) : 텍스트 형태 인터페이스<br>NUI(Natural User Interface) : 사용자의 말이나 행동으로 기기 조작하는 인터페이스",
         "keyword": "UI",
-        "desc": "OUI(Organic User Interface) : 모든 사물과 사용자 간의 상호작용을 위한 인터페이스<br>GUI(Graphical User Interface) : 마우스로 선택하여 작업하는 그래픽 환경 인터페이스<br>CLI(Command Line Interface) : 텍스트 형태 인터페이스<br>NUI(Natural User Interface) : 사용자의 말이나 행동으로 기기 조작하는 인터페이스"
+        "keyword_num": "5"
     },{
         "subject": "소프트웨어 설계",
         "question": "소프트웨어 모델링과 관련한 설명으로 틀린 것은?",
@@ -479,7 +482,8 @@
         "question": "다음 중 Myers가 구분한 응집도(Cohesion)의 정도에서 가장 낮은 응집도를 갖는 단계는?",
         "correct_answer": "우연적 응집도(Coincidental Cohesion)",
         "incorrect_answers": ["순차적 응집도(Sequential Cohesion)","기능적 응집도(Functional Cohesion)","시간적 응집도(Temporal Cohesion)"],
-        "keyword": "응집도"
+        "keyword": "응집도",
+        "keyword_num": "12"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "다음 C언어 프로그램이 실행되었을 때, 실행 결과는?",

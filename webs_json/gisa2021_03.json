@@ -169,7 +169,7 @@
         "question": "다음 중 선형 구조로만 묶인 것은?",
         "correct_answer": "큐, 데크",
         "incorrect_answers": ["스택, 트리","큐, 그래프","리스트, 그래프"],
-        "desc": "선형구조: 리스트, 스택, 큐, 덱<br>비선형구조: 트리, 그래프<br>파일구조: 순차파일, 색인파일, 직접파일",
+        "desc": "선형구조: 리스트, 스택, 큐, 데크<br>비선형구조: 트리, 그래프<br>파일구조: 순차파일, 색인파일, 직접파일",
         "keyword": "자료 구조"
     },{
         "subject": "소프트웨어 개발",
@@ -319,34 +319,37 @@
         "subject": "데이터베이스 구축",
         "question": "로킹 단위(Locking Granularity)에 대한 설명으로 옳은 것은?",
         "correct_answer": "로킹 단위가 크면 병행성 수준이 낮아진다.",
-        "incorrect_answers": ["로킹 단위가 크면 병행 제어 기법이 복잡해진다","로킹 단위가 작으면 로크(lock)의 수가 적어진다","로킹은 파일 단위로 이루어지며, 레코드와 필드는 로킹 단위가 될 수 없다."],
-        "keyword": "로킹"
+        "incorrect_answers": ["로킹 단위가 크면 병행 제어 기법이 복잡해진다.","로킹 단위가 작으면 로크(lock)의 수가 적어진다.","로킹은 파일 단위로 이루어지며, 레코드와 필드는 로킹 단위가 될 수 없다."],
+        "keyword": "로킹",
+        "keyword_num": "40"
     },{
         "subject": "데이터베이스 구축",
         "question": "관계 대수에 대한 설명으로 틀린 것은?",
         "correct_answer": "원하는 릴레이션을 정의하는 방법을 제공하며 비절차적 언어이다.",
         "incorrect_answers": ["릴레이션 조작을 위한 연산의 집합으로 피연산자와 결과가 모두 릴레이션이다.","일반 집합 연산과 순수 관계 연산으로 구분된다.","질의에 대한 해를 구하기 위해 수행해야 할 연산의 순서를 명시한다."],
-        "keyword": "관계 대수",
-        "desc": "관계 대수는 절차적 언어이며, 이에 대응하는 비절차적 언어는 관꼐 해석이다."
+        "desc": "관계 대수는 절차적 언어이며, 이에 대응하는 비절차적 언어는 관계 해석이다."
     },{
         "subject": "데이터베이스 구축",
         "question": "데이터의 중복으로 인하여 관계연산을 처리할 때 예기치 못한 곤란한 현상이 발생하는 것을 무엇이라 하는가?",
         "correct_answer": "이상(Anomaly)",
         "incorrect_answers": ["제한(Restriction)","종속성(Dependency)","변환(Translation)"],
-        "keyword": "정규화"
+        "keyword": "정규화",
+        "keyword_num": "19"
     },{
         "subject": "데이터베이스 구축",
         "question": "다음 중 SQL에서의 DDL 문이 아닌 것은?",
         "correct_answer": "DELETE",
         "incorrect_answers": ["CREATE","ALTER","DROP"],
         "desc": "DDL(데이터 정의어): CREATE, ALTER, DROP<br>DML(데이터 조작어): SELECT, INSERT, UPDATE, DELETE<br>DCL(데이터 제어어): GRANT, REVOKE, COMMIT, ROLLBACK",
-        "keyword": "SQL 명령어"
+        "keyword": "SQL 명령어",
+        "keyword_num": "20"
     },{
         "subject": "데이터베이스 구축",
         "question": "정규화에 대한 설명으로 적절하지 않은 것은?",
         "correct_answer": "데이터베이스의 개념적 설계 단계 이전에 수행한다.",
         "incorrect_answers": ["데이터 구조의 안정성을 최대화한다.","중복을 배제하여 삽입, 삭제, 갱신 이상의 발생을 방지한다.","데이터 삽입 시 릴레이션을 재구성할 필요성을 줄인다."],
-        "keyword": "정규화"
+        "keyword": "정규화",
+        "keyword_num": "19"
     },{
         "subject": "데이터베이스 구축",
         "question": "트랜잭션의 주요 특성 중 하나로 둘 이상의 트랜잭션이 동시에 병행 실행되는 경우 어느 하나의 트랜잭션 실행 중에 다른 트랜잭션의 연산이 끼어들 수 없음을 의미하는 것은?",
@@ -363,12 +366,16 @@
         "subject": "데이터베이스 구축",
         "question": "동시성 제어를 위한 직렬화 기법으로 트랜잭션 간의 처리순서를 미리 정하는 방법은?",
         "correct_answer": "타임스탬프 기법",
-        "incorrect_answers": ["로킹 기법","검증 기법","배타 로크 기법"]
+        "incorrect_answers": ["로킹 기법","검증 기법","배타 로크 기법"],
+        "keyword": "트랜잭션",
+        "keyword_num": "29"
     },{
         "subject": "데이터베이스 구축",
         "question": "이전 단계의 정규형을 만족하면서 후보키를 통하지 않는 조인 종속(JD : Join Dependency) 제거해야 만족하는 정규형은?",
         "correct_answer": "제5정규형",
-        "incorrect_answers": ["제4정규형","제3정규형","제6정규형"]
+        "incorrect_answers": ["제4정규형","제3정규형","제6정규형"],
+        "keyword": "정규화",
+        "keyword_num": "19"
     },{
         "subject": "데이터베이스 구축",
         "question": "어떤 릴레이션 R에서 X와 Y를 각각 R의 애트리뷰트 집합의 부분 집합이라고 할 경우 애트리뷰트 X의 값 각각에 대해 시간에 관계없이 항상 애트리뷰트 Y의 값이 오직 하나만 연관되어 있을 때 Y는 X에 함수 종속이라고 한다. 이 함수 종속의 표기로 옳은 것은?",
@@ -379,7 +386,8 @@
         "question": "모듈 내 구성 요소들이 서로 다른 기능을 같은 시간대에 함께 실행하는 경우의 응집도(Cohesion)는?",
         "correct_answer": "Temporal Cohesion",
         "incorrect_answers": ["Logical Cohesion","Coincidental Cohesion","Sequential Cohesion"],
-        "keyword": "응집도"
+        "keyword": "응집도",
+        "keyword_num": "12"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "오류 제어에 사용되는 자동반복 요청방식(ARQ)이 아닌 것은?",
@@ -457,8 +465,9 @@
         "subject": "프로그래밍 언어 활용",
         "question": "모듈의 독립성을 높이기 위한 결합도(Coupling)와 관련한 설명으로 틀린 것은?",
         "correct_answer": "모듈들이 변수를 공유하여 사용하게 하거나 제어 정보를 교류하게 함으로써 결합도를 낮추어야 한다.",
-        "incorrect_answers": ["오류가 발생했을 때 전파되어 다른 오류의 원인이 되는 파문 효과(Ripple Effect)를 최소화해야 한다.","인터페이스가 정확히 설정되어 있지 않을 경우 불필요한 인터페이스가 나타나 모듈 사이의 의존도는 높아지고 결합도가 증가한다","다른 모듈과 데이터 교류가 필요한 경우 전역변수(Global Variable)보다는 매개변수(Parameter)를 사용하는 것이 결합도를 낮추는 데 도움이 된다."],
-        "keyword": "결합도"
+        "incorrect_answers": ["오류가 발생했을 때 전파되어 다른 오류의 원인이 되는 파문 효과(Ripple Effect)를 최소화해야 한다.","인터페이스가 정확히 설정되어 있지 않을 경우 불필요한 인터페이스가 나타나 모듈 사이의 의존도는 높아지고 결합도가 증가한다.","다른 모듈과 데이터 교류가 필요한 경우 전역변수(Global Variable)보다는 매개변수(Parameter)를 사용하는 것이 결합도를 낮추는 데 도움이 된다."],
+        "keyword": "결합도",
+        "keyword_num": "12"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "TCP헤더와 관련한 설명으로 틀린 것은?",
@@ -530,7 +539,7 @@
         "incorrect_answers": ["SQL Injection은 임의로 작성한 SQL 구문을 애플리케이션에 삽입하는 공격방식이다"," SQL Injection 취약점이 발생하는 곳은 주로웹 애플리케이션과 데이터베이스가 연동되는 부분이다.","로그인과 같이 웹에서 사용자의 입력 값을 받아 데이터베이스 SQL문으로 데이터를요청하는 경우 SQL Injection을 수행할 수 있다"]
     },{
         "subject": "정보시스템 구축관리",
-        "question": "비대칭 암호화 방식으로 소수를 활용한암호화 알고리즘은?",
+        "question": "비대칭 암호화 방식으로 소수를 활용한 암호화 알고리즘은?",
         "correct_answer": "RSA",
         "incorrect_answers": ["DES","SMT","AES"]
     },{

@@ -493,7 +493,9 @@
         "question": "다음 중 가장 강한 응집도(Cohesion)는?",
         "correct_answer": "Sequential Cohesion",
         "incorrect_answers": ["Procedural Cohesion","Logical Cohesion","Coincidental Cohesion"],
-        "desc": "(약)우연적 - 논리적 - 시간적 - 절차적 - 통신적 - 순차적 - 기능적(강)"
+        "desc": "(약)우연적 - 논리적 - 시간적 - 절차적 - 통신적 - 순차적 - 기능적(강)",
+        "keyword": "응집도",
+        "keyword_num": "12"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "TCP 프로토콜과 관련한 설명으로 틀린 것은?",

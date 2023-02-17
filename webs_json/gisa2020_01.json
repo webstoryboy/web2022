@@ -213,7 +213,9 @@
         "question": "소프트웨어 형상 관리의 의미로 적절한 것은?",
         "correct_answer": "개발 과정의 변경 사항을 관리하는 것",
         "incorrect_answers": ["비용에 관한 사항을 효율적으로 관리하는 것", "테스트 과정에서 소프트웨어를 통합하는 것", "개발 인력을 관리하는 것"],
-        "desc": "형상관리란 소프트웨어 변경사항을 체계적으로 추적하고 통제하는 것을 말합니다."
+        "desc": "형상관리란 소프트웨어 변경사항을 체계적으로 추적하고 통제하는 것을 말합니다.",
+        "keyword": "형상관리",
+        "keyword_num": "39"
     },{
         "subject": "소프트웨어 개발",
         "question": "White Box Testing에 대한 설명으로 옳지 않은 것은?",
@@ -548,7 +550,9 @@
         "question": "CMM(Capability Maturity Model) 모델의 레벨로 옳지 않은 것은?",
         "correct_answer": "계획단계",
         "incorrect_answers": ["최적단계","관리단계","정의단계"],
-        "desc": "능력 성숙도 모델 단계는 초기 단계(initial), 반복 단계(repeatable), 정의 단계(defined), 관리 단계(managed), 최적 단계(optimizing) 이다."
+        "desc": "능력 성숙도 모델 단계는 초기 단계(initial), 반복 단계(repeatable), 정의 단계(defined), 관리 단계(managed), 최적 단계(optimizing) 이다.",
+        "keyword": "소프트웨어 개발방법론",
+        "keyword_num": "7"
     },{
         "subject": "정보시스템 구축관리",
         "question": "여러 개의 독립된 통신장치가 UWB(Ultra Wideband)기술 또는 블루투스 기술을 사용하여 통신망을 형성하는 무선 네트워크 기술은?",

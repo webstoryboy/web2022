@@ -494,7 +494,9 @@
         "subject": "프로그래밍 언어 활용",
         "question": "C언어에서의 변수 선언으로 틀린 것은?",
         "correct_answer": "int else;",
-        "incorrect_answers": ["int Test2;","int pc;","int True;"]
+        "incorrect_answers": ["int Test2;","int pc;","int True;"],
+        "keyword": "C언어",
+        "keyword_num": "42"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "파일 디스크립터(File Descriptor)에 대한 설명으로 틀린 것은?",

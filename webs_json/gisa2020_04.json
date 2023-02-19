@@ -8,7 +8,9 @@
         "subject": "소프트웨어 설계",
         "question": "럼바우(Rumbaugh) 객체지향 분석 기법에서 동적 모델링에 활용되는 다이어그램은?",
         "correct_answer": "상태 다이어그램(State Diagram)",
-        "incorrect_answers": ["객체 다이어그램(Object Diagram)","패키지 다이어그램(Package Diagram)","자료 흐름도(Data Flow Diagram)"]
+        "incorrect_answers": ["객체 다이어그램(Object Diagram)","패키지 다이어그램(Package Diagram)","자료 흐름도(Data Flow Diagram)"],
+        "keyword": "객체지향 분석 방법론",
+        "keyword_num": "23"
     },{
         "subject": "소프트웨어 설계",
         "question": "CASE(Computer Aided Software Engineering)의 주요 기능으로 옳지 않은 것은?",

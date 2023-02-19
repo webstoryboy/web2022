@@ -152,7 +152,9 @@
         "subject": "소프트웨어 개발",
         "question": "단위 테스트에서 테스트의 대상이 되는 하위 모듈을 호출하고, 파라미터를 전달하는 가상의 모듈로 상향식 테스트에 필요한 것은?",
         "correct_answer": "테스트 드라이버(Test Driver)",
-        "incorrect_answers": ["테스트 스텁(Test Stub)","테스트 슈트(Test Suites)","테스트 케이스(Test Case)"]
+        "incorrect_answers": ["테스트 스텁(Test Stub)","테스트 슈트(Test Suites)","테스트 케이스(Test Case)"],
+        "keyword": "통합테스트",
+        "keyword_num": "3"
     },{
         "subject": "소프트웨어 개발",
         "question": "스택(Stack)에 대한 옳은 내용으로만 나열된 것은?",
@@ -160,13 +162,15 @@
         "correct_answer": "㉣",
         "incorrect_answers": ["㉠, ㉡","㉡, ㉢","㉠, ㉡, ㉢, ㉣"],
         "desc": "㉠, ㉡은 큐 방식, ㉢은 데크 방식<br> 선형 구조에는 스택, 큐, 데크, 선형 리스트, 연결 리스트, 비선형 구조에는 트리와 그래프, 파일 구조에는 순차파일, 색인파일, 직접 파일 등이 있다.",
-        "keyword": "자료 구조"
+        "keyword": "자료 구조",
+        "keyword_num": "13"
     },{
         "subject": "소프트웨어 개발",
         "question": "소프트웨어 모듈화의 장점이 아닌 것은?",
         "correct_answer": "기능의 분리가 가능하여 인터페이스가 복잡하다.",
-        "incorrect_answers": ["오류의 파급 효과를 최소화한다.","모듈의 재사용 가능으로 개발과 유지보수가 용이하다.","프로그램의 효율적인 관리가 가능하다."],
-        "keyword": "모듈화"
+        "incorrect_answers": ["오류의 파급 효과를 최소화 한다.","모듈의 재사용 가능으로 개발과 유지보수가 용이하다.","프로그램의 효율적인 관리가 가능하다."],
+        "keyword": "모듈화",
+        "keyword_num": "41"
     },{
         "subject": "소프트웨어 개발",
         "question": "소프트웨어 프로젝트 관리에 대한 설명으로 가장 옳은 것은?",
@@ -201,7 +205,8 @@
         "correct_answer": "트리",
         "incorrect_answers": ["리스트","스택","데크"],
         "desc": "선형 구조에는 스택, 큐, 데크, 선형 리스트, 연결 리스트, 비선형 구조에는 트리와 그래프, 파일 구조에는 순차파일, 색인파일, 직접파일 등이 있다.",
-        "keyword": "자료 구조"
+        "keyword": "자료 구조",
+        "keyword_num": "13"
     },{
         "subject": "소프트웨어 개발",
         "question": "아주 오래되거나 참고문서 또는 개발자가 없어 유지보수 작업이 아주 어려운 프로그램을 의미하는 것은?",
@@ -228,7 +233,9 @@
         "subject": "소프트웨어 개발",
         "question": "순서가 A, B, C, D로 정해진 입력자료를 push, push, pop, push, push, pop, pop, pop 순서로 스택연산을 수행하는 경우 출력 결과는?",
         "correct_answer": "B D C A",
-        "incorrect_answers": ["A B C D"," B A C D","A B D C"]
+        "incorrect_answers": ["A B C D","B A C D","A B D C"],
+        "keyword": "자료구조",
+        "keyword_num": "13"
     },{
         "subject": "소프트웨어 개발",
         "question": "분할 정복(Divide and Conquer)에 기반한 알고리즘으로 피벗(pivot)을 사용하며 최악의 경우 n(n-1)/2 회의비교를 수행해야 하는 정렬(Sort)은?",
@@ -421,7 +428,9 @@
         "question": "C언어에서 두 개의 논리 값 중 하나라도 참이면 1을, 모두 거짓이면 0을 반환하는 연산자는?",
         "correct_answer": "||",
         "incorrect_answers": ["&&","**","!="],
-        "desc": "OR연산"
+        "desc": "OR연산",
+        "keyword": "C언어",
+        "keyword_num": "42"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "IPv6에 대한 특성으로 틀린 것은?",
@@ -546,7 +555,9 @@
         "question_desc": "- 하드디스크와 같은 데이터 저장장치를 호스트 버스 어댑터에 직접 연결하는 방식<br>- 저장장치와 호스트 기기 사이에 네트워크 디자이스 없이 직접 연결하는 방식으로 구성",
         "correct_answer": "DAS",
         "incorrect_answers": ["NAS","BSA","NFC"],
-        "desc": "스토리지에는 DAS(Direct Attached Storage), NAS(Network Attached Storage), SAN(Storage Area Network) 등이 있다."
+        "desc": "스토리지에는 DAS(Direct Attached Storage), NAS(Network Attached Storage), SAN(Storage Area Network) 등이 있다.",
+        "keyword": "스토리지",
+        "keyword_num": "21"
     },{
         "subject": "정보시스템 구축관리",
         "question": "취약점 관리를 위해 일반적으로 수행하는 작업이 아닌 것은?",

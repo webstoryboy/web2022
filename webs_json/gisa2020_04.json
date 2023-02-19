@@ -482,7 +482,9 @@
         "subject": "프로그래밍 언어 활용",
         "question": "C언어에서 구조체를 사용하여 데이터를 처리할 때 사용하는 것은?",
         "correct_answer": "for",
-        "incorrect_answers": ["scanf","struct","abstract"]
+        "incorrect_answers": ["scanf","struct","abstract"],
+        "keyword":"C언어",
+        "keyword_num": "42"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "PHP에서 사용 가능한 연산자가 아닌 것은?",
@@ -521,7 +523,9 @@
         "question_desc": "- 하드디스크와 같은 데이터 저장장치를 호스트 버스 어댑터에 직접 연결하는 방식<br>- 저장장치와 호스트 기기 사이에 네트워크 디바이스가 있지 말아야 하고 직접 연결 하는 방식으로 구성",
         "correct_answer": "DAS",
         "incorrect_answers": ["NAS","NFC","N-SCREEN"],
-        "desc": "스토리지에는 DAS(Direct Attached Storage), NAS(Network Attached Storage), SAN(Storage Area Network) 등이 있다."
+        "desc": "스토리지에는 DAS(Direct Attached Storage), NAS(Network Attached Storage), SAN(Storage Area Network) 등이 있다.",
+        "keyword": "스토리지",
+        "keyword_num": "21"
     },{
         "subject": "정보시스템 구축관리",
         "question": "소프트웨어 개발 프레임워크의 적용 효과로 볼 수 없는 것은?",

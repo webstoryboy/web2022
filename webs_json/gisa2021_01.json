@@ -153,13 +153,16 @@
         "correct_answer": "3, 4, 7, 9, 8",
         "incorrect_answers": ["3, 4, 8, 9, 7","3, 8, 4, 9, 7","3, 4, 7, 8, 9"],
         "desc": "선택정렬은 정렬되지 않은 값중 가장 작은 값을 선택 후 정렬되지 않은 첫 번째 요소와 바꾸는 방법입니다.<br>1회전: 3, 8, 4, 9, 7<br>2회전: 3, 4, 8, 9, 7<br>3회전: 3, 4, 7, 9, 8<br>4회전: 3, 4, 7, 8, 9",
-        "keyword": "정렬"
+        "keyword": "정렬",
+        "keyword_num": "14"
     },{
         "subject": "소프트웨어 개발",
         "question": "하향식 통합시험을 위해 일시적으로 필요한 조건만을 가지고 임시로 제공되는 시험용 모듈은?",
         "correct_answer": "Stub",
         "incorrect_answers": ["Driver","Procedure","Function"],
-        "desc": "하향식 통합 방법의 절차 중 주요 제어 모듈은 작성된 프로그램을 사용하고, 주요 제어 모듈의 종속 모듈들은 스텁(Stub)으로 대체합니다."
+        "desc": "하향식 통합 방법의 절차 중 주요 제어 모듈은 작성된 프로그램을 사용하고, 주요 제어 모듈의 종속 모듈들은 스텁(Stub)으로 대체합니다.",
+        "keyword": "통합테스트",
+        "keyword_num": "3"
     },{
         "subject": "소프트웨어 개발",
         "question": "다음 전위식(prefix)을 후위식(postfix)으로 옳게 표현한 것은?",
@@ -170,22 +173,27 @@
     },{
         "subject": "소프트웨어 개발",
         "question": "그래프의 특수한 형태로 노드(Node)와 선분(Branch)으로 되어 있고, 정점 사이에 사이클(Cycle)이 형성되어 있지 않으며, 자료 사이의 관계성이 계층 형식으로 나타나는 비선형 구조는?",
-        "correct_answer": "tree",
-        "incorrect_answers": ["network","stack","distributed"],
-        "desc": "선형구조에는 배열, 선형리스트, 스택, 큐, 테크가 비선형구조에는 트리, 그래프가 있습니다."
+        "correct_answer": "Tree",
+        "incorrect_answers": ["Network","Stack","Distributed"],
+        "desc": "선형구조에는 배열, 선형리스트, 스택, 큐, 테크가 비선형구조에는 트리, 그래프가 있습니다.",
+        "keyword": "자료구조",
+        "keyword_num": "13"
     },{
         "subject": "소프트웨어 개발",
         "question": "스택에 대한 설명으로 틀린 것은?",
         "correct_answer": "Head(front)와 Tail(rear)의 2개 포인터를 갖고 있다.",
         "incorrect_answers": ["입출력이 한쪽 끝으로만 제한된 리스트이다.","더 이상 삭제할 데이터가 없는 상태에서 데이터를 삭제하면 언더플로(Underflow)가 발생한다.","LIFO 구조이다."],
-        "desc": "스택(Stack)은 한쪽 끝으로만 삽입, 삭제 작업이 이루어 지고, 큐(Queue)는 한쪽에서는 삽입 작업, 다른 한쪽에서는 삭제 작업이 이루어집니다."
+        "desc": "스택(Stack)은 한쪽 끝으로만 삽입, 삭제 작업이 이루어 지고, 큐(Queue)는 한쪽에서는 삽입 작업, 다른 한쪽에서는 삭제 작업이 이루어집니다.",
+        "keyword": "자료구조",
+        "keyword_num": "13"
     },{
         "subject": "소프트웨어 개발",
         "question": "디지털 저작권 관리(DRM)에 사용되는 기술요소가 아닌 것은?",
         "correct_answer": "방화벽",
         "incorrect_answers": ["키관리","암호화","크랙방지"],
         "desc": "디지털 저작권 관리(DRM)의 기술 요소에는 암호화(Encryption), 키관리(Key Management), 암호와 파일 생성(Packager), 식별 기술(Identification), 저작권 표현(Right Expression), 정책 관리(Policy Management), 크랙방지(Tamper Resistance), 인증(Authentication) 등이 있다.",
-        "keyword": "DRM"
+        "keyword": "DRM",
+        "keyword_num": "16"
     },{
         "subject": "소프트웨어 개발",
         "question": "여러 개의 선택 항목 중 하나의 선택만 가능한 경우 사용하는 사용자 인터페이스(UI)요소는?",
@@ -203,7 +211,9 @@
         "question": "자료구조에 대한 설명으로 틀린 것은?",
         "correct_answer": "큐는 비선형구조에 해당한다.",
         "incorrect_answers": ["큐는 First In - First Out 처리를 수행한다.","스택은 Last In - First out 처리를 수행한다.","스택은 서브루틴 호출, 인터럽트 처리, 수식 계산 및 수식 표기법에 응용된다."],
-        "desc": "선형구조에는 배열, 선형리스트, 스택, 큐, 테크가 비선형구조에는 트리, 그래프가 있습니다."
+        "desc": "선형구조에는 배열, 선형리스트, 스택, 큐, 테크가 비선형구조에는 트리, 그래프가 있습니다.",
+        "keyword": "자료구조",
+        "keyword_num": "13"
     },{
         "subject": "소프트웨어 개발",
         "question": "다음 중 블랙박스 검사 기법은?",
@@ -502,7 +512,9 @@
         "subject": "프로그래밍 언어 활용",
         "question": "C언어에서 산술 연산자가 아닌 것은?",
         "correct_answer": "=",
-        "incorrect_answers": ["%","*","/"]
+        "incorrect_answers": ["%","*","/"],
+        "keyword": "C언어",
+        "keyword_num": "42"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "UDP 특성에 해당되는 것은?",

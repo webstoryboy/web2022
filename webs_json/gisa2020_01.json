@@ -132,7 +132,9 @@
         "subject": "소프트웨어 설계",
         "question": "공동 모듈에 대한 명세 기법 중 해당 기능에 대해 일관되게 이해되고 한 가지로 해석될 수 있도록 작성하는 원칙은?",
         "correct_answer": "명확성",
-        "incorrect_answers": ["상호작용성","독립성","내용성"]
+        "incorrect_answers": ["상호작용성","독립성","내용성"],
+        "keyword": "모듈화",
+        "keyword_num": "41"
     },{
         "subject": "소프트웨어 설계",
         "question": "UML 모델에서 사용되는 Structural Diagram에 속하지 않는 것은?",
@@ -175,7 +177,9 @@
         "question": "하향식 통합에 있어서 모듈 간의 통합 시험을 위해 일시적으로 필요한 조건만을 가지고 임시로 제공되는 시험용 모듈을 무엇이라고 하는가?",
         "correct_answer": "Stub",
         "incorrect_answers": ["Driver", "Procedure", "Function"],
-        "desc": "Driver는 상향식 통합 모듈에 사용된다."
+        "desc": "Driver는 상향식 통합 모듈에 사용된다.",
+        "keyword": "통합테스트",
+        "keyword_num": "3"
     },{
         "subject": "소프트웨어 개발",
         "question": "소프트웨어 테스트에서 오류의 80%는 전체 모듈의 20% 내에서 발견된다는 법칙은?",
@@ -425,7 +429,9 @@
         "subject": "프로그래밍 언어 활용",
         "question": "C언어에서 비트 논리 연산자에 해당하지 않는 것은?",
         "correct_answer": "?",
-        "incorrect_answers": ["^","&","~"]
+        "incorrect_answers": ["^","&","~"],
+        "keyword": "C언어",
+        "keyword_num": "42"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "시스템에서 모듈 사이의 결합도(Couping)에 대한 설명으로 옳은 것은?",
@@ -443,7 +449,9 @@
         "question": "C언어에서 배열 b[5]의 값은?",
         "question_desc": "static int b[9]={1,2,3}",
         "correct_answer": "0",
-        "incorrect_answers": ["1","2","4"]
+        "incorrect_answers": ["1","2","4"],
+        "keyword": "C언어",
+        "keyword_num": "42"
     },{
         "subject": "프로그래밍 언어 활용",
         "question": "은행가 알고리즘(Banker's Algorithm)은 교착상태의 해결 방법 중 어떤 기법에 해당하는가?",

@@ -732,7 +732,26 @@ a {
 .quiz__table td:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
-
+.quiz__select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quiz__select span {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: rgb(187, 168, 255);
+    margin: 10px 10px 40px 10px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+}
+.quiz__select span:hover {
+    background: rgb(139, 123, 195);
+}
 
 
 .quiz__wrap.option3 {

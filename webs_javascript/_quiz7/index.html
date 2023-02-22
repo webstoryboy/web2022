@@ -44,7 +44,7 @@
             <hr>
             <p class="sub">주관식 연습하기</p>
             <ul class="select" id="option4">
-                <li data-time="https://webstoryboy.github.io/web2022/webs_json/gisaOX.json"><a href="#">정보처리기사 OX 랜덤 기출문제</a></li>
+                <li data-time="../../webs_json/gisaOX.json"><a href="#">정보처리기사 OX 랜덤 기출문제</a></li>
             </ul>
             <hr>
             <p class="sub">한문제씩 연습하기</p>
@@ -1360,6 +1360,22 @@
         </div>
         <!-- //quiz__wrap 주관식 -->
 
+        <div class="quiz__wrap option4 hide">
+            <div class="quiz__title"></div>
+            <div class="quiz">
+                <div class="quiz__number"></div>
+                <div class="quiz__question"></div>
+                <div class="quiz__select">
+                    <span>O</span>
+                    <span>X</span>
+                </div>
+                <div class="quiz__keyword hide"></div>
+                <div class="quiz__confirm">정답 확인하기</div>
+                <div class="quiz__next hide">다음 문제</div>
+            </div>
+        </div>
+        <!-- //quiz__wrap OX -->
+
         <div class="quiz__wrap option2 hide">
             <div class="quiz__title"></div>
             <div class="quiz">
@@ -1450,6 +1466,7 @@
         const quizWrapOption1 = document.querySelector(".quiz__wrap.option1");  
         const quizWrapOption2 = document.querySelector(".quiz__wrap.option2");  
         const quizWrapOption3 = document.querySelector(".quiz__wrap.option3");  
+        const quizWrapOption4 = document.querySelector(".quiz__wrap.option4");  
 
         const quizConfirm1 = quizWrapOption1.querySelector(".quiz__confirm");
         const quizNumber1 = quizWrapOption1.querySelector(".quiz__number");
@@ -1458,6 +1475,12 @@
         const quizQuestionDesc1 = quizWrapOption1.querySelector(".quiz__question__desc");
         const quizAnswer1 = quizWrapOption1.querySelector(".quiz__answer");
         const quizNext1 = quizWrapOption1.querySelector(".quiz__next");
+
+        const quizConfirm4 = quizWrapOption4.querySelector(".quiz__confirm");
+        const quizNumber4 = quizWrapOption4.querySelector(".quiz__number");
+        const quizTitle4 = quizWrapOption4.querySelector(".quiz__title");
+        const quizQuestion4 = quizWrapOption4.querySelector(".quiz__question");
+
 
         const quizNumber2 = quizWrapOption2.querySelector(".quiz__number");
         const quizTitle2 = quizWrapOption2.querySelector(".quiz__title");
@@ -1499,7 +1522,7 @@
                 li.classList.add("selected");
                 quiztitle = li.innerText;
 
-                quizStart.classList.remove("option1", "option2", "option3");
+                quizStart.classList.remove("option1", "option2", "option3", "option4");
                 quizStart.classList.add(option);
             })
         });
@@ -1527,6 +1550,13 @@
                 dataQuestion3(quiztime);
                 document.querySelector("body").classList.add("fixed")
             }
+
+            if(quizStart.classList.contains("option4")){
+                quizWrapOption4.classList.remove("hide");
+                quizMain.classList.add("hide");
+                quizClose.classList.remove("hide");
+                dataQuestion4(quiztime);
+            }
         });
 
         // 닫기 버튼
@@ -1536,6 +1566,7 @@
             quizWrapOption1.classList.add("hide");
             quizWrapOption2.classList.add("hide");
             quizWrapOption3.classList.add("hide");
+            quizWrapOption4.classList.add("hide");
 
             quizSelect.forEach(a => a.classList.remove("selected"));
 
@@ -1548,8 +1579,47 @@
             questionAttempt = 0;   
             questionCorrect = 0;   
 
-            document.querySelector("body").classList.remove("fixed")
+            document.querySelector("body").classList.remove("fixed");
         });
+
+        // 데이터 가져오기4
+        const dataQuestion4 = (time) => {
+            fetch(time)
+            .then(res => res.json())
+            .then(items => {
+                questionAll = items.map((item, index) => {
+                    const formattedQuestion = {
+                        question: item.question,
+                        answer: item.answer,
+                        time: item.time
+                    };
+                    console.log(formattedQuestion);
+                    return formattedQuestion;
+                });
+                startGame4();
+            })
+            .catch((err) => console.error(err));
+        }
+
+        const startGame4 = () => {
+            questionAvailable = [...questionAll];
+            newQuestion4();      //문제 만들기
+        }
+
+        const newQuestion4 = () => {
+            questionCounter++;
+            //번호 만들기
+            quizTitle4.innerHTML = quiztitle;
+            
+            //문제 만들기
+            const questionRamdomIndex = Math.floor(Math.random() * questionAvailable.length);
+            questionCurrent = questionAvailable[questionRamdomIndex];
+            questionAvailable.splice(questionRamdomIndex, 1);
+            quizQuestion4.innerHTML = questionCurrent.question;
+            quizNumber4.innerHTML = `<span>${questionCounter}</span><em>${questionCurrent.time}</em>`;
+            
+            
+        }
 
         // 데이터 가져오기1
         const dataQuestion1 = (time) => {

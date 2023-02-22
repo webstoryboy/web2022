@@ -169,44 +169,5 @@
     },{
         "question": "기본키는 NULL 값을 가져서는 안되며 릴레이션 내에 오직 하나의 값만 존재해야 한다는 무결성 제약조건 중 개체 무결성을 말한다.",
         "answer": "정답"
-    },{
-        "question": "",
-        "answer": ""
-    },{
-        "question": "",
-        "answer": ""
-    },{
-        "question": "",
-        "answer": ""
-    },{
-        "question": "",
-        "answer": ""
-    },{
-        "question": "",
-        "answer": ""
-    },{
-        "question": "",
-        "answer": ""
-    },{
-        "question": "",
-        "answer": ""
-    },{
-        "question": "",
-        "answer": ""
-    },{
-        "question": "",
-        "answer": ""
-    },{
-        "question": "",
-        "answer": ""
-    },{
-        "question": "",
-        "answer": ""
-    },{
-        "question": "",
-        "answer": ""
-    },{
-        "question": "",
-        "answer": ""
     }
 ]

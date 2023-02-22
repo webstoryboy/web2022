@@ -1579,15 +1579,14 @@
 
         const newQuestion1 = () => {
             questionCounter++;
-            
             //번호 만들기
             quizTitle1.innerHTML = quiztitle;
-            quizNumber1.innerHTML = questionCounter;
             
             //문제 만들기
             const questionRamdomIndex = Math.floor(Math.random() * questionAvailable.length);
             questionCurrent = questionAvailable[questionRamdomIndex];
             quizQuestion1.innerHTML = questionCurrent.question;
+            quizNumber1.innerHTML = `<span>${questionCounter}</span><em>${questionCurrent.time}</em>`;
             
             //문제 보충 설명 만들기
             quizQuestionDesc1.innerHTML = ""; 

@@ -353,11 +353,26 @@ a {
     box-shadow: 2px 2px 2px rgb(0 0 0 / 10%);
 }
 .quiz__number {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.quiz__number span {
     font-size: 40px;
     margin-bottom: 1vw;
     display: inline-block;
     color: rgb(187, 168, 255);
     font-weight: 100;
+}
+.quiz__number em {
+    font-style: normal;
+    font-size: 0.8em;
+    margin-bottom: 1vw;
+    font-weight: 500;
+    background: rgb(187, 168, 255);
+    color: #fff;
+    padding: 1px 10px;
+    border-radius: 10px;
 }
 .quiz__question {
     font-size: 24px;

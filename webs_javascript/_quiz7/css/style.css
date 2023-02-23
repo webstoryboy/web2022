@@ -741,12 +741,13 @@ a {
     display: inline-block;
     width: 100px;
     height: 100px;
-    background: rgb(187, 168, 255);
+    background-color: #422e910b;
+    border: 1px solid #422e9123;
     margin: 10px 10px 40px 10px;
     text-align: center;
     line-height: 100px;
     border-radius: 50%;
-    color: #fff;
+    color: #412E91;
     cursor: pointer;
 }
 .quiz__select span:hover {

@@ -1369,9 +1369,10 @@
                     <span>O</span>
                     <span>X</span>
                 </div>
-                <div class="quiz__keyword hide"></div>
-                <div class="quiz__confirm">정답 확인하기</div>
+                <div class="quiz__result hide"></div>
                 <div class="quiz__next hide">다음 문제</div>
+                <div class="quiz__desc hide"></div>
+                <div class="quiz__keyword hide"></div>
             </div>
         </div>
         <!-- //quiz__wrap OX -->
@@ -1462,7 +1463,7 @@
         const quizMain = document.querySelector(".quiz__main");
         const quizClose = document.querySelector(".quiz__close");
         const quizPopup = document.querySelector(".quiz__popup");
-        
+
         const quizWrapOption1 = document.querySelector(".quiz__wrap.option1");  
         const quizWrapOption2 = document.querySelector(".quiz__wrap.option2");  
         const quizWrapOption3 = document.querySelector(".quiz__wrap.option3");  
@@ -1475,13 +1476,17 @@
         const quizQuestionDesc1 = quizWrapOption1.querySelector(".quiz__question__desc");
         const quizAnswer1 = quizWrapOption1.querySelector(".quiz__answer");
         const quizNext1 = quizWrapOption1.querySelector(".quiz__next");
-
+        
         const quizConfirm4 = quizWrapOption4.querySelector(".quiz__confirm");
         const quizNumber4 = quizWrapOption4.querySelector(".quiz__number");
         const quizTitle4 = quizWrapOption4.querySelector(".quiz__title");
         const quizQuestion4 = quizWrapOption4.querySelector(".quiz__question");
-
-
+        const quizDesc4 = quizWrapOption4.querySelector(".quiz__desc");
+        const quizKeyword4 = quizWrapOption4.querySelector(".quiz__keyword");
+        const quizOxBtns = quizWrapOption4.querySelectorAll(".quiz__select span");
+        const quizResult4 = quizWrapOption4.querySelector(".quiz__result");
+        const quizNext4 = quizWrapOption4.querySelector(".quiz__next");
+        
         const quizNumber2 = quizWrapOption2.querySelector(".quiz__number");
         const quizTitle2 = quizWrapOption2.querySelector(".quiz__title");
         const quizQuestion2 = quizWrapOption2.querySelector(".quiz__question");
@@ -1593,6 +1598,15 @@
                         answer: item.answer,
                         time: item.time
                     };
+                    if(item.hasOwnProperty("desc")){      
+                        formattedQuestion.desc = item.desc;
+                    }
+                    if(item.hasOwnProperty("keyword")){       
+                        formattedQuestion.keyword = item.keyword;
+                    }
+                    if(item.hasOwnProperty("keyword_num")){       
+                        formattedQuestion.keyword_num = item.keyword_num;
+                    }
                     console.log(formattedQuestion);
                     return formattedQuestion;
                 });
@@ -1604,6 +1618,7 @@
         const startGame4 = () => {
             questionAvailable = [...questionAll];
             newQuestion4();      //문제 만들기
+            viewPopup4(); 
         }
 
         const newQuestion4 = () => {
@@ -1618,8 +1633,68 @@
             quizQuestion4.innerHTML = questionCurrent.question;
             quizNumber4.innerHTML = `<span>${questionCounter}</span><em>${questionCurrent.time}</em>`;
             
-            
+            //설명 만들기
+            quizDesc4.innerHTML = "";
+            if(questionCurrent.hasOwnProperty("desc")){
+                quizDesc4.innerHTML = "<div>" + questionCurrent.desc + "</div>";
+            } 
+
+            //키워드 만들기
+            quizKeyword4.innerHTML = "";
+            if(questionCurrent.hasOwnProperty("keyword")){
+                quizKeyword4.innerHTML = "<div>" + questionCurrent.keyword + "</div>";
+            } 
+
+            //키워드 링크 만들기
+            if(questionCurrent.hasOwnProperty("keyword_num")){
+                const keywordNum = questionCurrent.keyword_num;
+                quizPopup.querySelector("iframe").setAttribute("src", "https://license.tistory.com/"+keywordNum)
+            } 
+
+            quizOxBtns.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    quizResult4.classList.remove("hide");
+                    quizKeyword4.classList.remove("hide");
+                    quizNext4.classList.remove("hide");
+                    quizDesc4.classList.remove("hide");
+
+                    if(btn.textContent === questionCurrent.answer){ 
+                        quizResult4.innerHTML = "정답입니다."
+                    } else {
+                        quizResult4.innerHTML = "틀렸습니다."
+                    }
+                })
+            })
         }
+        
+        quizNext4.addEventListener("click", () => {
+            quizResult4.classList.add("hide");
+            quizDesc4.classList.add("hide");     
+            quizKeyword4.classList.add("hide");
+            quizNext4.classList.add("hide");
+
+            if(questionCounter === questionAll.length){
+                gameOver();
+            } else {
+                newQuestion4();
+            }
+        });
+        
+        // 키워드 팝업
+        const viewPopup4 = () => {
+            const quiz__popup__close = document.querySelector(".quiz__popup__close");
+
+            quizKeyword4.addEventListener("click", () => {
+                document.querySelector("body").classList.add("fixed");
+                gsap.to(quizPopup, {top:0, duration: 0});
+            });
+
+            quiz__popup__close.addEventListener("click", () => {
+                document.querySelector("body").classList.remove("fixed");
+                gsap.to(quizPopup, {top: "100%", duration: 0});
+            });
+        }
+
 
         // 데이터 가져오기1
         const dataQuestion1 = (time) => {
@@ -1695,8 +1770,7 @@
         const gameOver = () => {
             alert("게임이 끝났습니다.")
         }
-        
-        
+          
         // 데이터 가져오기2
         const dataQuestion2 = (time) => {
             fetch(time)
@@ -1753,7 +1827,7 @@
             questionCounter++;
 
             quizTitle2.innerHTML = quiztitle;
-            quizNumber2.innerHTML = questionCounter;
+            quizNumber2.innerHTML = "<span>"+ questionCounter +"</span>";
 
             const questionRamdomIndex = Math.floor(Math.random() * questionAvailable.length);
             questionCurrent = questionAvailable[questionRamdomIndex];

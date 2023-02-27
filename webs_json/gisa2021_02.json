@@ -120,8 +120,8 @@
         "question": "애자일 개발 방법론이 아닌 것은?",
         "correct_answer": "하둡(Hadoop)",
         "incorrect_answers": ["스크럼(Scrum)","익스트림 프로그래밍(XP, eXtreme Programming)","기능 주도 개발(FDD, Feature Driven Development)"],
-        "keyword": "소프트웨어 생명주기",
-        "keyword_num": "37"
+        "keyword": "애자일 방법론",
+        "keyword_num": "9"
     },{
         "subject": "소프트웨어 설계",
         "question": "GoF(Gangs of Four) 디자인 패턴 중 생성패턴으로 옳은 것은?",

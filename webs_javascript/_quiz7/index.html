@@ -43,6 +43,7 @@
                 <li class="select__time" data-style="option1" data-time="../../webs_json/gisaShort.json"><a href="#">정보처리기사 주관식 랜덤 기출문제</a></li>
                 <li class="select__time" data-style="option1" data-time="../../webs_json/gineungsaShort.json"><a href="#">정보처리기능사 주관식 랜덤 기출문제</a></li>
                 <li class="select__time" data-style="option4" data-time="../../webs_json/gisaOX.json"><a href="#">정보처리기사 OX 랜덤 기출문제</a></li>
+                <li class="select__time" data-style="option1" data-time="https://webstoryboy.github.io/webstoryboy/w_json/sujebi.json"><a href="#">정보처리기사 OX 랜덤 기출문제</a></li>
             </ul>
     
             <hr>
@@ -1349,6 +1350,7 @@
                 <div class="quiz__question__img"></div>
                 <div class="quiz__indicator hide"></div>
                 <div class="quiz__answer hide"></div>
+                <div class="quiz__desc hide"></div>
                 <div class="quiz__keyword hide"></div>
                 <div class="quiz__confirm">정답 확인하기</div>
                 <div class="quiz__next hide">다음 문제</div>
@@ -1474,6 +1476,7 @@
         const quizAnswer1 = quizWrapOption1.querySelector(".quiz__answer");
         const quizNext1 = quizWrapOption1.querySelector(".quiz__next");
         const quizKeyword1 = quizWrapOption1.querySelector(".quiz__keyword");
+        const quizDesc1 = quizWrapOption1.querySelector(".quiz__desc");
         
         const quizConfirm4 = quizWrapOption4.querySelector(".quiz__confirm");
         const quizNumber4 = quizWrapOption4.querySelector(".quiz__number");
@@ -1690,9 +1693,11 @@
                     const formattedQuestion = {
                         question: item.question,
                         number: index+1,
-                        answer: item.correct_answer,
-                        time: item.time
+                        answer: item.correct_answer
                     };
+                    if(item.hasOwnProperty("time")){        
+                        formattedQuestion.time = item.time;
+                    }
                     if(item.hasOwnProperty("question_desc")){        
                         formattedQuestion.question_desc = item.question_desc;
                     }
@@ -1704,6 +1709,9 @@
                     }
                     if(item.hasOwnProperty("keyword_num")){        
                         formattedQuestion.keyword_num = item.keyword_num;
+                    }
+                    if(item.hasOwnProperty("desc")){        
+                        formattedQuestion.desc = item.desc;
                     }
                     console.log(formattedQuestion)
                     return formattedQuestion;
@@ -1736,6 +1744,11 @@
                 quizQuestionDesc1.innerHTML = "<div>" + questionCurrent.question_desc + "</div>";
             } 
 
+            quizDesc1.innerHTML = ""; 
+            if(questionCurrent.hasOwnProperty("desc")){
+                quizDesc1.innerHTML = "<div>" + questionCurrent.desc + "</div>";
+            } 
+
             quizKeyword1.innerHTML = "";
             if(questionCurrent.hasOwnProperty("keyword")){
                 quizKeyword1.innerHTML = "<div>" + questionCurrent.keyword + "</div>";
@@ -1756,6 +1769,7 @@
             quizConfirm1.classList.add("hide");
             quizNext1.classList.remove("hide");
             quizKeyword1.classList.remove("hide");
+            quizDesc1.classList.remove("hide");
         });
 
         quizNext1.addEventListener("click", () => {
@@ -1763,6 +1777,7 @@
             quizConfirm1.classList.remove("hide");
             quizNext1.classList.add("hide");
             quizKeyword1.classList.add("hide");
+            quizDesc1.classList.add("hide");
             
             if(questionCounter === questionAll.length){
                 gameOver();

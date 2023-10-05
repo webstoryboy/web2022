@@ -6,7 +6,7 @@ const modalClose = document.querySelector(".modal__close");
 const modalCont = document.querySelector(".modal__cont");
 
 modalBtn.addEventListener("click", () => {
-    modalCont.classList.add("show");
+    modalCont.classList.add("show"); 
     modalCont.classList.remove("hide");
 });
 modalClose.addEventListener("click", () => {
